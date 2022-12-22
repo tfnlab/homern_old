@@ -129,25 +129,25 @@
         <p>
         </p>
         <%
+                long currentTimeMillis = System.currentTimeMillis();
+                Timestamp currentTime = new Timestamp(currentTimeMillis);
+
+                int orderId = Integer.parseInt(request.getParameter("orderId"));
+                String username = request.getParameter("username");
+                Date orderDate = new Date();
+                Date shippingDate = new Date();
                 String shippingAddress = request.getParameter("shippingAddress");
+                String billingAddress = request.getParameter("billingAddress");
+                String paymentMethod = request.getParameter("paymentMethod");
+                BigDecimal orderTotal = new BigDecimal(request.getParameter("orderTotal"));
+                Timestamp createdAt = currentTime;
+                Timestamp updatedAt = currentTime;
+                Timestamp deletedAt = currentTime;
+
+                Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt);
 
                 // Validate form data
                 if (shippingAddress != null && shippingAddress.trim().length() > 0) {
-
-                      Order order = new Order(
-                          Integer.parseInt(request.getParameter("orderId")),
-                          request.getParameter("username"),
-                          new Date(),
-                          new Date(),
-                          request.getParameter("shippingAddress"),
-                          request.getParameter("billingAddress"),
-                          request.getParameter("paymentMethod"),
-                          new BigDecimal(request.getParameter("orderTotal")),
-                          new Timestamp(),
-                          new Timestamp(),
-                          new Timestamp()
-                      );
-
                       OrderDao dao = new OrderDao();
                       dao.insertOrder(order);
                 }else{
