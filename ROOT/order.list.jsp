@@ -131,20 +131,15 @@
         </p>
         <%
                 OrderDao orderDao = new OrderDao();
-                String username = request.getParameter("username");
+                String username = (String) session.getAttribute("username");
+
                 List<Order> orders = orderDao.getCustomerOrders(username);
                 %>
 
 
-          %>
               <a href="order.new.jsp">New Order</a><BR>
-              <a href="order.list.jsp">Orders</a>
+              <a href="order.list.jsp">Orders</a><BR><BR>
 
-              <form action="orders.jsp" method="post">
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username"><br>
-                <input type="submit" value="Submit">
-              </form>
               <% for (Order order : orders) { %>
                 Order ID: <%= order.getOrderId() %><br>
                 Order Date: <%= order.getOrderDate() %><br>

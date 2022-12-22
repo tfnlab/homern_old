@@ -155,9 +155,10 @@
 
                       if(pv){
                         pv = dao.loginUser(user);
-                      }  
+                      }
                         if(pv){
                           um  = "Thank you are signed in";
+                          session.setAttribute("username", username);
                         }else{
                           um  = "Unable to Login, you are NOT signed in";
                         }

@@ -166,13 +166,15 @@
 
                       if(pv){
                         dao.insertUser(user);
+                        session.setAttribute("username", username);
                         um  = "Thank you for joining";
                       }
                         %>
                         <p>
                           <%=um%>
                           <%if(pv){%>
-                            <a href="https://homerenovationnation.com/signin.jsp">Sign-In</a>
+
+                              <a href="https://homerenovationnation.com/user.menu.jsp">Menu</a>
                           <%}%>
                         </p>
                         <%
