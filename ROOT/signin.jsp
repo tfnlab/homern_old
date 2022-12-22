@@ -177,30 +177,10 @@
             <!-- ======= Contact Section ======= -->
 
                 <form action="signup.jsp" method="POST">
-              		<label for="firstName">First Name:</label><br>
-              		<input type="text" id="firstName" name="firstName"><br>
-              		<label for="middleInitial">Middle Initial:</label><br>
-              		<input type="text" id="middleInitial" name="middleInitial"><br>
-              		<label for="lastName">Last Name:</label><br>
-              		<input type="text" id="lastName" name="lastName"><br>
-              		<label for="email">Email:</label><br>
-              		<input type="email" id="email" name="email"><br>
-              		<label for="phone">Phone:</label><br>
-              		<input type="text" id="phone" name="phone"><br>
               		<label for="username">Username:</label><br>
               		<input type="text" id="username" name="username"><br>
               		<label for="password">Password:</label><br>
               		<input type="password" id="password" name="password"><br>
-              		<label for="ogId">OG ID:</label><br>
-              		<input type="text" id="ogId" name="ogId"><br>
-              		<label for="address">Address:</label><br>
-              		<input type="text" id="address" name="address"><br>
-              		<label for="city">City:</label><br>
-              		<input type="text" id="city" name="city"><br>
-              		<label for="state">State:</label><br>
-              		<input type="text" id="state" name="state"><br>
-                  <label for="state">Zip:</label><br>
-                  <input type="text" id="zipcode" name="zipcode"><br><br>
                   		<input type="submit" value="Submit">
                   	</form>
 
