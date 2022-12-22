@@ -132,7 +132,6 @@
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
 
-                int orderId = Integer.parseInt(request.getParameter("orderId"));
                 String username = request.getParameter("username");
                 Date orderDate = new Date();
                 Date shippingDate = new Date();
@@ -142,6 +141,7 @@
 
                 // Validate form data
                 if (shippingAddress != null && shippingAddress.trim().length() > 0) {
+                      int orderId = Integer.parseInt(request.getParameter("orderId"));
                       BigDecimal orderTotal = new BigDecimal(request.getParameter("orderTotal"));
                       Timestamp createdAt = currentTime;
                       Timestamp updatedAt = currentTime;
