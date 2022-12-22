@@ -116,16 +116,16 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Sign-up</li>
+          <li>Order</li>
         </ol>
-        <h2>Sign-up form</h2>
+        <h2>Order form</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Sign-Up</h2>
+        <h2>Order Form</h2>
         <p>
         </p>
         <%
@@ -141,8 +141,14 @@
 
                 // Validate form data
                 if (shippingAddress != null && shippingAddress.trim().length() > 0) {
-                      int orderId = Integer.parseInt(request.getParameter("orderId"));
-                      BigDecimal orderTotal = new BigDecimal(request.getParameter("orderTotal"));
+                      int orderId = null;
+                      if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+                        orderId = Integer.parseInt(request.getParameter("orderId"));
+                      }
+                      BigDecimal orderTotal = new BigDecimal("0");
+                      if (request.getParameter("orderTotal") != null && !request.getParameter("orderTotal").isEmpty()) {
+                        orderTotal = new BigDecimal(request.getParameter("orderTotal"));
+                      }
                       Timestamp createdAt = currentTime;
                       Timestamp updatedAt = currentTime;
                       Timestamp deletedAt = currentTime;
