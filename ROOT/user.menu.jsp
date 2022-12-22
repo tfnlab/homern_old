@@ -111,91 +111,18 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Sign-In</li>
+          <li>Home</li>
         </ol>
-        <h2>Sign-In form</h2>
+        <h2>User Home</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Sign-In</h2>
-        <p>
-        </p>
-        <%
-        String firstName = request.getParameter("firstName");
-        String middleInitial = request.getParameter("middleInitial");
-        String lastName = request.getParameter("lastName");
-        String email = request.getParameter("email");
-        String phone = request.getParameter("phone");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String ogId = request.getParameter("ogId");
-        String address = request.getParameter("address");
-        String city = request.getParameter("city");
-        String state = request.getParameter("state");
-        String zipcode = request.getParameter("zipcode");
-
-                // Validate form data
-                if (username != null && username.trim().length() > 0) {
-                  User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode);
-                  UserDao dao = new UserDao();
-                  try {
-                      boolean pv = true;
-                      String um = "Thank you for signing in";
-                      if (username == null || username.isEmpty()) {
-                        pv = false;
-                        um  = "Username can't be Empty";
-                      }
-                      if (password == null || password.isEmpty()) {
-                        pv = false;
-                        um  = "Password can't be Empty";
-                      }
-
-                      if(pv){
-                        pv = dao.loginUser(user)
-                        if(pv){
-                          um  = "Thank you are signed in";
-                        }else
-                          um  = "Unable to Login, you are NOT signed in";
-                        }
-                        %>
-                        <p>
-                          <%=um%>
-                          <%
-                          if(pv){
-                          %>
-                            <a href="https://homerenovationnation.com/user.menu.jsp">Menu</a>
-                          <%
-                          }
-                          %>
-                        </p>
-                        <%
-                  } catch (Exception e) {
-                      %><%="An error occurred: " + e.getMessage()%><%
-                  }
-
-
-                }else{
-
-                // Validate other fields as necessary
-
-                // Create User object and set its fields
-
-
-        %>
-            <!-- ======= Contact Section ======= -->
-
-                <form action="signin.jsp" method="POST">
-              		<label for="username">Username:</label><br>
-              		<input type="text" id="username" name="username"><br>
-              		<label for="password">Password:</label><br>
-              		<input type="password" id="password" name="password"><br>
-                  		<input type="submit" value="Submit">
-                  	</form>
-
-                 <%}%>
+        <h2>Home</h2>
+        <a href="order.new.jsp">New Order</a><BR>
+        <a href="order.list.jsp">Orders</a>
       </div>
 
     </section><!-- End Blog Section -->
