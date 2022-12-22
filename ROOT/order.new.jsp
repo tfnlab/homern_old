@@ -139,6 +139,8 @@
                 String shippingAddress = request.getParameter("shippingAddress");
                 String billingAddress = request.getParameter("billingAddress");
                 String paymentMethod = request.getParameter("paymentMethod");
+                String orderName = request.getParameter("orderName");
+                String orderDescription = request.getParameter("orderDescription");
 
                 // Validate form data
                 if (shippingAddress != null && shippingAddress.trim().length() > 0) {
@@ -154,7 +156,7 @@
                       Timestamp updatedAt = currentTime;
                       Timestamp deletedAt = currentTime;
 
-                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt);
+                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription);
                       OrderDao dao = new OrderDao();
                       dao.insertOrder(order);
                       %>
@@ -167,6 +169,10 @@
             <!-- ======= Contact Section ======= -->
 
                 <form action="order.new.jsp" method="POST">
+                <label for="orderId">Order Name:</label><br>
+                <input type="text" id="orderName" name="orderName"><br>
+                <label for="orderId">Order Description:</label><br>
+                <input type="text" id="orderDescription" name="orderDescription"><br>
                 <label for="orderId">Order ID:</label><br>
                 <input type="text" id="orderId" name="orderId"><br>
                 <label for="username">Username:</label><br>
