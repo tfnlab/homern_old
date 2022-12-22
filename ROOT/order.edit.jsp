@@ -127,6 +127,8 @@
       <div class="container px-4 px-lg-5">
         <h2>Order Form</h2>
         <p>
+        <a href="order.new.jsp">New Order</a><BR>
+        <a href="order.list.jsp">Orders</a>
         </p>
         <%
                 OrderDao dao = new OrderDao();
