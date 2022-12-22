@@ -129,7 +129,10 @@
         <p>
         </p>
         <%
+                OrderDao dao = new OrderDao();
+
                 int orderId = 0;
+                String username = (String) session.getAttribute("username");
                 if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
                   orderId = Integer.parseInt(request.getParameter("orderId"));
                 }
@@ -140,10 +143,25 @@
                         <a href="order.new.jsp">New Order</a><BR>
                         <a href="order.list.jsp">Orders</a>
                       <%
-                }else{
+                      long currentTimeMillis = System.currentTimeMillis();
+                      Timestamp currentTime = new Timestamp(currentTimeMillis);
+                      Date orderDate = new Date();
+                      Date shippingDate = new Date();
+                      String billingAddress = request.getParameter("billingAddress");
+                      String paymentMethod = request.getParameter("paymentMethod");
+                      BigDecimal orderTotal = new BigDecimal("0");
+                      if (request.getParameter("orderTotal") != null && !request.getParameter("orderTotal").isEmpty()) {
+                        orderTotal = new BigDecimal(request.getParameter("orderTotal"));
+                      }
+                      Timestamp createdAt = currentTime;
+                      Timestamp updatedAt = currentTime;
+                      Timestamp deletedAt = currentTime;
+                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt);
+                      dao.updateOrder(order);  
+
+                }
         %>
         <%
-          OrderDao dao = new OrderDao();
           Order order = dao.getOrderByOrderId(orderId);
         %>
         <!-- ======= Contact Section ======= -->
@@ -173,8 +191,7 @@
           <input type="text" id="lastModified" name="lastModified" value="<%= order.getLastModified() %>"><br><br>
           <input type="submit" value="Submit">
         </form>
-        
-                    <%}%>
+
       </div>
 
     </section><!-- End Blog Section -->
