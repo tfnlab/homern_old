@@ -169,6 +169,18 @@
                   try {
                       boolean pv = true;
                       String um = "Thank you for joining";
+                      if (email == null || email.isEmpty()) {
+                        pv = false;
+                        um  = "Email can't be Empty";
+                      }
+                      if (username == null || username.isEmpty()) {
+                        pv = false;
+                        um  = "Username can't be Empty";
+                      }
+                      if (password == null || password.isEmpty()) {
+                        pv = false;
+                        um  = "Password can't be Empty";
+                      }
                       if(dao.isUsernameTaken(username)){
                         pv = false;
                         um  = "Username is taken";
