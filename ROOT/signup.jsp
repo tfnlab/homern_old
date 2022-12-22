@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Avatar - Metagascar Inc</title>
+  <title>Home Renovation Nation - Sign-up</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -136,9 +136,9 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Avatar</li>
+          <li>Sign-up</li>
         </ol>
-        <h2>Avatar (NFT)</h2>
+        <h2>Sign-up form</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
@@ -146,6 +146,8 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Sign-Up</h2>
+        <p>
+        </p>
         <%
                 String firstName = request.getParameter("firstName");
                 String middleInitial = request.getParameter("middleInitial");
@@ -166,12 +168,18 @@
                   UserDao dao = new UserDao();
                   try {
                       dao.insertUser(user);
+                      %>
+                      <p>
+                        Thank you for joining
+                      </p>
+                      <%
                   } catch (Exception e) {
                       %><%="An error occurred: " + e.getMessage()%><%
                   }
 
 
-                }
+                }else{
+
                 // Validate other fields as necessary
 
                 // Create User object and set its fields
@@ -207,6 +215,8 @@
                   <input type="text" id="zipcode" name="zipcode"><br><br>
                   		<input type="submit" value="Submit">
                   	</form>
+
+                 <%}%>
       </div>
 
     </section><!-- End Blog Section -->
