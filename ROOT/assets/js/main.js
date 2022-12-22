@@ -1,6 +1,6 @@
 /**
-* Template Name: Gp - v4.9.1
-* Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+* Template Name: Presento - v3.9.1
+* Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
@@ -66,6 +66,10 @@
   const scrollto = (el) => {
     let header = select('#header')
     let offset = header.offsetHeight
+
+    if (!header.classList.contains('header-scrolled')) {
+      offset -= 16
+    }
 
     let elementPos = select(el).offsetTop
     window.scrollTo({
@@ -153,17 +157,6 @@
       }
     }
   });
-
-  /**
-   * Preloader
-   */
-  let preloader = select('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
-  }
-
   /**
    * Clients Slider
    */
@@ -207,7 +200,8 @@
     let portfolioContainer = select('.portfolio-container');
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
       });
 
       let portfolioFilters = select('#portfolio-flters li', true);
@@ -269,6 +263,17 @@
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      }
     }
   });
 
@@ -278,10 +283,10 @@
   window.addEventListener('load', () => {
     AOS.init({
       duration: 1000,
-      easing: "ease-in-out",
+      easing: 'ease-in-out',
       once: true,
       mirror: false
-    });
+    })
   });
 
   /**
