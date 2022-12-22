@@ -173,7 +173,8 @@
           <input type="text" id="lastModified" name="lastModified" value="<%= order.getLastModified() %>"><br><br>
           <input type="submit" value="Submit">
         </form>
-
+        
+                    <%}%>
       </div>
 
     </section><!-- End Blog Section -->
