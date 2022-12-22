@@ -157,7 +157,7 @@
                       Timestamp updatedAt = currentTime;
                       Timestamp deletedAt = currentTime;
                       Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt);
-                      dao.updateOrder(order);  
+                      dao.updateOrder(order);
 
                 }
         %>
@@ -166,7 +166,7 @@
         %>
         <!-- ======= Contact Section ======= -->
 
-        <form action="order.new.jsp" method="POST">
+        <form action="order.edit.jsp" method="POST">
           <label for="orderId">Order ID:</label><br>
           <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>"><br>
           <label for="username">Username:</label><br>
