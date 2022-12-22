@@ -115,10 +115,10 @@
         String zipcode = request.getParameter("zipcode");
 
         // Validate form data
-        if (firstName != null || firstName.trim().length() > 0) {
+        if (firstName != null $$ firstName.trim().length() > 0) {
           User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode);
           UserDao dao = new UserDao();
-          dao.insertUser(user);          
+          dao.insertUser(user);
         }
         // Validate other fields as necessary
 
