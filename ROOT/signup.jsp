@@ -167,12 +167,20 @@
                   User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode);
                   UserDao dao = new UserDao();
                   try {
-                      dao.insertUser(user);
-                      %>
-                      <p>
-                        Thank you for joining
-                      </p>
-                      <%
+                      if(!dao.isUsernameTaken(username)){
+                        dao.insertUser(user);
+                        %>
+                        <p>
+                          Thank you for joining
+                        </p>
+                        <%
+                      }else{
+                        %>
+                        <p>
+                          Username is taken
+                        </p>
+                        <%
+                      }
                   } catch (Exception e) {
                       %><%="An error occurred: " + e.getMessage()%><%
                   }
