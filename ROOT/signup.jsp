@@ -171,6 +171,9 @@
                         %>
                         <p>
                           <%=um%>
+                          <%if(pv){%>
+                            <a href="https://homerenovationnation.com/signin.jsp">Sign-In</a>
+                          <%}%>
                         </p>
                         <%
                   } catch (Exception e) {
