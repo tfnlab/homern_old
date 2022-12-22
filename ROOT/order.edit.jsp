@@ -129,70 +129,51 @@
         <p>
         </p>
         <%
-                long currentTimeMillis = System.currentTimeMillis();
-                Timestamp currentTime = new Timestamp(currentTimeMillis);
-
-                String username = (String) session.getAttribute("username");
-
-                Date orderDate = new Date();
-                Date shippingDate = new Date();
+                int orderId = 0;
+                if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+                  orderId = Integer.parseInt(request.getParameter("orderId"));
+                }
                 String shippingAddress = request.getParameter("shippingAddress");
-                String billingAddress = request.getParameter("billingAddress");
-                String paymentMethod = request.getParameter("paymentMethod");
-
                 // Validate form data
                 if (shippingAddress != null && shippingAddress.trim().length() > 0) {
-                      int orderId = 0;
-                      if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
-                        orderId = Integer.parseInt(request.getParameter("orderId"));
-                      }
-                      BigDecimal orderTotal = new BigDecimal("0");
-                      if (request.getParameter("orderTotal") != null && !request.getParameter("orderTotal").isEmpty()) {
-                        orderTotal = new BigDecimal(request.getParameter("orderTotal"));
-                      }
-                      Timestamp createdAt = currentTime;
-                      Timestamp updatedAt = currentTime;
-                      Timestamp deletedAt = currentTime;
-
-                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt);
-                      OrderDao dao = new OrderDao();
-                      dao.insertOrder(order);
                       %>
                         <a href="order.new.jsp">New Order</a><BR>
                         <a href="order.list.jsp">Orders</a>
                       <%
                 }else{
-
         %>
-            <!-- ======= Contact Section ======= -->
+        <%
+          OrderDao dao = new OrderDao();
+          Order order = dao.getOrderByOrderId(orderId);
+        %>
+        <!-- ======= Contact Section ======= -->
 
-                <form action="order.new.jsp" method="POST">
-                <label for="orderId">Order ID:</label><br>
-                <input type="text" id="orderId" name="orderId"><br>
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username"><br>
-                <label for="orderDate">Order Date:</label><br>
-                <input type="text" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd"><br>
-                <label for="shipDate">Ship Date:</label><br>
-                <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
-                <label for="shippingAddress">Shipping Address:</label><br>
-                <input type="text" id="shippingAddress" name="shippingAddress"><br>
-                <label for="billingAddress">Billing Address:</label><br>
-                <input type="text" id="billingAddress" name="billingAddress"><br>
-                <label for="paymentMethod">Payment Method:</label><br>
-                <input type="text" id="paymentMethod" name="paymentMethod"><br>
-                <label for="orderTotal">Order Total:</label><br>
-                <input type="text" id="orderTotal" name="orderTotal"><br>
-                <label for="timestamp">Timestamp:</label><br>
-                <input type="text" id="timestamp" name="timestamp"><br>
-                <label for="ts">TS:</label><br>
-                <input type="text" id="ts" name="ts"><br>
-                <label for="lastModified">Last Modified:</label><br>
-                <input type="text" id="lastModified" name="lastModified"><br><br>
-                <input type="submit" value="Submit">
-                  	</form>
+        <form action="order.new.jsp" method="POST">
+          <label for="orderId">Order ID:</label><br>
+          <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>"><br>
+          <label for="username">Username:</label><br>
+          <input type="text" id="username" name="username" value="<%= order.getUsername() %>"><br>
+          <label for="orderDate">Order Date:</label><br>
+          <input type="text" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd" value="<%= order.getOrderDate() %>"><br>
+          <label for="shipDate">Ship Date:</label><br>
+          <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
+          <label for="shippingAddress">Shipping Address:</label><br>
+          <input type="text" id="shippingAddress" name="shippingAddress" value="<%= order.getShippingAddress() %>"><br>
+          <label for="billingAddress">Billing Address:</label><br>
+          <input type="text" id="billingAddress" name="billingAddress" value="<%= order.getBillingAddress() %>"><br>
+          <label for="paymentMethod">Payment Method:</label><br>
+          <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"><br>
+          <label for="orderTotal">Order Total:</label><br>
+          <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"><br>
+          <label for="timestamp">Timestamp:</label><br>
+          <input type="text" id="timestamp" name="timestamp" value="<%= order.getTimestamp() %>"><br>
+          <label for="ts">TS:</label><br>
+          <input type="text" id="ts" name="ts" value="<%= order.getTs() %>"><br>
+          <label for="lastModified">Last Modified:</label><br>
+          <input type="text" id="lastModified" name="lastModified" value="<%= order.getLastModified() %>"><br><br>
+          <input type="submit" value="Submit">
+        </form>
 
-                 <%}%>
       </div>
 
     </section><!-- End Blog Section -->
