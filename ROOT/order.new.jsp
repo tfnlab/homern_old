@@ -132,9 +132,8 @@
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
 
-                String username = request.getParameter("username");
                 String username = (String) session.getAttribute("username");
-                
+
                 Date orderDate = new Date();
                 Date shippingDate = new Date();
                 String shippingAddress = request.getParameter("shippingAddress");
