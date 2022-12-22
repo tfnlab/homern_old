@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Say>
+Thank you for calling Los Angeles Painterz. We are a professional paint service company that offers high-quality painting services for residential and commercial properties in the Los Angeles area. Our team of experienced painters can help you transform any space with a fresh coat of paint, using the highest-quality materials and techniques. Whether you need to freshen up a single room or paint an entire building, we can help. Please let us know how we can assist you, and one of our friendly team members will be happy to assist you.
+    </Say>
+    <Dial>
+        <Number sendDigits="wwww1928">
+            310-903-6014
+        </Number>
+    </Dial>
+</Response>
