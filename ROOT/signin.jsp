@@ -124,15 +124,18 @@
         <p>
         </p>
         <%
-                String email = request.getParameter("email");
-                String phone = request.getParameter("phone");
-                String username = request.getParameter("username");
-                String password = request.getParameter("password");
-                String ogId = request.getParameter("ogId");
-                String address = request.getParameter("address");
-                String city = request.getParameter("city");
-                String state = request.getParameter("state");
-                String zipcode = request.getParameter("zipcode");
+        String firstName = request.getParameter("firstName");
+        String middleInitial = request.getParameter("middleInitial");
+        String lastName = request.getParameter("lastName");
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String ogId = request.getParameter("ogId");
+        String address = request.getParameter("address");
+        String city = request.getParameter("city");
+        String state = request.getParameter("state");
+        String zipcode = request.getParameter("zipcode");
 
                 // Validate form data
                 if (username != null && username.trim().length() > 0) {
