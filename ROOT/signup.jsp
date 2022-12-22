@@ -174,6 +174,12 @@
                           Thank you for joining
                         </p>
                         <%
+                      }else if(!dao.isEmailTaken(email)){
+                        %>
+                        <p>
+                          Email is already a user
+                        </p>
+                        <%
                       }else{
                         %>
                         <p>
