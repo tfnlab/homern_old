@@ -154,7 +154,7 @@
                       }
 
                       if(pv){
-                        pv = dao.loginUser(user)
+                        pv = dao.loginUser(user);
                         if(pv){
                           um  = "Thank you are signed in";
                         }else{
