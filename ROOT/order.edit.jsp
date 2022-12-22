@@ -7,7 +7,6 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
-<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +14,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Home Renovation Nation - Order List</title>
+  <title>Home Renovation Nation - Sign-up</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -119,38 +118,81 @@
           <li><a href="index.html">Home</a></li>
           <li>Order</li>
         </ol>
-        <h2>Order List</h2>
+        <h2>Order form</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Order List</h2>
+        <h2>Order Form</h2>
         <p>
         </p>
         <%
-                OrderDao orderDao = new OrderDao();
+                long currentTimeMillis = System.currentTimeMillis();
+                Timestamp currentTime = new Timestamp(currentTimeMillis);
+
                 String username = (String) session.getAttribute("username");
 
-                List<Order> orders = orderDao.getCustomerOrders(username);
-                %>
+                Date orderDate = new Date();
+                Date shippingDate = new Date();
+                String shippingAddress = request.getParameter("shippingAddress");
+                String billingAddress = request.getParameter("billingAddress");
+                String paymentMethod = request.getParameter("paymentMethod");
 
+                // Validate form data
+                if (shippingAddress != null && shippingAddress.trim().length() > 0) {
+                      int orderId = 0;
+                      if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+                        orderId = Integer.parseInt(request.getParameter("orderId"));
+                      }
+                      BigDecimal orderTotal = new BigDecimal("0");
+                      if (request.getParameter("orderTotal") != null && !request.getParameter("orderTotal").isEmpty()) {
+                        orderTotal = new BigDecimal(request.getParameter("orderTotal"));
+                      }
+                      Timestamp createdAt = currentTime;
+                      Timestamp updatedAt = currentTime;
+                      Timestamp deletedAt = currentTime;
 
-              <a href="order.new.jsp">New Order</a><BR>
-              <a href="order.list.jsp">Orders</a><BR><BR>
+                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt);
+                      OrderDao dao = new OrderDao();
+                      dao.insertOrder(order);
+                      %>
+                        <a href="order.new.jsp">New Order</a><BR>
+                        <a href="order.list.jsp">Orders</a>
+                      <%
+                }else{
 
-              <% for (Order order : orders) { %>
-                Order ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %></a><br>
-                Order Date: <%= order.getOrderDate() %><br>
-                Shipping Address: <%= order.getShippingAddress() %><br>
-                Billing Address: <%= order.getBillingAddress() %><br>
-                Payment Method: <%= order.getPaymentMethod() %><br>
-                Order Total: <%= order.getOrderTotal() %><br>
-                <hr>
-              <% } %>
+        %>
+            <!-- ======= Contact Section ======= -->
 
+                <form action="order.new.jsp" method="POST">
+                <label for="orderId">Order ID:</label><br>
+                <input type="text" id="orderId" name="orderId"><br>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username"><br>
+                <label for="orderDate">Order Date:</label><br>
+                <input type="text" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd"><br>
+                <label for="shipDate">Ship Date:</label><br>
+                <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
+                <label for="shippingAddress">Shipping Address:</label><br>
+                <input type="text" id="shippingAddress" name="shippingAddress"><br>
+                <label for="billingAddress">Billing Address:</label><br>
+                <input type="text" id="billingAddress" name="billingAddress"><br>
+                <label for="paymentMethod">Payment Method:</label><br>
+                <input type="text" id="paymentMethod" name="paymentMethod"><br>
+                <label for="orderTotal">Order Total:</label><br>
+                <input type="text" id="orderTotal" name="orderTotal"><br>
+                <label for="timestamp">Timestamp:</label><br>
+                <input type="text" id="timestamp" name="timestamp"><br>
+                <label for="ts">TS:</label><br>
+                <input type="text" id="ts" name="ts"><br>
+                <label for="lastModified">Last Modified:</label><br>
+                <input type="text" id="lastModified" name="lastModified"><br><br>
+                <input type="submit" value="Submit">
+                  	</form>
 
+                 <%}%>
       </div>
 
     </section><!-- End Blog Section -->
