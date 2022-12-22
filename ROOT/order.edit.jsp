@@ -167,6 +167,10 @@
         <!-- ======= Contact Section ======= -->
 
         <form action="order.edit.jsp" method="POST">
+          <label for="orderId">Order Name:</label><br>
+          <input type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"><br>
+          <label for="orderId">Order Description:</label><br>
+          <input type="text" id="orderDescription" name="orderDescription" value="<%= order.getOrderDescription() %>"><br>
           <label for="orderId">Order ID:</label><br>
           <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>"><br>
           <label for="username">Username:</label><br>
