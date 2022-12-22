@@ -172,7 +172,9 @@
                 <label for="orderId">Order Name:</label><br>
                 <input type="text" id="orderName" name="orderName"><br>
                 <label for="orderId">Order Description:</label><br>
-                <input type="text" id="orderDescription" name="orderDescription"><br>
+                <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"></textarea>
+                <label class="form-label" for="textAreaExample">Request Info</label>
+
                 <label for="orderId">Order ID:</label><br>
                 <input type="text" id="orderId" name="orderId"><br>
                 <label for="username">Username:</label><br>
