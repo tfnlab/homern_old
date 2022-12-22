@@ -155,6 +155,7 @@
 
                       if(pv){
                         pv = dao.loginUser(user);
+                      }  
                         if(pv){
                           um  = "Thank you are signed in";
                         }else{
@@ -172,6 +173,7 @@
                           %>
                         </p>
                         <%
+
                   } catch (Exception e) {
                       %><%="An error occurred: " + e.getMessage()%><%
                   }
