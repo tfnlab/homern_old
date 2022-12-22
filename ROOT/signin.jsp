@@ -151,9 +151,11 @@
                       }
 
                       if(pv){
-                        dao.insertUser(user);
-                        um  = "Thank you are signed in";
-                      }
+                        if(dao.loginUser(user)){
+                          um  = "Thank you are signed in";
+                        }else
+                          um  = "Unable to Login, you are NOT signed in";
+                        }
                         %>
                         <p>
                           <%=um%>
