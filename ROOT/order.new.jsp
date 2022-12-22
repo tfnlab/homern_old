@@ -139,15 +139,15 @@
                 String shippingAddress = request.getParameter("shippingAddress");
                 String billingAddress = request.getParameter("billingAddress");
                 String paymentMethod = request.getParameter("paymentMethod");
-                BigDecimal orderTotal = new BigDecimal(request.getParameter("orderTotal"));
-                Timestamp createdAt = currentTime;
-                Timestamp updatedAt = currentTime;
-                Timestamp deletedAt = currentTime;
-
-                Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt);
 
                 // Validate form data
                 if (shippingAddress != null && shippingAddress.trim().length() > 0) {
+                      BigDecimal orderTotal = new BigDecimal(request.getParameter("orderTotal"));
+                      Timestamp createdAt = currentTime;
+                      Timestamp updatedAt = currentTime;
+                      Timestamp deletedAt = currentTime;
+
+                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt);
                       OrderDao dao = new OrderDao();
                       dao.insertOrder(order);
                 }else{
