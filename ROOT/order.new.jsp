@@ -156,6 +156,10 @@
                       Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt);
                       OrderDao dao = new OrderDao();
                       dao.insertOrder(order);
+                      %>
+                        <a href="order.new.jsp">New Order</a><BR>
+                        <a href="order.list.jsp">Orders</a>
+                      <%
                 }else{
 
         %>
