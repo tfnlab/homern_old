@@ -111,9 +111,9 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Sign-in</li>
+          <li>Sign-In</li>
         </ol>
-        <h2>Sign-in form</h2>
+        <h2>Sign-In form</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
