@@ -167,26 +167,25 @@
                   User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode);
                   UserDao dao = new UserDao();
                   try {
-                      if(!dao.isUsernameTaken(username)){
-                        dao.insertUser(user);
-                        %>
-                        <p>
-                          Thank you for joining
-                        </p>
-                        <%
-                      }else if(!dao.isEmailTaken(email)){
-                        %>
-                        <p>
-                          Email is already a user
-                        </p>
-                        <%
-                      }else{
-                        %>
-                        <p>
-                          Username is taken
-                        </p>
-                        <%
+                      boolean pv = true;
+                      String um = "Thank you for joining";
+                      if(dao.isUsernameTaken(username)){
+                        pv = false;
+                        um  = "Username is taken";
+                      }else if(dao.isEmailTaken(email)){
+                        pv = false;
+                        um  = "Email is already a user";
                       }
+
+                      if(pv){
+                        dao.insertUser(user);
+                        um  = "Thank you for joining";
+                      }
+                        %>
+                        <p>
+                          <%=um%>
+                        </p>
+                        <%
                   } catch (Exception e) {
                       %><%="An error occurred: " + e.getMessage()%><%
                   }
