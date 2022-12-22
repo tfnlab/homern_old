@@ -141,6 +141,7 @@
               <a href="order.list.jsp">Orders</a><BR><BR>
 
               <% for (Order order : orders) { %>
+                Order Date: <%= order.getOrderName() %><br>
                 Order ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %></a><br>
                 Order Date: <%= order.getOrderDate() %><br>
                 Shipping Address: <%= order.getShippingAddress() %><br>
