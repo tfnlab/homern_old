@@ -141,10 +141,7 @@
                 String shippingAddress = request.getParameter("shippingAddress");
                 // Validate form data
                 if (shippingAddress != null && shippingAddress.trim().length() > 0) {
-                      %>
-                        <a href="order.new.jsp">New Order</a><BR>
-                        <a href="order.list.jsp">Orders</a>
-                      <%
+                      
                       long currentTimeMillis = System.currentTimeMillis();
                       Timestamp currentTime = new Timestamp(currentTimeMillis);
                       Date orderDate = new Date();

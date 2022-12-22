@@ -139,8 +139,6 @@
                 %>
 
 
-              <a href="order.new.jsp">New Order</a><BR>
-              <a href="order.list.jsp">Orders</a><BR><BR>
 
               <% for (Order order : orders) { %>
                 Order Name: <%= order.getOrderName() %><br>
