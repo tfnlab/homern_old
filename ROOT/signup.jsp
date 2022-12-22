@@ -118,7 +118,13 @@
         if (firstName != null && firstName.trim().length() > 0) {
           User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode);
           UserDao dao = new UserDao();
-          dao.insertUser(user);
+          try {
+              dao.insertUser(user);
+          } catch (Exception e) {
+              %><%="An error occurred: " + e.getMessage()%><%
+          }
+
+
         }
         // Validate other fields as necessary
 
@@ -153,6 +159,7 @@
       		<input type="text" id="city" name="city"><br>
       		<label for="state">State:</label><br>
       		<input type="text" id="state" name="state"><br>
+          <label for="state">Zip:</label><br>
           <input type="text" id="zipcode" name="zipcode"><br><br>
           		<input type="submit" value="Submit">
           	</form>
