@@ -179,7 +179,7 @@
         %>
             <!-- ======= Contact Section ======= -->
 
-                <form action="signup.jsp" method="POST">
+                <form action="signin.jsp" method="POST">
               		<label for="username">Username:</label><br>
               		<input type="text" id="username" name="username"><br>
               		<label for="password">Password:</label><br>
