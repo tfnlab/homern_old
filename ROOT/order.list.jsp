@@ -7,6 +7,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -153,7 +154,7 @@
                 Order Total: <%= order.getOrderTotal() %><br>
                 <hr>
               <% } %>
-              
+
 
       </div>
 
