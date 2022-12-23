@@ -121,8 +121,11 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Home</h2>
+        <a href="user.menu.jsp">Home</a> |
         <a href="order.list.jsp">Orders</a> |
-        <a href="product.list.jsp">Products</a>
+        <a href="order.new.jsp">New</a> |
+        <a href="product.list.jsp">Products</a> |
+        <a href="product.new.jsp">New</a>
       </div>
 
     </section><!-- End Blog Section -->
