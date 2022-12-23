@@ -207,12 +207,12 @@
           <ul id="shippingAddressac" name="shippingAddressac"></ul>
           <hr>
             <%
+              String uAddPls = usernameOBJ.getAddress().replace(" ", "+");
             if(usernameOBJ!=null && usernameOBJ.getAddress() !=null){
               String sAddSpcS = order.getShippingAddress().replace(" ", "-");
               String sAddPlsS = order.getShippingAddress().replace(" ", "+");
               String sAddEncS = URLDecoder.decode(order.getShippingAddress(), "UTF-8");
 
-              String uAddPls = usernameOBJ.getAddress().replace(" ", "+");
               String uAddEnc = URLDecoder.decode(usernameOBJ.getAddress(), "UTF-8");
                     %>
                     <a href="https://www.google.com/maps/search/?api=1&query=<%=sAddEncS%>">Google</a> |
