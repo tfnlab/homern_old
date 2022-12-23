@@ -128,8 +128,6 @@
          String lastName = request.getParameter("lastName");
          String email = request.getParameter("email");
          String phone = request.getParameter("phone");
-         String username = request.getParameter("username");
-         String password = request.getParameter("password");
          String ogId = request.getParameter("ogId");
          String address = request.getParameter("address");
          String city = request.getParameter("city");
