@@ -83,10 +83,11 @@
         }
       };
       alert(sfor.name)
-      let search = document.getElementById(sfor.id).value;
+      let elName = sfor.name + "ac";
+      let search = document.getElementById(sfor.name).value;
 
       if (search.length > 5) {
-        document.getElementById(sfor.id + "ac").innerHTML = "";
+        document.getElementById(elName).innerHTML = "";
         var urlString = "GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
         xhttp.open("GET", urlString, true);
         xhttp.send();
