@@ -52,13 +52,7 @@
           if (this.readyState == 4 && this.status == 200) {
             let items = this.responseText.split('<ITEM>');
             alert(itemx.length);
-            if(items.length>2){
-              fName = items[items.length-1];
-              fName = removeTrailingSpaces(fName);
-              document.getElementById(fName+"lat").value = items[0];
-              document.getElementById(fName+"lng").value = items[1];
-              alert(document.getElementById(fName+"lng").value);
-            }
+
 
           }
         };
