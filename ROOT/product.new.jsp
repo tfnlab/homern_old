@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
+<%@ page import="java.math.BigDecimal" %>
+<%@ page import="java.sql.Timestamp" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="com.tfnlab.mysql.Product" %>
+<%@ page import="com.tfnlab.mysql.ProductDao" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,41 +45,54 @@
   ======================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    function callTFNLab() {
+    function callGeo(sk, fNameLink) {
+        document.getElementById(fNameLink.substring(0,fNameLink.length-2)).value = sk;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            let items = this.responseText.split('<ITEM>');
+            fNamenew = items[items.length-1];
+            fNamenew = removeTrailingSpaces(fNamenew);
+            document.getElementById(fNamenew+"lat").value = items[0];
+            document.getElementById(fNamenew+"lng").value = items[1];
+
+
+          }
+        };
+        const encodedString = encodeURIComponent(sk);
+        var urlString = "GeocodingExample.jsp?search=" + encodedString + "&sfor=" + fNameLink;
+        xhttp.open("GET", urlString, true);
+        xhttp.send();
+    }
+    function removeTrailingSpaces(str) {
+            return str.replace(/\s+$/g, "");
+    }
+    function callAC(sfor) {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("status").innerHTML = this.responseText;
-          const el = document.createElement('textarea');
-          el.value =  this.responseText;
-          el.setAttribute('readonly', '');
-          el.style.position = 'absolute';
-          el.style.left = '-9999px';
-          document.body.appendChild(el);
-          el.select();
-          document.execCommand('copy');
-          document.body.removeChild(el);
-
+          let items = this.responseText.split('<ITEM>');
+          fName = items[items.length-1];
+          fName = removeTrailingSpaces(fName);
+          for (let i = 0; i < items.length-1; i++) {
+            if (items[i].length > 5) {
+              let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"' , '" + fName+ "')\" >" + items[i] + "</a>" + "</li>";
+              document.getElementById(fName).innerHTML = document.getElementById(fName).innerHTML  + newL;
+            }
+          }
         }
       };
-      var urlString = "gennft.jsp?walletid=" + document.getElementById("walletid").value
-      document.getElementById("start").style.display="none";
-      document.getElementById("status").innerHTML = "Started Avatar Generation, give it a minute. <img src=\"assets/img/wait.gif\" />";
-      xhttp.open("GET", urlString, true);
-      xhttp.send();
+      let elName = sfor.name + "ac";
+      let search = document.getElementById(sfor.name).value;
+
+      if (search.length > 5) {
+        document.getElementById(elName).innerHTML = "";
+        var urlString = "GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
+        xhttp.open("GET", urlString, true);
+        xhttp.send();
+      }
     }
 
-    function callCopy() {
-      const el = document.createElement('textarea');
-      el.value =  document.getElementById("status").innerHTML;
-      el.setAttribute('readonly', '');
-      el.style.position = 'absolute';
-      el.style.left = '-9999px';
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-    }
   </script>
 </head>
 
@@ -111,20 +129,113 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Home</li>
+          <li>Order</li>
         </ol>
-        <h2>User Home</h2>
+        <h2>Order form</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Home</h2>
+        <h2>Order Form</h2>
+        <p>
         <a href="order.new.jsp">New Order</a><BR>
-        <a href="order.list.jsp">Orders</a><BR>
-        <a href="product.new.jsp">New Product</a><BR>
-        <a href="product.list.jsp">Products</a>
+        <a href="order.list.jsp">Orders</a>
+        </p>
+        <%
+                long currentTimeMillis = System.currentTimeMillis();
+                Timestamp currentTime = new Timestamp(currentTimeMillis);
+
+                String username = (String) session.getAttribute("username");
+
+
+                <%
+                  // Get the form data from the request
+                  int id = Integer.parseInt(request.getParameter("id"));
+                  String sku = request.getParameter("sku");
+                  String name = request.getParameter("name");
+
+                if (name != null && shippingAddress.trim().length() > 0) {
+
+                  BigDecimal price = new BigDecimal(request.getParameter("price"));
+                  int inventory = Integer.parseInt(request.getParameter("inventory"));
+                  int reorderLevel = Integer.parseInt(request.getParameter("reorder_level"));
+                  int leadTime = Integer.parseInt(request.getParameter("lead_time"));
+                  boolean featured = Boolean.parseBoolean(request.getParameter("featured"));
+                  BigDecimal rating = new BigDecimal(request.getParameter("rating"));
+                  String description = request.getParameter("description");
+                  String imageUrl = request.getParameter("image_url");
+                  Timestamp createdAt = currentTime;
+                  Timestamp updatedAt = currentTime;
+                  int categoryId = Integer.parseInt(request.getParameter("category_id"));
+                  int manufacturerId = Integer.parseInt(request.getParameter("manufacturer_id"));
+                  boolean availability = Boolean.parseBoolean(request.getParameter("availability"));
+                  BigDecimal weight = new BigDecimal(request.getParameter("weight"));
+                  String dimensions = request.getParameter("dimensions");
+                  String customerId = request.getParameter("customer_id");
+
+                  // Create a new Product object
+                  Product product = new Product(id, sku, name, price, inventory, reorderLevel, leadTime, featured, rating, description, imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
+
+                  // Create a new ProductDao object
+                  ProductDao dao = new ProductDao();
+
+                  // Insert the Product object into the database
+                  dao.insertProduct(product);
+                %>
+                <p>Product successfully added to the database.</p>
+                <%
+
+                }else{
+
+        %>
+            <!-- ======= Contact Section ======= -->
+
+            <form action="product.new.jsp" method="post">
+              <label for="id">ID:</label><br>
+              <input type="number" id="id" name="id"><br>
+              <label for="sku">SKU:</label><br>
+              <input type="text" id="sku" name="sku"><br>
+              <label for="name">Name:</label><br>
+              <input type="text" id="name" name="name"><br>
+              <label for="price">Price:</label><br>
+              <input type="number" id="price" name="price"><br>
+              <label for="inventory">Inventory:</label><br>
+              <input type="number" id="inventory" name="inventory"><br>
+              <label for="reorder_level">Reorder Level:</label><br>
+              <input type="number" id="reorder_level" name="reorder_level"><br>
+              <label for="lead_time">Lead Time:</label><br>
+              <input type="number" id="lead_time" name="lead_time"><br>
+              <label for="featured">Featured:</label><br>
+              <input type="checkbox" id="featured" name="featured"><br>
+              <label for="rating">Rating:</label><br>
+              <input type="number" id="rating" name="rating"><br>
+              <label for="description">Description:</label><br>
+              <textarea id="description" name="description"></textarea><br>
+              <label for="image_url">Image URL:</label><br>
+              <input type="text" id="image_url" name="image_url"><br>
+              <label for="created_at">Created At:</label><br>
+              <input type="text" id="created_at" name="created_at"><br>
+              <label for="updated_at">Updated At:</label><br>
+              <input type="text" id="updated_at" name="updated_at"><br>
+              <label for="category_id">Category ID:</label><br>
+              <input type="number" id="category_id" name="category_id"><br>
+              <label for="manufacturer_id">Manufacturer ID:</label><br>
+              <input type="number" id="manufacturer_id" name="manufacturer_id"><br>
+              <label for="availability">Availability:</label><br>
+              <input type="checkbox" id="availability" name="availability"><br>
+              <label for="weight">Weight:</label><br>
+              <input type="number" id="weight" name="weight"><br>
+              <label for="dimensions">Dimensions:</label><br>
+              <input type="text" id="dimensions" name="dimensions"><br>
+              <label for="customer_id">Customer ID:</label><br>
+              <input type="text" id="customer_id" name="customer_id"><br><br>
+              <input type="submit" value="Submit">
+            </form>
+
+
+                 <%}%>
       </div>
 
     </section><!-- End Blog Section -->
