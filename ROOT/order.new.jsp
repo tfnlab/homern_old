@@ -46,7 +46,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     function callGeo(sk) {
-        alert(sk);
         document.getElementById("shippingAddress").value = sk;
     }
     function callAC() {
@@ -55,7 +54,7 @@
         if (this.readyState == 4 && this.status == 200) {
           let items = this.responseText.split('<ITEM>');
           alert(items);
-          for (let i = 0; i < items.length; i++) {          
+          for (let i = 0; i < items.length; i++) {
             if (items[i].length > 5) {
               let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"')\" >" + items[i] + "</a>" + "</li>";
               document.getElementById("shippingAddressac").innerHTML = document.getElementById("shippingAddressac").innerHTML  + newL;
@@ -179,7 +178,7 @@
                 <label for="shipDate">Ship Date:</label><br>
                 <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
                 <label for="shippingAddress">Shipping Address:</label><br>
-                <input type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC()"><br>
+                <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC()"><br>
                 <ul id="shippingAddressac" name="shippingAddressac"></ul>
                 <hr>
                 <label for="billingAddress">Billing Address:</label><br>
