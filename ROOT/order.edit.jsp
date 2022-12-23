@@ -141,6 +141,20 @@
       <div class="container px-4 px-lg-5">
         <h2>Order</h2>
         <%@ include file="user.menu.nav.jsp" %>
+        <hr>
+          <a href="com.jsp?com=greeting">Greeting</a>
+          <a href="com.jsp?com=interestletter">Interest letter</a>
+          <a href="com.jsp?com=proposal">Proposal</a>
+          <a href="com.jsp?com=invoicing">Invoicing</a>
+          <a href="com.jsp?com=paymentconfirmation">Payment confirmation</a>
+          <a href="com.jsp?com=thankyou">Thank you</a>
+          <a href="com.jsp?com=paymentrequest">Payment request</a>
+          <a href="com.jsp?com=progressupdate">Progress update</a>
+          <a href="com.jsp?com=changeorderrequest">Change order request</a>
+          <a href="com.jsp?com=warrantyormaintenanceinformation">Warranty or maintenance information</a>
+          <a href="com.jsp?com=customersatisfactionsurvey">Customer satisfaction survey</a>
+          <a href="com.jsp?com=followup">Follow-up</a>          
+        <hr>
 
         <%
                 OrderDao dao = new OrderDao();
