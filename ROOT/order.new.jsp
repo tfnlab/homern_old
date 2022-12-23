@@ -60,6 +60,7 @@
       let search = document.getElementById("shippingAddress").value;
 
       if (search.length > 5) {
+        document.getElementById("shippingAddressac").innerHTML = "";
         var urlString = "GoogleAutocomplete.jsp?search=" + search;
         xhttp.open("GET", urlString, true);
         xhttp.send();
