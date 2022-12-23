@@ -46,7 +46,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     function callGeo(sk, fNameLink) {
-        document.getElementById("shippingAddress").value = sk;
+        document.getElementById(fNameLink).value = sk;
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
@@ -82,7 +82,6 @@
           }
         }
       };
-      alert(sfor.name)
       let elName = sfor.name + "ac";
       let search = document.getElementById(sfor.name).value;
 
