@@ -238,7 +238,8 @@
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
           <label for="orderId">Touch Point</label><br>
           <textarea class="form-control" id="orderCom" name="orderCom" rows="5"><%= comType %></textarea>
-          <button class="btn btn-primary" onclick="getMessage()">Download</button>
+          <a href="javascript:void(0)" class="btn btn-primary" onclick="getMessage()">Generate Message</a>
+
           <label for="orderId">Order ID:</label><br>
           <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>"><br>
           <label for="username">Username:</label><br>
