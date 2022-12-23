@@ -53,11 +53,13 @@
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           let items = this.responseText.split('<ITEM>');
-//          alert(items);
+          //alert(items);
+            fName = items[items.length-1]+"ac";
           for (let i = 0; i < items.length-1; i++) {
             if (items[i].length > 5) {
               let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"')\" >" + items[i] + "</a>" + "</li>";
-              document.getElementById(items[items.length-1]+"ac").innerHTML = document.getElementById("shippingAddressac").innerHTML  + newL;
+
+              document.getElementById(fName).innerHTML = document.getElementById("shippingAddressac").innerHTML  + newL;
             }
           }
         }
