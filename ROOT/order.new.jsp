@@ -59,8 +59,7 @@
           for (let i = 0; i < items.length-1; i++) {
             if (items[i].length > 5) {
               let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"')\" >" + items[i] + "</a>" + "</li>";
-
-              document.getElementById(fName).innerHTML = document.getElementById("shippingAddressac").innerHTML  + newL;
+              document.getElementById(fName).innerHTML = document.getElementById(fName).innerHTML  + newL;
             }
           }
         }
@@ -68,7 +67,7 @@
       let search = document.getElementById("shippingAddress").value;
 
       if (search.length > 5) {
-        alert(sfor.name) ; 
+        alert(sfor.name) ;
         document.getElementById("shippingAddressac").innerHTML = "";
         var urlString = "GoogleAutocomplete.jsp?search=" + search + "sfor=" + sfor.name;
         xhttp.open("GET", urlString, true);
