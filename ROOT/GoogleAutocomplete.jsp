@@ -2,7 +2,7 @@
 <%
   GoogleAutocomplete googleAutocomplete = new GoogleAutocomplete();
   try {
-    Vector<String> results = googleAutocomplete.search("1325 N Lamer St");
+    Vector<String> results = googleAutocomplete.search(request.getParameter("search"));
     for (int i = 0; i < results.size(); i++) {
       String result = results.get(i);
       %><%=result%><ITEM><%
