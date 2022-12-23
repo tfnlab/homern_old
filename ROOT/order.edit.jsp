@@ -152,9 +152,10 @@
             <option value="interestletter">Interest letter</option>
             <option value="proposal">Proposal</option>
             <option value="invoicing">Invoicing</option>
-            <option value="paymentconfirmation">Payment confirmation</option>
             <option value="thankyou">Thank you</option>
             <option value="paymentrequest">Payment request</option>
+            <option value="latepaymentrequest">Late Payment request</option>
+            <option value="paymentconfirmation">Payment confirmation</option>
             <option value="progressupdate">Progress update</option>
             <option value="changeorderrequest">Change order request</option>
             <option value="warrantyormaintenanceinformation">Warranty or maintenance information</option>
