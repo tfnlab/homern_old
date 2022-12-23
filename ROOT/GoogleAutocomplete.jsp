@@ -12,4 +12,4 @@
   } finally {
     // close the input stream and scanner objects here
   }
-%>
+%><%request.getParameter("sfor")%>
