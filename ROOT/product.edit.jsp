@@ -144,6 +144,10 @@
         <a href="order.list.jsp">Orders</a>
         </p>
         <%
+
+                int id = Integer.parseInt(request.getParameter("id"));
+                ProductDao dao = new ProductDao();
+
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
 
@@ -176,7 +180,6 @@
                   Product product = new Product(id, sku, name, price, inventory, reorderLevel, leadTime, featured, rating, description, imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
 
                   // Create a new ProductDao object
-                  ProductDao dao = new ProductDao();
 
                   // Insert the Product object into the database
                   dao.insertProduct(product);
@@ -186,50 +189,91 @@
 
                 }else{
 
+
+                  Product product = dao.getProductById(id, username);
+
         %>
             <!-- ======= Contact Section ======= -->
+            <body>
+            	<div class="container mt-5">
+            		<h1>Product Form</h1>
+            		<form action="product.new.jsp" method="post" class="form">
+            			<div class="form-group">
+            				<label for="sku">SKU:</label>
+            				<input type="text" class="form-control" name="sku" id="sku" value="<%= product.getSku() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="name">Name:</label>
+            				<input type="text" class="form-control" name="name" id="name" value="<%= product.getName() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="price">Price:</label>
+            				<input type="text" class="form-control" name="price" id="price" value="<%= product.getPrice() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="inventory">Inventory:</label>
+            				<input type="text" class="form-control" name="inventory" id="inventory" value="<%= product.getInventory() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="reorderLevel">Reorder Level:</label>
+            				<input type="text" class="form-control" name="reorderLevel" id="reorderLevel" value="<%= product.getReorderLevel() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="leadTime">Lead Time:</label>
+            				<input type="text" class="form-control" name="leadTime" id="leadTime" value="<%= product.getLeadTime() %>">
+            			</div>
 
-            <form action="product.new.jsp" method="post">
-              <label for="id">ID:</label><br>
-              <input type="number" id="id" name="id"><br>
-              <label for="sku">SKU:</label><br>
-              <input type="text" id="sku" name="sku"><br>
-              <label for="name">Name:</label><br>
-              <input type="text" id="name" name="name"><br>
-              <label for="price">Price:</label><br>
-              <input type="number" id="price" name="price"><br>
-              <label for="inventory">Inventory:</label><br>
-              <input type="number" id="inventory" name="inventory"><br>
-              <label for="reorder_level">Reorder Level:</label><br>
-              <input type="number" id="reorder_level" name="reorder_level"><br>
-              <label for="lead_time">Lead Time:</label><br>
-              <input type="number" id="lead_time" name="lead_time"><br>
-              <label for="featured">Featured:</label><br>
-              <input type="checkbox" id="featured" name="featured"><br>
-              <label for="rating">Rating:</label><br>
-              <input type="number" id="rating" name="rating"><br>
-              <label for="description">Description:</label><br>
-              <textarea id="description" name="description"></textarea><br>
-              <label for="image_url">Image URL:</label><br>
-              <input type="text" id="image_url" name="image_url"><br>
-              <label for="created_at">Created At:</label><br>
-              <input type="text" id="created_at" name="created_at"><br>
-              <label for="updated_at">Updated At:</label><br>
-              <input type="text" id="updated_at" name="updated_at"><br>
-              <label for="category_id">Category ID:</label><br>
-              <input type="number" id="category_id" name="category_id"><br>
-              <label for="manufacturer_id">Manufacturer ID:</label><br>
-              <input type="number" id="manufacturer_id" name="manufacturer_id"><br>
-              <label for="availability">Availability:</label><br>
-              <input type="checkbox" id="availability" name="availability"><br>
-              <label for="weight">Weight:</label><br>
-              <input type="number" id="weight" name="weight"><br>
-              <label for="dimensions">Dimensions:</label><br>
-              <input type="text" id="dimensions" name="dimensions"><br>
-              <label for="customer_id">Customer ID:</label><br>
-              <input type="text" id="customer_id" name="customer_id"><br><br>
-              <input type="submit" value="Submit">
-            </form>
+                  <div class="form-group form-check">
+            				<input type="checkbox" class="form-check-input" name="featured" id="featured" value="<%= product.isFeatured() %>" <%= product.isFeatured() ? "checked" : "" %>>
+            				<label class="form-check-label" for="featured">Featured</label>
+            			</div>
+            			<div class="form-group">
+            				<label for="rating">Rating:</label>
+            				<input type="text" class="form-control" name="rating" id="rating" value="<%= product.getRating() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="description">Description:</label>
+            				<input type="text" class="form-control" name="description" id="description" value="<%= product.getDescription() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="imageUrl">Image URL:</label>
+            				<input type="text" class="form-control" name="imageUrl" id="imageUrl" value="<%= product.getImageUrl() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="createdAt">Created At:</label>
+            				<input type="text" class="form-control" name="createdAt" id="createdAt" value="<%= product.getCreatedAt() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="updatedAt">Updated At:</label>
+            				<input type="text" class="form-control" name="updatedAt" id="updatedAt" value="<%= product.getUpdatedAt() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="categoryId">Category ID:</label>
+            				<input type="text" class="form-control" name="categoryId" id="categoryId" value="<%= product.getCategoryId() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="manufacturerId">Manufacturer ID:</label>
+            				<input type="text" class="form-control" name="manufacturerId" id="manufacturerId" value="<%= product.getManufacturerId() %>">
+            			</div>
+            			<div class="form-group form-check">
+            				<input type="checkbox" class="form-check-input" name="availability" id="availability" value="<%= product.isAvailability() %>" <%= product.isAvailability() ? "checked" : "" %>>
+            				<label class="form-check-label" for="availability">Availability</label>
+            			</div>
+                  <div class="form-group">
+            				<label for="weight">Weight:</label>
+            				<input type="text" class="form-control" name="weight" id="weight" value="<%= product.getWeight() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="dimensions">Dimensions:</label>
+            				<input type="text" class="form-control" name="dimensions" id="dimensions" value="<%= product.getDimensions() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="customerId">Customer ID:</label>
+            				<input type="text" class="form-control" name="customerId" id="customerId" value="<%= product.getCustomerId() %>">
+            			</div>
+            			<button type="submit" class="btn btn-primary">Save</button>
+            		</form>
+            	</div>
 
 
                  <%}%>
