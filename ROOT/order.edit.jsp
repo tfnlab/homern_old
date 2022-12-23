@@ -109,7 +109,7 @@
       var com = selectedOption.value;
       alert(com);
       var url = "order.edit.com.jsp?orderId=<%=orderId%>&comType=" + selectedValue;
-
+      alert(url)
       // Open the URL in a new window
       window.open(url, "_blank");
       alert(com);
