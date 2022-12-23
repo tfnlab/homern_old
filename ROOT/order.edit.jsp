@@ -207,6 +207,7 @@
           <ul id="shippingAddressac" name="shippingAddressac"></ul>
           <hr>
             <%
+            if(usernameOBJ!=null){
               String sAddSpcS = order.getShippingAddress().replace(" ", "-");
               String sAddPlsS = order.getShippingAddress().replace(" ", "+");
               String sAddEncS = URLDecoder.decode(order.getShippingAddress(), "UTF-8");
@@ -223,6 +224,9 @@
             <a href="https://www.tomtom.com/en_gb/maps/maps/point?lat=<%=order.getShippingAddresslat()%>&lon=<%=order.getShippingAddresslng()%>">TomTom</a>
             <BR>
             <a href="https://www.google.com/maps/dir/?api=1&origin=<%=uAddPls%>&destination=<%=sAddPlsS%>">Get directions</a>
+              <%
+                  }
+              %>
 
           <hr>
 
