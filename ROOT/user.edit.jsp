@@ -120,7 +120,6 @@
     UserDao dao = new UserDao();
     String username = (String) session.getAttribute("username");
 
-    <%
       User user = new User();
       if (firstName != null && firstName.trim().length() > 0) {
          String firstName = request.getParameter("firstName");
@@ -177,14 +176,6 @@
            <div class="form-group">
               <label for="phone">Phone</label>
               <input type="text" class="form-control" id="phone" name="phone" value="<%= user.getPhone() %>">
-           </div>
-           <div class="form-group">
-              <label for="username">Username</label>
-              <input type="text" class="form-control" id="username" name="username" value="<%= user.getUsername() %>">
-           </div>
-           <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" name="password" value="<%= user.getPassword() %>">
            </div>
            <div class="form-group">
               <label for="ogId">OG ID</label>
