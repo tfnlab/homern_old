@@ -1,3 +1,4 @@
+<%@ page import="com.tfnlab.api.con.GoogleAutocomplete" %>
 <%
   GoogleAutocomplete googleAutocomplete = new GoogleAutocomplete();
   try {
