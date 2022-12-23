@@ -175,6 +175,7 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
+        <h2>User</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <form method="post" action="user.edit.jsp">
            <div class="form-group">
@@ -216,6 +217,7 @@
            String uAddEnc = URLDecoder.decode(usernameOBJ.getAddress(), "UTF-8");
                  %>
            <div class="form-group">
+             <hr>
              <a href="https://www.google.com/maps/search/?api=1&query=<%=uAddEnc%>">Google</a> |
              <a href="https://maps.apple.com/?address=<%=uAddEnc%>">Apple</a> |
              <a href="https://www.waze.com/en/directions?navigate=yes&latlng=<%=usernameOBJ.getAddresslat()%>,<%=usernameOBJ.getAddresslng()%>">Waze</a> |
@@ -223,7 +225,7 @@
              <a href="https://www.bing.com/maps?osid=a8d44b60-4f0c-4e4a-b9c7-3a3b3f597628&cp=<%=usernameOBJ.getAddresslat()%>~<%=usernameOBJ.getAddresslng()%>&lvl=15&style=r">Bing</a> |
              <a href="https://www.openstreetmap.org/search?query=<%=uAddEnc%>"#map=15/<%=usernameOBJ.getAddresslat()%>/<%=usernameOBJ.getAddresslng()%>">OSM</a> |
              <a href="https://www.tomtom.com/en_gb/maps/maps/point?lat=<%=usernameOBJ.getAddresslat()%>&lon=<%=usernameOBJ.getAddresslng()%>">TomTom</a>
-             <BR>
+             <hr>
            </div>
 
            <div class="form-group">
