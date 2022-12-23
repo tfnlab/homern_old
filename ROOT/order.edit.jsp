@@ -139,9 +139,8 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Order Form</h2>
-        <p>
-        <a href="user.menu.jsp">Menu</a> | <a href="order.list.jsp">Orders</a> | <a href="order.new.jsp">New</a>
-        </p>
+        <%@ include file="user.menu.nav.jsp" %>
+
         <%
                 OrderDao dao = new OrderDao();
 
