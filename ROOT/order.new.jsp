@@ -82,7 +82,7 @@
           }
         }
       };
-      slaert(sfor.name)
+      alert(sfor.name)
       let search = document.getElementById(sfor.id).value;
 
       if (search.length > 5) {
