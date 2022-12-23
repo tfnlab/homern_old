@@ -55,7 +55,7 @@
           let items = this.responseText.split('<ITEM>');
           alert(items);
             fName = items[items.length-1]+"ac";
-          alert(fName)  
+          alert(fName)
           for (let i = 0; i < items.length-1; i++) {
             if (items[i].length > 5) {
               let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"')\" >" + items[i] + "</a>" + "</li>";
@@ -68,6 +68,7 @@
       let search = document.getElementById("shippingAddress").value;
 
       if (search.length > 5) {
+        alert(sfor.name) ; 
         document.getElementById("shippingAddressac").innerHTML = "";
         var urlString = "GoogleAutocomplete.jsp?search=" + search + "sfor=" + sfor.name;
         xhttp.open("GET", urlString, true);
