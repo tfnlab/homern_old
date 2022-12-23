@@ -136,6 +136,8 @@
                 String city = request.getParameter("city");
                 String state = request.getParameter("state");
                 String zipcode = request.getParameter("zipcode");
+                String addressaclat = "0";
+                String addressaclng = "0";
 
                 // Validate form data
                 if (firstName != null && firstName.trim().length() > 0) {
