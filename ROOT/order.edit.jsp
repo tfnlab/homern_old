@@ -204,6 +204,10 @@
 
           <label for="billingAddress">Billing Address:</label><br>
           <input type="text" id="billingAddress" name="billingAddress" value="<%= order.getBillingAddress() %>"><br>
+          <input type="hidden" id="billingAddresslat" name="billingAddresslat" >
+          <input type="hidden" id="billingAddresslng" name="billingAddresslng" >
+          <ul id="billingAddressac" name="billingAddressac"></ul>
+          <hr>          
           <label for="paymentMethod">Payment Method:</label><br>
           <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"><br>
           <label for="orderTotal">Order Total:</label><br>

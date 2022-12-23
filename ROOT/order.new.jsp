@@ -185,7 +185,7 @@
 
                 <form action="order.new.jsp" method="POST">
                 <label for="orderId">Order Name:</label><br>
-                <input type="text" id="orderName" name="orderName"><br>
+                <input class="form-control"  type="text" id="orderName" name="orderName"><br>
                 <label for="orderId">Order Description:</label><br>
                 <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"></textarea>
                 <label class="form-label" for="textAreaExample">Request Info</label>
@@ -205,7 +205,11 @@
                 <ul id="shippingAddressac" name="shippingAddressac"></ul>
                 <hr>
                 <label for="billingAddress">Billing Address:</label><br>
-                <input type="text" id="billingAddress" name="billingAddress"><br>
+                <input class="form-control" type="text" id="billingAddress" name="billingAddress" onkeypress="callAC(this)"><br>
+                <input type="hidden" id="billingAddresslat" name="billingAddresslat" >
+                <input type="hidden" id="billingAddresslng" name="billingAddresslng" >
+                <ul id="billingAddressac" name="billingAddressac"></ul>
+                <hr>
                 <label for="paymentMethod">Payment Method:</label><br>
                 <input type="text" id="paymentMethod" name="paymentMethod"><br>
                 <label for="orderTotal">Order Total:</label><br>
