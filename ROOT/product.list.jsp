@@ -146,12 +146,6 @@
                 Product Name: <%= order.getName() %><br>
                 Order ID: <a href="product.edit.jsp?productId=<%= order.getId() %>" ><%= order.getId() %></a><br>
                 Order Date: <%= order.getDescription() %><br>
-                Shipping Address: <%= order.getShippingAddress() %><br>
-                Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br>
-                Billing Address: <%= order.getBillingAddress() %><br>
-                Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br>
-                Payment Method: <%= order.getPaymentMethod() %><br>
-                Order Total: <%= order.getOrderTotal() %><br>
                 <hr>
               <% } %>
 
