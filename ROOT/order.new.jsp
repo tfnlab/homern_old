@@ -59,7 +59,7 @@
           for (let i = 0; i < items.length-1; i++) {
             if (items[i].length > 5) {
               let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"')\" >" + items[i] + "</a>" + "</li>";
-              document.getElementById("shippingAddressac").innerHTML = document.getElementById(fName).innerHTML  + newL;
+              document.getElementById("shippingAddressac").innerHTML = document.getElementById("shippingAddressac").innerHTML  + newL;
 
               alert(newL);
             }
