@@ -45,41 +45,59 @@
   ======================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    function callTFNLab() {
+    function callGeo(sk, fNameLink) {
+        document.getElementById("shippingAddress").value = sk;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            let items = this.responseText.split('<ITEM>');
+            alert(items.length);
+            fNamenew = items[items.length-1];
+            fNamenew = removeTrailingSpaces(fNamenew);
+            alert(fNamenew);
+            document.getElementById(fNamenew+"lat").value = items[0];
+            document.getElementById(fNamenew+"lng").value = items[1];
+            alert(document.getElementById(fNamenew+"lat").value);
+            alert(document.getElementById(fNamenew+"lng").value);
+
+
+          }
+        };
+        const encodedString = encodeURIComponent(sk);
+        var urlString = "GeocodingExample.jsp?search=" + encodedString + "&sfor=" + fNameLink;
+        alert(urlString)
+        xhttp.open("GET", urlString, true);
+        xhttp.send();
+
+    }
+    function removeTrailingSpaces(str) {
+            return str.replace(/\s+$/g, "");
+    }
+    function callAC(sfor) {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("status").innerHTML = this.responseText;
-          const el = document.createElement('textarea');
-          el.value =  this.responseText;
-          el.setAttribute('readonly', '');
-          el.style.position = 'absolute';
-          el.style.left = '-9999px';
-          document.body.appendChild(el);
-          el.select();
-          document.execCommand('copy');
-          document.body.removeChild(el);
-
+          let items = this.responseText.split('<ITEM>');
+          fName = items[items.length-1];
+          fName = removeTrailingSpaces(fName);
+          for (let i = 0; i < items.length-1; i++) {
+            if (items[i].length > 5) {
+              let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"' , '" + fName+ "')\" >" + items[i] + "</a>" + "</li>";
+              document.getElementById(fName).innerHTML = document.getElementById(fName).innerHTML  + newL;
+            }
+          }
         }
       };
-      var urlString = "gennft.jsp?walletid=" + document.getElementById("walletid").value
-      document.getElementById("start").style.display="none";
-      document.getElementById("status").innerHTML = "Started Avatar Generation, give it a minute. <img src=\"assets/img/wait.gif\" />";
-      xhttp.open("GET", urlString, true);
-      xhttp.send();
+      let search = document.getElementById("shippingAddress").value;
+
+      if (search.length > 5) {
+        document.getElementById("shippingAddressac").innerHTML = "";
+        var urlString = "GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
+        xhttp.open("GET", urlString, true);
+        xhttp.send();
+      }
     }
 
-    function callCopy() {
-      const el = document.createElement('textarea');
-      el.value =  document.getElementById("status").innerHTML;
-      el.setAttribute('readonly', '');
-      el.style.position = 'absolute';
-      el.style.left = '-9999px';
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-    }
   </script>
 </head>
 
@@ -141,7 +159,7 @@
                 String shippingAddress = request.getParameter("shippingAddress");
                 // Validate form data
                 if (shippingAddress != null && shippingAddress.trim().length() > 0) {
-                      
+
                       long currentTimeMillis = System.currentTimeMillis();
                       Timestamp currentTime = new Timestamp(currentTimeMillis);
                       Date orderDate = new Date();
@@ -183,7 +201,12 @@
           <label for="shipDate">Ship Date:</label><br>
           <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
           <label for="shippingAddress">Shipping Address:</label><br>
-          <input type="text" id="shippingAddress" name="shippingAddress" value="<%= order.getShippingAddress() %>"><br>
+          <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" value="<%= order.getShippingAddress() %>" onkeypress="callAC(this)"><br>
+          <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" value="<%= order.getShippingAddresslat() %>">
+          <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" value="<%= order.getShippingAddresslng() %>">
+          <ul id="shippingAddressac" name="shippingAddressac"></ul>
+          <hr>
+
           <label for="billingAddress">Billing Address:</label><br>
           <input type="text" id="billingAddress" name="billingAddress" value="<%= order.getBillingAddress() %>"><br>
           <label for="paymentMethod">Payment Method:</label><br>
