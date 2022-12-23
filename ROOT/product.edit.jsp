@@ -174,7 +174,7 @@
                   // Create a new ProductDao object
 
                   // Insert the Product object into the database
-                  dao.updateProductById(product);
+//                  dao.updateProductById(product);
                 %>
                 <p>Product successfully Saved to the database.</p>
                 <%
