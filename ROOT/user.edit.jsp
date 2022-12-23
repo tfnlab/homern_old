@@ -146,7 +146,7 @@
          user.setState(state);
          user.setZipcode(zipcode);
 
-         dao.getUserByUsername(user);
+         dao.updateUser(user);
      }
 
     user = dao.getUserByUsername(username);
