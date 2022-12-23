@@ -160,6 +160,8 @@
          user.setCity(city);
          user.setState(state);
          user.setZipcode(zipcode);
+         user.setAddresslat(addressaclat);
+         user.setAddresslng(addressaclng);
 
          dao.updateUser(user);
      }
