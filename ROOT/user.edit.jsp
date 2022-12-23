@@ -116,39 +116,67 @@
         <h2>User Edit</h2>
       </div>
     </section><!-- End Breadcrumbs -->
-
+    <%
+    UserDao dao = new UserDao();
+    %>
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>User Edit</h2>
         <%@ include file="user.menu.nav.jsp" %>
-        <form action="signup.jsp" method="POST">
-          <label for="firstName">First Name:</label><br>
-          <input type="text" id="firstName" name="firstName"><br>
-          <label for="middleInitial">Middle Initial:</label><br>
-          <input type="text" id="middleInitial" name="middleInitial"><br>
-          <label for="lastName">Last Name:</label><br>
-          <input type="text" id="lastName" name="lastName"><br>
-          <label for="email">Email:</label><br>
-          <input type="email" id="email" name="email"><br>
-          <label for="phone">Phone:</label><br>
-          <input type="text" id="phone" name="phone"><br>
-          <label for="username">Username:</label><br>
-          <input type="text" id="username" name="username"><br>
-          <label for="password">Password:</label><br>
-          <input type="password" id="password" name="password"><br>
-          <label for="ogId">OG ID:</label><br>
-          <input type="text" id="ogId" name="ogId"><br>
-          <label for="address">Address:</label><br>
-          <input type="text" id="address" name="address"><br>
-          <label for="city">City:</label><br>
-          <input type="text" id="city" name="city"><br>
-          <label for="state">State:</label><br>
-          <input type="text" id="state" name="state"><br>
-          <label for="state">Zip:</label><br>
-          <input type="text" id="zipcode" name="zipcode"><br><br>
-              <input type="submit" value="Submit">
-            </form>
+        <form method="post" action="user.edit.jsp">
+           <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>">
+           </div>
+           <div class="form-group">
+              <label for="middleInitial">Middle Initial</label>
+              <input type="text" class="form-control" id="middleInitial" name="middleInitial" value="<%= user.getMiddleInitial() %>">
+           </div>
+           <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.getLastName() %>">
+           </div>
+           <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" value="<%= user.getEmail() %>">
+           </div>
+           <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="text" class="form-control" id="phone" name="phone" value="<%= user.getPhone() %>">
+           </div>
+           <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" name="username" value="<%= user.getUsername() %>">
+           </div>
+           <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" value="<%= user.getPassword() %>">
+           </div>
+           <div class="form-group">
+              <label for="ogId">OG ID</label>
+              <input type="text" class="form-control" id="ogId" name="ogId" value="<%= user.getOgId() %>">
+           </div>
+           <div class="form-group">
+              <label for="address">Address</label>
+              <input type="text" class="form-control" id="address" name="address" value="<%= user.getAddress() %>">
+           </div>
+           <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city" name="city" value="<%= user.getCity() %>">
+           </div>
+           <div class="form-group">
+              <label for="state">State</label>
+              <input type="text" class="form-control" id="state" name="state" value="<%= user.getState() %>">
+           </div>
+           <div class="form-group">
+              <label for="zipcode">Zipcode</label>
+              <input type="text" class="form-control" id="zipcode" name="zipcode" value="<%= user.getZipcode() %>">
+           </div>
+           <button type="submit" class="btn btn-primary">Submit</button>
+           </form>
+
+
       </div>
 
     </section><!-- End Blog Section -->
