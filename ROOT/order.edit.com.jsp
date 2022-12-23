@@ -48,7 +48,7 @@
     }
 
     String comType = request.getParameter("comType");
-    
+
   %>
   <!-- =======================================================
   * Template Name: Presento - v3.9.1
@@ -111,7 +111,7 @@
       var com = selectedOption.value;
       var orderId = <%=orderId%>;
       var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + com;
-      window.open(url;
+      window.open(url, "_self");
     }
   </script>
 </head>
