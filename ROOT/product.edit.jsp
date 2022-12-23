@@ -139,9 +139,8 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Product Form</h2>
-        <p>
-        <a href="user.menu.jsp">Menu</a> | <a href="product.list.jsp">Products</a> | <a href="product.new.jsp">New</a>
-        </p>
+        <%@ include file="user.menu.nav.jsp" %>
+
         <%
 
                 int id = Integer.parseInt(request.getParameter("productId"));

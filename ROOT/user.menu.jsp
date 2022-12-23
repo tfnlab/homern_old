@@ -122,7 +122,6 @@
       <div class="container px-4 px-lg-5">
         <h2>Home</h2>
         <%@ include file="user.menu.nav.jsp" %>
-
         <p>
           Welcome to our application for contractors! Our platform is designed to simplify and streamline your business operations from start to finish. With our user-friendly interface, you can easily manage your leads, track your projects, and handle invoicing and payment all in one place. No more juggling multiple software or spreadsheet to keep your business running smoothly. Additionally, our platform provides valuable insights and analytics to help you make informed decisions and grow your business. Thank you for choosing our application, we are confident it will make a significant difference in your day-to-day operations as a contractor.
         </p>
