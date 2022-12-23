@@ -207,7 +207,7 @@
           <hr>
 
           <label for="billingAddress">Billing Address:</label><br>
-          <input class="form-control" type="text" id="billingAddress" name="billingAddress" value="<%= order.getBillingAddress() %>" onkeypress="callAC(this)">><br>
+          <input class="form-control" type="text" id="billingAddress" name="billingAddress" value="<%= order.getBillingAddress() %>" onkeypress="callAC(this)"><br>
           <input type="hidden" id="billingAddresslat" name="billingAddresslat" >
           <input type="hidden" id="billingAddresslng" name="billingAddresslng" >
           <ul id="billingAddressac" name="billingAddressac"></ul>
