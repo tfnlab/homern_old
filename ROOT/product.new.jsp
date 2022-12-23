@@ -149,8 +149,6 @@
 
                 String username = (String) session.getAttribute("username");
 
-
-                <%
                   // Get the form data from the request
                   int id = Integer.parseInt(request.getParameter("id"));
                   String sku = request.getParameter("sku");
