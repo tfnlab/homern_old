@@ -46,7 +46,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     function callGeo(sk, fNameLink) {
-        document.getElementById("shippingAddress").value = sk;
+        document.getElementById(fNameLink.substring(0,fNameLink.length-2)).value = sk;
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
@@ -55,13 +55,14 @@
             fNamenew = removeTrailingSpaces(fNamenew);
             document.getElementById(fNamenew+"lat").value = items[0];
             document.getElementById(fNamenew+"lng").value = items[1];
+
+
           }
         };
         const encodedString = encodeURIComponent(sk);
         var urlString = "GeocodingExample.jsp?search=" + encodedString + "&sfor=" + fNameLink;
         xhttp.open("GET", urlString, true);
         xhttp.send();
-
     }
     function removeTrailingSpaces(str) {
             return str.replace(/\s+$/g, "");
@@ -81,10 +82,11 @@
           }
         }
       };
+      let elName = sfor.name + "ac";
       let search = document.getElementById(sfor.name).value;
 
       if (search.length > 5) {
-        document.getElementById(sfor.name + "ac").innerHTML = "";
+        document.getElementById(elName).innerHTML = "";
         var urlString = "GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
         xhttp.open("GET", urlString, true);
         xhttp.send();
