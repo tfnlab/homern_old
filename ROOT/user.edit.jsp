@@ -168,6 +168,7 @@
          session.setAttribute("usernameOBJ", user);
      }
 
+    User usernameOBJ = (User) session.getAttribute("usernameOBJ");
     user = dao.getUserByUsername(username);
     %>
     <!-- ======= Blog Section ======= -->
@@ -207,6 +208,21 @@
            <input type="hidden" id="addressaclng" name="addressaclng" value="<%= user.getAddresslng() %>">
            <div class="form-group">
              <ul id="addressac" name="addressac"></ul>
+           </div>
+           <%
+           String uAddSpc = usernameOBJ.getAddress().replace(" ", "-");
+           String uAddPls = usernameOBJ.getAddress().replace(" ", "+");
+           String uAddEnc = URLDecoder.decode(usernameOBJ.getAddress(), "UTF-8");
+                 %>
+           <div class="form-group">
+             <a href="https://www.google.com/maps/search/?api=1&query=<%=uAddEnc%>">Google</a> |
+             <a href="https://maps.apple.com/?address=<%=uAddEnc%>">Apple</a> |
+             <a href="https://www.waze.com/en/directions?navigate=yes&latlng=<%=usernameOBJ.Addresslat()%>,<%=usernameOBJ.Addresslng()%>">Waze</a> |
+             <a href="https://wego.here.com/directions/mix//<%=uAddSpc%>:e-eyJuYW1lIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJhZGRyZXNzIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJsYXRpdHVkZSI6MzQuMTgzNjYyLCJsb25naXR1ZGUiOi0xMTguMzI2MTAyfQ==?map=<%=usernameOBJ.Addresslat()%>,<%=usernameOBJ.Addresslng()%>,15,normal">HERE</a> |
+             <a href="https://www.bing.com/maps?osid=a8d44b60-4f0c-4e4a-b9c7-3a3b3f597628&cp=<%=usernameOBJ.Addresslat()%>~<%=usernameOBJ.Addresslng()%>&lvl=15&style=r">Bing</a> |
+             <a href="https://www.openstreetmap.org/search?query=<%=uAddEnc%>"#map=15/<%=usernameOBJ.Addresslat()%>/<%=usernameOBJ.Addresslng()%>">OSM</a> |
+             <a href="https://www.tomtom.com/en_gb/maps/maps/point?lat=<%=usernameOBJ.Addresslat()%>&lon=<%=usernameOBJ.Addresslng()%>">TomTom</a>
+             <BR>
            </div>
 
            <div class="form-group">
