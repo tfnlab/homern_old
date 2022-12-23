@@ -52,13 +52,11 @@
         url: "GoogleAutocomplete.jsp?q=" + shippingAddress,
         success: function(data) {
           // process the returned data and update the UI
+          $("#suggestions").empty(); // clear the previous suggestions
+          $.each(data, function(index, suggestion) {
+            $("#suggestions").append("<li>" + suggestion + "</li>");
+          });
         }
-      });
-    }
-    success: function(data) {
-      $("#suggestions").empty(); // clear the previous suggestions
-      $.each(data, function(index, suggestion) {
-        $("#suggestions").append("<li>" + suggestion + "</li>");
       });
     }
 
