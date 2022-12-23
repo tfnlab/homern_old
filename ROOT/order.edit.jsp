@@ -81,10 +81,10 @@
           }
         }
       };
-      let search = document.getElementById(sfor).value;
+      let search = document.getElementById(sfor.name).value;
 
       if (search.length > 5) {
-        document.getElementById(sfor + "ac").innerHTML = "";
+        document.getElementById(sfor.name + "ac").innerHTML = "";
         var urlString = "GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
         xhttp.open("GET", urlString, true);
         xhttp.send();
