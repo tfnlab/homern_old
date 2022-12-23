@@ -52,6 +52,11 @@
           if (this.readyState == 4 && this.status == 200) {
             let items = this.responseText.split('<ITEM>');
             alert(items.length);
+            fNamenew = items[items.length-1];
+            fNamenew = removeTrailingSpaces(fNamenew);
+            alert(fNamenew);
+            document.getElementById(fNamenew+"lat").value = items[0];
+            alert(document.getElementById(fNamenew+"lat").value);
 
 
           }
