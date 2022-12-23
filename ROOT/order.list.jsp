@@ -147,6 +147,7 @@
                 Shipping Address: <%= order.getShippingAddress() %><br>
                 Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br>
                 Billing Address: <%= order.getBillingAddress() %><br>
+                Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br>
                 Payment Method: <%= order.getPaymentMethod() %><br>
                 Order Total: <%= order.getOrderTotal() %><br>
                 <hr>
