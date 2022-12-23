@@ -129,16 +129,16 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Order</li>
+          <li>Product</li>
         </ol>
-        <h2>Order form</h2>
+        <h2>Product form</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Order Form</h2>
+        <h2>Product Form</h2>
         <p>
         <a href="order.new.jsp">New Order</a><BR>
         <a href="order.list.jsp">Orders</a>
