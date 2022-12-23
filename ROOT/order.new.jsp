@@ -52,7 +52,7 @@
           document.getElementById("shippingAddressac").innerHTML = this.responseText;
         }
       };
-      var urlString = "GoogleAutocomplete.jsp?search=" + document.getElementById("shippingAddress").value
+      var urlString = "GoogleAutocomplete.jsp?search=" + document.getElementById("shippingAddress").value;
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
