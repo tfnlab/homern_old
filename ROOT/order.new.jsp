@@ -48,12 +48,12 @@
     function callGeo(sk) {
         document.getElementById("shippingAddress").value = sk;
     }
-    function callAC(sfor) {
+    function callAC(items[items.length-1]+"ac") {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           let items = this.responseText.split('<ITEM>');
-          //alert(items);
+          alert(items);
             fName = items[items.length-1]+"ac";
           for (let i = 0; i < items.length-1; i++) {
             if (items[i].length > 5) {
@@ -68,7 +68,7 @@
 
       if (search.length > 5) {
         document.getElementById("shippingAddressac").innerHTML = "";
-        var urlString = "GoogleAutocomplete.jsp?search=" + search + "sfor=" + sfor;
+        var urlString = "GoogleAutocomplete.jsp?search=" + search + "sfor=" + sfor.name;
         xhttp.open("GET", urlString, true);
         xhttp.send();
       }
@@ -180,7 +180,7 @@
                 <label for="shipDate">Ship Date:</label><br>
                 <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
                 <label for="shippingAddress">Shipping Address:</label><br>
-                <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC('shippingAddress')"><br>
+                <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC(this)"><br>
                 <ul id="shippingAddressac" name="shippingAddressac"></ul>
                 <hr>
                 <label for="billingAddress">Billing Address:</label><br>
