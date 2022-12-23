@@ -139,7 +139,6 @@
          user.setEmail(email);
          user.setPhone(phone);
          user.setUsername(username);
-         user.setPassword(password);
          user.setOgId(ogId);
          user.setAddress(address);
          user.setCity(city);
