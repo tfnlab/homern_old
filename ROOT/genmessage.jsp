@@ -10,4 +10,5 @@
  <hr>
  <%= "UUID " + uuid + " " + stdout + " " +  request.getParameter("comType")%>
  <hr>
+   
  <a class="btn btn-primary" href="#" onclick="callCopy()" name="copy" id="copy" >Copy</a>
