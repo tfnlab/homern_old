@@ -165,6 +165,8 @@
                       Date orderDate = new Date();
                       Date shippingDate = new Date();
                       String billingAddress = request.getParameter("billingAddress");
+                      String shippingAddressaclat = request.getParameter("shippingAddressaclat");
+                      String shippingAddressaclng = request.getParameter("shippingAddressaclng");
                       String paymentMethod = request.getParameter("paymentMethod");
                       BigDecimal orderTotal = new BigDecimal("0");
                       if (request.getParameter("orderTotal") != null && !request.getParameter("orderTotal").isEmpty()) {
@@ -175,7 +177,7 @@
                       Timestamp deletedAt = currentTime;
                       String orderName = request.getParameter("orderName");
                       String orderDescription = request.getParameter("orderDescription");
-                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription);
+                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng);
                       dao.updateOrder(order);
 
                 }
