@@ -126,7 +126,7 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Order List</h2>
+        <h2>Orders</h2>
         <%@ include file="user.menu.nav.jsp" %>
 
         <%

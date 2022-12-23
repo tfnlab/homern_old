@@ -128,7 +128,7 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Product List</h2>
+        <h2>Products</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <%
                 ProductDao productDao = new ProductDao();
