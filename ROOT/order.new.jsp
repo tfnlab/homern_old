@@ -206,8 +206,8 @@
                 <hr>
                 <label for="billingAddress">Billing Address:</label><br>
                 <input class="form-control" type="text" id="billingAddress" name="billingAddress" onkeypress="callAC(this)"><br>
-                <input type="hidden" id="billingAddresslat" name="billingAddresslat" >
-                <input type="hidden" id="billingAddresslng" name="billingAddresslng" >
+                <input type="hidden" id="billingAddressaclat" name="billingAddressaclat" >
+                <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" >
                 <ul id="billingAddressac" name="billingAddressac"></ul>
                 <hr>
                 <label for="paymentMethod">Payment Method:</label><br>
