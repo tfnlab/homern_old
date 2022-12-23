@@ -2,7 +2,7 @@
 <%
   GeocodingExample geocodingExample = new GeocodingExample();
   try {
-    String[] results = googleAutocomplete.search("1325 N Lamer St");
+    String[] results = geocodingExample.search("1325 N Lamer St");
       %><%=results[0]%><ITEM><%
       %><%=results[1]%><%
   } catch (IOException e) {
