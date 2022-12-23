@@ -48,6 +48,9 @@
     function callGeo(sk) {
         document.getElementById("shippingAddress").value = sk;
     }
+    function removeTrailingSpaces(str) {
+            return str.replace(/\s+$/g, "");
+    }
     function callAC(sfor) {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
@@ -55,11 +58,12 @@
           let items = this.responseText.split('<ITEM>');
           fName = items[items.length-1];
           alert(items);
+          fName = removeTrailingSpaces(fName);
           alert(fName);
           for (let i = 0; i < items.length-1; i++) {
             if (items[i].length > 5) {
               let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"')\" >" + items[i] + "</a>" + "</li>";
-              document.getElementById("shippingAddressac").innerHTML = document.getElementById("shippingAddressac").innerHTML  + newL;
+              document.getElementById(fName).innerHTML = document.getElementById(fName).innerHTML  + newL;
 
               alert(newL);
             }
