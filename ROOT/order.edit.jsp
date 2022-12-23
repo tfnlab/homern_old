@@ -180,7 +180,6 @@
         %>
         <%
           Order order = dao.getOrderByOrderId(orderId);
-          String sAddEnc = order.getBillingAddress();
           String sAddSpc = order.getBillingAddress().replace(" ", "-");
           String sAddEnc = URLDecoder.decode(order.getBillingAddress(), "UTF-8");
         %>
