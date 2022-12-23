@@ -160,7 +160,22 @@
                 if (name != null && name.trim().length() > 0) {
 
                   BigDecimal price = new BigDecimal(request.getParameter("price"));
-                  
+                  int inventory = Integer.parseInt(request.getParameter("inventory"));
+                  int reorderLevel = 0;
+                  int leadTime = 0;
+                  boolean featured = Boolean.parseBoolean(request.getParameter("featured"));
+                  BigDecimal rating = new BigDecimal(request.getParameter("rating"));
+
+                  String description = request.getParameter("description");
+                  String imageUrl = request.getParameter("image_url");
+                  Timestamp createdAt = currentTime;
+                  Timestamp updatedAt = currentTime;
+                  int categoryId = 0;
+                  int manufacturerId = 0;
+                  boolean availability = Boolean.parseBoolean(request.getParameter("availability"));
+                  BigDecimal weight = new BigDecimal(request.getParameter("weight"));
+                  String dimensions = request.getParameter("dimensions");
+
                   String customerId = username;
 
                   // Create a new Product object
