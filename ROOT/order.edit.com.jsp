@@ -44,16 +44,6 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-<%
-  OrderDao dao = new OrderDao();
-
-  int orderId = 0;
-  String username = (String) session.getAttribute("username");
-  User usernameOBJ = (User) session.getAttribute("usernameOBJ");
-  if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
-    orderId = Integer.parseInt(request.getParameter("orderId"));
-  }
-%>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     function callGeo(sk, fNameLink) {
@@ -108,10 +98,6 @@
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.value;
       alert(com);
-      var url = "order.edit.com.jsp?orderId=<%=orderId%>&comType=" + selectedValue;
-
-      // Open the URL in a new window
-      window.open(url, "_blank");
     }
   </script>
 </head>
@@ -158,7 +144,7 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Order</h2>
+        <h2>Order - Customer Touch Points </h2>
         <%@ include file="user.menu.nav.jsp" %>
         <hr>
           <select id="customer-touch-points">
@@ -185,6 +171,14 @@
         <hr>
 
         <%
+                OrderDao dao = new OrderDao();
+
+                int orderId = 0;
+                String username = (String) session.getAttribute("username");
+                User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+                if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+                  orderId = Integer.parseInt(request.getParameter("orderId"));
+                }
                 String shippingAddress = request.getParameter("shippingAddress");
                 // Validate form data
                 if (shippingAddress != null && shippingAddress.trim().length() > 0) {
