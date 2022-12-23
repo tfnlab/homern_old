@@ -97,7 +97,9 @@
       var select = document.getElementById("customer-touch-points");
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.value;
-      alert(com);
+      var orderId = <%=orderId%>;
+      var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + com;
+      window.open(url;
     }
   </script>
 </head>
@@ -218,8 +220,8 @@
           <input type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"><br>
           <label for="orderId">Order Description:</label><br>
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
-          <label class="form-label" for="textAreaExample">Request Info</label>
-
+          <label for="orderId">Touch Point</label><br>
+          <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
           <label for="orderId">Order ID:</label><br>
           <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>"><br>
           <label for="username">Username:</label><br>
