@@ -205,8 +205,8 @@
                 <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
                 <label for="shippingAddress">Shipping Address:</label><br>
                 <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC(this)"><br>
-                <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" ><br>
-                <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" ><br>
+                <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" >
+                <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" >
                 <ul id="shippingAddressac" name="shippingAddressac"></ul>
                 <hr>
                 <label for="billingAddress">Billing Address:</label><br>
