@@ -53,9 +53,13 @@
           document.getElementById("shippingAddressac").innerHTML = this.responseText;
         }
       };
-      var urlString = "GoogleAutocomplete.jsp?search=" + document.getElementById("shippingAddress").value;
-      xhttp.open("GET", urlString, true);
-      xhttp.send();
+      let search = document.getElementById("shippingAddress").value;
+
+      if (search.length > 5) {
+        var urlString = "GoogleAutocomplete.jsp?search=" + search;
+        xhttp.open("GET", urlString, true);
+        xhttp.send();
+      }
     }
 
   </script>
@@ -164,7 +168,7 @@
                 <label for="shipDate">Ship Date:</label><br>
                 <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
                 <label for="shippingAddress">Shipping Address:</label><br>
-                <input type="text" id="shippingAddress" name="shippingAddress" onchange="callAC()"><br>
+                <input type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC()"><br>
                 <div id="shippingAddressac" name="shippingAddressac"> </div>
                 <hr>
                 <label for="billingAddress">Billing Address:</label><br>
