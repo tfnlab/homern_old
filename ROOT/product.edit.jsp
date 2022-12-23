@@ -155,7 +155,7 @@
 
                   // Get the form data from the request
                   String sku = request.getParameter("sku");
-                  String name = request.getParameter("name");
+                  String product_name = request.getParameter("name");
 
                 if (name != null && name.trim().length() > 0) {
                   int id = 0;
@@ -177,7 +177,7 @@
                   String customerId = username;
 
                   // Create a new Product object
-                  Product product = new Product(id, sku, name, price, inventory, reorderLevel, leadTime, featured, rating, description, imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
+                  Product product = new Product(id, sku, product_name, price, inventory, reorderLevel, leadTime, featured, rating, description, imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
 
                   // Create a new ProductDao object
 
