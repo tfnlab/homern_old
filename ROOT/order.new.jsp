@@ -71,8 +71,9 @@
         if (this.readyState == 4 && this.status == 200) {
           let items = this.responseText.split('<ITEM>');
           for (let i = 0; i < items.length; i++) {
-            let newL = "<a href=\"#\" onclick='getGeo(items[i])' >" + items[i] + "</a><BR>";
-            document.getElementById("shippingAddressac").innerHTML += newL;
+//            let newL = "<a href=\"#\" onclick='getGeo(items[i])' >" + items[i] + "</a><BR>";
+          let newL = "<a href=\"#\" >" + items[i] + "</a><BR>";
+          document.getElementById("shippingAddressac").innerHTML += newL;
           }
         }
       };
