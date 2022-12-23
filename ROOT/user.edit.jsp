@@ -146,6 +146,8 @@
          String city = request.getParameter("city");
          String state = request.getParameter("state");
          String zipcode = request.getParameter("zipcode");
+         String addressaclat = request.getParameter("addressaclat");
+         String addressaclng = request.getParameter("addressaclng");
 
          user.setFirstName(firstName);
          user.setMiddleInitial(middleInitial);
