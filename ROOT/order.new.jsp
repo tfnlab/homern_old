@@ -182,8 +182,7 @@
                       OrderDao dao = new OrderDao();
                       dao.insertOrder(order);
                       %>
-                        <a href="order.new.jsp">New Order</a><BR>
-                        <a href="order.list.jsp">Orders</a>
+                        Order Saved
                       <%
                 }else{
 
