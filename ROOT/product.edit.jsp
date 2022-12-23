@@ -155,10 +155,9 @@
 
                   // Get the form data from the request
                   String sku = request.getParameter("sku");
-                  String product_name = request.getParameter("name");
+                  String name = request.getParameter("name");
 
                 if (name != null && name.trim().length() > 0) {
-                  int id = 0;
                   BigDecimal price = new BigDecimal(request.getParameter("price"));
                   int inventory = Integer.parseInt(request.getParameter("inventory"));
                   int reorderLevel = Integer.parseInt(request.getParameter("reorder_level"));
@@ -177,7 +176,7 @@
                   String customerId = username;
 
                   // Create a new Product object
-                  Product product = new Product(id, sku, product_name, price, inventory, reorderLevel, leadTime, featured, rating, description, imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
+                  Product product = new Product(id, sku, name, price, inventory, reorderLevel, leadTime, featured, rating, description, imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
 
                   // Create a new ProductDao object
 
