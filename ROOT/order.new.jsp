@@ -47,6 +47,21 @@
   <script>
     function callGeo(sk, fName) {
         document.getElementById("shippingAddress").value = sk;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            let items = this.responseText.split('<ITEM>');
+            fName = items[items.length-1];
+            fName = removeTrailingSpaces(fName);
+            alert(items);
+          }
+        };
+
+        document.getElementById("shippingAddressac").innerHTML = "";
+        var urlString = "GeocodingExample.jsp?search=" + sk + "&sfor=" + fName.name;
+        xhttp.open("GET", urlString, true);
+        xhttp.send();
+
     }
     function removeTrailingSpaces(str) {
             return str.replace(/\s+$/g, "");
