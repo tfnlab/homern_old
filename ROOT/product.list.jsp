@@ -137,7 +137,7 @@
                 ProductDao productDao = new ProductDao();
                 String username = (String) session.getAttribute("username");
 
-                List<Order> products = searchByCustomerId.getCustomerOrders(username);
+                List<Product> products = searchByCustomerId.getCustomerOrders(username);
                 %>
 
 
