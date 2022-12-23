@@ -80,6 +80,18 @@
     function removeTrailingSpaces(str) {
             return str.replace(/\s+$/g, "");
     }
+    function getMessage() {
+      //genmessage.jsp?comType=latepaymentrequest
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById(orderCom).innerHTML = this.responseText;
+        }
+      };
+      var urlString = "genmessage.jsp?comType=" + document.getElementById(orderCom).innerHTML ;
+      xhttp.open("GET", urlString, true);
+      xhttp.send();
+    }
     function callAC(sfor) {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
@@ -225,7 +237,8 @@
           <label for="orderId">Order Description:</label><br>
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
           <label for="orderId">Touch Point</label><br>
-          <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= comType %></textarea>
+          <textarea class="form-control" id="orderCom" name="orderCom" rows="5"><%= comType %></textarea>
+          <button class="btn btn-primary" onclick="getMessage()">Download</button>
           <label for="orderId">Order ID:</label><br>
           <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>"><br>
           <label for="username">Username:</label><br>
