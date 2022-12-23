@@ -157,7 +157,7 @@
                         pv = dao.loginUser(user);
                       }
                         if(pv){
-                          um  = "Thank you are signed in";
+                          um  = "Thank you for signing in! You are now able to access the main menu. Simply click 'Next' to proceed.";
                           session.setAttribute("username", username);
                         }else{
                           um  = "Unable to Login, you are NOT signed in";
@@ -168,7 +168,8 @@
                           <%
                           if(pv){
                           %>
-                            <a href="https://homerenovationnation.com/user.menu.jsp">Menu</a>
+                            <BR>
+                            <a href="https://homerenovationnation.com/user.menu.jsp">NEXT</a>
                           <%
                           }
                           %>
