@@ -58,6 +58,7 @@
         };
         const encodedString = encodeURIComponent(sk);
         var urlString = "GeocodingExample.jsp?search=" + encodedString + "&sfor=" + fNameLink;
+        alert(urlString)
         xhttp.open("GET", urlString, true);
         xhttp.send();
 
