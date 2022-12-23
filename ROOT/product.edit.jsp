@@ -158,7 +158,7 @@
                   String name = request.getParameter("name");
 
                 if (name != null && name.trim().length() > 0) {
-                  
+
                   BigDecimal price = new BigDecimal(request.getParameter("price"));
                   int inventory = Integer.parseInt(request.getParameter("inventory"));
                   int reorderLevel = Integer.parseInt(request.getParameter("reorder_level"));
@@ -169,8 +169,8 @@
                   String imageUrl = request.getParameter("image_url");
                   Timestamp createdAt = currentTime;
                   Timestamp updatedAt = currentTime;
-                  int categoryId = Integer.parseInt(request.getParameter("category_id"));
-                  int manufacturerId = Integer.parseInt(request.getParameter("manufacturer_id"));
+                  int categoryId = 0;
+                  int manufacturerId = 0;
                   boolean availability = Boolean.parseBoolean(request.getParameter("availability"));
                   BigDecimal weight = new BigDecimal(request.getParameter("weight"));
                   String dimensions = request.getParameter("dimensions");
