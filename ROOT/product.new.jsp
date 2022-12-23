@@ -150,12 +150,11 @@
                 String username = (String) session.getAttribute("username");
 
                   // Get the form data from the request
-                  int id = Integer.parseInt(request.getParameter("id"));
                   String sku = request.getParameter("sku");
                   String name = request.getParameter("name");
 
                 if (name != null && name.trim().length() > 0) {
-
+                  int id = 0;
                   BigDecimal price = new BigDecimal(request.getParameter("price"));
                   int inventory = Integer.parseInt(request.getParameter("inventory"));
                   int reorderLevel = Integer.parseInt(request.getParameter("reorder_level"));
