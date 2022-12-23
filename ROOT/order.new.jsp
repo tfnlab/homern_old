@@ -48,7 +48,7 @@
     function callGeo(sk) {
         document.getElementById("shippingAddress").value = sk;
     }
-    function callAC(items[items.length-1]+"ac") {
+    function callAC(sfor) {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
