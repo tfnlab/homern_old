@@ -196,7 +196,6 @@
             <!-- ======= Contact Section ======= -->
             <body>
             	<div class="container mt-5">
-            		<h1>Product Form</h1>
             		<form action="product.edit.jsp" method="post" class="form">
             			<div class="form-group">
             				<label for="sku">ID:</label>
