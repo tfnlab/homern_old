@@ -107,8 +107,9 @@
       var select = document.getElementById("customer-touch-points");
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.value;
+      var orderId = <%=orderId%>;
       alert(com);
-      var url = "order.edit.com.jsp?orderId=<%=orderId%>&comType=" + selectedValue;
+      var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + selectedValue;
       alert(url)
       // Open the URL in a new window
       window.open(url, "_blank");
