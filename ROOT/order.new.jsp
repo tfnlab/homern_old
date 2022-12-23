@@ -45,7 +45,7 @@
   ======================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    function callGeo(sk, fName) {
+    function callGeo(sk, fNameLink) {
         document.getElementById("shippingAddress").value = sk;
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -53,15 +53,13 @@
             let items = this.responseText.split('<ITEM>');
             fName = items[items.length-1];
             fName = removeTrailingSpaces(fName);
-            document.getElementById(fName+"lat").value = items[0].
-            document.getElementById(fName+"lng").value = items[1].
+            document.getElementById(fName+"lat").value = items[0];
+            document.getElementById(fName+"lng").value = items[1];
             alert(document.getElementById(fName+"lng").value);
 
           }
         };
-
-        document.getElementById("shippingAddressac").innerHTML = "";
-        var urlString = "GeocodingExample.jsp?search=" + sk + "&sfor=" + fName;
+        var urlString = "GeocodingExample.jsp?search=" + sk + "&sfor=" + fNameLink;
         xhttp.open("GET", urlString, true);
         xhttp.send();
 
