@@ -164,6 +164,8 @@
          user.setAddresslng(addressaclng);
 
          dao.updateUser(user);
+
+         session.setAttribute("usernameOBJ", user);
      }
 
     user = dao.getUserByUsername(username);
@@ -171,7 +173,6 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>User Edit</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <form method="post" action="user.edit.jsp">
            <div class="form-group">

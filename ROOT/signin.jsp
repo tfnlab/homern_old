@@ -159,6 +159,7 @@
                         if(pv){
                           um  = "Thank you for signing in! You are now able to access the main menu. Simply click 'Next' to proceed.";
                           session.setAttribute("username", username);
+                          session.setAttribute("usernameOBJ", user);
                         }else{
                           um  = "Unable to Login, you are NOT signed in";
                         }
