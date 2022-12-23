@@ -180,17 +180,8 @@
         %>
         <%
           Order order = dao.getOrderByOrderId(orderId);
-          String sAddSpc = order.getBillingAddress().replace(" ", "-");
-          String sAddEnc = URLDecoder.decode(order.getBillingAddress(), "UTF-8");
         %>
         <!-- ======= Contact Section ======= -->
-        <a href="https://www.google.com/maps/search/?api=1&query=<%=sAddEnc%>">Open in Google Maps</a>
-        <a href="https://maps.apple.com/?address=<%=sAddEnc%>">Open in Apple Maps</a>
-        <a href="https://www.waze.com/en/directions?navigate=yes&latlng=<%=order.getBillingAddresslat()%>,<%=order.getBillingAddresslng()%>">Open in Waze</a>
-        <a href="https://wego.here.com/directions/mix//<%=sAddSpc%>:e-eyJuYW1lIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJhZGRyZXNzIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJsYXRpdHVkZSI6MzQuMTgzNjYyLCJsb25naXR1ZGUiOi0xMTguMzI2MTAyfQ==?map=34.18366,-118.3261,15,normal">Open in HERE WeGo</a>
-        <a href="https://www.bing.com/maps?osid=a8d44b60-4f0c-4e4a-b9c7-3a3b3f597628&cp=<%=order.getBillingAddresslat()%>~<%=order.getBillingAddresslng()%>&lvl=15&style=r">Open in Bing Maps</a>
-        <a href="https://www.openstreetmap.org/search?query=<%=sAddEnc%>"#map=15/<%=order.getBillingAddresslat()%>/<%=order.getBillingAddresslng()%>">Open in OpenStreetMap</a>
-        <a href="https://www.tomtom.com/en_gb/maps/maps/point?lat=<%=order.getBillingAddresslat()%>&lon=<%=order.getBillingAddresslng()%>">Open in TomTom Go</a>
 
         <form action="order.edit.jsp" method="POST">
           <label for="orderId">Order Name:</label><br>
@@ -219,6 +210,18 @@
           <input type="hidden" id="billingAddressaclat" name="billingAddressaclat" value="<%= order.getBillingAddresslat() %>">
           <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" value="<%= order.getBillingAddresslng() %>">
           <ul id="billingAddressac" name="billingAddressac"></ul>
+          <hr>
+            <%
+              String sAddSpc = order.getBillingAddress().replace(" ", "-");
+              String sAddEnc = URLDecoder.decode(order.getBillingAddress(), "UTF-8");
+            %>
+            <a href="https://www.google.com/maps/search/?api=1&query=<%=sAddEnc%>">Google</a>
+            <a href="https://maps.apple.com/?address=<%=sAddEnc%>">Apple</a>
+            <a href="https://www.waze.com/en/directions?navigate=yes&latlng=<%=order.getBillingAddresslat()%>,<%=order.getBillingAddresslng()%>">Waze</a>
+            <a href="https://wego.here.com/directions/mix//<%=sAddSpc%>:e-eyJuYW1lIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJhZGRyZXNzIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJsYXRpdHVkZSI6MzQuMTgzNjYyLCJsb25naXR1ZGUiOi0xMTguMzI2MTAyfQ==?map=34.18366,-118.3261,15,normal">HERE</a>
+            <a href="https://www.bing.com/maps?osid=a8d44b60-4f0c-4e4a-b9c7-3a3b3f597628&cp=<%=order.getBillingAddresslat()%>~<%=order.getBillingAddresslng()%>&lvl=15&style=r">Bing</a>
+            <a href="https://www.openstreetmap.org/search?query=<%=sAddEnc%>"#map=15/<%=order.getBillingAddresslat()%>/<%=order.getBillingAddresslng()%>">OSM</a>
+            <a href="https://www.tomtom.com/en_gb/maps/maps/point?lat=<%=order.getBillingAddresslat()%>&lon=<%=order.getBillingAddresslng()%>">TomTom</a>
           <hr>
           <label for="paymentMethod">Payment Method:</label><br>
           <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"><br>
