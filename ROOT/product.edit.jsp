@@ -160,12 +160,7 @@
                 if (name != null && name.trim().length() > 0) {
 
                   BigDecimal price = new BigDecimal(request.getParameter("price"));
-                  int inventory = Integer.parseInt(request.getParameter("inventory"));
-                  int reorderLevel = Integer.parseInt(request.getParameter("reorder_level"));
-                  int leadTime = Integer.parseInt(request.getParameter("lead_time"));
-                  boolean featured = Boolean.parseBoolean(request.getParameter("featured"));
-                  BigDecimal rating = new BigDecimal(request.getParameter("rating"));
-
+                  
                   String customerId = username;
 
                   // Create a new Product object
