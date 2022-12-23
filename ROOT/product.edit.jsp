@@ -158,7 +158,7 @@
                   String name = request.getParameter("name");
 
                 if (name != null && name.trim().length() > 0) {
-                  /*
+                  
                   BigDecimal price = new BigDecimal(request.getParameter("price"));
                   int inventory = Integer.parseInt(request.getParameter("inventory"));
                   int reorderLevel = Integer.parseInt(request.getParameter("reorder_level"));
@@ -174,16 +174,16 @@
                   boolean availability = Boolean.parseBoolean(request.getParameter("availability"));
                   BigDecimal weight = new BigDecimal(request.getParameter("weight"));
                   String dimensions = request.getParameter("dimensions");
-                  */
+
                   String customerId = username;
 
                   // Create a new Product object
-                  //Product product = new Product(id, sku, name, price, inventory, reorderLevel, leadTime, featured, rating, description, imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
+                  Product product = new Product(id, sku, name, price, inventory, reorderLevel, leadTime, featured, rating, description, imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
 
                   // Create a new ProductDao object
 
                   // Insert the Product object into the database
-                  //dao.updateProductById(product);
+                  dao.updateProductById(product);
                 %>
                 <p>Product successfully Saved to the database.</p>
                 <%
