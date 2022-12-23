@@ -47,26 +47,21 @@
   <script>
 
     function callAC() {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          let items = this.responseText.split('<ITEM>');
-          for (let i = 0; i < items.length; i++) {
-//            let newL = "<a href=\"#\" onclick='getGeo(items[i])' >" + items[i] + "</a><BR>";
-          let newL = "<a href=\"#\" >" + items[i] + "</a><BR>";
-          document.getElementById("shippingAddressac").innerHTML += newL;
-          }
+      var shippingAddress = $("#shippingAddress").val();
+      $.ajax({
+        url: "GoogleAutocomplete.jsp?q=" + shippingAddress,
+        success: function(data) {
+          // process the returned data and update the UI
         }
-      };
-      let search = document.getElementById("shippingAddress").value;
-
-      if (search.length > 5) {
-        document.getElementById("shippingAddressac").innerHTML = "";
-        var urlString = "GoogleAutocomplete.jsp?search=" + search;
-        xhttp.open("GET", urlString, true);
-        xhttp.send();
-      }
+      });
     }
+    success: function(data) {
+      $("#suggestions").empty(); // clear the previous suggestions
+      $.each(data, function(index, suggestion) {
+        $("#suggestions").append("<li>" + suggestion + "</li>");
+      });
+    }
+
 
   </script>
 </head>
@@ -175,6 +170,7 @@
                 <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
                 <label for="shippingAddress">Shipping Address:</label><br>
                 <input type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC()"><br>
+                <ul id="suggestions"></ul>
                 <div id="shippingAddressac" name="shippingAddressac"> </div>
                 <hr>
                 <label for="billingAddress">Billing Address:</label><br>
