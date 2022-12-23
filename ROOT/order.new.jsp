@@ -45,7 +45,7 @@
   ======================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    function callGeo(sk) {
+    function callGeo(sk, fName) {
         document.getElementById("shippingAddress").value = sk;
     }
     function removeTrailingSpaces(str) {
@@ -60,7 +60,7 @@
           fName = removeTrailingSpaces(fName);
           for (let i = 0; i < items.length-1; i++) {
             if (items[i].length > 5) {
-              let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"')\" >" + items[i] + "</a>" + "</li>";
+              let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"' , '" + fName+ "')\" >" + items[i] + "</a>" + "</li>";
               document.getElementById(fName).innerHTML = document.getElementById(fName).innerHTML  + newL;
             }
           }
