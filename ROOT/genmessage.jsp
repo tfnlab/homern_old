@@ -6,4 +6,4 @@
   String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
 
  %>
- <%= "UUID " + uuid + " " + stdout + " " +  request.getParameter("comType")%>
+ <%= "UUID " + stdout uuid + " \n " + uuid %>
