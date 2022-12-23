@@ -93,7 +93,12 @@
         xhttp.send();
       }
     }
-
+    function getCom() {
+      var select = document.getElementById("customer-touch-points");
+      var selectedOption = select.options[select.selectedIndex];
+      var com = selectedOption.value;
+      alert(com);
+    }
   </script>
 </head>
 
@@ -142,18 +147,22 @@
         <h2>Order</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <hr>
-          <a href="com.jsp?com=greeting">Greeting</a>
-          <a href="com.jsp?com=interestletter">Interest letter</a>
-          <a href="com.jsp?com=proposal">Proposal</a>
-          <a href="com.jsp?com=invoicing">Invoicing</a>
-          <a href="com.jsp?com=paymentconfirmation">Payment confirmation</a>
-          <a href="com.jsp?com=thankyou">Thank you</a>
-          <a href="com.jsp?com=paymentrequest">Payment request</a>
-          <a href="com.jsp?com=progressupdate">Progress update</a>
-          <a href="com.jsp?com=changeorderrequest">Change order request</a>
-          <a href="com.jsp?com=warrantyormaintenanceinformation">Warranty or maintenance information</a>
-          <a href="com.jsp?com=customersatisfactionsurvey">Customer satisfaction survey</a>
-          <a href="com.jsp?com=followup">Follow-up</a>          
+          <select id="customer-touch-points">
+            <option value="greeting">Greeting</option>
+            <option value="interestletter">Interest letter</option>
+            <option value="proposal">Proposal</option>
+            <option value="invoicing">Invoicing</option>
+            <option value="paymentconfirmation">Payment confirmation</option>
+            <option value="thankyou">Thank you</option>
+            <option value="paymentrequest">Payment request</option>
+            <option value="progressupdate">Progress update</option>
+            <option value="changeorderrequest">Change order request</option>
+            <option value="warrantyormaintenanceinformation">Warranty or maintenance information</option>
+            <option value="customersatisfactionsurvey">Customer satisfaction survey</option>
+            <option value="followup">Follow-up</option>
+          </select>
+          <BR><BR>
+          <button class="btn btn-primary" onclick="getCom()">Download</button>
         <hr>
 
         <%
