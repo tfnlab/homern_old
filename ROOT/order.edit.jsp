@@ -108,10 +108,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.value;
       var orderId = <%=orderId%>;
-      alert(com);
-      var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + selectedValue;
-      alert(url)
-      // Open the URL in a new window
+      var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + com;
       window.open(url, "_blank");
       alert(com);
     }
