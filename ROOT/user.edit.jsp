@@ -198,8 +198,8 @@
               <label for="address">Address</label>
               <input type="text" class="form-control" id="address" name="address" value="<%= user.getAddress() %>" onkeypress="callAC(this)">
            </div>
-           <input type="hidden" id="addressaclat" name="addressaclat" value="<%= order.getAddresslat() %>">
-           <input type="hidden" id="addressaclng" name="addressaclng" value="<%= order.getAddresslng() %>">
+           <input type="hidden" id="addressaclat" name="addressaclat" value="<%= user.getAddresslat() %>">
+           <input type="hidden" id="addressaclng" name="addressaclng" value="<%= user.getAddresslng() %>">
            <div class="form-group">
              <ul id="addressac" name="addressac"></ul>
            </div>
