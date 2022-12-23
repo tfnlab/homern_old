@@ -53,12 +53,15 @@
             let items = this.responseText.split('<ITEM>');
             fName = items[items.length-1];
             fName = removeTrailingSpaces(fName);
-            alert(items);
+            document.getElementById(fName+"lat").value = items[0].
+            document.getElementById(fName+"lng").value = items[1].
+            alert(document.getElementById(fName+"lng").value);
+
           }
         };
 
         document.getElementById("shippingAddressac").innerHTML = "";
-        var urlString = "GeocodingExample.jsp?search=" + sk + "&sfor=" + fName.name;
+        var urlString = "GeocodingExample.jsp?search=" + sk + "&sfor=" + fName;
         xhttp.open("GET", urlString, true);
         xhttp.send();
 
@@ -198,6 +201,8 @@
                 <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
                 <label for="shippingAddress">Shipping Address:</label><br>
                 <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC(this)"><br>
+                <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" ><br>
+                <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" ><br>
                 <ul id="shippingAddressac" name="shippingAddressac"></ul>
                 <hr>
                 <label for="billingAddress">Billing Address:</label><br>
