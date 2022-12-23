@@ -178,7 +178,7 @@
                 <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
                 <label for="shippingAddress">Shipping Address:</label><br>
                 <input type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC()"><br>
-                <ul id="shippingAddressac" name="shippingAddressac"> </ul>
+                <ul id="shippingAddressac" name="shippingAddressac"></ul>
                 <hr>
                 <label for="billingAddress">Billing Address:</label><br>
                 <input type="text" id="billingAddress" name="billingAddress"><br>
