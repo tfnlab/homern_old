@@ -110,7 +110,6 @@
       var orderId = <%=orderId%>;
       var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + com;
       window.open(url, "_blank");
-      alert(com);
     }
   </script>
 </head>
