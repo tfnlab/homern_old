@@ -1,5 +1,4 @@
-<%@ page import="com.tfnlab.api.con.GoogleAutocomplete,java.util.Vector, java.io.IOException" %>
-<%
+<%@ page import="com.tfnlab.api.con.GoogleAutocomplete,java.util.Vector, java.io.IOException" %><%
   GoogleAutocomplete googleAutocomplete = new GoogleAutocomplete();
   try {
     Vector<String> results = googleAutocomplete.search(request.getParameter("search"));
