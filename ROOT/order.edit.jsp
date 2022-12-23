@@ -112,6 +112,7 @@
 
       // Open the URL in a new window
       window.open(url, "_blank");
+      alert(com);
     }
   </script>
 </head>
