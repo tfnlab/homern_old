@@ -56,7 +56,7 @@
           let items = this.responseText.split('<ITEM>');
           for (let i = 0; i < items.length; i++) {
             console.log(items[i]);
-            let newL = "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"')\" >" + items[i] + "</a><BR>";
+            let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"')\" >" + items[i] + "</a>" + "</li>";
             document.getElementById("shippingAddressac").innerHTML += newL;
           }
         }
@@ -178,7 +178,7 @@
                 <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
                 <label for="shippingAddress">Shipping Address:</label><br>
                 <input type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC()"><br>
-                <div id="shippingAddressac" name="shippingAddressac"> </div>
+                <ul id="shippingAddressac" name="shippingAddressac"> </ul>
                 <hr>
                 <label for="billingAddress">Billing Address:</label><br>
                 <input type="text" id="billingAddress" name="billingAddress"><br>
