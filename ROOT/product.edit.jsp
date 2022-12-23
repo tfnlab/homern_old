@@ -158,6 +158,7 @@
                   String name = request.getParameter("name");
 
                 if (name != null && name.trim().length() > 0) {
+                  /*
                   BigDecimal price = new BigDecimal(request.getParameter("price"));
                   int inventory = Integer.parseInt(request.getParameter("inventory"));
                   int reorderLevel = Integer.parseInt(request.getParameter("reorder_level"));
@@ -173,6 +174,7 @@
                   boolean availability = Boolean.parseBoolean(request.getParameter("availability"));
                   BigDecimal weight = new BigDecimal(request.getParameter("weight"));
                   String dimensions = request.getParameter("dimensions");
+                  */
                   String customerId = username;
 
                   // Create a new Product object
