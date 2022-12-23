@@ -56,7 +56,9 @@
             fNamenew = removeTrailingSpaces(fNamenew);
             alert(fNamenew);
             document.getElementById(fNamenew+"lat").value = items[0];
+            document.getElementById(fNamenew+"lng").value = items[1];
             alert(document.getElementById(fNamenew+"lat").value);
+            alert(document.getElementById(fNamenew+"lng").value);
 
 
           }
