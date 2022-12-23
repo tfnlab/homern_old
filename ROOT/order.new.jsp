@@ -54,6 +54,7 @@
         if (this.readyState == 4 && this.status == 200) {
           let items = this.responseText.split('<ITEM>');
           fName = items[items.length-1] + "ac";
+          alert(fName);
           for (let i = 0; i < items.length-1; i++) {
             if (items[i].length > 5) {
               let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"')\" >" + items[i] + "</a>" + "</li>";
