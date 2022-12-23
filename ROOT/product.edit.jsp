@@ -145,7 +145,7 @@
         </p>
         <%
 
-                int id = Integer.parseInt(request.getParameter("id"));
+                int id = Integer.parseInt(request.getParameter("productId"));
                 ProductDao dao = new ProductDao();
 
                 long currentTimeMillis = System.currentTimeMillis();
