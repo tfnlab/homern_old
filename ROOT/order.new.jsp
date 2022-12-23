@@ -45,6 +45,9 @@
   ======================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
+    function callGeo() {
+        alert('hell');
+    }
     function callAC() {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
@@ -52,7 +55,7 @@
           let items = this.responseText.split('<ITEM>');
           for (let i = 0; i < items.length; i++) {
             console.log(items[i]);
-            let newL = "<a href=\"#\" onclick=\"callGeo()\" >" + items[i] + "</a><BR>";
+            let newL = "<a href=\"javascript:void(0)\" onclick=\"callGeo()\" >" + items[i] + "</a><BR>";
             document.getElementById("shippingAddressac").innerHTML += newL;
           }
         }
