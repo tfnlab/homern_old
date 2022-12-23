@@ -158,6 +158,7 @@
                       }
                         if(pv){
                           um  = "Thank you for signing in! You are now able to access the main menu. Simply click 'Next' to proceed.";
+                          user = dao.getUserByUsername(username);
                           session.setAttribute("username", username);
                           session.setAttribute("usernameOBJ", user);
                         }else{
