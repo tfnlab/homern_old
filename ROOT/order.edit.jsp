@@ -208,8 +208,8 @@
 
           <label for="billingAddress">Billing Address:</label><br>
           <input class="form-control" type="text" id="billingAddress" name="billingAddress" value="<%= order.getBillingAddress() %>" onkeypress="callAC(this)"><br>
-          <input type="hidden" id="billingAddresslat" name="billingAddresslat" >
-          <input type="hidden" id="billingAddresslng" name="billingAddresslng" >
+          <input type="hidden" id="billingAddressaclat" name="billingAddressaclat" value="<%= order.getBillingAddresslat() %>">
+          <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" value="<%= order.getBillingAddresslng() %>">
           <ul id="billingAddressac" name="billingAddressac"></ul>
           <hr>
           <label for="paymentMethod">Payment Method:</label><br>
