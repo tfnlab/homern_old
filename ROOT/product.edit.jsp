@@ -199,6 +199,10 @@
             		<form action="product.new.jsp" method="post" class="form">
             			<div class="form-group">
             				<label for="sku">SKU:</label>
+            				<input type="text" class="form-control" name="productId" id="productId" value="<%= product.getId() %>">
+            			</div>
+            			<div class="form-group">
+            				<label for="sku">SKU:</label>
             				<input type="text" class="form-control" name="sku" id="sku" value="<%= product.getSku() %>">
             			</div>
             			<div class="form-group">
