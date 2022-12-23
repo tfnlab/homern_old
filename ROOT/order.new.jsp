@@ -158,6 +158,8 @@
                 String orderDescription = request.getParameter("orderDescription");
                 String shippingAddressaclat = request.getParameter("shippingAddressaclat");
                 String shippingAddressaclng = request.getParameter("shippingAddressaclng");
+                String billingAddressaclat = request.getParameter("billingAddressaclat");
+                String billingAddressaclng = request.getParameter("billingAddressaclng");
 
                 // Validate form data
                 if (shippingAddress != null && shippingAddress.trim().length() > 0) {
@@ -173,7 +175,7 @@
                       Timestamp updatedAt = currentTime;
                       Timestamp deletedAt = currentTime;
 
-                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng);
+                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng);
                       OrderDao dao = new OrderDao();
                       dao.insertOrder(order);
                       %>
