@@ -82,10 +82,10 @@
           }
         }
       };
-      let search = document.getElementById("shippingAddress").value;
+      let search = document.getElementById(sfor).value;
 
       if (search.length > 5) {
-        document.getElementById("shippingAddressac").innerHTML = "";
+        document.getElementById(sfor + "ac").innerHTML = "";
         var urlString = "GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
         xhttp.open("GET", urlString, true);
         xhttp.send();
