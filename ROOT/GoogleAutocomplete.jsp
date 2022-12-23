@@ -1,4 +1,4 @@
-<%@ page import="com.tfnlab.api.con.GoogleAutocomplete" %>
+<%@ page import="com.tfnlab.api.con.GoogleAutocomplete,java.util.Vector" %>
 <%
   GoogleAutocomplete googleAutocomplete = new GoogleAutocomplete();
   try {
