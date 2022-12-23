@@ -200,7 +200,7 @@
             		<h1>Product Form</h1>
             		<form action="product.edit.jsp" method="post" class="form">
             			<div class="form-group">
-            				<label for="sku">SKU:</label>
+            				<label for="sku">ID:</label>
             				<input type="text" class="form-control" name="productId" id="productId" value="<%= product.getId() %>">
             			</div>
             			<div class="form-group">
