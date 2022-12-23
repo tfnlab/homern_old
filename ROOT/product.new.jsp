@@ -156,7 +156,7 @@
                   String sku = request.getParameter("sku");
                   String name = request.getParameter("name");
 
-                if (name != null && shippingAddress.trim().length() > 0) {
+                if (name != null && name.trim().length() > 0) {
 
                   BigDecimal price = new BigDecimal(request.getParameter("price"));
                   int inventory = Integer.parseInt(request.getParameter("inventory"));
