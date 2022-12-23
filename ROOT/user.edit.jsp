@@ -113,7 +113,7 @@
           <li><a href="index.html">Home</a></li>
           <li>Home</li>
         </ol>
-        <h2>User Edit</h2>
+        <h2>User</h2>
       </div>
     </section><!-- End Breadcrumbs -->
     <%

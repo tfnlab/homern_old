@@ -117,9 +117,9 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Order</li>
+          <li>Orders</li>
         </ol>
-        <h2>Order List</h2>
+        <h2>Orders</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
