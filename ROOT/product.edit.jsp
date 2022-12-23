@@ -165,20 +165,11 @@
                   int leadTime = Integer.parseInt(request.getParameter("lead_time"));
                   boolean featured = Boolean.parseBoolean(request.getParameter("featured"));
                   BigDecimal rating = new BigDecimal(request.getParameter("rating"));
-                  String description = request.getParameter("description");
-                  String imageUrl = request.getParameter("image_url");
-                  Timestamp createdAt = currentTime;
-                  Timestamp updatedAt = currentTime;
-                  int categoryId = 0;
-                  int manufacturerId = 0;
-                  boolean availability = Boolean.parseBoolean(request.getParameter("availability"));
-                  BigDecimal weight = new BigDecimal(request.getParameter("weight"));
-                  String dimensions = request.getParameter("dimensions");
 
                   String customerId = username;
 
                   // Create a new Product object
-                  Product product = new Product(id, sku, name, price, inventory, reorderLevel, leadTime, featured, rating, description, imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
+//                  Product product = new Product(id, sku, name, price, inventory, reorderLevel, leadTime, featured, rating, description, imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
 
                   // Create a new ProductDao object
 
