@@ -217,11 +217,11 @@
            <div class="form-group">
              <a href="https://www.google.com/maps/search/?api=1&query=<%=uAddEnc%>">Google</a> |
              <a href="https://maps.apple.com/?address=<%=uAddEnc%>">Apple</a> |
-             <a href="https://www.waze.com/en/directions?navigate=yes&latlng=<%=usernameOBJ.Addresslat()%>,<%=usernameOBJ.Addresslng()%>">Waze</a> |
-             <a href="https://wego.here.com/directions/mix//<%=uAddSpc%>:e-eyJuYW1lIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJhZGRyZXNzIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJsYXRpdHVkZSI6MzQuMTgzNjYyLCJsb25naXR1ZGUiOi0xMTguMzI2MTAyfQ==?map=<%=usernameOBJ.Addresslat()%>,<%=usernameOBJ.Addresslng()%>,15,normal">HERE</a> |
-             <a href="https://www.bing.com/maps?osid=a8d44b60-4f0c-4e4a-b9c7-3a3b3f597628&cp=<%=usernameOBJ.Addresslat()%>~<%=usernameOBJ.Addresslng()%>&lvl=15&style=r">Bing</a> |
-             <a href="https://www.openstreetmap.org/search?query=<%=uAddEnc%>"#map=15/<%=usernameOBJ.Addresslat()%>/<%=usernameOBJ.Addresslng()%>">OSM</a> |
-             <a href="https://www.tomtom.com/en_gb/maps/maps/point?lat=<%=usernameOBJ.Addresslat()%>&lon=<%=usernameOBJ.Addresslng()%>">TomTom</a>
+             <a href="https://www.waze.com/en/directions?navigate=yes&latlng=<%=usernameOBJ.getAddresslat()%>,<%=usernameOBJ.getAddresslng()%>">Waze</a> |
+             <a href="https://wego.here.com/directions/mix//<%=uAddSpc%>:e-eyJuYW1lIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJhZGRyZXNzIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJsYXRpdHVkZSI6MzQuMTgzNjYyLCJsb25naXR1ZGUiOi0xMTguMzI2MTAyfQ==?map=<%=usernameOBJ.getAddresslat()%>,<%=usernameOBJ.getAddresslng()%>,15,normal">HERE</a> |
+             <a href="https://www.bing.com/maps?osid=a8d44b60-4f0c-4e4a-b9c7-3a3b3f597628&cp=<%=usernameOBJ.getAddresslat()%>~<%=usernameOBJ.getAddresslng()%>&lvl=15&style=r">Bing</a> |
+             <a href="https://www.openstreetmap.org/search?query=<%=uAddEnc%>"#map=15/<%=usernameOBJ.getAddresslat()%>/<%=usernameOBJ.getAddresslng()%>">OSM</a> |
+             <a href="https://www.tomtom.com/en_gb/maps/maps/point?lat=<%=usernameOBJ.getAddresslat()%>&lon=<%=usernameOBJ.getAddresslng()%>">TomTom</a>
              <BR>
            </div>
 
