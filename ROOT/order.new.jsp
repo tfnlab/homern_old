@@ -52,7 +52,7 @@
           let items = this.responseText.split('<ITEM>');
           for (let i = 0; i < items.length; i++) {
             console.log(items[i]);
-            let newL = items[i] + "<BR>";
+            let newL = "<a href=\"#\" onclick=\"callGeo()\" >" + items[i] + "</a><BR>";
             document.getElementById("shippingAddressac").innerHTML += newL;
           }
         }
