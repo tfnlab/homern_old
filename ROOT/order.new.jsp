@@ -49,8 +49,12 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          alert(this.responseText);
-          document.getElementById("shippingAddressac").innerHTML = this.responseText;
+          let items = this.responseText.split('<ITEM>');
+          for (let i = 0; i < items.length; i++) {
+            console.log(items[i]);
+            let newL = items[i] + "<BR>";
+            document.getElementById("shippingAddressac").innerHTML += newL;
+          }
         }
       };
       let search = document.getElementById("shippingAddress").value;
