@@ -54,7 +54,7 @@
         if (this.readyState == 4 && this.status == 200) {
           let items = this.responseText.split('<ITEM>');
           alert(items);
-            fName = items[items.length-1]+"ac";
+          fName = items[items.length-1] + "ac";
           alert(fName)
           for (let i = 0; i < items.length-1; i++) {
             if (items[i].length > 5) {
