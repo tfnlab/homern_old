@@ -46,6 +46,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     function callGeo(sk, fNameLink) {
+        alert(fNameLink);
         document.getElementById(fNameLink).value = sk;
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
