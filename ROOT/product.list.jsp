@@ -142,10 +142,10 @@
 
 
 
-              <% for (Product order : orders) { %>
-                Product Name: <%= order.getName() %><br>
-                Order ID: <a href="product.edit.jsp?productId=<%= order.getId() %>" ><%= order.getId() %></a><br>
-                Order Date: <%= order.getDescription() %><br>
+              <% for (Product product : products) { %>
+                Product Name: <%= product.getName() %><br>
+                Order ID: <a href="product.edit.jsp?productId=<%= product.getId() %>" ><%= product.getId() %></a><br>
+                Order Date: <%= product.getDescription() %><br>
                 <hr>
               <% } %>
 
