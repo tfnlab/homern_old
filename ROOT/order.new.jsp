@@ -45,41 +45,18 @@
   ======================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    function callTFNLab() {
+    function callAC() {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("status").innerHTML = this.responseText;
-          const el = document.createElement('textarea');
-          el.value =  this.responseText;
-          el.setAttribute('readonly', '');
-          el.style.position = 'absolute';
-          el.style.left = '-9999px';
-          document.body.appendChild(el);
-          el.select();
-          document.execCommand('copy');
-          document.body.removeChild(el);
-
+          document.getElementById("shippingAddressac").innerHTML = this.responseText;
         }
       };
-      var urlString = "gennft.jsp?walletid=" + document.getElementById("walletid").value
-      document.getElementById("start").style.display="none";
-      document.getElementById("status").innerHTML = "Started Avatar Generation, give it a minute. <img src=\"assets/img/wait.gif\" />";
+      var urlString = "GoogleAutocomplete.jsp?search=" + document.getElementById("shippingAddress").value
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
 
-    function callCopy() {
-      const el = document.createElement('textarea');
-      el.value =  document.getElementById("status").innerHTML;
-      el.setAttribute('readonly', '');
-      el.style.position = 'absolute';
-      el.style.left = '-9999px';
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-    }
   </script>
 </head>
 
@@ -186,7 +163,9 @@
                 <label for="shipDate">Ship Date:</label><br>
                 <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
                 <label for="shippingAddress">Shipping Address:</label><br>
-                <input type="text" id="shippingAddress" name="shippingAddress"><br>
+                <input type="text" id="shippingAddress" name="shippingAddress" onchange="callAC()"><br>
+                <div id="shippingAddressac" name="shippingAddressac"> </div>
+                <hr>
                 <label for="billingAddress">Billing Address:</label><br>
                 <input type="text" id="billingAddress" name="billingAddress"><br>
                 <label for="paymentMethod">Payment Method:</label><br>
