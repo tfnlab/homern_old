@@ -118,6 +118,9 @@
     </section><!-- End Breadcrumbs -->
     <%
     UserDao dao = new UserDao();
+    String username = (String) session.getAttribute("username");
+
+    User user = dao.getUserByUsername(username);
     %>
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
