@@ -237,7 +237,7 @@
             			</div>
             			<div class="form-group">
             				<label for="description">Description:</label>
-            				<input type="text" class="form-control" name="description" id="description" value="<%= product.getDescription() %>">
+                    <textarea class="form-control" id="description" name="description"><%= product.getDescription() %></textarea><br>
             			</div>
             			<div class="form-group">
             				<label for="imageUrl">Image URL:</label>

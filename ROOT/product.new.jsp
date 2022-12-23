@@ -207,7 +207,7 @@
               <label for="rating">Rating:</label><br>
               <input type="number" id="rating" name="rating"><br>
               <label for="description">Description:</label><br>
-              <textarea id="description" name="description"></textarea><br>
+              <textarea class="form-control" id="description" name="description"></textarea><br>
               <label for="image_url">Image URL:</label><br>
               <input type="text" id="image_url" name="image_url"><br>
               <label for="created_at">Created At:</label><br>
