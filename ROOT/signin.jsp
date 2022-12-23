@@ -169,7 +169,10 @@
                           if(pv){
                           %>
                             <BR>
+                            <BR>
+                            <HR>
                             <a href="https://homerenovationnation.com/user.menu.jsp">NEXT</a>
+                            <HR>
                           <%
                           }
                           %>
