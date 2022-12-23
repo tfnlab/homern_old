@@ -240,7 +240,8 @@
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
           <label for="orderId">Touch Point</label><br>
           <textarea class="form-control" id="orderCom" name="orderCom" rows="5"><%= comType %></textarea>
-          <a href="javascript:void(0)" class="btn btn-primary" onclick="getMessage()">Generate Message</a>
+          <HR>
+          <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
           <BR>
           <label for="orderId">Order ID:</label><br>
           <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>"><br>
