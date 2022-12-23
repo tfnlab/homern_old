@@ -120,7 +120,39 @@
     UserDao dao = new UserDao();
     String username = (String) session.getAttribute("username");
 
-    User user = dao.getUserByUsername(username);
+    <%
+      User user = new User();
+      if (firstName != null && firstName.trim().length() > 0) {
+         String firstName = request.getParameter("firstName");
+         String middleInitial = request.getParameter("middleInitial");
+         String lastName = request.getParameter("lastName");
+         String email = request.getParameter("email");
+         String phone = request.getParameter("phone");
+         String username = request.getParameter("username");
+         String password = request.getParameter("password");
+         String ogId = request.getParameter("ogId");
+         String address = request.getParameter("address");
+         String city = request.getParameter("city");
+         String state = request.getParameter("state");
+         String zipcode = request.getParameter("zipcode");
+
+         user.setFirstName(firstName);
+         user.setMiddleInitial(middleInitial);
+         user.setLastName(lastName);
+         user.setEmail(email);
+         user.setPhone(phone);
+         user.setUsername(username);
+         user.setPassword(password);
+         user.setOgId(ogId);
+         user.setAddress(address);
+         user.setCity(city);
+         user.setState(state);
+         user.setZipcode(zipcode);
+
+         dao.getUserByUsername(user);
+     }
+
+    user = dao.getUserByUsername(username);
     %>
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
