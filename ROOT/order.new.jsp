@@ -53,7 +53,7 @@
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           let items = this.responseText.split('<ITEM>');
-          alert(items);
+//          alert(items);
           for (let i = 0; i < items.length; i++) {
             if (items[i].length > 5) {
               let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"')\" >" + items[i] + "</a>" + "</li>";
