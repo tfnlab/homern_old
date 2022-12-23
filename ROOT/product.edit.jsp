@@ -181,12 +181,12 @@
                   // Create a new ProductDao object
 
                   // Insert the Product object into the database
-                  dao.insertProduct(product);
+                  dao.updateProductById(product);
                 %>
                 <p>Product successfully Saved to the database.</p>
                 <%
 
-                }else{
+              }
 
 
                   Product product = dao.getProductById(id, username);
@@ -275,7 +275,6 @@
             	</div>
 
 
-                 <%}%>
       </div>
 
     </section><!-- End Blog Section -->
