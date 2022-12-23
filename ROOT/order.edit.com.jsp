@@ -88,7 +88,7 @@
           document.getElementById(orderCom).innerHTML = this.responseText;
         }
       };
-      var urlString = "genmessage.jsp?comType=" + document.getElementById(orderCom).innerHTML ;
+      var urlString = "genmessage.jsp?comType=" + document.getElementById("orderCom").innerHTML ;
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
