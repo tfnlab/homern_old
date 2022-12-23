@@ -45,7 +45,7 @@
   ======================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    function callAC() {
+    function getGeo(let key) {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -53,6 +53,26 @@
           for (let i = 0; i < items.length; i++) {
             console.log(items[i]);
             let newL = items[i] + "<BR>";
+            document.getElementById("shippingAddressac").innerHTML += newL;
+          }
+        }
+      };
+      let search = key;
+      if (search.length > 5) {
+        var urlString = "GeocodingExample.jsp?search=" + search;
+        xhttp.open("GET", urlString, true);
+        xhttp.send();
+      }
+
+    }
+    function callAC() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          let items = this.responseText.split('<ITEM>');
+          for (let i = 0; i < items.length; i++) {
+            console.log(items[i]);
+            let newL = "<a href='#' onclick='getGeo(items[i])' >" + items[i] + "</a><BR>";
             document.getElementById("shippingAddressac").innerHTML += newL;
           }
         }
