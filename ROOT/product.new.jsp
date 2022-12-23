@@ -170,7 +170,7 @@
                   boolean availability = Boolean.parseBoolean(request.getParameter("availability"));
                   BigDecimal weight = new BigDecimal(request.getParameter("weight"));
                   String dimensions = request.getParameter("dimensions");
-                  String customerId = request.getParameter("customer_id");
+                  String customerId = username;
 
                   // Create a new Product object
                   Product product = new Product(id, sku, name, price, inventory, reorderLevel, leadTime, featured, rating, description, imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
