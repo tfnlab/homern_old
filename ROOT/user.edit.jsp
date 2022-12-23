@@ -40,41 +40,54 @@
   ======================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    function callTFNLab() {
+    function callGeo(sk, fNameLink) {
+        document.getElementById(fNameLink.substring(0,fNameLink.length-2)).value = sk;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            let items = this.responseText.split('<ITEM>');
+            fNamenew = items[items.length-1];
+            fNamenew = removeTrailingSpaces(fNamenew);
+            document.getElementById(fNamenew+"lat").value = items[0];
+            document.getElementById(fNamenew+"lng").value = items[1];
+
+
+          }
+        };
+        const encodedString = encodeURIComponent(sk);
+        var urlString = "GeocodingExample.jsp?search=" + encodedString + "&sfor=" + fNameLink;
+        xhttp.open("GET", urlString, true);
+        xhttp.send();
+    }
+    function removeTrailingSpaces(str) {
+            return str.replace(/\s+$/g, "");
+    }
+    function callAC(sfor) {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("status").innerHTML = this.responseText;
-          const el = document.createElement('textarea');
-          el.value =  this.responseText;
-          el.setAttribute('readonly', '');
-          el.style.position = 'absolute';
-          el.style.left = '-9999px';
-          document.body.appendChild(el);
-          el.select();
-          document.execCommand('copy');
-          document.body.removeChild(el);
-
+          let items = this.responseText.split('<ITEM>');
+          fName = items[items.length-1];
+          fName = removeTrailingSpaces(fName);
+          for (let i = 0; i < items.length-1; i++) {
+            if (items[i].length > 5) {
+              let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"' , '" + fName+ "')\" >" + items[i] + "</a>" + "</li>";
+              document.getElementById(fName).innerHTML = document.getElementById(fName).innerHTML  + newL;
+            }
+          }
         }
       };
-      var urlString = "gennft.jsp?walletid=" + document.getElementById("walletid").value
-      document.getElementById("start").style.display="none";
-      document.getElementById("status").innerHTML = "Started Avatar Generation, give it a minute. <img src=\"assets/img/wait.gif\" />";
-      xhttp.open("GET", urlString, true);
-      xhttp.send();
+      let elName = sfor.name + "ac";
+      let search = document.getElementById(sfor.name).value;
+
+      if (search.length > 5) {
+        document.getElementById(elName).innerHTML = "";
+        var urlString = "GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
+        xhttp.open("GET", urlString, true);
+        xhttp.send();
+      }
     }
 
-    function callCopy() {
-      const el = document.createElement('textarea');
-      el.value =  document.getElementById("status").innerHTML;
-      el.setAttribute('readonly', '');
-      el.style.position = 'absolute';
-      el.style.left = '-9999px';
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-    }
   </script>
 </head>
 
@@ -101,6 +114,7 @@
 
       <a href="https://forms.gle/vdU9zvFTZJ9eKAsz6" class="get-started-btn scrollto">Get Started</a>
     </div>
+
   </header><!-- End Header -->
 
   <main id="main">
@@ -182,8 +196,14 @@
            </div>
            <div class="form-group">
               <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" name="address" value="<%= user.getAddress() %>">
+              <input type="text" class="form-control" id="address" name="address" value="<%= user.getAddress() %>" onkeypress="callAC(this)">
            </div>
+           <input type="hidden" id="addressaclat" name="addressaclat" value="<%= order.getAddresslat() %>">
+           <input type="hidden" id="addressaclng" name="addressaclng" value="<%= order.getAddresslng() %>">
+           <div class="form-group">
+             <ul id="addressac" name="addressac"></ul>
+           </div>
+
            <div class="form-group">
               <label for="city">City</label>
               <input type="text" class="form-control" id="city" name="city" value="<%= user.getCity() %>">
