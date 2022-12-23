@@ -144,8 +144,8 @@
                 Order Name: <%= order.getOrderName() %><br>
                 Order ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %></a><br>
                 Order Date: <%= order.getOrderDate() %><br>
-                Shipping Address: <%= order.getShippingAddresslat() %> , <%= order.getShippingAddresslng() %><br>
-                Location : <%= order.getOrderTotal() %><br>
+                Shipping Address: <%= order.getShippingAddress() %><br>
+                Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br>
                 Billing Address: <%= order.getBillingAddress() %><br>
                 Payment Method: <%= order.getPaymentMethod() %><br>
                 Order Total: <%= order.getOrderTotal() %><br>
