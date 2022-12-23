@@ -128,10 +128,9 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Order List</h2>
+        <h2>Product List</h2>
         <p>
-        <a href="order.new.jsp">New Order</a><BR>
-        <a href="order.list.jsp">Orders</a>
+        <a href="user.menu.jsp">Menu</a> | <a href="product.new.jsp">New</a>
         </p>
         <%
                 ProductDao productDao = new ProductDao();

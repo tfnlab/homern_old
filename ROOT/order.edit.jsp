@@ -140,7 +140,7 @@
       <div class="container px-4 px-lg-5">
         <h2>Order Form</h2>
         <p>
-        <a href="user.menu.jsp">Menu</a> | <a href="order.list.jsp">Orders</a> | <a href="order.new.jsp">New Order</a>
+        <a href="user.menu.jsp">Menu</a> | <a href="order.list.jsp">Orders</a> | <a href="order.new.jsp">New</a>
         </p>
         <%
                 OrderDao dao = new OrderDao();

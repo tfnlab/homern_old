@@ -140,8 +140,7 @@
       <div class="container px-4 px-lg-5">
         <h2>Product Form</h2>
         <p>
-        <a href="order.new.jsp">New Order</a><BR>
-        <a href="order.list.jsp">Orders</a>
+        <a href="user.menu.jsp">Menu</a> | <a href="product.list.jsp">Products</a>
         </p>
         <%
                 long currentTimeMillis = System.currentTimeMillis();
