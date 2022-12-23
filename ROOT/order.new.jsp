@@ -60,6 +60,8 @@
             if (items[i].length > 5) {
               let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"')\" >" + items[i] + "</a>" + "</li>";
               document.getElementById("shippingAddressac").innerHTML = document.getElementById(fName).innerHTML  + newL;
+
+              alert(newL);
             }
           }
         }
