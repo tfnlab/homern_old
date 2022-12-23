@@ -243,7 +243,7 @@
           <textarea class="form-control" id="orderCom" name="orderCom" rows="5"><%= comType %></textarea>
           <HR>
           <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
-          <BR>
+          <HR>
           <label for="orderId">Order ID:</label><br>
           <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>"><br>
           <label for="username">Username:</label><br>

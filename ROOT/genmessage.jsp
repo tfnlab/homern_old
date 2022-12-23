@@ -3,7 +3,7 @@
   String username = (String) session.getAttribute("username");
   UUID uuid = UUID.randomUUID();
   String strRes = "";
-  if(username!-null && username.length>1){
+  if(username!-null && username.length()>1){
     Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/hrn.py", request.getParameter("comType")).start();
     String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
     String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
