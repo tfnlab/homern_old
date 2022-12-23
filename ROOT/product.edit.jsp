@@ -183,7 +183,7 @@
                   // Insert the Product object into the database
                   dao.insertProduct(product);
                 %>
-                <p>Product successfully added to the database.</p>
+                <p>Product successfully Saved to the database.</p>
                 <%
 
                 }else{
