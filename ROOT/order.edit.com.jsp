@@ -37,7 +37,19 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <%
+    OrderDao dao = new OrderDao();
 
+    int orderId = 0;
+    String username = (String) session.getAttribute("username");
+    User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+    if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+      orderId = Integer.parseInt(request.getParameter("orderId"));
+    }
+
+    String comType = request.getParameter("comType");
+    
+  %>
   <!-- =======================================================
   * Template Name: Presento - v3.9.1
   * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
@@ -173,14 +185,7 @@
         <hr>
 
         <%
-                OrderDao dao = new OrderDao();
 
-                int orderId = 0;
-                String username = (String) session.getAttribute("username");
-                User usernameOBJ = (User) session.getAttribute("usernameOBJ");
-                if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
-                  orderId = Integer.parseInt(request.getParameter("orderId"));
-                }
                 String shippingAddress = request.getParameter("shippingAddress");
                 // Validate form data
                 if (shippingAddress != null && shippingAddress.trim().length() > 0) {
@@ -211,7 +216,6 @@
         %>
         <%
           Order order = dao.getOrderByOrderId(orderId);
-
         %>
         <!-- ======= Contact Section ======= -->
 
@@ -221,7 +225,7 @@
           <label for="orderId">Order Description:</label><br>
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
           <label for="orderId">Touch Point</label><br>
-          <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
+          <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= comType %></textarea>
           <label for="orderId">Order ID:</label><br>
           <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>"><br>
           <label for="username">Username:</label><br>
