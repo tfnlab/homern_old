@@ -47,6 +47,7 @@
   <script>
     function callGeo(sk) {
         alert(sk);
+        document.getElementById("shippingAddress").value = sk;
     }
     function callAC() {
       var xhttp = new XMLHttpRequest();
