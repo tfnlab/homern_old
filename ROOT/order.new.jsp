@@ -55,9 +55,8 @@
         if (this.readyState == 4 && this.status == 200) {
           let items = this.responseText.split('<ITEM>');
           for (let i = 0; i < items.length; i++) {
-            console.log(items[i]);
             let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"')\" >" + items[i] + "</a>" + "</li>";
-            document.getElementById("shippingAddressac").innerHTML += newL;
+            document.getElementById("shippingAddressac").innerHTML = document.getElementById("shippingAddressac").innerHTML  + newL;
           }
         }
       };
