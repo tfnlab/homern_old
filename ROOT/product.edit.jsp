@@ -196,7 +196,7 @@
             <body>
             	<div class="container mt-5">
             		<h1>Product Form</h1>
-            		<form action="product.new.jsp" method="post" class="form">
+            		<form action="product.edit.jsp" method="post" class="form">
             			<div class="form-group">
             				<label for="sku">SKU:</label>
             				<input type="text" class="form-control" name="productId" id="productId" value="<%= product.getId() %>">
