@@ -81,6 +81,12 @@
       document.body.removeChild(el);
     }
   </script>
+  <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css?dp-version=1578490236" />
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+
 </head>
 
 <body>
@@ -130,6 +136,9 @@
         <a href="order.new.jsp">New Order</a><BR>
         <a href="order.list.jsp">Orders</a>
         </p>
+        <div id="map" style="position:absolute; width:49%; height:100%; background:grey" ></div>
+        <div id="panel" style="position:absolute; width:49%; left:51%; height:100%; background:inherit" ></div>
+
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
