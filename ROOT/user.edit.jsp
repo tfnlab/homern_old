@@ -119,10 +119,10 @@
     <%
     UserDao dao = new UserDao();
     String username = (String) session.getAttribute("username");
+       String firstName = request.getParameter("firstName");
 
       User user = new User();
       if (firstName != null && firstName.trim().length() > 0) {
-         String firstName = request.getParameter("firstName");
          String middleInitial = request.getParameter("middleInitial");
          String lastName = request.getParameter("lastName");
          String email = request.getParameter("email");
