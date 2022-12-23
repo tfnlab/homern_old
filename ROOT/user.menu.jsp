@@ -121,14 +121,17 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Home</h2>
+        <p>
         <a href="user.menu.jsp">Home</a> |
         <a href="order.list.jsp">Orders</a> |
         <a href="order.new.jsp">Order</a> |
         <a href="product.list.jsp">Products</a> |
         <a href="product.new.jsp">Product</a>
+      </p>
+
         <p>
           Welcome to our application for contractors! Our platform is designed to simplify and streamline your business operations from start to finish. With our user-friendly interface, you can easily manage your leads, track your projects, and handle invoicing and payment all in one place. No more juggling multiple software or spreadsheet to keep your business running smoothly. Additionally, our platform provides valuable insights and analytics to help you make informed decisions and grow your business. Thank you for choosing our application, we are confident it will make a significant difference in your day-to-day operations as a contractor.
-        </p>  
+        </p>
       </div>
 
     </section><!-- End Blog Section -->
