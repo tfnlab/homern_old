@@ -149,7 +149,7 @@
          String zipcode = request.getParameter("zipcode");
          String addressaclat = request.getParameter("addressaclat");
          String addressaclng = request.getParameter("addressaclng");
-         String business_type = request.getParameter("business_type");
+         String business_type = request.getParameter("businesstype");
 
          user.setFirstName(firstName);
          user.setMiddleInitial(middleInitial);
@@ -255,7 +255,7 @@
            %>
            <div class="form-group">
              <label for="business-type">Select a type of business:</label>
-             <select class="form-control" id="business-type" name="business-type">
+             <select class="form-control" id="businesstype" name="businesstype">
                <option value="general-contractor" <% if (businessType.equals("general-contractor")) { %>selected<% } %>>General contractor</option>
                <option value="carpenter" <% if (businessType.equals("carpenter")) { %>selected<% } %>>Carpenter</option>
                <option value="plumber" <% if (businessType.equals("plumber")) { %>selected<% } %>>Plumber</option>
