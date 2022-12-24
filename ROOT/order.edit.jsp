@@ -232,9 +232,9 @@
           <label for="username">Username:</label><br>
           <input type="text" id="username" name="username" value="<%= order.getUsername() %>"><br>
           <label for="orderDate">Order Date:</label><br>
-          <input type="form-control" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd" value="<%= order.getOrderDate() %>"><br>
+          <input class="form-control"  type="datetime-local" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd" value="<%= order.getOrderDate() %>"><br>
           <label for="shipDate">Ship Date:</label><br>
-          <input type="form-control" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
+          <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
           <label for="shippingAddress">Shipping Address:</label><br>
           <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" value="<%= order.getShippingAddress() %>" onkeypress="callAC(this)"><br>
           <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" value="<%= order.getShippingAddresslat() %>">
