@@ -15,6 +15,8 @@
     strRes = stdout;
 //    tmp.tmp.setMessage(null)
     tmp.setMessage(strRes);
+    tmp.setSubject(request.getParameter("comType"));
+    tmp.setUsername(username);
     tD.addTemplate(tmp);
   }
  %><%= strRes  + " \n  UUID " + uuid %>
