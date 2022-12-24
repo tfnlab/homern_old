@@ -184,7 +184,7 @@
                   Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId);
                   EventDao evd = new EventDao();
 
-                  //evd.addEvent(event);
+                  evd.addEvent(event);
                   // Create a new Product object
 
                   // Insert the Product object into the database
