@@ -149,7 +149,7 @@
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
                 String username = (String) session.getAttribute("username");
-                String first_name = request.getParameter("first_name");
+                String first_name = request.getParameter("firstName");
 
                 // Validate form data
                 if (first_name != null && first_name.trim().length() > 0) {
@@ -207,7 +207,7 @@
                 }else{
 
         %>
-        <form>
+                    <form action="customer.new.jsp" method="post">
           <div class="form-group">
             <label for="firstName">First Name</label>
             <input type="text" class="form-control" id="firstName" name="firstName" required>
