@@ -196,11 +196,18 @@
           <div class="form-group">
             <div class="input-group-append">
               <label for="start_time">Start Time</label>
-              <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker>
+              <input type="datetime-local" class="form-control" id="start_time" name="start_time" onclick="" required datepicker>
               <button class="btn btn-secondary" type="button" id="start_time-button"><i class="fa fa-calendar"></i></button>
             </div>
           </div>
 
+                      <div class="form-group">
+                          <div class='input-group date' id='datetimepicker1'>
+                              <input type='text' class="form-control" />
+                              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                              </span>
+                          </div>
+                      </div>
           <div class="form-group">
             <div class="input-group">
               <input type="text" class="form-control" id="datepicker">
@@ -345,24 +352,52 @@
 
   <!-- Initialize the datepicker on the text input field -->
   <script>
-    $('#start_time input').datepicker({
-      format: 'mm/dd/yyyy',
-      language: 'en',
-      todayHighlight: true
-    });
-    $('#start_time-button').click(function() {
-      $('#start_time').datepicker('show');
-    });
+    $(function () {
+     var bindDatePicker = function() {
+  		$(".date").datetimepicker({
+          format:'YYYY-MM-DD',
+  			icons: {
+  				time: "fa fa-clock-o",
+  				date: "fa fa-calendar",
+  				up: "fa fa-arrow-up",
+  				down: "fa fa-arrow-down"
+  			}
+  		}).find('input:first').on("blur",function () {
+  			// check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
+  			// update the format if it's yyyy-mm-dd
+  			var date = parseDate($(this).val());
 
-  </script>
-  <script>
-    $('#datepicker input').datepicker({
-        format: 'mm/dd/yyyy',
-        startDate: '-3d'
-    });
-    $('#datepicker-button').click(function() {
-      $('#datepicker').datepicker('show');
-    });
+  			if (! isValidDate(date)) {
+  				//create date based on momentjs (we have that)
+  				date = moment().format('YYYY-MM-DD');
+  			}
+
+  			$(this).val(date);
+  		});
+  	}
+
+     var isValidDate = function(value, format) {
+  		format = format || false;
+  		// lets parse the date to the best of our knowledge
+  		if (format) {
+  			value = parseDate(value);
+  		}
+
+  		var timestamp = Date.parse(value);
+
+  		return isNaN(timestamp) == false;
+     }
+
+     var parseDate = function(value) {
+  		var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
+  		if (m)
+  			value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
+
+  		return value;
+     }
+
+     bindDatePicker();
+   });
   </script>
 </body>
 
