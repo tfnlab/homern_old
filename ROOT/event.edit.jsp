@@ -169,7 +169,7 @@
                       String endTime = request.getParameter("end_time");
                       String location = request.getParameter("location");
                       String description = request.getParameter("description");
-                      String reminderTime = request.getParameter("reminder_time");
+                      String reminderTime = request.getParameter("reminderTime");
                       String invitees = request.getParameter("invitees");
                       String groupId = request.getParameter("group_id");
 
