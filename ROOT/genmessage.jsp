@@ -13,7 +13,8 @@
     String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
     String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
     strRes = stdout;
-//    tmp.set
+//    tmp.tmp.setMessage(null)
+    tmp.setMessage(strRes)
     tD.addTemplate(tmp);
   }
  %><%= strRes  + " \n  UUID " + uuid %>
