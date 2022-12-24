@@ -149,6 +149,7 @@
          String zipcode = request.getParameter("zipcode");
          String addressaclat = request.getParameter("addressaclat");
          String addressaclng = request.getParameter("addressaclng");
+         String business_type = request.getParameter("business_type");
 
          user.setFirstName(firstName);
          user.setMiddleInitial(middleInitial);
@@ -163,6 +164,7 @@
          user.setZipcode(zipcode);
          user.setAddresslat(addressaclat);
          user.setAddresslng(addressaclng);
+         user.setBusiness_type(business_type);
 
          dao.updateUser(user);
 
@@ -212,6 +214,7 @@
              <ul id="addressac" name="addressac"></ul>
            </div>
            <%
+           if(usernameOBJ.getAddress()!=null ){
            String uAddSpc = usernameOBJ.getAddress().replace(" ", "-");
            String uAddPls = usernameOBJ.getAddress().replace(" ", "+");
            String uAddEnc = URLDecoder.decode(usernameOBJ.getAddress(), "UTF-8");
@@ -228,6 +231,8 @@
              <hr>
            </div>
 
+           <%}%>
+           
            <div class="form-group">
               <label for="city">City</label>
               <input type="text" class="form-control" id="city" name="city" value="<%= user.getCity() %>">
