@@ -5,6 +5,7 @@
   String strRes = "";
   Template tmp = new Template();
 		tmp = tmp.createTestTemplate();
+    tmp.setId(uuid);
   TemplateDao tD = new TemplateDao();
   tD.addTemplate(tmp);
 
