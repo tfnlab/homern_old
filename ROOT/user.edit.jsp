@@ -215,7 +215,7 @@
            </div>
            <%
            if(usernameOBJ.getAddress()!=null ){
-             
+
              String uAddSpc = usernameOBJ.getAddress().replace(" ", "-");
              String uAddPls = usernameOBJ.getAddress().replace(" ", "+");
              String uAddEnc = URLDecoder.decode(usernameOBJ.getAddress(), "UTF-8");
@@ -245,6 +245,23 @@
            <div class="form-group">
               <label for="zipcode">Zipcode</label>
               <input type="text" class="form-control" id="zipcode" name="zipcode" value="<%= user.getZipcode() %>">
+           </div>
+           <%
+           String businessType = user.getBusiness_type();
+           %>
+           <div class="form-group">
+             <label for="business-type">Select a type of business:</label>
+             <select class="form-control" id="business-type" name="business-type">
+               <option value="general-contractor" <%= businessType.equals("general-contractor") ? "selected" : "" %>>General contractor</option>
+               <option value="carpenter" <%= businessType.equals("carpenter") ? "selected" : "" %>>Carpenter</option>
+               <option value="plumber" <%= businessType.equals("plumber") ? "selected" : "" %>>Plumber</option>
+               <option value="electrician" <%= businessType.equals("electrician") ? "selected" : "" %>>Electrician</option>
+               <option value="hvac-technician" <%= businessType.equals("hvac-technician") ? "selected" : "" %>>HVAC technician</option>
+               <option value="landscaper" <%= businessType.equals("landscaper") ? "selected" : "" %>>Landscaper</option>
+               <option value="roofing-contractor" <%= businessType.equals("roofing-contractor") ? "selected" : "" %>>Roofing contractor</option>
+               <option value="painter" <%= businessType.equals("painter") ? "selected" : "" %>>Painter</option>
+               <option value="flooring-contractor" <%= businessType.equals("flooring-contractor") ? "selected" : "" %>>Flooring contractor</option>
+             </select>                          
            </div>
            <button type="submit" class="btn btn-primary">Submit</button>
            </form>
