@@ -182,7 +182,7 @@
                           } catch (ParseException e) {
                               // dateString is not a valid date
                               dateString = "1980-24-10";
-                              date = dateFormat.parse(dateString);
+//                              date = dateFormat.parse(dateString);
                           }
                       }
                       entity.setBirthday(dateString);
