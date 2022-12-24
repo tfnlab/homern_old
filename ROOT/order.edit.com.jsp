@@ -72,6 +72,7 @@
 
           }
         };
+
         const encodedString = encodeURIComponent(sk);
         var urlString = "GeocodingExample.jsp?search=" + encodedString + "&sfor=" + fNameLink;
         xhttp.open("GET", urlString, true);
@@ -88,7 +89,11 @@
           document.getElementById("orderCom").innerHTML = this.responseText;
         }
       };
-      var urlString = "genmessage.jsp?comType=" + document.getElementById("orderCom").innerHTML ;
+      var select = document.getElementById("customer-touch-points");
+      var selectedOption = select.options[select.selectedIndex];
+      var text = selectedOption.text;
+      const encodedString = encodeURIComponent(text);
+      var urlString = "genmessage.jsp?comType=" + encodedString ;
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
@@ -173,7 +178,7 @@
         <h2>Order - Customer Touch Points </h2>
         <%@ include file="user.menu.nav.jsp" %>
         <hr>
-          <select id="customer-touch-points">
+          <select id="customer-touch-points" name="customer-touch-points">
             <option value="greeting" <%if(comType.equals("greeting")){%>selected<%}%> >Greeting</option>
             <option value="interestletter" <%if(comType.equals("interestletter")){%>selected<%}%> >Interest letter</option>
             <option value="proposal" <%if(comType.equals("proposal")){%>selected<%}%> >Proposal</option>
