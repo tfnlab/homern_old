@@ -197,8 +197,6 @@
 
                       long currentTimeMillis = System.currentTimeMillis();
                       Timestamp currentTime = new Timestamp(currentTimeMillis);
-                      Date orderDate = new Date();
-                      Date shippingDate = new Date();
                       String shippingAddressaclat = request.getParameter("shippingAddressaclat");
                       String shippingAddressaclng = request.getParameter("shippingAddressaclng");
                       String billingAddress = request.getParameter("billingAddress");
@@ -208,6 +206,15 @@
                       BigDecimal orderTotal = new BigDecimal("0");
                       if (request.getParameter("orderTotal") != null && !request.getParameter("orderTotal").isEmpty()) {
                         orderTotal = new BigDecimal(request.getParameter("orderTotal"));
+                      }
+                      Date orderDate = new Date();
+                      Date shippingDate = new Date();
+                      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+                        try{
+                           orderDate = dateFormat.parse(request.getParameter("orderDate"));
+                           shippingDate = dateFormat.parse(request.getParameter("shipDate"));
+                        } catch (Exception e) {
+                          %><%="Error parsing date and time string: " + e.getMessage()%><%
                       }
                       Timestamp createdAt = currentTime;
                       Timestamp updatedAt = currentTime;
