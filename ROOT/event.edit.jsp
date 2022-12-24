@@ -175,7 +175,7 @@
                       // parse lastModifiedDate as a Timestamp object
                       //entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
                       event.setId(eId);
-                      ed.updateEntityById(entity);
+                      //ed.updateEntityById(event);
                     %>
 
 
