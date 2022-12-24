@@ -230,10 +230,7 @@
           <input type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"><br>
           <label for="orderId">Order Description:</label><br>
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
-          <label for="orderId">Order ID:</label><br>
-          <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>"><br>
-          <label for="username">Username:</label><br>
-          <input type="text" id="username" name="username" value="<%= order.getUsername() %>"><br>
+          <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
           <label for="orderDate">Order Date:</label><br>
           <input class="form-control"  type="datetime-local" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd" value="<%= order.getOrderDate() %>"><br>
           <label for="shipDate">Ship Date:</label><br>
@@ -293,12 +290,6 @@
           <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"><br>
           <label for="orderTotal">Order Total:</label><br>
           <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"><br>
-          <label for="timestamp">Timestamp:</label><br>
-          <input type="text" id="timestamp" name="timestamp" value="<%= order.getTimestamp() %>"><br>
-          <label for="ts">TS:</label><br>
-          <input type="text" id="ts" name="ts" value="<%= order.getTs() %>"><br>
-          <label for="lastModified">Last Modified:</label><br>
-          <input type="text" id="lastModified" name="lastModified" value="<%= order.getLastModified() %>"><br><br>
           <input type="submit" value="Submit">
         </form>
 
