@@ -168,6 +168,7 @@
                   String groupId = request.getParameter("group_id");
 
 //                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY, HH:MM AM");
+//                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy, HH:mm a");
                   SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy, HH:mm a");
 
                   Date startTimeDate = dateFormat.parse(startTime);
@@ -179,7 +180,7 @@
 
                   Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId);
                   EventDao evd = new EventDao();
-                  evd.addEvent(event);
+                  //evd.addEvent(event);
                   // Create a new Product object
 
                   // Insert the Product object into the database
