@@ -345,7 +345,7 @@
 
   <!-- Initialize the datepicker on the text input field -->
   <script>
-    $('#start_time').datepicker({
+    $('#start_time input').datepicker({
       format: 'mm/dd/yyyy',
       language: 'en',
       todayHighlight: true
@@ -356,7 +356,7 @@
 
   </script>
   <script>
-    $('.datepicker').datepicker({
+    $('#datepicker input').datepicker({
         format: 'mm/dd/yyyy',
         startDate: '-3d'
     });
