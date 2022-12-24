@@ -94,12 +94,9 @@
       var select = document.getElementById("customer-touch-points");
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
-      var select2 = document.getElementById("business-type");
-      var selectedOption2 = select.options[select2.selectedIndex];
-      var text2 = selectedOption2.text;
       const encodedString = encodeURIComponent(text);
       const encodedString2 = encodeURIComponent(text2);
-      var urlString = "genmessage.jsp?comType=" + encodedString + "&business-type=" + encodedString2;
+      var urlString = "genmessage.jsp?comType=" + encodedString ;
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
