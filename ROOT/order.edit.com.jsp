@@ -243,7 +243,7 @@
           <label for="orderId">Order Description:</label><br>
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
           <label for="orderId">Touch Point</label><br>
-          <textarea class="form-control" id="orderCom" name="orderCom" rows="5"><%= comType %></textarea>
+          <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
           <HR>
           <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
           <HR>
