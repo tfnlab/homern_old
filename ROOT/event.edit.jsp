@@ -187,7 +187,7 @@
                     <form action="event.edit.jsp" method="post">
                       <div class="form-group">
                         <label for="id">ID</label>
-                        <input type="text" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly>
+                        <input type="text" class="form-control" id="customerId" name="customerId" value="<%= event.getId() %>" readonly>
                       </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
