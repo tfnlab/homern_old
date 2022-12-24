@@ -200,6 +200,15 @@
               <button class="btn btn-secondary" type="button" id="start_time-button"><i class="fa fa-calendar"></i></button>
             </div>
           </div>
+
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" class="form-control" id="datepicker">
+              <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" id="datepicker-button"><i class="fa fa-calendar"></i></button>
+              </div>
+            </div>
+          </div>            
           <div class="form-group">
             <label for="end_time">End Time</label>
             <input type="datetime-local" class="form-control" id="end_time" name="end_time" required>
@@ -343,6 +352,13 @@
     });
     $('#start_time-button').click(function() {
       $('#start_time').datepicker('show');
+    });
+
+  </script>
+  <script>
+    $('#datepicker').datepicker();
+    $('#datepicker-button').click(function() {
+      $('#datepicker').datepicker('show');
     });
   </script>
 </body>
