@@ -192,7 +192,7 @@
                   event = ed.getEventById(eId);
         %>
                     <form action="event.edit.jsp" method="post">
-                          <input type="hidden" class="form-control" name="eId" value="<%= eId %>">
+                          <input type="hidden" class="form-control" name="eventid" value="<%= eId %>">
                         <div class="form-group">
                           <label for="title">Title</label>
                           <input type="text" class="form-control" name="title" value="<%= event.getTitle() %>">
