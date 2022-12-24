@@ -194,8 +194,11 @@
             <input type="text" class="form-control" id="title" name="title" required>
           </div>
           <div class="form-group">
-            <label for="start_time">Start Time</label>
-            <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker>
+            <div class="input-group-append">
+              <label for="start_time">Start Time</label>
+              <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker>
+              <button class="btn btn-secondary" type="button" id="start_time-button"><i class="fa fa-calendar"></i></button>
+            </div>
           </div>
           <div class="form-group">
             <label for="end_time">End Time</label>
@@ -337,6 +340,9 @@
       format: 'mm/dd/yyyy',
       language: 'en',
       todayHighlight: true
+    });
+    $('#start_time-button').click(function() {
+      $('#start_time').datepicker('show');
     });
   </script>
 </body>
