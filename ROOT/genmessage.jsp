@@ -9,7 +9,8 @@
   TemplateDao tD = new TemplateDao();
 
   if(username!=null && username.length() >1 ){
-    Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/hrn.py", request.getParameter("comType")).start();
+    String agm =   request.getParameter("comType") + " "+ request.getParameter("business-type");
+    Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/hrn.py", agm).start();
     String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
     String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
     strRes = stdout;
