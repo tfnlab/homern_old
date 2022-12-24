@@ -155,7 +155,6 @@
 
                 if (title != null && title.trim().length() > 0) {
                   int id = 0;
-                  String title = request.getParameter("title");
                   String startTime = request.getParameter("start_time");
                   String endTime = request.getParameter("end_time");
                   String location = request.getParameter("location");
