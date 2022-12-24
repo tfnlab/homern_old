@@ -256,7 +256,7 @@
            <div class="form-group">
              <label for="business-type">Select a type of business:</label>
              <select class="form-control" id="business-type" name="business-type">
-               <option value="general-contractor" <%if(true)%>selected<%}%> >General contractor</option>
+               <option value="general-contractor" <%if(true){%>selected<%}%> >General contractor</option>
 
 
              </select>
