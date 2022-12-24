@@ -136,16 +136,16 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Product</li>
+          <li>Event</li>
         </ol>
-        <h2>Product</h2>
+        <h2>Event</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Product</h2>
+        <h2>Event</h2>
         <%@ include file="user.menu.nav.jsp" %>
 
         <%

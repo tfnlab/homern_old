@@ -132,11 +132,20 @@
       <div class="container px-4 px-lg-5">
         <h2>Events</h2>
         <%@ include file="user.menu.nav.jsp" %>
+        <BR>
+        <a href="event.list.jsp?sortBy=eventDate">Most Recent</a>
+        <BR>
+
         <%
                 EventDao eDao = new EventDao();
                 String username = (String) session.getAttribute("username");
 
-                List<Event> events = eDao.getEventsByUsername(username);
+                List<Event> events = null;
+                if(request.getParameter("eventDate")!=null){
+                  events = eDao.getEventsByUsername(username, 1);
+                }else{
+                  events = eDao.getEventsByUsernameSortByStartTime(username, 0);
+                }
                 %>
 
 

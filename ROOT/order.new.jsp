@@ -232,11 +232,14 @@
                     <option value="electronic-payment">Electronic Payment</option>
                     <option value="paypal">PayPal</option>
                     <option value="google-pay">Google Pay</option>
-                    <option value="apple-pay">Apple Pay</option>                    
+                    <option value="apple-pay">Apple Pay</option>
                     <option value="bank-transfer">Bank Transfer</option>
                     <option value="money-order">Money Order</option>
                     <option value="gift-card">Gift Card</option>
                     <option value="cryptocurrency">Cryptocurrency</option>
+                    <option value="doge">Doge</option>
+                    <option value="bitcoin">Bitcoin</option>
+                    <option value="eth">ETH</option>                    
                   </select>
                 </div>
 
