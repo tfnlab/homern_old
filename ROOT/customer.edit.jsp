@@ -238,7 +238,7 @@
                         Order Saved
                       <%
                 }
-                  entity = ed.getEntityById(eId)
+                  entity = ed.getEntityById(eId);
         %>
                     <form action="customer.new.jsp" method="post">
                       <div class="form-group">
