@@ -3,21 +3,22 @@
 <%@page import="com.itextpdf.layout.Document"%>
 <%@page import="com.itextpdf.layout.element.Paragraph"%>
 <%@page import="java.io.FileOutputStream"%>
-
+<%@ page import="com.tfnlab.mysql.OrderDao" %>
+<%@ page import="com.tfnlab.business.create_PDF" %>
+<%@ page import="java.util.UUID" %>
 <%
+OrderDao dao = new OrderDao();
+
+UUID uuid = UUID.randomUUID();
+int orderId = 0;
+String username = (String) session.getAttribute("username");
+User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+  orderId = Integer.parseInt(request.getParameter("orderId"));
+}
   // Get the content from the query parameter
-  String content = request.getParameter("orderCom");
+  Order order = dao.getOrderByOrderId(orderId);
+  create_PDF cpdf = new create_PDF();
 
-  // Create a Document and a PdfWriter
-  Document document = new Document();
-  PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("document.pdf"));
-
-  // Open the document
-  document.open();
-
-  // Add the content as a paragraph
-  document.add(new Paragraph(content));
-
-  // Close the document
-  document.close();
-%>
+  cpdf.createPD(uuid + ".pdf", order, request.getParameter("orderCom"))
+%>DONE
