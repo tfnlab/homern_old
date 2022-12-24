@@ -182,10 +182,11 @@
                           } catch (ParseException e) {
                               // dateString is not a valid date
                               dateString = "1980-24-10";
+                              entity.setBirthday(new SimpleDateFormat("yyyy-MM-dd").parse(dateString));
 //                              date = dateFormat.parse(dateString);
                           }
                       }
-                      entity.setBirthday(dateString);
+//                      entity.setBirthday(dateString);
 
                       entity.setGender(request.getParameter("gender"));
                       entity.setMaritalStatus(request.getParameter("maritalStatus"));
