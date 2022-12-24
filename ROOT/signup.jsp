@@ -138,10 +138,12 @@
                 String zipcode = request.getParameter("zipcode");
                 String addressaclat = "0";
                 String addressaclng = "0";
+                String business_type = request.getParameter("business_type");
+
 
                 // Validate form data
                 if (firstName != null && firstName.trim().length() > 0) {
-                  User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0");
+                  User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0", business_type);
                   UserDao dao = new UserDao();
                   try {
                       boolean pv = true;
@@ -196,6 +198,21 @@
             <!-- ======= Contact Section ======= -->
 
                 <form action="signup.jsp" method="POST">
+                  <div class="form-group">
+                    <label for="business-type">Select a type of business:</label>
+                    <select class="form-control" id="business-type" name="business-type">
+                      <option value="general-contractor">General contractor</option>
+                      <option value="carpenter">Carpenter</option>
+                      <option value="plumber">Plumber</option>
+                      <option value="electrician">Electrician</option>
+                      <option value="hvac-technician">HVAC technician</option>
+                      <option value="landscaper">Landscaper</option>
+                      <option value="roofing-contractor">Roofing contractor</option>
+                      <option value="painter">Painter</option>
+                      <option value="flooring-contractor">Flooring contractor</option>
+                    </select>
+                  </div>
+
               		<label for="firstName">First Name:</label><br>
               		<input type="text" id="firstName" name="firstName"><br>
               		<label for="middleInitial">Middle Initial:</label><br>
