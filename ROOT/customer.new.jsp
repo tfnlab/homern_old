@@ -154,8 +154,6 @@
                 // Validate form data
                 if (first_name != null && first_name.trim().length() > 0) {
                       int orderId = 0;
-                              long currentTimeMillis = System.currentTimeMillis();
-                              Timestamp currentTime = new Timestamp(currentTimeMillis);
                       Entity entity = new Entity();
                       entity.setId(Integer.parseInt(request.getParameter("id")));
                       entity.setUsername(request.getParameter("username"));
