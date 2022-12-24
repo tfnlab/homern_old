@@ -296,10 +296,6 @@
           <label for="orderTotal">Order Total:</label><br>
           <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"><br>
           <input type="submit" value="Submit">
-          <div class="form-group">
-  <label for="datepicker">Date</label>
-  <input type="datetime-local" class="form-control datepicker" id="datepicker">
-</div>
         </form>
 
       </div>
