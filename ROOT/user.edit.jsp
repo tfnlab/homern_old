@@ -249,7 +249,7 @@
            </div>
            <%
            String businessType = user.getBusiness_type();
-           if (businessType != null && !businessType.isEmpty()) {
+           if (businessType == null && businessType.isEmpty()) {
              businessType = "general-contractor";
            }
            %>
@@ -257,8 +257,15 @@
              <%=businessType%>
              <label for="business-type">Select a type of business:</label>
              <select class="form-control" id="business-type" name="business-type">
-               <option value="general-contractor" <%if("plumber".equals("plumber")){%>selected<%}%> >General contractor</option>
-
+               <option value="general-contractor" <% if (businessType.equals("general-contractor")) { %>selected<% } %>>General contractor</option>
+               <option value="carpenter" <% if (businessType.equals("carpenter")) { %>selected<% } %>>Carpenter</option>
+               <option value="plumber" <% if (businessType.equals("plumber")) { %>selected<% } %>>Plumber</option>
+               <option value="electrician" <% if (businessType.equals("electrician")) { %>selected<% } %>>Electrician</option>
+               <option value="hvac-technician" <% if (businessType.equals("hvac-technician")) { %>selected<% } %>>HVAC technician</option>
+               <option value="landscaper" <% if (businessType.equals("landscaper")) { %>selected<% } %>>Landscaper</option>
+               <option value="roofing-contractor" <% if (businessType.equals("roofing-contractor")) { %>selected<% } %>>Roofing contractor</option>
+               <option value="painter" <% if (businessType.equals("painter")) { %>selected<% } %>>Painter</option>
+               <option value="flooring-contractor" <% if (businessType.equals("flooring-contractor")) { %>selected<% } %>>Flooring contractor</option>
              </select>
            </div>
            <button type="submit" class="btn btn-primary">Submit</button>
