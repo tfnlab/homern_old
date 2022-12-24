@@ -168,6 +168,7 @@
                       entity.setZipcode(request.getParameter("zipcode"));
                       entity.setCountry(request.getParameter("country"));
                       // parse birthday as a Date object
+                      if(request.getParameter("birthday")!=null)
                       entity.setBirthday(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("birthday")));
                       entity.setGender(request.getParameter("gender"));
                       entity.setMaritalStatus(request.getParameter("maritalStatus"));
@@ -182,7 +183,17 @@
                       entity.setEmergencyContactPhone(request.getParameter("emergencyContactPhone"));
                       entity.setReferralSource(request.getParameter("referralSource"));
                       entity.setLoyaltyProgram(request.getParameter("loyaltyProgram"));
-                      entity.setLoyaltyPoints(Integer.parseInt(request.getParameter("loyaltyPoints")));
+                      int loyaltyPoints = 0
+                      String loyaltyPointsString = request.getParameter("loyaltyPoints");
+                      if (loyaltyPointsString != null) {
+                          try {
+                              loyaltyPoints = Integer.parseInt(loyaltyPointsString);
+                              // loyaltyPoints is a valid integer
+                          } catch (NumberFormatException e) {
+                              // loyaltyPointsString is not a valid integer
+                          }
+                      }
+                      entity.setLoyaltyPoints(loyaltyPoints);
                       entity.setFacebookUsername(request.getParameter("facebookUsername"));
                       entity.setTwitterHandle(request.getParameter("twitterHandle"));
                       entity.setInstagramUsername(request.getParameter("instagramUsername"));
