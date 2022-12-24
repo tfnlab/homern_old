@@ -152,8 +152,53 @@
                 // Validate form data
                 if (first_name != null && first_name.trim().length() > 0) {
                       int orderId = 0;
+                      Entity entity = new Entity();
+                      entity.setId(Integer.parseInt(request.getParameter("id")));
+                      entity.setUsername(request.getParameter("username"));
+                      entity.setFirstName(request.getParameter("firstName"));
+                      entity.setLastName(request.getParameter("lastName"));
+                      entity.setEmail(request.getParameter("email"));
+                      entity.setPhone(request.getParameter("phone"));
+                      entity.setAddress(request.getParameter("address"));
+                      entity.setCity(request.getParameter("city"));
+                      entity.setState(request.getParameter("state"));
+                      entity.setZipcode(request.getParameter("zipcode"));
+                      entity.setCountry(request.getParameter("country"));
+                      // parse birthday as a Date object
+                      entity.setBirthday(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("birthday")));
+                      entity.setGender(request.getParameter("gender"));
+                      entity.setMaritalStatus(request.getParameter("maritalStatus"));
+                      entity.setNationality(request.getParameter("nationality"));
+                      entity.setOccupation(request.getParameter("occupation"));
+                      entity.setIncomeRange(request.getParameter("incomeRange"));
+                      entity.setEducationLevel(request.getParameter("educationLevel"));
+                      entity.setPreferences(request.getParameter("preferences"));
+                      entity.setInterests(request.getParameter("interests"));
+                      entity.setEmergencyContactName(request.getParameter("emergencyContactName"));
+                      entity.setEmergencyContactRelationship(request.getParameter("emergencyContactRelationship"));
+                      entity.setEmergencyContactPhone(request.getParameter("emergencyContactPhone"));
+                      entity.setReferralSource(request.getParameter("referralSource"));
+                      entity.setLoyaltyProgram(request.getParameter("loyaltyProgram"));
+                      entity.setLoyaltyPoints(Integer.parseInt(request.getParameter("loyaltyPoints")));
+                      entity.setFacebookUsername(request.getParameter("facebookUsername"));
+                      entity.setTwitterHandle(request.getParameter("twitterHandle"));
+                      entity.setInstagramUsername(request.getParameter("instagramUsername"));
+                      entity.setLinkedinUrl(request.getParameter("linkedinUrl"));
+                      entity.setYoutubeChannel(request.getParameter("youtubeChannel"));
+                      // parse createdAt as a Timestamp object
+                      entity.setCreatedAt(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("createdAt")).getTime()));
+                      entity.setCreatedBy(request.getParameter("createdBy"));
+                      // parse createdDate as a Date object
+                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
+                      // parse createdDate as a Date object
+                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("createdDate")));
+                      entity.setLastModifiedBy(request.getParameter("lastModifiedBy"));
+                      // parse lastModifiedDate as a Timestamp object
+                      entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
 
-                      %>
+                    %>
+
+
                         Order Saved
                       <%
                 }else{
