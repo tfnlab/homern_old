@@ -132,24 +132,19 @@
         <%@ include file="user.menu.nav.jsp" %>
 
         <%
-                OrderDao orderDao = new OrderDao();
+                CustomerDao cDao = new CustomerDao();
                 String username = (String) session.getAttribute("username");
 
-                List<Order> orders = orderDao.getCustomerOrders(username);
+                List<Entity> es = cDao.getEntitiesByUsername(username);
                 %>
 
 
 
-              <% for (Order order : orders) { %>
-                Order Name: <%= order.getOrderName() %><br>
-                Order ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %></a><br>
-                Order Date: <%= order.getOrderDate() %><br>
-                Shipping Address: <%= order.getShippingAddress() %><br>
-                Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br>
-                Billing Address: <%= order.getBillingAddress() %><br>
-                Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br>
-                Payment Method: <%= order.getPaymentMethod() %><br>
-                Order Total: <%= order.getOrderTotal() %><br>
+              <% for (Entity entity : es) { %>
+                Name: <%= entity.getFirstName() %><br>
+                  Name: <%= entity.getLastName() %><br>
+                  Email: <%= entity.getLastName() %><br>
+                Customer ID: <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
                 <hr>
               <% } %>
 
