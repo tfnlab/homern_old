@@ -202,10 +202,8 @@
             <input type="text" class="form-control" id="title" name="title" required>
           </div>
           <div class="form-group">
-            <div class="input-group-append">
               <label for="start_time">Start Time</label>
-              <input type="datetime-local" class="form-control" id="start_time" name="start_time" onclick="" required datepicker>
-            </div>
+              <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker>
           </div>
           <div class="form-group">
             <label for="end_time">End Time</label>
