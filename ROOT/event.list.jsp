@@ -144,7 +144,7 @@
                 if(request.getParameter("eventDate")!=null){
                   events = eDao.getEventsByUsername(username, 1);
                 }else{
-                  events = eDao.getEventsByUsernameSortByStartTime(username, 0);
+                  events = eDao.getEventsByUsername(username, 0);
                 }
                 %>
 
