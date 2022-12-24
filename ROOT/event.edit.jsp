@@ -165,8 +165,8 @@
                 if (title != null && title.trim().length() > 0) {
 
                       event = event.generateTestEvent();
-                      String startTime = request.getParameter("start_time");
-                      String endTime = request.getParameter("end_time");
+                      String startTime = request.getParameter("startTime");
+                      String endTime = request.getParameter("endTime");
                       String location = request.getParameter("location");
                       String description = request.getParameter("description");
                       String reminderTime = request.getParameter("reminderTime");
