@@ -254,7 +254,6 @@
            }
            %>
            <div class="form-group">
-             <%=businessType%>
              <label for="business-type">Select a type of business:</label>
              <select class="form-control" id="business-type" name="business-type">
                <option value="general-contractor" <% if (businessType.equals("general-contractor")) { %>selected<% } %>>General contractor</option>
