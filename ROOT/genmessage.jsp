@@ -8,8 +8,10 @@
   //  tmp.setId(uuid);
   TemplateDao tD = new TemplateDao();
 
+      User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+
   if(username!=null && username.length() >1 ){
-    String agm =   request.getParameter("comType") + " message for my "+ username.user.getBusiness_type() + " company";
+    String agm =   request.getParameter("comType") + " message for my "+ usernameOBJ.getBusiness_type() + " company";
     Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/hrn.py", agm).start();
     String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
     String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
