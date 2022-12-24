@@ -179,7 +179,7 @@
                        endTimeDate = dateFormat.parse(endTime);
                        reminderTimeDate = dateFormat.parse(reminderTime);
                     } catch (Exception e) {
-            		      System.out.println("Error parsing date and time string: " + e.getMessage());
+            		      %><%="Error parsing date and time string: " + e.getMessage()%><%
             		    }
                   Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId);
                   EventDao evd = new EventDao();
