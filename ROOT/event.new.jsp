@@ -169,6 +169,7 @@
 
 //                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY, HH:MM AM");
 //                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy, HH:mm a");
+                  //SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy',' HH':'mm a");
                   SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy, HH:mm a");
 
                   Date startTimeDate = dateFormat.parse(startTime);
