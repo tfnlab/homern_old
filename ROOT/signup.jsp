@@ -177,8 +177,18 @@
                         <p>
                           <%=um%>
                           <%if(pv){%>
+                              <P>
+                              Dear new user,<BR><BR>
 
-                              <a href="https://homerenovationnation.com/user.menu.jsp">Menu</a>
+                              Welcome to Home Renovation Nation! We're glad you've decided to join us. As you may have noticed, this system was built using artificial intelligence, which means there is a lot of advanced functionality and capabilities built into it. While we won't get into all the details right now, we want to reassure you that you'll have access to everything you need to get the most out of this system.
+                              <BR><BR>
+                              To start, let's finish setting up your user account so you can start using the system right away. Once that's done, you'll have full access to all the tools and resources available on Home Renovation Nation. We hope you find this system useful and helpful in your home renovation journey. If you have any questions or need assistance, don't hesitate to reach out to us.
+                              <BR><BR>
+                              Sincerely,
+                              <BR><BR>
+                              Home Renovation Nation
+                              </P>
+                              <a href="https://homerenovationnation.com/user.edit.jsp">Finish User Profile</a>
                           <%}%>
                         </p>
                         <%
