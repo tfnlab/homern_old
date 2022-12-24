@@ -155,6 +155,7 @@
                 if (first_name != null && first_name.trim().length() > 0) {
                       int orderId = 0;
                       Entity entity = new Entity();
+                      entity = entity.generateSampleEntity();
 //                      entity.setId(Integer.parseInt(request.getParameter("id")));
                       entity.setUsername(request.getParameter("username"));
                       entity.setFirstName(request.getParameter("firstName"));
