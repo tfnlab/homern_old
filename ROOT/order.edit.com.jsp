@@ -180,6 +180,11 @@
         <h2>Order - Customer Touch Points </h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
+
+                    <div class="form-group">
+                        <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderName() %></a><br>
+                    </div>
+        <HR>
             <div class="form-group">
           <label for="business-type">Select a type of business:</label>
           <select class="form-control" id="customer-touch-points" name="customer-touch-points">
@@ -240,14 +245,12 @@
           Order order = dao.getOrderByOrderId(orderId);
         %>
 
-          <div class="form-group">
-              <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderName() %></a><br>
-          </div>
         <!-- ======= Contact Section ======= -->
 
         <form action="order.edit.com.print.jsp" method="POST" >
-          <label for="orderId">Order Description:</label><br>
-          <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
+
+          <p>Order Description: <%= order.getOrderDescription() %></p><br>
+          
           <label for="orderId">Touch Point</label><br>
           <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
 
