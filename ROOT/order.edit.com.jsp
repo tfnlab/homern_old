@@ -184,22 +184,9 @@
         <h2>Order - Customer Touch Points </h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-          <div class="form-group">
-            <label for="business-type">Select a type of business:</label>
-            <select class="form-control" id="business-type" name="business-type">
-              <option value="general-contractor">General contractor</option>
-              <option value="carpenter">Carpenter</option>
-              <option value="plumber">Plumber</option>
-              <option value="electrician">Electrician</option>
-              <option value="hvac-technician">HVAC technician</option>
-              <option value="landscaper">Landscaper</option>
-              <option value="roofing-contractor">Roofing contractor</option>
-              <option value="painter">Painter</option>
-              <option value="flooring-contractor">Flooring contractor</option>
-            </select>
-          </div>
-        <hr>
-          <select id="customer-touch-points" name="customer-touch-points">
+            <div class="form-group">
+          <label for="business-type">Select a type of business:</label>
+          <select class="form-control" id="customer-touch-points" name="customer-touch-points">
             <option value="greeting" <%if(comType.equals("greeting")){%>selected<%}%> >Greeting</option>
             <option value="interestletter" <%if(comType.equals("interestletter")){%>selected<%}%> >Interest letter</option>
             <option value="proposal" <%if(comType.equals("proposal")){%>selected<%}%> >Proposal</option>
@@ -219,6 +206,7 @@
             <option value="permitapplication" <%if(comType.equals("permitapplication")){%>selected<%}%> >Permit application</option>
           </select>
 
+          </div>
           <HR>
           <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
           <HR>
