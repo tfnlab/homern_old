@@ -168,8 +168,23 @@
                       entity.setZipcode(request.getParameter("zipcode"));
                       entity.setCountry(request.getParameter("country"));
                       // parse birthday as a Date object
-                      if(request.getParameter("birthday")!=null)
-                      entity.setBirthday(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("birthday")));
+
+                      String dateString = request.getParameter("birthday");
+                      Date date = null;
+                      if (dateString != null) {
+                          try {
+                              SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                              date = dateFormat.parse(dateString);
+                              entity.setBirthday(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("birthday")));
+                              // date is a valid date
+                          } catch (ParseException e) {
+                              // dateString is not a valid date
+                              dateString = "1980-24-10";
+                              date = dateFormat.parse(dateString);
+                          }
+                      }
+                      entity.setBirthday(dateString);
+
                       entity.setGender(request.getParameter("gender"));
                       entity.setMaritalStatus(request.getParameter("maritalStatus"));
                       entity.setNationality(request.getParameter("nationality"));
