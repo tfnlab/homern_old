@@ -7,6 +7,8 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
+<%@ page import="com.tfnlab.mysql.Entity" %>
+<%@ page import="com.tfnlab.mysql.EntityDao" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -144,85 +146,159 @@
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
-
                 String username = (String) session.getAttribute("username");
-
-                Date orderDate = new Date();
-                Date shippingDate = new Date();
-                String shippingAddress = request.getParameter("shippingAddress");
-                String billingAddress = request.getParameter("billingAddress");
-                String paymentMethod = request.getParameter("paymentMethod");
-                String orderName = request.getParameter("orderName");
-                String orderDescription = request.getParameter("orderDescription");
-                String shippingAddressaclat = request.getParameter("shippingAddressaclat");
-                String shippingAddressaclng = request.getParameter("shippingAddressaclng");
-                String billingAddressaclat = request.getParameter("billingAddressaclat");
-                String billingAddressaclng = request.getParameter("billingAddressaclng");
+                String first_name = request.getParameter("first_name");
 
                 // Validate form data
-                if (shippingAddress != null && shippingAddress.trim().length() > 0) {
+                if (first_name != null && first_name.trim().length() > 0) {
                       int orderId = 0;
-                      if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
-                        orderId = Integer.parseInt(request.getParameter("orderId"));
-                      }
-                      BigDecimal orderTotal = new BigDecimal("0");
-                      if (request.getParameter("orderTotal") != null && !request.getParameter("orderTotal").isEmpty()) {
-                        orderTotal = new BigDecimal(request.getParameter("orderTotal"));
-                      }
-                      Timestamp createdAt = currentTime;
-                      Timestamp updatedAt = currentTime;
-                      Timestamp deletedAt = currentTime;
 
-                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng);
-                      OrderDao dao = new OrderDao();
-                      dao.insertOrder(order);
                       %>
                         Order Saved
                       <%
                 }else{
 
         %>
-            <!-- ======= Contact Section ======= -->
+        <form>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" class="form-control" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" required>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" name="city" required>
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" class="form-control" id="state" name="state" required>
+          </div>
+          <div class="form-group">
+            <label for="zipcode">Zipcode</label>
+            <input type="text" class="form-control" id="zipcode" name="zipcode" required>
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" class="form-control" id="country" name="country" required>
+          </div>
+          <div class="form-group">
+            <label for="birthday">Birthday</label>
+            <input type="date" class="form-control" id="birthday" name="birthday" required>
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" name="gender" required>
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+            <div class="form-group">
+              <label for="maritalStatus">Marital Status</label>
+              <select class="form-control" id="maritalStatus" name="maritalStatus" required>
+                <option value="">Select</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="widowed">Widowed</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="nationality">Nationality</label>
+              <input type="text" class="form-control" id="nationality" name="nationality" required>
+            </div>
+            <div class="form-group">
+              <label for="occupation">Occupation</label>
+              <input type="text" class="form-control" id="occupation" name="occupation" required>
+            </div>
+            <div class="form-group">
+              <label for="incomeRange">Income Range</label>
+              <select class="form-control" id="incomeRange" name="incomeRange" required>
+                <option value="">Select</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="educationLevel">Education Level</label>
+              <input type="text" class="form-control" id="educationLevel" name="educationLevel" required>
+            </div>
+            <div class="form-group">
+              <label for="preferences">Preferences</label>
+              <input type="text" class="form-control" id="preferences" name="preferences" required>
+            </div>
+            <div class="form-group">
+              <label for="interests">Interests</label>
+              <input type="text" class="form-control" id="interests" name="interests" required>
+            </div>
+            <div class="form-group">
+              <label for="emergencyContactName">Emergency Contact Name</label>
+              <input type="text" class="form-control" id="emergencyContactName" name="emergencyContactName" required>
+            </div>
+            <div class="form-group">
+              <label for="emergencyContactRelationship">Emergency Contact Relationship</label>
+              <input type="text" class="form-control" id="emergencyContactRelationship" name="emergencyContactRelationship" required>
+            </div>
+            <div class="form-group">
+              <label for="emergencyContactPhone">Emergency Contact Phone</label>
+              <input type="tel" class="form-control" id="emergencyContactPhone" name="emergencyContactPhone" required>
+            </div>
+              <div class="form-group">
+                <label for="referralSource">Referral Source</label>
+                <input type="text" class="form-control" id="referralSource" name="referralSource" required>
+              </div>
+              <div class="form-group">
+                <label for="loyaltyProgram">Loyalty Program</label>
+                <input type="text" class="form-control" id="loyaltyProgram" name="loyaltyProgram" required>
+              </div>
+              <div class="form-group">
+                <label for="loyaltyPoints">Loyalty Points</label>
+                <input type="number" class="form-control" id="loyaltyPoints" name="loyaltyPoints" required>
+              </div>
+              <div class="form-group">
+                <label for="facebookUsername">Facebook Username</label>
+                <input type="text" class="form-control" id="facebookUsername" name="facebookUsername" required>
+              </div>
+              <div class="form-group">
+                <label for="twitterHandle">Twitter Handle</label>
+                <input type="text" class="form-control" id="twitterHandle" name="twitterHandle" required>
+              </div>
+              <div class="form-group">
+                <label for="instagramUsername">Instagram Username</label>
+                <input type="text" class="form-control" id="instagramUsername" name="instagramUsername" required>
+              </div>
+              <div class="form-group">
+                <label for="linkedinUrl">LinkedIn URL</label>
+                <input type="text" class="form-control" id="linkedinUrl" name="linkedinUrl" required>
+              </div>
+              <div class="form-group">
+                <label for="youtubeChannel">YouTube Channel</label>
+                <input type="text" class="form-control" id="youtubeChannel" name="youtubeChannel" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
 
-                <form action="order.new.jsp" method="POST">
-                <label for="orderId">Order Name:</label><br>
-                <input class="form-control"  type="text" id="orderName" name="orderName"><br>
-                <label for="orderId">Order Description:</label><br>
-                <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"></textarea>
-                <label class="form-label" for="textAreaExample">Request Info</label>
-
-                <label for="orderId">Order ID:</label><br>
-                <input type="text" id="orderId" name="orderId"><br>
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username"><br>
-                <label for="orderDate">Order Date:</label><br>
-                <input type="text" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd"><br>
-                <label for="shipDate">Ship Date:</label><br>
-                <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
-                <label for="shippingAddress">Shipping Address:</label><br>
-                <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC(this)"><br>
-                <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" >
-                <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" >
-                <ul id="shippingAddressac" name="shippingAddressac"></ul>
-                <hr>
-                <label for="billingAddress">Billing Address:</label><br>
-                <input class="form-control" type="text" id="billingAddress" name="billingAddress" onkeypress="callAC(this)"><br>
-                <input type="hidden" id="billingAddressaclat" name="billingAddressaclat" >
-                <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" >
-                <ul id="billingAddressac" name="billingAddressac"></ul>
-                <hr>
-                <label for="paymentMethod">Payment Method:</label><br>
-                <input type="text" id="paymentMethod" name="paymentMethod"><br>
-                <label for="orderTotal">Order Total:</label><br>
-                <input type="text" id="orderTotal" name="orderTotal"><br>
-                <label for="timestamp">Timestamp:</label><br>
-                <input type="text" id="timestamp" name="timestamp"><br>
-                <label for="ts">TS:</label><br>
-                <input type="text" id="ts" name="ts"><br>
-                <label for="lastModified">Last Modified:</label><br>
-                <input type="text" id="lastModified" name="lastModified"><br><br>
-                <input type="submit" value="Submit">
-                  	</form>
 
                  <%}%>
       </div>
