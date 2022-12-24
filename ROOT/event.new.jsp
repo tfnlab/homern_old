@@ -192,6 +192,7 @@
 
                   // Insert the Product object into the database
                 %>
+                <%=request.getParameter("end_time")%>
                 <p>Event successfully added to the database.</p>
                 <%
 
