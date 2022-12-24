@@ -3,6 +3,7 @@
 <%@page import="com.itextpdf.layout.Document"%>
 <%@page import="com.itextpdf.layout.element.Paragraph"%>
 <%@page import="java.io.FileOutputStream"%>
+<%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="com.tfnlab.business.create_PDF" %>
 <%@ page import="java.util.UUID" %>
