@@ -258,6 +258,10 @@
         <%
           Order order = dao.getOrderByOrderId(orderId);
         %>
+
+          <div class="form-group">            
+              <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderName() %></a><br>
+          </div>
         <!-- ======= Contact Section ======= -->
 
         <form action="order.edit.com.print.jsp" method="POST" >
