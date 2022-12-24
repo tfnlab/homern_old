@@ -240,7 +240,7 @@
                 }
                   entity = ed.getEntityById(eId);
         %>
-                    <form action="customer.new.jsp" method="post">
+                    <form action="customer.edit.jsp" method="post">
                       <div class="form-group">
                         <label for="id">ID</label>
                         <input type="text" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly>
