@@ -231,8 +231,13 @@
           <label for="orderId">Order Description:</label><br>
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
           <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
-          <label for="orderDate">Order Date:</label><br>
-          <input class="form-control"  type="datetime-local" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd" value="<%= order.getOrderDate() %>"><BR><%= order.getOrderDate() %><br>
+          TEST <%= order.getOrderDate() %><br>
+
+          <div class="form-group">
+            <label for="endTime">Order Date:</label>
+            <input type="datetime-local" class="form-control" name="orderDate" value="<%= order.getOrderDate() %>" datepicker >
+          </div>
+
           <label for="shipDate">Ship Date:</label><br>
           <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
           <label for="shippingAddress">Shipping Address:</label><br>
@@ -395,16 +400,52 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
-  $(function () {
-  $('.datepicker').datepicker({
-    format: 'yyyy-mm-dd',
-    startDate: '-3d',
-    endDate: '+3d',
-    autoclose: true
-  });
-});
+    $(function () {
+     var bindDatePicker = function() {
+  		$(".date").datetimepicker({
+          format:'YYYY-MM-DD',
+  			icons: {
+  				time: "fa fa-clock-o",
+  				date: "fa fa-calendar",
+  				up: "fa fa-arrow-up",
+  				down: "fa fa-arrow-down"
+  			}
+  		}).find('input:first').on("blur",function () {
+  			// check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
+  			// update the format if it's yyyy-mm-dd
+  			var date = parseDate($(this).val());
 
+  			if (! isValidDate(date)) {
+  				//create date based on momentjs (we have that)
+  				date = moment().format('YYYY-MM-DD');
+  			}
 
+  			$(this).val(date);
+  		});
+  	}
+
+     var isValidDate = function(value, format) {
+  		format = format || false;
+  		// lets parse the date to the best of our knowledge
+  		if (format) {
+  			value = parseDate(value);
+  		}
+
+  		var timestamp = Date.parse(value);
+
+  		return isNaN(timestamp) == false;
+     }
+
+     var parseDate = function(value) {
+  		var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
+  		if (m)
+  			value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
+
+  		return value;
+     }
+
+     bindDatePicker();
+   });
   </script>
 </body>
 
