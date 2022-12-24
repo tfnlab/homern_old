@@ -85,13 +85,10 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          alert(this.responseText);
           document.getElementById("orderCom").innerHTML = this.responseText;
         }
       };
-      alert("urlString")
       var urlString = "genmessage.jsp?comType=" + document.getElementById("orderCom").innerHTML ;
-      alert(urlString)
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
