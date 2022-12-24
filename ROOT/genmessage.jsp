@@ -21,4 +21,4 @@
     tmp.setPublic(false);
     tD.addTemplate(tmp);
   }
- %><%= strRes  + " \n  UUID " + uuid %>
+ %><%= strRes %>
