@@ -179,6 +179,41 @@
       <div class="container px-4 px-lg-5">
         <h2>Order - Customer Touch Points </h2>
         <%@ include file="user.menu.nav.jsp" %>
+
+        <%
+
+              String shippingAddress = request.getParameter("shippingAddress");
+              // Validate form data
+              if (shippingAddress != null && shippingAddress.trim().length() > 0) {
+
+                    long currentTimeMillis = System.currentTimeMillis();
+                    Timestamp currentTime = new Timestamp(currentTimeMillis);
+                    Date orderDate = new Date();
+                    Date shippingDate = new Date();
+                    String shippingAddressaclat = request.getParameter("shippingAddressaclat");
+                    String shippingAddressaclng = request.getParameter("shippingAddressaclng");
+                    String billingAddress = request.getParameter("billingAddress");
+                    String billingAddressaclat = request.getParameter("billingAddressaclat");
+                    String billingAddressaclng = request.getParameter("billingAddressaclng");
+                    String paymentMethod = request.getParameter("paymentMethod");
+                    BigDecimal orderTotal = new BigDecimal("0");
+                    if (request.getParameter("orderTotal") != null && !request.getParameter("orderTotal").isEmpty()) {
+                      orderTotal = new BigDecimal(request.getParameter("orderTotal"));
+                    }
+                    Timestamp createdAt = currentTime;
+                    Timestamp updatedAt = currentTime;
+                    Timestamp deletedAt = currentTime;
+                    String orderName = request.getParameter("orderName");
+                    String orderDescription = request.getParameter("orderDescription");
+                    Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng );
+                    dao.updateOrder(order);
+
+              }
+        %>
+
+        <%
+        Order order = dao.getOrderByOrderId(orderId);
+        %>
         <HR>
 
                     <div class="form-group">
@@ -211,46 +246,13 @@
           <HR>
           <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
           <HR>
-        <%
-
-                String shippingAddress = request.getParameter("shippingAddress");
-                // Validate form data
-                if (shippingAddress != null && shippingAddress.trim().length() > 0) {
-
-                      long currentTimeMillis = System.currentTimeMillis();
-                      Timestamp currentTime = new Timestamp(currentTimeMillis);
-                      Date orderDate = new Date();
-                      Date shippingDate = new Date();
-                      String shippingAddressaclat = request.getParameter("shippingAddressaclat");
-                      String shippingAddressaclng = request.getParameter("shippingAddressaclng");
-                      String billingAddress = request.getParameter("billingAddress");
-                      String billingAddressaclat = request.getParameter("billingAddressaclat");
-                      String billingAddressaclng = request.getParameter("billingAddressaclng");
-                      String paymentMethod = request.getParameter("paymentMethod");
-                      BigDecimal orderTotal = new BigDecimal("0");
-                      if (request.getParameter("orderTotal") != null && !request.getParameter("orderTotal").isEmpty()) {
-                        orderTotal = new BigDecimal(request.getParameter("orderTotal"));
-                      }
-                      Timestamp createdAt = currentTime;
-                      Timestamp updatedAt = currentTime;
-                      Timestamp deletedAt = currentTime;
-                      String orderName = request.getParameter("orderName");
-                      String orderDescription = request.getParameter("orderDescription");
-                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng );
-                      dao.updateOrder(order);
-
-                }
-        %>
-        <%
-          Order order = dao.getOrderByOrderId(orderId);
-        %>
 
         <!-- ======= Contact Section ======= -->
 
         <form action="order.edit.com.print.jsp" method="POST" >
 
           <p>Order Description: <%= order.getOrderDescription() %></p><br>
-          
+
           <label for="orderId">Touch Point</label><br>
           <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
 
