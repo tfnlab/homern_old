@@ -9,5 +9,7 @@
         <a href="order.new.jsp">Order</a> |
         <a href="product.list.jsp">Products</a> |
         <a href="product.new.jsp">Product</a> |
+        <a href="customer.list.jsp">Customers</a> |
+        <a href="customer.new.jsp">Customer</a> |
         <a href="user.edit.jsp">User</a>
       </p>
