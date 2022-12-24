@@ -221,8 +221,25 @@
                 <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" >
                 <ul id="billingAddressac" name="billingAddressac"></ul>
                 <hr>
-                <label for="paymentMethod">Payment Method:</label><br>
-                <input type="text" id="paymentMethod" name="paymentMethod"><br>
+                <!-- HTML -->
+                <div class="form-group">
+                  <label for="payment-options">Payment Options</label>
+                  <select class="form-control" id="paymentMethod">
+                    <option value="cash">Cash</option>
+                    <option value="check">Check</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="debit-card">Debit Card</option>
+                    <option value="electronic-payment">Electronic Payment</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="google-pay">Google Pay</option>
+                    <option value="apple-pay">Apple Pay</option>                    
+                    <option value="bank-transfer">Bank Transfer</option>
+                    <option value="money-order">Money Order</option>
+                    <option value="gift-card">Gift Card</option>
+                    <option value="cryptocurrency">Cryptocurrency</option>
+                  </select>
+                </div>
+
                 <label for="orderTotal">Order Total:</label><br>
                 <input type="text" id="orderTotal" name="orderTotal"><br>
                 <input type="submit" value="Submit">
