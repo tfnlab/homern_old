@@ -14,7 +14,7 @@
     String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
     strRes = stdout;
 //    tmp.tmp.setMessage(null)
-    tmp.setMessage(strRes)
+    tmp.setMessage(strRes);
     tD.addTemplate(tmp);
   }
  %><%= strRes  + " \n  UUID " + uuid %>
