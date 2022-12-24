@@ -154,6 +154,8 @@
                 // Validate form data
                 if (first_name != null && first_name.trim().length() > 0) {
                       int orderId = 0;
+                              long currentTimeMillis = System.currentTimeMillis();
+                              Timestamp currentTime = new Timestamp(currentTimeMillis);
                       Entity entity = new Entity();
                       entity.setId(Integer.parseInt(request.getParameter("id")));
                       entity.setUsername(request.getParameter("username"));
@@ -188,7 +190,7 @@
                       entity.setLinkedinUrl(request.getParameter("linkedinUrl"));
                       entity.setYoutubeChannel(request.getParameter("youtubeChannel"));
                       // parse createdAt as a Timestamp object
-                      entity.setCreatedAt(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("createdAt")).getTime()));
+                      entity.setCreatedAt(currentTime);
                       entity.setCreatedBy(request.getParameter("createdBy"));
                       // parse createdDate as a Date object
                       entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
