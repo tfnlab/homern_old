@@ -185,10 +185,45 @@
                   event = ed.getEventById(eId);
         %>
                     <form action="event.edit.jsp" method="post">
-                      <div class="form-group">
-                        <label for="id">ID</label>
-                        <input type="text" class="form-control" id="customerId" name="customerId" value="<%= event.getId() %>" readonly>
-                      </div>
+                        <div class="form-group">
+                          <label for="title">Title</label>
+                          <input type="text" class="form-control" name="title" value="<%= event.getTitle() %>">
+                        </div>
+                        <div class="form-group">
+                          <label for="startTime">Start Time</label>
+                          <input type="text" class="form-control" name="startTime" value="<%= event.getStartTime() %>">
+                        </div>
+                        <div class="form-group">
+                          <label for="endTime">End Time</label>
+                          <input type="text" class="form-control" name="endTime" value="<%= event.getEndTime() %>">
+                        </div>
+                        <div class="form-group">
+                          <label for="location">Location</label>
+                          <input type="text" class="form-control" name="location" value="<%= event.getLocation() %>">
+                        </div>
+                        <div class="form-group">
+                          <label for="description">Description</label>
+                          <input type="text" class="form-control" name="description" value="<%= event.getDescription() %>">
+                        </div>
+                        <div class="form-group">
+                          <label for="reminderTime">Reminder Time</label>
+                          <input type="text" class="form-control" name="reminderTime" value="<%= event.getReminderTime() %>">
+                        </div>
+                        <div class="form-group">
+                          <label for="invitees">Invitees</label>
+                          <input type="text" class="form-control" name="invitees" value="<%= event.getInvitees() %>">
+                        </div>
+                        <div class="form-group">
+                          <label for="username">Username</label>
+                          <input type="text" class="form-control" name="username" value="<%= event.getUsername() %>">
+                        </div>
+                        <div class="form-group">
+                          <label for="groupId">Group ID</label>
+                          <input type="text" class="form-control" name="groupId" value="<%= event.getGroupId() %>">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
