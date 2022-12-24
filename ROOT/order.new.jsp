@@ -205,11 +205,6 @@
                 <label for="orderId">Order Description:</label><br>
                 <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"></textarea>
                 <label class="form-label" for="textAreaExample">Request Info</label>
-
-                <label for="orderId">Order ID:</label><br>
-                <input type="text" id="orderId" name="orderId"><br>
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username"><br>
                 <label for="orderDate">Order Date:</label><br>
                 <input type="datetime-local" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd"><br>
                 <label for="shipDate">Ship Date:</label><br>
@@ -230,12 +225,6 @@
                 <input type="text" id="paymentMethod" name="paymentMethod"><br>
                 <label for="orderTotal">Order Total:</label><br>
                 <input type="text" id="orderTotal" name="orderTotal"><br>
-                <label for="timestamp">Timestamp:</label><br>
-                <input type="text" id="timestamp" name="timestamp"><br>
-                <label for="ts">TS:</label><br>
-                <input type="text" id="ts" name="ts"><br>
-                <label for="lastModified">Last Modified:</label><br>
-                <input type="text" id="lastModified" name="lastModified"><br><br>
                 <input type="submit" value="Submit">
                   	</form>
 
