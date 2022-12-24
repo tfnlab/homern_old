@@ -183,7 +183,7 @@
                       entity.setEmergencyContactPhone(request.getParameter("emergencyContactPhone"));
                       entity.setReferralSource(request.getParameter("referralSource"));
                       entity.setLoyaltyProgram(request.getParameter("loyaltyProgram"));
-                      int loyaltyPoints = 0
+                      int loyaltyPoints = 0;
                       String loyaltyPointsString = request.getParameter("loyaltyPoints");
                       if (loyaltyPointsString != null) {
                           try {
