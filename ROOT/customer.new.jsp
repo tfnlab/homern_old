@@ -190,7 +190,7 @@
                       entity.setYoutubeChannel(request.getParameter("youtubeChannel"));
                       // parse createdAt as a Timestamp object
                       entity.setCreatedAt(currentTime);
-                      entity.setCreatedBy(request.getParameter("createdBy"));
+                      entity.setCreatedBy(username);
                       // parse createdDate as a Date object
 //                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
                       // parse createdDate as a Date object
