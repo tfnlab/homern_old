@@ -5,6 +5,8 @@
 <%@page import="java.io.FileOutputStream"%>
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
+<%@ page import="com.tfnlab.mysql.User"%>
+<%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="com.tfnlab.business.create_PDF" %>
 <%@ page import="java.util.UUID" %>
 <%
