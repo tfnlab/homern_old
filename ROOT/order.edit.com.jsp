@@ -258,7 +258,7 @@
         %>
         <!-- ======= Contact Section ======= -->
 
-        <form action="order.edit.jsp" method="POST" target="_blank">
+        <form action="order.edit.com.print.jsp" method="POST" target="_blank">
           <label for="orderId">Order Name:</label><br>
           <input type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"><br>
           <label for="orderId">Order Description:</label><br>
