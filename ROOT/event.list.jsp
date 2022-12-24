@@ -134,7 +134,7 @@
         <%@ include file="user.menu.nav.jsp" %>
         <BR>
         <a href="event.list.jsp?sortBy=eventDate">Most Recent</a>|
-        <a href="event.list.jsp?sortBy=eventDate">Most Recent Desc</a>
+        <a href="event.list.jsp?sortBy=eventDateDESC">Most Recent Desc</a>
         <BR>
 
         <%
