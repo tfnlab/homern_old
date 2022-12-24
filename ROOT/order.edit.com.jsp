@@ -197,10 +197,7 @@
               <option value="painter">Painter</option>
               <option value="flooring-contractor">Flooring contractor</option>
             </select>
-
-              <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderName() %></a><br>
           </div>
-
         <hr>
           <select id="customer-touch-points" name="customer-touch-points">
             <option value="greeting" <%if(comType.equals("greeting")){%>selected<%}%> >Greeting</option>
@@ -259,7 +256,7 @@
           Order order = dao.getOrderByOrderId(orderId);
         %>
 
-          <div class="form-group">            
+          <div class="form-group">
               <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderName() %></a><br>
           </div>
         <!-- ======= Contact Section ======= -->
