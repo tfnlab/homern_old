@@ -222,7 +222,7 @@
           <input type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"><br>
           <label for="orderId">Order Description:</label><br>
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
-          <label for="orderId">Order ID:</label><br>
+          <label for="orderId">Order d ID:</label><br>
           sadfdsad
           <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>"><br>
           <label for="username">Username:</label><br>
