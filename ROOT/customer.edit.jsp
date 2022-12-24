@@ -161,6 +161,7 @@
                 EntityDao ed = new EntityDao();
 
                 if (first_name != null && first_name.trim().length() > 0) {
+
                       entity = entity.generateSampleEntity();
 //                      entity.setId(Integer.parseInt(request.getParameter("id")));
                       entity.setUsername(username);
@@ -231,6 +232,7 @@
                       //entity.setLastModifiedBy(request.getParameter("lastModifiedBy"));
                       // parse lastModifiedDate as a Timestamp object
                       //entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
+                      entity.setId(eId)
                       ed.updateEntityById(entity);
                     %>
 
