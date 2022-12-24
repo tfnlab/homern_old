@@ -9,6 +9,8 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="com.tfnlab.mysql.Product" %>
 <%@ page import="com.tfnlab.mysql.ProductDao" %>
+<%@ page import="com.tfnlab.mysql.Event" %>
+<%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -119,30 +121,30 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Products</li>
+          <li>Events</li>
         </ol>
-        <h2>Products</h2>
+        <h2>Events</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Products</h2>
+        <h2>Events</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <%
-                ProductDao productDao = new ProductDao();
+                EventDao eDao = new EventDao();
                 String username = (String) session.getAttribute("username");
 
-                List<Product> products = productDao.searchByCustomerId(username);
+                List<Event> events = eDao.getEventsByUsername(username);
                 %>
 
 
 
-              <% for (Product product : products) { %>
-                Product Name: <%= product.getName() %><br>
-                Order ID: <a href="product.edit.jsp?productId=<%= product.getId() %>" ><%= product.getId() %></a><br>
-                Order Date: <%= product.getDescription() %><br>
+              <% for (Event event : events) { %>
+                Event Name: <%= event.getTitle() %><br>
+                Event ID: <a href="product.edit.jsp?productId=<%= event.getId() %>" ><%= event.getId() %></a><br>
+                Event Date: <%= event.getDescription() %><br>
                 <hr>
               <% } %>
 
