@@ -197,7 +197,8 @@
                       entity.setLastModifiedBy(request.getParameter("lastModifiedBy"));
                       // parse lastModifiedDate as a Timestamp object
                       entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
-
+                      EntityDao ed = new EntityDao();
+                      ed.addEntity(ed);
                     %>
 
 
@@ -207,10 +208,6 @@
 
         %>
         <form>
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username" required>
-          </div>
           <div class="form-group">
             <label for="firstName">First Name</label>
             <input type="text" class="form-control" id="firstName" name="firstName" required>
