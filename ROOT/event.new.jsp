@@ -195,7 +195,7 @@
           </div>
           <div class="form-group">
             <label for="start_time">Start Time</label>
-            <input type="datetime-local" class="form-control" id="start_time" name="start_time" required>
+            <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker>
           </div>
           <div class="form-group">
             <label for="end_time">End Time</label>
