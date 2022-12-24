@@ -9,6 +9,7 @@
 <%@ page import="com.tfnlab.mysql.ProductDao" %>
 <%@ page import="com.tfnlab.mysql.Event" %>
 <%@ page import="com.tfnlab.mysql.EventDao" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -161,7 +162,6 @@
                   String description = request.getParameter("description");
                   String reminderTime = request.getParameter("reminder_time");
                   String invitees = request.getParameter("invitees");
-                  String username = request.getParameter("username");
                   String groupId = request.getParameter("group_id");
 
                   DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
