@@ -3,6 +3,11 @@
   String username = (String) session.getAttribute("username");
   UUID uuid = UUID.randomUUID();
   String strRes = "";
+  Template tmp = new Template();
+		tmp = tmp.createTestTemplate();
+  TemplateMgr mgr = new TemplateMgr();
+  tD.addTemplate(tmp);
+
   if(username!=null && username.length() >1 ){
     Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/hrn.py", request.getParameter("comType")).start();
     String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
