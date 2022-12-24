@@ -154,12 +154,32 @@
 
                 if (title != null && title.trim().length() > 0) {
                   int id = 0;
+                  String title = request.getParameter("title");
+                  String startTime = request.getParameter("start_time");
+                  String endTime = request.getParameter("end_time");
+                  String location = request.getParameter("location");
+                  String description = request.getParameter("description");
+                  String reminderTime = request.getParameter("reminder_time");
+                  String invitees = request.getParameter("invitees");
+                  String username = request.getParameter("username");
+                  String groupId = request.getParameter("group_id");
 
+                  DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+                  Date startTimeDate = dateFormat.parse(startTime);
+                  Date endTimeDate = dateFormat.parse(endTime);
+                  Date reminderTimeDate = null;
+                  if (reminderTime != null && !reminderTime.isEmpty()) {
+                    reminderTimeDate = dateFormat.parse(reminderTime);
+                  }
+
+                  Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId);
+                  EventDao evd = new EventDao();
+                  evd.addEvent(event);
                   // Create a new Product object
 
                   // Insert the Product object into the database
                 %>
-                <p>Product successfully added to the database.</p>
+                <p>Event successfully added to the database.</p>
                 <%
 
                 }else{
