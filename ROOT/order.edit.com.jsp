@@ -251,7 +251,7 @@
         <!-- ======= Contact Section ======= -->
 
         <form action="order.edit.com.print.jsp" method="POST" >
-          <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>" readonly><br>
+          <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
           <p>Order Description: <%= order.getOrderDescription() %></p><br>
           <label for="orderId">Touch Point</label><br>
           <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
