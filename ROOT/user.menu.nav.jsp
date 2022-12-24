@@ -11,5 +11,7 @@
         <a href="product.new.jsp">Product</a> |
         <a href="customer.list.jsp">Customers</a> |
         <a href="customer.new.jsp">Customer</a> |
+        <a href="event.list.jsp">Events</a> |
+        <a href="event.new.jsp">Event</a> |
         <a href="user.edit.jsp">User</a>
       </p>
