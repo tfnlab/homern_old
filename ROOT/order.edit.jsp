@@ -232,7 +232,7 @@
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
           <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
           <label for="orderDate">Order Date:</label><br>
-          <input class="form-control"  type="datetime-local" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd" value="<%= order.getOrderDate() %>"><br>
+          <input class="form-control"  type="datetime-local" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd" value="<%= order.getOrderDate() %>"><BR><%= order.getOrderDate() %><br>
           <label for="shipDate">Ship Date:</label><br>
           <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
           <label for="shippingAddress">Shipping Address:</label><br>
