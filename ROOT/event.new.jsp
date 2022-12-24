@@ -197,28 +197,11 @@
             <div class="input-group-append">
               <label for="start_time">Start Time</label>
               <input type="datetime-local" class="form-control" id="start_time" name="start_time" onclick="" required datepicker>
-              <button class="btn btn-secondary" type="button" id="start_time-button"><i class="fa fa-calendar"></i></button>
-            </div>
-          </div>
-
-                      <div class="form-group">
-                          <div class='input-group date' id='datetimepicker1'>
-                              <input type='text' class="form-control" />
-                              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                              </span>
-                          </div>
-                      </div>
-          <div class="form-group">
-            <div class="input-group">
-              <input type="text" class="form-control" id="datepicker">
-              <div class="input-group-append">
-                <button class="btn btn-secondary" type="button" id="datepicker-button"><i class="fa fa-calendar"></i></button>
-              </div>
             </div>
           </div>
           <div class="form-group">
             <label for="end_time">End Time</label>
-            <input type="datetime-local" class="form-control" id="end_time" name="end_time" required>
+            <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker>
           </div>
           <div class="form-group">
             <label for="location">Location</label>
@@ -230,7 +213,7 @@
           </div>
           <div class="form-group">
             <label for="reminder_time">Reminder Time</label>
-            <input type="datetime-local" class="form-control" id="reminder_time" name="reminder_time">
+            <input type="datetime-local" class="form-control" id="reminder_time" name="reminder_time" datepicker>
           </div>
           <div class="form-group">
             <label for="invitees">Invitees</label>
