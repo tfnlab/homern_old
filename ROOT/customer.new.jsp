@@ -157,7 +157,7 @@
                       Entity entity = new Entity();
                       entity = entity.generateSampleEntity();
 //                      entity.setId(Integer.parseInt(request.getParameter("id")));
-                      entity.setUsername(request.getParameter("username"));
+                      entity.setUsername(username);
                       entity.setFirstName(request.getParameter("firstName"));
                       entity.setLastName(request.getParameter("lastName"));
                       entity.setEmail(request.getParameter("email"));
