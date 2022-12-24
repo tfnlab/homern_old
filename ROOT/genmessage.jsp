@@ -1,4 +1,5 @@
-<%@ page language="java" import="com.tfnlab.mysql.User,com.tfnlab.mysql.TemplateDao,com.tfnlab.mysql.Template,java.util.UUID,java.lang.Thread,org.apache.commons.io.IOUtils,org.apache.commons.io.output.*,java.nio.charset.Charset,java.io.*,java.util.*,java.awt.image.BufferedImage,javax.imageio.ImageIO,java.io.OutputStream,java.io.FileInputStream,java.io.File"%><%
+<%@ page language="java" import="com.tfnlab.mysql.Order,com.tfnlab.mysql.OrderDao,com.tfnlab.mysql.User,com.tfnlab.mysql.TemplateDao,com.tfnlab.mysql.Template,java.util.UUID,java.lang.Thread,org.apache.commons.io.IOUtils,org.apache.commons.io.output.*,java.nio.charset.Charset,java.io.*,java.util.*,java.awt.image.BufferedImage,javax.imageio.ImageIO,java.io.OutputStream,java.io.FileInputStream,java.io.File"%><%
+
 
   String username = (String) session.getAttribute("username");
   UUID uuid = UUID.randomUUID();
@@ -7,11 +8,18 @@
 		tmp = tmp.createTestTemplate();
   //  tmp.setId(uuid);
   TemplateDao tD = new TemplateDao();
-
-      User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+  User usernameOBJ = (User) session.getAttribute("usernameOBJ");
 
   if(username!=null && username.length() >1 ){
-    String agm =   request.getParameter("comType") + " message for my "+ usernameOBJ.getBusiness_type() + " company";
+    int orderId = 0;
+    if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+      orderId = Integer.parseInt(request.getParameter("orderId"));
+    }
+    OrderDao dao = new OrderDao();
+    Order order = dao.getOrderByOrderId(orderId);
+
+    String agm =   request.getParameter("comType") + " message for my "+ usernameOBJ.getBusiness_type() + " company, the person sending the message is named  " + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + ", The project name is " + order.getOrderName();
+
     Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/hrn.py", agm).start();
     String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
     String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
