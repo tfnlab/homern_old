@@ -201,15 +201,15 @@
                         </div>
                         <div class="form-group">
                           <label for="startTime">Start Time</label>
-                          <input type="text" class="form-control" name="startTime" value="<%= event.getStartTime() %>">
+                          <input type="text" class="form-control" name="startTime" value="<%= event.getStartTime() %>" datepicker>
                         </div>
                         <div class="form-group">
                           <label for="endTime">End Time</label>
-                          <input type="text" class="form-control" name="endTime" value="<%= event.getEndTime() %>">
+                          <input type="text" class="form-control" name="endTime" value="<%= event.getEndTime() %>" datepicker>
                         </div>
                         <div class="form-group">
                           <label for="location">Location</label>
-                          <input type="text" class="form-control" name="location" value="<%= event.getLocation() %>">
+                          <input type="text" class="form-control" name="location" value="<%= event.getLocation() %>" >
                         </div>
                         <div class="form-group">
                           <label for="description">Description</label>
@@ -217,7 +217,7 @@
                         </div>
                         <div class="form-group">
                           <label for="reminderTime">Reminder Time</label>
-                          <input type="text" class="form-control" name="reminderTime" value="<%= event.getReminderTime() %>">
+                          <input type="text" class="form-control" name="reminderTime" value="<%= event.getReminderTime() %>" datepicker>
                         </div>
                         <div class="form-group">
                           <label for="invitees">Invitees</label>
@@ -333,9 +333,54 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
-    $(function() {
-      $("#startTime").datepicker();
-    });
+    <script>
+      $(function () {
+       var bindDatePicker = function() {
+    		$(".date").datetimepicker({
+            format:'YYYY-MM-DD',
+    			icons: {
+    				time: "fa fa-clock-o",
+    				date: "fa fa-calendar",
+    				up: "fa fa-arrow-up",
+    				down: "fa fa-arrow-down"
+    			}
+    		}).find('input:first').on("blur",function () {
+    			// check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
+    			// update the format if it's yyyy-mm-dd
+    			var date = parseDate($(this).val());
+
+    			if (! isValidDate(date)) {
+    				//create date based on momentjs (we have that)
+    				date = moment().format('YYYY-MM-DD');
+    			}
+
+    			$(this).val(date);
+    		});
+    	}
+
+       var isValidDate = function(value, format) {
+    		format = format || false;
+    		// lets parse the date to the best of our knowledge
+    		if (format) {
+    			value = parseDate(value);
+    		}
+
+    		var timestamp = Date.parse(value);
+
+    		return isNaN(timestamp) == false;
+       }
+
+       var parseDate = function(value) {
+    		var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
+    		if (m)
+    			value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
+
+    		return value;
+       }
+
+       bindDatePicker();
+     });
+    </script>
   </script>
 </body>
 
