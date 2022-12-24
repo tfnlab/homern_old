@@ -174,24 +174,25 @@
         <%@ include file="user.menu.nav.jsp" %>
         <hr>
           <select id="customer-touch-points">
-            <option value="greeting">Greeting</option>
-            <option value="interestletter">Interest letter</option>
-            <option value="proposal">Proposal</option>
-            <option value="invoicing">Invoicing</option>
-            <option value="thankyou">Thank you</option>
-            <option value="paymentrequest">Payment request</option>
-            <option value="latepaymentrequest">Late Payment request</option>
-            <option value="paymentconfirmation">Payment confirmation</option>
-            <option value="progressupdate">Progress update</option>
-            <option value="changeorderrequest">Change order request</option>
-            <option value="warrantyormaintenanceinformation">Warranty or maintenance information</option>
-            <option value="customersatisfactionsurvey">Customer satisfaction survey</option>
-            <option value="followup">Follow-up</option>
-            <option value="estimaterequest">Estimate request</option>
-            <option value="scheduling">Scheduling</option>
-            <option value="sitevisit">Site visit</option>
-            <option value="permitapplication">Permit application</option>
+            <option value="greeting" <%if(comType.equals("greeting")){%>selected<%}%> >Greeting</option>
+            <option value="interestletter" <%if(comType.equals("interestletter")){%>selected<%}%> >Interest letter</option>
+            <option value="proposal" <%if(comType.equals("proposal")){%>selected<%}%> >Proposal</option>
+            <option value="invoicing" <%if(comType.equals("invoicing")){%>selected<%}%> >Invoicing</option>
+            <option value="thankyou" <%if(comType.equals("thankyou")){%>selected<%}%> >Thank you</option>
+            <option value="paymentrequest" <%if(comType.equals("paymentrequest")){%>selected<%}%> >Payment request</option>
+            <option value="latepaymentrequest" <%if(comType.equals("latepaymentrequest")){%>selected<%}%> >Late Payment request</option>
+            <option value="paymentconfirmation" <%if(comType.equals("paymentconfirmation")){%>selected<%}%> >Payment confirmation</option>
+            <option value="progressupdate" <%if(comType.equals("progressupdate")){%>selected<%}%> >Progress update</option>
+            <option value="changeorderrequest" <%if(comType.equals("changeorderrequest")){%>selected<%}%> >Change order request</option>
+            <option value="warrantyormaintenanceinformation" <%if(comType.equals("warrantyormaintenanceinformation")){%>selected<%}%> >Warranty or maintenance information</option>
+            <option value="customersatisfactionsurvey" <%if(comType.equals("customersatisfactionsurvey")){%>selected<%}%> >Customer satisfaction survey</option>
+            <option value="followup" <%if(comType.equals("followup")){%>selected<%}%> >Follow-up</option>
+            <option value="estimaterequest" <%if(comType.equals("estimaterequest")){%>selected<%}%> >Estimate request</option>
+            <option value="scheduling" <%if(comType.equals("scheduling")){%>selected<%}%> >Scheduling</option>
+            <option value="sitevisit" <%if(comType.equals("sitevisit")){%>selected<%}%> >Site visit</option>
+            <option value="permitapplication" <%if(comType.equals("permitapplication")){%>selected<%}%> >Permit application</option>
           </select>
+
           <BR><BR>
           <button class="btn btn-primary" onclick="getCom()">Download</button>
         <hr>
