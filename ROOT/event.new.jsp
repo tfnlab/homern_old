@@ -208,7 +208,7 @@
                 <button class="btn btn-secondary" type="button" id="datepicker-button"><i class="fa fa-calendar"></i></button>
               </div>
             </div>
-          </div>            
+          </div>
           <div class="form-group">
             <label for="end_time">End Time</label>
             <input type="datetime-local" class="form-control" id="end_time" name="end_time" required>
@@ -356,7 +356,10 @@
 
   </script>
   <script>
-    $('#datepicker').datepicker();
+    $('.datepicker').datepicker({
+        format: 'mm/dd/yyyy',
+        startDate: '-3d'
+    });
     $('#datepicker-button').click(function() {
       $('#datepicker').datepicker('show');
     });
