@@ -160,6 +160,18 @@
                 if (title != null && title.trim().length() > 0) {
                   int id = 0;
                   String startTime = request.getParameter("start_time");
+                  String endTime = request.getParameter("end_time");
+                  String location = request.getParameter("location");
+                  String description = request.getParameter("description");
+                  String reminderTime = request.getParameter("reminder_time");
+                  String invitees = request.getParameter("invitees");
+                  String groupId = request.getParameter("group_id");
+
+//                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY, HH:MM AM");
+//                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy, HH:mm a");
+                  //SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy',' HH':'mm a");
+                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy, HH:mm a");
+
 
 
                   //evd.addEvent(event);
