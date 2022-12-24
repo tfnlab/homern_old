@@ -165,17 +165,42 @@
                 if (title != null && title.trim().length() > 0) {
 
                       event = event.generateTestEvent();
-//                      entity.setId(Integer.parseInt(request.getParameter("id")));
-                      event.setUsername(username);
-                      // parse createdDate as a Date object
-//                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
-                      // parse createdDate as a Date object
-                      //entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("createdDate")));
-                      //entity.setLastModifiedBy(request.getParameter("lastModifiedBy"));
-                      // parse lastModifiedDate as a Timestamp object
-                      //entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
-                      event.setId(eId);
-                      //ed.updateEntityById(event);
+                      String startTime = request.getParameter("start_time");
+                      String endTime = request.getParameter("end_time");
+                      String location = request.getParameter("location");
+                      String description = request.getParameter("description");
+                      String reminderTime = request.getParameter("reminder_time");
+                      String invitees = request.getParameter("invitees");
+                      String groupId = request.getParameter("group_id");
+
+                      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+                      Date startTimeDate = dateFormat.parse(startTime);
+                      Date endTimeDate = dateFormat.parse(endTime);
+                      Date reminderTimeDate = null;
+                      if (reminderTime != null && !reminderTime.isEmpty()) {
+                        reminderTimeDate = dateFormat.parse(reminderTime);
+                      }
+
+                      event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId);
+                      evd = new EventDao();
+                      String startTime = request.getParameter("start_time");
+                      String endTime = request.getParameter("end_time");
+                      String location = request.getParameter("location");
+                      String description = request.getParameter("description");
+                      String reminderTime = request.getParameter("reminder_time");
+                      String invitees = request.getParameter("invitees");
+                      String groupId = request.getParameter("group_id");
+
+                      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+                      Date startTimeDate = dateFormat.parse(startTime);
+                      Date endTimeDate = dateFormat.parse(endTime);
+                      Date reminderTimeDate = null;
+                      if (reminderTime != null && !reminderTime.isEmpty()) {
+                        reminderTimeDate = dateFormat.parse(reminderTime);
+                      }
+
+                      event = new Event(eId, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId);
+                      ed.updateEventById(event);
                     %>
 
 
