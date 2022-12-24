@@ -78,6 +78,7 @@
         xhttp.open("GET", urlString, true);
         xhttp.send();
     }
+
     function removeTrailingSpaces(str) {
             return str.replace(/\s+$/g, "");
     }
@@ -257,7 +258,7 @@
         %>
         <!-- ======= Contact Section ======= -->
 
-        <form action="order.edit.jsp" method="POST">
+        <form action="order.edit.jsp" method="POST" target="_blank">
           <label for="orderId">Order Name:</label><br>
           <input type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"><br>
           <label for="orderId">Order Description:</label><br>
