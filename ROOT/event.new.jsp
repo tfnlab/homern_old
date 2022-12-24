@@ -333,7 +333,7 @@
 
   <!-- Initialize the datepicker on the text input field -->
   <script>
-    $('#datepicker').datepicker({
+    $('#start_time').datepicker({
       format: 'mm/dd/yyyy',
       language: 'en',
       todayHighlight: true
