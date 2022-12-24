@@ -164,7 +164,7 @@
 
                 if (title != null && title.trim().length() > 0) {
 
-                      event = event.generateSampleEvent();
+                      event = event.generateTestEvent();
 //                      entity.setId(Integer.parseInt(request.getParameter("id")));
                       event.setUsername(username);
                       // parse createdDate as a Date object
