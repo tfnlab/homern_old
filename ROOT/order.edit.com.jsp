@@ -93,8 +93,12 @@
       var select = document.getElementById("customer-touch-points");
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
+      var select2 = document.getElementById("business-type");
+      var selectedOption2 = select.options[select2.selectedIndex];
+      var text2 = selectedOption2.text;
       const encodedString = encodeURIComponent(text);
-      var urlString = "genmessage.jsp?comType=" + encodedString ;
+      const encodedString2 = encodeURIComponent(text2);
+      var urlString = "genmessage.jsp?comType=" + encodedString + "&business-type=" + encodedString2;
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
@@ -178,6 +182,22 @@
       <div class="container px-4 px-lg-5">
         <h2>Order - Customer Touch Points </h2>
         <%@ include file="user.menu.nav.jsp" %>
+        <HR>
+          <div class="form-group">
+            <label for="business-type">Select a type of business:</label>
+            <select class="form-control" id="business-type" name="business-type">
+              <option value="general-contractor">General contractor</option>
+              <option value="carpenter">Carpenter</option>
+              <option value="plumber">Plumber</option>
+              <option value="electrician">Electrician</option>
+              <option value="hvac-technician">HVAC technician</option>
+              <option value="landscaper">Landscaper</option>
+              <option value="roofing-contractor">Roofing contractor</option>
+              <option value="painter">Painter</option>
+              <option value="flooring-contractor">Flooring contractor</option>
+            </select>
+          </div>
+
         <hr>
           <select id="customer-touch-points" name="customer-touch-points">
             <option value="greeting" <%if(comType.equals("greeting")){%>selected<%}%> >Greeting</option>
