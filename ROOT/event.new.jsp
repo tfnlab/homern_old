@@ -172,6 +172,12 @@
                   //SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy',' HH':'mm a");
                   SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy, HH:mm a");
 
+                  Date startTimeDate = dateFormat.parse(startTime);
+                  Date endTimeDate = dateFormat.parse(endTime);
+                  Date reminderTimeDate = null;
+                  if (reminderTime != null && !reminderTime.isEmpty()) {
+                    reminderTimeDate = dateFormat.parse(reminderTime);
+                  }
 
 
                   //evd.addEvent(event);
