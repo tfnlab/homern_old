@@ -197,6 +197,8 @@
               <option value="painter">Painter</option>
               <option value="flooring-contractor">Flooring contractor</option>
             </select>
+
+              <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderName() %></a><br>
           </div>
 
         <hr>
@@ -259,8 +261,6 @@
         <!-- ======= Contact Section ======= -->
 
         <form action="order.edit.com.print.jsp" method="POST" >
-          <label for="orderId">Order Name:</label><br>
-          <input type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"><br>
           <label for="orderId">Order Description:</label><br>
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
           <label for="orderId">Touch Point</label><br>
