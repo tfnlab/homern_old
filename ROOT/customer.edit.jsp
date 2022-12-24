@@ -232,7 +232,7 @@
                       //entity.setLastModifiedBy(request.getParameter("lastModifiedBy"));
                       // parse lastModifiedDate as a Timestamp object
                       //entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
-                      entity.setId(eId)
+                      entity.setId(eId);
                       ed.updateEntityById(entity);
                     %>
 
