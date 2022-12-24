@@ -217,8 +217,8 @@
         <HR>
 
                     <div class="form-group">
-                      Order Name:
-                        <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderName() %></a><br>
+                      Order:
+                        <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                     </div>
         <HR>
             <div class="form-group">
@@ -251,7 +251,6 @@
         <!-- ======= Contact Section ======= -->
 
         <form action="order.edit.com.print.jsp" method="POST" >
-          <label for="orderId">Order ID:</label><br>
           <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>" readonly><br>
           <p>Order Description: <%= order.getOrderDescription() %></p><br>
           <label for="orderId">Touch Point</label><br>
