@@ -155,8 +155,8 @@
                 String username = (String) session.getAttribute("username");
                 String title = request.getParameter("title");
                 int eId = 0;
-                if (request.getParameter("eId") != null && !request.getParameter("eId").isEmpty()) {
-                  eId = Integer.parseInt(request.getParameter("eId"));
+                if (request.getParameter("eventid") != null && !request.getParameter("eventid").isEmpty()) {
+                  eId = Integer.parseInt(request.getParameter("eventid"));
                 }
                 // Validate form data
                 Event event = new Event();

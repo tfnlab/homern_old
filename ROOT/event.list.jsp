@@ -143,7 +143,7 @@
 
               <% for (Event event : events) { %>
                 Event Name: <%= event.getTitle() %><br>
-                Event ID: <a href="event.edit.jsp?productId=<%= event.getId() %>" ><%= event.getId() %></a><br>
+                Event ID: <a href="event.edit.jsp?eventid=<%= event.getId() %>" ><%= event.getId() %></a><br>
                 Event Date: <%= event.getDescription() %><br>
                 <hr>
               <% } %>
