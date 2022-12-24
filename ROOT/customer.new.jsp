@@ -219,39 +219,39 @@
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+            <input type="email" class="form-control" id="email" name="email" >
           </div>
           <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="tel" class="form-control" id="phone" name="phone" required>
+            <input type="tel" class="form-control" id="phone" name="phone" >
           </div>
           <div class="form-group">
             <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" name="address" required>
+            <input type="text" class="form-control" id="address" name="address" >
           </div>
           <div class="form-group">
             <label for="city">City</label>
-            <input type="text" class="form-control" id="city" name="city" required>
+            <input type="text" class="form-control" id="city" name="city" >
           </div>
           <div class="form-group">
             <label for="state">State</label>
-            <input type="text" class="form-control" id="state" name="state" required>
+            <input type="text" class="form-control" id="state" name="state" >
           </div>
           <div class="form-group">
             <label for="zipcode">Zipcode</label>
-            <input type="text" class="form-control" id="zipcode" name="zipcode" required>
+            <input type="text" class="form-control" id="zipcode" name="zipcode" >
           </div>
           <div class="form-group">
             <label for="country">Country</label>
-            <input type="text" class="form-control" id="country" name="country" required>
+            <input type="text" class="form-control" id="country" name="country" >
           </div>
           <div class="form-group">
             <label for="birthday">Birthday</label>
-            <input type="date" class="form-control" id="birthday" name="birthday" required>
+            <input type="date" class="form-control" id="birthday" name="birthday" >
           </div>
           <div class="form-group">
             <label for="gender">Gender</label>
-            <select class="form-control" id="gender" name="gender" required>
+            <select class="form-control" id="gender" name="gender" >
               <option value="">Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -260,7 +260,7 @@
           </div>
             <div class="form-group">
               <label for="maritalStatus">Marital Status</label>
-              <select class="form-control" id="maritalStatus" name="maritalStatus" required>
+              <select class="form-control" id="maritalStatus" name="maritalStatus" >
                 <option value="">Select</option>
                 <option value="single">Single</option>
                 <option value="married">Married</option>
@@ -270,15 +270,15 @@
             </div>
             <div class="form-group">
               <label for="nationality">Nationality</label>
-              <input type="text" class="form-control" id="nationality" name="nationality" required>
+              <input type="text" class="form-control" id="nationality" name="nationality" >
             </div>
             <div class="form-group">
               <label for="occupation">Occupation</label>
-              <input type="text" class="form-control" id="occupation" name="occupation" required>
+              <input type="text" class="form-control" id="occupation" name="occupation" >
             </div>
             <div class="form-group">
               <label for="incomeRange">Income Range</label>
-              <select class="form-control" id="incomeRange" name="incomeRange" required>
+              <select class="form-control" id="incomeRange" name="incomeRange" >
                 <option value="">Select</option>
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
@@ -287,59 +287,59 @@
             </div>
             <div class="form-group">
               <label for="educationLevel">Education Level</label>
-              <input type="text" class="form-control" id="educationLevel" name="educationLevel" required>
+              <input type="text" class="form-control" id="educationLevel" name="educationLevel" >
             </div>
             <div class="form-group">
               <label for="preferences">Preferences</label>
-              <input type="text" class="form-control" id="preferences" name="preferences" required>
+              <input type="text" class="form-control" id="preferences" name="preferences" >
             </div>
             <div class="form-group">
               <label for="interests">Interests</label>
-              <input type="text" class="form-control" id="interests" name="interests" required>
+              <input type="text" class="form-control" id="interests" name="interests" >
             </div>
             <div class="form-group">
               <label for="emergencyContactName">Emergency Contact Name</label>
-              <input type="text" class="form-control" id="emergencyContactName" name="emergencyContactName" required>
+              <input type="text" class="form-control" id="emergencyContactName" name="emergencyContactName" >
             </div>
             <div class="form-group">
               <label for="emergencyContactRelationship">Emergency Contact Relationship</label>
-              <input type="text" class="form-control" id="emergencyContactRelationship" name="emergencyContactRelationship" required>
+              <input type="text" class="form-control" id="emergencyContactRelationship" name="emergencyContactRelationship" >
             </div>
             <div class="form-group">
               <label for="emergencyContactPhone">Emergency Contact Phone</label>
-              <input type="tel" class="form-control" id="emergencyContactPhone" name="emergencyContactPhone" required>
+              <input type="tel" class="form-control" id="emergencyContactPhone" name="emergencyContactPhone" >
             </div>
               <div class="form-group">
                 <label for="referralSource">Referral Source</label>
-                <input type="text" class="form-control" id="referralSource" name="referralSource" required>
+                <input type="text" class="form-control" id="referralSource" name="referralSource" >
               </div>
               <div class="form-group">
                 <label for="loyaltyProgram">Loyalty Program</label>
-                <input type="text" class="form-control" id="loyaltyProgram" name="loyaltyProgram" required>
+                <input type="text" class="form-control" id="loyaltyProgram" name="loyaltyProgram" >
               </div>
               <div class="form-group">
                 <label for="loyaltyPoints">Loyalty Points</label>
-                <input type="number" class="form-control" id="loyaltyPoints" name="loyaltyPoints" required>
+                <input type="number" class="form-control" id="loyaltyPoints" name="loyaltyPoints" >
               </div>
               <div class="form-group">
                 <label for="facebookUsername">Facebook Username</label>
-                <input type="text" class="form-control" id="facebookUsername" name="facebookUsername" required>
+                <input type="text" class="form-control" id="facebookUsername" name="facebookUsername" >
               </div>
               <div class="form-group">
                 <label for="twitterHandle">Twitter Handle</label>
-                <input type="text" class="form-control" id="twitterHandle" name="twitterHandle" required>
+                <input type="text" class="form-control" id="twitterHandle" name="twitterHandle" >
               </div>
               <div class="form-group">
                 <label for="instagramUsername">Instagram Username</label>
-                <input type="text" class="form-control" id="instagramUsername" name="instagramUsername" required>
+                <input type="text" class="form-control" id="instagramUsername" name="instagramUsername" >
               </div>
               <div class="form-group">
                 <label for="linkedinUrl">LinkedIn URL</label>
-                <input type="text" class="form-control" id="linkedinUrl" name="linkedinUrl" required>
+                <input type="text" class="form-control" id="linkedinUrl" name="linkedinUrl" >
               </div>
               <div class="form-group">
                 <label for="youtubeChannel">YouTube Channel</label>
-                <input type="text" class="form-control" id="youtubeChannel" name="youtubeChannel" required>
+                <input type="text" class="form-control" id="youtubeChannel" name="youtubeChannel" >
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
