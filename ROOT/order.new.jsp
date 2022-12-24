@@ -153,7 +153,6 @@
                 String username = (String) session.getAttribute("username");
 
 
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
 
                 String shippingAddress = request.getParameter("shippingAddress");
                 String billingAddress = request.getParameter("billingAddress");
@@ -182,9 +181,10 @@
                       Timestamp deletedAt = currentTime;
                       Date orderDate = new Date();
                       Date shippingDate = new Date();
+                      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                         try{
                            orderDate = dateFormat.parse(request.getParameter("orderDate"));
-                           shippingDate = dateFormat.parse(request.getParameter("shippingDate"));
+                           shippingDate = dateFormat.parse(request.getParameter("shipDate"));
                         } catch (Exception e) {
                           %><%="Error parsing date and time string: " + e.getMessage()%><%
                       }
