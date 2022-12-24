@@ -249,7 +249,7 @@
            </div>
            <%
            String businessType = user.getBusiness_type();
-           if (businessType == null && businessType.isEmpty()) {
+           if (businessType == null || businessType.isEmpty()) {
              businessType = "general-contractor";
            }
            %>
