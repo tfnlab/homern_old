@@ -163,7 +163,7 @@
                   String invitees = request.getParameter("invitees");
                   String groupId = request.getParameter("group_id");
 
-                  DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+                  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                   Date startTimeDate = dateFormat.parse(startTime);
                   Date endTimeDate = dateFormat.parse(endTime);
                   Date reminderTimeDate = null;
