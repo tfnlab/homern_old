@@ -169,11 +169,11 @@
                   String reminderTime = "01/06/2023, 11:16 AM";
                   String invitees = request.getParameter("invitees");
                   String groupId = request.getParameter("group_id");
-
+                  //2022-12-30T17:35
 //                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY, HH:MM AM");
 //                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy, HH:mm a");
                   //SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy',' HH':'mm a");
-                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy, HH:mm a");
+                  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                   Date startTimeDate = null;
                   Date endTimeDate = null;
                   Date reminderTimeDate = null;
