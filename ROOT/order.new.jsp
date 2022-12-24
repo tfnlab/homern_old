@@ -7,6 +7,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -151,8 +152,9 @@
 
                 String username = (String) session.getAttribute("username");
 
-                Date orderDate = new Date();
-                Date shippingDate = new Date();
+
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+
                 String shippingAddress = request.getParameter("shippingAddress");
                 String billingAddress = request.getParameter("billingAddress");
                 String paymentMethod = request.getParameter("paymentMethod");
@@ -162,6 +164,15 @@
                 String shippingAddressaclng = request.getParameter("shippingAddressaclng");
                 String billingAddressaclat = request.getParameter("billingAddressaclat");
                 String billingAddressaclng = request.getParameter("billingAddressaclng");
+
+                Date orderDate = new Date();
+                Date shippingDate = new Date();
+                  try{
+                     orderDate = dateFormat.parse(request.getParameter("orderDate"));
+                     shippingDate = dateFormat.parse(request.getParameter("shippingDate"));
+                  } catch (Exception e) {
+                    %><%="Error parsing date and time string: " + e.getMessage()%><%
+                }
 
                 // Validate form data
                 if (shippingAddress != null && shippingAddress.trim().length() > 0) {
