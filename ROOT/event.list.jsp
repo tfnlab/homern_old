@@ -133,7 +133,8 @@
         <h2>Events</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <BR>
-        <a href="event.list.jsp?sortBy=eventDate">Most Recent</a>
+        <a href="event.list.jsp?sortBy=eventDate">Most Recent</a>|
+        <a href="event.list.jsp?sortBy=eventDate">Most Recent Desc</a>
         <BR>
 
         <%
@@ -141,8 +142,13 @@
                 String username = (String) session.getAttribute("username");
 
                 List<Event> events = null;
-                if(request.getParameter("eventDate")!=null){
-                  events = eDao.getEventsByUsername(username, 1);
+                if(request.getParameter("sortBy")!=null){
+                  if(request.getParameter("sortBy").equals("eventDate")){
+                    events = eDao.getEventsByUsername(username, 1);
+                  }
+                  if(request.getParameter("sortBy").equals("eventDateDESC")){
+                    events = eDao.getEventsByUsername(username, 2);
+                  }
                 }else{
                   events = eDao.getEventsByUsername(username, 0);
                 }
