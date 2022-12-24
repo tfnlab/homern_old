@@ -196,7 +196,7 @@
                       entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("createdDate")));
                       //entity.setLastModifiedBy(request.getParameter("lastModifiedBy"));
                       // parse lastModifiedDate as a Timestamp object
-                      entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
+                      //entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
                       EntityDao ed = new EntityDao();
                       ed.addEntity(entity);
                     %>
