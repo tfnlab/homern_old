@@ -171,15 +171,14 @@
 //                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy, HH:mm a");
                   //SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy',' HH':'mm a");
                   SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy, HH:mm a");
-                    try{
-                  Date startTimeDate = dateFormat.parse(startTime);
-                  Date endTimeDate = dateFormat.parse(endTime);
+                  Date startTimeDate = null;
+                  Date endTimeDate = null;
                   Date reminderTimeDate = null;
-                  if (reminderTime != null && !reminderTime.isEmpty()) {
-                    reminderTimeDate = dateFormat.parse(reminderTime);
-                  }
+                    try{
+                       startTimeDate = dateFormat.parse(startTime);
+                       endTimeDate = dateFormat.parse(endTime);
+                       reminderTimeDate = dateFormat.parse(reminderTime);
                     } catch (Exception e) {
-            		      // Print an error message if the parsing fails
             		      System.out.println("Error parsing date and time string: " + e.getMessage());
             		    }
                   Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId);
