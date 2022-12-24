@@ -209,7 +209,6 @@
                       }
                       Date orderDate = new Date();
                       Date shippingDate = new Date();
-                      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                         try{
                            orderDate = dateFormat.parse(request.getParameter("orderDate"));
                            shippingDate = dateFormat.parse(request.getParameter("shipDate"));
@@ -238,8 +237,6 @@
           <label for="orderId">Order Description:</label><br>
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
           <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
-          TEST <%= order.getOrderDate() %><br>
-
           <div class="form-group">
             <label for="endTime">Order Date:</label>
             <input type="datetime-local" class="form-control" name="orderDate" value="<%= order.getOrderDate() %>" datepicker >
