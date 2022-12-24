@@ -213,13 +213,7 @@
            <div class="form-group">
              <ul id="addressac" name="addressac"></ul>
            </div>
-           <%
-           String address = usernameOBJ.getAddress();
-           if (address != null && !address.isEmpty()) {
-
-
-
-           <%}%>
+           
 
            <div class="form-group">
               <label for="city">City</label>
