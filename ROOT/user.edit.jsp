@@ -214,7 +214,8 @@
              <ul id="addressac" name="addressac"></ul>
            </div>
            <%
-           if(usernameOBJ.getAddress()!=null ){
+           String address = usernameOBJ.getAddress();
+           if (address != null && !address.isEmpty()) {
 
              String uAddSpc = usernameOBJ.getAddress().replace(" ", "-");
              String uAddPls = usernameOBJ.getAddress().replace(" ", "+");
