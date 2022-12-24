@@ -213,7 +213,27 @@
            <div class="form-group">
              <ul id="addressac" name="addressac"></ul>
            </div>
-           
+           <%
+           String address = usernameOBJ.getAddress();
+           if (address != null && !address.isEmpty()) {
+
+             String uAddSpc = usernameOBJ.getAddress().replace(" ", "-");
+             String uAddPls = usernameOBJ.getAddress().replace(" ", "+");
+             String uAddEnc = URLDecoder.decode(usernameOBJ.getAddress(), "UTF-8");
+                   %>
+             <div class="form-group">
+               <hr>
+               <a href="https://www.google.com/maps/search/?api=1&query=<%=uAddEnc%>">Google</a> |
+               <a href="https://maps.apple.com/?address=<%=uAddEnc%>">Apple</a> |
+               <a href="https://www.waze.com/en/directions?navigate=yes&latlng=<%=usernameOBJ.getAddresslat()%>,<%=usernameOBJ.getAddresslng()%>">Waze</a> |
+               <a href="https://wego.here.com/directions/mix//<%=uAddSpc%>:e-eyJuYW1lIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJhZGRyZXNzIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJsYXRpdHVkZSI6MzQuMTgzNjYyLCJsb25naXR1ZGUiOi0xMTguMzI2MTAyfQ==?map=<%=usernameOBJ.getAddresslat()%>,<%=usernameOBJ.getAddresslng()%>,15,normal">HERE</a> |
+               <a href="https://www.bing.com/maps?osid=a8d44b60-4f0c-4e4a-b9c7-3a3b3f597628&cp=<%=usernameOBJ.getAddresslat()%>~<%=usernameOBJ.getAddresslng()%>&lvl=15&style=r">Bing</a> |
+               <a href="https://www.openstreetmap.org/search?query=<%=uAddEnc%>"#map=15/<%=usernameOBJ.getAddresslat()%>/<%=usernameOBJ.getAddresslng()%>">OSM</a> |
+               <a href="https://www.tomtom.com/en_gb/maps/maps/point?lat=<%=usernameOBJ.getAddresslat()%>&lon=<%=usernameOBJ.getAddresslng()%>">TomTom</a>
+               <hr>
+             </div>
+
+           <%}%>
 
            <div class="form-group">
               <label for="city">City</label>
@@ -230,20 +250,6 @@
            <%
            String businessType = user.getBusiness_type();
            %>
-           <div class="form-group">
-             <label for="business-type">Select a type of business:</label>
-             <select class="form-control" id="business-type" name="business-type">
-               <option value="general-contractor" <% if (businessType.equals("general-contractor")) { %>selected<% } %>>General contractor</option>
-               <option value="carpenter" <% if (businessType.equals("carpenter")) { %>selected<% } %>>Carpenter</option>
-               <option value="plumber" <% if (businessType.equals("plumber")) { %>selected<% } %>>Plumber</option>
-               <option value="electrician" <% if (businessType.equals("electrician")) { %>selected<% } %>>Electrician</option>
-               <option value="hvac-technician" <% if (businessType.equals("hvac-technician")) { %>selected<% } %>>HVAC technician</option>
-               <option value="landscaper" <% if (businessType.equals("landscaper")) { %>selected<% } %>>Landscaper</option>
-               <option value="roofing-contractor" <% if (businessType.equals("roofing-contractor")) { %>selected<% } %>>Roofing contractor</option>
-               <option value="painter" <% if (businessType.equals("painter")) { %>selected<% } %>>Painter</option>
-               <option value="flooring-contractor" <% if (businessType.equals("flooring-contractor")) { %>selected<% } %>>Flooring contractor</option>
-             </select>
-           </div>
            <button type="submit" class="btn btn-primary">Submit</button>
            </form>
 
