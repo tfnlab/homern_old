@@ -182,7 +182,7 @@
                         Event Saved
                       <%
                 }
-                  event = ed.getEntityById(eId);
+                  event = ed.getEventById(eId);
         %>
                     <form action="event.edit.jsp" method="post">
                       <div class="form-group">
