@@ -165,14 +165,7 @@
                 String billingAddressaclat = request.getParameter("billingAddressaclat");
                 String billingAddressaclng = request.getParameter("billingAddressaclng");
 
-                Date orderDate = new Date();
-                Date shippingDate = new Date();
-                  try{
-                     orderDate = dateFormat.parse(request.getParameter("orderDate"));
-                     shippingDate = dateFormat.parse(request.getParameter("shippingDate"));
-                  } catch (Exception e) {
-                    %><%="Error parsing date and time string: " + e.getMessage()%><%
-                }
+
 
                 // Validate form data
                 if (shippingAddress != null && shippingAddress.trim().length() > 0) {
@@ -187,7 +180,14 @@
                       Timestamp createdAt = currentTime;
                       Timestamp updatedAt = currentTime;
                       Timestamp deletedAt = currentTime;
-
+                      Date orderDate = new Date();
+                      Date shippingDate = new Date();
+                        try{
+                           orderDate = dateFormat.parse(request.getParameter("orderDate"));
+                           shippingDate = dateFormat.parse(request.getParameter("shippingDate"));
+                        } catch (Exception e) {
+                          %><%="Error parsing date and time string: " + e.getMessage()%><%
+                      }
                       Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng);
                       OrderDao dao = new OrderDao();
                       dao.insertOrder(order);
