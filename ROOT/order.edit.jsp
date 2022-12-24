@@ -293,7 +293,7 @@
           <input type="submit" value="Submit">
           <div class="form-group">
   <label for="datepicker">Date</label>
-  <input type="text" class="form-control datepicker" id="datepicker">
+  <input type="datetime-local" class="form-control datepicker" id="datepicker">
 </div>
         </form>
 
