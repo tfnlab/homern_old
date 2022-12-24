@@ -159,11 +159,14 @@
 
                 if (title != null && title.trim().length() > 0) {
                   int id = 0;
-                  String startTime = request.getParameter("start_time");
-                  String endTime = request.getParameter("end_time");
+//                  String startTime = request.getParameter("start_time");
+                  String startTime = "01/06/2023, 11:16 AM";
+//                  String endTime = request.getParameter("end_time");
+                  String endTime = "01/06/2023, 11:16 AM";
                   String location = request.getParameter("location");
                   String description = request.getParameter("description");
-                  String reminderTime = request.getParameter("reminder_time");
+//                  String reminderTime = request.getParameter("reminder_time");
+                  String reminderTime = "01/06/2023, 11:16 AM";
                   String invitees = request.getParameter("invitees");
                   String groupId = request.getParameter("group_id");
 
