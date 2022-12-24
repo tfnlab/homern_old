@@ -179,7 +179,7 @@
             <option value="permitapplication">Permit application</option>
           </select>
             <HR>
-          <button class="btn btn-primary" onclick="getCom()">Download</button>
+          <button class="btn btn-primary" onclick="getCom()">Correspondence</button>
         <hr>
 
         <%

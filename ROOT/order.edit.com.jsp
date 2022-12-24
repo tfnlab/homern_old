@@ -217,6 +217,7 @@
         <HR>
 
                     <div class="form-group">
+                      Order Name:
                         <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderName() %></a><br>
                     </div>
         <HR>
@@ -252,80 +253,9 @@
         <form action="order.edit.com.print.jsp" method="POST" >
 
           <p>Order Description: <%= order.getOrderDescription() %></p><br>
-
           <label for="orderId">Touch Point</label><br>
           <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
-
-          <label for="orderId">Order ID:</label><br>
-          <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>"><br>
-          <label for="username">Username:</label><br>
-          <input type="text" id="username" name="username" value="<%= order.getUsername() %>"><br>
-          <label for="orderDate">Order Date:</label><br>
-          <input type="text" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd" value="<%= order.getOrderDate() %>"><br>
-          <label for="shipDate">Ship Date:</label><br>
-          <input type="text" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
-          <label for="shippingAddress">Shipping Address:</label><br>
-          <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" value="<%= order.getShippingAddress() %>" onkeypress="callAC(this)"><br>
-          <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" value="<%= order.getShippingAddresslat() %>">
-          <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" value="<%= order.getShippingAddresslng() %>">
-          <ul id="shippingAddressac" name="shippingAddressac"></ul>
-          <hr>
-            <%
-              String uAddPls = usernameOBJ.getAddress().replace(" ", "+");
-            if(usernameOBJ!=null && usernameOBJ.getAddress() !=null){
-              String sAddSpcS = order.getShippingAddress().replace(" ", "-");
-              String sAddPlsS = order.getShippingAddress().replace(" ", "+");
-              String sAddEncS = URLDecoder.decode(order.getShippingAddress(), "UTF-8");
-
-              String uAddEnc = URLDecoder.decode(usernameOBJ.getAddress(), "UTF-8");
-                    %>
-                    <a href="https://www.google.com/maps/search/?api=1&query=<%=sAddEncS%>">Google</a> |
-                    <a href="https://maps.apple.com/?address=<%=sAddEncS%>">Apple</a> |
-                    <a href="https://www.waze.com/en/directions?navigate=yes&latlng=<%=order.getShippingAddresslat()%>,<%=order.getShippingAddresslng()%>">Waze</a> |
-                    <a href="https://wego.here.com/directions/mix//<%=sAddSpcS%>:e-eyJuYW1lIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJhZGRyZXNzIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJsYXRpdHVkZSI6MzQuMTgzNjYyLCJsb25naXR1ZGUiOi0xMTguMzI2MTAyfQ==?map=<%=order.getShippingAddresslat()%>,<%=order.getShippingAddresslng()%>,15,normal">HERE</a> |
-                    <a href="https://www.bing.com/maps?osid=a8d44b60-4f0c-4e4a-b9c7-3a3b3f597628&cp=<%=order.getShippingAddresslat()%>~<%=order.getShippingAddresslng()%>&lvl=15&style=r">Bing</a> |
-                    <a href="https://www.openstreetmap.org/search?query=<%=sAddEncS%>"#map=15/<%=order.getShippingAddresslat()%>/<%=order.getShippingAddresslng()%>">OSM</a> |
-                    <a href="https://www.tomtom.com/en_gb/maps/maps/point?lat=<%=order.getShippingAddresslat()%>&lon=<%=order.getShippingAddresslng()%>">TomTom</a>
-                    <hr>
-                    <a href="https://www.google.com/maps/dir/?api=1&origin=<%=uAddPls%>&destination=<%=sAddPlsS%>">Get directions</a>
-              <%
-                  }
-              %>
-
-          <hr>
-
-          <label for="billingAddress">Billing Address:</label><br>
-          <input class="form-control" type="text" id="billingAddress" name="billingAddress" value="<%= order.getBillingAddress() %>" onkeypress="callAC(this)"><br>
-          <input type="hidden" id="billingAddressaclat" name="billingAddressaclat" value="<%= order.getBillingAddresslat() %>">
-          <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" value="<%= order.getBillingAddresslng() %>">
-          <ul id="billingAddressac" name="billingAddressac"></ul>
-          <hr>
-            <%
-              String sAddPls = order.getBillingAddress().replace(" ", "+");
-              String sAddSpc = order.getBillingAddress().replace(" ", "-");
-              String sAddEnc = URLDecoder.decode(order.getBillingAddress(), "UTF-8");
-            %>
-            <a href="https://www.google.com/maps/search/?api=1&query=<%=sAddEnc%>">Google</a> |
-            <a href="https://maps.apple.com/?address=<%=sAddEnc%>">Apple</a> |
-            <a href="https://www.waze.com/en/directions?navigate=yes&latlng=<%=order.getBillingAddresslat()%>,<%=order.getBillingAddresslng()%>">Waze</a> |
-            <a href="https://wego.here.com/directions/mix//<%=sAddSpc%>:e-eyJuYW1lIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJhZGRyZXNzIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJsYXRpdHVkZSI6MzQuMTgzNjYyLCJsb25naXR1ZGUiOi0xMTguMzI2MTAyfQ==?map=34.18366,-118.3261,15,normal">HERE</a> |
-            <a href="https://www.bing.com/maps?osid=a8d44b60-4f0c-4e4a-b9c7-3a3b3f597628&cp=<%=order.getBillingAddresslat()%>~<%=order.getBillingAddresslng()%>&lvl=15&style=r">Bing</a> |
-            <a href="https://www.openstreetmap.org/search?query=<%=sAddEnc%>"#map=15/<%=order.getBillingAddresslat()%>/<%=order.getBillingAddresslng()%>">OSM</a> |
-            <a href="https://www.tomtom.com/en_gb/maps/maps/point?lat=<%=order.getBillingAddresslat()%>&lon=<%=order.getBillingAddresslng()%>">TomTom</a>
-            <hr>
-            <a href="https://www.google.com/maps/dir/?api=1&origin=<%=uAddPls%>&destination=<%=sAddPls%>">Get directions</a>
-          <hr>
-          <label for="paymentMethod">Payment Method:</label><br>
-          <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"><br>
-          <label for="orderTotal">Order Total:</label><br>
-          <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"><br>
-          <label for="timestamp">Timestamp:</label><br>
-          <input type="text" id="timestamp" name="timestamp" value="<%= order.getTimestamp() %>"><br>
-          <label for="ts">TS:</label><br>
-          <input type="text" id="ts" name="ts" value="<%= order.getTs() %>"><br>
-          <label for="lastModified">Last Modified:</label><br>
-          <input type="text" id="lastModified" name="lastModified" value="<%= order.getLastModified() %>"><br><br>
-          <input type="submit" value="Submit">
+          <input type="submit" value="Download">
         </form>
 
       </div>
