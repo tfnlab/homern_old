@@ -9,7 +9,7 @@
   TemplateDao tD = new TemplateDao();
 
   if(username!=null && username.length() >1 ){
-    String agm =   request.getParameter("comType") + " for "+ request.getParameter("business-type") + " type of business";
+    String agm =   request.getParameter("comType") + " message for my "+ request.getParameter("business-type") + " company";
     Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/hrn.py", agm).start();
     String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
     String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
