@@ -178,7 +178,7 @@
             <option value="sitevisit">Site visit</option>
             <option value="permitapplication">Permit application</option>
           </select>
-          <BR><BR>
+            <HR>
           <button class="btn btn-primary" onclick="getCom()">Download</button>
         <hr>
 

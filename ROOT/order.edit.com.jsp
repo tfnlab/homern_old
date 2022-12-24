@@ -198,10 +198,9 @@
             <option value="permitapplication" <%if(comType.equals("permitapplication")){%>selected<%}%> >Permit application</option>
           </select>
 
-          <BR><BR>
-          <button class="btn btn-primary" onclick="getCom()">Download</button>
-        <hr>
-
+          <HR>
+          <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
+          <HR>
         <%
 
                 String shippingAddress = request.getParameter("shippingAddress");
@@ -244,9 +243,7 @@
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
           <label for="orderId">Touch Point</label><br>
           <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
-          <HR>
-          <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
-          <HR>
+
           <label for="orderId">Order ID:</label><br>
           <input type="text" id="orderId" name="orderId" value="<%= order.getOrderId() %>"><br>
           <label for="username">Username:</label><br>
