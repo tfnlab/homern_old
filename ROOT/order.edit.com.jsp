@@ -95,7 +95,6 @@
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
       const encodedString = encodeURIComponent(text);
-      const encodedString2 = encodeURIComponent(text2);
       var urlString = "genmessage.jsp?comType=" + encodedString ;
       xhttp.open("GET", urlString, true);
       xhttp.send();
