@@ -17,6 +17,7 @@
     tmp.setMessage(strRes);
     tmp.setSubject(request.getParameter("comType"));
     tmp.setUsername(username);
+    tmp.setActive(false);
     tD.addTemplate(tmp);
   }
  %><%= strRes  + " \n  UUID " + uuid %>
