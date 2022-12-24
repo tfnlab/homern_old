@@ -20,5 +20,5 @@ if (request.getParameter("orderId") != null && !request.getParameter("orderId").
   Order order = dao.getOrderByOrderId(orderId);
   create_PDF cpdf = new create_PDF();
 
-  cpdf.createPD(uuid + ".pdf", order, request.getParameter("orderCom"))
+  cpdf.createPD(uuid + ".pdf", order, request.getParameter("orderCom"));
 %>DONE
