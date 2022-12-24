@@ -171,7 +171,7 @@
                       String description = request.getParameter("description");
                       String reminderTime = request.getParameter("reminderTime");
                       String invitees = request.getParameter("invitees");
-                      String groupId = request.getParameter("group_id");
+                      String groupId = request.getParameter("groupId");
 
                       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                       Date startTimeDate = dateFormat.parse(startTime);
