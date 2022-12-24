@@ -7,8 +7,8 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
-<%@ page import="com.tfnlab.mysql.Customer" %>
-<%@ page import="com.tfnlab.mysql.CustomerDao" %>
+<%@ page import="com.tfnlab.mysql.Entity" %>
+<%@ page import="com.tfnlab.mysql.EntityDao" %>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -132,7 +132,7 @@
         <%@ include file="user.menu.nav.jsp" %>
 
         <%
-                CustomerDao cDao = new CustomerDao();
+                EntityDao cDao = new EntityDao();
                 String username = (String) session.getAttribute("username");
 
                 List<Entity> es = cDao.getEntitiesByUsername(username);
