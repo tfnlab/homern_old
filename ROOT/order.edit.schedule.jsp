@@ -242,18 +242,7 @@
                     </div>
         <HR>
         <form action="order.edit.schedule.jsp" method="POST" >
-          <div class="form-group">
-            <label for="endTime">Order Date:</label>
-            <input type="datetime-local" class="form-control" name="orderDate" value="<%= order.getOrderDate() %>" datepicker >
-          </div>
-
-          <label for="shipDate">Ship Date:</label><br>
-          <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
-
-
-        <!-- ======= Contact Section ======= -->
-
-          <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
+          <p>Order Dates: <%= order.getOrderDate() %> - <%= order.getShipDate() %></p><br>
           <p>Order Description: <%= order.getOrderDescription() %></p><br>
           <input type="submit" value="Schedule">
         </form>
