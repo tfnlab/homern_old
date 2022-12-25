@@ -328,7 +328,7 @@
                 <%=tMap.get(Integer.valueOf(technician.getTechnicianId())).getTechnicianName() %>
                 -- <BR>
                 <%=eMap.get(Integer.valueOf(technician.getEventId())).getTitle() %>
-                -- <a href="order.edit.schedule.jsp?orderId=<%orderId%>&tlid=<%= technician.getId() %>" >remove<a><br>
+                -- <a href="order.edit.schedule.jsp?orderId=<%=orderId%>&tlid=<%= technician.getId() %>" >remove<a><br>
                 <hr>
 
          <%
