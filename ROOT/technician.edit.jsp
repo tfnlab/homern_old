@@ -227,6 +227,10 @@
               <input type="checkbox" class="form-control" id="isTechnicianActive" name="isTechnicianActive" value="true" <%= technician.isTechnicianActive() ? "checked" : "" %>>
           </div>
           <div class="form-group">
+            <label for="technicianInterviewed">Technician Interviewed</label>
+            <input type="checkbox" class="form-control" id="technicianInterviewed" name="technicianInterviewed" value="true" <%= technician.isTechnicianInterviewed() ? "checked" : "" %>>
+          </div>
+          <div class="form-group">
               <label for="technicianPassedBackgroundCheck">Passed Background Check</label>
               <input type="checkbox" class="form-control" id="technicianPassedBackgroundCheck" name="technicianPassedBackgroundCheck" value="true" <%= technician.isTechnicianPassedBackgroundCheck() ? "checked" : "" %>>
           </div>
