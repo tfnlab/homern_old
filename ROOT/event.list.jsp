@@ -161,6 +161,7 @@
                 Event ID: <a href="event.edit.jsp?eventid=<%= event.getId() %>" ><%= event.getId() %></a><br>
                 Event Description: <%= event.getDescription() %><br>
                 Event Date: <%= event.getStartTime() %> - <%= event.getEndTime() %> <BR>
+                <a href="event.list.jsp?eventid=<%= event.getId() %>&remove=yes" >REMOVE <%= event.getId() %></a><br>
                 <hr>
               <% } %>
 
