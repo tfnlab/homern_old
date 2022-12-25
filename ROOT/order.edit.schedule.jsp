@@ -259,7 +259,6 @@
         </form>
         <%
              TechnicianDao technicianDao = new TechnicianDao();
-             OrderTechniciansDAO otD = new OrderTechniciansDAO();
              List<OrderTechnicians> lI = otD.getOrderTechniciansByOrderId(order.getOrderId());
              List<Technician> technicians = technicianDao.getTechniciansByUsername(username);
          %>
