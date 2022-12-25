@@ -52,7 +52,8 @@
   <%
     OrderDao dao = new OrderDao();
     OrderTechniciansDAO otD = new OrderTechniciansDAO();
-
+    EventDao evd = new EventDao();
+    TechnicianDao technicianDao = new TechnicianDao();
     int orderId = 0;
     String username = (String) session.getAttribute("username");
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
@@ -256,7 +257,6 @@
           <input type="submit" value="Schedule">
         </form>
         <%
-             TechnicianDao technicianDao = new TechnicianDao();
              List<OrderTechnicians> lI = otD.getOrderTechniciansByOrderId(order.getOrderId());
              List<Technician> technicians = technicianDao.getTechniciansByUsername(username);
          %>
@@ -264,7 +264,6 @@
                 HashMap<Integer, Event> eMap = new HashMap<>();
                 HashMap<Integer, Technician> tMap = new HashMap<>();
                 if(lI.size()>0){
-                    EventDao evd = new EventDao();
                     eMap = evd.getEventsByUsernameMap(username);
                     tMap = technicianDao.getTechniciansByUsernameMap(username);
 
