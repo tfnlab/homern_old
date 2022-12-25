@@ -8,6 +8,8 @@
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.tfnlab.mysql.Technician" %>
+<%@ page import="com.tfnlab.mysql.TechnicianDao" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -128,28 +130,38 @@
       <div class="container px-4 px-lg-5">
         <h2>Orders</h2>
         <%@ include file="user.menu.nav.jsp" %>
-
         <%
-                OrderDao orderDao = new OrderDao();
-                String username = (String) session.getAttribute("username");
+             String username = request.getParameter("username");
+             TechnicianDao technicianDao = new TechnicianDao();
+             List<Technician> technicians = technicianDao.getTechniciansByUsername(username);
+         %>
 
-                List<Order> orders = orderDao.getCustomerOrders(username);
-                %>
-
-
-
-              <% for (Order order : orders) { %>
-                Order Name: <%= order.getOrderName() %><br>
-                Order ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %></a><br>
-                Order Date: <%= order.getOrderDate() %><br>
-                Shipping Address: <%= order.getShippingAddress() %><br>
-                Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br>
-                Billing Address: <%= order.getBillingAddress() %><br>
-                Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br>
-                Payment Method: <%= order.getPaymentMethod() %><br>
-                Order Total: <%= order.getOrderTotal() %><br>
-                <hr>
-              <% } %>
+         <%
+             for (Technician technician : technicians) {
+         %>
+         <p>
+             ID: <%= technician.getTechnicianId() %><br>
+             Name: <%= technician.getTechnicianName() %><br>
+             Email: <%= technician.getTechnicianEmail() %><br>
+             Phone: <%= technician.getTechnicianPhone() %><br>
+             Skills: <%= technician.getTechnicianSkills() %><br>
+             Last Modified: <%= technician.getDateLastModified() %><br>
+             Active: <%= technician.isTechnicianActive() %><br>
+             Created: <%= technician.getDateCreated() %><br>
+             Interviewed: <%= technician.isTechnicianInterviewed() %><br>
+             Background Check: <%= technician.isTechnicianPassedBackgroundCheck() %><br>
+             Payrate: <%= technician.getTechnicianPayrate() %><br>
+             Location: <%= technician.getTechnicianLocation() %><br>
+             Certifications: <%= technician.getTechnicianCertifications() %><br>
+             Availability: <%= technician.getTechnicianAvailability() %><br>
+             Notes: <%= technician.getTechnicianNotes() %><br>
+             Photo: <%= technician.getTechnicianPhoto() %><br>
+             Password: <%= technician.getTechnicianPassword() %><br>
+             Username: <%= technician.getUsername() %>
+         </p>
+         <%
+             }
+         %>
 
 
       </div>
