@@ -269,7 +269,7 @@
         </form>
         <%
              List<OrderTechnicians> lI = otD.getOrderTechniciansByOrderId(order.getOrderId());
-             List<Technician> technicians = technicianDao.getTechniciansByUsername(username);
+             List<Technician> technicians = technicianDao.getTechniciansByUsernameActive(username);
          %>
               <%
                 HashMap<Integer, Event> eMap = new HashMap<>();
