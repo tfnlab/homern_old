@@ -199,6 +199,7 @@
 
               String shippingAddress = request.getParameter("shippingAddress");
               String technicianId = request.getParameter("technicianId");
+              String title = request.getParameter("title");
 
               // Validate form data
               if (technicianId != null && technicianId.trim().length() > 0) {
