@@ -269,7 +269,7 @@
                   <%
                     tMap = technicianDao.getTechniciansByUsernameMap(username);
 
-                  %><%=tMap.size()%><%
+                  %>-- <%=tMap.size()%> -- <BR><%
                 }
               %>
          <%
