@@ -140,7 +140,7 @@
              for (Technician technician : technicians) {
          %>
          <p>
-             ID: <%= technician.getTechnicianId() %><br>
+             ID: <a href="technician.edit.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= product.getTechnicianId() %></a><br>
              Name: <%= technician.getTechnicianName() %><br>
              Email: <%= technician.getTechnicianEmail() %><br>
              Phone: <%= technician.getTechnicianPhone() %><br>
