@@ -165,6 +165,7 @@
 
 
                 // Validate form data
+                Technician technician = new Technician();
                 if (technicianName != null && technicianName.trim().length() > 0) {
 
 
@@ -172,7 +173,7 @@
                       //OrderDao dao = new OrderDao();
                       //ao.insertOrder(order);
 
-                        technician = new Technician();
+
                         technician = technician.generateSampleTechnician();
                         technician.setTechnicianName(request.getParameter("technicianName"));
                         technician.setTechnicianEmail(request.getParameter("technicianEmail"));
