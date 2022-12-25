@@ -240,6 +240,7 @@
                   ot.setTechnicianId(tId);
                   ot.setOrderId(orderId);
                   ot.setEventId(event.getId());
+                  ot.setUsername(username);
                   otD.insertOrderTechnicians(ot);
               }
         %>
