@@ -175,6 +175,7 @@
 
 
                         technician = technician.generateSampleTechnician();
+                        technician.setTechnicianId(id);
                         technician.setTechnicianName(request.getParameter("technicianName"));
                         technician.setTechnicianEmail(request.getParameter("technicianEmail"));
                         technician.setTechnicianPhone(request.getParameter("technicianPhone"));
