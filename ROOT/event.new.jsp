@@ -211,7 +211,11 @@
           </div>
           <div class="form-group">
             <label for="location">Location</label>
-            <input type="text" class="form-control" id="location" name="location">
+            <input type="text" class="form-control" id="location" name="location" onkeypress="callAC(this)">
+            <input type="hidden" id="locationlat" name="locationaclat" >
+            <input type="hidden" id="locationaclng" name="locationaclng" >
+            <ul id="locationac" name="locationac"></ul>
+            <hr>
           </div>
           <div class="form-group">
             <label for="description">Description</label>
