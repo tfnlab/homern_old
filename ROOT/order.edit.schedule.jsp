@@ -194,7 +194,6 @@
 
               // Validate form data
               if (technicianId != null && technicianId.trim().length() > 0) {
-                  int technicianId = 0;
                   if (request.getParameter("technicianId") != null && !request.getParameter("technicianId").isEmpty()) {
                     technicianId = Integer.parseInt(request.getParameter("technicianId"));
                   }
