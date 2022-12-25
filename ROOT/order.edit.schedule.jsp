@@ -335,7 +335,7 @@
          <%
              for (OrderTechnicians technician : lI) {
          %>
-                Tech ID: <a href="=<%= technician.getId() %>" ><%= technician.getId() %><a><br>
+                ID: <%= technician.getId() %><br>
                 Tech ID: <%= technician.getTechnicianId() %><br>
                 <%=tMap.get(Integer.valueOf(technician.getTechnicianId())).getTechnicianName() %>
                 -- <BR>
