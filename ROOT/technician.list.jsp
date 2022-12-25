@@ -131,7 +131,7 @@
         <h2>Orders</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <%
-             String username = request.getParameter("username");
+             String username = (String) session.getAttribute("username");
              TechnicianDao technicianDao = new TechnicianDao();
              List<Technician> technicians = technicianDao.getTechniciansByUsername(username);
          %>
