@@ -45,6 +45,7 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <%
     OrderDao dao = new OrderDao();
+    OrderTechniciansDAO otD = new OrderTechniciansDAO();
 
     int orderId = 0;
     String username = (String) session.getAttribute("username");
@@ -189,7 +190,16 @@
         <%
 
               String shippingAddress = request.getParameter("shippingAddress");
+              String technicianId = request.getParameter("technicianId");
+
               // Validate form data
+              if (technicianId != null && technicianId.trim().length() > 0) {
+                  int technicianId = 0;
+                  if (request.getParameter("technicianId") != null && !request.getParameter("technicianId").isEmpty()) {
+                    technicianId = Integer.parseInt(request.getParameter("technicianId"));
+                  }
+                  otD.insertOrderTechnicians(orderId, technicianId, 0);
+              }
               if (shippingAddress != null && shippingAddress.trim().length() > 0) {
 
                     long currentTimeMillis = System.currentTimeMillis();
@@ -278,7 +288,7 @@
              Photo: <%= technician.getTechnicianPhoto() %><br>
              Password: <%= technician.getTechnicianPassword() %><br>
              Username: <%= technician.getUsername() %>
-             ID: <a href="order.edit.schedule.jsp?orderId=<%= order.getOrderId() %>&technicianId=<%= technician.getTechnicianId() %>" >Add</a><br>             
+             ID: <a href="order.edit.schedule.jsp?orderId=<%= order.getOrderId() %>&technicianId=<%= technician.getTechnicianId() %>" >Add</a><br>
 
          </p>
          <%
