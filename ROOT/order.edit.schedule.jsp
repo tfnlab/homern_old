@@ -199,7 +199,7 @@
                     tId = Integer.parseInt(request.getParameter("technicianId"));
                   }
                   OrderTechnicians ot = OrderTechnicians.createSampleOrderTechnicians();
-                  ot.getTechnicianId(tId);
+                  ot.setTechnicianId(tId);
                   ot.setOrderId(orderId);
                   ot.setEventId(0);
                   otD.insertOrderTechnicians(ot);
