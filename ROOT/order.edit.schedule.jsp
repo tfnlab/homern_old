@@ -13,6 +13,10 @@
 <%@ page import="com.tfnlab.mysql.TechnicianDao" %>
 <%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
 <%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
+<%@ page import="com.tfnlab.mysql.Event" %>
+<%@ page import="com.tfnlab.mysql.EventDao" %>
+<%@ page import="java.util.UUID" %>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -187,6 +191,9 @@
         <h2>Order - Schedule </h2>
         <%@ include file="user.menu.nav.jsp" %>
 
+                <%
+                Order order = dao.getOrderByOrderId(orderId);
+                %>
         <%
 
               String shippingAddress = request.getParameter("shippingAddress");
@@ -194,6 +201,35 @@
 
               // Validate form data
               if (technicianId != null && technicianId.trim().length() > 0) {
+
+                    String uuid = java.util.UUID.randomUUID().toString();
+                    String startTime = request.getParameter(technicianId +"-start_time");
+                    String endTime = request.getParameter(technicianId +"-end_time");
+
+
+                    String location = request.getParameter("location");
+                    String description = request.getParameter("description");
+                    String reminderTime = request.getParameter("reminder_time");
+                    String invitees = request.getParameter("invitees");
+                    String groupId = request.getParameter("group_id");
+                    String locationaclat = request.getParameter("locationaclat");
+                    String locationaclng = request.getParameter("locationaclng");
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+                    Date startTimeDate = null;
+                    Date endTimeDate = null;
+                    Date reminderTimeDate = null;
+                      try{
+                         startTimeDate = dateFormat.parse(startTime);
+                         endTimeDate = dateFormat.parse(endTime);
+                         reminderTimeDate = dateFormat.parse(reminderTime);
+                      } catch (Exception e) {
+                        %><%="Error parsing date and time string: " + e.getMessage()%><%
+                      }
+                    Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid);
+                    EventDao evd = new EventDao();
+                    evd.addEvent(event);
+                    event = evd.getEventByUuid(uuid);
+
                   int tId = 0;
                   if (request.getParameter("technicianId") != null && !request.getParameter("technicianId").isEmpty()) {
                     tId = Integer.parseInt(request.getParameter("technicianId"));
@@ -201,39 +237,11 @@
                   OrderTechnicians ot = OrderTechnicians.createSampleOrderTechnicians();
                   ot.setTechnicianId(tId);
                   ot.setOrderId(orderId);
-                  ot.setEventId(0);
+                  ot.setEventId(event.getId());
                   otD.insertOrderTechnicians(ot);
               }
-              if (shippingAddress != null && shippingAddress.trim().length() > 0) {
-
-                    long currentTimeMillis = System.currentTimeMillis();
-                    Timestamp currentTime = new Timestamp(currentTimeMillis);
-                    Date orderDate = new Date();
-                    Date shippingDate = new Date();
-                    String shippingAddressaclat = request.getParameter("shippingAddressaclat");
-                    String shippingAddressaclng = request.getParameter("shippingAddressaclng");
-                    String billingAddress = request.getParameter("billingAddress");
-                    String billingAddressaclat = request.getParameter("billingAddressaclat");
-                    String billingAddressaclng = request.getParameter("billingAddressaclng");
-                    String paymentMethod = request.getParameter("paymentMethod");
-                    BigDecimal orderTotal = new BigDecimal("0");
-                    if (request.getParameter("orderTotal") != null && !request.getParameter("orderTotal").isEmpty()) {
-                      orderTotal = new BigDecimal(request.getParameter("orderTotal"));
-                    }
-                    Timestamp createdAt = currentTime;
-                    Timestamp updatedAt = currentTime;
-                    Timestamp deletedAt = currentTime;
-                    String orderName = request.getParameter("orderName");
-                    String orderDescription = request.getParameter("orderDescription");
-                    Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng );
-                    dao.updateOrder(order);
-
-              }
         %>
 
-        <%
-        Order order = dao.getOrderByOrderId(orderId);
-        %>
         <HR>
 
                     <div class="form-group">
@@ -258,43 +266,62 @@
          <%
              }
          %>
-         <%
-             for (Technician technician : technicians) {
-         %>
 
          <form action="order.edit.schedule.jsp" method="POST" >
          <p>
-             ID: <a href="technician.edit.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianId() %></a><br>
-             Name: <%= technician.getTechnicianName() %><br>
-             Email: <%= technician.getTechnicianEmail() %><br>
-             Phone: <%= technician.getTechnicianPhone() %><br>
-             Skills: <%= technician.getTechnicianSkills() %><br>
-             Last Modified: <%= technician.getDateLastModified() %><br>
-             Active: <%= technician.isTechnicianActive() %><br>
-             Created: <%= technician.getDateCreated() %><br>
-             Interviewed: <%= technician.isTechnicianInterviewed() %><br>
-             Background Check: <%= technician.isTechnicianPassedBackgroundCheck() %><br>
-             Payrate: <%= technician.getTechnicianPayrate() %><br>
-             Location: <%= technician.getTechnicianLocation() %><br>
-             Certifications: <%= technician.getTechnicianCertifications() %><br>
-             Availability: <%= technician.getTechnicianAvailability() %><br>
-             Notes: <%= technician.getTechnicianNotes() %><br>
-             ID: <a href="order.edit.schedule.jsp?orderId=<%= order.getOrderId() %>&technicianId=<%= technician.getTechnicianId() %>" >Add</a><br>
-             <div class="form-group">
+
+              <div class="form-group">
+               <label for="technicianId">Technician:</label>
+               <select class="form-group" name="technicianId" >
+                   <% for (Technician technician : technicians) { %>
+                     <option value="<%= technician.getTechnicianId() %>"><%= technician.getTechnicianName() %></option>
+                   <% } %>
+              </div>
+           </select>
+              <div class="form-group">
                <label for="endTime">Order Date:</label>
-               <input type="datetime-local" class="form-control" name="orderDate" value="<%= order.getOrderDate() %>" datepicker >
+               <input type="datetime-local" class="form-control"  id="start_time" name="start_time" value="<%= order.getOrderDate() %>" datepicker >
              </div>
              <label for="shipDate">Ship Date:</label><br>
-             <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
+             <input class="form-control" type="datetime-local" id="end_time" name="end_time" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
 
-             <input type="hidden" id="technicianId" name="technicianId" value="<%= technician.getTechnicianId() %>" >
+             <div class="form-group">
+               <label for="title">Title</label>
+               <input type="text" class="form-control" id="title" name="title" required>
+             </div>
+             <div class="form-group">
+                 <label for="start_time">Start Time</label>
+                 <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker>
+             </div>
+             <div class="form-group">
+               <label for="end_time">End Time</label>
+               <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker>
+             </div>
+             <div class="form-group">
+               <label for="location">Location</label>
+               <input type="text" class="form-control" id="location" name="location" onkeypress="callAC(this)">
+               <input type="hidden" id="locationaclat" name="locationaclat" >
+               <input type="hidden" id="locationaclng" name="locationaclng" >
+               <ul id="locationac" name="locationac"></ul>
+               <hr>
+             </div>
+             <div class="form-group">
+               <label for="description">Description</label>
+               <textarea class="form-control" id="description" name="description"></textarea>
+             </div>
+             <div class="form-group">
+               <label for="reminder_time">Reminder Time</label>
+               <input type="datetime-local" class="form-control" id="reminder_time" name="reminder_time" datepicker>
+             </div>
+             <div class="form-group">
+               <label for="invitees">Invitees</label>
+               <input type="email" class="form-control" id="invitees" name="invitees" placeholder="Enter email addresses separated by commas">
+             </div>
+
              <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
              <input type="submit" value="Schedule">
          </p>
          </form>
-         <%
-             }
-         %>
 
       </div>
 
