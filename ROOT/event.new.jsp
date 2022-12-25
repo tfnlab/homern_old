@@ -10,6 +10,7 @@
 <%@ page import="com.tfnlab.mysql.Event" %>
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.UUID" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -159,6 +160,8 @@
 
                 if (title != null && title.trim().length() > 0) {
                   int id = 0;
+
+                  String uuid = java.util.UUID.randomUUID().toString();
                   String startTime = request.getParameter("start_time");
                   String endTime = request.getParameter("end_time");
                   String location = request.getParameter("location");
@@ -183,7 +186,7 @@
                     } catch (Exception e) {
             		      %><%="Error parsing date and time string: " + e.getMessage()%><%
             		    }
-                  Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng);
+                  Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid);
                   EventDao evd = new EventDao();
 
                   evd.addEvent(event);
