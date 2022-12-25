@@ -200,8 +200,8 @@
                   }
                   OrderTechnicians ot = OrderTechnicians.createSampleOrderTechnicians();
                   ot.getTechnicianId(tId);
-                  ot.setOrderId(orderId)
-                  ot.setEventId(0)
+                  ot.setOrderId(orderId);
+                  ot.setEventId(0);
                   otD.insertOrderTechnicians(orderId, technicianId, 0);
               }
               if (shippingAddress != null && shippingAddress.trim().length() > 0) {
