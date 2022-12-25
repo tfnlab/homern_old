@@ -286,11 +286,13 @@
 
               <div class="form-group">
                <label for="technicianId">Technician:</label>
-               <select class="form-group" name="technicianId" >
+               <select class="form-group" id="technicianId" name="technicianId" >
                    <% for (Technician technician : technicians) { %>
                      <option value="<%= technician.getTechnicianId() %>"><%= technician.getTechnicianName() %></option>
                    <% } %>
+
                 </select>
+
              </div>
 
              <div class="form-group">
