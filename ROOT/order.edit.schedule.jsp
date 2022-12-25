@@ -8,6 +8,8 @@
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.net.URLDecoder" %>
+<%@ page import="com.tfnlab.mysql.Technician" %>
+<%@ page import="com.tfnlab.mysql.TechnicianDao" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -221,6 +223,7 @@
                         <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                     </div>
         <HR>
+        <form action="order.edit.schedule.jsp" method="POST" >
           <div class="form-group">
             <label for="endTime">Order Date:</label>
             <input type="datetime-local" class="form-control" name="orderDate" value="<%= order.getOrderDate() %>" datepicker >
@@ -232,11 +235,41 @@
 
         <!-- ======= Contact Section ======= -->
 
-        <form action="order.edit.schedule.jsp" method="POST" >
           <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
           <p>Order Description: <%= order.getOrderDescription() %></p><br>
           <input type="submit" value="Schedule">
         </form>
+        <%
+             TechnicianDao technicianDao = new TechnicianDao();
+             List<Technician> technicians = technicianDao.getTechniciansByUsername(username);
+         %>
+
+         <%
+             for (Technician technician : technicians) {
+         %>
+         <p>
+             ID: <a href="technician.edit.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianId() %></a><br>
+             Name: <%= technician.getTechnicianName() %><br>
+             Email: <%= technician.getTechnicianEmail() %><br>
+             Phone: <%= technician.getTechnicianPhone() %><br>
+             Skills: <%= technician.getTechnicianSkills() %><br>
+             Last Modified: <%= technician.getDateLastModified() %><br>
+             Active: <%= technician.isTechnicianActive() %><br>
+             Created: <%= technician.getDateCreated() %><br>
+             Interviewed: <%= technician.isTechnicianInterviewed() %><br>
+             Background Check: <%= technician.isTechnicianPassedBackgroundCheck() %><br>
+             Payrate: <%= technician.getTechnicianPayrate() %><br>
+             Location: <%= technician.getTechnicianLocation() %><br>
+             Certifications: <%= technician.getTechnicianCertifications() %><br>
+             Availability: <%= technician.getTechnicianAvailability() %><br>
+             Notes: <%= technician.getTechnicianNotes() %><br>
+             Photo: <%= technician.getTechnicianPhoto() %><br>
+             Password: <%= technician.getTechnicianPassword() %><br>
+             Username: <%= technician.getUsername() %>
+         </p>
+         <%
+             }
+         %>
 
       </div>
 
