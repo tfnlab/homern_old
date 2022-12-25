@@ -267,19 +267,7 @@
                     tMap = technicianDao.getTechniciansByUsernameMap(username);
                 }
               %>
-         <%
-             for (OrderTechnicians technician : lI) {
-         %>
-                Tech ID: <%= technician.getTechnicianId() %><br>
-                <%=tMap.get(Integer.valueOf(technician.getTechnicianId())).getTechnicianName() %>
-                -- <BR>
-                <%=eMap.get(Integer.valueOf(technician.getEventId())).getTitle() %>
-                -- <BR>
-                <hr>
 
-         <%
-             }
-         %>
 
          <form action="order.edit.schedule.jsp" method="POST" >
          <p>
@@ -331,6 +319,19 @@
              <input type="submit" value="Add Event">
          </p>
          </form>
+         <%
+             for (OrderTechnicians technician : lI) {
+         %>
+                Tech ID: <%= technician.getTechnicianId() %><br>
+                <%=tMap.get(Integer.valueOf(technician.getTechnicianId())).getTechnicianName() %>
+                -- <BR>
+                <%=eMap.get(Integer.valueOf(technician.getEventId())).getTitle() %>
+                -- <BR>
+                <hr>
+
+         <%
+             }
+         %>
 
       </div>
 
