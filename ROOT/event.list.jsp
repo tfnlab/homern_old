@@ -12,6 +12,8 @@
 <%@ page import="com.tfnlab.mysql.Event" %>
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -140,6 +142,16 @@
         <%
                 EventDao eDao = new EventDao();
                 String username = (String) session.getAttribute("username");
+                String remove = request.getParameter("remove");
+                int eId = 0;
+                if (request.getParameter("eventid") != null && !request.getParameter("eventid").isEmpty()) {
+                  eId = Integer.parseInt(request.getParameter("eventid"));
+                }
+                if (remove != null && remove.trim().length() > 0) {
+                    OrderTechniciansDAO otDao = new OrderTechniciansDAO()
+                    otDao.deleteOrderTechniciansByEventId(eId, username);
+                    eDao.deleteEventById(eId, username);
+                }
 
                 List<Event> events = null;
                 if(request.getParameter("sortBy")!=null){
