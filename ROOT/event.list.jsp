@@ -148,7 +148,7 @@
                   eId = Integer.parseInt(request.getParameter("eventid"));
                 }
                 if (remove != null && remove.trim().length() > 0) {
-                    OrderTechniciansDAO otDao = new OrderTechniciansDAO()
+                    OrderTechniciansDAO otDao = new OrderTechniciansDAO();
                     otDao.deleteOrderTechniciansByEventId(eId, username);
                     eDao.deleteEventById(eId, username);
                 }
