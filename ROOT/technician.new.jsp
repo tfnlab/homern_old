@@ -195,65 +195,61 @@
 
         %>
         <form action="technician.new.jsp" method="post">
-<div class="form-group">
-<label for="technicianName">Technician Name</label>
-<input type="text" class="form-control" name="technicianName" id="technicianName" placeholder="Enter Technician Name">
-</div>
-<div class="form-group">
-<label for="technicianEmail">Technician Email</label>
-<input type="email" class="form-control" id="technicianEmail" placeholder="Enter Technician Email">
-</div>
-<div class="form-group">
-<label for="technicianPhone">Technician Phone</label>
-<input type="text" class="form-control" id="technicianPhone" placeholder="Enter Technician Phone">
-</div>
-<div class="form-group">
-<label for="technicianSkills">Technician Skills</label>
-<input type="text" class="form-control" id="technicianSkills" placeholder="Enter Technician Skills">
-</div>
-<div class="form-group">
-<label for="isTechnicianActive">Is Technician Active</label>
-<input type="checkbox" class="form-control" id="isTechnicianActive">
-</div>
-<div class="form-group">
-<label for="technicianInterviewed">Technician Interviewed</label>
-<input type="checkbox" class="form-control" id="technicianInterviewed">
-</div>
- <div class="form-group">
-   <label for="technicianPassedBackgroundCheck">Technician Passed Background Check</label>
-   <input type="checkbox" class="form-control" id="technicianPassedBackgroundCheck">
- </div>
- <div class="form-group">
-   <label for="technicianPayrate">Technician Payrate</label>
-   <input type="number" class="form-control" id="technicianPayrate" placeholder="Enter Technician Payrate">
- </div>
- <div class="form-group">
-   <label for="technicianLocation">Technician Location</label>
-   <input type="text" class="form-control" id="technicianLocation" placeholder="Enter Technician Location">
- </div>
- <div class="form-group">
-   <label for="technicianCertifications">Technician Certifications</label>
-   <input type="text" class="form-control" id="technicianCertifications" placeholder="Enter Technician Certifications">
- </div>
- <div class="form-group">
-   <label for="technicianCertifications">Technician Certifications</label>
-   <input type="text" class="form-control" id="technicianCertifications" placeholder="Enter Technician Certifications">
- </div>
- <div class="form-group">
-   <label for="technicianAvailability">Technician Availability</label>
-   <input type="text" class="form-control" id="technicianAvailability" placeholder="Enter Technician Availability">
- </div>
- <div class="form-group">
+  <div class="form-group">
+    <label for="technicianName">Technician Name</label>
+    <input type="text" class="form-control" name="technicianName" id="technicianName" placeholder="Enter Technician Name">
+  </div>
+  <div class="form-group">
+    <label for="technicianEmail">Technician Email</label>
+    <input type="email" class="form-control" id="technicianEmail" name="technicianEmail" placeholder="Enter Technician Email">
+  </div>
+  <div class="form-group">
+    <label for="technicianPhone">Technician Phone</label>
+    <input type="text" class="form-control" id="technicianPhone" name="technicianPhone" placeholder="Enter Technician Phone">
+  </div>
+  <div class="form-group">
+    <label for="technicianSkills">Technician Skills</label>
+    <input type="text" class="form-control" id="technicianSkills" name="technicianSkills" placeholder="Enter Technician Skills">
+  </div>
+  <div class="form-group">
+    <label for="isTechnicianActive">Is Technician Active</label>
+    <input type="checkbox" class="form-control" id="isTechnicianActive" name="isTechnicianActive">
+  </div>
+  <div class="form-group">
+    <label for="technicianInterviewed">Technician Interviewed</label>
+    <input type="checkbox" class="form-control" id="technicianInterviewed" name="technicianInterviewed">
+  </div>
+  <div class="form-group">
+    <label for="technicianPassedBackgroundCheck">Technician Passed Background Check</label>
+    <input type="checkbox" class="form-control" id="technicianPassedBackgroundCheck" name="technicianPassedBackgroundCheck">
+  </div>
+  <div class="form-group">
+    <label for="technicianPayrate">Technician Payrate</label>
+    <input type="number" class="form-control" id="technicianPayrate" name="technicianPayrate" placeholder="Enter Technician Payrate">
+  </div>
+  <div class="form-group">
+    <label for="technicianLocation">Technician Location</label>
+    <input type="text" class="form-control" id="technicianLocation" name="technicianLocation" placeholder="Enter Technician Location">
+  </div>
+  <div class="form-group">
+    <label for="technicianCertifications">Technician Certifications</label>
+    <input type="text" class="form-control" id="technicianCertifications" name="technicianCertifications" placeholder="Enter Technician Certifications">
+  </div>
+  <div class="form-group">
+    <label for="technicianAvailability">Technician Availability</label>
+    <input type="text" class="form-control" id="technicianAvailability" name="technicianAvailability" placeholder="Enter Technician Availability">
+  </div>
+  <div class="form-group">
    <label for="technicianNotes">Technician Notes</label>
-   <textarea class="form-control" id="technicianNotes" rows="3"></textarea>
+   <textarea class="form-control" name="technicianNotes" id="technicianNotes" rows="3"></textarea>
  </div>
  <div class="form-group">
    <label for="technicianPhoto">Technician Photo</label>
-   <input type="file" class="form-control-file" id="technicianPhoto">
+   <input type="file" class="form-control-file" name="technicianPhoto" id="technicianPhoto">
  </div>
  <div class="form-group">
    <label for="technicianPassword">Technician Password</label>
-   <input type="password" class="form-control" id="technicianPassword" placeholder="Enter Technician Password">
+   <input type="password" class="form-control" name="technicianPassword" id="technicianPassword" placeholder="Enter Technician Password">
  </div>
  <button type="submit" class="btn btn-primary">Submit</button>
  </form>
