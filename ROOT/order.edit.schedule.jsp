@@ -202,6 +202,7 @@
               String technicianId = request.getParameter("technicianId");
               String title = request.getParameter("title");
 
+
               // Validate form data
               if (technicianId != null && technicianId.trim().length() > 0) {
 
@@ -227,7 +228,6 @@
                         %><%="Error parsing date and time string: " + e.getMessage()%><%
                       }
                     Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid);
-                    EventDao evd = new EventDao();
                     evd.addEvent(event);
                     event = evd.getEventByUuid(uuid);
 
@@ -264,19 +264,22 @@
                 HashMap<Integer, Event> eMap = new HashMap<>();
                 HashMap<Integer, Technician> tMap = new HashMap<>();
                 if(lI.size()>0){
-                  %>
-                        getTechniciansByUsernameMap <br> --
-                  <%
+                    EventDao evd = new EventDao();
+                    eMap = evd.getEventsByUsernameMap(username);
                     tMap = technicianDao.getTechniciansByUsernameMap(username);
 
-                  %>-- <%=tMap.size()%> -- <BR><%
                 }
               %>
          <%
              for (OrderTechnicians technician : lI) {
          %>
-                Tech ID: <%= technician.getTechnicianId() %><br> <%=tMap.get(Integer.valueOf(technician.getTechnicianId())).getTechnicianName() %>
+                Tech ID: <%= technician.getTechnicianId() %><br>
+                <%=tMap.get(Integer.valueOf(technician.getTechnicianId())).getTechnicianName() %>
                 -- <BR>
+                <%=eMap.get(Integer.valueOf(technician.getEventId())).getTitle() %>
+                -- <BR>
+                <hr>
+
          <%
              }
          %>
