@@ -278,6 +278,8 @@
              Photo: <%= technician.getTechnicianPhoto() %><br>
              Password: <%= technician.getTechnicianPassword() %><br>
              Username: <%= technician.getUsername() %>
+             ID: <a href="order.edit.schedule.jsp?orderId=<%= order.getOrderId() %>&technicianId=<%= technician.getTechnicianId() %>" >Add</a><br>             
+
          </p>
          <%
              }
