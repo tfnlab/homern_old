@@ -189,7 +189,7 @@
                         Timestamp updatedAt = currentTime;
                         technician.setDateCreated(new java.util.Date(createdAt.getTime()));
                         technician.setDateLastModified(new java.util.Date(updatedAt.getTime()));
-                        technician.getUsername(username);
+                        technician.setUsername(username);
 
                         TechnicianDao td = new TechnicianDao();
                         td.insertRecord(technician);
