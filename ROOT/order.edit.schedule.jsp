@@ -16,6 +16,7 @@
 <%@ page import="com.tfnlab.mysql.Event" %>
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.util.UUID" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 
 
 <!DOCTYPE html>
