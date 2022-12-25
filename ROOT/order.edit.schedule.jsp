@@ -207,8 +207,9 @@
               // Validate form data
               String tlid = request.getParameter("tlid");
               if (tlid != null && tlid.trim().length() > 0) {
-                OrderTechnicians ot = OrderTechnicians.createSampleOrderTechnicians();
-                ot.deleteOrderTechnicians(tlid, username);
+                OrderTechnicians ot = otD.getOrderTechniciansById(tlid);
+                otD.deleteOrderTechnicians(tlid, username);
+                evd.deleteEventById(ot.getEventId(),username);
               }
 
               if (technicianId != null && technicianId.trim().length() > 0) {
