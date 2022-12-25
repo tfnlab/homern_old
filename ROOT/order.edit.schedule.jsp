@@ -289,15 +289,15 @@
 
              <div class="form-group">
                <label for="title">Title</label>
-               <input type="text" class="form-control" id="title" name="title" required>
+               <input type="text" class="form-control" id="title" name="title" required <%= order.getOrderName() %>>
              </div>
              <div class="form-group">
                  <label for="start_time">Start Time</label>
-                 <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker>
+                 <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%= order.getOrderDate() %>" >
              </div>
              <div class="form-group">
                <label for="end_time">End Time</label>
-               <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker>
+               <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%= order.getShipDate() %>">
              </div>
              <div class="form-group">
                <label for="location">Location</label>
@@ -309,7 +309,7 @@
              </div>
              <div class="form-group">
                <label for="description">Description</label>
-               <textarea class="form-control" id="description" name="description"></textarea>
+               <textarea class="form-control" id="description" name="description"><%= order.getOrderDescription() %></textarea>
              </div>
              <div class="form-group">
                <label for="reminder_time">Reminder Time</label>
