@@ -168,7 +168,7 @@
                       try{
                          startTimeDate = dateFormat.parse(startTime);
                          endTimeDate = dateFormat.parse(endTime);
-                         events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate);
+                         //events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate);
                       } catch (Exception e) {
               		      %><%="Error parsing date and time string: " + e.getMessage()%><%
               		    }
