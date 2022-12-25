@@ -204,7 +204,7 @@
                 }
                 technician = td.getTechnicianById(id);
         %>
-        <form action="technician.new.jsp" method="post">
+        <form action="technician.edit.jsp" method="post">
           <input type="hidden" name="technicianId" value="<%= technician.getTechnicianId() %>">
           <div class="form-group">
               <label for="technicianName">Name</label>
