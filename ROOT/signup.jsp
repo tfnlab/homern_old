@@ -121,8 +121,6 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Sign-Up</h2>
-        <p>
-        </p>
         <%
                 String firstName = request.getParameter("firstName");
                 String middleInitial = request.getParameter("middleInitial");
@@ -206,6 +204,9 @@
 
         %>
             <!-- ======= Contact Section ======= -->
+                <p>
+                Welcome to our contractor business management software! We're here to help you streamline your operations and manage everything from project estimates and invoicing to employee schedules and customer relations. Simply fill out the form below to create your account and get started. Thanks for choosing our platform!
+                </p>
 
                 <form action="signup.jsp" method="POST">
                   <div class="form-group">
