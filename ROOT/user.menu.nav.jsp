@@ -13,5 +13,7 @@
         <a href="customer.new.jsp">Customer</a> |
         <a href="event.list.jsp">Events</a> |
         <a href="event.new.jsp">Event</a> |
+        <a href="technician.list.jsp">Technicians</a> |
+        <a href="technician.new.jsp">Technician</a> |
         <a href="user.edit.jsp">User</a>
       </p>

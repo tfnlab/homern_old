@@ -2,6 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
+<%@ page import="java.math.BigDecimal" %>
+<%@ page import="java.sql.Timestamp" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="com.tfnlab.mysql.Order" %>
+<%@ page import="com.tfnlab.mysql.OrderDao" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +15,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Home Renovation Nation - Sign-up</title>
+  <title>Home Renovation Nation - Order List</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -111,81 +117,40 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Home</li>
+          <li>Orders</li>
         </ol>
-        <h2>User Home</h2>
+        <h2>Orders</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Home</h2>
+        <h2>Orders</h2>
         <%@ include file="user.menu.nav.jsp" %>
-        <p>
-          Welcome to our application for contractors! Our platform is designed to simplify and streamline your business operations from start to finish. With our user-friendly interface, you can easily manage your leads, track your projects, and handle invoicing and payment all in one place. No more juggling multiple software or spreadsheet to keep your business running smoothly. Additionally, our platform provides valuable insights and analytics to help you make informed decisions and grow your business. Thank you for choosing our application, we are confident it will make a significant difference in your day-to-day operations as a contractor.
-        </p>
-        <HR>
-        <h1>Features of Home Service Software</h1>
 
-        <h2>Scheduling and dispatch</h2>
-        <p>Home service software can help schedule and dispatch technicians to service calls and manage their work schedules.</p>
-        <p>
-        <small>
-          Here is a general workflow for scheduling using home service software:
+        <%
+                OrderDao orderDao = new OrderDao();
+                String username = (String) session.getAttribute("username");
 
-A customer contacts the company to request service. This can be done through a phone call, email, or through the company's website.
+                List<Order> orders = orderDao.getCustomerOrders(username);
+                %>
 
-The customer's request is entered into the home service software's scheduling system. This may involve completing a form with information such as the customer's contact information, the type of service requested, and the desired service date and time.
 
-The scheduling system checks the availability of technicians and assigns the service request to an available technician.
 
-The technician receives notification of the service request and confirms availability.
+              <% for (Order order : orders) { %>
+                Order Name: <%= order.getOrderName() %><br>
+                Order ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %></a><br>
+                Order Date: <%= order.getOrderDate() %><br>
+                Shipping Address: <%= order.getShippingAddress() %><br>
+                Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br>
+                Billing Address: <%= order.getBillingAddress() %><br>
+                Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br>
+                Payment Method: <%= order.getPaymentMethod() %><br>
+                Order Total: <%= order.getOrderTotal() %><br>
+                <hr>
+              <% } %>
 
-The service request is added to the technician's schedule and is visible to the technician and other members of the company through the home service software.
-
-The customer is notified of the service appointment and receives any necessary documents, such as a service agreement or invoice, through the home service software.
-
-The technician performs the service at the scheduled time and updates the home service software with any relevant information, such as the type of service performed and any parts used.
-
-The customer may be asked to complete a satisfaction survey through the home service software.
-
-The company generates an invoice for the service through the home service software and sends it to the customer.
-
-Forms that may be used in this process include:
-
-Service request form: This form is used to gather information from the customer about the service they are requesting.
-
-Technician availability form: This form is used by technicians to indicate their availability for service appointments.
-
-Service agreement: This form outlines the terms and conditions of the service being provided.
-
-Invoice: This form outlines the charges for the service being provided and may include information about any parts or materials used.
-
-Satisfaction survey: This form is used to gather feedback from customers about their experience with the company's services.
-</small>
-</p>
-
-        <h2>Customer relationship management (CRM)</h2>
-        <p>Home service software can help companies manage customer relationships by storing customer information, tracking interactions, and managing communication with customers.</p>
-
-        <h2>Invoicing and billing</h2>
-        <p>Home service software can help companies create and manage invoices, process payments, and track billing.</p>
-
-        <h2>Inventory management</h2>
-        <p>Home service software can help companies track inventory levels, reorder supplies, and manage the purchase and use of parts and equipment.</p>
-
-        <h2>Service history</h2>
-        <p>Home service software can help companies track service history for individual customers and equipment, including the type of service provided, the technician who performed the service, and the parts used.</p>
-
-        <h2>Reporting</h2>
-        <p>Home service software can generate reports on a variety of metrics, such as service history, customer interactions, and financial performance.</p>
-
-        <h2>Mobile functionality</h2>
-        <p>Many home service software programs have mobile apps that allow technicians to access and update information on the go.</p>
-
-        <h2>Integration with other systems</h2>
-        <p>Home service software may integrate with other business systems, such as accounting software or CRM software, to streamline workflows and improve efficiency.</p>
 
       </div>
 
