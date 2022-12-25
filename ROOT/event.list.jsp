@@ -158,7 +158,7 @@
 
                 List<Event> events = null;
 
-                String startTime = request.getParameter("startTime");
+                String startTime = request.getParameter("start_Time");
                 String endTime = request.getParameter("end_time");
                 if (startTime != null && startTime.trim().length() > 0) {
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
@@ -168,7 +168,7 @@
                       try{
                          startTimeDate = dateFormat.parse(startTime);
                          endTimeDate = dateFormat.parse(endTime);
-                         //events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate);
+                         events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate);
                       } catch (Exception e) {
               		      %><%="Error parsing date and time string: " + e.getMessage()%><%
               		    }
