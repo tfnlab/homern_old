@@ -225,29 +225,29 @@
                   </div>
 
               		<label for="firstName">First Name:</label><br>
-              		<input type="text" id="firstName" name="firstName"><br>
+              		<input type="text" id="firstName" name="firstName"  required><br>
               		<label for="middleInitial">Middle Initial:</label><br>
               		<input type="text" id="middleInitial" name="middleInitial"><br>
               		<label for="lastName">Last Name:</label><br>
-              		<input type="text" id="lastName" name="lastName"><br>
+              		<input type="text" id="lastName" name="lastName" required><br>
               		<label for="email">Email:</label><br>
-              		<input type="email" id="email" name="email"><br>
+              		<input type="email" id="email" name="email" required><br>
               		<label for="phone">Phone:</label><br>
-              		<input type="text" id="phone" name="phone"><br>
+              		<input type="text" id="phone" name="phone" required><br>
               		<label for="username">Username:</label><br>
-              		<input type="text" id="username" name="username"><br>
+              		<input type="text" id="username" name="username" required><br>
               		<label for="password">Password:</label><br>
-              		<input type="password" id="password" name="password"><br>
+              		<input type="password" id="password" name="password" required><br>
               		<label for="ogId">OG ID:</label><br>
               		<input type="text" id="ogId" name="ogId"><br>
               		<label for="address">Address:</label><br>
-              		<input type="text" id="address" name="address"><br>
+              		<input type="text" id="address" name="address" required><br>
               		<label for="city">City:</label><br>
-              		<input type="text" id="city" name="city"><br>
+              		<input type="text" id="city" name="city" required><br>
               		<label for="state">State:</label><br>
-              		<input type="text" id="state" name="state"><br>
+              		<input type="text" id="state" name="state" required><br>
                   <label for="state">Zip:</label><br>
-                  <input type="text" id="zipcode" name="zipcode"><br><br>
+                  <input type="text" id="zipcode" name="zipcode" required><br><br>
                   		<input type="submit" value="Submit">
                   	</form>
 
