@@ -170,6 +170,7 @@
                       //ao.insertOrder(order);
 
                         Technician technician = new Technician();
+                        technician = technician.generateSampleTechnician()
                         technician.setTechnicianName(request.getParameter("technicianName"));
                         technician.setTechnicianEmail(request.getParameter("technicianEmail"));
                         technician.setTechnicianPhone(request.getParameter("technicianPhone"));
@@ -184,6 +185,10 @@
                         technician.setTechnicianNotes(request.getParameter("technicianNotes"));
                         //technician.setTechnicianPhoto(request.getParameter("technicianPhoto").getBytes());
                         technician.setTechnicianPassword(request.getParameter("technicianPassword"));
+                        Timestamp createdAt = currentTime;
+                        Timestamp updatedAt = currentTime;
+                        technician.setDateCreated(new java.util.Date(createdAt.getTime()));
+                        technician.setDateLastModified(new java.util.Date(updatedAt.getTime()));
 
                         TechnicianDao td = new TechnicianDao();
                         td.insertRecord(technician);
