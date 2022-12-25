@@ -170,7 +170,7 @@
                       //ao.insertOrder(order);
 
                         Technician technician = new Technician();
-                        technician = technician.generateSampleTechnician()
+                        technician = technician.generateSampleTechnician();
                         technician.setTechnicianName(request.getParameter("technicianName"));
                         technician.setTechnicianEmail(request.getParameter("technicianEmail"));
                         technician.setTechnicianPhone(request.getParameter("technicianPhone"));
@@ -192,6 +192,7 @@
 
                         TechnicianDao td = new TechnicianDao();
                         td.insertRecord(technician);
+
                       %>
 
                         Order Saved
