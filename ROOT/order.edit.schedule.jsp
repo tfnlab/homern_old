@@ -194,9 +194,14 @@
 
               // Validate form data
               if (technicianId != null && technicianId.trim().length() > 0) {
+                  int tId = 0;
                   if (request.getParameter("technicianId") != null && !request.getParameter("technicianId").isEmpty()) {
-                    technicianId = Integer.parseInt(request.getParameter("technicianId"));
+                    tId = Integer.parseInt(request.getParameter("technicianId"));
                   }
+                  OrderTechnicians ot = new OrderTechnicians();
+                  ot.getTechnicianId(tId);
+                  ot.setOrderId(orderId)
+                  ot.setEventId(0)
                   otD.insertOrderTechnicians(orderId, technicianId, 0);
               }
               if (shippingAddress != null && shippingAddress.trim().length() > 0) {
