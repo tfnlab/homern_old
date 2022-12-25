@@ -169,6 +169,28 @@
                       //OrderDao dao = new OrderDao();
                       //ao.insertOrder(order);
                       %>
+                      <%@ page import="com.tfnlab.mysql.Technician" %>
+                      <%
+                        Technician technician = new Technician();
+                        technician.setTechnicianName(request.getParameter("technicianName"));
+                        technician.setTechnicianEmail(request.getParameter("technicianEmail"));
+                        technician.setTechnicianPhone(request.getParameter("technicianPhone"));
+                        technician.setTechnicianSkills(request.getParameter("technicianSkills"));
+                        technician.setTechnicianActive(Boolean.parseBoolean(request.getParameter("isTechnicianActive")));
+                        technician.setTechnicianInterviewed(Boolean.parseBoolean(request.getParameter("technicianInterviewed")));
+                        technician.setTechnicianPassedBackgroundCheck(Boolean.parseBoolean(request.getParameter("technicianPassedBackgroundCheck")));
+                        technician.setTechnicianPayrate(new BigDecimal(request.getParameter("technicianPayrate")));
+                        technician.setTechnicianLocation(request.getParameter("technicianLocation"));
+                        technician.setTechnicianCertifications(request.getParameter("technicianCertifications"));
+                        technician.setTechnicianAvailability(request.getParameter("technicianAvailability"));
+                        technician.setTechnicianNotes(request.getParameter("technicianNotes"));
+                        technician.setTechnicianPhoto(request.getParameter("technicianPhoto").getBytes());
+                        technician.setTechnicianPassword(request.getParameter("technicianPassword"));
+
+                        TechnicianDao td = new TechnicianDao();
+                        td.insertRecord(technician);
+                      %>
+
                         Order Saved
                       <%
                 }else{
