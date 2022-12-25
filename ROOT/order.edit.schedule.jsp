@@ -290,8 +290,8 @@
                    <% for (Technician technician : technicians) { %>
                      <option value="<%= technician.getTechnicianId() %>"><%= technician.getTechnicianName() %></option>
                    <% } %>
-              </div>
-           </select>
+                </select>
+             </div>
 
              <div class="form-group">
                <label for="title">Title</label>
