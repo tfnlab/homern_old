@@ -156,15 +156,32 @@
                 }
 
                 List<Event> events = null;
-                if(request.getParameter("sortBy")!=null){
-                  if(request.getParameter("sortBy").equals("eventDate")){
-                    events = eDao.getEventsByUsername(username, 1);
-                  }
-                  if(request.getParameter("sortBy").equals("eventDateDESC")){
-                    events = eDao.getEventsByUsername(username, 2);
-                  }
+                start_time
+
+                String startTime = request.getParameter("startTime");
+                String endTime = request.getParameter("end_time");
+                if (startTime != null && startTime.trim().length() > 0) {
+                    Date startTimeDate = null;
+                    Date endTimeDate = null;
+                    Date reminderTimeDate = null;
+                      try{
+                         startTimeDate = dateFormat.parse(startTime);
+                         endTimeDate = dateFormat.parse(endTime);
+                         events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate);
+                      } catch (Exception e) {
+              		      %><%="Error parsing date and time string: " + e.getMessage()%><%
+              		    }
                 }else{
-                  events = eDao.getEventsByUsername(username, 0);
+                  if(request.getParameter("sortBy")!=null){
+                    if(request.getParameter("sortBy").equals("eventDate")){
+                      events = eDao.getEventsByUsername(username, 1);
+                    }
+                    if(request.getParameter("sortBy").equals("eventDateDESC")){
+                      events = eDao.getEventsByUsername(username, 2);
+                    }
+                  }else{
+                    events = eDao.getEventsByUsername(username, 0);
+                  }
                 }
                 %>
 
