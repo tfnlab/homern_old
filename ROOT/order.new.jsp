@@ -239,7 +239,7 @@
                     <option value="cryptocurrency">Cryptocurrency</option>
                     <option value="doge">Doge</option>
                     <option value="bitcoin">Bitcoin</option>
-                    <option value="eth">ETH</option>                    
+                    <option value="eth">ETH</option>
                   </select>
                 </div>
 

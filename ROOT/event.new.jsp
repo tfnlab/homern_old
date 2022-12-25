@@ -166,6 +166,8 @@
                   String reminderTime = request.getParameter("reminder_time");
                   String invitees = request.getParameter("invitees");
                   String groupId = request.getParameter("group_id");
+                  String locationaclat = request.getParameter("locationaclat");
+                  String locationaclng = request.getParameter("locationaclng");
                   //2022-12-30T17:35
 //                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY, HH:MM AM");
 //                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy, HH:mm a");
@@ -181,7 +183,7 @@
                     } catch (Exception e) {
             		      %><%="Error parsing date and time string: " + e.getMessage()%><%
             		    }
-                  Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId);
+                  Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng);
                   EventDao evd = new EventDao();
 
                   evd.addEvent(event);
