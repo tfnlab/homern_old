@@ -158,7 +158,7 @@
 
                 List<Event> events = null;
 
-                String startTime = request.getParameter("start_Time");
+                String startTime = request.getParameter("start_time");
                 String endTime = request.getParameter("end_time");
                 if (startTime != null && startTime.trim().length() > 0) {
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
