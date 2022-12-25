@@ -290,9 +290,6 @@
              Certifications: <%= technician.getTechnicianCertifications() %><br>
              Availability: <%= technician.getTechnicianAvailability() %><br>
              Notes: <%= technician.getTechnicianNotes() %><br>
-             Photo: <%= technician.getTechnicianPhoto() %><br>
-             Password: <%= technician.getTechnicianPassword() %><br>
-             Username: <%= technician.getUsername() %>
              ID: <a href="order.edit.schedule.jsp?orderId=<%= order.getOrderId() %>&technicianId=<%= technician.getTechnicianId() %>" >Add</a><br>
              <div class="form-group">
                <label for="endTime">Order Date:</label>
