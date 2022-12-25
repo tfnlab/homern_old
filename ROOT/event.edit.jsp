@@ -213,7 +213,7 @@
                         </div>
                         <div class="form-group">
                           <label for="location">Location</label>
-                          <input type="text" class="form-control" name="location" value="<%= event.getLocation() %>" onkeypress="callAC(this)" >
+                          <input type="text" class="form-control" id="location" name="location" value="<%= event.getLocation() %>" onkeypress="callAC(this)" >
                           <input type="hidden" id="locationaclat" name="locationaclat" value="<%= event.getLocationaclat() %>" >
                           <input type="hidden" id="locationaclng" name="locationaclng" value="<%= event.getLocationaclng() %>">
                           <ul id="locationac" name="locationac"></ul>
