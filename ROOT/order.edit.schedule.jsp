@@ -272,6 +272,8 @@
          <%
              for (Technician technician : technicians) {
          %>
+
+         <form action="order.edit.schedule.jsp" method="POST" >
          <p>
              ID: <a href="technician.edit.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianId() %></a><br>
              Name: <%= technician.getTechnicianName() %><br>
@@ -292,8 +294,16 @@
              Password: <%= technician.getTechnicianPassword() %><br>
              Username: <%= technician.getUsername() %>
              ID: <a href="order.edit.schedule.jsp?orderId=<%= order.getOrderId() %>&technicianId=<%= technician.getTechnicianId() %>" >Add</a><br>
+             <div class="form-group">
+               <label for="endTime">Order Date:</label>
+               <input type="datetime-local" class="form-control" name="orderDate" value="<%= order.getOrderDate() %>" datepicker >
+             </div>
+             <label for="shipDate">Ship Date:</label><br>
+             <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
 
+             <input type="hidden" id="technicianId" name="technicianId" value="<%= technician.getTechnicianId() %>" >
          </p>
+         </form>
          <%
              }
          %>
