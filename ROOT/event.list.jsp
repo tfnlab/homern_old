@@ -196,6 +196,10 @@
                     Calendar calendar = Calendar.getInstance();
                     calendar.setTime(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm").parse(startTime));
                     calendar.add(Calendar.DATE, 1);
+                    calendar.set(Calendar.HOUR_OF_DAY, 19);
+                    calendar.set(Calendar.MINUTE, 0);
+                    calendar.set(Calendar.SECOND, 0);
+                    calendar.set(Calendar.MILLISECOND, 0);
                     endTime = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm").format(calendar.getTime());
                   }
                 %>
