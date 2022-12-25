@@ -331,6 +331,7 @@
              <input type="submit" value="Add Event">
          </p>
          </form>
+         <hr>
          <%
              for (OrderTechnicians technician : lI) {
          %>
