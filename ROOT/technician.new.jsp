@@ -182,7 +182,7 @@
                         technician.setTechnicianCertifications(request.getParameter("technicianCertifications"));
                         technician.setTechnicianAvailability(request.getParameter("technicianAvailability"));
                         technician.setTechnicianNotes(request.getParameter("technicianNotes"));
-                        technician.setTechnicianPhoto(request.getParameter("technicianPhoto").getBytes());
+                        //technician.setTechnicianPhoto(request.getParameter("technicianPhoto").getBytes());
                         technician.setTechnicianPassword(request.getParameter("technicianPassword"));
 
                         TechnicianDao td = new TechnicianDao();
