@@ -270,8 +270,7 @@
          <%
              for (OrderTechnicians technician : lI) {
          %>
-                Tech ID: <%= technician.getTechnicianId() %><br>
-                <%=tMap.get(new Integer(technician.getTechnicianId())).getTechnicianName()%>
+                Tech ID: <%= technician.getTechnicianId() %><br> --
          <%
              }
          %>
