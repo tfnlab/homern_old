@@ -205,10 +205,8 @@
               if (technicianId != null && technicianId.trim().length() > 0) {
 
                     String uuid = java.util.UUID.randomUUID().toString();
-                    String startTime = request.getParameter(technicianId +"-start_time");
-                    String endTime = request.getParameter(technicianId +"-end_time");
-
-
+                    String startTime = request.getParameter("start_time");
+                    String endTime = request.getParameter("end_time");
                     String location = request.getParameter("location");
                     String description = request.getParameter("description");
                     String reminderTime = request.getParameter("reminder_time");
