@@ -198,7 +198,7 @@
                   if (request.getParameter("technicianId") != null && !request.getParameter("technicianId").isEmpty()) {
                     tId = Integer.parseInt(request.getParameter("technicianId"));
                   }
-                  OrderTechnicians ot = new OrderTechnicians();
+                  OrderTechnicians ot = OrderTechnicians.createSampleOrderTechnicians();
                   ot.getTechnicianId(tId);
                   ot.setOrderId(orderId)
                   ot.setEventId(0)
