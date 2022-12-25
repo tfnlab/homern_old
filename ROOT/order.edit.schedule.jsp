@@ -202,7 +202,7 @@
                   ot.getTechnicianId(tId);
                   ot.setOrderId(orderId);
                   ot.setEventId(0);
-                  otD.insertOrderTechnicians(orderId, technicianId, 0);
+                  otD.insertOrderTechnicians(ot);
               }
               if (shippingAddress != null && shippingAddress.trim().length() > 0) {
 
