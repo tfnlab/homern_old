@@ -311,7 +311,7 @@
              </div>
              <div class="form-group">
                <label for="invitees">Invitees</label>
-               <input type="email" class="form-control" id="invitees" name="invitees" value="<%= technician.getTechnicianEmail() %>" placeholder="Enter email addresses separated by commas">
+               <input type="email" class="form-control" id="invitees" name="invitees" placeholder="Enter email addresses separated by commas">
              </div>
 
              <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
