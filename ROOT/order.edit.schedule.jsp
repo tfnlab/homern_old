@@ -295,9 +295,9 @@
              </div>
              <div class="form-group">
                <label for="location">Location</label>
-               <input type="text" class="form-control" id="location" name="location" onkeypress="callAC(this)">
-               <input type="hidden" id="locationaclat" name="locationaclat" >
-               <input type="hidden" id="locationaclng" name="locationaclng" >
+               <input type="text" class="form-control" id="location" name="location" onkeypress="callAC(this)" value="<%= order.getShippingAddress() %>">
+               <input type="hidden" id="locationaclat" name="locationaclat" value="<%= order.getShippingAddresslat() %>" >
+               <input type="hidden" id="locationaclng" name="locationaclng" value="<%= order.getShippingAddresslng() %>" >
                <ul id="locationac" name="locationac"></ul>
                <hr>
              </div>
