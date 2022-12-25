@@ -263,7 +263,7 @@
               <%
                 HashMap<Integer, Event> eMap = new HashMap<>();
                 HashMap<Integer, Technician> tMap = new HashMap<>();
-                if(technicians.size()>0){
+                if(lI.size()>0){
                     tMap = technicianDao.getTechniciansByUsernameMap(username);
                 }
               %>
