@@ -280,16 +280,10 @@
                    <% } %>
               </div>
            </select>
-              <div class="form-group">
-               <label for="endTime">Order Date:</label>
-               <input type="datetime-local" class="form-control"  id="start_time" name="start_time" value="<%= order.getOrderDate() %>" datepicker >
-             </div>
-             <label for="shipDate">Ship Date:</label><br>
-             <input class="form-control" type="datetime-local" id="end_time" name="end_time" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
 
              <div class="form-group">
                <label for="title">Title</label>
-               <input type="text" class="form-control" id="title" name="title" required <%= order.getOrderName() %>>
+               <input type="text" class="form-control" id="title" name="title" required value="<%= order.getOrderName() %>" >
              </div>
              <div class="form-group">
                  <label for="start_time">Start Time</label>
@@ -309,7 +303,7 @@
              </div>
              <div class="form-group">
                <label for="description">Description</label>
-               <textarea class="form-control" id="description" name="description"><%= order.getOrderDescription() %></textarea>
+               <textarea class="form-control" id="description" name="description" ><%= order.getOrderDescription() %></textarea>
              </div>
              <div class="form-group">
                <label for="reminder_time">Reminder Time</label>
