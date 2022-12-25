@@ -280,21 +280,20 @@
          <%
              }
          %>
+         <div class="form-group">
+          <label for="technicianId">Technician:</label>
+          <select class="form-group" id="technicianId" name="technicianId" >
+              <% for (Technician technician : technicians) { %>
+                <option value="<%= technician.getTechnicianId() %>"><%= technician.getTechnicianName() %></option>
+              <% } %>
 
+           </select>
+
+        </div>
          <form action="order.edit.schedule.jsp" method="POST" >
          <p>
 
-              <div class="form-group">
-               <label for="technicianId">Technician:</label>
-               <select class="form-group" id="technicianId" name="technicianId" >
-                   <% for (Technician technician : technicians) { %>
-                     <option value="<%= technician.getTechnicianId() %>"><%= technician.getTechnicianName() %></option>
-                   <% } %>
 
-                </select>
-
-             </div>
-             <BR><BR>
              <div class="form-group">
                <label for="title">Title</label>
                <input type="text" class="form-control" id="title" name="title" required value="<%= order.getOrderName() %>" >
