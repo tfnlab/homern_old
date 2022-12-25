@@ -224,7 +224,7 @@
                 <!-- HTML -->
                 <div class="form-group">
                   <label for="payment-options">Payment Options</label>
-                  <select class="form-control" id="paymentMethod">
+                  <select class="form-control" id="paymentMethod" name="paymentMethod">
                     <option value="cash">Cash</option>
                     <option value="check">Check</option>
                     <option value="credit-card">Credit Card</option>
