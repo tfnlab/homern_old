@@ -117,6 +117,16 @@
       var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + com;
       window.open(url, "_self");
     }
+    function getSchedule() {
+      var select = document.getElementById("customer-touch-points");
+      var selectedOption = select.options[select.selectedIndex];
+      var com = selectedOption.value;
+      var orderId = <%=orderId%>;
+      var url = "order.edit.schedule.jsp?orderId=" + orderId +  "&comType=" + com;
+      window.open(url, "_self");
+    }
+
+
   </script>
 </head>
 
@@ -186,6 +196,7 @@
           </select>
             <HR>
           <button class="btn btn-primary" onclick="getCom()">Correspondence</button>
+          <button class="btn btn-primary" onclick="getSchedule()">Schedule</button>
         <hr>
 
         <%
