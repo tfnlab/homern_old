@@ -9,6 +9,7 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.net.URLDecoder" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.HashMap" %>
 <%@ page import="com.tfnlab.mysql.Technician" %>
 <%@ page import="com.tfnlab.mysql.TechnicianDao" %>
 <%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
@@ -259,10 +260,18 @@
              List<OrderTechnicians> lI = otD.getOrderTechniciansByOrderId(order.getOrderId());
              List<Technician> technicians = technicianDao.getTechniciansByUsername(username);
          %>
+              <%
+                HashMap<Integer, Event> eMap = new HashMap<>();
+                HashMap<Technician, Event> tMap = new HashMap<>();
+                if(OrderTechnicians.size()>0){
+                    tMap = technicianDao.getTechniciansByUsernameMap(username);
+                }
+              %>
          <%
              for (OrderTechnicians technician : lI) {
          %>
                 Tech ID: <%= technician.getTechnicianId() %><br>
+                <%=tMap.get(new Integer(technician.getTechnicianId())).getTechnicianName()%>
          <%
              }
          %>
