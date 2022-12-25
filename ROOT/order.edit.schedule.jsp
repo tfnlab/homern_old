@@ -302,6 +302,7 @@
              <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
 
              <input type="hidden" id="technicianId" name="technicianId" value="<%= technician.getTechnicianId() %>" >
+             <input type="hidden" id="technicianId" name="technicianId" value="<%= order.getOrderId() %>" >
              <input type="submit" value="Schedule">
          </p>
          </form>
