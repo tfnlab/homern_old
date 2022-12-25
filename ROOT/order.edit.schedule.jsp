@@ -250,7 +250,7 @@
              List<Technician> technicians = technicianDao.getTechniciansByUsername(username);
          %>
          <%
-             for (OrderTechnicians technician : technicians) {
+             for (OrderTechnicians technician : lI) {
          %>
                 Tech ID: <%= technician.getTechnicianId() %><br>
          <%
