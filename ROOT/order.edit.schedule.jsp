@@ -205,8 +205,12 @@
 
 
               // Validate form data
-              String tlid = request.getParameter("tlid");
-              if (tlid != null && tlid.trim().length() > 0) {
+              String tlidstr = request.getParameter("tlid");
+              if (tlidstr != null && tlidstr.trim().length() > 0) {
+                int tlid = 0;
+                if (!request.getParameter("tlid").isEmpty()) {
+                  tlid = Integer.parseInt(request.getParameter("tlid"));
+                }
                 OrderTechnicians ot = otD.getOrderTechniciansById(tlid);
                 otD.deleteOrderTechnicians(tlid, username);
                 evd.deleteEventById(ot.getEventId(),username);
