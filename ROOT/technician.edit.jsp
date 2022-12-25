@@ -195,7 +195,7 @@
                         technician.setDateLastModified(new java.util.Date(updatedAt.getTime()));
                         technician.setUsername(username);
 
-                        td.insertRecord(technician);
+                        td.updateRecord(technician);
 
                       %>
 
