@@ -168,7 +168,9 @@
 
                       if(pv){
                         dao.insertUser(user);
+                        user = dao.getUserByUsername(username);
                         session.setAttribute("username", username);
+                        session.setAttribute("usernameOBJ", user);
                         um  = "Thank you for joining";
                       }
                         %>
