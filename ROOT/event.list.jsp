@@ -14,6 +14,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Calendar" %>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -160,7 +162,7 @@
 
                 String startTime = request.getParameter("start_time");
                 String endTime = request.getParameter("end_time");
-                
+
                 if (startTime != null && startTime.trim().length() > 0) {
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                     Date startTimeDate = null;
