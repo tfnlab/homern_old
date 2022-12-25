@@ -186,7 +186,7 @@
                         technician.setTechnicianPassword(request.getParameter("technicianPassword"));
 
                         TechnicianDao td = new TechnicianDao();
-                        td.insertRecord(technician);
+                        //td.insertRecord(technician);
                       %>
 
                         Order Saved
