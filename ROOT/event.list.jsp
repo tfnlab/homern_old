@@ -28,6 +28,8 @@
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Include the Bootstrap Datepicker CSS file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -166,14 +168,23 @@
                 }
                 %>
 
-
-
+                <form method="post" action="event.list.jsp">
+                  <div class="form-group">
+                      <label for="start_time">Start Time</label>
+                      <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker>
+                  </div>
+                  <div class="form-group">
+                    <label for="end_time">End Time</label>
+                    <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker>
+                  </div>
+              </form>
+              <hr>
               <% for (Event event : events) { %>
                 Event Name: <%= event.getTitle() %><br>
                 Event ID: <a href="event.edit.jsp?eventid=<%= event.getId() %>" ><%= event.getId() %></a><br>
                 Event Description: <%= event.getDescription() %><br>
                 Event Date: <%= event.getStartTime() %> - <%= event.getEndTime() %> <BR>
-                <a href="event.list.jsp?eventid=<%= event.getId() %>&remove=yes" >REMOVE <%= event.getId() %></a><br>
+                <a href="event.list.jsp?eventid=<%= event.getId() %>&remove=yes" >REMOVE</a><br>
                 <hr>
               <% } %>
 
@@ -275,7 +286,54 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    $(function () {
+     var bindDatePicker = function() {
+  		$(".date").datetimepicker({
+          format:'YYYY-MM-DD',
+  			icons: {
+  				time: "fa fa-clock-o",
+  				date: "fa fa-calendar",
+  				up: "fa fa-arrow-up",
+  				down: "fa fa-arrow-down"
+  			}
+  		}).find('input:first').on("blur",function () {
+  			// check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
+  			// update the format if it's yyyy-mm-dd
+  			var date = parseDate($(this).val());
 
+  			if (! isValidDate(date)) {
+  				//create date based on momentjs (we have that)
+  				date = moment().format('YYYY-MM-DD');
+  			}
+
+  			$(this).val(date);
+  		});
+  	}
+
+     var isValidDate = function(value, format) {
+  		format = format || false;
+  		// lets parse the date to the best of our knowledge
+  		if (format) {
+  			value = parseDate(value);
+  		}
+
+  		var timestamp = Date.parse(value);
+
+  		return isNaN(timestamp) == false;
+     }
+
+     var parseDate = function(value) {
+  		var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
+  		if (m)
+  			value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
+
+  		return value;
+     }
+
+     bindDatePicker();
+   });
+  </script>
 </body>
 
 </html>
