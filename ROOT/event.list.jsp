@@ -160,6 +160,7 @@
 
                 String startTime = request.getParameter("start_time");
                 String endTime = request.getParameter("end_time");
+                
                 if (startTime != null && startTime.trim().length() > 0) {
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                     Date startTimeDate = null;
@@ -189,6 +190,12 @@
                   if (startTime == null) {
                     startTime = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm").format(new Date());
                   }
+                  if (endTime == null) {
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.setTime(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm").parse(startTime));
+                    calendar.add(Calendar.DATE, 1);
+                    endTime = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm").format(calendar.getTime());
+                  }
                 %>
 
                 <form method="post" action="event.list.jsp">
@@ -198,10 +205,11 @@
                   </div>
                   <div class="form-group">
                     <label for="end_time">End Time</label>
-                    <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%= request.getParameter("end_time") %>">
+                    <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%= endTime %>">
                   </div>
                   <button type="submit" class="btn btn-primary">Filter</button>
                 </form>
+
 
               <hr>
               <% for (Event event : events) { %>
