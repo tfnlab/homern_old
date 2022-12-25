@@ -13,6 +13,7 @@
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -161,6 +162,7 @@
                 String startTime = request.getParameter("startTime");
                 String endTime = request.getParameter("end_time");
                 if (startTime != null && startTime.trim().length() > 0) {
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                     Date startTimeDate = null;
                     Date endTimeDate = null;
                     Date reminderTimeDate = null;
