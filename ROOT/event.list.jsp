@@ -157,7 +157,6 @@
                 }
 
                 List<Event> events = null;
-                start_time
 
                 String startTime = request.getParameter("startTime");
                 String endTime = request.getParameter("end_time");
