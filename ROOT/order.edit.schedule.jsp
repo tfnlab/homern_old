@@ -11,6 +11,9 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.tfnlab.mysql.Technician" %>
 <%@ page import="com.tfnlab.mysql.TechnicianDao" %>
+<%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
+<%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -242,9 +245,17 @@
         </form>
         <%
              TechnicianDao technicianDao = new TechnicianDao();
+             OrderTechniciansDAO otD = new OrderTechniciansDAO();
+             List<OrderTechnicians> lI = otD.getOrderTechniciansByOrderId(order.getOrderId());
              List<Technician> technicians = technicianDao.getTechniciansByUsername(username);
          %>
-
+         <%
+             for (OrderTechnicians technician : technicians) {
+         %>
+                Tech ID: <%= technician.getTechnicianId() %><br>
+         <%
+             }
+         %>
          <%
              for (Technician technician : technicians) {
          %>
