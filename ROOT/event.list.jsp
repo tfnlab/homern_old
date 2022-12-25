@@ -185,18 +185,24 @@
                   }
                 }
                 %>
+                <%
+                  if (startTime == null) {
+                    startTime = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm").format(new Date());
+                  }
+                %>
 
                 <form method="post" action="event.list.jsp">
                   <div class="form-group">
                       <label for="start_time">Start Time</label>
-                      <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker>
+                      <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%= startTime %>">
                   </div>
                   <div class="form-group">
                     <label for="end_time">End Time</label>
-                    <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker>
+                    <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%= request.getParameter("end_time") %>">
                   </div>
                   <button type="submit" class="btn btn-primary">Filter</button>
-              </form>
+                </form>
+
               <hr>
               <% for (Event event : events) { %>
                 Event Name: <%= event.getTitle() %><br>
