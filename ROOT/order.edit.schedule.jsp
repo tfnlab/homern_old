@@ -254,7 +254,6 @@
         <form action="order.edit.schedule.jsp" method="POST" >
           <p>Order Dates: <%= order.getOrderDate() %> - <%= order.getShipDate() %></p><br>
           <p>Order Description: <%= order.getOrderDescription() %></p><br>
-          <input type="submit" value="Schedule">
         </form>
         <%
              List<OrderTechnicians> lI = otD.getOrderTechniciansByOrderId(order.getOrderId());
@@ -266,7 +265,6 @@
                 if(lI.size()>0){
                     eMap = evd.getEventsByUsernameMap(username);
                     tMap = technicianDao.getTechniciansByUsernameMap(username);
-
                 }
               %>
          <%
@@ -329,7 +327,7 @@
              </div>
 
              <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
-             <input type="submit" value="Schedule">
+             <input type="submit" value="Add Event">
          </p>
          </form>
 
