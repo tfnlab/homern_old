@@ -205,6 +205,12 @@
 
 
               // Validate form data
+              String tlid = request.getParameter("tlid");
+              if (tlid != null && tlid.trim().length() > 0) {
+                OrderTechnicians ot = OrderTechnicians.createSampleOrderTechnicians();
+                ot.deleteOrderTechnicians(tlid, username);
+              }
+
               if (technicianId != null && technicianId.trim().length() > 0) {
 
                     String uuid = java.util.UUID.randomUUID().toString();
