@@ -177,6 +177,7 @@
                     <label for="end_time">End Time</label>
                     <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker>
                   </div>
+                  <button type="submit" class="btn btn-primary">Filter</button>
               </form>
               <hr>
               <% for (Event event : events) { %>
