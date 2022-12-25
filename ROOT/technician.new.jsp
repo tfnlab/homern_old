@@ -168,9 +168,7 @@
                       //Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng);
                       //OrderDao dao = new OrderDao();
                       //ao.insertOrder(order);
-                      %>
-                      <%@ page import="com.tfnlab.mysql.Technician" %>
-                      <%
+
                         Technician technician = new Technician();
                         technician.setTechnicianName(request.getParameter("technicianName"));
                         technician.setTechnicianEmail(request.getParameter("technicianEmail"));
@@ -199,7 +197,7 @@
         <form action="technician.new.jsp" method="post">
 <div class="form-group">
 <label for="technicianName">Technician Name</label>
-<input type="text" class="form-control" id="technicianName" placeholder="Enter Technician Name">
+<input type="text" class="form-control" name="technicianName" id="technicianName" placeholder="Enter Technician Name">
 </div>
 <div class="form-group">
 <label for="technicianEmail">Technician Email</label>
