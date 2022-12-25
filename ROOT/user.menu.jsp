@@ -125,6 +125,7 @@
         <p>
           Welcome to our application for contractors! Our platform is designed to simplify and streamline your business operations from start to finish. With our user-friendly interface, you can easily manage your leads, track your projects, and handle invoicing and payment all in one place. No more juggling multiple software or spreadsheet to keep your business running smoothly. Additionally, our platform provides valuable insights and analytics to help you make informed decisions and grow your business. Thank you for choosing our application, we are confident it will make a significant difference in your day-to-day operations as a contractor.
         </p>
+        <HR>
         <h1>Features of Home Service Software</h1>
 
         <h2>Scheduling and dispatch</h2>
@@ -150,7 +151,7 @@
 
         <h2>Integration with other systems</h2>
         <p>Home service software may integrate with other business systems, such as accounting software or CRM software, to streamline workflows and improve efficiency.</p>
-        
+
       </div>
 
     </section><!-- End Blog Section -->
