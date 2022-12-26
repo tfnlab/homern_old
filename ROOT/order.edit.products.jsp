@@ -174,6 +174,11 @@
         document.getElementById("total").value = document.getElementById("units").value * document.getElementById("price").value;
     }
 
+    function getInv() {
+      var orderId = <%=orderId%>;
+      var url = "order.edit.products.print.com.jsp?orderId=" + orderId;
+      window.open(url, "_blank");
+    }
   </script>
 </head>
 
@@ -222,6 +227,9 @@
         <h2>Order - Products </h2>
         <%@ include file="user.menu.nav.jsp" %>
 
+          <HR>
+        <button class="btn btn-primary" onclick="getInv()">Download</button>
+        <hr>
                 <%
                 Order order = dao.getOrderByOrderId(orderId);
 
