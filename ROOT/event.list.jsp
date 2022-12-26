@@ -184,7 +184,7 @@
                              if (request.getParameter("technicianId") != null && !request.getParameter("technicianId").isEmpty()) {
                                tId = Integer.parseInt(request.getParameter("technicianId"));
                              }
-                             events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate, tId);
+                             //events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate, tId);
                            }
                       } catch (Exception e) {
               		      %><%="Error parsing date and time string: " + e.getMessage()%><%
@@ -224,7 +224,7 @@
                    <select class="form-group" id="technicianId" name="technicianId" >
                          <option value="allTechnicians">All Technicians</option>
                        <% for (Technician technician : technicians) { %>
-                         <option value="<%= technician.getTechnicianId() %>"><%= technician.getTechnicianName() %></option>
+                         <option value="<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianName() %></option>
                        <% } %>
                    </select>
                  </div>
