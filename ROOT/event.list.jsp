@@ -170,7 +170,25 @@
                 String endTime = request.getParameter("end_time");
                 String tIdstr = request.getParameter("technicianId");
                 if (startTime != null && startTime.trim().length() > 0) {
-                    
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+                    Date startTimeDate = null;
+                    Date endTimeDate = null;
+                    Date reminderTimeDate = null;
+                      try{
+                         startTimeDate = dateFormat.parse(startTime);
+                         endTimeDate = dateFormat.parse(endTime);
+                           if (request.getParameter("technicianId").equals("All")) {
+                             events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate);
+                           }else{
+                             int tId = 0;
+                             if (request.getParameter("technicianId") != null && !request.getParameter("technicianId").isEmpty()) {
+                               tId = Integer.parseInt(request.getParameter("technicianId"));
+                             }
+                             //events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate, tId);
+                           }
+                      } catch (Exception e) {
+              		      %><%="Error parsing date and time string: " + e.getMessage()%><%
+              		    }
                 }else{
                   if(request.getParameter("sortBy")!=null){
                     if(request.getParameter("sortBy").equals("eventDate")){
@@ -223,6 +241,7 @@
 
 
               <hr>
+              <% if(events !=null) {%>
               <% for (Event event : events) { %>
                 Event Name: <%= event.getTitle() %><br>
                 Event ID: <a href="event.edit.jsp?eventid=<%= event.getId() %>" ><%= event.getId() %></a><br>
@@ -231,6 +250,7 @@
                 <a href="event.list.jsp?eventid=<%= event.getId() %>&remove=yes" >REMOVE</a><br>
                 <hr>
               <% } %>
+              <% }%>
 
 
       </div>
