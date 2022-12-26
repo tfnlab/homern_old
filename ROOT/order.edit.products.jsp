@@ -231,7 +231,7 @@
                   if (!request.getParameter("plid").isEmpty()) {
                     plid = Integer.parseInt(request.getParameter("plid"));
                   }
-                  plDao.deleteProductLineItem(ot.getEventId(),username);
+                  plDao.deleteProductLineItem(plid,username);
                 }
 
                 if (name != null && name.trim().length() > 0) {
