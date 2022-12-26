@@ -295,6 +295,12 @@
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
+            <%
+
+                List<Payment> pList = pDao.getPayments(eId, username);
+                BigDecimal pTotal  = new BigDecimal("0");
+
+            %>
 
       </div>
 
