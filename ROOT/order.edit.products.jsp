@@ -150,7 +150,7 @@
       window.open(url, "_self");
     }
     function getProductDetail() {
-      var select = document.getElementById("products");
+      var select = document.getElementById("productsId");
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.value;
       var orderId = <%=orderId%>;
