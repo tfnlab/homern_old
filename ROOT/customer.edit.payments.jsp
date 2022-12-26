@@ -304,7 +304,7 @@
                %>
                    ID: <%= pItem.getPaymentId() %><br>
                    Tech Price: <%= pItem.getPaymentAmount() %><br>
-                   -- <a href="customer.edit.payments.jsp?remove=yes&orderId=<%=orderId%>&pid=<%= pItem.getPaymentId() %>" >remove<a><br>
+                   -- <a href="customer.edit.payments.jsp?remove=yes&orderId=<%=entity.getId()%>&pid=<%= pItem.getPaymentId() %>" >remove<a><br>
                    <hr>
 
             <%
