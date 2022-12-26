@@ -252,7 +252,7 @@
 
                     <div class="form-group">
                       Order:
-                        <a href="order.edit.jsp?remove=yes&orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
+                        <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                     </div>
         <HR>
         <form action="order.edit.schedule.jsp" method="POST" >
@@ -313,7 +313,7 @@
                   Tech ID: <%= plItem.getPrice() %><br>
                   Tech Name: <%= plItem.getName() %><br>
                   Tech Description: <%= plItem.getDescription() %><br>
-                  -- <a href="order.edit.products.jsp?orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
+                  -- <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                   <hr>
 
            <%
