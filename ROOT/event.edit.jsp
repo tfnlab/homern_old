@@ -187,7 +187,7 @@
                       String locationaclat = request.getParameter("locationaclat");
                       String locationaclng = request.getParameter("locationaclng");
 
-                      event = new Event(eId, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, "");
+                      event = new Event(eId, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, "", null, null);
                       ed.updateEventById(event);
                     %>
 
