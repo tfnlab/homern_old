@@ -107,7 +107,7 @@
     }
     function getPayments(){
         var eId = <%=eId%>;
-        var url = "customer.edit.payments.jsp?orderId=" + eId ;
+        var url = "customer.edit.payments.jsp?eId=" + eId ;
         window.open(url, "_self");
     }
   </script>
