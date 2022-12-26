@@ -300,7 +300,6 @@
            %>
                   ID: <%= plItem.getId() %><br>
                   Tech ID: <%= plItem.getPrice() %><br>
-                  Tech ID: <%= plItem.getName() %><br>
                   -- <a href="order.edit.products.jsp?orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                   <hr>
 
