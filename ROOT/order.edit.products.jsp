@@ -20,8 +20,8 @@
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.util.UUID" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.text.ProductLineItem" %>
-<%@ page import="java.text.ProductLineItemDao" %>
+<%@ page import="com.tfnlab.mysql.ProductLineItem" %>
+<%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 
 
 
