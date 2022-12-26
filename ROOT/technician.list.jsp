@@ -139,26 +139,23 @@
          <%
              for (Technician technician : technicians) {
          %>
-         <p>
-             ID: <a href="technician.edit.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianId() %></a><br>
-             Name: <%= technician.getTechnicianName() %><br>
-             Email: <%= technician.getTechnicianEmail() %><br>
-             Phone: <%= technician.getTechnicianPhone() %><br>
-             Skills: <%= technician.getTechnicianSkills() %><br>
-             Last Modified: <%= technician.getDateLastModified() %><br>
-             Active: <%= technician.isTechnicianActive() %><br>
-             Created: <%= technician.getDateCreated() %><br>
-             Interviewed: <%= technician.isTechnicianInterviewed() %><br>
-             Background Check: <%= technician.isTechnicianPassedBackgroundCheck() %><br>
-             Payrate: <%= technician.getTechnicianPayrate() %><br>
-             Location: <%= technician.getTechnicianLocation() %><br>
-             Certifications: <%= technician.getTechnicianCertifications() %><br>
-             Availability: <%= technician.getTechnicianAvailability() %><br>
-             Notes: <%= technician.getTechnicianNotes() %><br>
-             Photo: <%= technician.getTechnicianPhoto() %><br>
-             Password: <%= technician.getTechnicianPassword() %><br>
-             Username: <%= technician.getUsername() %>
-         </p>
+         <div style="background-color: <%= technician.isTechnicianActive() ? 'green' : 'red' %>">
+           ID: <a href="technician.edit.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianId() %></a><br>
+           Name: <%= technician.getTechnicianName() %><br>
+           Email: <%= technician.getTechnicianEmail() %><br>
+           Phone: <%= technician.getTechnicianPhone() %><br>
+           Skills: <%= technician.getTechnicianSkills() %><br>
+           Active: <%= technician.isTechnicianActive() %><br>
+           Last Modified: <%= technician.getDateLastModified() %><br>
+           Created: <%= technician.getDateCreated() %><br>
+           Interviewed: <%= technician.isTechnicianInterviewed() %><br>
+           Background Check: <%= technician.isTechnicianPassedBackgroundCheck() %><br>
+           Payrate: <%= technician.getTechnicianPayrate() %><br>
+           Location: <%= technician.getTechnicianLocation() %><br>
+           Certifications: <%= technician.getTechnicianCertifications() %><br>
+           Availability: <%= technician.getTechnicianAvailability() %>
+         </div>
+
          <%
              }
          %>
