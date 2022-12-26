@@ -299,12 +299,12 @@
 
                 List<Payment> pList = pDao.getPayments(order.getOrderId(), username);
                 BigDecimal pTotal  = new BigDecimal("0");
-                for (ProductLineItem pItem : pliList) {
+                for (Payment pItem : pliList) {
                        pTotal = pTotal.add(pItem.getTotal());
                %>
                    ID: <%= pItem.getPaymentId() %><br>
                    Tech Price: <%= pItem.getPaymentAmount() %><br>
-                   -- <a href="customer.edit.payments.jsp?remove=yes&orderId=<%=orderId%>&pid=<%= plItem.getPaymentId() %>" >remove<a><br>
+                   -- <a href="customer.edit.payments.jsp?remove=yes&orderId=<%=orderId%>&pid=<%= pItem.getPaymentId() %>" >remove<a><br>
                    <hr>
 
             <%
