@@ -232,7 +232,7 @@
                   BigDecimal price = new BigDecimal(request.getParameter("price"));
                   int units = Integer.parseInt(request.getParameter("units"));
                   String description = request.getParameter("description");
-                  ProductLineItem li = new ProductLineItem(0, orderId, productId, units, price, currentTime, currentTime, username, username);
+                  ProductLineItem li = new ProductLineItem(0, orderId, productId, units, price, currentTime, currentTime, username, username, name, description);
                   plDao.insertProductLineItem(li);
                 }
                 %>
@@ -300,6 +300,8 @@
            %>
                   ID: <%= plItem.getId() %><br>
                   Tech ID: <%= plItem.getPrice() %><br>
+                  Tech Name: <%= plItem.getName() %><br>
+                  Tech Description: <%= plItem.getDescription() %><br>
                   -- <a href="order.edit.products.jsp?orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                   <hr>
 
