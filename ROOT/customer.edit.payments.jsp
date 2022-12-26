@@ -11,6 +11,8 @@
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.text.ParseException" %>
+<%@ page import="com.tfnlab.mysql.Payment" %>
+<%@ page import="com.tfnlab.mysql.PaymentDao" %>
 
 
 <!DOCTYPE html>
@@ -157,13 +159,30 @@
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
-                String first_name = request.getParameter("firstName");
+                String paymentAmountStr = request.getParameter("paymentAmount");
 
                 Entity entity = new Entity();
                 EntityDao ed = new EntityDao();
-
-                if (first_name != null && first_name.trim().length() > 0) {
+                PaymentDao pDao = new PaymentDao();
+                if (paymentAmountStr != null && paymentAmountStr.trim().length() > 0) {
                       %>
+                      <%
+                        Integer customerId = Integer.parseInt(request.getParameter("customerId"));
+                        Date paymentDate = Date.valueOf(request.getParameter("paymentDate"));
+                        Date expectedPostDate = Date.valueOf(request.getParameter("expectedPostDate"));
+                        Date effectiveDate = Date.valueOf(request.getParameter("effectiveDate"));
+                        BigDecimal paymentAmount = BigDecimal.valueOf(Double.parseDouble(request.getParameter("paymentAmount")));
+                        String paymentMethod = request.getParameter("paymentMethod");
+                        Boolean hasCleared = Boolean.parseBoolean(request.getParameter("hasCleared"));
+                        Boolean hasReversed = Boolean.parseBoolean(request.getParameter("hasReversed"));
+                        Date createdAt = Date.valueOf(request.getParameter("createdAt"));
+                        Date lastUpdatedAt = Date.valueOf(request.getParameter("lastUpdatedAt"));
+                        String createdBy = username;
+                        Integer lastModifiedBy = Integer.parseInt(request.getParameter("lastModifiedBy"));
+                        Payment payment = new Payment(0, customerId, paymentDate, expectedPostDate, effectiveDate, paymentAmount, paymentMethod, hasCleared, hasReversed, createdAt, lastUpdatedAt, createdBy, lastModifiedBy);
+                        pDao.insertPayment(payment);
+                      %>
+
                         Payment Saved
                       <%
                 }
@@ -172,27 +191,24 @@
                     <form action="customer.edit.payments.jsp" method="post">
                       <div class="form-group">
                         <label for="id">ID</label>
-                        <input type="text" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly>
+                        <input type="text" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly disable>
                       </div>
                       <div class="form-group">
                         <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>">
+                        <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>" disable>
                       </div>
                       <div class="form-group">
                         <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" value="<%= entity.getLastName() %>">
+                        <input type="text" class="form-control" id="lastName" name="lastName" value="<%= entity.getLastName() %>" disable>
                       </div>
                       <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="<%= entity.getEmail() %>">
+                        <input type="email" class="form-control" id="email" name="email" value="<%= entity.getEmail() %>" disable>
                       </div>
                       <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" >
+                        <input type="tel" class="form-control" id="phone" name="phone" disable>
                       </div>
-                      <div class="form-group">
-                        <label for="customerId">Customer ID</label>
-                        <input type="number" class="form-control" id="customerId" placeholder="Enter customer ID">
                       </div>
                       <div class="form-group">
                         <label for="paymentDate">Payment Date</label>
