@@ -15,6 +15,8 @@
 <%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Calendar" %>
+<%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
+<%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
 
 
 <!DOCTYPE html>
@@ -148,6 +150,9 @@
                 EventDao eDao = new EventDao();
                 String username = (String) session.getAttribute("username");
                 String remove = request.getParameter("remove");
+
+                TechnicianDao technicianDao = new TechnicianDao();
+                List<Technician> technicians = technicianDao.getTechniciansByUsernameActive(username);
                 int eId = 0;
                 if (request.getParameter("eventid") != null && !request.getParameter("eventid").isEmpty()) {
                   eId = Integer.parseInt(request.getParameter("eventid"));
@@ -205,6 +210,14 @@
                 %>
 
                 <form method="post" action="event.list.jsp">
+                  <div class="form-group">
+                   <label for="technicianId">Technician:</label>
+                   <select class="form-group" id="technicianId" name="technicianId" >
+                       <% for (Technician technician : technicians) { %>
+                         <option value="<%= technician.getTechnicianId() %>"><%= technician.getTechnicianName() %></option>
+                       <% } %>
+                   </select>
+                 </div>
                   <div class="form-group">
                       <label for="start_time">Start Time</label>
                       <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%= startTime %>">
