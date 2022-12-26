@@ -295,21 +295,6 @@
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
-            <%
-
-                List<Payment> pList = pDao.getPayments(eId, username);
-                BigDecimal pTotal  = new BigDecimal("0");
-                for (Payment pItem : pList) {
-                       pTotal = pTotal.add(pItem.getPaymentAmount());
-               %>
-                   ID: <%= pItem.getPaymentId() %><br>
-                   Tech Price: <%= pItem.getPaymentAmount() %><br>
-                   -- <a href="customer.edit.payments.jsp?remove=yes&orderId=<%=eId%>&pid=<%= pItem.getPaymentId() %>" >remove<a><br>
-                   <hr>
-
-            <%
-                }
-            %>
 
       </div>
 
