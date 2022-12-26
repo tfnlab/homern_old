@@ -232,6 +232,7 @@
                   BigDecimal price = new BigDecimal(request.getParameter("price"));
                   int units = Integer.parseInt(request.getParameter("units"));
                   String description = request.getParameter("description");
+                  %><%=description%><%
                   ProductLineItem li = new ProductLineItem(0, orderId, productId, units, price, currentTime, currentTime, username, username, name, description);
                   plDao.insertProductLineItem(li);
                 }
