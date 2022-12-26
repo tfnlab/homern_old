@@ -176,7 +176,7 @@
 
     function getInv() {
       var orderId = <%=orderId%>;
-      var url = "order.edit.products.print.com.jsp?orderId=" + orderId;
+      var url = "order.edit.products.print.jsp?orderId=" + orderId;
       window.open(url, "_blank");
     }
   </script>
