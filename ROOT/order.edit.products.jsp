@@ -312,10 +312,10 @@
            <%
 
                List<ProductLineItem> pliList = plDao.getProductLineItemsByInvoiceId(order.getOrderId());
+               BigDecimal invTotal  = new BigDecimal("0");
                for (ProductLineItem plItem : pliList) {
-               BigDecimal invTotal  = new BigDecimal();
                       invTotal.add(plItem.getTotal());
-           %>
+              %>
                   ID: <%= plItem.getId() %><br>
                   Tech Name: <%= plItem.getName() %><br>
                   Tech Description: <%= plItem.getDescription() %><br>
