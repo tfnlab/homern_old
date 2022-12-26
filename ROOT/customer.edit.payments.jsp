@@ -178,7 +178,7 @@
                         Date createdAt = null;
                         Date lastUpdatedAt = null;
                         String createdBy = username;
-                        Integer lastModifiedBy = Integer.parseInt(request.getParameter("lastModifiedBy"));
+                        Integer lastModifiedBy = 0;
                         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
                         if (request.getParameter("paymentDate") != null) {
