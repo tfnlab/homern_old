@@ -157,7 +157,6 @@
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
-                String username = (String) session.getAttribute("username");
                 String first_name = request.getParameter("firstName");
 
                 Entity entity = new Entity();
