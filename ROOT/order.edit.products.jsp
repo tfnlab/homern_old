@@ -293,7 +293,20 @@
          </p>
          </form>
          <hr>
+           <%
 
+               List<ProductLineItem> pliList = plDao.getProductLineItemsByInvoiceId(order.getOrderId());
+               for (ProductLineItem plItem : pliList) {
+           %>
+                  ID: <%= plItem.getId() %><br>
+                  Tech ID: <%= plItem.getPrice() %><br>
+                  Tech ID: <%= plItem.getName() %><br>
+                  -- <a href="order.edit.products.jsp?orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
+                  <hr>
+
+           <%
+               }
+           %>
       </div>
 
     </section><!-- End Blog Section -->
