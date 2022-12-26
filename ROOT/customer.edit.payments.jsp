@@ -168,17 +168,55 @@
                       %>
                       <%
                         Integer customerId = Integer.parseInt(request.getParameter("customerId"));
-                        Date paymentDate = Date.valueOf(request.getParameter("paymentDate"));
-                        Date expectedPostDate = Date.valueOf(request.getParameter("expectedPostDate"));
-                        Date effectiveDate = Date.valueOf(request.getParameter("effectiveDate"));
+                        Date paymentDate = null;
+                        Date expectedPostDate = null;
+                        Date effectiveDate = null;
                         BigDecimal paymentAmount = BigDecimal.valueOf(Double.parseDouble(request.getParameter("paymentAmount")));
                         String paymentMethod = request.getParameter("paymentMethod");
                         Boolean hasCleared = Boolean.parseBoolean(request.getParameter("hasCleared"));
                         Boolean hasReversed = Boolean.parseBoolean(request.getParameter("hasReversed"));
-                        Date createdAt = Date.valueOf(request.getParameter("createdAt"));
-                        Date lastUpdatedAt = Date.valueOf(request.getParameter("lastUpdatedAt"));
+                        Date createdAt = null;
+                        Date lastUpdatedAt = null;
                         String createdBy = username;
                         Integer lastModifiedBy = Integer.parseInt(request.getParameter("lastModifiedBy"));
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+                        if (request.getParameter("paymentDate") != null) {
+                            try {
+                                paymentDate = dateFormat.parse(request.getParameter("paymentDate"));
+                            } catch (ParseException e) {
+                                paymentDate = dateFormat.parse("1980-24-10");
+                            }
+                        }
+                        if (request.getParameter("expectedPostDate") != null) {
+                            try {
+                                expectedPostDate = dateFormat.parse(request.getParameter("expectedPostDate"));
+                            } catch (ParseException e) {
+                                expectedPostDate = dateFormat.parse("1980-24-10");
+                            }
+                        }
+                        if (request.getParameter("effectiveDate") != null) {
+                            try {
+                                effectiveDate = dateFormat.parse(request.getParameter("effectiveDate"));
+                            } catch (ParseException e) {
+                                effectiveDate = dateFormat.parse("1980-24-10");
+                            }
+                        }
+                        if (request.getParameter("createdAt") != null) {
+                            try {
+                                createdAt = dateFormat.parse(request.getParameter("createdAt"));
+                            } catch (ParseException e) {
+                                createdAt = dateFormat.parse("1980-24-10");
+                            }
+                        }
+                        if (request.getParameter("lastUpdatedAt") != null) {
+                            try {
+                                lastUpdatedAt = dateFormat.parse(request.getParameter("lastUpdatedAt"));
+                            } catch (ParseException e) {
+                                lastUpdatedAt = dateFormat.parse("1980-24-10");
+                            }
+                        }
+
                         Payment payment = new Payment(0, customerId, paymentDate, expectedPostDate, effectiveDate, paymentAmount, paymentMethod, hasCleared, hasReversed, createdAt, lastUpdatedAt, createdBy, lastModifiedBy);
                         pDao.insertPayment(payment);
                       %>
