@@ -177,15 +177,6 @@
                       try{
                          startTimeDate = dateFormat.parse(startTime);
                          endTimeDate = dateFormat.parse(endTime);
-                           if (request.getParameter("technicianId").equals("All")) {
-                             events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate);
-                           }else{
-                             int tId = 0;
-                             if (request.getParameter("technicianId") != null && !request.getParameter("technicianId").isEmpty()) {
-                               tId = Integer.parseInt(request.getParameter("technicianId"));
-                             }
-                             //events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate, tId);
-                           }
                       } catch (Exception e) {
               		      %><%="Error parsing date and time string: " + e.getMessage()%><%
               		    }
