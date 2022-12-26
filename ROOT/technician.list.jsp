@@ -139,7 +139,8 @@
          <%
              for (Technician technician : technicians) {
          %>
-         <div style="background-color: <%= technician.isTechnicianActive() ? 'green' : 'red' %>">
+         <% String color = technician.isTechnicianActive() ? "green" : "red"; %>
+         <div style="background-color: <%=color%>">
            ID: <a href="technician.edit.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianId() %></a><br>
            Name: <%= technician.getTechnicianName() %><br>
            Email: <%= technician.getTechnicianEmail() %><br>
