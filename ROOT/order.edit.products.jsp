@@ -225,9 +225,9 @@
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
                 ProductLineItemDao plDao = new ProductLineItemDao();
                 if (name != null && name.trim().length() > 0) {
-                  int productsId = 0;
+                  int productId = 0;
                   if (request.getParameter("productsId") != null && !request.getParameter("productsId").isEmpty()) {
-                    productsId = Integer.parseInt(request.getParameter("productsId"));
+                    productId = Integer.parseInt(request.getParameter("productsId"));
                   }
                   BigDecimal price = new BigDecimal(request.getParameter("price"));
                   int units = Integer.parseInt(request.getParameter("units"));
