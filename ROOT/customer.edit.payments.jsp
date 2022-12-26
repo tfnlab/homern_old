@@ -299,7 +299,7 @@
 
                 List<Payment> pList = pDao.getPayments(order.getOrderId(), username);
                 BigDecimal pTotal  = new BigDecimal("0");
-                for (Payment pItem : pliList) {
+                for (Payment pItem : pList) {
                        pTotal = pTotal.add(pItem.getTotal());
                %>
                    ID: <%= pItem.getPaymentId() %><br>
