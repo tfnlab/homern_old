@@ -177,14 +177,14 @@
                       try{
                          startTimeDate = dateFormat.parse(startTime);
                          endTimeDate = dateFormat.parse(endTime);
-                           if (request.getParameter("technicianId").equals("All")) {
+                           if (request.getParameter("technicianId").equals("all")) {
                              events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate);
                            }else{
                              int tId = 0;
                              if (request.getParameter("technicianId") != null && !request.getParameter("technicianId").isEmpty()) {
                                tId = Integer.parseInt(request.getParameter("technicianId"));
                              }
-                             //events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate, tId);
+                             events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate, tId);
                            }
                       } catch (Exception e) {
               		      %><%="Error parsing date and time string: " + e.getMessage()%><%
@@ -222,7 +222,7 @@
                   <div class="form-group">
                    <label for="technicianId">Technician:</label>
                    <select class="form-group" id="technicianId" name="technicianId" >
-                         <option value="allTechnicians">All Technicians</option>
+                         <option value="all">All Technicians</option>
                        <% for (Technician technician : technicians) { %>
                          <option value="<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianName() %></option>
                        <% } %>
