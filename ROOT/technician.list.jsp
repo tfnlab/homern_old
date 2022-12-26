@@ -142,8 +142,8 @@
          <% String color = technician.isTechnicianActive() ? "#C8E6C9" : "#FFCDD2"; %>
          <div class="container-fluid p-5" style="background-color: <%=color%>">
            <div class="card p-3">
-            <p> ID:
-           <a href="technician.edit.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianId() %></a>
+            <p> Technician ID:
+           <a href="technician.edit.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianId() %></a> <BR>
            Name: <%= technician.getTechnicianName() %><br>
            Email: <%= technician.getTechnicianEmail() %><br>
            Phone: <%= technician.getTechnicianPhone() %><br>
