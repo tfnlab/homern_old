@@ -287,6 +287,7 @@
                <label for="title">Total</label>
                <input type="text" class="form-control" id="total" name="total" required value="0"  >
              </div>
+             <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
 
              <input type="submit" value="Add Product">
          </p>
