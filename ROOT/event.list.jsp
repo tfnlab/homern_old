@@ -168,7 +168,7 @@
 
                 String startTime = request.getParameter("start_time");
                 String endTime = request.getParameter("end_time");
-
+                String tIdstr = request.getParameter("technicianId");
                 if (startTime != null && startTime.trim().length() > 0) {
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                     Date startTimeDate = null;
@@ -177,7 +177,15 @@
                       try{
                          startTimeDate = dateFormat.parse(startTime);
                          endTimeDate = dateFormat.parse(endTime);
-                         events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate);
+                           if (request.getParameter("technicianId").equals("All")) {
+                             events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate);
+                           }else{
+                             int tId = 0;
+                             if (request.getParameter("technicianId") != null && !request.getParameter("technicianId").isEmpty()) {
+                               tId = Integer.parseInt(request.getParameter("technicianId"));
+                             }
+                             events = eDao.searchEventsByDateRange(startTimeDate , endTimeDate, tId);
+                           }
                       } catch (Exception e) {
               		      %><%="Error parsing date and time string: " + e.getMessage()%><%
               		    }
@@ -214,6 +222,7 @@
                   <div class="form-group">
                    <label for="technicianId">Technician:</label>
                    <select class="form-group" id="technicianId" name="technicianId" >
+                         <option value="allTechnicians">All Technicians</option>
                        <% for (Technician technician : technicians) { %>
                          <option value="<%= technician.getTechnicianId() %>"><%= technician.getTechnicianName() %></option>
                        <% } %>
