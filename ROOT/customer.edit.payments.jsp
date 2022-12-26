@@ -297,7 +297,7 @@
 
             <%
 
-                List<Payment> pList = pDao.getPayments(order.getOrderId(), username);
+                List<Payment> pList = pDao.getPayments(entity.getId(), username);
                 BigDecimal pTotal  = new BigDecimal("0");
                 for (Payment pItem : pList) {
                        pTotal = pTotal.add(pItem.getPaymentAmount());
