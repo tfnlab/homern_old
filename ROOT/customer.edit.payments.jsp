@@ -247,7 +247,6 @@
                         <label for="phone">Phone</label>
                         <input type="tel" class="form-control" id="phone" name="phone" disabled >
                       </div>
-                      </div>
                       <div class="form-group">
                         <label for="paymentDate">Payment Date</label>
                         <input type="date" class="form-control" id="paymentDate" placeholder="Enter payment date">
