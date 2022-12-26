@@ -164,6 +164,7 @@
           document.getElementById("name").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[0].trim());
           document.getElementById("description").innerHTML = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[1].trim());
           document.getElementById("price").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[2].trim());
+          calTotal();
         }
       };
       xhttp.open("GET", url, true);
@@ -292,7 +293,7 @@
              </div>
              <div class="form-group">
                <label for="title">Price</label>
-               <input type="text" class="form-control" id="price" name="price" required   >
+               <input type="text" class="form-control" id="price" name="price" required   onchange="calTotal()">
              </div>
              <div class="form-group">
                <label for="title">Units</label>
@@ -300,7 +301,7 @@
              </div>
              <div class="form-group">
                <label for="title">Total</label>
-               <input type="text" class="form-control" id="total" name="total" required value="0"  >
+               <input type="text" class="form-control" id="total" name="total" required value="0"  readonly disabled>
              </div>
              <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
 
