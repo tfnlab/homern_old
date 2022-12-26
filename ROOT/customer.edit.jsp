@@ -98,7 +98,11 @@
         xhttp.send();
       }
     }
-
+    function getPayments(){
+        var cId = <%=cId%>;
+        var url = "customer.edit.payments.jsp?orderId=" + cId ;
+        window.open(url, "_self");
+    }
   </script>
 </head>
 
@@ -146,7 +150,7 @@
       <div class="container px-4 px-lg-5">
         <h2>Customer</h2>
         <%@ include file="user.menu.nav.jsp" %>
-
+        <button class="btn btn-primary" onclick="getPayments()">Payments</button>
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);

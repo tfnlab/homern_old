@@ -7,22 +7,10 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
-<%@ page import="java.net.URLDecoder" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.HashMap" %>
-<%@ page import="com.tfnlab.mysql.Technician" %>
-<%@ page import="com.tfnlab.mysql.TechnicianDao" %>
-<%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
-<%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
-<%@ page import="com.tfnlab.mysql.Product" %>
-<%@ page import="com.tfnlab.mysql.ProductDao" %>
-<%@ page import="com.tfnlab.mysql.Event" %>
-<%@ page import="com.tfnlab.mysql.EventDao" %>
-<%@ page import="java.util.UUID" %>
+<%@ page import="com.tfnlab.mysql.Entity" %>
+<%@ page import="com.tfnlab.mysql.EntityDao" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="com.tfnlab.mysql.ProductLineItem" %>
-<%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
-
+<%@ page import="java.text.ParseException" %>
 
 
 <!DOCTYPE html>
@@ -32,7 +20,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Home Renovation Nation - Sign-up</title>
+  <title>Home Renovation Nation - Customer</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -55,20 +43,12 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <%
-    OrderDao dao = new OrderDao();
-    OrderTechniciansDAO otD = new OrderTechniciansDAO();
-    EventDao evd = new EventDao();
-    TechnicianDao technicianDao = new TechnicianDao();
-    ProductDao pDao = new ProductDao();
-    int orderId = 0;
+    int eId = 0;
     String username = (String) session.getAttribute("username");
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
-    if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
-      orderId = Integer.parseInt(request.getParameter("orderId"));
+    if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
+      eId = Integer.parseInt(request.getParameter("customerId"));
     }
-
-    String comType = request.getParameter("comType");
-
   %>
   <!-- =======================================================
   * Template Name: Presento - v3.9.1
@@ -92,32 +72,13 @@
 
           }
         };
-
         const encodedString = encodeURIComponent(sk);
         var urlString = "GeocodingExample.jsp?search=" + encodedString + "&sfor=" + fNameLink;
         xhttp.open("GET", urlString, true);
         xhttp.send();
     }
-
     function removeTrailingSpaces(str) {
             return str.replace(/\s+$/g, "");
-    }
-    function getMessage() {
-      //genmessage.jsp?comType=latepaymentrequest
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-
-          document.getElementById("orderCom").innerHTML = this.responseText.trim();
-        }
-      };
-      var select = document.getElementById("customer-touch-points");
-      var selectedOption = select.options[select.selectedIndex];
-      var text = selectedOption.text;
-      const encodedString = encodeURIComponent(text);
-      var urlString = "genmessage.jsp?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
-      xhttp.open("GET", urlString, true);
-      xhttp.send();
     }
     function callAC(sfor) {
       var xhttp = new XMLHttpRequest();
@@ -144,45 +105,11 @@
         xhttp.send();
       }
     }
-    function getCom() {
-      var select = document.getElementById("customer-touch-points");
-      var selectedOption = select.options[select.selectedIndex];
-      var com = selectedOption.value;
-      var orderId = <%=orderId%>;
-      var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + com;
-      window.open(url, "_self");
-    }
-    function getProductDetail() {
-      var select = document.getElementById("productsId");
-      var selectedOption = select.options[select.selectedIndex];
-      var productsId = selectedOption.value;
-      var orderId = <%=orderId%>;
-      var url = "product.xml.jsp?productId=" + productsId ;
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("name").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[0].trim());
-          document.getElementById("description").innerHTML = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[1].trim());
-          document.getElementById("price").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[2].trim());
-          calTotal();
-        }
-      };
-      xhttp.open("GET", url, true);
-      xhttp.send();
-    }
-    function calTotal() {
-        document.getElementById("total").value = document.getElementById("units").value * document.getElementById("price").value;
-    }
 
-    function getInv() {
-      var orderId = <%=orderId%>;
-      var url = "order.edit.products.print.jsp?orderId=" + orderId;
-      window.open(url, "_blank");
-    }
   </script>
 </head>
 
-<body onload="getProductDetail()">
+<body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -215,128 +142,107 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Order</li>
+          <li>Customer</li>
         </ol>
-        <h2>Order</h2>
+        <h2>Customer</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Order - Products </h2>
+        <h2>Customer</h2>
         <%@ include file="user.menu.nav.jsp" %>
 
-          <HR>
-        <button class="btn btn-primary" onclick="getInv()">Download</button>
-        <hr>
-                <%
-                Order order = dao.getOrderByOrderId(orderId);
-
-                String name = request.getParameter("name");
+        <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
-                ProductLineItemDao plDao = new ProductLineItemDao();
+                String username = (String) session.getAttribute("username");
+                String first_name = request.getParameter("firstName");
 
-                String remove = request.getParameter("remove");
-                if (remove != null && remove.trim().length() > 0) {
-                  int plid = 0;
-                  if (!request.getParameter("plid").isEmpty()) {
-                    plid = Integer.parseInt(request.getParameter("plid"));
-                  }
-                  plDao.deleteProductLineItem(plid,username);
+                Entity entity = new Entity();
+                EntityDao ed = new EntityDao();
+
+                if (first_name != null && first_name.trim().length() > 0) {
+                      %>
+                        Payment Saved
+                      <%
                 }
+                  entity = ed.getEntityById(eId);
+        %>
+                    <form action="customer.edit.payments.jsp" method="post">
+                      <div class="form-group">
+                        <label for="id">ID</label>
+                        <input type="text" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly>
+                      </div>
+                      <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>">
+                      </div>
+                      <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" value="<%= entity.getLastName() %>">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="<%= entity.getEmail() %>">
+                      </div>
+                      <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" >
+                      </div>
+                      <div class="form-group">
+                        <label for="customerId">Customer ID</label>
+                        <input type="number" class="form-control" id="customerId" placeholder="Enter customer ID">
+                      </div>
+                      <div class="form-group">
+                        <label for="paymentDate">Payment Date</label>
+                        <input type="date" class="form-control" id="paymentDate" placeholder="Enter payment date">
+                      </div>
+                      <div class="form-group">
+                        <label for="expectedPostDate">Expected Post Date</label>
+                        <input type="date" class="form-control" id="expectedPostDate" placeholder="Enter expected post date">
+                      </div>
+                      <div class="form-group">
+                        <label for="effectiveDate">Effective Date</label>
+                        <input type="date" class="form-control" id="effectiveDate" placeholder="Enter effective date">
+                      </div>
+                      <div class="form-group">
+                        <label for="paymentAmount">Payment Amount</label>
+                        <input type="number" class="form-control" id="paymentAmount" placeholder="Enter payment amount">
+                      </div>
+                      <div class="form-group">
+                        <label for="paymentMethod">Payment Method</label>
+                        <input type="text" class="form-control" id="paymentMethod" placeholder="Enter payment method">
+                      </div>
+                      <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="hasCleared">
+                        <label class="form-check-label" for="hasCleared">Has Cleared</label>
+                      </div>
+                      <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="hasReversed">
+                        <label class="form-check-label" for="hasReversed">Has Reversed</label>
+                      </div>
+                      <div class="form-group">
+                        <label for="createdAt">Created At</label>
+                        <input type="date" class="form-control" id="createdAt" placeholder="Enter created at date">
+                      </div>
+                      <div class="form-group">
+                        <label for="lastUpdatedAt">Last Updated At</label>
+                        <input type="date" class="form-control" id="lastUpdatedAt" placeholder="Enter last updated at date">
+                      </div>
+                      <div class="form-group">
+                        <label for="createdBy">Created By</label>
+                        <input type="text" class="form-control" id="createdBy" placeholder="Enter created by">
+                      </div>
+                      <div class="form-group">
+                        <label for="lastModifiedBy">Last Modified By</label>
+                        <input type="number" class="form-control" id="lastModifiedBy" placeholder="Enter last modified by">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
 
-                if (name != null && name.trim().length() > 0) {
-                  int productId = 0;
-                  if (request.getParameter("productsId") != null && !request.getParameter("productsId").isEmpty()) {
-                    productId = Integer.parseInt(request.getParameter("productsId"));
-                  }
-                  BigDecimal price = new BigDecimal(request.getParameter("price"));
-                  int units = Integer.parseInt(request.getParameter("units"));
-                  String description = request.getParameter("description");
-                  ProductLineItem li = new ProductLineItem(0, orderId, productId, units, price, currentTime, currentTime, username, username, name, description);
-                  plDao.insertProductLineItem(li);
-                }
-                %>
 
-        <HR>
-
-                    <div class="form-group">
-                      Order:
-                        <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
-                    </div>
-        <HR>
-        <form action="order.edit.schedule.jsp" method="POST" >
-          <p>Order Dates: <%= order.getOrderDate() %> - <%= order.getShipDate() %></p><br>
-          <p>Order Description: <%= order.getOrderDescription() %></p><br>
-        </form>
-        <%
-             List<Product> products = pDao.searchByCustomerIdIsActive(username);
-         %>
-
-
-
-         <form action="order.edit.products.jsp" method="POST" >
-         <p>
-
-              <div class="form-group">
-               <label for="technicianId">Product:</label>
-                <select class="form-group" id="productsId" name="productsId" onchange="getProductDetail()">
-                   <% for (Product product : products) { %>
-                     <option value="<%= product.getId() %>"><%= product.getName() %></option>
-                   <% } %>
-                </select>
-
-             </div>
-             <div class="form-group">
-               <label for="title">Name</label>
-               <input type="text" class="form-control" id="name" name="name" required   >
-             </div>
-             <div class="form-group">
-               <label for="title">Description</label>
-               <textarea class="form-control" id="description" name="description" rows="5"></textarea>
-
-             </div>
-             <div class="form-group">
-               <label for="title">Price</label>
-               <input type="text" class="form-control" id="price" name="price" required   onchange="calTotal()">
-             </div>
-             <div class="form-group">
-               <label for="title">Units</label>
-               <input type="text" class="form-control" id="units" name="units" required value="1"  onchange="calTotal()">
-             </div>
-             <div class="form-group">
-               <label for="title">Total</label>
-               <input type="text" class="form-control" id="total" name="total" required value="0"  readonly disabled>
-             </div>
-             <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
-
-             <input type="submit" value="Add Product">
-         </p>
-         </form>
-         <hr>
-           <%
-
-               List<ProductLineItem> pliList = plDao.getProductLineItemsByInvoiceId(order.getOrderId());
-               BigDecimal invTotal  = new BigDecimal("0");
-               for (ProductLineItem plItem : pliList) {
-                      invTotal = invTotal.add(plItem.getTotal());
-              %>
-                  ID: <%= plItem.getId() %><br>
-                  Tech Name: <%= plItem.getName() %><br>
-                  Tech Description: <%= plItem.getDescription() %><br>
-                  Tech Units: <%= plItem.getQuantity() %><br>
-                  Tech Price: <%= plItem.getPrice() %><br>
-                  Tech Price: <%= plItem.getTotal() %><br>
-                  -- <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
-                  <hr>
-
-           <%
-               }
-           %>
-                  Products Total <%=invTotal%>
-                  <hr>
       </div>
 
     </section><!-- End Blog Section -->
