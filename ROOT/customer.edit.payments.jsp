@@ -229,23 +229,23 @@
                     <form action="customer.edit.payments.jsp" method="post">
                       <div class="form-group">
                         <label for="id">ID</label>
-                        <input type="text" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly disable>
+                        <input type="text" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly disable >
                       </div>
                       <div class="form-group">
                         <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>" disable>
+                        <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>" disable >
                       </div>
                       <div class="form-group">
                         <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" value="<%= entity.getLastName() %>" disable>
+                        <input type="text" class="form-control" id="lastName" name="lastName" value="<%= entity.getLastName() %>" disable >
                       </div>
                       <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="<%= entity.getEmail() %>" disable>
+                        <input type="email" class="form-control" id="email" name="email" value="<%= entity.getEmail() %>" disable >
                       </div>
                       <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" disable>
+                        <input type="tel" class="form-control" id="phone" name="phone" disabled >
                       </div>
                       </div>
                       <div class="form-group">
