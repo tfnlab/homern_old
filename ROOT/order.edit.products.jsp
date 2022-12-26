@@ -14,6 +14,8 @@
 <%@ page import="com.tfnlab.mysql.TechnicianDao" %>
 <%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
 <%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
+<%@ page import="com.tfnlab.mysql.Product" %>
+<%@ page import="com.tfnlab.mysql.ProductDAO" %>
 <%@ page import="com.tfnlab.mysql.Event" %>
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.util.UUID" %>
@@ -54,6 +56,7 @@
     OrderTechniciansDAO otD = new OrderTechniciansDAO();
     EventDao evd = new EventDao();
     TechnicianDao technicianDao = new TechnicianDao();
+    ProductDAO pDao = new ProductDAO();
     int orderId = 0;
     String username = (String) session.getAttribute("username");
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
@@ -196,65 +199,7 @@
 
                 <%
                 Order order = dao.getOrderByOrderId(orderId);
-                %>
-        <%
-
-              String shippingAddress = request.getParameter("shippingAddress");
-              String technicianId = request.getParameter("technicianId");
-              String title = request.getParameter("title");
-
-
-              // Validate form data
-              String tlidstr = request.getParameter("tlid");
-              if (tlidstr != null && tlidstr.trim().length() > 0) {
-                int tlid = 0;
-                if (!request.getParameter("tlid").isEmpty()) {
-                  tlid = Integer.parseInt(request.getParameter("tlid"));
-                }
-                OrderTechnicians ot = otD.getOrderTechniciansById(tlid);
-                otD.deleteOrderTechnicians(tlid, username);
-                evd.deleteEventById(ot.getEventId(),username);
-              }
-
-              if (technicianId != null && technicianId.trim().length() > 0) {
-
-                    String uuid = java.util.UUID.randomUUID().toString();
-                    String startTime = request.getParameter("start_time");
-                    String endTime = request.getParameter("end_time");
-                    String location = request.getParameter("location");
-                    String description = request.getParameter("description");
-                    String reminderTime = request.getParameter("reminder_time");
-                    String invitees = request.getParameter("invitees");
-                    String groupId = request.getParameter("group_id");
-                    String locationaclat = request.getParameter("locationaclat");
-                    String locationaclng = request.getParameter("locationaclng");
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
-                    Date startTimeDate = null;
-                    Date endTimeDate = null;
-                    Date reminderTimeDate = null;
-                      try{
-                         startTimeDate = dateFormat.parse(startTime);
-                         endTimeDate = dateFormat.parse(endTime);
-                         reminderTimeDate = dateFormat.parse(reminderTime);
-                      } catch (Exception e) {
-                        %><%="Error parsing date and time string: " + e.getMessage()%><%
-                      }
-                    Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
-                    evd.addEvent(event);
-                    event = evd.getEventByUuid(uuid);
-
-                  int tId = 0;
-                  if (request.getParameter("technicianId") != null && !request.getParameter("technicianId").isEmpty()) {
-                    tId = Integer.parseInt(request.getParameter("technicianId"));
-                  }
-                  OrderTechnicians ot = OrderTechnicians.createSampleOrderTechnicians();
-                  ot.setTechnicianId(tId);
-                  ot.setOrderId(orderId);
-                  ot.setEventId(event.getId());
-                  ot.setUsername(username);
-                  otD.insertOrderTechnicians(ot);
-              }
-        %>
+                %> 
 
         <HR>
 
@@ -268,17 +213,9 @@
           <p>Order Description: <%= order.getOrderDescription() %></p><br>
         </form>
         <%
-             List<OrderTechnicians> lI = otD.getOrderTechniciansByOrderId(order.getOrderId());
-             List<Technician> technicians = technicianDao.getTechniciansByUsernameActive(username);
+             List<Product> products = pDao.searchByCustomerIdIsActive(username);
          %>
-              <%
-                HashMap<Integer, Event> eMap = new HashMap<>();
-                HashMap<Integer, Technician> tMap = new HashMap<>();
-                if(lI.size()>0){
-                    eMap = evd.getEventsByUsernameMap(username);
-                    tMap = technicianDao.getTechniciansByUsernameMap(username);
-                }
-              %>
+
 
 
          <form action="order.edit.schedule.jsp" method="POST" >
@@ -286,66 +223,17 @@
 
               <div class="form-group">
                <label for="technicianId">Technician:</label>
-               <select class="form-group" id="technicianId" name="technicianId" >
-                   <% for (Technician technician : technicians) { %>
-                     <option value="<%= technician.getTechnicianId() %>"><%= technician.getTechnicianName() %></option>
+                <select class="form-group" id="technicianId" name="technicianId" >
+                   <% for (Product product : products) { %>
+                     <option value="<%= product.getId() %>"><%= product.getName() %></option>
                    <% } %>
-
                 </select>
 
              </div>
-             <div class="form-group">
-               <label for="title">Title</label>
-               <input type="text" class="form-control" id="title" name="title" required value="<%= order.getOrderName() %>" >
-             </div>
-             <div class="form-group">
-                 <label for="start_time">Start Time</label>
-                 <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%= order.getOrderDate() %>" >
-             </div>
-             <div class="form-group">
-               <label for="end_time">End Time</label>
-               <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%= order.getShipDate() %>">
-             </div>
-             <div class="form-group">
-               <label for="location">Location</label>
-               <input type="text" class="form-control" id="location" name="location" onkeypress="callAC(this)" value="<%= order.getShippingAddress() %>">
-               <input type="hidden" id="locationaclat" name="locationaclat" value="<%= order.getShippingAddresslat() %>" >
-               <input type="hidden" id="locationaclng" name="locationaclng" value="<%= order.getShippingAddresslng() %>" >
-               <ul id="locationac" name="locationac"></ul>
-               <hr>
-             </div>
-             <div class="form-group">
-               <label for="description">Description</label>
-               <textarea class="form-control" id="description" name="description" ><%= order.getOrderDescription() %></textarea>
-             </div>
-             <div class="form-group">
-               <label for="reminder_time">Reminder Time</label>
-               <input type="datetime-local" class="form-control" id="reminder_time" name="reminder_time" datepicker>
-             </div>
-             <div class="form-group">
-               <label for="invitees">Invitees</label>
-               <input type="email" class="form-control" id="invitees" name="invitees" placeholder="Enter email addresses separated by commas">
-             </div>
-
-             <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
-             <input type="submit" value="Add Event">
+             <input type="submit" value="Add Product">
          </p>
          </form>
          <hr>
-         <%
-             for (OrderTechnicians technician : lI) {
-         %>
-                ID: <%= technician.getId() %><br>
-                Tech ID: <%= technician.getTechnicianId() %><br>
-                <%=tMap.get(Integer.valueOf(technician.getTechnicianId())).getTechnicianName() %>
-                -- <BR>
-                <%=eMap.get(Integer.valueOf(technician.getEventId())).getTitle() %>
-                -- <a href="order.edit.schedule.jsp?orderId=<%=orderId%>&tlid=<%= technician.getId() %>" >remove<a><br>
-                <hr>
-
-         <%
-             }
-         %>
 
       </div>
 
