@@ -253,6 +253,8 @@
                 Event Date: <%= event.getStartTime() %> - <%= event.getEndTime() %> <BR>
                 <a href="event.list.jsp?eventid=<%= event.getId() %>&remove=yes" >REMOVE</a><br>
                 <hr>
+                  <%}else{%>
+                    REMOVED <%=event.getTechnician().getTechnicianId()%>  - <%=request.getParameter("technicianId")%>
                   <%}%>
               <% } %>
               <% }%>
