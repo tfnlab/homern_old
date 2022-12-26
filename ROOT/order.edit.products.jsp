@@ -152,11 +152,18 @@
     function getProductDetail() {
       var select = document.getElementById("productsId");
       var selectedOption = select.options[select.selectedIndex];
-      var com = selectedOption.value;
+      var productsId = selectedOption.value;
       var orderId = <%=orderId%>;
-      var url = "order.edit.com.jsp?orderId=" + orderId ;
+      var url = "product.xml.com.jsp?productsId=" + productsId ;
       alert(url)
-//      window.open(url, "_self");
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          alert(this.responseText);
+        }
+      };
+      xhttp.open("GET", urlString, true);
+      xhttp.send();
     }
   </script>
 </head>
