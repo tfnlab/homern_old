@@ -165,6 +165,14 @@
                 Entity entity = new Entity();
                 EntityDao ed = new EntityDao();
                 PaymentDao pDao = new PaymentDao();
+                String remove = request.getParameter("remove");
+                if (remove != null && remove.trim().length() > 0) {
+                  int pid = 0;
+                  if (!request.getParameter("pid").isEmpty()) {
+                    pid = Integer.parseInt(request.getParameter("pid"));
+                  }
+                  pDao.deletePayment(pid,username);
+                }
                 if (paymentAmountStr != null && paymentAmountStr.trim().length() > 0) {
                       %>
                       <%
