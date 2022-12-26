@@ -155,12 +155,11 @@
       var productsId = selectedOption.value;
       var orderId = <%=orderId%>;
       var url = "product.xml.jsp?productId=" + productsId ;
-      alert(url)
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           document.getElementById("name").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[0].trim());
-          document.getElementById("description").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[1].trim());
+          document.getElementById("description").innerHTML = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[1].trim());
           document.getElementById("price").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[2].trim());
         }
       };
@@ -170,7 +169,7 @@
   </script>
 </head>
 
-<body>
+<body onload="getProductDetail()">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -254,7 +253,8 @@
              </div>
              <div class="form-group">
                <label for="title">Description</label>
-               <input type="text" class="form-control" id="description" name="description" required   >
+               <textarea class="form-control" id="description" name="description" rows="5"></textarea>
+
              </div>
              <div class="form-group">
                <label for="title">Price</label>
