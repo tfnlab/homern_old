@@ -125,6 +125,13 @@
       var url = "order.edit.schedule.jsp?orderId=" + orderId +  "&comType=" + com;
       window.open(url, "_self");
     }
+    function getProducts() {
+      var orderId = <%=orderId%>;
+      var url = "order.edit.products.jsp?orderId=" + orderId ;
+      window.open(url, "_self");
+    }
+
+
 
 
   </script>
@@ -197,6 +204,7 @@
             <HR>
           <button class="btn btn-primary" onclick="getCom()">Correspondence</button>
           <button class="btn btn-primary" onclick="getSchedule()">Schedule</button>
+          <button class="btn btn-primary" onclick="getProducts()">Products</button>
         <hr>
 
         <%
