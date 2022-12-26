@@ -232,7 +232,7 @@
 
               <div class="form-group">
                <label for="technicianId">Product:</label>
-                <select class="form-group" id="productsId" name="productsId" >
+                <select class="form-group" id="productsId" name="productsId" onchange="getProductDetail()">
                    <% for (Product product : products) { %>
                      <option value="<%= product.getId() %>"><%= product.getName() %></option>
                    <% } %>
