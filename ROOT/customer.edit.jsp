@@ -42,7 +42,14 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
+    <%
+      int eId = 0;
+      String username = (String) session.getAttribute("username");
+      User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+      if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
+        eId = Integer.parseInt(request.getParameter("customerId"));
+      }
+    %>
   <!-- =======================================================
   * Template Name: Presento - v3.9.1
   * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
@@ -99,8 +106,8 @@
       }
     }
     function getPayments(){
-        var cId = <%=cId%>;
-        var url = "customer.edit.payments.jsp?orderId=" + cId ;
+        var eId = <%=eId%>;
+        var url = "customer.edit.payments.jsp?orderId=" + eId ;
         window.open(url, "_self");
     }
   </script>
@@ -154,12 +161,8 @@
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
-                String username = (String) session.getAttribute("username");
                 String first_name = request.getParameter("firstName");
-                int eId = 0;
-                if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
-                  eId = Integer.parseInt(request.getParameter("customerId"));
-                }
+
                 // Validate form data
                 Entity entity = new Entity();
                 EntityDao ed = new EntityDao();
