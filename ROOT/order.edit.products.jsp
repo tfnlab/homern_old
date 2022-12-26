@@ -254,7 +254,7 @@
 
 
 
-         <form action="order.edit.schedule.jsp" method="POST" >
+         <form action="order.edit.products.jsp" method="POST" >
          <p>
 
               <div class="form-group">
