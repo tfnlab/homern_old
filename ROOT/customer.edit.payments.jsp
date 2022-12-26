@@ -226,73 +226,74 @@
                 }
                   entity = ed.getEntityById(eId);
         %>
-                    <form action="customer.edit.payments.jsp" method="post">
-                      <div class="form-group">
-                        <label for="id">ID</label>
-                        <input type="text" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly disable >
-                      </div>
-                      <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>" disable >
-                      </div>
-                      <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" value="<%= entity.getLastName() %>" disable >
-                      </div>
-                      <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="<%= entity.getEmail() %>" disable >
-                      </div>
-                      <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" disabled >
-                      </div>
-                      <div class="form-group">
-                        <label for="paymentDate">Payment Date</label>
-                        <input type="date" class="form-control" id="paymentDate" placeholder="Enter payment date">
-                      </div>
-                      <div class="form-group">
-                        <label for="expectedPostDate">Expected Post Date</label>
-                        <input type="date" class="form-control" id="expectedPostDate" placeholder="Enter expected post date">
-                      </div>
-                      <div class="form-group">
-                        <label for="effectiveDate">Effective Date</label>
-                        <input type="date" class="form-control" id="effectiveDate" placeholder="Enter effective date">
-                      </div>
-                      <div class="form-group">
-                        <label for="paymentAmount">Payment Amount</label>
-                        <input type="number" class="form-control" id="paymentAmount" placeholder="Enter payment amount">
-                      </div>
-                      <div class="form-group">
-                        <label for="paymentMethod">Payment Method</label>
-                        <input type="text" class="form-control" id="paymentMethod" placeholder="Enter payment method">
-                      </div>
-                      <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="hasCleared">
-                        <label class="form-check-label" for="hasCleared">Has Cleared</label>
-                      </div>
-                      <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="hasReversed">
-                        <label class="form-check-label" for="hasReversed">Has Reversed</label>
-                      </div>
-                      <div class="form-group">
-                        <label for="createdAt">Created At</label>
-                        <input type="date" class="form-control" id="createdAt" placeholder="Enter created at date">
-                      </div>
-                      <div class="form-group">
-                        <label for="lastUpdatedAt">Last Updated At</label>
-                        <input type="date" class="form-control" id="lastUpdatedAt" placeholder="Enter last updated at date">
-                      </div>
-                      <div class="form-group">
-                        <label for="createdBy">Created By</label>
-                        <input type="text" class="form-control" id="createdBy" placeholder="Enter created by">
-                      </div>
-                      <div class="form-group">
-                        <label for="lastModifiedBy">Last Modified By</label>
-                        <input type="number" class="form-control" id="lastModifiedBy" placeholder="Enter last modified by">
-                      </div>
-                      <button type="submit" class="btn btn-primary">Submit</button>
+        <form action="customer.edit.payments.jsp" method="post">
+          <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly disable >
+          </div>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>" disable >
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" value="<%= entity.getLastName() %>" disable >
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="<%= entity.getEmail() %>" disable >
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" class="form-control" id="phone" name="phone" disabled >
+          </div>
+          <div class="form-group">
+            <label for="paymentDate">Payment Date</label>
+            <input type="date" class="form-control" id="paymentDate" name="paymentDate" placeholder="Enter payment date">
+          </div>
+          <div class="form-group">
+            <label for="expectedPostDate">Expected Post Date</label>
+            <input type="date" class="form-control" id="expectedPostDate" name="expectedPostDate" placeholder="Enter expected post date">
+          </div>
+          <div class="form-group">
+            <label for="effectiveDate">Effective Date</label>
+            <input type="date" class="form-control" id="effectiveDate" name="effectiveDate" placeholder="Enter effective date">
+          </div>
+          <div class="form-group">
+            <label for="paymentAmount">Payment Amount</label>
+            <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" placeholder="Enter payment amount">
+          </div>
+          <div class="form-group">
+            <label for="paymentMethod">Payment Method</label>
+            <input type="text" class="form-control" id="paymentMethod" name="paymentMethod" placeholder="Enter payment method">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="hasCleared" name="hasCleared">
+            <label class="form-check-label" for="hasCleared">Has Cleared</label>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="hasReversed" name="hasReversed">
+                <label class="form-check-label" for="hasReversed">Has Reversed</label>
+              </div>
+              <div class="form-group">
+                <label for="createdAt">Created At</label>
+                <input type="date" class="form-control" id="createdAt" name="createdAt" placeholder="Enter created at date">
+              </div>
+              <div class="form-group">
+                <label for="lastUpdatedAt">Last Updated At</label>
+                <input type="date" class="form-control" id="lastUpdatedAt" name="lastUpdatedAt" placeholder="Enter last updated at date">
+              </div>
+              <div class="form-group">
+                <label for="createdBy">Created By</label>
+                <input type="text" class="form-control" id="createdBy" name="createdBy" placeholder="Enter created by">
+              </div>
+              <div class="form-group">
+                <label for="lastUpdatedBy">Last Updated By</label>
+                <input type="text" class="form-control" id="lastUpdatedBy" name="lastUpdatedBy" placeholder="Enter last updated by">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+
 
 
       </div>
