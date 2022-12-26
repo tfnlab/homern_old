@@ -208,11 +208,17 @@
                     endTime = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm").format(calendar.getTime());
                   }
                 %>
-                <c:set var="technicianId" value="${param.technicianId}" />
-                <%-- Set the value to "all" if it is null or empty --%>
-                <c:if test="${empty technicianId}">
-                  <c:set var="technicianId" value="all" />
-                </c:if>
+
+                <%
+                  // Get the value of the "technicianId" parameter
+                  String technicianId = request.getParameter("technicianId");
+
+                  // Set the value to "all" if it is null or empty
+                  if (technicianId == null || technicianId.trim().length() == 0) {
+                    technicianId = "all";
+                  }
+                %>
+
 
                 <form method="post" action="event.list.jsp">
                   <div class="form-group">
