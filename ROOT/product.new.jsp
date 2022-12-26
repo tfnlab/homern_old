@@ -219,7 +219,7 @@
               <label for="manufacturer_id">Manufacturer ID:</label><br>
               <input type="number" id="manufacturer_id" name="manufacturer_id"><br>
               <label for="availability">Availability:</label><br>
-              <input type="checkbox" id="availability" name="availability"><br>
+              <input type="checkbox" id="availability" name="availability" ><br>
               <label for="weight">Weight:</label><br>
               <input type="number" id="weight" name="weight"><br>
               <label for="dimensions">Dimensions:</label><br>

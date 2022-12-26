@@ -227,7 +227,7 @@
             			</div>
 
                   <div class="form-group form-check">
-            				<input type="checkbox" class="form-check-input" name="featured" id="featured" value="<%= product.isFeatured() %>" <%= product.isFeatured() ? "checked" : "" %>>
+            				<input type="checkbox" class="form-check-input" name="featured" id="featured" value="true" <%= product.isFeatured() ? "checked" : "" %>>
             				<label class="form-check-label" for="featured">Featured</label>
             			</div>
             			<div class="form-group">
@@ -259,7 +259,7 @@
             				<input type="text" class="form-control" name="manufacturerId" id="manufacturerId" value="<%= product.getManufacturerId() %>">
             			</div>
             			<div class="form-group form-check">
-            				<input type="checkbox" class="form-check-input" name="availability" id="availability" value="<%= product.isAvailability() %>" <%= product.isAvailability() ? "checked" : "" %>>
+            				<input type="checkbox" class="form-check-input" name="availability" id="availability" value="true" <%= product.isAvailability() ? "checked" : "" %>>
             				<label class="form-check-label" for="availability">Availability</label>
             			</div>
                   <div class="form-group">
