@@ -223,6 +223,7 @@
                 String name = request.getParameter("name");
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
+                ProductLineItemDao plDao = new ProductLineItemDao();
                 if (name != null && name.trim().length() > 0) {
                   int productsId = 0;
                   if (request.getParameter("productsId") != null && !request.getParameter("productsId").isEmpty()) {
@@ -231,7 +232,8 @@
                   BigDecimal price = new BigDecimal(request.getParameter("price"));
                   int units = Integer.parseInt(request.getParameter("units"));
                   String description = request.getParameter("description");
-                  ProductLineItem lI = new ProductLineItem(0, orderId, productId, units, price, currentTime, currentTime, username, username);
+                  ProductLineItem li = new ProductLineItem(0, orderId, productId, units, price, currentTime, currentTime, username, username);
+                  plDao.insertProductLineItem(li);
                 }
                 %>
 
