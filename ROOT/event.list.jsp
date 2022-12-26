@@ -170,16 +170,7 @@
                 String endTime = request.getParameter("end_time");
                 String tIdstr = request.getParameter("technicianId");
                 if (startTime != null && startTime.trim().length() > 0) {
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
-                    Date startTimeDate = null;
-                    Date endTimeDate = null;
-                    Date reminderTimeDate = null;
-                      try{
-                         startTimeDate = dateFormat.parse(startTime);
-                         endTimeDate = dateFormat.parse(endTime);
-                      } catch (Exception e) {
-              		      %><%="Error parsing date and time string: " + e.getMessage()%><%
-              		    }
+                    
                 }else{
                   if(request.getParameter("sortBy")!=null){
                     if(request.getParameter("sortBy").equals("eventDate")){
