@@ -152,10 +152,11 @@
            Background Check: <%= technician.isTechnicianPassedBackgroundCheck() %><br>
            Payrate: <%= technician.getTechnicianPayrate() %><br>
            Location: <%= technician.getTechnicianLocation() %><br>
-           Certifications: <%= technician.getTechnicianCertifications() %><br>
+           Certifications: <%= technician.getTechnicianCertifications() %>
             </p>
            </div>
          </div>
+         <HR>
 
          <%
              }
