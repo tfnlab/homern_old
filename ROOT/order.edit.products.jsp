@@ -159,8 +159,9 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          alert(this.responseText.split("<HRNITEM>")[0]);
-          alert(this.responseText.split("<HRNITEM>")[1]);
+          document.getElementById("name").value = this.responseText.split("<HRNITEM>")[0];
+          document.getElementById("description").value = this.responseText.split("<HRNITEM>")[1];
+          document.getElementById("price").value = this.responseText.split("<HRNITEM>")[2];
         }
       };
       xhttp.open("GET", url, true);

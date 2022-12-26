@@ -15,5 +15,5 @@
                 Product product = dao.getProductById(id, username);
         %>
             				<%= product.getName() %><HRNITEM>
-                    <%= product.getPrice() %><HRNITEM>
-            		    <%= product.getDescription() %>
+                    <%= product.getDescription() %><HRNITEM>
+            		    <%= product.getPrice() %>
