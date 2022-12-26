@@ -315,10 +315,11 @@
                for (ProductLineItem plItem : pliList) {
            %>
                   ID: <%= plItem.getId() %><br>
-                  Tech ID: <%= plItem.getPrice() %><br>
-                  Tech ID: <%= plItem.getQuantity() %><br>
                   Tech Name: <%= plItem.getName() %><br>
                   Tech Description: <%= plItem.getDescription() %><br>
+                  Tech Units: <%= plItem.getQuantity() %><br>
+                  Tech Price: <%= plItem.getPrice() %><br>
+                  Tech Price: <%= plItem.getTotal() %><br>
                   -- <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                   <hr>
 
