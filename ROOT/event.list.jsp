@@ -208,12 +208,17 @@
                     endTime = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm").format(calendar.getTime());
                   }
                 %>
+                <c:set var="technicianId" value="${param.technicianId}" />
+                <%-- Set the value to "all" if it is null or empty --%>
+                <c:if test="${empty technicianId}">
+                  <c:set var="technicianId" value="all" />
+                </c:if>
 
                 <form method="post" action="event.list.jsp">
                   <div class="form-group">
                    <label for="technicianId">Technician:</label>
                    <select class="form-group" id="technicianId" name="technicianId" >
-                         <option value="all">All Technicians</option>
+                         <option value="all" >All Technicians</option>
                        <% for (Technician technician : technicians) { %>
                          <option value="<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianName() %></option>
                        <% } %>
