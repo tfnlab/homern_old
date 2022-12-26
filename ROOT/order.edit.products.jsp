@@ -15,7 +15,7 @@
 <%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
 <%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
 <%@ page import="com.tfnlab.mysql.Product" %>
-<%@ page import="com.tfnlab.mysql.ProductDAO" %>
+<%@ page import="com.tfnlab.mysql.ProductDao" %>
 <%@ page import="com.tfnlab.mysql.Event" %>
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.util.UUID" %>
@@ -199,7 +199,7 @@
 
                 <%
                 Order order = dao.getOrderByOrderId(orderId);
-                %> 
+                %>
 
         <HR>
 
