@@ -224,6 +224,16 @@
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
                 ProductLineItemDao plDao = new ProductLineItemDao();
+
+                String remove = request.getParameter("remove");
+                if (remove != null && remove.trim().length() > 0) {
+                  int plid = 0;
+                  if (!request.getParameter("plid").isEmpty()) {
+                    plid = Integer.parseInt(request.getParameter("plid"));
+                  }
+                  plDao.deleteProductLineItem(ot.getEventId(),username);
+                }
+
                 if (name != null && name.trim().length() > 0) {
                   int productId = 0;
                   if (request.getParameter("productsId") != null && !request.getParameter("productsId").isEmpty()) {
@@ -242,7 +252,7 @@
 
                     <div class="form-group">
                       Order:
-                        <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
+                        <a href="order.edit.jsp?remove=yes&orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                     </div>
         <HR>
         <form action="order.edit.schedule.jsp" method="POST" >
