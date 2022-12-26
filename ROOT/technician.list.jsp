@@ -140,7 +140,8 @@
              for (Technician technician : technicians) {
          %>
          <% String color = technician.isTechnicianActive() ? "#C8E6C9" : "#FFCDD2"; %>
-         <div class="container" style="background-color: <%=color%>">
+         <div class="container-fluid" style="background-color: <%=color%>">
+           <div class="card">
            ID: <a href="technician.edit.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianId() %></a><br>
            Name: <%= technician.getTechnicianName() %><br>
            Email: <%= technician.getTechnicianEmail() %><br>
@@ -151,6 +152,7 @@
            Payrate: <%= technician.getTechnicianPayrate() %><br>
            Location: <%= technician.getTechnicianLocation() %><br>
            Certifications: <%= technician.getTechnicianCertifications() %><br>
+           </div>
          </div>
 
          <%
