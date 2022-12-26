@@ -239,7 +239,7 @@
                       } catch (Exception e) {
                         %><%="Error parsing date and time string: " + e.getMessage()%><%
                       }
-                    Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid);
+                    Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
                     evd.addEvent(event);
                     event = evd.getEventByUuid(uuid);
 
