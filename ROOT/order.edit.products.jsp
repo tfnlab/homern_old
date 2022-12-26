@@ -169,6 +169,10 @@
       xhttp.open("GET", url, true);
       xhttp.send();
     }
+    function calTotal() {
+        document.getElementById("total").value = document.getElementById("units").value * document.getElementById("price").value;
+    }
+
   </script>
 </head>
 
@@ -292,7 +296,7 @@
              </div>
              <div class="form-group">
                <label for="title">Units</label>
-               <input type="text" class="form-control" id="units" name="units" required value="1"  >
+               <input type="text" class="form-control" id="units" name="units" required value="1"  onchange="calTotal()">
              </div>
              <div class="form-group">
                <label for="title">Total</label>
