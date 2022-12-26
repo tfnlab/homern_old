@@ -154,7 +154,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var productsId = selectedOption.value;
       var orderId = <%=orderId%>;
-      var url = "product.xml.com.jsp?productsId=" + productsId ;
+      var url = "product.xml.jsp?productsId=" + productsId ;
       alert(url)
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
