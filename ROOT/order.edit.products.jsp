@@ -219,6 +219,20 @@
 
                 <%
                 Order order = dao.getOrderByOrderId(orderId);
+
+                String name = request.getParameter("name");
+                long currentTimeMillis = System.currentTimeMillis();
+                Timestamp currentTime = new Timestamp(currentTimeMillis);
+                if (name != null && name.trim().length() > 0) {
+                  int productsId = 0;
+                  if (request.getParameter("productsId") != null && !request.getParameter("productsId").isEmpty()) {
+                    productsId = Integer.parseInt(request.getParameter("productsId"));
+                  }
+                  BigDecimal price = new BigDecimal(request.getParameter("price"));
+                  int units = Integer.parseInt(request.getParameter("units"));
+                  String description = request.getParameter("description");
+                  ProductLineItem lI = new ProductLineItem(0, orderId, productId, units, price, currentTime, currentTime, username, username);
+                }
                 %>
 
         <HR>
@@ -269,7 +283,7 @@
              </div>
              <div class="form-group">
                <label for="title">Total</label>
-               <input type="text" class="form-control" id="units" name="units" required value="0"  >
+               <input type="text" class="form-control" id="total" name="total" required value="0"  >
              </div>
 
              <input type="submit" value="Add Product">
