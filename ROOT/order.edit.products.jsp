@@ -149,6 +149,15 @@
       var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + com;
       window.open(url, "_self");
     }
+    function getProductDetail() {
+      var select = document.getElementById("products");
+      var selectedOption = select.options[select.selectedIndex];
+      var com = selectedOption.value;
+      var orderId = <%=orderId%>;
+      var url = "order.edit.com.jsp?orderId=" + orderId ;
+      alert(url)
+//      window.open(url, "_self");
+    }
   </script>
 </head>
 
@@ -222,14 +231,31 @@
          <p>
 
               <div class="form-group">
-               <label for="technicianId">Technician:</label>
-                <select class="form-group" id="technicianId" name="technicianId" >
+               <label for="technicianId">Product:</label>
+                <select class="form-group" id="productsId" name="productsId" >
                    <% for (Product product : products) { %>
                      <option value="<%= product.getId() %>"><%= product.getName() %></option>
                    <% } %>
                 </select>
 
              </div>
+             <div class="form-group">
+               <label for="title">Name</label>
+               <input type="text" class="form-control" id="name" name="name" required   >
+             </div>
+             <div class="form-group">
+               <label for="title">Description</label>
+               <input type="text" class="form-control" id="description" name="description" required   >
+             </div>
+             <div class="form-group">
+               <label for="title">Price</label>
+               <input type="text" class="form-control" id="price" name="price" required   >
+             </div>
+             <div class="form-group">
+               <label for="title">Units</label>
+               <input type="text" class="form-control" id="units" name="units" required   >
+             </div>
+
              <input type="submit" value="Add Product">
          </p>
          </form>
