@@ -162,7 +162,7 @@
           alert(this.responseText);
         }
       };
-      xhttp.open("GET", urlString, true);
+      xhttp.open("GET", url, true);
       xhttp.send();
     }
   </script>
