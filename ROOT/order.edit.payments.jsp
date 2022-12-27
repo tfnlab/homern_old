@@ -193,8 +193,8 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("pR").innerHTML = this.responseText;
-              if(!document.getElementById('pIdReq').value == "Done"){
+              document.getElementById("pR").innerHTML = this.responseText;
+              if(document.getElementById('pIdReq').value != "Done"){
                 var pIdReqValue = document.getElementById('pIdReq').value;
                 // get a reference to the pId select element
                 var selectElement = document.getElementById('pId');
