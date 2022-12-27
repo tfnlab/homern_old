@@ -40,7 +40,7 @@
     if (request.getParameter("ocId") != null && !request.getParameter("ocId").isEmpty()) {
       ocId = Integer.parseInt(request.getParameter("ocId"));
     }
-    OrderCustomerDao ocDao  = new OrderCustomerDao()
+    OrderCustomerDao ocDao  = new OrderCustomerDao();
     OrderCustomer oc = ocDao.getCustomersById(ocId);
 
 
