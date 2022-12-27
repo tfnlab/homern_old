@@ -31,7 +31,6 @@
     OrderTechniciansDAO otD = new OrderTechniciansDAO();
     EventDao evd = new EventDao();
     TechnicianDao technicianDao = new TechnicianDao();
-    ProductDao pDao = new ProductDao();
     int orderId = 0;
     String username = (String) session.getAttribute("username");
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
