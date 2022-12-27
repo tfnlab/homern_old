@@ -203,7 +203,7 @@
   </script>
 </head>
 
-<body onload="getProductDetail()">
+<body onload="getOpenPayments()">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
