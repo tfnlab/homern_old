@@ -49,15 +49,20 @@
         PaymentDao pDao = new PaymentDao();
         List<Payment> pList = pDao.getPaymentsWithAvailablePostBalance(oc.getCustomerId(), username);
         BigDecimal pTotal  = new BigDecimal("0");
+        %>
+        <div class="form-group">
+         <label for="pId">Available Payments:</label>
+          <select class="form-group" id="pId" name="pId" >
+        <%
         for (Payment pItem : pList) {
                pTotal = pTotal.add(pItem.getPaymentAmount());
        %>
-           ID: <%= pItem.getPaymentId() %><br>
-           Tech Price: <%= pItem.getPaymentAmount() %><br>
-           -- <%= pItem.getPostTotal() %> --
-           -- <a href="customer.edit.payments.jsp?remove=yes&customerId=<%=oc.getCustomerId()%>&pid=<%= pItem.getPaymentId() %>" >remove<a><br>
-           <hr>
-
+                 <option value="<%= pItem.getPaymentId() %>"><%=pItem.getPaymentAmount()%></option>
     <%
         }
-  %> Test <%=ocId%>-<%=oc.getCustomerId()%>
+  %>
+</select>
+</div>
+
+
+  Test <%=ocId%>-<%=oc.getCustomerId()%>
