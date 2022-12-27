@@ -249,7 +249,7 @@
                     int cId = 0;
                     if (!request.getParameter("customerId").isEmpty()) {
                       cId = Integer.parseInt(request.getParameter("customerId"));
-                    }                    
+                    }
                     long currentTimeMillis = System.currentTimeMillis();
                     Timestamp currentTime = new Timestamp(currentTimeMillis);
                     OrderCustomer oc = new OrderCustomer(0,orderId, cId, currentTime, username);
@@ -260,7 +260,7 @@
                     if (!request.getParameter("ocId").isEmpty()) {
                       ocId = Integer.parseInt(request.getParameter("ocId"));
                     }
-                    //ocDao.deleteById(cId, username);
+                    ocDao.deleteById(cId, username);
                   }
                 }
                 %>
