@@ -282,7 +282,7 @@
                 <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" placeholder="Enter payment amount">
               </div>
               <div class="form-group">
-                <button type="button" class="btn btn-primary">Save Payment</button>
+                <button type="submit"  class="btn btn-primary">Save Payment</button>
               </div>
             </form>
             <HR>
