@@ -306,6 +306,7 @@
             <HR>
               TEST
               <%=eId%>
+              <%=username%>
             <%
 
                 List<Payment> pList = pDao.getPayments(eId, username);
