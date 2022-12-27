@@ -24,6 +24,8 @@
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 <%@ page import="com.tfnlab.mysql.OrderCustomer" %>
 <%@ page import="com.tfnlab.mysql.OrderCustomerDao" %>
+<%@ page import="com.tfnlab.mysql.Payment" %>
+<%@ page import="com.tfnlab.mysql.PaymentDao" %>
   <%
     OrderDao dao = new OrderDao();
     OrderTechniciansDAO otD = new OrderTechniciansDAO();
@@ -43,7 +45,7 @@
     OrderCustomerDao ocDao  = new OrderCustomerDao();
     OrderCustomer oc = ocDao.getCustomersById(ocId);
 
-
+    getPaymentsWithAvailablePostBalance
 
 
   %> Test <%=ocId%>-<%=oc.getCustomerId()%>
