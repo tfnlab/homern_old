@@ -45,7 +45,19 @@
     OrderCustomerDao ocDao  = new OrderCustomerDao();
     OrderCustomer oc = ocDao.getCustomersById(ocId);
 
-    getPaymentsWithAvailablePostBalance
 
 
+        PaymentDao pDao = new PaymentDao();
+        List<Payment> pList = pDao.getPaymentsWithAvailablePostBalance(oc.getCustomerId(), username);
+        BigDecimal pTotal  = new BigDecimal("0");
+        for (Payment pItem : pList) {
+               pTotal = pTotal.add(pItem.getPaymentAmount());
+       %>
+           ID: <%= pItem.getPaymentId() %><br>
+           Tech Price: <%= pItem.getPaymentAmount() %><br>
+           -- <a href="customer.edit.payments.jsp?remove=yes&customerId=<%=eId%>&pid=<%= pItem.getPaymentId() %>" >remove<a><br>
+           <hr>
+
+    <%
+        }
   %> Test <%=ocId%>-<%=oc.getCustomerId()%>
