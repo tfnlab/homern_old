@@ -22,7 +22,7 @@
     APIConfig conf = new APIConfig();
     String filename = username + ".png";
     String filepath = conf.getPdfloc();
-    String logofilepath  +  "logo." + filename;
+    String logofilepath  = filepath +  "logo." + filename;
     response.setContentType("image/jpeg");
     response.setContentLength(new File(logofilepath).length());
     FileInputStream fis = new FileInputStream(logofilepath);
