@@ -209,7 +209,7 @@
           <button class="btn btn-primary" onclick="getCom()">Correspondence</button>
           <button class="btn btn-primary" onclick="getSchedule()">Schedule</button>
           <button class="btn btn-primary" onclick="getProducts()">Products</button>
-          <button class="btn btn-primary" onclick="getCustomers()">Customer</button>
+          <button class="btn btn-primary" onclick="getCustomers()">Customers</button>
         <hr>
 
         <%
