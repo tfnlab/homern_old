@@ -57,7 +57,7 @@
         for (Payment pItem : pList) {
                pTotal = pTotal.add(pItem.getPaymentAmount());
        %>
-                 <option value="<%= pItem.getPaymentId() %>"><%=pItem.getPaymentAmount().subtract(pItem.getPostTotal())%> </option>
+                 <option value="<%= pItem.getPaymentId() %>" ><%=pItem.getPaymentAmount().subtract(pItem.getPostTotal())%> </option>
     <%
         }
   %>
