@@ -7,13 +7,22 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
-<%@ page import="com.tfnlab.mysql.Entity" %>
-<%@ page import="com.tfnlab.mysql.EntityDao" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.text.ParseException" %>
-<%@ page import="com.tfnlab.mysql.Payment" %>
-<%@ page import="com.tfnlab.mysql.PaymentDao" %>
+<%@ page import="java.net.URLDecoder" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="com.tfnlab.mysql.Technician" %>
+<%@ page import="com.tfnlab.mysql.TechnicianDao" %>
+<%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
+<%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
+<%@ page import="com.tfnlab.mysql.Product" %>
+<%@ page import="com.tfnlab.mysql.ProductDao" %>
+<%@ page import="com.tfnlab.mysql.Event" %>
+<%@ page import="com.tfnlab.mysql.EventDao" %>
+<%@ page import="java.util.UUID" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="com.tfnlab.mysql.ProductLineItem" %>
+<%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
+
 
 
 <!DOCTYPE html>
@@ -23,7 +32,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Home Renovation Nation - Customer</title>
+  <title>Home Renovation Nation - Sign-up</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -46,12 +55,19 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <%
-    int eId = 0;
+    OrderDao dao = new OrderDao();
+    OrderTechniciansDAO otD = new OrderTechniciansDAO();
+    EventDao evd = new EventDao();
+    TechnicianDao technicianDao = new TechnicianDao();
+    ProductDao pDao = new ProductDao();
+    int orderId = 0;
     String username = (String) session.getAttribute("username");
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
-    if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
-      eId = Integer.parseInt(request.getParameter("customerId"));
+    if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+      orderId = Integer.parseInt(request.getParameter("orderId"));
     }
+
+
   %>
   <!-- =======================================================
   * Template Name: Presento - v3.9.1
@@ -75,13 +91,32 @@
 
           }
         };
+
         const encodedString = encodeURIComponent(sk);
         var urlString = "GeocodingExample.jsp?search=" + encodedString + "&sfor=" + fNameLink;
         xhttp.open("GET", urlString, true);
         xhttp.send();
     }
+
     function removeTrailingSpaces(str) {
             return str.replace(/\s+$/g, "");
+    }
+    function getMessage() {
+      //genmessage.jsp?comType=latepaymentrequest
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+
+          document.getElementById("orderCom").innerHTML = this.responseText.trim();
+        }
+      };
+      var select = document.getElementById("customer-touch-points");
+      var selectedOption = select.options[select.selectedIndex];
+      var text = selectedOption.text;
+      const encodedString = encodeURIComponent(text);
+      var urlString = "genmessage.jsp?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
+      xhttp.open("GET", urlString, true);
+      xhttp.send();
     }
     function callAC(sfor) {
       var xhttp = new XMLHttpRequest();
@@ -108,11 +143,45 @@
         xhttp.send();
       }
     }
+    function getCom() {
+      var select = document.getElementById("customer-touch-points");
+      var selectedOption = select.options[select.selectedIndex];
+      var com = selectedOption.value;
+      var orderId = <%=orderId%>;
+      var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + com;
+      window.open(url, "_self");
+    }
+    function getProductDetail() {
+      var select = document.getElementById("productsId");
+      var selectedOption = select.options[select.selectedIndex];
+      var productsId = selectedOption.value;
+      var orderId = <%=orderId%>;
+      var url = "product.xml.jsp?productId=" + productsId ;
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("name").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[0].trim());
+          document.getElementById("description").innerHTML = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[1].trim());
+          document.getElementById("price").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[2].trim());
+          calTotal();
+        }
+      };
+      xhttp.open("GET", url, true);
+      xhttp.send();
+    }
+    function calTotal() {
+        document.getElementById("total").value = document.getElementById("units").value * document.getElementById("price").value;
+    }
 
+    function getInv() {
+      var orderId = <%=orderId%>;
+      var url = "order.edit.products.print.jsp?orderId=" + orderId;
+      window.open(url, "_blank");
+    }
   </script>
 </head>
 
-<body>
+<body onload="getProductDetail()">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -145,180 +214,22 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Customer</li>
+          <li>Order</li>
         </ol>
-        <h2>Customer</h2>
+        <h2>Order</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Customer</h2>
+        <h2>Order - Products </h2>
         <%@ include file="user.menu.nav.jsp" %>
 
-        <%
-                long currentTimeMillis = System.currentTimeMillis();
-                Timestamp currentTime = new Timestamp(currentTimeMillis);
-                String paymentAmountStr = request.getParameter("paymentAmount");
+          <HR>
+        <button class="btn btn-primary" onclick="getInv()">Download</button>
+        <hr>
 
-                Entity entity = new Entity();
-                EntityDao ed = new EntityDao();
-                PaymentDao pDao = new PaymentDao();
-                String remove = request.getParameter("remove");
-                if (remove != null && remove.trim().length() > 0) {
-                  int pid = 0;
-                  if (!request.getParameter("pid").isEmpty()) {
-                    pid = Integer.parseInt(request.getParameter("pid"));
-                  }
-                  pDao.deletePayment(pid,username);
-                }
-                if (paymentAmountStr != null && paymentAmountStr.trim().length() > 0) {
-                      %>
-                      <%
-                        Integer customerId = Integer.parseInt(request.getParameter("customerId"));
-                        Date paymentDate = null;
-                        Date expectedPostDate = null;
-                        Date effectiveDate = null;
-                        BigDecimal paymentAmount = BigDecimal.valueOf(Double.parseDouble(request.getParameter("paymentAmount")));
-                        String paymentMethod = request.getParameter("paymentMethod");
-                        Boolean hasCleared = Boolean.parseBoolean(request.getParameter("hasCleared"));
-                        Boolean hasReversed = Boolean.parseBoolean(request.getParameter("hasReversed"));
-                        Date createdAt = null;
-                        Date lastUpdatedAt = null;
-                        String createdBy = username;
-                        Integer lastModifiedBy = 0;
-                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
-                        if (request.getParameter("paymentDate") != null) {
-                            try {
-                                paymentDate = dateFormat.parse(request.getParameter("paymentDate"));
-                            } catch (ParseException e) {
-                                paymentDate = dateFormat.parse("1980-24-10");
-                            }
-                        }
-                        if (request.getParameter("expectedPostDate") != null) {
-                            try {
-                                expectedPostDate = dateFormat.parse(request.getParameter("expectedPostDate"));
-                            } catch (ParseException e) {
-                                expectedPostDate = dateFormat.parse("1980-24-10");
-                            }
-                        }
-                        if (request.getParameter("effectiveDate") != null) {
-                            try {
-                                effectiveDate = dateFormat.parse(request.getParameter("effectiveDate"));
-                            } catch (ParseException e) {
-                                effectiveDate = dateFormat.parse("1980-24-10");
-                            }
-                        }
-                        if (request.getParameter("createdAt") != null) {
-                            try {
-                                createdAt = dateFormat.parse(request.getParameter("createdAt"));
-                            } catch (ParseException e) {
-                                createdAt = dateFormat.parse("1980-24-10");
-                            }
-                        }
-                        if (request.getParameter("lastUpdatedAt") != null) {
-                            try {
-                                lastUpdatedAt = dateFormat.parse(request.getParameter("lastUpdatedAt"));
-                            } catch (ParseException e) {
-                                lastUpdatedAt = dateFormat.parse("1980-24-10");
-                            }
-                        }
-
-                        Payment payment = new Payment(0, customerId, paymentDate, expectedPostDate, effectiveDate, paymentAmount, paymentMethod, hasCleared, hasReversed, createdAt, lastUpdatedAt, createdBy, lastModifiedBy);
-                        pDao.insertPayment(payment);
-                      %>
-
-                        Payment Saved
-                      <%
-                }
-                  entity = ed.getEntityById(eId);
-        %>
-        <form action="customer.edit.payments.jsp" method="post">
-          <div class="form-group">
-            <label for="id">ID</label>
-            <input type="text" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly disable >
-          </div>
-          <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>" disable >
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" class="form-control" id="lastName" name="lastName" value="<%= entity.getLastName() %>" disable >
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" value="<%= entity.getEmail() %>" disable >
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" class="form-control" id="phone" name="phone" disabled >
-          </div>
-          <div class="form-group">
-            <label for="paymentDate">Payment Date</label>
-            <input type="date" class="form-control" id="paymentDate" name="paymentDate" placeholder="Enter payment date">
-          </div>
-          <div class="form-group">
-            <label for="expectedPostDate">Expected Post Date</label>
-            <input type="date" class="form-control" id="expectedPostDate" name="expectedPostDate" placeholder="Enter expected post date">
-          </div>
-          <div class="form-group">
-            <label for="effectiveDate">Effective Date</label>
-            <input type="date" class="form-control" id="effectiveDate" name="effectiveDate" placeholder="Enter effective date">
-          </div>
-          <div class="form-group">
-            <label for="paymentAmount">Payment Amount</label>
-            <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" placeholder="Enter payment amount">
-          </div>
-          <div class="form-group">
-            <label for="paymentMethod">Payment Method</label>
-            <input type="text" class="form-control" id="paymentMethod" name="paymentMethod" placeholder="Enter payment method">
-          </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="hasCleared" name="hasCleared">
-            <label class="form-check-label" for="hasCleared">Has Cleared</label>
-          </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="hasReversed" name="hasReversed">
-                <label class="form-check-label" for="hasReversed">Has Reversed</label>
-              </div>
-              <div class="form-group">
-                <label for="createdAt">Created At</label>
-                <input type="date" class="form-control" id="createdAt" name="createdAt" placeholder="Enter created at date">
-              </div>
-              <div class="form-group">
-                <label for="lastUpdatedAt">Last Updated At</label>
-                <input type="date" class="form-control" id="lastUpdatedAt" name="lastUpdatedAt" placeholder="Enter last updated at date">
-              </div>
-              <div class="form-group">
-                <label for="createdBy">Created By</label>
-                <input type="text" class="form-control" id="createdBy" name="createdBy" placeholder="Enter created by">
-              </div>
-              <div class="form-group">
-                <label for="lastUpdatedBy">Last Updated By</label>
-                <input type="text" class="form-control" id="lastUpdatedBy" name="lastUpdatedBy" placeholder="Enter last updated by">
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            <HR>
-            <%
-
-                List<Payment> pList = pDao.getPayments(eId, username);
-                BigDecimal pTotal  = new BigDecimal("0");
-                for (Payment pItem : pList) {
-                       pTotal = pTotal.add(pItem.getPaymentAmount());
-               %>
-                   ID: <%= pItem.getPaymentId() %><br>
-                   Tech Price: <%= pItem.getPaymentAmount() %><br>
-                   -- <a href="customer.edit.payments.jsp?remove=yes&customerId=<%=eId%>&pid=<%= pItem.getPaymentId() %>" >remove<a><br>
-                   <hr>
-
-            <%
-                }
-            %>
-                  Payments Total: <%=pTotal%>
       </div>
 
     </section><!-- End Blog Section -->
