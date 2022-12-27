@@ -157,7 +157,7 @@
           boolean isMultipart = ServletFileUpload.isMultipartContent(request);
           if (isMultipart) {
               APIConfig conf = new APIConfig();
-              String filename = username + ".pdf";
+              String filename = username + ".png";
               String filepath = conf.getPdfloc();
 
               Part file = request.getPart("file");
