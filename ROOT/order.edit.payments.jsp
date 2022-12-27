@@ -183,6 +183,20 @@
     }
     function getOpenPayments(){
       alert("works");
+      var select = document.getElementById("ocId");
+      var selectedOption = select.options[select.selectedIndex];
+      var ocId = selectedOption.value;
+
+      var orderId = <%=orderId%>;
+      var url = "order.edit.payments.available.jsp?ocId=" + ocId + "&orderId=" + orderId ;
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("pR").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", url, true);
+      xhttp.send();
     }
   </script>
 </head>
