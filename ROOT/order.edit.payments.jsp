@@ -251,33 +251,33 @@
                     <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                 </div>
                 <HR>
-           <div class="container" id="searchR" name="searchR" >
              <h3>Payments</h3>
              <HR>
-             <%
-
-                 List<OrderCustomer> ocList = ocDao.getCustomersByOrderId(orderId);
-                 for (OrderCustomer ocItem : ocList) {
-                %>
-                    ID: <%= ocItem.getId() %><br>
-                    Customer ID: <a href="customer.edit.jsp?customerId=<%= ocItem.getCustomer().getId() %>" > <%= ocItem.getCustomer().getId() %></a><br>
-                    Name: <%= ocItem.getCustomer().getFirstName() %><br>
-                    Email: <%= ocItem.getCustomer().getEmail() %><br>
-                    -- <a href="order.edit.customers.jsp?action=remove&orderId=<%=orderId%>&ocId=<%= ocItem.getId() %>" >remove<a><br>
-                    <hr>
-             <%
-                 }
-             %>
              <div class="form-group">
-              <label for="technicianId">Customers:</label>
+              <label for="ocId">Customers:</label>
                <select class="form-group" id="ocId" name="ocId" onchange="getOpenPayments()">
                   <% for (OrderCustomer ocItem : ocList) { %>
                     <option value="<%= ocItem.getId() %>"><%= ocItem.getCustomer().getFirstName() %></option>
                   <% } %>
                </select>
-
             </div>
-           </div>
+            <form action="order.edit.payments.jsp" method="POST">
+              <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
+              <div class="container" id="pR" name="pR" >
+                  <div class="form-group">
+                   <label for="pId">Available Payments:</label>
+                    <select class="form-group" id="pId" name="pId" >
+                            <option >Select Customer</option>
+                    </select>
+                 </div>
+              </div>
+              <div class="form-group">
+                <label for="paymentAmount">Payment Amount</label>
+                <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" placeholder="Enter payment amount">
+              </div>
+              <input type="submit" value="Submit">
+            </form>
+            <HR>
           <hr>
       </div>
 
