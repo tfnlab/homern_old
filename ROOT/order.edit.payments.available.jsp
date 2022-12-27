@@ -54,6 +54,7 @@
        %>
            ID: <%= pItem.getPaymentId() %><br>
            Tech Price: <%= pItem.getPaymentAmount() %><br>
+           -- <%= pItem.getPostTotal() %>--
            -- <a href="customer.edit.payments.jsp?remove=yes&customerId=<%=oc.getCustomerId()%>&pid=<%= pItem.getPaymentId() %>" >remove<a><br>
            <hr>
 
