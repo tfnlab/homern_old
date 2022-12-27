@@ -200,10 +200,25 @@
       xhttp.open("GET", url, true);
       xhttp.send();
     }
+    function onloadpage(){
+        getOpenPayments();
+        var pIdReqValue = document.getElementById('pIdReq').value;
+        // get a reference to the pId select element
+        var selectElement = document.getElementById('pId');
+        // loop through the options of the select element
+        for (var i = 0; i < selectElement.options.length; i++) {
+          // if the value of the option matches the pIdReq value
+          if (selectElement.options[i].value == pIdReqValue) {
+            // set the option as selected
+            selectElement.options[i].selected = true;
+            break;
+          }
+        }
+    }
   </script>
 </head>
 
-<body onload="getOpenPayments()">
+<body onload="onloadpage()">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -309,6 +324,8 @@
             <HR>
               <input type="hidden" id="action" name="action" value="add">
               <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
+              <input type="hidden" id="pIdReq" name="pIdReq" value="<%= request.getParameter("pId") %>">
+
               <div class="container" id="pR" name="pR" >
                   <div class="form-group">
                    <label for="pId">Available Payments:</label>
