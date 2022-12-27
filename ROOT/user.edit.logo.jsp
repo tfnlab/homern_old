@@ -6,6 +6,10 @@
 <%@ page import="java.io.*" %>
 <%@ page import="javax.servlet.http.*" %>
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
+<%@ page import="org.apache.commons.fileupload.servlet.ServletFileUpload" %>
+<%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory" %>
+<%@ page import="javax.servlet.http.Part" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
