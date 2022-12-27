@@ -265,7 +265,7 @@
                           pId = Integer.parseInt(request.getParameter("pId"));
                         }
                         paymentAmount = new BigDecimal(request.getParameter("paymentAmount"));
-                        PaymentPost pp = new new PaymentPost(1, pId, new Date(), new Date(), new Date(), paymentAmount, new Date(), new Date(), username, 3, username, pId);
+                        PaymentPost pp = new  PaymentPost(1, pId, new Date(), new Date(), new Date(), paymentAmount, new Date(), new Date(), username, 3, username, pId);
                         ppDao.insertPaymentPost(pp);
                       }
                     }
