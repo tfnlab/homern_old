@@ -181,6 +181,7 @@
                         Date expectedPostDate = null;
                         Date effectiveDate = null;
                         BigDecimal paymentAmount = BigDecimal.valueOf(Double.parseDouble(request.getParameter("paymentAmount")));
+                        BigDecimal totalAmount = BigDecimal.valueOf(Double.parseDouble("0"));
                         String paymentMethod = request.getParameter("paymentMethod");
                         Boolean hasCleared = Boolean.parseBoolean(request.getParameter("hasCleared"));
                         Boolean hasReversed = Boolean.parseBoolean(request.getParameter("hasReversed"));
@@ -226,7 +227,7 @@
                             }
                         }
 
-                        Payment payment = new Payment(0, customerId, paymentDate, expectedPostDate, effectiveDate, paymentAmount, paymentMethod, hasCleared, hasReversed, createdAt, lastUpdatedAt, createdBy, lastModifiedBy);
+                        Payment payment = new Payment(0, customerId, paymentDate, expectedPostDate, effectiveDate, paymentAmount, paymentMethod, hasCleared, hasReversed, createdAt, lastUpdatedAt, createdBy, lastModifiedBy, totalAmount);
                         pDao.insertPayment(payment);
                       %>
 
