@@ -265,8 +265,12 @@
                         if (request.getParameter("pId") != null && !request.getParameter("pId").isEmpty()) {
                           pId = Integer.parseInt(request.getParameter("pId"));
                         }
+                        int ocId = 0;
+                        if (request.getParameter("ocId") != null && !request.getParameter("ocId").isEmpty()) {
+                          ocId = Integer.parseInt(request.getParameter("ocId"));
+                        }
                         paymentAmount = new BigDecimal(request.getParameter("paymentAmount"));
-                        PaymentPost pp = new  PaymentPost(1, pId, new Date(), new Date(), new Date(), paymentAmount, new Date(), new Date(), username, 3, username, pId);
+                        PaymentPost pp = new  PaymentPost(1, pId, new Date(), new Date(), new Date(), paymentAmount, new Date(), new Date(), username, 3, username, ocId);
                         ppDao.insertPaymentPost(pp);
                       }
                     }
