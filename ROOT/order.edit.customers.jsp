@@ -183,10 +183,7 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-//          document.getElementById("name").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[0].trim());
-//          document.getElementById("description").innerHTML = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[1].trim());
-//          document.getElementById("price").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[2].trim());
-            alert(this.responseText);
+            document.getElementById("searchR").innerHTML = this.responseText;
         }
       };
       xhttp.open("GET", url, true);
@@ -245,6 +242,9 @@
             <input type="text" class="form-control" id="search" name="search" required   onchange="searchCustomer()" onkeypress="searchCustomer()">
           </div>
          <hr>
+           <div class="container" id="searchR" name="searchR" >
+           </div>
+          <hr>
       </div>
 
     </section><!-- End Blog Section -->

@@ -19,6 +19,6 @@
           Name: <%= entity.getFirstName() %><br>
             Name: <%= entity.getLastName() %><br>
             Email: <%= entity.getLastName() %><br>
-          Customer ID: <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
+          Customer ID: <a href="customer.edit.customers.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
           <hr>
         <% } %>
