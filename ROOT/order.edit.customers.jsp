@@ -22,6 +22,9 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItem" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
+<%@ page import="com.tfnlab.mysql.OrderCustomer" %>
+<%@ page import="com.tfnlab.mysql.OrderCustomerDao" %>
+
 
 
 
@@ -236,6 +239,25 @@
       <div class="container px-4 px-lg-5">
         <h2>Order - Products </h2>
         <%@ include file="user.menu.nav.jsp" %>
+                <%
+                ProductLineItemDao plDao = new ProductLineItemDao();
+
+                String action = request.getParameter("action");
+                if (action != null && action.trim().length() > 0) {
+                  int cId = 0;
+                  if (!request.getParameter("customerId").isEmpty()) {
+                    plid = Integer.parseInt(request.getParameter("customerId"));
+                  }
+                  OrderCustomerDao ocDao = new OrderCustomerDao();
+                  if(action.equals("add")){
+                    long currentTimeMillis = System.currentTimeMillis();
+                    Timestamp currentTime = new Timestamp(currentTimeMillis);
+                    OrderCustomer oc = new OrderCustomer(orderId, cId, currentTime, unersname)
+                    ocDao.insert();
+                  }
+                  //plDao.deleteProductLineItem(plid,username);
+                }
+                %>
         <hr>
           <div class="form-group">
             <label for="title">Name</label>
