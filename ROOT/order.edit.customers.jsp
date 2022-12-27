@@ -256,6 +256,10 @@
                     ocDao.insert(oc);
                   }
                   if(action.equals("remove")){
+                    int ocId = 0;
+                    if (!request.getParameter("ocId").isEmpty()) {
+                      ocId = Integer.parseInt(request.getParameter("ocId"));
+                    }
                     ocDao.deleteById(cId, username);
                   }
                 }
@@ -276,7 +280,7 @@
                  for (OrderCustomer ocItem : ocList) {
                 %>
                     ID: <%= ocItem.getId() %><br>
-                    -- <a href="order.edit.customers.jsp?action=remove&orderId=<%=orderId%>&ocid=<%= ocItem.getId() %>" >remove<a><br>
+                    -- <a href="order.edit.customers.jsp?action=remove&orderId=<%=orderId%>&ocId=<%= ocItem.getId() %>" >remove<a><br>
                     <hr>
 
              <%
