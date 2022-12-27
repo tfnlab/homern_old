@@ -256,7 +256,7 @@
                     ocDao.insert(oc);
                   }
                   if(action.equals("remove")){
-                    ocDao.deleteById(ocid, username);
+                    ocDao.deleteById(cId, username);
                   }
                 }
                 %>
