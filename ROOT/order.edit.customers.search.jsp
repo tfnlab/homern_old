@@ -20,7 +20,7 @@
           EntityDao cDao = new EntityDao();
           List<Entity> es = null;
 
-          String action = request.getParameter("searchKey");
+          String searchKey = request.getParameter("searchKey");
           if (searchKey != null && searchKey.trim().length() > 0) {
               es = cDao.searchSearchKeyByUsername(username, searchKey);
           }else{
