@@ -194,6 +194,20 @@
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("pR").innerHTML = this.responseText;
+              if(!document.getElementById('pIdReq').value == "Done"){
+                var pIdReqValue = document.getElementById('pIdReq').value;
+                // get a reference to the pId select element
+                var selectElement = document.getElementById('pId');
+                // loop through the options of the select element
+                for (var i = 0; i < selectElement.options.length; i++) {
+                  // if the value of the option matches the pIdReq value
+                  if (selectElement.options[i].value == pIdReqValue) {
+                    // set the option as selected
+                    selectElement.options[i].selected = true;
+                    break;
+                  }
+                }
+              }
         }
       };
 //      alert(url);
@@ -202,18 +216,6 @@
     }
     function onloadpage(){
         getOpenPayments();
-        var pIdReqValue = document.getElementById('pIdReq').value;
-        // get a reference to the pId select element
-        var selectElement = document.getElementById('pId');
-        // loop through the options of the select element
-        for (var i = 0; i < selectElement.options.length; i++) {
-          // if the value of the option matches the pIdReq value
-          if (selectElement.options[i].value == pIdReqValue) {
-            // set the option as selected
-            selectElement.options[i].selected = true;
-            break;
-          }
-        }
     }
   </script>
 </head>
