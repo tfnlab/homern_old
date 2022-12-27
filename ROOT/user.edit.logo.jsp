@@ -146,7 +146,7 @@
 
 
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
-    user = dao.getUserByUsername(username);
+    User user = dao.getUserByUsername(username);
     %>
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
