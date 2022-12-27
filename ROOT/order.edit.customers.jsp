@@ -252,7 +252,7 @@
                   if(action.equals("add")){
                     long currentTimeMillis = System.currentTimeMillis();
                     Timestamp currentTime = new Timestamp(currentTimeMillis);
-                    OrderCustomer oc = new OrderCustomer(orderId, cId, currentTime, username)
+                    OrderCustomer oc = new OrderCustomer(orderId, cId, currentTime, username);
                     ocDao.insert(oc);
                   }
                   //plDao.deleteProductLineItem(plid,username);
