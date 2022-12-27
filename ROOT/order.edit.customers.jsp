@@ -225,11 +225,12 @@
       <div class="container px-4 px-lg-5">
         <h2>Order - Products </h2>
         <%@ include file="user.menu.nav.jsp" %>
-
-          <HR>
-        <button class="btn btn-primary" onclick="getInv()">Download</button>
         <hr>
-
+          <div class="form-group">
+            <label for="title">Name</label>
+            <input type="text" class="form-control" id="search" name="search" required   >
+          </div>
+         <hr>
       </div>
 
     </section><!-- End Blog Section -->
