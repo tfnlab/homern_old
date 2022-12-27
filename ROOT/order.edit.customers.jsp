@@ -285,6 +285,9 @@
                  for (OrderCustomer ocItem : ocList) {
                 %>
                     ID: <%= ocItem.getId() %><br>
+                    Name: <%= ocItem.getCustomer().getId() %><br>
+                    Email: <%= ocItem.getFirstName() %><br>
+                    Customer ID: <%= ocItem.getEmail() %><br>
                     -- <a href="order.edit.customers.jsp?action=remove&orderId=<%=orderId%>&ocId=<%= ocItem.getId() %>" >remove<a><br>
                     <hr>
 
