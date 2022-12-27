@@ -239,10 +239,17 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Order - Products </h2>
+
+                            <div class="form-group">
+                              Order:
+                                <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
+                            </div>
+                            <HR>
         <%@ include file="user.menu.nav.jsp" %>
                 <%
                 ProductLineItemDao plDao = new ProductLineItemDao();
                 OrderCustomerDao ocDao = new OrderCustomerDao();
+                Order order = dao.getOrderByOrderId(orderId);
                 String action = request.getParameter("action");
                 if (action != null && action.trim().length() > 0) {
                   if(action.equals("add")){
