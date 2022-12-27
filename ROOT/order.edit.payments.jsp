@@ -297,7 +297,7 @@
                <select class="form-group" id="ocId" name="ocId" onchange="getOpenPayments()">
                   <% for (OrderCustomer ocItem : ocList) { %>
                     <option value="<%= ocItem.getId() %>"
-                        <%if(request.getParameter("ocId")!=null !request.getParameter("ocId").isEmpty()){%>
+                        <%if(request.getParameter("ocId")!=null && !request.getParameter("ocId").isEmpty()){%>
                           <%if(ocItem.getId() == Integer.parseInt(request.getParameter("ocId"))) {%>
                               selected
                           <%}%>
