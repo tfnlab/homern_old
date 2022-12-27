@@ -253,6 +253,10 @@
                 <HR>
              <h3>Payments</h3>
              <HR>
+               <%
+
+                    List<OrderCustomer> ocList = ocDao.getCustomersByOrderId(order.getOrderId());
+               %>
              <div class="form-group">
               <label for="ocId">Customers:</label>
                <select class="form-group" id="ocId" name="ocId" onchange="getOpenPayments()">
