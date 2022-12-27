@@ -255,7 +255,9 @@
                     OrderCustomer oc = new OrderCustomer(0,orderId, cId, currentTime, username);
                     ocDao.insert(oc);
                   }
-                  //plDao.deleteProductLineItem(plid,username);
+                  if(action.equals("remove")){
+                    ocDao.deleteById(ocid, username);
+                  }
                 }
                 %>
 
@@ -274,7 +276,7 @@
                  for (OrderCustomer ocItem : ocList) {
                 %>
                     ID: <%= ocItem.getId() %><br>
-                    -- <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&ocid=<%= ocItem.getId() %>" >remove<a><br>
+                    -- <a href="order.edit.products.jsp?action=remove&orderId=<%=orderId%>&ocid=<%= ocItem.getId() %>" >remove<a><br>
                     <hr>
 
              <%
