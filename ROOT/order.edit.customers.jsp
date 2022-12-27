@@ -258,18 +258,7 @@
                   //plDao.deleteProductLineItem(plid,username);
                 }
                 %>
-                <%
 
-                    List<OrderCustomer> ocList = ocDao.getCustomersByOrderId(orderId);
-                    for (OrderCustomer ocItem : ocList) {
-                   %>
-                       ID: <%= ocItem.getId() %><br>
-                       -- <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&ocid=<%= ocItem.getId() %>" >remove<a><br>
-                       <hr>
-
-                <%
-                    }
-                %>
         <hr>
           <div class="form-group">
             <label for="title">Name</label>
@@ -277,6 +266,20 @@
           </div>
          <hr>
            <div class="container" id="searchR" name="searchR" >
+             <h3>Customer</h3>
+             <HR>
+             <%
+
+                 List<OrderCustomer> ocList = ocDao.getCustomersByOrderId(orderId);
+                 for (OrderCustomer ocItem : ocList) {
+                %>
+                    ID: <%= ocItem.getId() %><br>
+                    -- <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&ocid=<%= ocItem.getId() %>" >remove<a><br>
+                    <hr>
+
+             <%
+                 }
+             %>
            </div>
           <hr>
       </div>
