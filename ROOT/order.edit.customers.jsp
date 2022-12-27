@@ -246,7 +246,7 @@
                 if (action != null && action.trim().length() > 0) {
                   int cId = 0;
                   if (!request.getParameter("customerId").isEmpty()) {
-                    plid = Integer.parseInt(request.getParameter("customerId"));
+                    cId = Integer.parseInt(request.getParameter("customerId"));
                   }
                   OrderCustomerDao ocDao = new OrderCustomerDao();
                   if(action.equals("add")){
