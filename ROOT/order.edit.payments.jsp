@@ -24,6 +24,9 @@
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 <%@ page import="com.tfnlab.mysql.OrderCustomer" %>
 <%@ page import="com.tfnlab.mysql.OrderCustomerDao" %>
+<%@ page import="com.tfnlab.mysql.PaymentPost" %>
+<%@ page import="com.tfnlab.mysql.PaymentPostDao" %>
+
 
 
 
@@ -182,11 +185,9 @@
       window.open(url, "_blank");
     }
     function getOpenPayments(){
-      alert("works");
       var select = document.getElementById("ocId");
       var selectedOption = select.options[select.selectedIndex];
       var ocId = selectedOption.value;
-
       var orderId = <%=orderId%>;
       var url = "order.edit.payments.available.jsp?ocId=" + ocId + "&orderId=" + orderId ;
       var xhttp = new XMLHttpRequest();
@@ -251,9 +252,24 @@
                 Order order = dao.getOrderByOrderId(orderId);
                 String action = request.getParameter("action");
                 if (action != null && action.trim().length() > 0) {
+                  PaymentPostDao ppDao = new PaymentPostDao();
                   if(action.equals("add")){
                     long currentTimeMillis = System.currentTimeMillis();
                     Timestamp currentTime = new Timestamp(currentTimeMillis);
+                    String paymentAmountStr = request.getParameter("paymentAmount");
+                    if (paymentAmountStr != null && paymentAmountStr.trim().length() > 0) {
+                      BigDecimal paymentAmount = new BigDecimal("0");
+                      if (request.getParameter("paymentAmount") != null && !request.getParameter("paymentAmount").isEmpty()) {
+                        int pId = 0;
+                        if (request.getParameter("pId") != null && !request.getParameter("pId").isEmpty()) {
+                          pId = Integer.parseInt(request.getParameter("pId"));
+                        }
+                        paymentAmount = new BigDecimal(request.getParameter("paymentAmount"));
+                        //new PaymentPost(1, 3, new Date(), new Date(), new Date(), new BigDecimal("100.00"), new Date(), new Date(), "test_user", 3, "test_created_by")
+                        PaymentPost pp = new new PaymentPost(1, pId, new Date(), new Date(), new Date(), paymentAmount, new Date(), new Date(), username, 3, username)
+                        ppDao.insertPaymentPost()
+                      }
+                    }
                   }
                   if(action.equals("remove")){
 

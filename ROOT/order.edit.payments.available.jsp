@@ -36,6 +36,12 @@
     if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
       orderId = Integer.parseInt(request.getParameter("orderId"));
     }
+    if (request.getParameter("ocId") != null && !request.getParameter("ocId").isEmpty()) {
+      ocId = Integer.parseInt(request.getParameter("ocId"));
+    }
+
+
+
 
 
   %> Test
