@@ -135,6 +135,11 @@
       var url = "order.edit.customers.jsp?orderId=" + orderId ;
       window.open(url, "_self");
     }
+    function getPayments() {
+      var orderId = <%=orderId%>;
+      var url = "order.edit.payments.jsp?orderId=" + orderId ;
+      window.open(url, "_self");
+    }
 
 
 
@@ -210,6 +215,7 @@
           <button class="btn btn-primary" onclick="getSchedule()">Schedule</button>
           <button class="btn btn-primary" onclick="getProducts()">Products</button>
           <button class="btn btn-primary" onclick="getCustomers()">Customers</button>
+          <button class="btn btn-primary" onclick="getPayments()">Payments</button>
         <hr>
 
         <%

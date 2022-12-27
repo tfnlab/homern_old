@@ -181,18 +181,6 @@
       var url = "order.edit.products.print.jsp?orderId=" + orderId;
       window.open(url, "_blank");
     }
-    function searchCustomer() {
-      var orderId = <%=orderId%>;
-      var url = "order.edit.customers.search.jsp?searchKey=" + document.getElementById("search").value  + "&orderId=" + orderId ;
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("searchR").innerHTML = this.responseText;
-        }
-      };
-      xhttp.open("GET", url, true);
-      xhttp.send();
-    }
   </script>
 </head>
 
@@ -247,21 +235,11 @@
                 String action = request.getParameter("action");
                 if (action != null && action.trim().length() > 0) {
                   if(action.equals("add")){
-                    int cId = 0;
-                    if (!request.getParameter("customerId").isEmpty()) {
-                      cId = Integer.parseInt(request.getParameter("customerId"));
-                    }
                     long currentTimeMillis = System.currentTimeMillis();
                     Timestamp currentTime = new Timestamp(currentTimeMillis);
-                    OrderCustomer oc = new OrderCustomer(0,orderId, cId, currentTime, username);
-                    ocDao.insert(oc);
                   }
                   if(action.equals("remove")){
-                    int ocId = 0;
-                    if (!request.getParameter("ocId").isEmpty()) {
-                      ocId = Integer.parseInt(request.getParameter("ocId"));
-                    }
-                    ocDao.deleteById(ocId, username);
+
                   }
                 }
                 %>
@@ -270,14 +248,8 @@
                     <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                 </div>
                 <HR>
-        <hr>
-          <div class="form-group">
-            <label for="title">Search by Name, Email or Phone</label>
-            <input type="text" class="form-control" id="search" name="search" required   onkeypress="searchCustomer()">
-          </div>
-         <hr>
            <div class="container" id="searchR" name="searchR" >
-             <h3>Customer</h3>
+             <h3>Payments</h3>
              <HR>
              <%
 
