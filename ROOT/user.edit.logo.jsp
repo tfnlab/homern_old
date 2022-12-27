@@ -3,6 +3,9 @@
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="java.net.URLDecoder" %>
+<%@ page import="java.io.*" %>
+<%@ page import="javax.servlet.http.*" %>
+<%@ page import="com.tfnlab.api.con.APIConfig" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -134,42 +137,9 @@
     <%
     UserDao dao = new UserDao();
     String username = (String) session.getAttribute("username");
-       String firstName = request.getParameter("firstName");
+    String firstName = request.getParameter("firstName");
 
-      User user = new User();
-      if (firstName != null && firstName.trim().length() > 0) {
-         String middleInitial = request.getParameter("middleInitial");
-         String lastName = request.getParameter("lastName");
-         String email = request.getParameter("email");
-         String phone = request.getParameter("phone");
-         String ogId = request.getParameter("ogId");
-         String address = request.getParameter("address");
-         String city = request.getParameter("city");
-         String state = request.getParameter("state");
-         String zipcode = request.getParameter("zipcode");
-         String addressaclat = request.getParameter("addressaclat");
-         String addressaclng = request.getParameter("addressaclng");
-         String business_type = request.getParameter("businesstype");
 
-         user.setFirstName(firstName);
-         user.setMiddleInitial(middleInitial);
-         user.setLastName(lastName);
-         user.setEmail(email);
-         user.setPhone(phone);
-         user.setUsername(username);
-         user.setOgId(ogId);
-         user.setAddress(address);
-         user.setCity(city);
-         user.setState(state);
-         user.setZipcode(zipcode);
-         user.setAddresslat(addressaclat);
-         user.setAddresslng(addressaclng);
-         user.setBusiness_type(business_type);
-
-         dao.updateUser(user);
-
-         session.setAttribute("usernameOBJ", user);
-     }
 
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
     user = dao.getUserByUsername(username);
@@ -179,98 +149,41 @@
       <div class="container px-4 px-lg-5">
         <h2>User</h2>
         <%@ include file="user.menu.nav.jsp" %>
-        <a href="user.edit.logo.jsp" >Upload Logo</a>
-        <BR>
-        <form method="post" action="user.edit.jsp">
-           <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>">
-           </div>
-           <div class="form-group">
-              <label for="middleInitial">Middle Initial</label>
-              <input type="text" class="form-control" id="middleInitial" name="middleInitial" value="<%= user.getMiddleInitial() %>">
-           </div>
-           <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.getLastName() %>">
-           </div>
-           <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" value="<%= user.getEmail() %>">
-           </div>
-           <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="text" class="form-control" id="phone" name="phone" value="<%= user.getPhone() %>">
-           </div>
-           <div class="form-group">
-              <label for="ogId">OG ID</label>
-              <input type="text" class="form-control" id="ogId" name="ogId" value="<%= user.getOgId() %>">
-           </div>
-           <div class="form-group">
-              <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" name="address" value="<%= user.getAddress() %>" onkeypress="callAC(this)">
-           </div>
-           <input type="hidden" id="addressaclat" name="addressaclat" value="<%= user.getAddresslat() %>">
-           <input type="hidden" id="addressaclng" name="addressaclng" value="<%= user.getAddresslng() %>">
-           <div class="form-group">
-             <ul id="addressac" name="addressac"></ul>
-           </div>
-           <%
-           String address = usernameOBJ.getAddress();
-           if (address != null && !address.isEmpty()) {
 
-             String uAddSpc = usernameOBJ.getAddress().replace(" ", "-");
-             String uAddPls = usernameOBJ.getAddress().replace(" ", "+");
-             String uAddEnc = URLDecoder.decode(usernameOBJ.getAddress(), "UTF-8");
-                   %>
-             <div class="form-group">
-               <hr>
-               <a href="https://www.google.com/maps/search/?api=1&query=<%=uAddEnc%>">Google</a> |
-               <a href="https://maps.apple.com/?address=<%=uAddEnc%>">Apple</a> |
-               <a href="https://www.waze.com/en/directions?navigate=yes&latlng=<%=usernameOBJ.getAddresslat()%>,<%=usernameOBJ.getAddresslng()%>">Waze</a> |
-               <a href="https://wego.here.com/directions/mix//<%=uAddSpc%>:e-eyJuYW1lIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJhZGRyZXNzIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJsYXRpdHVkZSI6MzQuMTgzNjYyLCJsb25naXR1ZGUiOi0xMTguMzI2MTAyfQ==?map=<%=usernameOBJ.getAddresslat()%>,<%=usernameOBJ.getAddresslng()%>,15,normal">HERE</a> |
-               <a href="https://www.bing.com/maps?osid=a8d44b60-4f0c-4e4a-b9c7-3a3b3f597628&cp=<%=usernameOBJ.getAddresslat()%>~<%=usernameOBJ.getAddresslng()%>&lvl=15&style=r">Bing</a> |
-               <a href="https://www.openstreetmap.org/search?query=<%=uAddEnc%>"#map=15/<%=usernameOBJ.getAddresslat()%>/<%=usernameOBJ.getAddresslng()%>">OSM</a> |
-               <a href="https://www.tomtom.com/en_gb/maps/maps/point?lat=<%=usernameOBJ.getAddresslat()%>&lon=<%=usernameOBJ.getAddresslng()%>">TomTom</a>
-               <hr>
-             </div>
+        <%
+          boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+          if (isMultipart) {
+              APIConfig conf = new APIConfig();
+              String filename = username + ".pdf";
+              String filepath = conf.getPdfloc();
 
-           <%}%>
+              Part file = request.getPart("file");
+              String fileName = file.getSubmittedFileName();
+              InputStream fileContent = file.getInputStream();
+              FileOutputStream fos = new FileOutputStream(filepath + filename);
+              byte[] buffer = new byte[1024];
+              int length;
+              while ((length = fileContent.read(buffer)) > 0) {
+                fos.write(buffer, 0, length);
+              }
+              fileContent.close();
+              fos.close();
+            %>
 
-           <div class="form-group">
-              <label for="city">City</label>
-              <input type="text" class="form-control" id="city" name="city" value="<%= user.getCity() %>">
-           </div>
-           <div class="form-group">
-              <label for="state">State</label>
-              <input type="text" class="form-control" id="state" name="state" value="<%= user.getState() %>">
-           </div>
-           <div class="form-group">
-              <label for="zipcode">Zipcode</label>
-              <input type="text" class="form-control" id="zipcode" name="zipcode" value="<%= user.getZipcode() %>">
-           </div>
-           <%
-           String businessType = user.getBusiness_type();
-           if (businessType == null || businessType.isEmpty()) {
-             businessType = "general-contractor";
-           }
-           %>
-           <div class="form-group">
-             <label for="business-type">Select a type of business:</label>
-             <select class="form-control" id="businesstype" name="businesstype">
-               <option value="general-contractor" <% if (businessType.equals("general-contractor")) { %>selected<% } %>>General contractor</option>
-               <option value="carpenter" <% if (businessType.equals("carpenter")) { %>selected<% } %>>Carpenter</option>
-               <option value="plumber" <% if (businessType.equals("plumber")) { %>selected<% } %>>Plumber</option>
-               <option value="electrician" <% if (businessType.equals("electrician")) { %>selected<% } %>>Electrician</option>
-               <option value="hvac-technician" <% if (businessType.equals("hvac-technician")) { %>selected<% } %>>HVAC technician</option>
-               <option value="landscaper" <% if (businessType.equals("landscaper")) { %>selected<% } %>>Landscaper</option>
-               <option value="roofing-contractor" <% if (businessType.equals("roofing-contractor")) { %>selected<% } %>>Roofing contractor</option>
-               <option value="painter" <% if (businessType.equals("painter")) { %>selected<% } %>>Painter</option>
-               <option value="flooring-contractor" <% if (businessType.equals("flooring-contractor")) { %>selected<% } %>>Flooring contractor</option>
-             </select>
-           </div>
-           <button type="submit" class="btn btn-primary">Submit</button>
-           </form>
+            <p>File uploaded successfully!</p>
+
+            <%
+          } else {
+            // Request is not a multipart form
+            %>
+            <form method="post" action="user.edit.logojsp" enctype="multipart/form-data">
+              <input type="file" name="file" />
+              <input type="submit" value="Upload" />
+            </form>
+            <%
+          }
+        %>
+
 
 
       </div>
