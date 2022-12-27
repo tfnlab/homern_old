@@ -181,6 +181,9 @@
       var url = "order.edit.products.print.jsp?orderId=" + orderId;
       window.open(url, "_blank");
     }
+    function getOpenPayments(){
+      alert("works");
+    }
   </script>
 </head>
 
@@ -265,6 +268,15 @@
              <%
                  }
              %>
+             <div class="form-group">
+              <label for="technicianId">Customers:</label>
+               <select class="form-group" id="ocId" name="ocId" onchange="getOpenPayments()">
+                  <% for (OrderCustomer ocItem : ocList) { %>
+                    <option value="<%= ocItem.getId() %>"><%= ocItem.getCustomer().getFirstName() %></option>
+                  <% } %>
+               </select>
+
+            </div>
            </div>
           <hr>
       </div>
