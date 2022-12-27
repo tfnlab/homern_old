@@ -123,9 +123,17 @@
                   String fileName = item.getName(); // Get the original file name
                   InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
                   // Save the file to a local directory or database, or process the contents in some other way
+                  String fileName = item.getName(); // Get the original file name
+                  FileOutputStream fos = new FileOutputStream(filepath  + fileName);
+                  byte[] buffer = new byte[1024];
+                  int length;
+                  while ((length = fileContent.read(buffer)) > 0) {
+                    fos.write(buffer, 0, length);
+                  }
+                  fos.close();
+                  fileContent.close();
                 }
               }
-              fileContent.close();
             %>
 
             <p>File uploaded successfully!</p>
