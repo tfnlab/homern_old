@@ -178,6 +178,20 @@
       var url = "order.edit.products.print.jsp?orderId=" + orderId;
       window.open(url, "_blank");
     }
+    function searchCustomer() {
+      var url = "order.edit.customers.search.jsp?searchKey=" + document.getElementById("search").value  ;
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+//          document.getElementById("name").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[0].trim());
+//          document.getElementById("description").innerHTML = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[1].trim());
+//          document.getElementById("price").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[2].trim());
+            alert(this.responseText);
+        }
+      };
+      xhttp.open("GET", url, true);
+      xhttp.send();
+    }
   </script>
 </head>
 
@@ -228,7 +242,7 @@
         <hr>
           <div class="form-group">
             <label for="title">Name</label>
-            <input type="text" class="form-control" id="search" name="search" required   >
+            <input type="text" class="form-control" id="search" name="search" required   onchange="searchCustomer()" onkeypress="searchCustomer()">
           </div>
          <hr>
       </div>
