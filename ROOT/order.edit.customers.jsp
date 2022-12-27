@@ -245,11 +245,11 @@
                 OrderCustomerDao ocDao = new OrderCustomerDao();
                 String action = request.getParameter("action");
                 if (action != null && action.trim().length() > 0) {
-                  int cId = 0;
-                  if (!request.getParameter("customerId").isEmpty()) {
-                    cId = Integer.parseInt(request.getParameter("customerId"));
-                  }
                   if(action.equals("add")){
+                    int cId = 0;
+                    if (!request.getParameter("customerId").isEmpty()) {
+                      cId = Integer.parseInt(request.getParameter("customerId"));
+                    }                    
                     long currentTimeMillis = System.currentTimeMillis();
                     Timestamp currentTime = new Timestamp(currentTimeMillis);
                     OrderCustomer oc = new OrderCustomer(0,orderId, cId, currentTime, username);
