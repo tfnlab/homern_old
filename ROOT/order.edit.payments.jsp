@@ -291,6 +291,7 @@
 
                     List<OrderCustomer> ocList = ocDao.getCustomersByOrderId(order.getOrderId());
                %>
+               <form action="order.edit.payments.jsp" method="POST">
              <div class="form-group">
               <label for="ocId">Customers:</label>
                <select class="form-group" id="ocId" name="ocId" onchange="getOpenPayments()">
@@ -300,7 +301,6 @@
                </select>
             </div>
             <HR>
-            <form action="order.edit.payments.jsp" method="POST">
               <input type="hidden" id="action" name="action" value="add">
               <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
               <div class="container" id="pR" name="pR" >
