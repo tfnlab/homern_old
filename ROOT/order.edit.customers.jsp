@@ -286,6 +286,9 @@
                 %>
                     ID: <%= ocItem.getId() %><br>
                     Customer ID: <a href="customer.edit.jsp?customerId=<%= ocItem.getCustomer().getId() %>" > <%= ocItem.getCustomer().getId() %></a><br>
+
+                    -- <a href="customer.edit.payments.jsp?action=remove&orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" >Add Payment<a><br>
+
                     Name: <%= ocItem.getCustomer().getFirstName() %><br>
                     Email: <%= ocItem.getCustomer().getEmail() %><br>
                     -- <a href="order.edit.customers.jsp?action=remove&orderId=<%=orderId%>&ocId=<%= ocItem.getId() %>" >remove<a><br>
