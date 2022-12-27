@@ -243,14 +243,14 @@
         <%@ include file="user.menu.nav.jsp" %>
                 <%
                 ProductLineItemDao plDao = new ProductLineItemDao();
-
+                OrderCustomerDao ocDao = new OrderCustomerDao();
+                getCustomersByOrderId
                 String action = request.getParameter("action");
                 if (action != null && action.trim().length() > 0) {
                   int cId = 0;
                   if (!request.getParameter("customerId").isEmpty()) {
                     cId = Integer.parseInt(request.getParameter("customerId"));
                   }
-                  OrderCustomerDao ocDao = new OrderCustomerDao();
                   if(action.equals("add")){
                     long currentTimeMillis = System.currentTimeMillis();
                     Timestamp currentTime = new Timestamp(currentTimeMillis);
@@ -259,6 +259,18 @@
                   }
                   //plDao.deleteProductLineItem(plid,username);
                 }
+                %>
+                <%
+
+                    List<OrderCustomer> ocList = ocDao.getCustomersByOrderId(orderId);
+                    for (OrderCustomer ocItem : ocList) {
+                   %>
+                       ID: <%= ocItem.getId() %><br>
+                       -- <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&ocid=<%= ocItem.getId() %>" >remove<a><br>
+                       <hr>
+
+                <%
+                    }
                 %>
         <hr>
           <div class="form-group">
