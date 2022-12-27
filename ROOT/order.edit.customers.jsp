@@ -260,7 +260,7 @@
                     if (!request.getParameter("ocId").isEmpty()) {
                       ocId = Integer.parseInt(request.getParameter("ocId"));
                     }
-                    ocDao.deleteById(cId, username);
+                    //ocDao.deleteById(cId, username);
                   }
                 }
                 %>
