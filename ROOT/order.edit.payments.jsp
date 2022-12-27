@@ -196,6 +196,7 @@
             document.getElementById("pR").innerHTML = this.responseText;
         }
       };
+      alert(url);
       xhttp.open("GET", url, true);
       xhttp.send();
     }

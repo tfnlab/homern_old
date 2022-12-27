@@ -33,6 +33,7 @@
     int orderId = 0;
     String username = (String) session.getAttribute("username");
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+    int ocId = 0;
     if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
       orderId = Integer.parseInt(request.getParameter("orderId"));
     }
