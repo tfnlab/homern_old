@@ -179,7 +179,7 @@
           } else {
             // Request is not a multipart form
             %>
-            <form method="post" action="user.edit.logojsp" enctype="multipart/form-data">
+            <form method="post" action="user.edit.logo.jsp" enctype="multipart/form-data">
               <input type="file" name="file" />
               <input type="submit" value="Upload" />
             </form>
