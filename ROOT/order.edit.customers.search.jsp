@@ -18,7 +18,14 @@
     }
 
           EntityDao cDao = new EntityDao();
-          List<Entity> es = cDao.getEntitiesByUsername(username);
+          List<Entity> es = null;
+
+          String action = request.getParameter("searchKey");
+          if (searchKey != null && searchKey.trim().length() > 0) {
+              es = cDao.searchSearchKeyByUsername(username, searchKey);
+          }else{
+              es = cDao.getEntitiesByUsername(username);
+          }
 
         for (Entity entity : es) { %>
           Name: <%= entity.getFirstName() %><br>
