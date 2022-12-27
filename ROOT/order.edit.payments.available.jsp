@@ -53,7 +53,7 @@
         <div class="form-group">
          <label for="pId">Available Payments:</label>
           <select class="form-group" id="pId" name="pId" >
-                  <%if(!pList.size()>0){%>
+                  <%if(!(pList.size()>0)){%>
                     <option value="ap" >Add Payment</option>
                   <%}%>
         <%
