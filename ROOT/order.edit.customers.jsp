@@ -244,7 +244,6 @@
                 <%
                 ProductLineItemDao plDao = new ProductLineItemDao();
                 OrderCustomerDao ocDao = new OrderCustomerDao();
-                getCustomersByOrderId
                 String action = request.getParameter("action");
                 if (action != null && action.trim().length() > 0) {
                   int cId = 0;
