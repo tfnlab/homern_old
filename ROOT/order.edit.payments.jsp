@@ -297,6 +297,7 @@
             </div>
             <HR>
             <form action="order.edit.payments.jsp" method="POST">
+              <input type="hidden" id="action" name="action" value="add">
               <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
               <div class="container" id="pR" name="pR" >
                   <div class="form-group">
