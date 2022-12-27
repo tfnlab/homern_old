@@ -24,7 +24,7 @@
     String filepath = conf.getPdfloc();
     String logofilepath  +  "logo." + filename;
     response.setContentType("image/jpeg");
-    response.setContentLength(new File(logofilep;ath).length());
+    response.setContentLength(new File(logofilepath).length());
     FileInputStream fis = new FileInputStream(logofilepath);
     byte[] buffer = new byte[1024];
     int length;
