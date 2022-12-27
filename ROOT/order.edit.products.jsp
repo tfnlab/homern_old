@@ -226,10 +226,6 @@
       <div class="container px-4 px-lg-5">
         <h2>Order - Products </h2>
         <%@ include file="user.menu.nav.jsp" %>
-
-          <HR>
-        <button class="btn btn-primary" onclick="getInv()">Download</button>
-        <hr>
                 <%
                 Order order = dao.getOrderByOrderId(orderId);
 
@@ -266,6 +262,10 @@
                       Order:
                         <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                     </div>
+
+                              <HR>
+                            <button class="btn btn-primary" onclick="getInv()">Download</button>
+                                               
         <HR>
         <form action="order.edit.schedule.jsp" method="POST" >
           <p>Order Dates: <%= order.getOrderDate() %> - <%= order.getShipDate() %></p><br>
