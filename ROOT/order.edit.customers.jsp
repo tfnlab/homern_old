@@ -190,7 +190,6 @@
             document.getElementById("searchR").innerHTML = this.responseText;
         }
       };
-      alert(url);
       xhttp.open("GET", url, true);
       xhttp.send();
     }
@@ -274,7 +273,7 @@
         <hr>
           <div class="form-group">
             <label for="title">Name</label>
-            <input type="text" class="form-control" id="search" name="search" required   onchange="searchCustomer()" onkeypress="searchCustomer()">
+            <input type="text" class="form-control" id="search" name="search" required   onkeypress="searchCustomer()">
           </div>
          <hr>
            <div class="container" id="searchR" name="searchR" >
