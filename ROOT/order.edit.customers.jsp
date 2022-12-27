@@ -239,12 +239,6 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Order - Products </h2>
-
-                            <div class="form-group">
-                              Order:
-                                <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
-                            </div>
-                            <HR>
         <%@ include file="user.menu.nav.jsp" %>
                 <%
                 ProductLineItemDao plDao = new ProductLineItemDao();
@@ -271,7 +265,11 @@
                   }
                 }
                 %>
-
+                <div class="form-group">
+                  Order:
+                    <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
+                </div>
+                <HR>
         <hr>
           <div class="form-group">
             <label for="title">Name</label>
