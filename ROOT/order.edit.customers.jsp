@@ -190,7 +190,7 @@
             document.getElementById("searchR").innerHTML = this.responseText;
         }
       };
-      aler(url);
+      alert(url);
       xhttp.open("GET", url, true);
       xhttp.send();
     }
