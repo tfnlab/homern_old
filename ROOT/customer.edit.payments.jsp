@@ -304,6 +304,8 @@
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <HR>
+              TEST
+              <%=eId%>
             <%
 
                 List<Payment> pList = pDao.getPayments(eId, username);
