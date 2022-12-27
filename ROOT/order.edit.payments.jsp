@@ -265,6 +265,7 @@
                   <% } %>
                </select>
             </div>
+            <HR>
             <form action="order.edit.payments.jsp" method="POST">
               <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
               <div class="container" id="pR" name="pR" >
@@ -275,11 +276,14 @@
                     </select>
                  </div>
               </div>
+              <HR>
               <div class="form-group">
                 <label for="paymentAmount">Payment Amount</label>
                 <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" placeholder="Enter payment amount">
               </div>
-              <input type="submit" value="Submit">
+              <div class="form-group">
+                <button type="button" class="btn btn-primary">Save Payment</button>
+              </div>
             </form>
             <HR>
           <hr>
