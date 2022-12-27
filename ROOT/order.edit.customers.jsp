@@ -182,7 +182,8 @@
       window.open(url, "_blank");
     }
     function searchCustomer() {
-      var url = "order.edit.customers.search.jsp?searchKey=" + document.getElementById("search").value  ;
+      var orderId = <%=orderId%>;
+      var url = "order.edit.customers.search.jsp?searchKey=" + document.getElementById("search").value  + "&orderId=" + orderId ;
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {

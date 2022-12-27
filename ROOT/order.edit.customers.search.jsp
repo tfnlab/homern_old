@@ -10,8 +10,13 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page import="com.tfnlab.mysql.Entity" %>
 <%@ page import="com.tfnlab.mysql.EntityDao" %><%
+    int orderId = 0;
     String username = (String) session.getAttribute("username");
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+    if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+      orderId = Integer.parseInt(request.getParameter("orderId"));
+    }
+
           EntityDao cDao = new EntityDao();
           List<Entity> es = cDao.getEntitiesByUsername(username);
 
@@ -19,6 +24,6 @@
           Name: <%= entity.getFirstName() %><br>
             Name: <%= entity.getLastName() %><br>
             Email: <%= entity.getLastName() %><br>
-          Customer ID: <a href="order.edit.customers.jsp?action=add&customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
+          Customer ID: <a href="order.edit.customers.jsp?action=add&orderId=<%=orderId%>&customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
           <hr>
         <% } %>
