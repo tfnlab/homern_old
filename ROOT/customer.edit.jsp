@@ -255,12 +255,9 @@
                     <form action="customer.edit.jsp" method="post">
                       <input type="hidden" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly>
                       <div class="form-group">
-                         ID <%= entity.getId() %> 
+                         ID <%= entity.getId() %>
                       </div>
-                      <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" value="<%= entity.getUsername() %>">
-                      </div>
+                      <HR>
                       <div class="form-group">
                         <label for="firstName">First Name</label>
                         <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>">
@@ -276,11 +273,11 @@
 
           <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="tel" class="form-control" id="phone" name="phone" >
+            <input type="tel" class="form-control" id="phone" name="phone" value="<%= entity.getPhone() %>">
           </div>
           <div class="form-group">
             <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" name="address" >
+            <input type="text" class="form-control" id="address" name="address" value="<%= entity.getAddress() %>">
           </div>
           <div class="form-group">
             <label for="city">City</label>
@@ -300,7 +297,7 @@
           </div>
           <div class="form-group">
             <label for="birthday">Birthday</label>
-            <input type="date" class="form-control" id="birthday" name="birthday" >
+            <input type="date" class="form-control" id="birthday" name="birthday" value="<%= entity.getBirthday() %>">
           </div>
           <div class="form-group">
             <label for="gender">Gender</label>
