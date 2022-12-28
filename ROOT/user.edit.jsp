@@ -167,6 +167,8 @@
          user.setAddresslat(addressaclat);
          user.setAddresslng(addressaclng);
          user.setBusiness_type(business_type);
+         user.setBusiness_name(business_name);
+         user.setInvoice_terms(invoice_terms);
 
          dao.updateUser(user);
 
