@@ -26,7 +26,7 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
   // Get the content from the query parameter
             APIConfig ac = new APIConfig();
 
-            File file = new File(conf.getPdfloc() + uuid.toString() + ".txt");
+            File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(request.getParameter("orderCom") + "<CONTENT>" +request.getParameter("orderCom"));
