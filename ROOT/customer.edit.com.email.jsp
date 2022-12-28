@@ -33,19 +33,19 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                         entity = ed.getEntityById(customerId);
                         Email_Manager eM = new Email_Manager();
                         try{
-            File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
-            FileWriter fw = new FileWriter(file);
-            BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(entity.getEmail() + "<CONTENT>CustomerEmail<CONTENT>" +request.getParameter("orderCom"));
-            bw.close();
+                              File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
+                              FileWriter fw = new FileWriter(file);
+                              BufferedWriter bw = new BufferedWriter(fw);
+                              bw.write(entity.getEmail() + "<CONTENT>CustomerEmail<CONTENT>" +request.getParameter("orderCom"));
+                              bw.close();
 
-              Thread newThread = new Thread(() -> {
-                          Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", "uuid", uuid.toString()).start();
-                          String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
-                          String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
-              });
-              newThread.start();
-                          }catch(Exception ex){
+                                Thread newThread = new Thread(() -> {
+                                            Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", "uuid", uuid.toString()).start();
+                                            String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+                                            String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                                });
+                                newThread.start();
+                          }catch(IOException ex){
 
                           }
             //eM.sendMail(entity.getEmail(), request.getParameter("subject"), request.getParameter("orderCom"));
