@@ -281,19 +281,19 @@
           </div>
           <div class="form-group">
             <label for="city">City</label>
-            <input type="text" class="form-control" id="city" name="city" >
+            <input type="text" class="form-control" id="city" name="city" value="<%= entity.getState() %>">
           </div>
           <div class="form-group">
             <label for="state">State</label>
-            <input type="text" class="form-control" id="state" name="state" >
+            <input type="text" class="form-control" id="state" name="state" value="<%= entity.getState() %>">
           </div>
           <div class="form-group">
             <label for="zipcode">Zipcode</label>
-            <input type="text" class="form-control" id="zipcode" name="zipcode" >
+            <input type="text" class="form-control" id="zipcode" name="zipcode" value="<%= entity.getZipcode() %>">
           </div>
           <div class="form-group">
             <label for="country">Country</label>
-            <input type="text" class="form-control" id="country" name="country" >
+            <input type="text" class="form-control" id="country" name="country" value="<%= entity.getCountry() %>">
           </div>
           <div class="form-group">
             <label for="birthday">Birthday</label>
@@ -320,7 +320,7 @@
             </div>
             <div class="form-group">
               <label for="nationality">Nationality</label>
-              <input type="text" class="form-control" id="nationality" name="nationality" >
+              <input type="text" class="form-control" id="nationality" name="nationality" value="<%= entity.getNationality() %>">
             </div>
             <div class="form-group">
               <label for="occupation">Occupation</label>
