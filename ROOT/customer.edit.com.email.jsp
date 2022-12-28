@@ -44,4 +44,4 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                           String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
                           String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
             //eM.sendMail(entity.getEmail(), request.getParameter("subject"), request.getParameter("orderCom"));
-%>DONE
+%><%=uuid.toString()%> - DONE
