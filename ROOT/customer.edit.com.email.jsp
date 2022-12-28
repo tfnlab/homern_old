@@ -27,16 +27,18 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
   // Get the content from the query parameter
             APIConfig ac = new APIConfig();
 
+
+                        Entity entity = new Entity();
+                        EntityDao ed = new EntityDao();
+                        entity = ed.getEntityById(customerId);
+                        Email_Manager eM = new Email_Manager();
+
             File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(request.getParameter("orderCom") + "<CONTENT>" +request.getParameter("orderCom"));
+            bw.write(entity.getEmail() + "<CONTENT>" + request.getParameter("orderCom") + "<CONTENT>" +request.getParameter("orderCom"));
             bw.close();
 
-            Entity entity = new Entity();
-            EntityDao ed = new EntityDao();
-            entity = ed.getEntityById(customerId);
-            Email_Manager eM = new Email_Manager();
 
                           Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", "uuid", uuid.toString()).start();
                           String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
