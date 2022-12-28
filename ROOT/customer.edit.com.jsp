@@ -212,30 +212,6 @@
                         <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %> - <%= entity.getFirstName() %></a><br>
                     </div>
         <HR>
-            <div class="form-group">
-          <label for="business-type">Select a type of business:</label>
-          <select class="form-control" id="customer-touch-points" name="customer-touch-points">
-            <option value="greeting" <%if(comType.equals("greeting")){%>selected<%}%> >Greeting</option>
-            <option value="interestletter" <%if(comType.equals("interestletter")){%>selected<%}%> >Interest letter</option>
-            <option value="proposal" <%if(comType.equals("proposal")){%>selected<%}%> >Proposal</option>
-            <option value="invoicing" <%if(comType.equals("invoicing")){%>selected<%}%> >Invoicing</option>
-            <option value="thankyou" <%if(comType.equals("thankyou")){%>selected<%}%> >Thank you</option>
-            <option value="paymentrequest" <%if(comType.equals("paymentrequest")){%>selected<%}%> >Payment request</option>
-            <option value="latepaymentrequest" <%if(comType.equals("latepaymentrequest")){%>selected<%}%> >Late Payment request</option>
-            <option value="paymentconfirmation" <%if(comType.equals("paymentconfirmation")){%>selected<%}%> >Payment confirmation</option>
-            <option value="progressupdate" <%if(comType.equals("progressupdate")){%>selected<%}%> >Progress update</option>
-            <option value="changeorderrequest" <%if(comType.equals("changeorderrequest")){%>selected<%}%> >Change order request</option>
-            <option value="warrantyormaintenanceinformation" <%if(comType.equals("warrantyormaintenanceinformation")){%>selected<%}%> >Warranty or maintenance information</option>
-            <option value="customersatisfactionsurvey" <%if(comType.equals("customersatisfactionsurvey")){%>selected<%}%> >Customer satisfaction survey</option>
-            <option value="followup" <%if(comType.equals("followup")){%>selected<%}%> >Follow-up</option>
-            <option value="estimaterequest" <%if(comType.equals("estimaterequest")){%>selected<%}%> >Estimate request</option>
-            <option value="scheduling" <%if(comType.equals("scheduling")){%>selected<%}%> >Scheduling</option>
-            <option value="sitevisit" <%if(comType.equals("sitevisit")){%>selected<%}%> >Site visit</option>
-            <option value="permitapplication" <%if(comType.equals("permitapplication")){%>selected<%}%> >Permit application</option>
-          </select>
-
-          </div>
-          <HR>
           <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
           <HR>
 
