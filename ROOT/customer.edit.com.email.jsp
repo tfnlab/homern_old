@@ -39,12 +39,6 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                               bw.write(entity.getEmail() + "<CONTENT>CustomerEmail<CONTENT>" +request.getParameter("orderCom"));
                               bw.close();
 
-                                Thread newThread = new Thread(() -> {
-                                            Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", "uuid", uuid.toString()).start();
-                                            String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
-                                            String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
-                                });
-                                newThread.start();
                           }catch(IOException ex){
 
                           }
