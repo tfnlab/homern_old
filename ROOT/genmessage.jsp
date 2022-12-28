@@ -1,4 +1,5 @@
-<%@ page language="java" import="com.tfnlab.mysql.Order,com.tfnlab.mysql.OrderDao,com.tfnlab.mysql.User,com.tfnlab.mysql.TemplateDao,com.tfnlab.mysql.Template,java.util.UUID,java.lang.Thread,org.apache.commons.io.IOUtils,org.apache.commons.io.output.*,java.nio.charset.Charset,java.io.*,java.util.*,java.awt.image.BufferedImage,javax.imageio.ImageIO,java.io.OutputStream,java.io.FileInputStream,java.io.File"%><%
+<%@ page language="java" import="com.tfnlab.mysql.Entity,com.tfnlab.mysql.EntityDao,com.tfnlab.mysql.Order,com.tfnlab.mysql.OrderDao,com.tfnlab.mysql.User,com.tfnlab.mysql.TemplateDao,com.tfnlab.mysql.Template,java.util.UUID,java.lang.Thread,org.apache.commons.io.IOUtils,org.apache.commons.io.output.*,java.nio.charset.Charset,java.io.*,java.util.*,java.awt.image.BufferedImage,javax.imageio.ImageIO,java.io.OutputStream,java.io.FileInputStream,java.io.File"%><%
+
 
 
   String username = (String) session.getAttribute("username");
@@ -11,14 +12,27 @@
   User usernameOBJ = (User) session.getAttribute("usernameOBJ");
 
   if(username!=null && username.length() >1 ){
+    String messageName = "":
     int orderId = 0;
     if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
       orderId = Integer.parseInt(request.getParameter("orderId"));
     }
-    OrderDao dao = new OrderDao();
-    Order order = dao.getOrderByOrderId(orderId);
-
-    String agm =   request.getParameter("comType") + " message for my "+ usernameOBJ.getBusiness_type() + " company, the person sending the message is named  " + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + ", The project name is " + order.getOrderName();
+    int customerId = 0;
+    if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
+      customerId = Integer.parseInt(request.getParameter("customerId"));
+    }
+    if(orderId !=0){
+      OrderDao dao = new OrderDao();
+      Order order = dao.getOrderByOrderId(orderId);
+      messageName = order.getOrderName();
+    }
+    if(customerId!=0){
+      Entity entity = new Entity();
+      EntityDao ed = new EntityDao();
+        entity = ed.getEntityById(eId);
+        messageName = entity.getFirstName();
+    }
+    String agm =   request.getParameter("comType") + " message for my "+ usernameOBJ.getBusiness_type() + " company, the person sending the message is named  " + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + ", The project name is " + messageName;
 
     Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/hrn.py", agm).start();
     String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
