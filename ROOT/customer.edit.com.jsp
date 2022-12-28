@@ -136,7 +136,7 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-
+          alert(this.responseText);
           document.getElementById("orderCom").innerHTML = this.responseText.trim();
         }
       };
@@ -144,6 +144,7 @@
       var text = document.getElementById("orderCom").innerHTML;
       const encodedString = encodeURIComponent(text);
       var urlString = "customer.edit.com.email.jsp?customerId=" + eId + "&comType=" + encodedString ;
+      alert(urlString);
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
