@@ -279,9 +279,9 @@
                                     <option value="Payment Request" >Payment Request</option>
                                     <option value="Payment Confirmation" >Payment Confirmation</option>
                                   </select>
-                                  <span class="fas fa-download" getInv()></span>
+                                  <i class="fas fa-download" getInv()></i>
                                 </div>
-
+                                <i class="fa fa-download" aria-hidden="true" onclick="getInv()"></i>
 
 
         <HR>
