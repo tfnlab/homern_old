@@ -155,6 +155,29 @@
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
+    function sendSMS() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          alert(this.responseText);
+          document.getElementById("orderCom").innerHTML = this.responseText.trim();
+        }
+      };
+      var eId = <%=eId%>;
+      var text = document.getElementById("orderCom").innerHTML;
+      const encodedString = encodeURIComponent(text);
+
+      var select = document.getElementById("touchPoints");
+      var selectedOption = select.options[select.selectedIndex];
+      var com = selectedOption.text;
+      const encodedStringsub = encodeURIComponent(com);
+
+
+      var urlString = "customer.edit.com.sms.jsp?customerId=" + eId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
+      alert(urlString);
+      xhttp.open("GET", urlString, true);
+      xhttp.send();
+    }
   </script>
 </head>
 
@@ -249,6 +272,8 @@
         </form>
         <HR>
           <button class="btn btn-primary" onclick="sendMail()" id="emailButton" name="emailButton">Email</button>
+          <button class="btn btn-primary" onclick="sendSMS()" id="emailButton" name="emailButton">SMS</button>
+
 
       </div>
 
