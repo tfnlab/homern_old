@@ -217,9 +217,8 @@
 
         <!-- ======= Contact Section ======= -->
 
-        <form action="order.edit.com.print.jsp" method="POST" >
+        <form action="customer.edit.com.print.jsp" method="POST" >
           <input type="hidden" id="customerId" name="customerId" value="<%= entity.getId() %>" >
-          <p>Customer Description:  </p><br>
           <label for="orderId">Touch Point</label><br>
           <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
           <input type="submit" value="Download">

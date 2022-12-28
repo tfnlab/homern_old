@@ -9,21 +9,28 @@
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="com.tfnlab.business.Create_PDF" %>
 <%@ page import="java.util.UUID" %>
+<%@ page import="com.tfnlab.mysql.Entity" %>
+<%@ page import="com.tfnlab.mysql.EntityDao" %>
 <%@ page import="com.tfnlab.api.con.APIConfig" %><%
 OrderDao dao = new OrderDao();
 
 UUID uuid = UUID.randomUUID();
-int orderId = 0;
+int customerId = 0;
 String username = (String) session.getAttribute("username");
 User usernameOBJ = (User) session.getAttribute("usernameOBJ");
-if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
-  orderId = Integer.parseInt(request.getParameter("orderId"));
+if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
+  customerId = Integer.parseInt(request.getParameter("customerId"));
 }
   // Get the content from the query parameter
-  Order order = dao.getOrderByOrderId(orderId);
+
+            Entity entity = new Entity();
+            EntityDao ed = new EntityDao();
+
+
+              entity = ed.getEntityById(customerId);
   create_PDF cpdf = new create_PDF();
 
-  cpdf.createPD(uuid + ".pdf", order, request.getParameter("orderCom"));
+  cpdf.createPD(uuid + ".pdf", entity, request.getParameter("orderCom"));
 %>DONE
 
 <%
