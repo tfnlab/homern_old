@@ -29,7 +29,7 @@
     if(customerId!=0){
       Entity entity = new Entity();
       EntityDao ed = new EntityDao();
-        entity = ed.getEntityById(eId);
+        entity = ed.getEntityById(customerId);
         messageName = entity.getFirstName();
     }
     String agm =   request.getParameter("comType") + " message for my "+ usernameOBJ.getBusiness_type() + " company, the person sending the message is named  " + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + ", The project name is " + messageName;
