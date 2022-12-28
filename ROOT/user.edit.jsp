@@ -300,37 +300,38 @@
            <textarea class="form-control" id="invoice_terms" name="invoice_terms" rows="5"><%= user.getInvoice_terms() %></textarea>
            </div>
            <div class="form-group">
-             <label for="url_website">Website URL</label>
-             <input type="text" class="form-control" id="url_website" value="<%= request.getParameter("url_website") %>">
-           </div>
-           <div class="form-group">
-             <label for="url_yelp">Yelp URL</label>
-             <input type="text" class="form-control" id="url_yelp" value="<%= request.getParameter("url_yelp") %>">
-           </div>
-           <div class="form-group">
-             <label for="url_google">Google URL</label>
-             <input type="text" class="form-control" id="url_google" value="<%= request.getParameter("url_google") %>">
-           </div>
-           <div class="form-group">
-             <label for="url_twitter">Twitter URL</label>
-             <input type="text" class="form-control" id="url_twitter" value="<%= request.getParameter("url_twitter") %>">
-           </div>
-           <div class="form-group">
-             <label for="url_tiktok">TikTok URL</label>
-             <input type="text" class="form-control" id="url_tiktok" value="<%= request.getParameter("url_tiktok") %>">
-           </div>
-           <div class="form-group">
-             <label for="url_snap">Snapchat URL</label>
-             <input type="text" class="form-control" id="url_snap" value="<%= request.getParameter("url_snap") %>">
-           </div>
-           <div class="form-group">
-             <label for="url_instagram">Instagram URL</label>
-             <input type="text" class="form-control" id="url_instagram" value="<%= request.getParameter("url_instagram") %>">
-           </div>
-           <div class="form-group">
-             <label for="url_facebook">Facebook URL</label>
-             <input type="text" class="form-control" id="url_facebook" value="<%= request.getParameter("url_facebook") %>">
-           </div>
+              <label for="url_website">Website URL</label>
+              <input type="text" class="form-control" id="url_website" name="url_website" value="<%= request.getParameter("url_website") %>">
+            </div>
+            <div class="form-group">
+              <label for="url_yelp">Yelp URL</label>
+              <input type="text" class="form-control" id="url_yelp" name="url_yelp" value="<%= request.getParameter("url_yelp") %>">
+            </div>
+            <div class="form-group">
+              <label for="url_google">Google URL</label>
+              <input type="text" class="form-control" id="url_google" name="url_google" value="<%= request.getParameter("url_google") %>">
+            </div>
+            <div class="form-group">
+              <label for="url_twitter">Twitter URL</label>
+              <input type="text" class="form-control" id="url_twitter" name="url_twitter" value="<%= request.getParameter("url_twitter") %>">
+            </div>
+            <div class="form-group">
+              <label for="url_tiktok">TikTok URL</label>
+              <input type="text" class="form-control" id="url_tiktok" name="url_tiktok" value="<%= request.getParameter("url_tiktok") %>">
+            </div>
+            <div class="form-group">
+              <label for="url_snap">Snapchat URL</label>
+              <input type="text" class="form-control" id="url_snap" name="url_snap" value="<%= request.getParameter("url_snap") %>">
+            </div>
+            <div class="form-group">
+              <label for="url_instagram">Instagram URL</label>
+              <input type="text" class="form-control" id="url_instagram" name="url_instagram" value="<%= request.getParameter("url_instagram") %>">
+            </div>
+            <div class="form-group">
+              <label for="url_facebook">Facebook URL</label>
+              <input type="text" class="form-control" id="url_facebook" name="url_facebook" value="<%= request.getParameter("url_facebook") %>">
+            </div>
+
            <button type="submit" class="btn btn-primary">Submit</button>
            </form>
 
