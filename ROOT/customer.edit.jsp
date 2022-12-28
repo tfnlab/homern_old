@@ -110,6 +110,14 @@
         var url = "customer.edit.payments.jsp?customerId=" + eId ;
         window.open(url, "_self");
     }
+    function getCom() {
+      var select = document.getElementById("touchPoints");
+      var selectedOption = select.options[select.selectedIndex];
+      var com = selectedOption.value;
+      var eId = <%=eId%>;
+      var url = "customer.edit.com.jsp?customerId=" + eId +  "&comType=" + com;
+      window.open(url, "_self");
+    }
   </script>
 </head>
 
@@ -158,6 +166,20 @@
         <h2>Customer</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
+          <div class="form-group">
+            <label for="touchPoints">Choose a touch point:</label>
+            <select class="form-control" id="touchPoints">
+              <option value="initialConsultation">Initial consultation</option>
+              <option value="contractSigning">Contract signing</option>
+              <option value="preConstructionMeeting">Pre-construction meeting</option>
+              <option value="onSiteVisits">On-site visits</option>
+              <option value="progressUpdates">Progress updates</option>
+              <option value="finalWalkThrough">Final walk-through</option>
+              <option value="warrantyAndMaintenance">Warranty and maintenance</option>
+            </select>
+          </div>
+        <HR>
+        <button class="btn btn-primary" onclick="getCom()">Correspondence</button>
         <button class="btn btn-primary" onclick="getPayments()">Payments</button>
         <button class="btn btn-primary" onclick="getOrders()">Orders</button>
         <HR>
