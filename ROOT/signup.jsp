@@ -138,10 +138,19 @@
                 String addressaclng = "0";
                 String business_type = request.getParameter("business_type");
 
+                String url_website = request.getParameter("url_website");
+                String url_yelp = request.getParameter("url_yelp");
+                String url_google = request.getParameter("url_google");
+                String url_twitter = request.getParameter("url_twitter");
+                String url_tiktok = request.getParameter("url_tiktok");
+                String url_snap = request.getParameter("url_snap");
+                String url_instagram = request.getParameter("url_instagram");
+                String url_facebook = request.getParameter("url_facebook");
+
 
                 // Validate form data
                 if (firstName != null && firstName.trim().length() > 0) {
-                  User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0", business_type, "", "");
+                  User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0", business_type, "", "", url_website, url_yelp, url_google, url_twitter, url_tiktok, url_snap, instagram, facebook);
                   UserDao dao = new UserDao();
                   try {
                       boolean pv = true;
