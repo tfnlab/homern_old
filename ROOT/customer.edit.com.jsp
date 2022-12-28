@@ -150,7 +150,7 @@
       const encodedStringsub = encodeURIComponent(com);
 
 
-      var urlString = "customer.edit.com.email.jsp?customerId=" + eId + "&orderCom=" + encodedString + "&orderSub=" + encodedStringsub ;
+      var urlString = "customer.edit.com.email.jsp?customerId=" + eId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
       alert(urlString);
       xhttp.open("GET", urlString, true);
       xhttp.send();

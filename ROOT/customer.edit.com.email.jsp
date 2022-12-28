@@ -37,7 +37,7 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                               File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
                               FileWriter fw = new FileWriter(file);
                               BufferedWriter bw = new BufferedWriter(fw);
-                              bw.write(entity.getEmail() + "<CONTENT>CustomerEmail<CONTENT>" +request.getParameter("orderCom"));
+                              bw.write(entity.getEmail() + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com"));
                               bw.close();
 
                               Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), uuid.toString()).start();
