@@ -178,14 +178,14 @@
          user.setBusiness_name(business_name);
          user.setInvoice_terms(invoice_terms);
 
-         user.setUrlWebsite(url_website);
-         user.setUrlYelp(url_yelp);
-         user.setUrlGoogle(url_google);
-         user.setUrlTwitter(url_twitter);
-         user.setUrlTiktok(url_tiktok);
-         user.setUrlSnap(url_snap);
-         user.setUrlInstagram(url_instagram);
-         user.setUrlFacebook(url_facebook);
+         user.setUrl_website(url_website);
+         user.setUrl_yelp(url_yelp);
+         user.setUrl_google(url_google);
+         user.setUrl_twitter(url_twitter);
+         user.setUrl_tiktok(url_tiktok);
+         user.setUrl_snap(url_snap);
+         user.setUrl_instagram(url_instagram);
+         user.setUrl_facebook(url_facebook);
 
          dao.updateUser(user);
 
