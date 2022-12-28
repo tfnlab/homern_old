@@ -132,6 +132,21 @@
       var url = "customer.edit.com.jsp?customerId=" + eId +  "&comType=" + com;
       window.open(url, "_self");
     }
+    function sendMail() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+
+          document.getElementById("orderCom").innerHTML = this.responseText.trim();
+        }
+      };
+      var eId = <%=eId%>;
+      var text = document.getElementById("orderCom").innerHTML;
+      const encodedString = encodeURIComponent(text);
+      var urlString = "customer.edit.com.email.jsp?customerId=" + eId + "&comType=" + encodedString ;
+      xhttp.open("GET", urlString, true);
+      xhttp.send();
+    }
   </script>
 </head>
 
@@ -196,6 +211,7 @@
         <button class="btn btn-primary" onclick="getCom()">Correspondence</button>
         <button class="btn btn-primary" onclick="getPayments()">Payments</button>
         <button class="btn btn-primary" onclick="getOrders()">Orders</button>
+
         <HR>
 
           <%
@@ -221,7 +237,8 @@
           <input type="hidden" id="customerId" name="customerId" value="<%= entity.getId() %>" >
           <label for="orderId">Touch Point</label><br>
           <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
-          <input type="submit" value="Download">
+          <button type="submit" class="btn btn-primary" onclick="sendMail()">Download</button>
+          <button class="btn btn-primary" onclick="sendMail()">Email</button>
         </form>
 
       </div>
