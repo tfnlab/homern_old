@@ -270,7 +270,6 @@
 
                               <HR>
                                 <div class="form-group" style="display: flex;">
-                                  <label for="type">Type</label>
                                   <select class="selectpicker form-control" id="type" name="type" style="flex: 1;">
                                     <option value="Proposal" >Proposal</option>
                                     <option value="Estimate" >Estimate</option>
