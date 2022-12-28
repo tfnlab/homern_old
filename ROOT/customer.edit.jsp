@@ -276,10 +276,12 @@
         %>
                     <form action="customer.edit.jsp" method="post">
                       <input type="hidden" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly>
+                      <!--
                       <div class="form-group">
                          ID <%= entity.getId() %>
                       </div>
                       <HR>
+                      -->
                       <div class="form-group">
                         <label for="firstName">First Name</label>
                         <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>">
