@@ -11,6 +11,9 @@
 <%@ page import="java.util.UUID" %>
 <%@ page import="com.tfnlab.mysql.Entity" %>
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
+<%@ page import="java.io.File" %>
+<%@ page import="java.io.FileWriter" %>
+<%@ page import="java.io.BufferedWriter" %>
 <%@ page import="com.tfnlab.api.con.APIConfig" %><%
 
 UUID uuid = UUID.randomUUID();
@@ -21,11 +24,18 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
   customerId = Integer.parseInt(request.getParameter("customerId"));
 }
   // Get the content from the query parameter
+            APIConfig ac = new APIConfig();
+
+            File file = new File(conf.getPdfloc() + uuid.toString() + ".txt");
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(request.getParameter("orderCom") + "<CONTENT>" +request.getParameter("orderCom"));
+            bw.close();
 
             Entity entity = new Entity();
             EntityDao ed = new EntityDao();
             entity = ed.getEntityById(customerId);
             Email_Manager eM = new Email_Manager();
 
-  eM.sendMail(entity.getEmail(), request.getParameter("subject"), request.getParameter("orderCom"));
+            //eM.sendMail(entity.getEmail(), request.getParameter("subject"), request.getParameter("orderCom"));
 %>DONE
