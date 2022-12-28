@@ -143,7 +143,14 @@
       var eId = <%=eId%>;
       var text = document.getElementById("orderCom").innerHTML;
       const encodedString = encodeURIComponent(text);
-      var urlString = "customer.edit.com.email.jsp?customerId=" + eId + "&orderCom=" + encodedString ;
+
+      var select = document.getElementById("touchPoints");
+      var selectedOption = select.options[select.selectedIndex];
+      var com = selectedOption.text;
+      const encodedStringsub = encodeURIComponent(com);
+
+
+      var urlString = "customer.edit.com.email.jsp?customerId=" + eId + "&orderCom=" + encodedString + "&orderSub=" + encodedStringsub ;
       alert(urlString);
       xhttp.open("GET", urlString, true);
       xhttp.send();
