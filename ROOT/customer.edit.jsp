@@ -157,7 +157,10 @@
       <div class="container px-4 px-lg-5">
         <h2>Customer</h2>
         <%@ include file="user.menu.nav.jsp" %>
+        <HR>
         <button class="btn btn-primary" onclick="getPayments()">Payments</button>
+        <button class="btn btn-primary" onclick="getOrders()">Orders</button>
+        <HR>
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
@@ -250,9 +253,9 @@
                   entity = ed.getEntityById(eId);
         %>
                     <form action="customer.edit.jsp" method="post">
+                      <input type="hidden" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly>
                       <div class="form-group">
-                        <label for="id">ID</label>
-                        <input type="text" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly>
+                         ID <%= entity.getId() %> 
                       </div>
                       <div class="form-group">
                         <label for="username">Username</label>
