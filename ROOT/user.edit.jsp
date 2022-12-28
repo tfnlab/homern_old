@@ -186,7 +186,7 @@
         <form method="post" action="user.edit.jsp">
           <div class="form-group">
             <label for="orderId">Business Name:</label><br>
-            <input type="text" id="business_name" name="business_name" value="<%= order.getBusiness_name() %>"><br>
+            <input type="text" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>"><br>
           </div>
 
            <div class="form-group">
