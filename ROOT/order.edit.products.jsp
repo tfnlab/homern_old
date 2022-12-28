@@ -290,6 +290,7 @@
           <p>Order Dates: <%= order.getOrderDate() %> - <%= order.getShipDate() %></p><br>
           <p>Order Description: <%= order.getOrderDescription() %></p><br>
         </form>
+        <HR>
         <%
              List<Product> products = pDao.searchByCustomerIdIsActive(username);
          %>
@@ -308,6 +309,7 @@
                 </select>
 
              </div>
+             <HR>
              <div class="form-group">
                <label for="title">Name</label>
                <input type="text" class="form-control" id="name" name="name" required   >
