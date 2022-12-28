@@ -46,7 +46,7 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                                     rm = stdout + stderr;
                               }
                           }catch(IOException ex){
-
+                              rm = ex.getMessage();
                           }
             //eM.sendMail(entity.getEmail(), request.getParameter("subject"), request.getParameter("orderCom"));
 %><%=uuid.toString()%> - DONE
