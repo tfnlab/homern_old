@@ -267,18 +267,19 @@
                     </div>
 
                               <HR>
-                          <div class="form-group">
-                            <label for="type">Type</label>
-                            <select class="selectpicker form-control" id="type" name="type">
-                              <option value="Proposal" >Proposal</option>
-                              <option value="Estimate" >Estimate</option>
-                              <option value="Invoice" >Invoice</option>
-                              <option value="Past Due Invoice" >Past Due Invoice</option>
-                              <option value="Payment Request" >Payment Request</option>
-                              <option value="Payment Confirmation" >Payment Confirmation</option>
-                            </select>
-                          </div>
-                          <button class="btn btn-primary" onclick="getInv()">Download</button>
+                                <div class="form-group" style="display: flex;">
+                                  <label for="type">Type</label>
+                                  <select class="selectpicker form-control" id="type" name="type" style="flex: 1;">
+                                    <option value="Proposal" >Proposal</option>
+                                    <option value="Estimate" >Estimate</option>
+                                    <option value="Invoice" >Invoice</option>
+                                    <option value="Past Due Invoice" >Past Due Invoice</option>
+                                    <option value="Payment Request" >Payment Request</option>
+                                    <option value="Payment Confirmation" >Payment Confirmation</option>
+                                  </select>
+                                  <button class="btn btn-primary" style="flex: 1;" onclick="getInv()"><i class="fas fa-download"></i></button>
+                                </div>
+
 
 
         <HR>
