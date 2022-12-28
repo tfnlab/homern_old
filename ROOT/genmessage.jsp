@@ -12,7 +12,7 @@
   User usernameOBJ = (User) session.getAttribute("usernameOBJ");
 
   if(username!=null && username.length() >1 ){
-    String messageName = "":
+    String messageName = "";
     int orderId = 0;
     if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
       orderId = Integer.parseInt(request.getParameter("orderId"));
@@ -21,12 +21,12 @@
     if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
       customerId = Integer.parseInt(request.getParameter("customerId"));
     }
-    if(orderId !=0){
+    if(orderId >0){
       OrderDao dao = new OrderDao();
       Order order = dao.getOrderByOrderId(orderId);
       messageName = order.getOrderName();
     }
-    if(customerId!=0){
+    if(customerId>0){
       Entity entity = new Entity();
       EntityDao ed = new EntityDao();
         entity = ed.getEntityById(customerId);
