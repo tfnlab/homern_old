@@ -140,7 +140,7 @@
 
                 // Validate form data
                 if (username != null && username.trim().length() > 0) {
-                  User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0", business_type);
+                  User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0", business_type, "", "");
                   UserDao dao = new UserDao();
                   try {
                       boolean pv = true;

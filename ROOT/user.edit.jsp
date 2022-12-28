@@ -150,6 +150,8 @@
          String addressaclat = request.getParameter("addressaclat");
          String addressaclng = request.getParameter("addressaclng");
          String business_type = request.getParameter("businesstype");
+         String business_name = request.getParameter("businesstype");
+         String invoice_terms = request.getParameter("invoice_terms");
 
          user.setFirstName(firstName);
          user.setMiddleInitial(middleInitial);
@@ -182,6 +184,11 @@
         <a href="user.edit.logo.jsp" >Upload Logo</a>
         <BR>
         <form method="post" action="user.edit.jsp">
+          <div class="form-group">
+            <label for="orderId">Business Name:</label><br>
+            <input type="text" id="business_name" name="business_name" value="<%= order.getBusiness_name() %>"><br>
+          </div>
+
            <div class="form-group">
               <label for="firstName">First Name</label>
               <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>">
@@ -269,6 +276,11 @@
                <option value="flooring-contractor" <% if (businessType.equals("flooring-contractor")) { %>selected<% } %>>Flooring contractor</option>
              </select>
            </div>
+           <div class="form-group">
+           <label for="invoice_terms">Invoice Terms</label><br>
+           <textarea class="form-control" id="invoice_terms" name="invoice_terms" rows="5"><%= user.getInvoice_terms() %></textarea>
+           </div>
+
            <button type="submit" class="btn btn-primary">Submit</button>
            </form>
 
