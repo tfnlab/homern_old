@@ -238,8 +238,9 @@
           <label for="orderId">Touch Point</label><br>
           <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
           <button type="submit" class="btn btn-primary" onclick="sendMail()">Download</button>
-          <button class="btn btn-primary" onclick="sendMail()">Email</button>
         </form>
+        <HR>
+          <button class="btn btn-primary" onclick="sendMail()" id="emailButton" name="emailButton">Email</button>
 
       </div>
 

@@ -232,7 +232,7 @@
                     %>
 
 
-                        Order Saved
+                        Customer Saved
                       <%
                 }else{
 
