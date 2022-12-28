@@ -270,9 +270,10 @@
                           <div class="form-group">
                             <label for="type">Type</label>
                             <select class="selectpicker form-control" id="type" name="type">
-                              <option value="Invoice" >Invoice</option>
+                              <option value="Proposal" >Proposal</option>
                               <option value="Estimate" >Estimate</option>
-                              <option value="Proposal">Proposal</option>
+                              <option value="Invoice" >Invoice</option>
+                              <option value="Invoice" >Past Due Invoice</option>
                             </select>
                           </div>
                           <button class="btn btn-primary" onclick="getInv()">Download</button>
