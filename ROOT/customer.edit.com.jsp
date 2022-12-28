@@ -91,7 +91,7 @@
           document.getElementById("orderCom").innerHTML = this.responseText.trim();
         }
       };
-      var select = document.getElementById("customer-touch-points");
+      var select = document.getElementById("touchPoints");
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
       const encodedString = encodeURIComponent(text);
