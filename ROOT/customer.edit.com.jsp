@@ -143,7 +143,7 @@
       var eId = <%=eId%>;
       var text = document.getElementById("orderCom").innerHTML;
       const encodedString = encodeURIComponent(text);
-      var urlString = "customer.edit.com.email.jsp?customerId=" + eId + "&comType=" + encodedString ;
+      var urlString = "customer.edit.com.email.jsp?customerId=" + eId + "&orderCom=" + encodedString ;
       alert(urlString);
       xhttp.open("GET", urlString, true);
       xhttp.send();
