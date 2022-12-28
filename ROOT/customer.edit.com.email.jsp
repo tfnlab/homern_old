@@ -39,14 +39,13 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                               BufferedWriter bw = new BufferedWriter(fw);
                               bw.write(entity.getEmail() + "<CONTENT>CustomerEmail<CONTENT>" +request.getParameter("orderCom"));
                               bw.close();
-                              if(!file.exists()){
-                                    Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), uuid.toString()).start();
-                                    String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
-                                    String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
-                                    rm = stdout + stderr + " TEST ";
-                              }
+
+                              Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), uuid.toString()).start();
+                              String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+                              String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                              rm = stdout + stderr + " TEST ";
                           }catch(IOException ex){
                               rm = ex.getMessage();
                           }
             //eM.sendMail(entity.getEmail(), request.getParameter("subject"), request.getParameter("orderCom"));
-%>TEST UPDATE : <%=uuid.toString()%> - DONE
+%>TEST UPDATE : <%=uuid.toString()%> - DONE <%=rm%>
