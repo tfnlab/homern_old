@@ -175,8 +175,11 @@
     }
 
     function getInv() {
+      var select = document.getElementById("type");
+      var selectedOption = select.options[select.selectedIndex];
+      var type = selectedOption.value;
       var orderId = <%=orderId%>;
-      var url = "order.edit.products.print.jsp?orderId=" + orderId;
+      var url = "order.edit.products.print.jsp?orderId=" + orderId + "&type=" + type;
       window.open(url, "_blank");
     }
   </script>
@@ -264,8 +267,17 @@
                     </div>
 
                               <HR>
-                            <button class="btn btn-primary" onclick="getInv()">Download</button>
-                                               
+                          <div class="form-group">
+                            <label for="type">Type</label>
+                            <select class="selectpicker form-control" id="type" name="type">
+                              <option value="Invoice" >Invoice</option>
+                              <option value="Estimate" >Estimate</option>
+                              <option value="Proposal">Proposal</option>
+                            </select>
+                          </div>
+                          <button class="btn btn-primary" onclick="getInv()">Download</button>
+
+
         <HR>
         <form action="order.edit.schedule.jsp" method="POST" >
           <p>Order Dates: <%= order.getOrderDate() %> - <%= order.getShipDate() %></p><br>
