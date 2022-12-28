@@ -150,7 +150,7 @@
          String addressaclat = request.getParameter("addressaclat");
          String addressaclng = request.getParameter("addressaclng");
          String business_type = request.getParameter("businesstype");
-         String business_name = request.getParameter("businesstype");
+         String business_name = request.getParameter("business_name");
          String invoice_terms = request.getParameter("invoice_terms");
 
          user.setFirstName(firstName);
