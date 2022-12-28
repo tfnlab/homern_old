@@ -270,7 +270,7 @@
 
                               <HR>
                                 <div class="form-group" style="display: flex;">
-                                  <select class="selectpicker form-control" id="type" name="type" style="flex: 1;">
+                                  <select class="selectpicker form-control" id="type" name="type" style="flex: 1;width:90%">
                                     <option value="Proposal" >Proposal</option>
                                     <option value="Estimate" >Estimate</option>
                                     <option value="Invoice" >Invoice</option>
@@ -281,7 +281,7 @@
                                   <button class="btn btn-primary" style="flex: 1;" onclick="getInv()">
                                     Download
                                     <span class="fas fa-download" ></span>
-                                </button>
+                                  </button>
                                 </div>
 
 
