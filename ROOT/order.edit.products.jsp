@@ -279,7 +279,7 @@
                                     <option value="Payment Request" >Payment Request</option>
                                     <option value="Payment Confirmation" >Payment Confirmation</option>
                                   </select>
-                                  <button class="btn btn-primary" style="flex: 1;" onclick="getInv()"><i class="fas fa-download"></i></button>
+                                  <span class="fas fa-download" getInv()></span>
                                 </div>
 
 
