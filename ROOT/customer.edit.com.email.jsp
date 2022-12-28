@@ -21,6 +21,7 @@ UUID uuid = UUID.randomUUID();
 int customerId = 0;
 String username = (String) session.getAttribute("username");
 User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+String rm = "";
 if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
   customerId = Integer.parseInt(request.getParameter("customerId"));
 }
@@ -42,6 +43,7 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                                     Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), uuid.toString()).start();
                                     String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
                                     String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                                    rm = stdout + stderr;
                               }
                           }catch(IOException ex){
 
