@@ -32,7 +32,7 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                         EntityDao ed = new EntityDao();
                         entity = ed.getEntityById(customerId);
                         Email_Manager eM = new Email_Manager();
-
+                        try{
             File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -45,5 +45,8 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                           String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
               });
               newThread.start();
+                          }catch(Exception ex){
+
+                          }
             //eM.sendMail(entity.getEmail(), request.getParameter("subject"), request.getParameter("orderCom"));
 %><%=uuid.toString()%> - DONE
