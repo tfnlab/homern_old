@@ -274,6 +274,8 @@
                               <option value="Estimate" >Estimate</option>
                               <option value="Invoice" >Invoice</option>
                               <option value="Past Due Invoice" >Past Due Invoice</option>
+                              <option value="Payment Request" >Payment Request</option>
+                              <option value="Payment Confirmation" >Payment Request</option>
                             </select>
                           </div>
                           <button class="btn btn-primary" onclick="getInv()">Download</button>
