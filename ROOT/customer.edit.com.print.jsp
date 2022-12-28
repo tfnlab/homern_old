@@ -28,7 +28,7 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
 
 
               entity = ed.getEntityById(customerId);
-  create_PDF cpdf = new create_PDF();
+  Create_PDF cpdf = new Create_PDF();
 
   cpdf.createPD(uuid + ".pdf", entity, request.getParameter("orderCom"));
 %>DONE

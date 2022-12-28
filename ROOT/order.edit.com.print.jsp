@@ -21,7 +21,7 @@ if (request.getParameter("orderId") != null && !request.getParameter("orderId").
 }
   // Get the content from the query parameter
   Order order = dao.getOrderByOrderId(orderId);
-  create_PDF cpdf = new create_PDF();
+  Create_PDF cpdf = new Create_PDF();
 
   cpdf.createPD(uuid + ".pdf", order, request.getParameter("orderCom"));
 %>DONE
