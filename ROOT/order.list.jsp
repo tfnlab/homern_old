@@ -156,6 +156,7 @@
               <% for (Order order : orders) { %>
                 Order Name: <%= order.getOrderName() %><br>
                 Order ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %></a><br>
+                  Order Description: <%= order.getOrderDescription() %><br>
                 Order Date: <%= order.getOrderDate() %><br>
                 Shipping Address: <%= order.getShippingAddress() %><br>
                 Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br>
