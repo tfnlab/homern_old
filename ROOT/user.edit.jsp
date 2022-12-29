@@ -207,20 +207,20 @@
 
 
         <form method="post" action="user.edit.jsp">
-          <div class="form-group">
+          <div class="form-group" style="display: inline-block;">
             <label for="orderId">Business Name:</label><br>
-            <input type="text" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>"><br>
+            <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>"><br>
           </div>
 
-           <div class="form-group">
+           <div class="form-group" style="display: inline-block;">
               <label for="firstName">First Name</label>
               <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>">
            </div>
-           <div class="form-group">
+           <div class="form-group" style="display: inline-block;">
               <label for="middleInitial">Middle Initial</label>
               <input type="text" class="form-control" id="middleInitial" name="middleInitial" value="<%= user.getMiddleInitial() %>">
            </div>
-           <div class="form-group">
+           <div class="form-group" style="display: inline-block;">
               <label for="lastName">Last Name</label>
               <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.getLastName() %>">
            </div>
