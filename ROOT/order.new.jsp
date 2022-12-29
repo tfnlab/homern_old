@@ -167,7 +167,7 @@
 
 
                 // Validate form data
-                if (shippingAddress != null && shippingAddress.trim().length() > 0) {
+                if (orderName != null && orderName.trim().length() > 0) {
                       int orderId = 0;
                       if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
                         orderId = Integer.parseInt(request.getParameter("orderId"));
