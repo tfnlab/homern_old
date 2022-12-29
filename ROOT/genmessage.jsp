@@ -40,7 +40,7 @@
 
       String moreInfo = request.getParameter("moreInfo");
       if(moreInfo!=null && moreInfo.length() >1 ){
-        agm =   request.getParameter("comType") + "  " + request.getParameter("moreInfo") + " message from my business named '"+ usernameOBJ.getBusiness_name() + "', this message is from  person named '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName();
+        agm =   request.getParameter("comType") + "  " + request.getParameter("moreInfo") + " post from my business named '"+ usernameOBJ.getBusiness_name() + "', this message is from  '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName();
       }
     }
     Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/hrn.py", agm).start();
