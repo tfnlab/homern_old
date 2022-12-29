@@ -260,10 +260,9 @@
               		<input type="text" id="state" name="state" required><br>
                   <label for="state">Zip:</label><br>
                   <input type="text" id="zipcode" name="zipcode" required><br><br>
-
                   <div class="form-group">
-                    <label for="url_facebook">Facebook URL</label>
-                    <input type="text" class="form-control" id="referred_by" name="referred_by" value="<%=request.getParameter("referred_by")%>">
+                    <label for="url_facebook">Referred By</label>
+                    <input type="text" class="form-control" id="referred_by" name="referred_by" <% if (request.getParameter("referred_by") !=null) { %>value="<%=request.getParameter("referred_by")%>" <% } %> >
                   </div>
                   		<input type="submit" value="Submit">
                   	</form>
