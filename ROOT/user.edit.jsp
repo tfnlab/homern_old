@@ -335,7 +335,7 @@
              <input type="text" class="form-control" id="url_facebook" name="url_facebook" value="<%= user.getUrl_facebook() %>">
            </div>
            <div class="form-group">
-             <label for="url_facebook">Referred by <a href="user.edit.jsp"><i class="fas fa-check"></i></a></label>
+             <label for="url_facebook">Referred by <a href="user.edit.referred_by.jsp"><i class="fas fa-check"></i></a></label>
              <input type="text" class="form-control" id="referred_by" name="referred_by" value="<%= user.getReferred_by() %>">
            </div>
            <BR>
