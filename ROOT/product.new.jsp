@@ -209,10 +209,8 @@
                     manufacturerId = Integer.parseInt(manufacturerIdStr);
                   }
 
-                  String availabilityStr = request.getParameter("availability");
-                  if (availabilityStr != null) {
-                    availability = Boolean.parseBoolean(availabilityStr);
-                  }
+
+                  boolean availability = Boolean.parseBoolean(request.getParameter("availability"));
 
                   String weightStr = request.getParameter("weight");
                   if (weightStr != null && weightStr.trim().length() > 0) {

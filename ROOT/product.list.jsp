@@ -140,10 +140,16 @@
 
 
               <% for (Product product : products) { %>
+                <% String color = product.isAvailability() ? "#C8E6C9" : "#FFCDD2"; %>
+                <div class="container-fluid p-5" style="background-color: <%=color%>">
+                  <div class="card p-3">
                 Product Name: <%= product.getName() %><br>
                 Order ID: <a href="product.edit.jsp?productId=<%= product.getId() %>" ><%= product.getId() %></a><br>
                 Order Date: <%= product.getDescription() %><br>
+                  </div>
+                </div>
                 <hr>
+
               <% } %>
 
 
