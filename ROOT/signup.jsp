@@ -152,7 +152,7 @@
                 // Validate form data
                 if (firstName != null && firstName.trim().length() > 0) {
                   username = username.toLowerCase();
-                  email = email.toLowerCase();                  
+                  email = email.toLowerCase();
                   User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0", business_type, "", "", url_website, url_yelp, url_google, url_twitter, url_tiktok, url_snap, url_instagram, url_facebook, referred_by);
                   UserDao dao = new UserDao();
                   try {
@@ -242,7 +242,7 @@
                       <option value="flooring-contractor">Flooring contractor</option>
                     </select>
                   </div>
-
+                  <HR>
               		<label for="firstName">First Name:</label><br>
               		<input type="text" id="firstName" name="firstName"  required><br>
               		<label for="middleInitial">Middle Initial:</label><br>
@@ -271,6 +271,7 @@
                     <label for="url_facebook">Referred By</label>
                     <input type="text" class="form-control" id="referred_by" name="referred_by" <% if (request.getParameter("referred_by") !=null) { %>value="<%=request.getParameter("referred_by")%>" <% } %> >
                   </div>
+                  <BR>
                   		<input type="submit" value="Submit">
                   	</form>
 
