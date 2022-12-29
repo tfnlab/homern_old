@@ -36,9 +36,9 @@
     String agm =   request.getParameter("comType") + " message from my business named '"+ usernameOBJ.getBusiness_name() + "', this message is from  person named '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + "', the message is for a customer named '" + messageName + "'";
     if(orderId==0 && customerId ==0){
 
-      agm =   request.getParameter("comType") +  " message from my business named '"+ usernameOBJ.getBusiness_name() + "', this message is from  person named '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName();
+      agm =   request.getParameter("comType") +  " message from my business named '" + usernameOBJ.getBusiness_name() + "', this message is from  person named '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName();
 
-      String moreInfo = (String) moreInfo.getAttribute("username");
+      String moreInfo = request.getParameter("moreInfo");
       if(moreInfo!=null && moreInfo.length() >1 ){
         agm =   request.getParameter("comType") + "  " + request.getParameter("moreInfo") + " message from my business named '"+ usernameOBJ.getBusiness_name() + "', this message is from  person named '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName();
       }

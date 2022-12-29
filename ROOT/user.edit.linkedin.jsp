@@ -106,7 +106,7 @@
       const encodedString = encodeURIComponent(text);
       const moreInfo = encodeURIComponent(document.getElementById("moreInfo").value);
       var urlString = "genmessage.jsp?comType=" + encodedString + "&moreInfo=" + moreInfo;
-      alert(urlString);
+      //alert(urlString);
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
