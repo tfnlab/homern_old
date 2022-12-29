@@ -339,7 +339,11 @@ TEST
            </div>
            <div class="form-group">
              <label for="url_facebook">LinkedIn <a href="user.edit.linkedin.jsp"><i class="fas fa-check"></i></a></label>
-             <input type="text" class="form-control" id="url_linkedin" name="url_linkedin" >
+             <input type="text" class="form-control" id="url_linkedin" name="url_linkedin" value="<%= user.getUrl_linkedin()>
+           </div>
+           <div class="form-group">
+             <label for="url_facebook">LinkedIn Access Code</label>
+             <input type="text" class="form-control" id="url_linkedin" name="url_linkedin" value="<%= user.getToken_linkedin()>
            </div>
            <div class="form-group">
              <label for="url_facebook">Referred by <a href="user.edit.referred_by.jsp"><i class="fas fa-check"></i></a></label>
