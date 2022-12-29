@@ -207,7 +207,7 @@
           <a href="user.edit.logo.jsp" >Upload Logo</a>
         <HR>
 
-
+TEST
         <form method="post" action="user.edit.jsp">
           <form class="form-inline">
             <div class="form-group">
