@@ -145,10 +145,11 @@
         String url_snap = request.getParameter("url_snap");
         String url_instagram = request.getParameter("url_instagram");
         String url_facebook = request.getParameter("url_facebook");
+        String referred_by = request.getParameter("referred_by");
 
                 // Validate form data
                 if (username != null && username.trim().length() > 0) {
-                  User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0", business_type, "", "", url_website, url_yelp, url_google, url_twitter, url_tiktok, url_snap, url_instagram, url_facebook);
+                  User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0", business_type, "", "", url_website, url_yelp, url_google, url_twitter, url_tiktok, url_snap, url_instagram, url_facebook, referred_by);
                   UserDao dao = new UserDao();
                   try {
                       boolean pv = true;
