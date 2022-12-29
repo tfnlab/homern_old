@@ -166,27 +166,27 @@
                   }
 
                   String inventoryStr = request.getParameter("inventory");
-                  if (inventoryStr != null) {
+                  if (inventoryStr != null && inventoryStr.trim().length() > 0) {
                     inventory = Integer.parseInt(inventoryStr);
                   }
 
                   String reorderLevelStr = request.getParameter("reorder_level");
-                  if (reorderLevelStr != null) {
+                  if (reorderLevelStr != null && reorderLevelStr.trim().length() > 0) {
                     reorderLevel = Integer.parseInt(reorderLevelStr);
                   }
 
                   String leadTimeStr = request.getParameter("lead_time");
-                  if (leadTimeStr != null) {
+                  if (leadTimeStr != null && leadTimeStr.trim().length() > 0) {
                     leadTime = Integer.parseInt(leadTimeStr);
                   }
 
                   String featuredStr = request.getParameter("featured");
-                  if (featuredStr != null) {
+                  if (featuredStr != null && featuredStr.trim().length() > 0) {
                     featured = Boolean.parseBoolean(featuredStr);
                   }
 
                   String ratingStr = request.getParameter("rating");
-                  if (ratingStr != null) {
+                  if (ratingStr != null && ratingStr.trim().length() > 0) {
                     rating = new BigDecimal(ratingStr);
                   }
 
@@ -200,12 +200,12 @@
                   BigDecimal weight = new BigDecimal("0");
 
                   String categoryIdStr = request.getParameter("category_id");
-                  if (categoryIdStr != null) {
+                  if (categoryIdStr != null && categoryIdStr.trim().length() > 0) {
                     categoryId = Integer.parseInt(categoryIdStr);
                   }
 
                   String manufacturerIdStr = request.getParameter("manufacturer_id");
-                  if (manufacturerIdStr != null) {
+                  if (manufacturerIdStr != null && manufacturerIdStr.trim().length() > 0) {
                     manufacturerId = Integer.parseInt(manufacturerIdStr);
                   }
 
@@ -215,7 +215,7 @@
                   }
 
                   String weightStr = request.getParameter("weight");
-                  if (weightStr != null) {
+                  if (weightStr != null && weightStr.trim().length() > 0) {
                     weight = new BigDecimal(weightStr);
                   }
                   String dimensions = request.getParameter("dimensions");
