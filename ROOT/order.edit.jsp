@@ -223,7 +223,8 @@
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                 String shippingAddress = request.getParameter("shippingAddress");
                 // Validate form data
-                if (shippingAddress != null && shippingAddress.trim().length() > 0) {
+                String orderName = request.getParameter("orderName");
+                if (orderName != null && orderName.trim().length() > 0) {
 
                       long currentTimeMillis = System.currentTimeMillis();
                       Timestamp currentTime = new Timestamp(currentTimeMillis);
@@ -237,6 +238,18 @@
                       if (request.getParameter("orderTotal") != null && !request.getParameter("orderTotal").isEmpty()) {
                         orderTotal = new BigDecimal(request.getParameter("orderTotal"));
                       }
+                      if (request.getParameter("shippingAddressaclat") == null || request.getParameter("shippingAddressaclat").isEmpty()) {
+                        shippingAddressaclat = "0.0";
+                      }
+                      if (request.getParameter("shippingAddressaclng") == null || request.getParameter("shippingAddressaclng").isEmpty()) {
+                        shippingAddressaclng = "0.0";
+                      }
+                      if (request.getParameter("billingAddressaclat") == null || request.getParameter("billingAddressaclat").isEmpty()) {
+                        billingAddressaclat = "0.0";
+                      }
+                      if (request.getParameter("billingAddressaclng") == null || request.getParameter("billingAddressaclng").isEmpty()) {
+                        billingAddressaclng = "0.0";
+                      }
                       Date orderDate = new Date();
                       Date shippingDate = new Date();
                         try{
@@ -248,7 +261,6 @@
                       Timestamp createdAt = currentTime;
                       Timestamp updatedAt = currentTime;
                       Timestamp deletedAt = currentTime;
-                      String orderName = request.getParameter("orderName");
                       String orderDescription = request.getParameter("orderDescription");
                       Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng );
                       dao.updateOrder(order);
