@@ -150,8 +150,8 @@
 
 
         <% for (User ruser : users) { %>
-          First Name: <%= ruser.getFirst_name() %><br>
-          Last name: <%= ruser.getLast_name() %><br>
+          First Name: <%= ruser.getFirstName() %><br>
+          Last name: <%= ruser.getLastName() %><br>
           Phone: <%= ruser.getEmail() %><br>
           Email: <%= ruser.getPhone() %><br>
         <%}%>
