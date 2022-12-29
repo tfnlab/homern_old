@@ -130,13 +130,27 @@
         <%@ include file="user.menu.nav.jsp" %>
 
         <%
+                String searchKey = request.getParameter("searchKey");
                 OrderDao orderDao = new OrderDao();
                 String username = (String) session.getAttribute("username");
 
-                List<Order> orders = orderDao.getCustomerOrders(username);
+                List<Order> orders = null;
+
+                if (searchKey != null && searchKey.trim().length() > 0) {
+                    //es = cDao.searchSearchKeyByUsername(username, searchKey);
+                }else{
+                    searchKey = "";
+                    orders = orderDao.getCustomerOrders(username);
+                }
                 %>
-
-
+                <form action="customer.list.jsp" method="post">
+                  <div class="form-group">
+                    <label for="firstName">Search Key</label>
+                    <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>">
+                  </div>
+                  <HR>
+                  <button type="submit" class="btn btn-primary">Search</button>
+                </form>
 
               <% for (Order order : orders) { %>
                 Order Name: <%= order.getOrderName() %><br>
