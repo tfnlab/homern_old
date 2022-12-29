@@ -3,6 +3,7 @@
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="java.net.URLDecoder" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -138,15 +139,22 @@
     User user = new User();
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
     user = dao.getUserByUsername(username);
+    List<User> users = dao.getUsersReferredBy(username);
+
     %>
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>User Referred By Info</h2>
         <%@ include file="user.menu.nav.jsp" %>
-        
 
 
+        <% for (User ruser : users) { %>
+          First Name: <%= ruser.getFirt_name() %><br>
+          Last name: <%= ruser.getLast_name() %><br>
+          Phone: <%= ruser.getEmail() %><br>
+          Email: <%= ruser.getPhone() %><br>
+        <%}%>
 
       </div>
 
