@@ -148,7 +148,11 @@
         <%@ include file="user.menu.nav.jsp" %>
         <h4>Welcome to the Home Renovation Nation referral program!</h4>
         <p>Are you a fan of Home Renovation Nation? Do you know someone who could benefit from our expertise? If so, you're in luck! With our referral program, you can earn points for every person you refer to us who becomes a paying customer.</p>
-
+        <p>
+          Use this referral link to help others sign up as customers and get a special discount on their first service. When you use this link to refer someone, you'll earn points towards future discounts or cash back for yourself.
+          <BR><BR>
+        <code>https://homerenovationnation.com/signup.jsp?referred_by=<%=username%></code>
+        </p>
         <% for (User ruser : users) { %>
           First Name: <%= ruser.getFirstName() %><br>
           Last name: <%= ruser.getLastName() %><br>
