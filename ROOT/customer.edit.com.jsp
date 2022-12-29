@@ -226,18 +226,27 @@
         <h2>Customer - Touch Points </h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-          <div class="form-group">
-            <label for="touchPoints">Choose a touch point:</label>
-            <select class="form-control" id="touchPoints">
-              <option value="initialConsultation">Initial consultation</option>
-              <option value="contractSigning">Contract signing</option>
-              <option value="preConstructionMeeting">Pre-construction meeting</option>
-              <option value="onSiteVisits">On-site visits</option>
-              <option value="progressUpdates">Progress updates</option>
-              <option value="finalWalkThrough">Final walk-through</option>
-              <option value="warrantyAndMaintenance">Warranty and maintenance</option>
-            </select>
-          </div>
+          comType
+          <%
+          String comType = request.getParameter("comType");
+          if (comType != null) {
+          %>
+            <div class="form-group">
+              <label for="touchPoints">Choose a touch point:</label>
+              <select class="form-control" id="touchPoints">
+                <option value="initialConsultation" <%= comType.equals("initialConsultation") ? "selected" : "" %>>Initial consultation</option>
+                <option value="contractSigning" <%= comType.equals("contractSigning") ? "selected" : "" %>>Contract signing</option>
+                <option value="preConstructionMeeting" <%= comType.equals("preConstructionMeeting") ? "selected" : "" %>>Pre-construction meeting</option>
+                <option value="onSiteVisits" <%= comType.equals("onSiteVisits") ? "selected" : "" %>>On-site visits</option>
+                <option value="progressUpdates" <%= comType.equals("progressUpdates") ? "selected" : "" %>>Progress updates</option>
+                <option value="finalWalkThrough" <%= comType.equals("finalWalkThrough") ? "selected" : "" %>>Final walk-through</option>
+                <option value="warrantyAndMaintenance" <%= comType.equals("warrantyAndMaintenance") ? "selected" : "" %>>Warranty and maintenance</option>
+              </select>
+            </div>
+          <%
+          }
+          %>
+
         <HR>
         <button class="btn btn-primary" onclick="getCom()">Correspondence</button>
         <button class="btn btn-primary" onclick="getPayments()">Payments</button>
