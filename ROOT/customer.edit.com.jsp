@@ -228,7 +228,6 @@
         <HR>
           comType
           <%
-          String comType = request.getParameter("comType");
           if (comType != null) {
           %>
             <div class="form-group">
