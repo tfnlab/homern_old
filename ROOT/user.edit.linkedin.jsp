@@ -91,22 +91,8 @@
       }
       function getMessage() {
         //genmessage.jsp?comType=latepaymentrequest
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
 
-            document.getElementById("orderCom").innerHTML = this.responseText.trim();
-          }
-        };
         alert('ALERT');
-        var select = document.getElementById("post-type");
-        var selectedOption = select.options[select.selectedIndex];
-        var text = selectedOption.text;
-        const encodedString = encodeURIComponent(text);
-        var urlString = "genmessage.jsp?comType=" + encodedString ;
-        alert(urlString);
-        xhttp.open("GET", urlString, true);
-        xhttp.send();
       }
     }
 
