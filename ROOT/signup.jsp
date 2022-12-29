@@ -263,7 +263,7 @@
 
                   <div class="form-group">
                     <label for="url_facebook">Facebook URL</label>
-                    <input type="text" class="form-control" id="referred_by" name="referred_by" value="<%= user.getReferred_by() %>">
+                    <input type="text" class="form-control" id="referred_by" name="referred_by" >
                   </div>
                   		<input type="submit" value="Submit">
                   	</form>
