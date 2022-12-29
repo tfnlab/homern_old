@@ -130,12 +130,24 @@
       <div class="container px-4 px-lg-5">
         <h2>Orders</h2>
         <%@ include file="user.menu.nav.jsp" %>
-
+        <form action="customer.list.jsp" method="post">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>">
+          </div>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
         <%
                 EntityDao cDao = new EntityDao();
                 String username = (String) session.getAttribute("username");
+                List<Entity> es = null;
 
-                List<Entity> es = cDao.getEntitiesByUsername(username);
+                String searchKey = request.getParameter("searchKey");
+                if (searchKey != null && searchKey.trim().length() > 0) {
+                    es = cDao.searchSearchKeyByUsername(username, searchKey);
+                }else{
+                    es = cDao.getEntitiesByUsername(username);
+                }
                 %>
 
 
