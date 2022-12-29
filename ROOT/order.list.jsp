@@ -154,16 +154,16 @@
                 <HR>
 
               <% for (Order order : orders) { %>
-                Order Name: <%= order.getOrderName() %><br>
-                Order ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %></a><br>
-                  Order Description: <%= order.getOrderDescription() %><br>
-                Order Date: <%= order.getOrderDate() %><br>
+                Name: <%= order.getOrderName() %><br>
+                ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %></a><br>
+                  Description: <%= order.getOrderDescription() %><br>
+                Date: <%= order.getOrderDate() %><br>
                 Shipping Address: <%= order.getShippingAddress() %><br>
                 Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br>
                 Billing Address: <%= order.getBillingAddress() %><br>
                 Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br>
                 Payment Method: <%= order.getPaymentMethod() %><br>
-                Order Total: <%= order.getOrderTotal() %><br>
+                Total: <%= order.getOrderTotal() %><br>
                 <hr>
               <% } %>
 

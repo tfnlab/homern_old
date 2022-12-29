@@ -160,7 +160,7 @@
          String url_snap = request.getParameter("url_snap");
          String url_instagram = request.getParameter("url_instagram");
          String url_facebook = request.getParameter("url_facebook");
-
+         String referred_by = request.getParameter("referred_by");
          user.setFirstName(firstName);
          user.setMiddleInitial(middleInitial);
          user.setLastName(lastName);
@@ -186,7 +186,7 @@
          user.setUrl_snap(url_snap);
          user.setUrl_instagram(url_instagram);
          user.setUrl_facebook(url_facebook);
-
+         user.setReferred_by(referred_by);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -332,6 +332,11 @@
              <label for="url_facebook">Facebook URL</label>
              <input type="text" class="form-control" id="url_facebook" name="url_facebook" value="<%= user.getUrl_facebook() %>">
            </div>
+           <div class="form-group">
+             <label for="url_facebook">Facebook URL</label>
+             <input type="text" class="form-control" id="referred_by" name="referred_by" value="<%= user.getReferred_by() %>">
+           </div>
+
 
            <button type="submit" class="btn btn-primary">Submit</button>
            </form>
