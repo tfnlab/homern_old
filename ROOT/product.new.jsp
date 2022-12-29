@@ -153,20 +153,71 @@
 
                 if (name != null && name.trim().length() > 0) {
                   int id = 0;
-                  BigDecimal price = new BigDecimal(request.getParameter("price"));
-                  int inventory = Integer.parseInt(request.getParameter("inventory"));
-                  int reorderLevel = Integer.parseInt(request.getParameter("reorder_level"));
-                  int leadTime = Integer.parseInt(request.getParameter("lead_time"));
-                  boolean featured = Boolean.parseBoolean(request.getParameter("featured"));
-                  BigDecimal rating = new BigDecimal(request.getParameter("rating"));
+                  BigDecimal price;
+                  int inventory;
+                  int reorderLevel;
+                  int leadTime;
+                  boolean featured;
+                  BigDecimal rating;
+
+                  String priceStr = request.getParameter("price");
+                  if (priceStr != null) {
+                    price = new BigDecimal(priceStr);
+                  }
+
+                  String inventoryStr = request.getParameter("inventory");
+                  if (inventoryStr != null) {
+                    inventory = Integer.parseInt(inventoryStr);
+                  }
+
+                  String reorderLevelStr = request.getParameter("reorder_level");
+                  if (reorderLevelStr != null) {
+                    reorderLevel = Integer.parseInt(reorderLevelStr);
+                  }
+
+                  String leadTimeStr = request.getParameter("lead_time");
+                  if (leadTimeStr != null) {
+                    leadTime = Integer.parseInt(leadTimeStr);
+                  }
+
+                  String featuredStr = request.getParameter("featured");
+                  if (featuredStr != null) {
+                    featured = Boolean.parseBoolean(featuredStr);
+                  }
+
+                  String ratingStr = request.getParameter("rating");
+                  if (ratingStr != null) {
+                    rating = new BigDecimal(ratingStr);
+                  }
+
                   String description = request.getParameter("description");
                   String imageUrl = request.getParameter("image_url");
                   Timestamp createdAt = currentTime;
                   Timestamp updatedAt = currentTime;
-                  int categoryId = Integer.parseInt(request.getParameter("category_id"));
-                  int manufacturerId = Integer.parseInt(request.getParameter("manufacturer_id"));
-                  boolean availability = Boolean.parseBoolean(request.getParameter("availability"));
-                  BigDecimal weight = new BigDecimal(request.getParameter("weight"));
+                  int categoryId;
+                  int manufacturerId;
+                  boolean availability;
+                  BigDecimal weight;
+
+                  String categoryIdStr = request.getParameter("category_id");
+                  if (categoryIdStr != null) {
+                    categoryId = Integer.parseInt(categoryIdStr);
+                  }
+
+                  String manufacturerIdStr = request.getParameter("manufacturer_id");
+                  if (manufacturerIdStr != null) {
+                    manufacturerId = Integer.parseInt(manufacturerIdStr);
+                  }
+
+                  String availabilityStr = request.getParameter("availability");
+                  if (availabilityStr != null) {
+                    availability = Boolean.parseBoolean(availabilityStr);
+                  }
+
+                  String weightStr = request.getParameter("weight");
+                  if (weightStr != null) {
+                    weight = new BigDecimal(weightStr);
+                  }
                   String dimensions = request.getParameter("dimensions");
                   String customerId = username;
 
@@ -188,8 +239,6 @@
             <!-- ======= Contact Section ======= -->
 
             <form action="product.new.jsp" method="post">
-              <label for="id">ID:</label><br>
-              <input type="number" id="id" name="id"><br>
               <label for="sku">SKU:</label><br>
               <input type="text" id="sku" name="sku"><br>
               <label for="name">Name:</label><br>
@@ -210,10 +259,6 @@
               <textarea class="form-control" id="description" name="description"></textarea><br>
               <label for="image_url">Image URL:</label><br>
               <input type="text" id="image_url" name="image_url"><br>
-              <label for="created_at">Created At:</label><br>
-              <input type="text" id="created_at" name="created_at"><br>
-              <label for="updated_at">Updated At:</label><br>
-              <input type="text" id="updated_at" name="updated_at"><br>
               <label for="category_id">Category ID:</label><br>
               <input type="number" id="category_id" name="category_id"><br>
               <label for="manufacturer_id">Manufacturer ID:</label><br>
