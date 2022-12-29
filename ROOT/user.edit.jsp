@@ -343,7 +343,7 @@
            </div>
            <div class="form-group">
              <label for="url_facebook">LinkedIn <a href="user.edit.linkedin.jsp"><i class="fas fa-check"></i></a></label>
-             <input type="text" class="form-control" id="url_facebook" name="url_facebook" value="<%= user.getUrl_facebook() %>">
+             <input type="text" class="form-control" id="url_linkedin" name="url_linkedin" >
            </div>
            <div class="form-group">
              <label for="url_facebook">Referred by <a href="user.edit.referred_by.jsp"><i class="fas fa-check"></i></a></label>
@@ -351,8 +351,6 @@
            </div>
            <BR>
            <BR>
-
-
            <button type="submit" class="btn btn-primary">Submit</button>
            </form>
 
