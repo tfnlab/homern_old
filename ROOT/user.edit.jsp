@@ -201,7 +201,8 @@
         <h2>User</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <a href="user.edit.logo.jsp" >Upload Logo</a>
-        <BR>
+
+
         <form method="post" action="user.edit.jsp">
           <div class="form-group">
             <label for="orderId">Business Name:</label><br>
@@ -333,9 +334,11 @@
              <input type="text" class="form-control" id="url_facebook" name="url_facebook" value="<%= user.getUrl_facebook() %>">
            </div>
            <div class="form-group">
-             <label for="url_facebook">Referred by</label>
+             <label for="url_facebook">Referred by <a href="user.edit.jsp"><i class="fas fa-check"></i></a></label>
              <input type="text" class="form-control" id="referred_by" name="referred_by" value="<%= user.getReferred_by() %>">
            </div>
+           <BR>
+           <BR>
 
 
            <button type="submit" class="btn btn-primary">Submit</button>
