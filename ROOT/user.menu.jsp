@@ -130,41 +130,7 @@
 
         <h2>Scheduling and dispatch</h2>
         <p>Home service software can help schedule and dispatch technicians to service calls and manage their work schedules.</p>
-        <p>
-        <small>
-          Here is a general workflow for scheduling using home service software:
-
-A customer contacts the company to request service. This can be done through a phone call, email, or through the company's website.
-
-The customer's request is entered into the home service software's scheduling system. This may involve completing a form with information such as the customer's contact information, the type of service requested, and the desired service date and time.
-
-The scheduling system checks the availability of technicians and assigns the service request to an available technician.
-
-The technician receives notification of the service request and confirms availability.
-
-The service request is added to the technician's schedule and is visible to the technician and other members of the company through the home service software.
-
-The customer is notified of the service appointment and receives any necessary documents, such as a service agreement or invoice, through the home service software.
-
-The technician performs the service at the scheduled time and updates the home service software with any relevant information, such as the type of service performed and any parts used.
-
-The customer may be asked to complete a satisfaction survey through the home service software.
-
-The company generates an invoice for the service through the home service software and sends it to the customer.
-
-Forms that may be used in this process include:
-
-Service request form: This form is used to gather information from the customer about the service they are requesting.
-
-Technician availability form: This form is used by technicians to indicate their availability for service appointments.
-
-Service agreement: This form outlines the terms and conditions of the service being provided.
-
-Invoice: This form outlines the charges for the service being provided and may include information about any parts or materials used.
-
-Satisfaction survey: This form is used to gather feedback from customers about their experience with the company's services.
-</small>
-</p>
+        
 
         <h2>Customer relationship management (CRM)</h2>
         <p>Home service software can help companies manage customer relationships by storing customer information, tracking interactions, and managing communication with customers.</p>
