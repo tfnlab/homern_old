@@ -210,7 +210,7 @@
                   }
 
 
-                  boolean availability = Boolean.parseBoolean(request.getParameter("availability"));
+                  availability = Boolean.parseBoolean(request.getParameter("availability"));
 
                   String weightStr = request.getParameter("weight");
                   if (weightStr != null && weightStr.trim().length() > 0) {
