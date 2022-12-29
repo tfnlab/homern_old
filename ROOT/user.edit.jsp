@@ -203,7 +203,9 @@
       <div class="container px-4 px-lg-5">
         <h2>User</h2>
         <%@ include file="user.menu.nav.jsp" %>
-        <a href="user.edit.logo.jsp" >Upload Logo</a>
+        <HR>
+          <a href="user.edit.logo.jsp" >Upload Logo</a>
+        <HR>
 
 
         <form method="post" action="user.edit.jsp">
