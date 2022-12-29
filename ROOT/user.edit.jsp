@@ -347,7 +347,7 @@ TEST
            </div>
            <BR>
            <BR>
-           <input type="submit" class="btn btn-primary">Submit</input>
+           <button type="submit" class="btn btn-primary">Submit</button>
            </form>
 
 
