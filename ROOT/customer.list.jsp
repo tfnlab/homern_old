@@ -130,6 +130,9 @@
       <div class="container px-4 px-lg-5">
         <h2>Orders</h2>
         <%@ include file="user.menu.nav.jsp" %>
+              <%              
+                 String searchKey = request.getParameter("searchKey");
+              %>
         <form action="customer.list.jsp" method="post">
           <div class="form-group">
             <label for="firstName">First Name</label>
@@ -142,7 +145,6 @@
                 String username = (String) session.getAttribute("username");
                 List<Entity> es = null;
 
-                String searchKey = request.getParameter("searchKey");
                 if (searchKey != null && searchKey.trim().length() > 0) {
                     es = cDao.searchSearchKeyByUsername(username, searchKey);
                 }else{
