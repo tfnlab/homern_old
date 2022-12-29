@@ -177,16 +177,16 @@
                         orderTotal = new BigDecimal(request.getParameter("orderTotal"));
                       }
                       if (request.getParameter("shippingAddressaclat") != null && !request.getParameter("shippingAddressaclat").isEmpty()) {
-                        shippingAddressaclat = "0";
+                        shippingAddressaclat = "0.0";
                       }
                       if (request.getParameter("shippingAddressaclng") != null && !request.getParameter("shippingAddressaclng").isEmpty()) {
-                        shippingAddressaclng = "0";
+                        shippingAddressaclng = "0.0";
                       }
                       if (request.getParameter("billingAddressaclat") != null && !request.getParameter("billingAddressaclat").isEmpty()) {
-                        billingAddressaclat = "0";
+                        billingAddressaclat = "0.0";
                       }
                       if (request.getParameter("billingAddressaclng") != null && !request.getParameter("billingAddressaclng").isEmpty()) {
-                        billingAddressaclng = "0";
+                        billingAddressaclng = "0.0";
                       }
                           %><%=billingAddressaclng%><%
                       Timestamp createdAt = currentTime;
@@ -203,7 +203,7 @@
                       }
                       Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng);
                       OrderDao dao = new OrderDao();
-                      //dao.insertOrder(order);
+                      dao.insertOrder(order);
                       %>
                         Order Saved
                       <%
