@@ -226,7 +226,6 @@
         <h2>Customer - Touch Points </h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-          comType
           <%
           if (comType != null) {
           %>
