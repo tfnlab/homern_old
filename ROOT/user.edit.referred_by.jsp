@@ -150,7 +150,7 @@
 
 
         <% for (User ruser : users) { %>
-          First Name: <%= ruser.getFirt_name() %><br>
+          First Name: <%= ruser.getFirst_name() %><br>
           Last name: <%= ruser.getLast_name() %><br>
           Phone: <%= ruser.getEmail() %><br>
           Email: <%= ruser.getPhone() %><br>
