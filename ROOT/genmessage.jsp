@@ -40,7 +40,7 @@
 
       String moreInfo = request.getParameter("moreInfo");
       if(moreInfo!=null && moreInfo.length() >1 ){
-        agm =   " my business name is '"+ usernameOBJ.getBusiness_name() + "' and my name is '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + " write linkedin post about " + request.getParameter("comType") + "  " + request.getParameter("moreInfo") +;
+        agm =   " my business name is '"+ usernameOBJ.getBusiness_name() + "' and my name is '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + " write linkedin post about " + request.getParameter("comType") + "  " + request.getParameter("moreInfo") ;
         //agm =   request.getParameter("comType") + "  " + request.getParameter("moreInfo") + " post from my business named '"+ usernameOBJ.getBusiness_name() + "', this message is from  '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName();
       }
     }
