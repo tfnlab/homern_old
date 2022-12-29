@@ -161,16 +161,16 @@
          String url_snap = request.getParameter("url_snap");
          String url_instagram = request.getParameter("url_instagram");
          String url_facebook = request.getParameter("url_facebook");
-         String referred_by = request.getParameter("referred_by");
 
          email = email.toLowerCase();
+
+         user = dao.getUserByUsername(username);
 
          user.setFirstName(firstName);
          user.setMiddleInitial(middleInitial);
          user.setLastName(lastName);
          user.setEmail(email);
          user.setPhone(phone);
-         user.setUsername(username);
          user.setOgId(ogId);
          user.setAddress(address);
          user.setCity(city);
@@ -190,7 +190,6 @@
          user.setUrl_snap(url_snap);
          user.setUrl_instagram(url_instagram);
          user.setUrl_facebook(url_facebook);
-         user.setReferred_by(referred_by);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
