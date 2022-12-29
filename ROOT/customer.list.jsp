@@ -130,16 +130,18 @@
       <div class="container px-4 px-lg-5">
         <h2>Orders</h2>
         <%@ include file="user.menu.nav.jsp" %>
-              <%              
+              <%
                  String searchKey = request.getParameter("searchKey");
               %>
         <form action="customer.list.jsp" method="post">
           <div class="form-group">
-            <label for="firstName">First Name</label>
+            <label for="firstName">Search Key</label>
             <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>">
           </div>
+          <HR>
           <button type="submit" class="btn btn-primary">Search</button>
         </form>
+        <HR>
         <%
                 EntityDao cDao = new EntityDao();
                 String username = (String) session.getAttribute("username");
@@ -155,10 +157,12 @@
 
 
               <% for (Entity entity : es) { %>
-                Name: <%= entity.getFirstName() %><br>
-                  Name: <%= entity.getLastName() %><br>
-                  Email: <%= entity.getLastName() %><br>
-                Customer ID: <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
+                  First Name: <%= entity.getFirstName() %><br>
+                  Last Name: <%= entity.getLastName() %><br>
+                  Address: <%= entity.getAddress() %><br>
+                  Phone: <%= entity.getPhone() %><br>
+                  Email: <%= entity.getEmail() %><br>
+                  Customer ID: <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
                 <hr>
               <% } %>
 
