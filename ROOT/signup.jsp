@@ -176,6 +176,11 @@
                         um  = "Email is already a user";
                       }
 
+                      if(username.equals(referred_by)){
+                        pv = false;
+                        um  = "Username can not equal to referred by";
+                      }
+
                       if(pv){
                         dao.insertUser(user);
                         user = dao.getUserByUsername(username);
