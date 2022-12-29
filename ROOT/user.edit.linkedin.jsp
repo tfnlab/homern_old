@@ -98,6 +98,7 @@
             document.getElementById("orderCom").innerHTML = this.responseText.trim();
           }
         };
+        alert("ALERT");
         var select = document.getElementById("post-type");
         var selectedOption = select.options[select.selectedIndex];
         var text = selectedOption.text;
