@@ -310,35 +310,39 @@
            </div>
 
            <div class="form-group">
-             <label for="url_website">Website URL</label>
+             <label for="url_website">Website</label>
              <input type="text" class="form-control" id="url_website" name="url_website" value="<%= user.getUrl_website() %>">
            </div>
            <div class="form-group">
-             <label for="url_yelp">Yelp URL</label>
+             <label for="url_yelp">Yelp</label>
              <input type="text" class="form-control" id="url_yelp" name="url_yelp" value="<%= user.getUrl_yelp() %>">
            </div>
            <div class="form-group">
-             <label for="url_google">Google URL</label>
+             <label for="url_google">Google</label>
              <input type="text" class="form-control" id="url_google" name="url_google" value="<%= user.getUrl_google() %>">
            </div>
            <div class="form-group">
-             <label for="url_twitter">Twitter URL</label>
+             <label for="url_twitter">Twitter</label>
              <input type="text" class="form-control" id="url_twitter" name="url_twitter" value="<%= user.getUrl_twitter() %>">
            </div>
            <div class="form-group">
-             <label for="url_tiktok">TikTok URL</label>
+             <label for="url_tiktok">TikTok</label>
              <input type="text" class="form-control" id="url_tiktok" name="url_tiktok" value="<%= user.getUrl_tiktok() %>">
            </div>
            <div class="form-group">
-             <label for="url_snap">Snapchat URL</label>
+             <label for="url_snap">Snapchat</label>
              <input type="text" class="form-control" id="url_snap" name="url_snap" value="<%= user.getUrl_snap() %>">
            </div>
            <div class="form-group">
-             <label for="url_instagram">Instagram URL</label>
+             <label for="url_instagram">Instagram</label>
              <input type="text" class="form-control" id="url_instagram" name="url_instagram" value="<%= user.getUrl_instagram() %>">
            </div>
            <div class="form-group">
-             <label for="url_facebook">Facebook URL</label>
+             <label for="url_facebook">Facebook</label>
+             <input type="text" class="form-control" id="url_facebook" name="url_facebook" value="<%= user.getUrl_facebook() %>">
+           </div>
+           <div class="form-group">
+             <label for="url_facebook">LinkedIn <a href="user.edit.linkedin.jsp"><i class="fas fa-check"></i></a></label>
              <input type="text" class="form-control" id="url_facebook" name="url_facebook" value="<%= user.getUrl_facebook() %>">
            </div>
            <div class="form-group">
