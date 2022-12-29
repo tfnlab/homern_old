@@ -176,6 +176,19 @@
                       if (request.getParameter("orderTotal") != null && !request.getParameter("orderTotal").isEmpty()) {
                         orderTotal = new BigDecimal(request.getParameter("orderTotal"));
                       }
+                      if (request.getParameter("shippingAddressaclat") != null && !request.getParameter("shippingAddressaclat").isEmpty()) {
+                        shippingAddressaclat = "0";
+                      }
+                      if (request.getParameter("shippingAddressaclng") != null && !request.getParameter("shippingAddressaclng").isEmpty()) {
+                        shippingAddressaclng = "0";
+                      }
+                      if (request.getParameter("billingAddressaclat") != null && !request.getParameter("billingAddressaclat").isEmpty()) {
+                        billingAddressaclat = "0";
+                      }
+                      if (request.getParameter("billingAddressaclng") != null && !request.getParameter("billingAddressaclng").isEmpty()) {
+                        billingAddressaclng = "0";
+                      }
+
                       Timestamp createdAt = currentTime;
                       Timestamp updatedAt = currentTime;
                       Timestamp deletedAt = currentTime;
