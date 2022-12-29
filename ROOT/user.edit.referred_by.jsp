@@ -138,7 +138,6 @@
     String username = (String) session.getAttribute("username");
     User user = new User();
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
-    user = dao.getUserByUsername(username);
     List<User> users = dao.getUsersReferredBy(username);
 
     %>
@@ -154,6 +153,7 @@
           Last name: <%= ruser.getLastName() %><br>
           Phone: <%= ruser.getEmail() %><br>
           Email: <%= ruser.getPhone() %><br>
+          <HR>
         <%}%>
 
       </div>
