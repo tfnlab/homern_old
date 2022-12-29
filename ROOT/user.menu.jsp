@@ -128,29 +128,29 @@
         <HR>
         <h1>Features of Home Service Software</h1>
 
-        <h2>Scheduling and dispatch</h2>
+        <h4>Scheduling and dispatch</h4>
         <p>Home service software can help schedule and dispatch technicians to service calls and manage their work schedules.</p>
-        
 
-        <h2>Customer relationship management (CRM)</h2>
+
+        <h4>Customer relationship management (CRM)</h4>
         <p>Home service software can help companies manage customer relationships by storing customer information, tracking interactions, and managing communication with customers.</p>
 
-        <h2>Invoicing and billing</h2>
+        <h4>Invoicing and billing</h4>
         <p>Home service software can help companies create and manage invoices, process payments, and track billing.</p>
 
-        <h2>Inventory management</h2>
+        <h4>Inventory management</h4>
         <p>Home service software can help companies track inventory levels, reorder supplies, and manage the purchase and use of parts and equipment.</p>
 
-        <h2>Service history</h2>
+        <h4>Service history</h4>
         <p>Home service software can help companies track service history for individual customers and equipment, including the type of service provided, the technician who performed the service, and the parts used.</p>
 
-        <h2>Reporting</h2>
+        <h4>Reporting</h4>
         <p>Home service software can generate reports on a variety of metrics, such as service history, customer interactions, and financial performance.</p>
 
-        <h2>Mobile functionality</h2>
+        <h4>Mobile functionality</h4>
         <p>Many home service software programs have mobile apps that allow technicians to access and update information on the go.</p>
 
-        <h2>Integration with other systems</h2>
+        <h4>Integration with other systems</h4>
         <p>Home service software may integrate with other business systems, such as accounting software or CRM software, to streamline workflows and improve efficiency.</p>
 
       </div>
