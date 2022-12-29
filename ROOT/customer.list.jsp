@@ -132,17 +132,6 @@
         <%@ include file="user.menu.nav.jsp" %>
               <%
                  String searchKey = request.getParameter("searchKey");
-              %>
-        <form action="customer.list.jsp" method="post">
-          <div class="form-group">
-            <label for="firstName">Search Key</label>
-            <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>">
-          </div>
-          <HR>
-          <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-        <HR>
-        <%
                 EntityDao cDao = new EntityDao();
                 String username = (String) session.getAttribute("username");
                 List<Entity> es = null;
@@ -150,12 +139,19 @@
                 if (searchKey != null && searchKey.trim().length() > 0) {
                     es = cDao.searchSearchKeyByUsername(username, searchKey);
                 }else{
+                    searchKey = "";
                     es = cDao.getEntitiesByUsername(username);
                 }
                 %>
-
-
-
+                <form action="customer.list.jsp" method="post">
+                  <div class="form-group">
+                    <label for="firstName">Search Key</label>
+                    <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>">
+                  </div>
+                  <HR>
+                  <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+                <HR>
               <% for (Entity entity : es) { %>
                   First Name: <%= entity.getFirstName() %><br>
                   Last Name: <%= entity.getLastName() %><br>
