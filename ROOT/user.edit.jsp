@@ -162,6 +162,9 @@
          String url_instagram = request.getParameter("url_instagram");
          String url_facebook = request.getParameter("url_facebook");
          String referred_by = request.getParameter("referred_by");
+
+         email = email.toLowerCase();
+
          user.setFirstName(firstName);
          user.setMiddleInitial(middleInitial);
          user.setLastName(lastName);
