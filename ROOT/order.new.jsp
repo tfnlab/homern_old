@@ -188,7 +188,7 @@
                       if (request.getParameter("billingAddressaclng") != null && !request.getParameter("billingAddressaclng").isEmpty()) {
                         billingAddressaclng = "0";
                       }
-
+                          %><%=billingAddressaclng%><%
                       Timestamp createdAt = currentTime;
                       Timestamp updatedAt = currentTime;
                       Timestamp deletedAt = currentTime;
@@ -203,7 +203,7 @@
                       }
                       Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng);
                       OrderDao dao = new OrderDao();
-                      dao.insertOrder(order);
+                      //dao.insertOrder(order);
                       %>
                         Order Saved
                       <%
