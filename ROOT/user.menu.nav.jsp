@@ -15,5 +15,5 @@
         <a href="event.new.jsp">Event</a> |
         <a href="technician.list.jsp">Technicians</a> |
         <a href="technician.new.jsp">Technician</a> |
-        <a href="user.edit.jsp">User</a>
+        <a href="user.edit.jsp">User <i class="fas fa-cog"></i></a>
       </p>
