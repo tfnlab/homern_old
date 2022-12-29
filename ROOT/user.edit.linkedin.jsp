@@ -98,7 +98,7 @@
             document.getElementById("orderCom").innerHTML = this.responseText.trim();
           }
         };
-        alert("ALERT");
+        alert('ALERT');
         var select = document.getElementById("post-type");
         var selectedOption = select.options[select.selectedIndex];
         var text = selectedOption.text;
@@ -166,7 +166,6 @@
         <%@ include file="user.menu.nav.jsp" %>
 
 
-        <form action="customer.edit.com.print.jsp" method="POST" >
           <div class="form-group">
             <label for="post-type">Select a post type:</label>
             <select class="form-control" id="post-type" name="post-type">
@@ -183,6 +182,7 @@
           <HR>
           <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
           <HR>
+        <form action="customer.edit.com.print.jsp" method="POST" >
           <div class="form-group">
             <label for="orderId">Touch Point</label><br>
             <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
