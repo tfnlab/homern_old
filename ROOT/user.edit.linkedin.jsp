@@ -4,6 +4,7 @@
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="java.net.URLDecoder" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.tfnlab.api.con.LinkedinPost"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -156,6 +157,12 @@
     User user = new User();
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
 
+       String orderCom = request.getParameter("orderCom");
+
+      if (orderCom != null && orderCom.trim().length() > 0) {
+              LinkedinPost.sendPost(orderCom);
+      }
+
     %>
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
@@ -164,6 +171,8 @@
         <%@ include file="user.menu.nav.jsp" %>
 
 
+
+        <form action="user.edit.linkedin.jsp" method="POST" >
           <div class="form-group">
             <label for="post-type">Select a post type:</label>
             <select class="form-control" id="post-type" name="post-type">
@@ -180,7 +189,6 @@
           <HR>
           <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
           <HR>
-        <form action="customer.edit.com.print.jsp" method="POST" >
           <div class="form-group">
             <label for="orderId">Touch Point</label><br>
             <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
