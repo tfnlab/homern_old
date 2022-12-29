@@ -161,6 +161,8 @@
          String url_snap = request.getParameter("url_snap");
          String url_instagram = request.getParameter("url_instagram");
          String url_facebook = request.getParameter("url_facebook");
+         String url_linkedin = request.getParameter("url_linkedin");
+         String token_linkedin = request.getParameter("token_linkedin");
 
          email = email.toLowerCase();
 
@@ -190,6 +192,8 @@
          user.setUrl_snap(url_snap);
          user.setUrl_instagram(url_instagram);
          user.setUrl_facebook(url_facebook);
+         user.setUrl_linkedin(url_linkedin);
+         user.setToken_linkedin(token_linkedin);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);

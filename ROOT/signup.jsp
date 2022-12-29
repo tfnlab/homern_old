@@ -153,7 +153,7 @@
                 if (firstName != null && firstName.trim().length() > 0) {
                   username = username.toLowerCase();
                   email = email.toLowerCase();
-                  User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0", business_type, "", "", url_website, url_yelp, url_google, url_twitter, url_tiktok, url_snap, url_instagram, url_facebook, referred_by);
+                  User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0", business_type, "", "", url_website, url_yelp, url_google, url_twitter, url_tiktok, url_snap, url_instagram, url_facebook, referred_by, "url_linkedin", "token_linkedin");
                   UserDao dao = new UserDao();
                   try {
                       boolean pv = true;
