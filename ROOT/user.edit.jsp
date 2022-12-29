@@ -333,7 +333,7 @@
              <input type="text" class="form-control" id="url_facebook" name="url_facebook" value="<%= user.getUrl_facebook() %>">
            </div>
            <div class="form-group">
-             <label for="url_facebook">Facebook URL</label>
+             <label for="url_facebook">Referred by</label>
              <input type="text" class="form-control" id="referred_by" name="referred_by" value="<%= user.getReferred_by() %>">
            </div>
 
