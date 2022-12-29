@@ -103,6 +103,7 @@
         var text = selectedOption.text;
         const encodedString = encodeURIComponent(text);
         var urlString = "genmessage.jsp?comType=" + encodedString ;
+        alert(urlString);
         xhttp.open("GET", urlString, true);
         xhttp.send();
       }
