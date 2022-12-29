@@ -142,13 +142,14 @@
               <% for (Product product : products) { %>
                 <% String color = product.isAvailability() ? "#C8E6C9" : "#FFCDD2"; %>
                 <div class="container-fluid p-5" style="background-color: <%=color%>">
-                  <a href="product.edit.jsp?productId=<%= product.getId() %>" >
+
                     <div class="card p-3">
                   Product Name: <%= product.getName() %><br>
                   ID: <%= product.getId() %> <br>
                   Description: <%= product.getDescription() %><br>
+                  <a class="btn btn-primary" href="product.edit.jsp?productId=<%= product.getId() %>" >Details</a>
                     </div>
-                  </a>
+
                 </div>
                 <hr>
 
