@@ -197,7 +197,7 @@
                   int categoryId = 0;
                   int manufacturerId = 0;
                   boolean availability = false;
-                  BigDecimal weight - new BigDecimal("0");
+                  BigDecimal weight = new BigDecimal("0");
 
                   String categoryIdStr = request.getParameter("category_id");
                   if (categoryIdStr != null) {
