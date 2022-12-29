@@ -147,7 +147,9 @@
                   Product Name: <%= product.getName() %><br>
                   ID: <%= product.getId() %> <br>
                   Description: <%= product.getDescription() %><br>
-                  <a class="btn btn-primary" href="product.edit.jsp?productId=<%= product.getId() %>" >Details</a>
+                  Price: <%= product.getPrice() %><br>
+                  <BR>
+                  <a class="btn btn-primary" href="product.edit.jsp?productId=<%= product.getId() %>" >More</a>
                     </div>
 
                 </div>
