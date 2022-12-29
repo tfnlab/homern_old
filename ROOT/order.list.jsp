@@ -137,13 +137,13 @@
                 List<Order> orders = null;
 
                 if (searchKey != null && searchKey.trim().length() > 0) {
-                    //es = cDao.searchSearchKeyByUsername(username, searchKey);
+                    orders = orderDao.getCustomerOrdersSearchKey(searchKey, username);
                 }else{
                     searchKey = "";
                     orders = orderDao.getCustomerOrders(username);
                 }
                 %>
-                <form action="customer.list.jsp" method="post">
+                <form action="order.list.jsp" method="post">
                   <div class="form-group">
                     <label for="firstName">Search Key</label>
                     <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>">
@@ -151,6 +151,7 @@
                   <HR>
                   <button type="submit" class="btn btn-primary">Search</button>
                 </form>
+                <HR>
 
               <% for (Order order : orders) { %>
                 Order Name: <%= order.getOrderName() %><br>
