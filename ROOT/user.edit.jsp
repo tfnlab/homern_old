@@ -209,14 +209,10 @@
 
 TEST
         <form method="post" action="user.edit.jsp">
-          <form class="form-inline">
             <div class="form-group">
               <label for="orderId" class="mr-2">Business Name:</label>
               <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>">
             </div>
-          </form>
-
-
            <div class="form-group">
               <label for="firstName">First Name</label>
               <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>">
