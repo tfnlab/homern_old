@@ -104,8 +104,9 @@
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
       const encodedString = encodeURIComponent(text);
-      var urlString = "genmessage.jsp?comType=" + encodedString ;
-      alert(urlString);
+      const moreInfo = encodeURIComponent(document.getElementById("moreInfo").value);
+      var urlString = "genmessage.jsp?comType=" + encodedString + "&moreInfo=" + moreInfo;
+      //alert(urlString);
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
@@ -170,23 +171,27 @@
         <h2>User LinkedIn Config Management Page</h2>
         <%@ include file="user.menu.nav.jsp" %>
 
-
+        <div class="form-group">
+          <label for="post-type">Select a post type:</label>
+          <select class="form-control" id="post-type" name="post-type">
+            <option value="industry-updates">Industry updates</option>
+            <option value="personal-updates">Personal updates</option>
+            <option value="inspirational-quotes">Inspirational quotes</option>
+            <option value="questions">Questions</option>
+            <option value="advice">Advice</option>
+            <option value="opinions">Opinions</option>
+            <option value="announcements">Announcements</option>
+            <option value="fun-facts">Fun facts</option>
+          </select>
+        </div>
+        <HR>
+        <div class="form-group">
+          <label for="url_facebook">More Info</label>
+          <input type="text" class="form-control" id="moreInfo" name="moreInfo" >
+        </div>
 
         <form action="user.edit.linkedin.jsp" method="POST" >
-          <div class="form-group">
-            <label for="post-type">Select a post type:</label>
-            <select class="form-control" id="post-type" name="post-type">
-              <option value="industry-updates">Industry updates</option>
-              <option value="personal-updates">Personal updates</option>
-              <option value="inspirational-quotes">Inspirational quotes</option>
-              <option value="questions">Questions</option>
-              <option value="advice">Advice</option>
-              <option value="opinions">Opinions</option>
-              <option value="announcements">Announcements</option>
-              <option value="fun-facts">Fun facts</option>
-            </select>
-          </div>
-          <HR>
+
           <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
           <HR>
           <div class="form-group">
