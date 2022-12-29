@@ -146,7 +146,8 @@
       <div class="container px-4 px-lg-5">
         <h2>User Referred By Info</h2>
         <%@ include file="user.menu.nav.jsp" %>
-
+        <h3>Welcome to the Home Renovation Nation referral program!<h3>
+        <p>Are you a fan of our Home Renovation Nation? Do you know someone who could benefit from our expertise? If so, you're in luck! With our referral program, you can earn points for every person you refer to us who becomes a paying customer.</p>
 
         <% for (User ruser : users) { %>
           First Name: <%= ruser.getFirstName() %><br>
