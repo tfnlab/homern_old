@@ -137,7 +137,7 @@
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           alert(this.responseText);
-          document.getElementById("orderCom").innerHTML = this.responseText.trim();
+          // document.getElementById("orderCom").innerHTML = this.responseText.trim();
         }
       };
       var eId = <%=eId%>;
@@ -151,7 +151,7 @@
 
 
       var urlString = "customer.edit.com.email.jsp?customerId=" + eId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
-      alert(urlString);
+//      alert(urlString);
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
