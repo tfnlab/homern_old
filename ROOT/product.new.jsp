@@ -153,12 +153,12 @@
 
                 if (name != null && name.trim().length() > 0) {
                   int id = 0;
-                  BigDecimal price = 0;
+                  BigDecimal price = new BigDecimal("0");
                   int inventory = 0;
                   int reorderLevel = 0;
                   int leadTime = 0;
                   boolean featured = false;
-                  BigDecimal rating = 0;
+                  BigDecimal rating = new BigDecimal("0");
 
                   String priceStr = request.getParameter("price");
                   if (priceStr != null) {
@@ -197,7 +197,7 @@
                   int categoryId = 0;
                   int manufacturerId = 0;
                   boolean availability = false;
-                  BigDecimal weight - 0;
+                  BigDecimal weight - new BigDecimal("0");
 
                   String categoryIdStr = request.getParameter("category_id");
                   if (categoryIdStr != null) {
