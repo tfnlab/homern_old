@@ -189,7 +189,7 @@
           <label for="url_facebook">More Info</label>
           <input type="text" class="form-control" id="moreInfo" name="moreInfo" >
         </div>
-
+        <HR>
         <form action="user.edit.linkedin.jsp" method="POST" >
 
           <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
