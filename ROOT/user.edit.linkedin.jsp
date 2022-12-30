@@ -111,7 +111,7 @@
       var text = selectedOption.text;
       const encodedString = encodeURIComponent(text);
       const moreInfo = encodeURIComponent(document.getElementById("moreInfo").value);
-      var urlString = "genmessage.jsp?comType=" + encodedString + "&moreInfo=" + moreInfo;
+      var urlString = "genmessage.jsp?comType=" + encodedString + "&moreInfo=" + moreInfo + "&twitter=" + document.getElementById('twitter').checked;
       //alert(urlString);
       xhttp.open("GET", urlString, true);
       xhttp.send();
@@ -243,13 +243,6 @@
         </div>
         <HR>
         <form action="user.edit.linkedin.jsp" method="POST" >
-
-          <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
-          <HR>
-          <div class="form-group">
-            <label for="orderId">Touch Point</label><br>
-            <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
-          </div>
           <HR>
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" name="twitter" id="twitter" value="true" checked >
@@ -259,6 +252,14 @@
               <input type="checkbox" class="form-check-input" name="linkedin" id="linkedin" value="true" checked >
               <label class="form-check-label" for="linkedin">LinkedIn</label>
             </div>
+          <HR>
+
+          <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
+          <HR>
+          <div class="form-group">
+            <label for="orderId">Touch Point</label><br>
+            <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
+          </div>
 
           <HR>
           <button type="submit" class="btn btn-primary" >Post Message</button>

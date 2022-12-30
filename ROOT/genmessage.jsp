@@ -36,11 +36,18 @@
     String agm =   request.getParameter("comType") + " message from my business named '"+ usernameOBJ.getBusiness_name() + "', this message is from  person named '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + "', the message is for a customer named '" + messageName + "'";
     if(orderId==0 && customerId ==0){
 
-      agm =   request.getParameter("comType") +  " message from my business named '" + usernameOBJ.getBusiness_name() + "', this message is from  person named '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName();
+      String postType = "Linkedin";
+      String twitter = request.getParameter("twitter");
+      if(twitter!=null && twitter.length() >1 ){
+        if(twitter.equals("true")){
+          postType = "Twitter";
+        }
+      }
+      agm =   request.getParameter("comType") +  " " + postType +" message from my business named '" + usernameOBJ.getBusiness_name() + "', this message is from  person named '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName();
 
       String moreInfo = request.getParameter("moreInfo");
       if(moreInfo!=null && moreInfo.length() >1 ){
-        agm =   " my business name is '"+ usernameOBJ.getBusiness_name() + "' and my name is '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + " write linkedin post about " + request.getParameter("comType") + "  " + request.getParameter("moreInfo") ;
+        agm =   " my business name is '"+ usernameOBJ.getBusiness_name() + "' and my name is '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + " write " + postType + " post about " + request.getParameter("comType") + "  " + request.getParameter("moreInfo") ;
         //agm =   request.getParameter("comType") + "  " + request.getParameter("moreInfo") + " post from my business named '"+ usernameOBJ.getBusiness_name() + "', this message is from  '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName();
       }
     }
