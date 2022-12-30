@@ -2,25 +2,19 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
-<style>
-  nav {
-    display: flex; /* display links as flex items */
-    justify-content: space-between; /* distribute links evenly across the width of the container */
-  }
 
-  nav a {
-    padding: 0 10px; /* add padding to the left and right of each link */
-  }
-</style>
-<nav>
-  <a href="user.menu.jsp"><i class="fas fa-home"></i> Home</a>
-  <a href="user.edit.jsp"><i class="fas fa-cog"></i> Marketing</a>
-  <a href="technician.list.jsp"><i class="fas fa-wrench"></i> Technicians</a>
-  <a href="product.list.jsp"><i class="fas fa-box"></i> Products</a>
-  <a href="customer.list.jsp"><i class="fas fa-users"></i> Customers</a>
-  <a href="order.list.jsp"><i class="fas fa-shopping-cart"></i> Orders</a>
-  <a href="event.list.jsp"><i class="fas fa-calendar"></i> Events</a>
-</nav>
+<nav id="navbar" class="navbar order-last order-lg-0">
+  <ul>
+  <li><a class="nav-link scrollto" href="user.menu.jsp"><i class="fas fa-home"></i> Home</a></li>
+  <li><a class="nav-link scrollto" href="user.edit.jsp"><i class="fas fa-cog"></i> Marketing</a></li>
+  <li><a class="nav-link scrollto" href="technician.list.jsp"><i class="fas fa-wrench"></i> Technicians</a></li>
+  <li><a class="nav-link scrollto" href="product.list.jsp"><i class="fas fa-box"></i> Products</a></li>
+  <li><a class="nav-link scrollto" href="customer.list.jsp"><i class="fas fa-users"></i> Customers</a></li>
+  <li><a class="nav-link scrollto" href="order.list.jsp"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+  <li><a class="nav-link scrollto" href="event.list.jsp"><i class="fas fa-calendar"></i> Events</a></li>
+  </ul>
+  <i class="bi bi-list mobile-nav-toggle"></i>
+</nav><!-- .navbar -->
 
 <!--
         <p>
