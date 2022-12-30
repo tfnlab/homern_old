@@ -143,12 +143,12 @@
         <h2>Events</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-          <a href="event.new.jsp"><i class="fas fa-plus"></i>Event</a>
+          <a href="event.new.jsp"><i class="fas fa-plus"></i> Event</a>
         <HR>
         <a href="event.list.jsp?sortBy=eventDate">Most Recent</a>|
         <a href="event.list.jsp?sortBy=eventDateDESC">Most Recent Desc</a>
         <HR>
-        
+
         <%
                 EventDao eDao = new EventDao();
                 String username = (String) session.getAttribute("username");
