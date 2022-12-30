@@ -131,8 +131,8 @@
         <h2>Orders</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-          <a href="technician.new.jsp"><i class="fas fa-plus"></i>Technician</a>
-        <HR>  
+          <a href="technician.new.jsp"><i class="fas fa-plus"></i> Technician</a>
+        <HR>
         <%
              String username = (String) session.getAttribute("username");
              TechnicianDao technicianDao = new TechnicianDao();

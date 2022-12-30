@@ -131,7 +131,7 @@
         <h2>Products</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-          <a href="product.new.jsp"><i class="fas fa-plus"></i>Product</a>
+          <a href="product.new.jsp"><i class="fas fa-plus"></i> Product</a>
         <HR>
         <%
                 ProductDao productDao = new ProductDao();
