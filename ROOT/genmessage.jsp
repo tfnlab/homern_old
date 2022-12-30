@@ -63,4 +63,4 @@
     tmp.setPublic(false);
     tD.addTemplate(tmp);
   }
- %><%= strRes %>TEST
+ %><%= strRes %>
