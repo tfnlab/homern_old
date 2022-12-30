@@ -219,8 +219,6 @@
         <HR>
           <a href="user.edit.logo.jsp" >Upload Logo</a>
         <HR>
-
-TEST
         <form method="post" action="user.edit.jsp">
             <div class="form-group">
               <label for="orderId" class="mr-2">Business Name:</label>
