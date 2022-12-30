@@ -89,12 +89,14 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
+          <li><a class="nav-link scrollto" href="tel:8669325118">(866) 932-5118</a></li>
           <li><a class="nav-link scrollto" href="index.html#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="index.html#services">Services</a></li>
           <li><a class="nav-link scrollto" href="index.html#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="index.html#team">Team</a></li>
           <li><a class="nav-link scrollto" href="signin.jsp">Sign-In</a></li>
           <li><a class="nav-link scrollto active" href="signup.jsp">Sign-Up</a></li>
+          <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
