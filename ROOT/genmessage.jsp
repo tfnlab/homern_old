@@ -54,7 +54,7 @@
     Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/hrn.py", agm).start();
     String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
     String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
-    strRes = stdout;
+    strRes = stdout + stderr;
 //    tmp.tmp.setMessage(null)
     tmp.setMessage(strRes);
     tmp.setSubject(request.getParameter("comType"));
