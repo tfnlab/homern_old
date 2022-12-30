@@ -335,19 +335,19 @@ TEST
              <input type="text" class="form-control" id="url_twitter" name="url_twitter" value="<%= user.getUrl_twitter() %>">
            </div>
            <div class="form-group">
-             <label for="url_twitter">Twitter</label>
+             <label for="url_twitter">Client Key</label>
              <input type="text" class="form-control" id="token_twitter_c_key" name="token_twitter_c_key" value="<%= user.getToken_twitter_c_key() %>">
            </div>
            <div class="form-group">
-             <label for="url_twitter">Twitter</label>
+             <label for="url_twitter">Client Secret</label>
              <input type="text" class="form-control" id="token_twitter_c_secret" name="token_twitter_c_secret" value="<%= user.getToken_twitter_c_secret() %>">
            </div>
            <div class="form-group">
-             <label for="url_twitter">Twitter</label>
+             <label for="url_twitter">Access Token Key</label>
              <input type="text" class="form-control" id="token_twitter_a" name="token_twitter_a" value="<%= user.getToken_twitter_a() %>">
            </div>
            <div class="form-group">
-             <label for="url_twitter">Twitter</label>
+             <label for="url_twitter">Access Token Secret</label>
              <input type="text" class="form-control" id="token_twitter_a_secret" name="token_twitter_a_secret" value="<%= user.getToken_twitter_a_secret() %>">
            </div>
            <div class="form-group">
