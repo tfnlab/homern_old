@@ -221,12 +221,8 @@
         <HR>
         <form method="post" action="user.edit.jsp">
           <div class="form-group">
-            <label for="business_name" class="mr-2">User ID:</label>
-            <input type="text" class="form-control"  value="<%= user.getId() %>" disabled>
-          </div>
-          <div class="form-group">
-            <label for="business_name" class="mr-2">Usernam:</label>
-            <input type="text" class="form-control"  value="<%= user.getUsername() %>" disabled>
+            <label for="business_name" class="mr-2">Username:</label>
+            <input type="text" class="form-control"  value="<%= user.getUsername() %>" disabled >
           </div>
             <div class="form-group">
               <label for="business_name" class="mr-2">Business Name:</label>
