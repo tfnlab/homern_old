@@ -225,6 +225,8 @@
       <div class="container px-4 px-lg-5">
         <h2>User Social Management Page</h2>
         <%@ include file="user.menu.nav.jsp" %>
+
+        <HR>
         <div class="form-group">
           <label for="post-type">Select a post type:</label>
           <select class="form-control" id="post-type" name="post-type">
@@ -244,7 +246,7 @@
           <input type="text" class="form-control" id="moreInfo" name="moreInfo" >
         </div>
         <HR>
-        <form action="user.edit.linkedin.jsp" method="POST" >
+        <form action="user.edit.social.jsp" method="POST" >
           <HR>
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" name="twitter" id="twitter" value="true" checked >

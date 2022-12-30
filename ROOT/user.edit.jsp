@@ -327,7 +327,7 @@
              <input type="text" class="form-control" id="url_google" name="url_google" value="<%= user.getUrl_google() %>">
            </div>
            <div class="form-group">
-             <label for="url_twitter">Twitter</label>
+             <label for="url_twitter">Twitter <a href="user.edit.social.jsp"><i class="fas fa-check"></i></a></label>
              <input type="text" class="form-control" id="url_twitter" name="url_twitter" value="<%= user.getUrl_twitter() %>">
            </div>
            <div class="form-group">
@@ -363,7 +363,7 @@
              <input type="text" class="form-control" id="url_facebook" name="url_facebook" value="<%= user.getUrl_facebook() %>">
            </div>
            <div class="form-group">
-             <label for="url_facebook">LinkedIn <a href="user.edit.linkedin.jsp"><i class="fas fa-check"></i></a></label>
+             <label for="url_facebook">LinkedIn <a href="user.edit.social.jsp"><i class="fas fa-check"></i></a></label>
              <input type="text" class="form-control" id="url_linkedin" name="url_linkedin" value="<%= user.getUrl_linkedin()%>">
            </div>
            <div class="form-group">
