@@ -149,6 +149,7 @@
       <div class="container px-4 px-lg-5">
         <h2>Event</h2>
         <%@ include file="user.menu.nav.jsp" %>
+        <HR>
 
         <%
                 long currentTimeMillis = System.currentTimeMillis();

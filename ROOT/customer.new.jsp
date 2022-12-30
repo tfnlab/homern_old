@@ -149,6 +149,7 @@
         <h2>Customer</h2>
         <%@ include file="user.menu.nav.jsp" %>
 
+        <HR>
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
