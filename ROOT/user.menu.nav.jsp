@@ -4,25 +4,28 @@
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <script>
   function goToUrl() {
-    alert("test");
     var select = document.getElementById("hrnnavbar");
     var option = select.options[select.selectedIndex];
     var url = option.value;
-    alert(url);
     window.open(url, "_self");
   }
   document.getElementById("navbar").addEventListener("change", goToUrl);
 </script>
 
-<select name="hrnnavbar" id="hrnnavbar"  onchange="goToUrl()">
-  <option value="user.menu.jsp"><i class="fas fa-home"></i> Home</option>
-  <option value="user.edit.jsp"><i class="fas fa-cog"></i> Marketing</option>
-  <option value="technician.list.jsp"><i class="fas fa-wrench"></i> Technicians</option>
-  <option value="product.list.jsp"><i class="fas fa-box"></i> Products</option>
-  <option value="customer.list.jsp"><i class="fas fa-users"></i> Customers</option>
-  <option value="order.list.jsp"><i class="fas fa-shopping-cart"></i> Orders</option>
-  <option value="event.list.jsp"><i class="fas fa-calendar"></i> Events</option>
+<%
+  String currentUrl = request.getRequestURL().toString();
+%>
+
+<select name="hrnnavbar" id="hrnnavbar" onchange="goToUrl()">
+  <option value="user.menu.jsp" <%= currentUrl.indexOf("user.menu.jsp") != -1 ? "selected" : "" %>><i class="fas fa-home"></i> Home</option>
+  <option value="user.edit.jsp" <%= currentUrl.indexOf("user.edit.jsp") != -1 ? "selected" : "" %>><i class="fas fa-cog"></i> Marketing</option>
+  <option value="technician.list.jsp" <%= currentUrl.indexOf("technician.list.jsp") != -1 ? "selected" : "" %>><i class="fas fa-wrench"></i> Technicians</option>
+  <option value="product.list.jsp" <%= currentUrl.indexOf("product.list.jsp") != -1 ? "selected" : "" %>><i class="fas fa-box"></i> Products</option>
+  <option value="customer.list.jsp" <%= currentUrl.indexOf("customer.list.jsp") != -1 ? "selected" : "" %>><i class="fas fa-users"></i> Customers</option>
+  <option value="order.list.jsp" <%= currentUrl.indexOf("order.list.jsp") != -1 ? "selected" : "" %>><i class="fas fa-shopping-cart"></i> Orders</option>
+  <option value="event.list.jsp" <%= currentUrl.indexOf("event.list.jsp") != -1 ? "selected" : "" %>><i class="fas fa-calendar"></i> Events</option>
 </select>
+
 
 <!--
         <p>
