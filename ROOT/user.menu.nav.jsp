@@ -2,6 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
+<style>
+  nav {
+    display: flex; /* display links as flex items */
+    justify-content: space-between; /* distribute links evenly across the width of the container */
+  }
+
+  nav a {
+    padding: 0 10px; /* add padding to the left and right of each link */
+  }
+</style>
 <nav>
   <a href="user.menu.jsp"><i class="fas fa-home"></i> Home</a>
   <a href="order.list.jsp"><i class="fas fa-shopping-cart"></i> Orders</a>
