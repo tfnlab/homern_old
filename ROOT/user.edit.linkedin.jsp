@@ -222,6 +222,7 @@
       <div class="container px-4 px-lg-5">
         <h2>User Social Management Page</h2>
         <%@ include file="user.menu.nav.jsp" %>
+        MESSAGE ERROR - <%=rm%>
 
         <div class="form-group">
           <label for="post-type">Select a post type:</label>
