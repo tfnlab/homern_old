@@ -2,19 +2,22 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
-
-<nav id="navbar" class="navbar order-last order-lg-0">
-  <ul>
-  <li><a class="nav-link scrollto" href="user.menu.jsp"><i class="fas fa-home"></i> Home</a></li>
-  <li><a class="nav-link scrollto" href="user.edit.jsp"><i class="fas fa-cog"></i> Marketing</a></li>
-  <li><a class="nav-link scrollto" href="technician.list.jsp"><i class="fas fa-wrench"></i> Technicians</a></li>
-  <li><a class="nav-link scrollto" href="product.list.jsp"><i class="fas fa-box"></i> Products</a></li>
-  <li><a class="nav-link scrollto" href="customer.list.jsp"><i class="fas fa-users"></i> Customers</a></li>
-  <li><a class="nav-link scrollto" href="order.list.jsp"><i class="fas fa-shopping-cart"></i> Orders</a></li>
-  <li><a class="nav-link scrollto" href="event.list.jsp"><i class="fas fa-calendar"></i> Events</a></li>
-  </ul>
-  <i class="bi bi-list mobile-nav-toggle"></i>
-</nav><!-- .navbar -->
+<style>
+  select#navbar option::before {
+    font-family: "Font Awesome 5 Free";
+    content: attr(data-icon);
+    margin-right: 10px;
+  }
+</style>
+<select id="navbar" class="navbar order-last order-lg-0">
+  <option value="user.menu.jsp" data-icon="&#xf015;">Home</option>
+  <option value="user.edit.jsp" data-icon="&#xf013;">Marketing</option>
+  <option value="technician.list.jsp" data-icon="&#xf0ad;">Technicians</option>
+  <option value="product.list.jsp" data-icon="&#xf187;">Products</option>
+  <option value="customer.list.jsp" data-icon="&#xf0c0;">Customers</option>
+  <option value="order.list.jsp" data-icon="&#xf07a;">Orders</option>
+  <option value="event.list.jsp" data-icon="&#xf073;">Events</option>
+</select>
 
 <!--
         <p>
