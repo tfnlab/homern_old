@@ -167,6 +167,7 @@
                 Event event = new Event();
                 EventDao ed = new EventDao();
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+                SimpleDateFormat dateFormatApple = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
                 if (title != null && title.trim().length() > 0) {
 
                       event = event.generateTestEvent();
@@ -199,8 +200,11 @@
                   event = ed.getEventById(eId);
         %>
                     <HR>
-                      <a href="https://calendar.google.com/calendar/r/eventedit?text=<%= URLEncoder.encode(event.getTitle()) %>&dates=<%= URLEncoder.encode(dateFormat.format(event.getStartTime())) %>&location=<%= URLEncoder.encode(event.getLocation()) %>&details=<%= URLEncoder.encode(event.getDescription()) %>&trp=false&sprop=website:<%= URLEncoder.encode(usernameOBJ.getBusiness_name()) %>&sprop=name:<%=usernameOBJ.getUrl_website()%>" target="_blank">Add to Goolge Calendar</a>
-
+                      Add to
+                      <a href="https://calendar.google.com/calendar/r/eventedit?text=<%= URLEncoder.encode(event.getTitle()) %>&dates=<%= URLEncoder.encode(dateFormat.format(event.getStartTime())) %>&location=<%= URLEncoder.encode(event.getLocation()) %>&details=<%= URLEncoder.encode(event.getDescription()) %>&trp=false&sprop=website:<%= URLEncoder.encode(usernameOBJ.getBusiness_name()) %>&sprop=name:<%=usernameOBJ.getUrl_website()%>" target="_blank">Goolge</a>
+                      |
+                      <a href="eventkit://new-event?summary=<%= URLEncoder.encode(event.getTitle()) %>&location=<%= URLEncoder.encode(event.getLocation()) %>&start=<%= URLEncoder.encode(dateFormatApple.format(event.getStartTime())) %>&end=<%= URLEncoder.encode(dateFormatApple.format(event.getEndTime())) %>">Add event to Apple calendar</a>
+                      Calendar
                     <HR>
                     <form action="event.edit.jsp" method="post">
                           <input type="hidden" class="form-control" name="eventid" value="<%= eId %>">
