@@ -185,6 +185,22 @@
 
       if (orderCom != null && orderCom.trim().length() > 0) {
               LinkedinPost.sendPost(orderCom, usernameOBJ.getToken_linkedin());
+
+              try{
+                    APIConfig ac = new APIConfig();
+                    File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
+                    FileWriter fw = new FileWriter(file);
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    bw.write("NA<CONTENT>NA<CONTENT>" +orderCom);
+                    bw.close();
+                    String argument =  usernameOBJ.getToken_twitter_c_key() + "HELGAMERIKYAN" + usernameOBJ.getToken_twitter_c_secret() + "HELGAMERIKYAN" + usernameOBJ.getToken_twitter_a() + "HELGAMERIKYAN" + usernameOBJ.getToken_twitter_a_secret() + "HELGAMERIKYAN" + uuid.toString();
+                    Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/tweet.py", argument, argument).start();
+                    String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+                    String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                    rm = stdout + stderr + " TEST ";
+              }catch(IOException ex){
+                    rm = ex.getMessage();
+              }
       }
 
     %>
