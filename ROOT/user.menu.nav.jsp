@@ -2,21 +2,24 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
-<style>
-  select#navbar option::before {
-    font-family: "Font Awesome 5 Free";
-    content: attr(data-icon);
-    margin-right: 10px;
+<script>
+  function goToUrl() {
+    var select = document.getElementById("navbar");
+    var option = select.options[select.selectedIndex];
+    var url = option.value;
+    window.location.href = url;
   }
-</style>
+  document.getElementById("navbar").addEventListener("change", goToUrl);
+</script>
+
 <select id="navbar" class="navbar order-last order-lg-0">
-  <option value="user.menu.jsp" data-icon="&#xf015;">Home</option>
-  <option value="user.edit.jsp" data-icon="&#xf013;">Marketing</option>
-  <option value="technician.list.jsp" data-icon="&#xf0ad;">Technicians</option>
-  <option value="product.list.jsp" data-icon="&#xf187;">Products</option>
-  <option value="customer.list.jsp" data-icon="&#xf0c0;">Customers</option>
-  <option value="order.list.jsp" data-icon="&#xf07a;">Orders</option>
-  <option value="event.list.jsp" data-icon="&#xf073;">Events</option>
+  <option value="user.menu.jsp"><i class="fas fa-home"></i> Home</option>
+  <option value="user.edit.jsp"><i class="fas fa-cog"></i> Marketing</option>
+  <option value="technician.list.jsp"><i class="fas fa-wrench"></i> Technicians</option>
+  <option value="product.list.jsp"><i class="fas fa-box"></i> Products</option>
+  <option value="customer.list.jsp"><i class="fas fa-users"></i> Customers</option>
+  <option value="order.list.jsp"><i class="fas fa-shopping-cart"></i> Orders</option>
+  <option value="event.list.jsp"><i class="fas fa-calendar"></i> Events</option>
 </select>
 
 <!--
