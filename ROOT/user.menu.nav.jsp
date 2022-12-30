@@ -12,7 +12,7 @@
   document.getElementById("navbar").addEventListener("change", goToUrl);
 </script>
 
-<select id="navbar" class="navbar order-last order-lg-0">
+<select id="navbar"  onchange="goToUrl()">
   <option value="user.menu.jsp"><i class="fas fa-home"></i> Home</option>
   <option value="user.edit.jsp"><i class="fas fa-cog"></i> Marketing</option>
   <option value="technician.list.jsp"><i class="fas fa-wrench"></i> Technicians</option>
