@@ -220,8 +220,16 @@
           <a href="user.edit.logo.jsp" >Upload Logo</a>
         <HR>
         <form method="post" action="user.edit.jsp">
+          <div class="form-group">
+            <label for="business_name" class="mr-2">User ID:</label>
+            <input type="text" class="form-control"  value="<%= user.getId() %>" disabled>
+          </div>
+          <div class="form-group">
+            <label for="business_name" class="mr-2">Usernam:</label>
+            <input type="text" class="form-control"  value="<%= user.getUsername() %>" disabled>
+          </div>
             <div class="form-group">
-              <label for="orderId" class="mr-2">Business Name:</label>
+              <label for="business_name" class="mr-2">Business Name:</label>
               <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>">
             </div>
            <div class="form-group">
