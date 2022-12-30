@@ -254,7 +254,7 @@
           <HR>
 
           <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
-          <a src="assets/img/hrn/mw.png" width="50px"/>
+          <img src="assets/img/hrn/mw.png" width="50px" />
           <HR>
           <div class="form-group">
             <label for="orderId">Touch Point</label><br>
