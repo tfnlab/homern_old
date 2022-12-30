@@ -252,12 +252,12 @@
           </div>
           <HR>
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" name="tweet" id="tweet" value="true" >
-              <label class="form-check-label" for="availability">Tweet</label>
+              <input type="checkbox" class="form-check-input" name="twitter" id="twitter" value="true" checked >
+              <label class="form-check-label" for="twitter">Tweet</label>
             </div>
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" name="linkedin" id="linkedin" value="true" >
-              <label class="form-check-label" for="availability">LinkedIn</label>
+              <input type="checkbox" class="form-check-input" name="linkedin" id="linkedin" value="true" checked >
+              <label class="form-check-label" for="linkedin">LinkedIn</label>
             </div>
 
           <HR>
