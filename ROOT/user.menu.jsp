@@ -124,7 +124,7 @@
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
           <div class="container mt-5">
-            <h2>Home Renovation Nation</h2>
+            <h4>Home Renovation Nation</h4>
             <p>Our home service software offers a range of features to help companies streamline their operations:</p>
             <ul>
               <li><strong>Scheduling and dispatch:</strong> our software can help schedule and dispatch technicians to service calls and manage their work schedules.</li>
@@ -136,6 +136,22 @@
               <li><strong>Mobile functionality:</strong> many of our software programs have mobile apps that allow technicians to access and update information on the go.</li>
               <li><strong>Integration with other systems:</strong> our software may integrate with other business systems, such as accounting software or CRM software, to streamline workflows and improve efficiency.</li>
             </ul>
+            <h4>Mind-Blowing Updates: What's in Store</h4>
+            <p>Get ready to have your minds blown, because we've got a whole bunch of new features and bug fixes that are sure to blow your socks off. These updates are going to take your user experience to a whole new level, and we can't wait for you to get your hands on them. Trust us, these are the kinds of features and bug fixes that you'll be talking about for years to come. So stay tuned and get ready to take your productivity (or whatever else you're using our product for) to the next level!</p>
+            <li>
+              Keep track of all your home renovation projects and events with our new calendar integration! When you use our software to schedule updates or events, they will automatically be added to your Google calendar. This means you'll never miss an important deadline or meeting, and you can easily keep track of your progress on all your renovation projects in one place. Plus, with the convenience of having everything in your Google calendar, you can easily access and view your renovation schedule from any device. Upgrade your home renovation process with this handy new feature!
+            </li>
+            <li>
+              Easily receive payments in cryptocurrency with our new wallet address feature! Now you can add your Thelonious name service address or any other cryptocurrency wallet address to your profile, and it will be displayed across all of our media channels. This means that anyone who wants to send you a payment in cryptocurrency can easily find and use your address. Plus, with the added convenience of having your address displayed in a prominent location, you can easily receive payments from multiple sources without having to share your address individually. Upgrade your payment process with this convenient new feature!
+            </li>
+            <li>
+              Keep track of your inventory like a pro with our new tracking feature! With this handy tool, you can easily see how much of each item you have in stock, set low stock alerts, and even keep track of how much you've sold. Whether you're managing a small store or a large warehouse, this feature will help you stay on top of your inventory and ensure that you always have what you need. Plus, with the ability to easily see your inventory levels at a glance, you can make more informed purchasing decisions and avoid running out of stock. Streamline your inventory management process with this convenient new feature!
+            </li>
+            <li>
+              Gain valuable insights into your business with our new order analysis feature! Now you can easily see how your orders are performing and make informed decisions about your business. With this tool, you can track your cash flow status, calculate your profit margin, and see how long it takes to deliver orders. Whether you're running a small online store or a large e-commerce business, this feature will help you understand your performance and identify areas for improvement. Plus, with the ability to view all this information in one place, you can save time and make more informed decisions about your business. Take control of your orders with this powerful new feature!
+            </li>      
+
+
           </div>
       </div>
 
