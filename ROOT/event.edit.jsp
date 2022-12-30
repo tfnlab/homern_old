@@ -199,7 +199,7 @@
                   event = ed.getEventById(eId);
         %>
                     <HR>
-                      <a href="https://calendar.google.com/calendar/r/eventedit?text=<%= URLEncoder.encode(event.getTitle()) %>&dates=<%= URLEncoder.encode(dateFormat.format(event.getStartTime())) %>/<%= URLEncoder.encode(dateFormat.format(event.getEndTime())) %>&location=<%= URLEncoder.encode(event.getLocation()) %>&details=<%= URLEncoder.encode(event.getDescription()) %>&trp=false&sprop=website:<%= URLEncoder.encode(usernameOBJ.getBusiness_name()) %>&sprop=name:<%=usernameOBJ.getUrl_website()%>" target="_blank">Add to Goolge Calendar</a>
+                      <a href="https://calendar.google.com/calendar/r/eventedit?text=<%= URLEncoder.encode(event.getTitle()) %>&dates=<%= URLEncoder.encode(dateFormat.format(event.getStartTime())) %>&location=<%= URLEncoder.encode(event.getLocation()) %>&details=<%= URLEncoder.encode(event.getDescription()) %>&trp=false&sprop=website:<%= URLEncoder.encode(usernameOBJ.getBusiness_name()) %>&sprop=name:<%=usernameOBJ.getUrl_website()%>" target="_blank">Add to Goolge Calendar</a>
 
                     <HR>
                     <form action="event.edit.jsp" method="post">
