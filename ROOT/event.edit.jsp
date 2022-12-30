@@ -166,7 +166,7 @@
                 // Validate form data
                 Event event = new Event();
                 EventDao ed = new EventDao();
-
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                 if (title != null && title.trim().length() > 0) {
 
                       event = event.generateTestEvent();
@@ -178,7 +178,6 @@
                       String invitees = request.getParameter("invitees");
                       String groupId = request.getParameter("groupId");
 
-                      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                       Date startTimeDate = dateFormat.parse(startTime);
                       Date endTimeDate = dateFormat.parse(endTime);
                       Date reminderTimeDate = null;
@@ -202,7 +201,7 @@
                     <HR>
                       <a href="https://calendar.google.com/calendar/r/eventedit?
                         text=<%= event.getTitle() %>
-                        &dates=<%= event.getStartTime() %>/<%= event.getEndTime() %>
+                        &dates=<%= dateFormat.format(event.getStartTime()) %>/<%= dateFormat.format(event.getEndTime()) %>
                         &location=<%= event.getLocation() %>
                         &details=<%= event.getDescription() %>
                         &trp=false
