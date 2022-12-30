@@ -120,12 +120,12 @@
       };
       var text = document.getElementById("orderCom").innerHTML;
       const encodedString = encodeURIComponent(text);
-      var select = document.getElementById("touchPoints");
+      var select = document.getElementById("post-type");
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.text;
       const encodedStringsub = encodeURIComponent(com);
       var urlString = "user.edit.twitter.jsp?com=" + encodedString + "&sub=" + encodedStringsub ;
-//      alert(urlString);
+      alert(urlString);
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
