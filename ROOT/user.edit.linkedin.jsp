@@ -102,10 +102,13 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-
+          document.getElementById("working").src = "assets/img/hrn/mw.png";
           document.getElementById("orderCom").innerHTML = this.responseText.trim();
         }
       };
+
+      document.getElementById("working").src = "assets/img/hrn/mw.gif";
+
       var select = document.getElementById("post-type");
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
@@ -254,7 +257,7 @@
           <HR>
 
           <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
-          <img src="assets/img/hrn/mw.png" width="50px" />
+          <img src="assets/img/hrn/mw.png" width="50px" id="working" name="working" />
           <HR>
           <div class="form-group">
             <label for="orderId">Touch Point</label><br>
