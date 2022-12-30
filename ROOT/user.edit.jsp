@@ -215,6 +215,8 @@
         <h2>User</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
+            <h4><%=username%></h4>
+        <HR>
           <a href="user.edit.logo.jsp" >Upload Logo</a>
         <HR>
         <form method="post" action="user.edit.jsp">
