@@ -23,7 +23,8 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -128,7 +129,9 @@
       <div class="container px-4 px-lg-5">
         <h2>Orders</h2>
         <%@ include file="user.menu.nav.jsp" %>
-
+          <HR>
+            <a href="order.new.jsp"><i class="fas fa-plus"></i> Add Order</a>
+          <HR>
         <%
                 String searchKey = request.getParameter("searchKey");
                 OrderDao orderDao = new OrderDao();
