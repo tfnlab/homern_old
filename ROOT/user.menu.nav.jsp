@@ -14,12 +14,12 @@
 </style>
 <nav>
   <a href="user.menu.jsp"><i class="fas fa-home"></i> Home</a>
-  <a href="order.list.jsp"><i class="fas fa-shopping-cart"></i> Orders</a>
+  <a href="user.edit.jsp"><i class="fas fa-cog"></i> Marketing</a>
+  <a href="technician.list.jsp"><i class="fas fa-wrench"></i> Technicians</a>
   <a href="product.list.jsp"><i class="fas fa-box"></i> Products</a>
   <a href="customer.list.jsp"><i class="fas fa-users"></i> Customers</a>
+  <a href="order.list.jsp"><i class="fas fa-shopping-cart"></i> Orders</a>
   <a href="event.list.jsp"><i class="fas fa-calendar"></i> Events</a>
-  <a href="technician.list.jsp"><i class="fas fa-wrench"></i> Technicians</a>
-  <a href="user.edit.jsp"><i class="fas fa-cog"></i> User Settings</a>
 </nav>
 
 <!--
