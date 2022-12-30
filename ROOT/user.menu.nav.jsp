@@ -5,7 +5,7 @@
 <script>
   function goToUrl() {
     alert("test");
-    var select = document.getElementById("navbar");
+    var select = document.getElementById("hrnnavbar");
     var option = select.options[select.selectedIndex];
     var url = option.value;
     alert(url);
@@ -14,7 +14,7 @@
   document.getElementById("navbar").addEventListener("change", goToUrl);
 </script>
 
-<select name="navbar" id="navbar"  onchange="goToUrl()">
+<select name="hrnnavbar" id="hrnnavbar"  onchange="goToUrl()">
   <option value="user.menu.jsp"><i class="fas fa-home"></i> Home</option>
   <option value="user.edit.jsp"><i class="fas fa-cog"></i> Marketing</option>
   <option value="technician.list.jsp"><i class="fas fa-wrench"></i> Technicians</option>
