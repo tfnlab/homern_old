@@ -4,6 +4,7 @@
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <script>
   function goToUrl() {
+    alert("test");
     var select = document.getElementById("navbar");
     var option = select.options[select.selectedIndex];
     var url = option.value;
