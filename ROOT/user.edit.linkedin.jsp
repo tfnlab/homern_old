@@ -119,6 +119,10 @@
         }
       };
       var text = document.getElementById("orderCom").innerHTML;
+      if(text.length>140){
+        alert('Make the message less than 140 characters')
+        return;
+      }
       const encodedString = encodeURIComponent(text);
       var select = document.getElementById("post-type");
       var selectedOption = select.options[select.selectedIndex];
@@ -220,7 +224,7 @@
           <HR>
           <button type="submit" class="btn btn-primary" >Post</button>
         </form>
-
+          <HR>
           <button type="submit" class="btn btn-primary" onclick="sendTweet()">Tweet</button>
 
       </div>
