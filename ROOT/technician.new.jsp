@@ -149,7 +149,7 @@
       <div class="container px-4 px-lg-5">
         <h2>Technician</h2>
         <%@ include file="user.menu.nav.jsp" %>
-
+        <HR>
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
@@ -196,8 +196,9 @@
                         td.insertRecord(technician);
 
                       %>
-
-                        Order Saved
+                        <HR>
+                        Technician Saved
+                        <HR>
                       <%
                 }else{
 
