@@ -191,7 +191,7 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>User LinkedIn Config Management Page</h2>
+        <h2>User Social Management Page</h2>
         <%@ include file="user.menu.nav.jsp" %>
 
         <div class="form-group">
@@ -222,7 +222,7 @@
             <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
           </div>
           <HR>
-          <button type="submit" class="btn btn-primary" >Post</button>
+          <button type="submit" class="btn btn-primary" >Post on LinkedIn</button>
         </form>
           <HR>
           <button type="submit" class="btn btn-primary" onclick="sendTweet()">Tweet</button>
