@@ -30,11 +30,11 @@
         <a href="product.list.jsp">Products</a> |
         <a href="product.new.jsp">Product</a> |
         <a href="customer.list.jsp">Customers</a> |
-        <a href="customer.new.jsp">Customer</a> |
+        <a href="customer.new.jsp"><i class="fas fa-plus"></i>Customer</a> |
         <a href="event.list.jsp">Events</a> |
-        <a href="event.new.jsp">Event</a> |
+        <a href="event.new.jsp"><i class="fas fa-plus"></i>Event</a> |
         <a href="technician.list.jsp">Technicians</a> |
-        <a href="technician.new.jsp">Technician</a> |
+        <a href="technician.new.jsp"><i class="fas fa-plus"></i>Technician</a> |
         <a href="user.edit.jsp">User <i class="fas fa-cog"></i></a>
       </p>
 -->

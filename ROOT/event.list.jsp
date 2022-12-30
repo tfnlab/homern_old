@@ -37,7 +37,7 @@
     <!-- Include the Bootstrap Datepicker CSS file -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
 
-  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -142,11 +142,13 @@
       <div class="container px-4 px-lg-5">
         <h2>Events</h2>
         <%@ include file="user.menu.nav.jsp" %>
-        <BR>
+        <HR>
+          <a href="event.new.jsp"><i class="fas fa-plus"></i>Event</a>
+        <HR>
         <a href="event.list.jsp?sortBy=eventDate">Most Recent</a>|
         <a href="event.list.jsp?sortBy=eventDateDESC">Most Recent Desc</a>
-        <BR>
-
+        <HR>
+        
         <%
                 EventDao eDao = new EventDao();
                 String username = (String) session.getAttribute("username");
