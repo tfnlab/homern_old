@@ -161,7 +161,7 @@
        String orderCom = request.getParameter("orderCom");
 
       if (orderCom != null && orderCom.trim().length() > 0) {
-              LinkedinPost.sendPost(orderCom);
+              LinkedinPost.sendPost(orderCom, usernameOBJ.getToken_linkedin());
       }
 
     %>
