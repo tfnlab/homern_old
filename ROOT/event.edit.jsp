@@ -13,8 +13,8 @@
 <%@ page import="java.text.ParseException" %>
 <%@ page import="com.tfnlab.mysql.Event" %>
 <%@ page import="com.tfnlab.mysql.EventDao" %>
-
-
+<%@ page import="java.io.UnsupportedEncodingException" %>
+<%@ page import="java.net.URLEncoder" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -199,14 +199,7 @@
                   event = ed.getEventById(eId);
         %>
                     <HR>
-                      <a href="https://calendar.google.com/calendar/r/eventedit?
-                        text=<%= event.getTitle() %>
-                        &dates=<%= dateFormat.format(event.getStartTime()) %>/<%= dateFormat.format(event.getEndTime()) %>
-                        &location=<%= event.getLocation() %>
-                        &details=<%= event.getDescription() %>
-                        &trp=false
-                        &sprop=website:<%= usernameOBJ.getBusiness_name() %>
-                        &sprop=name:<%=usernameOBJ.getUrl_website()%>" target="_blank">Add to Goolge Calendar</a>
+                      <a href="https://calendar.google.com/calendar/r/eventedit?text=<%= URLEncoder.encode(event.getTitle()) %>&dates=<%= URLEncoder.encode(dateFormat.format(event.getStartTime())) %>/<%= URLEncoder.encode(dateFormat.format(event.getEndTime())) %>&location=<%= URLEncoder.encode(event.getLocation()) %>&details=<%= URLEncoder.encode(event.getDescription()) %>&trp=false&sprop=website:<%= URLEncoder.encode(usernameOBJ.getBusiness_name()) %>&sprop=name:<%=usernameOBJ.getUrl_website()%>" target="_blank">Add to Goolge Calendar</a>
 
                     <HR>
                     <form action="event.edit.jsp" method="post">
