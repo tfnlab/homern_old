@@ -150,7 +150,7 @@
                 // Validate form data
                 if (username != null && username.trim().length() > 0) {
                   username = username.toLowerCase();
-                  User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0", business_type, "", "", url_website, url_yelp, url_google, url_twitter, url_tiktok, url_snap, url_instagram, url_facebook, referred_by, "url_linkedin", "token_linkedin");
+                  User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0", business_type, "", "", url_website, url_yelp, url_google, url_twitter, url_tiktok, url_snap, url_instagram, url_facebook, referred_by, "url_linkedin", "token_linkedin", "token_twitter_c_key", "token_twitter_c_secret", "token_twitter_a", "token_twitter_a_secret");
                   UserDao dao = new UserDao();
                   try {
                       boolean pv = true;

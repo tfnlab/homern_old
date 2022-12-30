@@ -163,6 +163,11 @@
          String url_facebook = request.getParameter("url_facebook");
          String url_linkedin = request.getParameter("url_linkedin");
          String token_linkedin = request.getParameter("token_linkedin");
+         String token_twitter_c_key = request.getParameter("token_twitter_c_key");
+         String token_twitter_c_secret = request.getParameter("token_twitter_c_secret");
+         String token_twitter_a = request.getParameter("token_twitter_a");
+         String token_twitter_a_secret = request.getParameter("token_twitter_a_secret");
+
 
          email = email.toLowerCase();
 
@@ -194,6 +199,10 @@
          user.setUrl_facebook(url_facebook);
          user.setUrl_linkedin(url_linkedin);
          user.setToken_linkedin(token_linkedin);
+         user.setToken_twitter_c_key(token_twitter_c_key);
+         user.setToken_twitter_c_secret(token_twitter_c_secret);
+         user.setToken_twitter_a(token_twitter_a);
+         user.setToken_twitter_a_secret(token_twitter_a_secret);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -324,6 +333,22 @@ TEST
            <div class="form-group">
              <label for="url_twitter">Twitter</label>
              <input type="text" class="form-control" id="url_twitter" name="url_twitter" value="<%= user.getUrl_twitter() %>">
+           </div>
+           <div class="form-group">
+             <label for="url_twitter">Twitter</label>
+             <input type="text" class="form-control" id="token_twitter_c_key" name="token_twitter_c_key" value="<%= user.getToken_twitter_c_key() %>">
+           </div>
+           <div class="form-group">
+             <label for="url_twitter">Twitter</label>
+             <input type="text" class="form-control" id="token_twitter_c_secret" name="token_twitter_c_secret" value="<%= user.getToken_twitter_c_secret() %>">
+           </div>
+           <div class="form-group">
+             <label for="url_twitter">Twitter</label>
+             <input type="text" class="form-control" id="token_twitter_a" name="token_twitter_a" value="<%= user.getToken_twitter_a() %>">
+           </div>
+           <div class="form-group">
+             <label for="url_twitter">Twitter</label>
+             <input type="text" class="form-control" id="token_twitter_a_secret" name="token_twitter_a_secret" value="<%= user.getToken_twitter_a_secret() %>">
            </div>
            <div class="form-group">
              <label for="url_tiktok">TikTok</label>
