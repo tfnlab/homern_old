@@ -187,6 +187,7 @@
     String username = (String) session.getAttribute("username");
     User user = new User();
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+    String rm = "";
 
        String orderCom = request.getParameter("orderCom");
 
