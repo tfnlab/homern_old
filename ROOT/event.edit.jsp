@@ -157,6 +157,7 @@
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
                 String username = (String) session.getAttribute("username");
+                User usernameOBJ = (User) session.getAttribute("usernameOBJ");
                 String title = request.getParameter("title");
                 int eId = 0;
                 if (request.getParameter("eventid") != null && !request.getParameter("eventid").isEmpty()) {
@@ -198,6 +199,17 @@
                 }
                   event = ed.getEventById(eId);
         %>
+                    <HR>
+                      <a href="https://calendar.google.com/calendar/r/eventedit?
+                        text=<%= event.getTitle() %>
+                        &dates=<%= event.getStartTime() %>/<%= event.getEndTime() %>
+                        &location=<%= event.getLocation() %>
+                        &details=<%= event.getDescription() %>
+                        &trp=false
+                        &sprop=website:<%= usernameOBJ.getBusiness_name() %>
+                        &sprop=name:<%=usernameOBJ.getUrl_website()%>" target="_blank">Add to Goolge Calendar</a>
+
+                    <HR>
                     <form action="event.edit.jsp" method="post">
                           <input type="hidden" class="form-control" name="eventid" value="<%= eId %>">
                         <div class="form-group">
