@@ -38,7 +38,7 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                               BufferedWriter bw = new BufferedWriter(fw);
                               bw.write(entity.getPhone() + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com"));
                               bw.close();
-                              String argument =  usernameOBJ.getToken_twitter_c_key() + "<HRN>" + usernameOBJ.getToken_twitter_c_secret() + "<HRN>" + usernameOBJ.getToken_twitter_a() + "<HRN>" + usernameOBJ.getToken_twitter_a_secret() + "<HRN>" + uuid.toString()
+                              String argument =  usernameOBJ.getToken_twitter_c_key() + "<HRN>" + usernameOBJ.getToken_twitter_c_secret() + "<HRN>" + usernameOBJ.getToken_twitter_a() + "<HRN>" + usernameOBJ.getToken_twitter_a_secret() + "<HRN>" + uuid.toString();
                               Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/tweet.py", argument, argument).start();
                               String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
                               String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
