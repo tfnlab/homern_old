@@ -183,6 +183,7 @@
       </div>
     </section><!-- End Breadcrumbs -->
     <%
+    UUID uuid = UUID.randomUUID();
     UserDao dao = new UserDao();
     String username = (String) session.getAttribute("username");
     User user = new User();
