@@ -124,36 +124,20 @@
         <h2>Home</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-        <p>
-          Welcome to our application for contractors! Our platform is designed to simplify and streamline your business operations from start to finish. With our user-friendly interface, you can easily manage your leads, track your projects, and handle invoicing and payment all in one place. No more juggling multiple software or spreadsheet to keep your business running smoothly. Additionally, our platform provides valuable insights and analytics to help you make informed decisions and grow your business. Thank you for choosing our application, we are confident it will make a significant difference in your day-to-day operations as a contractor.
-        </p>
-        <HR>
-
-        <h4>Scheduling and dispatch</h4>
-        <p>Home service software can help schedule and dispatch technicians to service calls and manage their work schedules.</p>
-
-
-        <h4>Customer relationship management (CRM)</h4>
-        <p>Home service software can help companies manage customer relationships by storing customer information, tracking interactions, and managing communication with customers.</p>
-
-        <h4>Invoicing and billing</h4>
-        <p>Home service software can help companies create and manage invoices, process payments, and track billing.</p>
-
-        <h4>Inventory management</h4>
-        <p>Home service software can help companies track inventory levels, reorder supplies, and manage the purchase and use of parts and equipment.</p>
-
-        <h4>Service history</h4>
-        <p>Home service software can help companies track service history for individual customers and equipment, including the type of service provided, the technician who performed the service, and the parts used.</p>
-
-        <h4>Reporting</h4>
-        <p>Home service software can generate reports on a variety of metrics, such as service history, customer interactions, and financial performance.</p>
-
-        <h4>Mobile functionality</h4>
-        <p>Many home service software programs have mobile apps that allow technicians to access and update information on the go.</p>
-
-        <h4>Integration with other systems</h4>
-        <p>Home service software may integrate with other business systems, such as accounting software or CRM software, to streamline workflows and improve efficiency.</p>
-
+          <div class="container mt-5">
+            <h2>Home Renovation Nation</h2>
+            <p>Our home service software offers a range of features to help companies streamline their operations:</p>
+            <ul>
+              <li><strong>Scheduling and dispatch:</strong> our software can help schedule and dispatch technicians to service calls and manage their work schedules.</li>
+              <li><strong>Customer relationship management (CRM):</strong> our software can help companies manage customer relationships by storing customer information, tracking interactions, and managing communication with customers.</li>
+              <li><strong>Invoicing and billing:</strong> our software can help companies create and manage invoices, process payments, and track billing.</li>
+              <li><strong>Inventory management:</strong> our software can help companies track inventory levels, reorder supplies, and manage the purchase and use of parts and equipment.</li>
+              <li><strong>Service history:</strong> our software can help companies track service history for individual customers and equipment, including the type of service provided, the technician who performed the service, and the parts used.</li>
+              <li><strong>Reporting:</strong> our software can generate reports on a variety of metrics, such as service history, customer interactions, and financial performance.</li>
+              <li><strong>Mobile functionality:</strong> many of our software programs have mobile apps that allow technicians to access and update information on the go.</li>
+              <li><strong>Integration with other systems:</strong> our software may integrate with other business systems, such as accounting software or CRM software, to streamline workflows and improve efficiency.</li>
+            </ul>
+          </div>
       </div>
 
     </section><!-- End Blog Section -->
