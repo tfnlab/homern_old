@@ -11,7 +11,7 @@
 <%@ page import="java.io.File" %>
 <%@ page import="java.io.FileWriter" %>
 <%@ page import="java.io.BufferedWriter" %>
-<%@ page import="com.tfnlab.api.con.APIConfig" %><%
+<%@ page import="com.tfnlab.api.con.APIConfig" %>
 <!DOCTYPE html>
 <html lang="en">
 
