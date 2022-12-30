@@ -8,12 +8,13 @@
     var select = document.getElementById("navbar");
     var option = select.options[select.selectedIndex];
     var url = option.value;
-    window.location.href = url;
+    alert(url);
+    window.open(url, "_self");
   }
   document.getElementById("navbar").addEventListener("change", goToUrl);
 </script>
 
-<select id="navbar"  onchange="goToUrl()">
+<select name="navbar" id="navbar"  onchange="goToUrl()">
   <option value="user.menu.jsp"><i class="fas fa-home"></i> Home</option>
   <option value="user.edit.jsp"><i class="fas fa-cog"></i> Marketing</option>
   <option value="technician.list.jsp"><i class="fas fa-wrench"></i> Technicians</option>
