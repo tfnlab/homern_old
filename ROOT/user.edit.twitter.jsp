@@ -29,14 +29,11 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
             APIConfig ac = new APIConfig();
 
 
-                        Entity entity = new Entity();
-                        EntityDao ed = new EntityDao();
-                        entity = ed.getEntityById(customerId);
                         try{
                               File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
                               FileWriter fw = new FileWriter(file);
                               BufferedWriter bw = new BufferedWriter(fw);
-                              bw.write(entity.getPhone() + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com"));
+                              bw.write("NA<CONTENT>NA<CONTENT>" +request.getParameter("com"));
                               bw.close();
                               String argument =  usernameOBJ.getToken_twitter_c_key() + "<HRN>" + usernameOBJ.getToken_twitter_c_secret() + "<HRN>" + usernameOBJ.getToken_twitter_a() + "<HRN>" + usernameOBJ.getToken_twitter_a_secret() + "<HRN>" + uuid.toString();
                               Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/tweet.py", argument, argument).start();
