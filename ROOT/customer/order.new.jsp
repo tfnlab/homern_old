@@ -58,7 +58,7 @@
             let items = this.responseText.split('<ITEM>');
             fNamenew = items[items.length-1];
             fNamenew = removeTrailingSpaces(fNamenew);
-            document.getElementById(elName).innerHTML = "Location identified. Gathering information for site. Will update soon. Thank you for using the Home Renovation Nation website. Please be assured that we take your privacy very seriously and do not share any of your information with third parties. We use zero knowledge proof technology to securely share information with authorized parties, ensuring that your data remains private and protected. If you have any questions or concerns about your privacy, please do not hesitate to contact us. ";
+            document.getElementById(fNamenew).innerHTML = "Location identified. Gathering information for site. Will update soon. Thank you for using the Home Renovation Nation website. Please be assured that we take your privacy very seriously and do not share any of your information with third parties. We use zero knowledge proof technology to securely share information with authorized parties, ensuring that your data remains private and protected. If you have any questions or concerns about your privacy, please do not hesitate to contact us. ";
             document.getElementById(fNamenew+"lat").value = items[0];
             document.getElementById(fNamenew+"lng").value = items[1];
 
