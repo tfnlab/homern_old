@@ -8,6 +8,7 @@
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,6 +107,7 @@
                 </form>
                 <HR>
                 <%
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
                     int tabindex = 4;
                 %>
               <% for (Order order : orders) { %>
@@ -115,7 +117,7 @@
                 <HR>
                 Description: <%= order.getOrderDescription() %><br>
                 <HR>
-                Date: <%= order.getOrderDate() %><br>
+                Date: <%= dateFormat.format(order.getOrderDate()) %><br>
                 <HR>
                 Project Address: <%= order.getShippingAddress() %><br>
                 <HR>
