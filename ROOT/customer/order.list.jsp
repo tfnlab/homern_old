@@ -8,6 +8,7 @@
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.StringJoiner" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.time.Duration" %>
 <%@ page import="java.time.LocalDate" %>
@@ -123,11 +124,23 @@
                     Instant startInstant = order.getOrderDate().toInstant();
                     Instant endInstant = order.getShipDate().toInstant();
                     Duration duration = Duration.between(startInstant, endInstant);
+                    StringJoiner durationString = new StringJoiner(", ");
                     long days = duration.toDays();
                     long hours = duration.toHours() % 24;
                     long minutes = duration.toMinutes() % 60;
                     long seconds = duration.getSeconds() % 60;
-                    String durationString = String.format("%d days, %d hours, %d minutes, and %d seconds", days, hours, minutes, seconds);
+                    if (days > 0) {
+                        durationString.add(days + " day" + (days > 1 ? "s" : ""));
+                    }
+                    if (hours > 0) {
+                        durationString.add(hours + " hour" + (hours > 1 ? "s" : ""));
+                    }
+                    if (minutes > 0) {
+                        durationString.add(minutes + " minute" + (minutes > 1 ? "s" : ""));
+                    }
+                    if (seconds > 0) {
+                        durationString.add(seconds + " second" + (seconds > 1 ? "s" : ""));
+                    }
 
                     invTotal = invTotal.add(order.getOrderTotal());
                 %>
