@@ -153,7 +153,7 @@
                       dao.insertOrder(order);
                       %>
                         <HR>
-                        Project Saved
+                        Your project information has been saved. You can find it under the 'Projects' section.
                       <%
                 }else{
 

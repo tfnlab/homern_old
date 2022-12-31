@@ -110,6 +110,7 @@
                 <%
                     SimpleDateFormat longFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a");
                     int tabindex = 4;
+                    BigDecimal invTotal  = new BigDecimal("0");
                 %>
               <% for (Order order : orders) { %>
                 <div class="container-fluid p-5" >
@@ -125,6 +126,9 @@
                 Project Address: <%= order.getShippingAddress() %><br>
                 <HR>
                 Total: <%= order.getOrderTotal() %>
+                <%
+                    invTotal = invTotal.add(order.getOrderTotal());
+                %>
                 <HR>
                 <a class="btn btn-primary" tabindex="<%=tabindex+""%>" href="order.edit.jsp?orderId=<%= order.getOrderId() %>" >More</a>
                     </div>
@@ -135,6 +139,9 @@
                 %>
               <% } %>
 
+              <HR>
+                    <H4>Total : <%=invTotal%></h4>
+                <HR>
 
       </div>
 
