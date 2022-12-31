@@ -222,7 +222,7 @@
         %>
             <!-- ======= Contact Section ======= -->
                 <p>
-                Welcome to Home Renovation Nation! We're the makers of the premier business management software for contractors. Our software is hyper focused on helping our users increase revenue and grow their businesses. By streamlining operations, improving customer relations, managing projects and invoicing, and managing employee schedules, our software provides all the tools contractors need to take on more projects, get paid faster, and reduce the cost of doing business. With Home Renovation Nation, you can trust that we have your business's success at the forefront of everything we do. Try our software today and see the difference it can make for your business!
+                Welcome to <b>Home Renovation Nation</b>! If you're considering a home renovation project, our platform is here to help. Sign up for free to access expert advice, connect with a community of homeowners, use our project planner tool, and receive discounts on products and services. Our system, built with advanced artificial intelligence, offers a wealth of functionality and capabilities to help you succeed in your home renovation journey. Join today and start exploring all that Home Renovation Nation has to offer. If you have any questions or need assistance, don't hesitate to reach out to us.
                 </p>
 
                 <form action="signup.jsp" method="POST">
