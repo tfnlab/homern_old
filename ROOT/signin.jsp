@@ -184,7 +184,6 @@
                             <BR>
                             <BR>
                             <HR>
-                            <%if(user.)%>
                             <%if(user.getBusiness_type().equals("home-owner")){%>
                               <a href="https://homerenovationnation.com/customer/user.menu.jsp">NEXT</a>
                             <%}else{%>
