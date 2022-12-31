@@ -213,10 +213,12 @@
               <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" class="form-control" id="username" name="username" required>
+                <small id="usernameHelp" class="form-text text-muted">Enter your username to sign in.</small>
               </div>
               <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" class="form-control" id="password" name="password" required>
+                <small id="passwordHelp" class="form-text text-muted">Enter your password to sign in.</small>
               </div>
               <div class="form-group">
                 <div class="form-check">
