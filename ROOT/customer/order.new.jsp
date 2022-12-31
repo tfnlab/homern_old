@@ -152,7 +152,8 @@
                       OrderDao dao = new OrderDao();
                       dao.insertOrder(order);
                       %>
-                        Order Saved
+                        <HR>
+                        Project Saved
                       <%
                 }else{
 
