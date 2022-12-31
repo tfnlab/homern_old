@@ -139,7 +139,7 @@
       <div class="container px-4 px-lg-5">
         <h2>Product</h2>
         <%@ include file="user.menu.nav.jsp" %>
-
+            <hr>
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
@@ -236,40 +236,68 @@
             <!-- ======= Contact Section ======= -->
 
             <form action="product.new.jsp" method="post">
-              <label for="sku">SKU:</label><br>
-              <input type="text" id="sku" name="sku"><br>
-              <label for="name">Name:</label><br>
-              <input type="text" id="name" name="name"><br>
-              <label for="price">Price:</label><br>
-              <input type="number" id="price" name="price"><br>
-              <label for="inventory">Inventory:</label><br>
-              <input type="number" id="inventory" name="inventory"><br>
-              <label for="reorder_level">Reorder Level:</label><br>
-              <input type="number" id="reorder_level" name="reorder_level"><br>
-              <label for="lead_time">Lead Time:</label><br>
-              <input type="number" id="lead_time" name="lead_time"><br>
-              <label for="featured">Featured:</label><br>
-              <input type="checkbox" id="featured" name="featured"><br>
-              <label for="rating">Rating:</label><br>
-              <input type="number" id="rating" name="rating"><br>
-              <label for="description">Description:</label><br>
-              <textarea class="form-control" id="description" name="description"></textarea><br>
-              <label for="image_url">Image URL:</label><br>
-              <input type="text" id="image_url" name="image_url"><br>
-              <label for="category_id">Category ID:</label><br>
-              <input type="number" id="category_id" name="category_id"><br>
-              <label for="manufacturer_id">Manufacturer ID:</label><br>
-              <input type="number" id="manufacturer_id" name="manufacturer_id"><br>
-              <label for="availability">Availability:</label><br>
-              <input type="checkbox" id="availability" name="availability" ><br>
-              <label for="weight">Weight:</label><br>
-              <input type="number" id="weight" name="weight"><br>
-              <label for="dimensions">Dimensions:</label><br>
-              <input type="text" id="dimensions" name="dimensions"><br>
-              <label for="customer_id">Customer ID:</label><br>
-              <input type="text" id="customer_id" name="customer_id"><br><br>
-              <input type="submit" value="Submit">
-            </form>
+              <div class="form-group">
+                <label for="sku">SKU:</label>
+                <input type="text" class="form-control" id="sku" name="sku" tabindex="2">
+              </div>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" tabindex="3">
+              </div>
+              <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" class="form-control" id="price" name="price" tabindex="4">
+              </div>
+              <div class="form-group">
+                <label for="inventory">Inventory:</label>
+                <input type="number" class="form-control" id="inventory" name="inventory" tabindex="5">
+              </div>
+              <div class="form-group">
+                <label for="reorder_level">Reorder Level:</label>
+                <input type="number" class="form-control" id="reorder_level" name="reorder_level" tabindex="6">
+              </div>
+              <div class="form-group">
+                <label for="lead_time">Lead Time:</label>
+                <input type="number" class="form-control" id="lead_time" name="lead_time" tabindex="7">
+              </div>
+              <div class="form-group">
+                <label for="featured">Featured:</label>
+                <input type="checkbox" class="form-control" id="featured" name="featured" tabindex="8">
+              </div>
+              <div class="form-group">
+                <label for="rating">Rating:</label>
+                <input type="number" class="form-control" id="rating" name="rating" tabindex="9">
+              </div>
+              <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" name="description" tabindex="10"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="image_url">Image URL:</label>
+                <input type="text" class="form-control" id="image_url" name="image_url" tabindex="11">
+              </div>
+              <div class="form-group">
+                <label for="category_id">Category ID:</label>
+                <input type="number" class="form-control" id="category_id" name="category_id" tabindex="12">
+              </div>
+              <div class="form-group">
+                <label for="manufacturer_id">Manufacturer ID:</label>
+                <input type="number" class="form-control" id="manufacturer_id" name="manufacturer_id" tabindex="13">
+              </div>
+              <div class="form-group">
+                <label for="availability">Availability:</label>
+                <input type="checkbox" class="form-control" id="availability" name="availability" tabindex="14">
+              </div>
+              <div class="form-group">
+                <label for="weight">Weight:</label>
+                <input type="number" class="form-control" id="weight" name="weight" tabindex="15">
+              </div>
+              <div class="form-group">
+                <label for="dimensions">Dimensions:</label>
+                <input type="text" class="form-control" id="dimensions" name="dimensions" tabindex="16">
+              </div>
+              <input type="submit" class="btn btn-primary" value="Submit" tabindex="17">
+              </form>
 
 
                  <%}%>
