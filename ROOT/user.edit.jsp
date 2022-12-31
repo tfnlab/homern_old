@@ -237,27 +237,27 @@
             <label for="business_name" class="mr-2">Username:</label>
             <input type="text" class="form-control"  value="<%= user.getUsername() %>" disabled >
           </div>
-            <div class="form-group mt-5">
+            <div class="form-group mt-2">
               <label for="business_name" class="mr-2">Business Name:</label>
               <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>" tabindex="5" >
             </div>
-           <div class="form-group" mt-5>
+           <div class="form-group  mt-2">
               <label for="firstName">First Name</label>
               <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>"  tabindex="6">
            </div>
-           <div class="form-group" mt-5>
+           <div class="form-group mt-2">
               <label for="middleInitial">Middle Initial</label>
               <input type="text" class="form-control" id="middleInitial" name="middleInitial" value="<%= user.getMiddleInitial() %>"  tabindex="7">
            </div>
-           <div class="form-group" mt-5>
+           <div class="form-group mt-2">
               <label for="lastName">Last Name</label>
               <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.getLastName() %>"  tabindex="8">
            </div>
-           <div class="form-group">
+           <div class="form-group mt-2">
               <label for="email">Email</label>
               <input type="email" class="form-control" id="email" name="email" value="<%= user.getEmail() %>"  tabindex="9">
            </div>
-           <div class="form-group">
+           <div class="form-group mt-2">
               <label for="phone">Phone</label>
               <input type="text" class="form-control" id="phone" name="phone" value="<%= user.getPhone() %>"  tabindex="10">
            </div>
