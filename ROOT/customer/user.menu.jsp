@@ -143,8 +143,6 @@
 
             <p>Social Features: Customers can connect with other people who are also undergoing home renovations through forums, groups, and social media integration.</p>
 
-            <HR>
-            <h4>Mind-Blowing Updates: What's in Store</h4>
       </div>
 
     </section><!-- End Blog Section -->
