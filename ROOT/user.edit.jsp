@@ -215,8 +215,8 @@
         <h2>Marketing</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-          <a href="user.edit.logo.jsp" tabindex="2" >Upload Logo</a>
-          <a href="user.edit.social.jsp" tabindex="3" >Social Media</a>
+          <a href="user.edit.logo.jsp" tabindex="2" >Logo</a>
+          <a href="user.edit.social.jsp" tabindex="3" >Social</a>
           <a href="user.edit.referred_by.jsp" tabindex="4" >Referrals</a>
         <HR>
         <form method="post" action="user.edit.jsp">
@@ -382,7 +382,7 @@
            </div>
            <BR>
            <BR>
-           <button type="submit" class="btn btn-primary">Submit</button>
+           <button type="submit" class="btn btn-primary" tabindex="19">Submit</button>
            </form>
 
 
