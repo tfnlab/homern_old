@@ -98,25 +98,18 @@
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
             <h4>Home Renovation Nation</h4>
-            <p>The Great Home Renovation Nation Features List: A Gonzo Guide to Managing Your Project with Style</p>
-            <p>Project Management Tools: Customers can use task lists, calendars, and Gantt charts to track the progress of their renovation projects and stay organized.</p>
-
-            <p>Communication Tools: Customers can easily communicate with other people involved in their renovation projects using messaging, chat, and video conferencing.</p>
-
-            <p>Budget and Cost Tracking: Customers can track their renovation budget and costs in real-time, including expenses for materials, labor, and other costs.</p>
-
-            <p>Document Management: Customers can store and access important documents related to their renovation projects, such as contracts, blueprints, and receipts.</p>
-
-            <p>File Sharing: Customers can easily share files with other people involved in their renovation projects, including images, PDFs, and other documents.</p>
-
-            <p>Photo and Video Sharing: Customers can share photos and videos of their renovation projects with others, including progress updates and before-and-after shots.</p>
-
-            <p>Design Tools: Customers can use design tools within the website to help plan and visualize their renovation projects, including 3D modeling, floor plans, and color schemes.</p>
-
-            <p>Expert Advice: Customers can access expert advice and guidance on their renovation projects from professionals in the field.</p>
-
-            <p>Social Features: Customers can connect with other people who are also undergoing home renovations through forums, groups, and social media integration.</p>
-
+            <h2><strong>The Great Home Renovation Nation Features List: A Gonzo Guide to Managing Your Project with Style</strong></h2>
+            <ul>
+              <li><strong>Project Management Tools:</strong> Customers can use task lists, calendars, and Gantt charts to track the progress of their renovation projects and stay organized.</li>
+              <li><strong>Communication Tools:</strong> Customers can easily communicate with other people involved in their renovation projects using messaging, chat, and video conferencing.</li>
+              <li><strong>Budget and Cost Tracking:</strong> Customers can track their renovation budget and costs in real-time, including expenses for materials, labor, and other costs.</li>
+              <li><strong>Document Management:</strong> Customers can store and access important documents related to their renovation projects, such as contracts, blueprints, and receipts.</li>
+              <li><strong>File Sharing:</strong> Customers can easily share files with other people involved in their renovation projects, including images, PDFs, and other documents.</li>
+              <li><strong>Photo and Video Sharing:</strong> Customers can share photos and videos of their renovation projects with others, including progress updates and before-and-after shots.</li>
+              <li><strong>Design Tools:</strong> Customers can use design tools within the website to help plan and visualize their renovation projects, including 3D modeling, floor plans, and color schemes.</li>
+              <li><strong>Expert Advice:</strong> Customers can access expert advice and guidance on their renovation projects from professionals in the field.</li>
+              <li><strong>Social Features:</strong> Customers can connect with other people who are also undergoing home renovations through forums, groups, and social media integration.</li>
+            </ul>
       </div>
 
     </section><!-- End Blog Section -->
