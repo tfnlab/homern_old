@@ -247,17 +247,22 @@
                   <HR>
 
                     <div class="form-group mt-3">
+                  <div class="row">
+                    <div class="col">
               		<label for="firstName">First Name:</label><br>
               		<input type="text"  class="form-control" id="firstName" name="firstName"  required><br>
-                  </div>
-                  <div class="form-group mt-3">
+                    </div>
+                    <div class="col">
               		<label for="middleInitial">Middle Initial:</label><br>
               		<input type="text"  class="form-control" id="middleInitial" name="middleInitial"><br>
-                  </div>
-                  <div class="form-group mt-3">
+                    </div>
+                    <div class="col">
               		<label for="lastName">Last Name:</label><br>
               		<input type="text"  class="form-control" id="lastName" name="lastName" required><br>
+                    </div>
                   </div>
+                    </div>
+
                   <div class="form-group mt-3">
               		<label for="email">Email:</label><br>
               		<input type="email"  class="form-control" id="email" name="email" required><br>
