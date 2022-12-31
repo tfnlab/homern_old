@@ -122,7 +122,6 @@
       <div class="container px-4 px-lg-5">
         <h2>Home</h2>
         <%@ include file="user.menu.nav.jsp" %>
-        <HR>
           <div class="container mt-5">
             <h4>Home Renovation Nation</h4>
             <p>Our home service software offers a range of features to help companies streamline their operations:</p>
@@ -136,6 +135,7 @@
               <li><strong>Mobile functionality:</strong> many of our software programs have mobile apps that allow technicians to access and update information on the go.</li>
               <li><strong>Integration with other systems:</strong> our software may integrate with other business systems, such as accounting software or CRM software, to streamline workflows and improve efficiency.</li>
             </ul>
+            <HR>
             <h4>Mind-Blowing Updates: What's in Store</h4>
             <p>Get ready to have your minds blown, because we've got a whole bunch of new features and bug fixes that are sure to blow your socks off. These updates are going to take your user experience to a whole new level, and we can't wait for you to get your hands on them. Trust us, these are the kinds of features and bug fixes that you'll be talking about for years to come. So stay tuned and get ready to take your productivity (or whatever else you're using our product for) to the next level!</p>
             <li>
