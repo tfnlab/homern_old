@@ -125,9 +125,9 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Home</li>
+          <li>Marketing</li>
         </ol>
-        <h2>User</h2>
+        <h2>Marketing</h2>
       </div>
     </section><!-- End Breadcrumbs -->
     <%
@@ -212,10 +212,8 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>User</h2>
+        <h2>Marketing</h2>
         <%@ include file="user.menu.nav.jsp" %>
-        <HR>
-            <h4><%=username%></h4>
         <HR>
           <a href="user.edit.logo.jsp" >Upload Logo</a>
         <HR>
