@@ -94,14 +94,12 @@
           <li><a class="nav-link scrollto" href="index.html#services">Services</a></li>
           <li><a class="nav-link scrollto" href="index.html#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="index.html#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="signin.jsp">Sign-In</a></li>
-          <li><a class="nav-link scrollto active" href="signup.jsp">Sign-Up</a></li>
           <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="https://forms.gle/vdU9zvFTZJ9eKAsz6" class="get-started-btn scrollto">Get Started</a>
+      <a href="signin.jsp" class="get-started-btn scrollto">Sign-In</a>
     </div>
   </header><!-- End Header -->
 
@@ -115,7 +113,7 @@
           <li><a href="index.html">Home</a></li>
           <li>Sign-up</li>
         </ol>
-        <h2>Sign-up form</h2>
+        <h2>Sign-up</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
@@ -299,7 +297,7 @@
                   </div>
                   <div class="col">
                   <label for="state">State:</label><br>
-              		<input type="text"  class="form-control" id="state" name="state" required width="20%"><br>
+              		<input type="text"  class="form-control" id="state" name="state" required ><br>
                     </div>
                     <div class="col">
                     <label for="state">Zip:</label><br>
