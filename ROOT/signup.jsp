@@ -248,51 +248,51 @@
 
                     <div class="form-group mt-3">
               		<label for="firstName">First Name:</label><br>
-              		<input type="text" id="firstName" name="firstName"  required><br>
+              		<input type="text"  class="form-control" id="firstName" name="firstName"  required><br>
                   </div>
                   <div class="form-group mt-3">
               		<label for="middleInitial">Middle Initial:</label><br>
-              		<input type="text" id="middleInitial" name="middleInitial"><br>
+              		<input type="text"  class="form-control" id="middleInitial" name="middleInitial"><br>
                   </div>
                   <div class="form-group mt-3">
               		<label for="lastName">Last Name:</label><br>
-              		<input type="text" id="lastName" name="lastName" required><br>
+              		<input type="text"  class="form-control" id="lastName" name="lastName" required><br>
                   </div>
                   <div class="form-group mt-3">
               		<label for="email">Email:</label><br>
-              		<input type="email" id="email" name="email" required><br>
+              		<input type="email"  class="form-control" id="email" name="email" required><br>
                   </div>
                   <div class="form-group mt-3">
               		<label for="phone">Phone:</label><br>
-              		<input type="text" id="phone" name="phone" required><br>
+              		<input type="text"  class="form-control" id="phone" name="phone" required><br>
                   </div>
                   <div class="form-group mt-3">
               		<label for="username">Username:</label><br>
-              		<input type="text" id="username" name="username" required><br>
+              		<input type="text"  class="form-control" id="username" name="username" required><br>
                   </div>
                   <div class="form-group mt-3">
               		<label for="password">Password:</label><br>
-              		<input type="password" id="password" name="password" required><br>
+              		<input type="password"  class="form-control" id="password" name="password" required><br>
                   </div>
                   <div class="form-group mt-3">
               		<label for="ogId">OG ID:</label><br>
-              		<input type="text" id="ogId" name="ogId"><br>
+              		<input type="text"  class="form-control" id="ogId" name="ogId"><br>
                   </div>
                   <div class="form-group mt-3">
               		<label for="address">Address:</label><br>
-              		<input type="text" id="address" name="address" required><br>
+              		<input type="text"  class="form-control" id="address" name="address" required><br>
                   </div>
                   <div class="form-group mt-3">
               		<label for="city">City:</label><br>
-              		<input type="text" id="city" name="city" required><br>
+              		<input type="text"  class="form-control" id="city" name="city" required><br>
                   </div>
                   <div class="form-group mt-3">
               		<label for="state">State:</label><br>
-              		<input type="text" id="state" name="state" required><br>
+              		<input type="text"  class="form-control" id="state" name="state" required><br>
                   </div>
                   <div class="form-group mt-3">
                   <label for="state">Zip:</label><br>
-                  <input type="text" id="zipcode" name="zipcode" required><br><br>
+                  <input type="text"  class="form-control" id="zipcode" name="zipcode" required><br><br>
                   </div>
                   <div class="form-group  mt-3">
                     <label for="url_facebook">Referred By</label>
