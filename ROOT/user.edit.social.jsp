@@ -257,7 +257,7 @@
               <label class="form-check-label" for="linkedin">LinkedIn</label>
             </div>
           <HR>
-          <a href="javascript:void(0)" onclick="getMessage()">Generate Message <img src="assets/img/hrn/mw.png" width="50px" id="working" name="working" tabindex="6" /></a>
+          <a href="javascript:void(0)" onclick="getMessage()"  tabindex="6" >Generate Message <img src="assets/img/hrn/mw.png" width="50px" id="working" name="working"/></a>
           <HR>
           <div class="form-group">
             <label for="orderId">Touch Point</label><br>
