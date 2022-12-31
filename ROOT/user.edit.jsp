@@ -226,7 +226,7 @@
           <HR>
           <select name="hrnnavbarsub" id="hrnnavbarsub" onchange="goToUrlSUB()" tabindex="1">
             <option value="#" >more </option>
-            <option value="user.edit.referred_by.jsp" <%= currentUrl.indexOf("user.edit.referred_by.jsp") != -1 ? "selected" : "" %>><i class="fas fa-home"></i> Logo</option>
+            <option value="user.edit.logo.jsp" <%= currentUrl.indexOf("user.edit.referred_by.jsp") != -1 ? "selected" : "" %>><i class="fas fa-home"></i> Logo</option>
             <option value="user.edit.social.jsp" <%= currentUrl.indexOf("user.edit.social.jsp") != -1 ? "selected" : "" %>><i class="fas fa-cog"></i> Social</option>
             <option value="user.edit.referred_by.jsp" <%= currentUrl.indexOf("user.edit.referred_by.jsp") != -1 ? "selected" : "" %>><i class="fas fa-wrench"></i> Referrals</option>
           </select>
