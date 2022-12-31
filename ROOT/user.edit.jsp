@@ -237,7 +237,7 @@
             <input type="text" class="form-control"  value="<%= user.getUsername() %>" disabled >
           </div>
 
-            <div class="container px-4 px-lg-5 m-5">
+            <div class="container mx-5">
             <div class="form-group mt-2">
               <label for="business_name" class="mr-2">Business Name:</label>
               <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>" tabindex="5" >
