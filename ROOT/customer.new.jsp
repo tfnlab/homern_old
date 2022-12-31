@@ -11,8 +11,12 @@
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.text.ParseException" %>
-
-
+<%@ page import="java.util.UUID" %>
+<%@ page import="org.apache.commons.fileupload.servlet.ServletFileUpload" %>
+<%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory" %>
+<%@ page import="javax.servlet.http.Part" %>
+<%@ page import="java.util.List" %>
+<%@ page import="org.apache.commons.fileupload.FileItem" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -150,6 +154,8 @@
         <%@ include file="user.menu.nav.jsp" %>
 
         <HR>
+
+
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
@@ -240,6 +246,55 @@
                 }else{
 
         %>
+
+        <%
+          boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+          String ocrDescription = new String();
+          if (isMultipart) {
+
+              UUID uuid = UUID.randomUUID();
+              APIConfig conf = new APIConfig();
+              String filename = username + "." + uuid + ".png";
+              String filepath = conf.getPdfloc();
+              DiskFileItemFactory factory = new DiskFileItemFactory();
+              factory.setSizeThreshold(1024 * 1024); // Set the size threshold for storing files in memory
+              factory.setRepository(new File(filepath)); // Set the repository location for temporarily storing files
+              ServletFileUpload upload = new ServletFileUpload(factory);
+              List<FileItem> items = upload.parseRequest(request);
+              for (FileItem item : items) {
+                if (!item.isFormField()) { // Check if the item is an uploaded file
+                  InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
+                  FileOutputStream fos = new FileOutputStream(filepath  +  "customer." + filename);
+                  byte[] buffer = new byte[1024];
+                  int length;
+                  while ((length = fileContent.read(buffer)) > 0) {
+                    fos.write(buffer, 0, length);
+                  }
+                  fos.close();
+                  fileContent.close();
+                }
+              }
+            %>
+
+            <p>File uploaded successfully!</p>
+
+            <%
+          } else {
+            // Request is not a multipart form
+            %>
+            <form method="post" action="user.edit.logo.jsp" enctype="multipart/form-data">
+              <input type="file" name="file" />
+              <input type="submit" value="Upload" />
+            </form>
+            <%
+          }
+        %>
+
+        <form method="post" action="customer.new.jsp" enctype="multipart/form-data">
+          <input type="file" name="file" />
+          <input type="submit" value="Upload" />
+        </form>
+        <HR>
                     <form action="customer.new.jsp" method="post">
           <div class="form-group">
             <label for="firstName">First Name</label>
