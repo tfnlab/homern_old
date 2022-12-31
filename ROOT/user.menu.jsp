@@ -142,7 +142,7 @@
               Keep track of all your home renovation projects and events with our new calendar integration! When you use our software to schedule updates or events, they will automatically be added to your Google calendar. This means you'll never miss an important deadline or meeting, and you can easily keep track of your progress on all your renovation projects in one place. Plus, with the convenience of having everything in your Google calendar, you can easily access and view your renovation schedule from any device. Upgrade your home renovation process with this handy new feature!
             </li>
             <li>
-              Easily receive payments in cryptocurrency with our new wallet address feature! Now you can add your Thelonious name service address or any other cryptocurrency wallet address to your profile, and it will be displayed across all of our media channels. This means that anyone who wants to send you a payment in cryptocurrency can easily find and use your address. Plus, with the added convenience of having your address displayed in a prominent location, you can easily receive payments from multiple sources without having to share your address individually. Upgrade your payment process with this convenient new feature!
+              Easily receive payments in cryptocurrency with our new wallet address feature! Now you can add your name service address or any other cryptocurrency wallet address to your profile, and it will be displayed across all of our media channels. This means that anyone who wants to send you a payment in cryptocurrency can easily find and use your address. Plus, with the added convenience of having your address displayed in a prominent location, you can easily receive payments from multiple sources without having to share your address individually. Upgrade your payment process with this convenient new feature!
             </li>
             <li>
               Keep track of your inventory like a pro with our new tracking feature! With this handy tool, you can easily see how much of each item you have in stock, set low stock alerts, and even keep track of how much you've sold. Whether you're managing a small store or a large warehouse, this feature will help you stay on top of your inventory and ensure that you always have what you need. Plus, with the ability to easily see your inventory levels at a glance, you can make more informed purchasing decisions and avoid running out of stock. Streamline your inventory management process with this convenient new feature!
@@ -183,7 +183,7 @@ This feature helps users to more easily manage orders and to stay organized by p
               With this feature, users can easily find orders that are located near a specific location by searching for orders based on location. The search results will be sorted by distance to the specified location, so users can see which orders are closest to the location they are interested in.
 
               This feature is useful for finding orders that are located in a specific area, or for finding orders that are close to a particular location. To implement this feature, you will need to add a location field to the order details screen, and to modify the order search screen to allow users to search for orders based on location. You will also need to add logic to sort the search results by distance to the specified location.
-            </li>                
+            </li>
 
           </div>
       </div>
