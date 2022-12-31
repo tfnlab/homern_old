@@ -262,7 +262,7 @@
               </div>
               <div class="form-group">
                 <label for="featured">Featured:</label>
-                <input type="checkbox" class="form-control" id="featured" name="featured" tabindex="8">
+                <input type="checkbox" class="form-check-input" id="featured" name="featured" tabindex="8">
               </div>
               <div class="form-group">
                 <label for="rating">Rating:</label>
@@ -286,7 +286,7 @@
               </div>
               <div class="form-group">
                 <label for="availability">Availability:</label>
-                <input type="checkbox" class="form-control" id="availability" name="availability" tabindex="14">
+                <input type="checkbox" class="form-check-input" id="availability" name="availability" tabindex="14">
               </div>
               <div class="form-group">
                 <label for="weight">Weight:</label>
