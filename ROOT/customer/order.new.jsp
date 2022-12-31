@@ -212,48 +212,22 @@
             <!-- ======= Contact Section ======= -->
 
                 <form action="order.new.jsp" method="POST">
-                <label for="orderId">Order Name:</label><br>
+                <label for="orderId">Project Name:</label><br>
                 <input class="form-control"  type="text" id="orderName" name="orderName"><br>
-                <label for="orderId">Order Description:</label><br>
+
+                <label class="form-label" for="orderDescription">Project Details</label>
                 <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"></textarea>
-                <label class="form-label" for="textAreaExample">Request Info</label>
-                <label for="orderDate">Order Date:</label><br>
+
+                <label for="orderDate">Start Date:</label><br>
                 <input type="datetime-local" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd"><br>
-                <label for="shipDate">Ship Date:</label><br>
+                <label for="shipDate">End Date:</label><br>
                 <input type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
-                <label for="shippingAddress">Shipping Address:</label><br>
+                <label for="shippingAddress">Project Address:</label><br>
                 <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC(this)"><br>
                 <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" >
                 <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" >
                 <ul id="shippingAddressac" name="shippingAddressac"></ul>
                 <hr>
-                <label for="billingAddress">Billing Address:</label><br>
-                <input class="form-control" type="text" id="billingAddress" name="billingAddress" onkeypress="callAC(this)"><br>
-                <input type="hidden" id="billingAddressaclat" name="billingAddressaclat" >
-                <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" >
-                <ul id="billingAddressac" name="billingAddressac"></ul>
-                <hr>
-                <!-- HTML -->
-                <div class="form-group">
-                  <label for="payment-options">Payment Options</label>
-                  <select class="form-control" id="paymentMethod" name="paymentMethod">
-                    <option value="cash">Cash</option>
-                    <option value="check">Check</option>
-                    <option value="credit-card">Credit Card</option>
-                    <option value="debit-card">Debit Card</option>
-                    <option value="electronic-payment">Electronic Payment</option>
-                    <option value="paypal">PayPal</option>
-                    <option value="google-pay">Google Pay</option>
-                    <option value="apple-pay">Apple Pay</option>
-                    <option value="bank-transfer">Bank Transfer</option>
-                    <option value="money-order">Money Order</option>
-                    <option value="gift-card">Gift Card</option>
-                    <option value="cryptocurrency">Cryptocurrency</option>
-                    <option value="doge">Doge</option>
-                    <option value="bitcoin">Bitcoin</option>
-                    <option value="eth">ETH</option>
-                  </select>
-                </div>
 
                 <label for="orderTotal">Order Total:</label><br>
                 <input type="text" id="orderTotal" name="orderTotal"><br>
