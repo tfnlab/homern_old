@@ -212,25 +212,41 @@
             <!-- ======= Contact Section ======= -->
 
                 <form action="order.new.jsp" method="POST">
+
+                <div class="form-group mt-3">
                 <label for="orderId">Project Name:</label><br>
                 <input class="form-control"  type="text" id="orderName" name="orderName"><br>
-
+                </div>
+                <div class="form-group mt-3">
                 <label class="form-label" for="orderDescription">Project Details</label>
                 <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"></textarea>
+                </div>
 
+                <div class="form-group mt-3">
                 <label for="orderDate">Start Date:</label><br>
                 <input type="datetime-local" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd"><br>
+                </div>
+
+                <div class="form-group mt-3">
                 <label for="shipDate">End Date:</label><br>
                 <input type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
+                </div>
+
+                <div class="form-group mt-3">
                 <label for="shippingAddress">Project Address:</label><br>
                 <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC(this)"><br>
                 <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" >
                 <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" >
+                </div>
+                <hr>
                 <ul id="shippingAddressac" name="shippingAddressac"></ul>
                 <hr>
 
+                <div class="form-group mt-3">
                 <label for="orderTotal">Order Total:</label><br>
                 <input type="text" id="orderTotal" name="orderTotal"><br>
+                </div>
+                <hr>
                 <input type="submit" value="Submit">
                   	</form>
 
