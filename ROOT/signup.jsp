@@ -245,35 +245,60 @@
                     </select>
                   </div>
                   <HR>
+
+                    <div class="form-group mt-3">
               		<label for="firstName">First Name:</label><br>
               		<input type="text" id="firstName" name="firstName"  required><br>
+                  </div>
+                  <div class="form-group mt-3">
               		<label for="middleInitial">Middle Initial:</label><br>
               		<input type="text" id="middleInitial" name="middleInitial"><br>
+                  </div>
+                  <div class="form-group mt-3">
               		<label for="lastName">Last Name:</label><br>
               		<input type="text" id="lastName" name="lastName" required><br>
+                  </div>
+                  <div class="form-group mt-3">
               		<label for="email">Email:</label><br>
               		<input type="email" id="email" name="email" required><br>
+                  </div>
+                  <div class="form-group mt-3">
               		<label for="phone">Phone:</label><br>
               		<input type="text" id="phone" name="phone" required><br>
+                  </div>
+                  <div class="form-group mt-3">
               		<label for="username">Username:</label><br>
               		<input type="text" id="username" name="username" required><br>
+                  </div>
+                  <div class="form-group mt-3">
               		<label for="password">Password:</label><br>
               		<input type="password" id="password" name="password" required><br>
+                  </div>
+                  <div class="form-group mt-3">
               		<label for="ogId">OG ID:</label><br>
               		<input type="text" id="ogId" name="ogId"><br>
+                  </div>
+                  <div class="form-group mt-3">
               		<label for="address">Address:</label><br>
               		<input type="text" id="address" name="address" required><br>
+                  </div>
+                  <div class="form-group mt-3">
               		<label for="city">City:</label><br>
               		<input type="text" id="city" name="city" required><br>
+                  </div>
+                  <div class="form-group mt-3">
               		<label for="state">State:</label><br>
               		<input type="text" id="state" name="state" required><br>
+                  </div>
+                  <div class="form-group mt-3">
                   <label for="state">Zip:</label><br>
                   <input type="text" id="zipcode" name="zipcode" required><br><br>
-                  <div class="form-group">
+                  </div>
+                  <div class="form-group  mt-3">
                     <label for="url_facebook">Referred By</label>
                     <input type="text" class="form-control" id="referred_by" name="referred_by" <% if (request.getParameter("referred_by") !=null) { %>value="<%=request.getParameter("referred_by")%>" <% } %> >
                   </div>
-                  <BR>
+                  <hr class="mt-3">
                   		<input type="submit" value="Submit">
                   	</form>
 
