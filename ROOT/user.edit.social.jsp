@@ -229,7 +229,7 @@
         <HR>
         <div class="form-group">
           <label for="post-type">Select a post type:</label>
-          <select class="form-control" id="post-type" name="post-type">
+          <select class="form-control" id="post-type" name="post-type" tabindex="2" >
             <option value="industry-updates">Industry updates</option>
             <option value="personal-updates">Personal updates</option>
             <option value="inspirational-quotes">Inspirational quotes</option>
