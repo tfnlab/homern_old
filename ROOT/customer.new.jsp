@@ -18,6 +18,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
+<%@ page import="java.io.*" %>
+<%@ page import="javax.servlet.http.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
