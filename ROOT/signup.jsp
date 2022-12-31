@@ -129,7 +129,7 @@
                 String phone = request.getParameter("phone");
                 String username = request.getParameter("username");
                 String password = request.getParameter("password");
-                String ogId = request.getParameter("ogId");
+                String ogId = "odId";
                 String address = request.getParameter("address");
                 String city = request.getParameter("city");
                 String state = request.getParameter("state");
@@ -279,10 +279,6 @@
                   <div class="form-group mt-3">
               		<label for="password">Password:</label><br>
               		<input type="password"  class="form-control" id="password" name="password" required><br>
-                  </div>
-                  <div class="form-group mt-3">
-              		<label for="ogId">OG ID:</label><br>
-              		<input type="text"  class="form-control" id="ogId" name="ogId"><br>
                   </div>
                   <div class="form-group mt-3">
                   <label for="address">Address:</label><br>
