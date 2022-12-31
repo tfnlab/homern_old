@@ -209,14 +209,26 @@
         %>
             <!-- ======= Contact Section ======= -->
 
-                <form action="signin.jsp" method="POST">
-              		<label for="username">Username:</label><br>
-              		<input type="text" id="username" name="username" required><br>
-              		<label for="password">Password:</label><br>
-              		<input type="password" id="password" name="password"  required><br>
-                  <HR>
-                            <button type="submit" class="btn btn-primary" onclick="sendTweet()">Sign-In</button>
-                  	</form>
+            <form action="signin.jsp" method="POST">
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+                  <label class="form-check-label" for="rememberMe">
+                    Remember me
+                  </label>
+                </div>
+              </div>
+              <hr>
+              <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="sendTweet()">Sign-In</button>
+            </form>
 
                  <%}%>
       </div>
