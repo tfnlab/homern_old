@@ -92,7 +92,7 @@
 
       if (search.length > 5) {
         document.getElementById(elName).innerHTML = "";
-        var urlString = "GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
+        var urlString = "../GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
         xhttp.open("GET", urlString, true);
         xhttp.send();
       }
