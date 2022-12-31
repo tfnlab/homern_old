@@ -284,17 +284,23 @@
               		<input type="text"  class="form-control" id="ogId" name="ogId"><br>
                   </div>
                   <div class="form-group mt-3">
-              		<label for="address">Address:</label><br>
+
+                  <div class="row">
+                  <div class="col">
+                  <label for="address">Address:</label><br>
               		<input type="text"  class="form-control" id="address" name="address" required><br>
                   </div>
-                  <div class="form-group mt-3">
-              		<label for="city">City:</label><br>
+                  <div class="col">
+                  <label for="city">City:</label><br>
               		<input type="text"  class="form-control" id="city" name="city" required><br>
                   </div>
-                  <div class="form-group mt-3">
-              		<label for="state">State:</label><br>
-              		<input type="text"  class="form-control" id="state" name="state" required><br>
+                  <div class="col">
+                  <label for="state">State:</label><br>
+              		<input type="text"  class="form-control" id="state" name="state" required width="20%"><br>
+                    </div>
                   </div>
+                  </div>
+
                   <div class="form-group mt-3">
                   <label for="state">Zip:</label><br>
                   <input type="text"  class="form-control" id="zipcode" name="zipcode" required><br><br>
