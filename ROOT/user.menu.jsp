@@ -154,7 +154,36 @@
                 Feature: Add event to Google Calendar from invoice:
                 Description: This feature allows the user to easily schedule a payment or follow-up action by clicking a link in an invoice PDF. The link will open an event in the user's default calendar app, allowing the user to edit and save the event.
             </li>
+            <li>
+              Feature: Closed tag for orders
+              Description: This feature allows users to mark orders as "closed" by adding a closed tag to the order details. The closed tag can be used to indicate that an order has been completed or is no longer active.
 
+              The closed tag is also searchable, so users can use the search screen to find orders based on their closed status. In the search screen, orders that have a closed tag will be marked as green or red to indicate their closed status.
+
+              This feature is useful for keeping track of orders that have been completed or are no longer active, and for quickly finding orders based on their closed status. It helps users to manage their orders more efficiently and to stay organized.
+
+              To implement this feature, you will need to add a closed tag field to the order details screen, and to modify the search screen to allow users to search for orders based on their closed status. You will also need to add logic to mark orders as green or red in the search screen based on their closed status.
+            </li>
+            <li>
+              Feature: Enhanced order search and location management
+
+Description: This feature enhances the order search and location management capabilities of the system by adding the ability to search for orders based on start dates or end dates, and to change the ship location of an order to the project location on the order detail screen.
+
+With this feature, users can easily find orders that are starting or ending within a specific time frame by searching for orders based on their start dates or end dates. This is useful for finding orders that are currently active or that are coming up in the future.
+
+In addition, users can change the ship location of an order to the project location on the order detail screen. This is useful for situations where the ship location needs to be changed to match the location of the project.
+
+This feature helps users to more easily manage orders and to stay organized by providing enhanced search and location management capabilities. To implement this feature, you will need to add start date and end date fields to the order details screen, and to modify the order search screen to allow users to search for orders based on start dates or end dates. You will also need to add logic to allow users to change the ship location of an order to the project location on the order detail screen.
+            </li>
+            <li>
+              Feature: Order search by location and distance
+
+              Description: This feature allows users to search for orders based on location, and to return the search results sorted by distance to the specified location.
+
+              With this feature, users can easily find orders that are located near a specific location by searching for orders based on location. The search results will be sorted by distance to the specified location, so users can see which orders are closest to the location they are interested in.
+
+              This feature is useful for finding orders that are located in a specific area, or for finding orders that are close to a particular location. To implement this feature, you will need to add a location field to the order details screen, and to modify the order search screen to allow users to search for orders based on location. You will also need to add logic to sort the search results by distance to the specified location.
+            </li>                
 
           </div>
       </div>

@@ -145,8 +145,8 @@
         <HR>
           <a href="event.new.jsp"><i class="fas fa-plus"></i> Event</a>
         <HR>
-        <a href="event.list.jsp?sortBy=eventDate">Most Recent</a>|
-        <a href="event.list.jsp?sortBy=eventDateDESC">Most Recent Desc</a>
+        <a href="event.list.jsp?sortBy=eventDate">Latest</a> |
+        <a href="event.list.jsp?sortBy=eventDateDESC">Oldest</a>
         <HR>
 
         <%
