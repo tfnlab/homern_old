@@ -131,13 +131,15 @@
         <h2>Products</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-          <a href="product.new.jsp"><i class="fas fa-plus"></i> Product</a>
+          <a href="product.new.jsp" tabindex="2"><i class="fas fa-plus"></i> Product</a>
         <HR>
         <%
                 ProductDao productDao = new ProductDao();
                 String username = (String) session.getAttribute("username");
 
                 List<Product> products = productDao.searchByCustomerId(username);
+
+                int tabindex = 3;
                 %>
 
 
@@ -152,12 +154,14 @@
                   Description: <%= product.getDescription() %><br>
                   Price: <%= product.getPrice() %><br>
                   <BR>
-                  <a class="btn btn-primary" href="product.edit.jsp?productId=<%= product.getId() %>" >More</a>
+                  <a class="btn btn-primary" tabindex="<%=tabindex+""%>" href="product.edit.jsp?productId=<%= product.getId() %>" >More</a>
                     </div>
 
                 </div>
                 <hr>
-
+                <%
+                  tabindex +=1;
+                %>
               <% } %>
 
 

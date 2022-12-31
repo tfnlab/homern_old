@@ -184,7 +184,13 @@ This feature helps users to more easily manage orders and to stay organized by p
 
               This feature is useful for finding orders that are located in a specific area, or for finding orders that are close to a particular location. To implement this feature, you will need to add a location field to the order details screen, and to modify the order search screen to allow users to search for orders based on location. You will also need to add logic to sort the search results by distance to the specified location.
             </li>
+            <li>
+              A password reset feature with email and text message capability allows users to reset their account password in the event that they have forgotten it or can no longer access their account. This can be done through a password reset form, where the user is required to enter their email address or phone number.
 
+Upon submission of the form, a reset password link is sent to the user's email address or a code is sent to the user's phone number via text message. The user can then use the link or code to reset their password and gain access to their account.
+
+This feature can be particularly useful for users who have multiple accounts and may have trouble remembering all of their passwords, or for users who have lost access to their account due to a change in their email address or phone number. It can also provide an additional layer of security by requiring the user to verify their identity through their email address or phone number before being able to reset their password.
+              </li>
           </div>
       </div>
 
