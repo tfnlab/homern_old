@@ -117,6 +117,17 @@
                     BigDecimal invTotal  = new BigDecimal("0");
                 %>
               <% for (Order order : orders) { %>
+                <%
+                    Duration duration = Duration.between(order.getOrderDate(), order.getShipDate());
+                    long days = duration.toDays();
+                    long hours = duration.toHours() % 24;
+                    long minutes = duration.toMinutes() % 60;
+                    long seconds = duration.getSeconds() % 60;
+                    String durationString = String.format("%d days, %d hours, %d minutes, and %d seconds", days, hours, minutes, seconds);
+
+                    invTotal = invTotal.add(order.getOrderTotal());
+                %>
+
                 <div class="container-fluid p-5" >
                     <div class="card p-3">
                 Name: <%= order.getOrderName() %><br>
@@ -132,16 +143,6 @@
                 Project Address: <%= order.getShippingAddress() %><br>
                 <HR>
                 Total: <%= order.getOrderTotal() %>
-                <%
-                    Duration duration = Duration.between(order.getOrderDate(), order.getShipDate());
-                    long days = duration.toDays();
-                    long hours = duration.toHours() % 24;
-                    long minutes = duration.toMinutes() % 60;
-                    long seconds = duration.getSeconds() % 60;
-                    String durationString = String.format("%d days, %d hours, %d minutes, and %d seconds", days, hours, minutes, seconds);
-
-                    invTotal = invTotal.add(order.getOrderTotal());
-                %>
                 <HR>
                 <a class="btn btn-primary" tabindex="<%=tabindex+""%>" href="order.edit.jsp?orderId=<%= order.getOrderId() %>" >More</a>
                     </div>
