@@ -216,6 +216,8 @@
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
           <a href="user.edit.logo.jsp" tabindex="2" >Upload Logo</a>
+          <a href="user.edit.social.jsp" tabindex="3" >Social Media</a>
+          <a href="user.edit.referred_by.jsp" tabindex="4" >Referrals</a>
         <HR>
         <form method="post" action="user.edit.jsp">
           <div class="form-group">
@@ -224,35 +226,35 @@
           </div>
             <div class="form-group">
               <label for="business_name" class="mr-2">Business Name:</label>
-              <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>" tabindex="3" >
+              <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>" tabindex="5" >
             </div>
            <div class="form-group">
               <label for="firstName">First Name</label>
-              <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>"  tabindex="4">
+              <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>"  tabindex="6">
            </div>
            <div class="form-group">
               <label for="middleInitial">Middle Initial</label>
-              <input type="text" class="form-control" id="middleInitial" name="middleInitial" value="<%= user.getMiddleInitial() %>"  tabindex="5">
+              <input type="text" class="form-control" id="middleInitial" name="middleInitial" value="<%= user.getMiddleInitial() %>"  tabindex="7">
            </div>
            <div class="form-group">
               <label for="lastName">Last Name</label>
-              <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.getLastName() %>"  tabindex="6">
+              <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.getLastName() %>"  tabindex="8">
            </div>
            <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" value="<%= user.getEmail() %>"  tabindex="7">
+              <input type="email" class="form-control" id="email" name="email" value="<%= user.getEmail() %>"  tabindex="9">
            </div>
            <div class="form-group">
               <label for="phone">Phone</label>
-              <input type="text" class="form-control" id="phone" name="phone" value="<%= user.getPhone() %>"  tabindex="8">
+              <input type="text" class="form-control" id="phone" name="phone" value="<%= user.getPhone() %>"  tabindex="10">
            </div>
            <div class="form-group">
               <label for="ogId">OG ID</label>
-              <input type="text" class="form-control" id="ogId" name="ogId" value="<%= user.getOgId() %>"  tabindex="9">
+              <input type="text" class="form-control" id="ogId" name="ogId" value="<%= user.getOgId() %>"  tabindex="11">
            </div>
            <div class="form-group">
               <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" name="address" value="<%= user.getAddress() %>" onkeypress="callAC(this)"  tabindex="10">
+              <input type="text" class="form-control" id="address" name="address" value="<%= user.getAddress() %>" onkeypress="callAC(this)"  tabindex="12">
            </div>
            <input type="hidden" id="addressaclat" name="addressaclat" value="<%= user.getAddresslat() %>">
            <input type="hidden" id="addressaclng" name="addressaclng" value="<%= user.getAddresslng() %>">
@@ -283,15 +285,15 @@
 
            <div class="form-group">
               <label for="city">City</label>
-              <input type="text" class="form-control" id="city" name="city" value="<%= user.getCity() %>" >
+              <input type="text" class="form-control" id="city" name="city" value="<%= user.getCity() %>" tabindex="13">
            </div>
            <div class="form-group">
               <label for="state">State</label>
-              <input type="text" class="form-control" id="state" name="state" value="<%= user.getState() %>">
+              <input type="text" class="form-control" id="state" name="state" value="<%= user.getState() %>" tabindex="14">
            </div>
            <div class="form-group">
               <label for="zipcode">Zipcode</label>
-              <input type="text" class="form-control" id="zipcode" name="zipcode" value="<%= user.getZipcode() %>">
+              <input type="text" class="form-control" id="zipcode" name="zipcode" value="<%= user.getZipcode() %>" tabindex="15">
            </div>
            <%
            String businessType = user.getBusiness_type();
@@ -301,7 +303,7 @@
            %>
            <div class="form-group">
              <label for="business-type">Select a type of business:</label>
-             <select class="form-control" id="businesstype" name="businesstype">
+             <select class="form-control" id="businesstype" name="businesstype"  tabindex="16">
                <option value="general-contractor" <% if (businessType.equals("general-contractor")) { %>selected<% } %>>General contractor</option>
                <option value="carpenter" <% if (businessType.equals("carpenter")) { %>selected<% } %>>Carpenter</option>
                <option value="plumber" <% if (businessType.equals("plumber")) { %>selected<% } %>>Plumber</option>
@@ -315,12 +317,12 @@
            </div>
            <div class="form-group">
            <label for="invoice_terms">Invoice Terms</label><br>
-           <textarea class="form-control" id="invoice_terms" name="invoice_terms" rows="5"><%= user.getInvoice_terms() %></textarea>
+           <textarea class="form-control" id="invoice_terms" name="invoice_terms" rows="5" tabindex="17"><%= user.getInvoice_terms() %></textarea>
            </div>
 
            <div class="form-group">
              <label for="url_website">Website</label>
-             <input type="text" class="form-control" id="url_website" name="url_website" value="<%= user.getUrl_website() %>">
+             <input type="text" class="form-control" id="url_website" name="url_website" value="<%= user.getUrl_website() %>"  tabindex="18">
            </div>
            <div class="form-group">
              <label for="url_yelp">Yelp</label>
