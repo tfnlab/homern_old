@@ -239,7 +239,9 @@
                 <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" >
                 </div>
                 <hr>
-                <ul id="shippingAddressac" name="shippingAddressac"></ul>
+                <ul id="shippingAddressac" name="shippingAddressac">
+                  <small>Welcome to the Home Renovation Nation website! Here, you can easily search for information about your project site. Simply enter an address and our system will instantly display relevant Google search results. By clicking on an address, you can access even more detailed information, including GPS coordinates and cost estimates for labor and materials. With our easy-to-use platform, managing your home renovation project has never been easier!</small>
+                </ul>
                 <hr>
 
                 <div class="form-group mt-3">
