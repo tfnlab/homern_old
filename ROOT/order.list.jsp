@@ -130,7 +130,7 @@
         <h2>Orders</h2>
         <%@ include file="user.menu.nav.jsp" %>
           <HR>
-            <a href="order.new.jsp"><i class="fas fa-plus"></i> Order</a>
+            <a href="order.new.jsp" tabindex="2" ><i class="fas fa-plus"></i> Order</a>
           <HR>
         <%
                 String searchKey = request.getParameter("searchKey");
@@ -149,16 +149,18 @@
                 <form action="order.list.jsp" method="post">
                   <div class="form-group">
                     <label for="firstName">Search Key</label>
-                    <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>">
+                    <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>" tabindex="3">
                   </div>
                   <HR>
-                  <button type="submit" class="btn btn-primary">Search</button>
+                  <button type="submit" class="btn btn-primary" tabindex="4" >Search</button>
                 </form>
                 <HR>
-
+                <%
+                    int tabindex = 4;
+                %>
               <% for (Order order : orders) { %>
                 Name: <%= order.getOrderName() %><br>
-                ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %></a><br>
+                ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" tabindex="<%=tabindex%>" ><%= order.getOrderId() %></a><br>
                   Description: <%= order.getOrderDescription() %><br>
                 Date: <%= order.getOrderDate() %><br>
                 Shipping Address: <%= order.getShippingAddress() %><br>
@@ -168,6 +170,9 @@
                 Payment Method: <%= order.getPaymentMethod() %><br>
                 Total: <%= order.getOrderTotal() %><br>
                 <hr>
+                <%
+                  tabindex +=1;
+                %>
               <% } %>
 
 

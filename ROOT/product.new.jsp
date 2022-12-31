@@ -296,6 +296,7 @@
                 <label for="dimensions">Dimensions:</label>
                 <input type="text" class="form-control" id="dimensions" name="dimensions" tabindex="16">
               </div>
+              <hr>
               <input type="submit" class="btn btn-primary" value="Submit" tabindex="17">
               </form>
 
