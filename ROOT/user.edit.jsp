@@ -19,8 +19,6 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -216,31 +214,15 @@
       <div class="container px-4 px-lg-5">
         <h2>Marketing</h2>
         <%@ include file="user.menu.nav.jsp" %>
-        <HR>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container">
-            <a class="navbar-brand" href="#">My Site</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="user.edit.logo.jsp">Logo</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="user.edit.social.jsp">Social</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="user.edit.referred_by.jsp">Referrals</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+          <select name="hrnnavbar" id="hrnnavbar" onchange="goToUrl()" tabindex="1">
+            <option value="user.edit.referred_by.jsp" <%= currentUrl.indexOf("user.edit.referred_by.jsp") != -1 ? "selected" : "" %>><i class="fas fa-home"></i> Logo</option>
+            <option value="user.edit.social.jsp" <%= currentUrl.indexOf("user.edit.social.jsp") != -1 ? "selected" : "" %>><i class="fas fa-cog"></i> Social</option>
+            <option value="user.edit.referred_by.jsp" <%= currentUrl.indexOf("user.edit.referred_by.jsp") != -1 ? "selected" : "" %>><i class="fas fa-wrench"></i> Referrals</option>
+          </select>
 
+          <HR>
         <form method="post" action="user.edit.jsp">
-          <div class="form-group">
+          <div class="form-group mt-3">
             <label for="business_name" class="mr-2">Username:</label>
             <input type="text" class="form-control"  value="<%= user.getUsername() %>" disabled >
           </div>
