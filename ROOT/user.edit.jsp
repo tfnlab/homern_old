@@ -215,10 +215,28 @@
         <h2>Marketing</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-          <a href="user.edit.logo.jsp" tabindex="2" >Logo</a>
-          <a href="user.edit.social.jsp" tabindex="3" >Social</a>
-          <a href="user.edit.referred_by.jsp" tabindex="4" >Referrals</a>
-        <HR>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="#">My Site</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="user.edit.logo.jsp">Logo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="user.edit.social.jsp">Social</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="user.edit.referred_by.jsp">Referrals</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
         <form method="post" action="user.edit.jsp">
           <div class="form-group">
             <label for="business_name" class="mr-2">Username:</label>
