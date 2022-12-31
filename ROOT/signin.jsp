@@ -95,7 +95,6 @@
           <li><a class="nav-link scrollto" href="index.html#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="index.html#team">Team</a></li>
           <li><a class="nav-link scrollto active" href="signin.jsp">Sign-In</a></li>
-          <li><a class="nav-link scrollto" href="signup.jsp">Sign-Up</a></li>
           <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -225,6 +224,9 @@
                 Remember me
               </label>
             </div>
+          </div>
+          <div class="form-group mt-5">
+              Don't have an account ? <a class="nav-link scrollto" href="signup.jsp">Sign-Up</a>
           </div>
           <hr class="my-5">
           <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="sendTweet()" tabindex="4" >Sign-In</button>
