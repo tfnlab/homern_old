@@ -94,13 +94,12 @@
           <li><a class="nav-link scrollto" href="index.html#services">Services</a></li>
           <li><a class="nav-link scrollto" href="index.html#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="index.html#team">Team</a></li>
-          <li><a class="nav-link scrollto active" href="signin.jsp">Sign-In</a></li>
           <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="https://forms.gle/vdU9zvFTZJ9eKAsz6" class="get-started-btn scrollto">Get Started</a>
+      <a href="signup.jsp" class="get-started-btn scrollto">Sign-up</a>
     </div>
   </header><!-- End Header -->
 
@@ -229,11 +228,6 @@
           <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="sendTweet()" tabindex="4" >Sign-In</button>
 
         </form>
-
-        <div class="form-group mt-5">
-            Don't have an account ? <a class="nav-link scrollto" href="signup.jsp">Sign-Up</a>
-        </div>
-
                  <%}%>
       </div>
 
