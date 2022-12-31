@@ -119,16 +119,16 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Orders</li>
+          <li>Customers</li>
         </ol>
-        <h2>Orders</h2>
+        <h2>Customers</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Orders</h2>
+        <h2>Customers</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
           <a href="customer.new.jsp"><i class="fas fa-plus"></i> Customer</a>
