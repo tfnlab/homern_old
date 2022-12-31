@@ -105,7 +105,7 @@
       <div class="container px-4 px-lg-5">
         <h2>User</h2>
         <%@ include file="user.menu.nav.jsp" %>
-
+        <HR>
         <%
           boolean isMultipart = ServletFileUpload.isMultipartContent(request);
           if (isMultipart) {

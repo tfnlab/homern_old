@@ -194,17 +194,15 @@
                         <p>
                           <%=um%>
                           <%if(pv){%>
-                              <P>
-                              Dear new user,<BR><BR>
-
-                              Welcome to Home Renovation Nation! We're glad you've decided to join us. As you may have noticed, this system was built using artificial intelligence, which means there is a lot of advanced functionality and capabilities built into it. While we won't get into all the details right now, we want to reassure you that you'll have access to everything you need to get the most out of this system.
+                              <hr>
+                              Dear new customer,<BR><BR>
+                              Welcome to Home Renovation Nation! Whether you're a homeowner looking to renovate your home or a contractor looking to grow your business, our platform has everything you need to get started. Sign up for free to access expert advice, connect with a community of homeowners, use our project planner tool, and receive discounts on products and services. Our system, built with advanced artificial intelligence, offers a wealth of functionality and capabilities to help you succeed in your home renovation journey. Join today and start exploring all that Home Renovation Nation has to offer. If you have any questions or need assistance, don't hesitate to reach out to us.
                               <BR><BR>
-                              To start, let's finish setting up your user account so you can start using the system right away. Once that's done, you'll have full access to all the tools and resources available on Home Renovation Nation. We hope you find this system useful and helpful in your home renovation journey. If you have any questions or need assistance, don't hesitate to reach out to us.
+                              To start, let's finish setting up your user account so you can start using 'Home Renovation Nation' right away. Once that's done, you'll have full access to all the tools and resources available on Home Renovation Nation. We hope you find this system useful and helpful in your home renovation journey. If you have any questions or need assistance, don't hesitate to reach out to us.
                               <BR><BR>
                               Sincerely,
                               <BR><BR>
                               Home Renovation Nation
-                              </P>
                               <a href="https://homerenovationnation.com/user.edit.jsp">Finish User Profile</a>
                           <%}%>
                         </p>
@@ -231,6 +229,7 @@
                   <div class="form-group  mt-3">
                     <label for="business-type">Select a type of business:</label>
                     <select class="form-control  mt-1" id="business-type" name="business-type">
+                      <option value="home-owner">Home Owner</option>
                       <option value="general-contractor">General contractor</option>
                       <option value="carpenter">Carpenter</option>
                       <option value="plumber">Plumber</option>
