@@ -243,29 +243,29 @@
         <HR>
         <div class="form-group">
           <label for="url_facebook">More Info</label>
-          <input type="text" class="form-control" id="moreInfo" name="moreInfo" >
+          <input type="text" class="form-control" id="moreInfo" name="moreInfo" tabindex="3">
         </div>
         <HR>
         <form action="user.edit.social.jsp" method="POST" >
           <HR>
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" name="twitter" id="twitter" value="true" checked >
+              <input type="checkbox" class="form-check-input" name="twitter" id="twitter" value="true" checked tabindex="4" >
               <label class="form-check-label" for="twitter">Tweet</label>
             </div>
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" name="linkedin" id="linkedin" value="true" checked >
+              <input type="checkbox" class="form-check-input" name="linkedin" id="linkedin" value="true" checked tabindex="5" >
               <label class="form-check-label" for="linkedin">LinkedIn</label>
             </div>
           <HR>
-          <a href="javascript:void(0)" onclick="getMessage()">Generate Message <img src="assets/img/hrn/mw.png" width="50px" id="working" name="working" /></a>
+          <a href="javascript:void(0)" onclick="getMessage()">Generate Message <img src="assets/img/hrn/mw.png" width="50px" id="working" name="working" tabindex="6" /></a>
           <HR>
           <div class="form-group">
             <label for="orderId">Touch Point</label><br>
-            <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
+            <textarea class="form-control" id="orderCom" name="orderCom" rows="10" tabindex="7" ></textarea>
           </div>
 
           <HR>
-          <button type="submit" class="btn btn-primary" >Post Message</button>
+          <button type="submit" class="btn btn-primary" tabindex="8" >Post Message</button>
         </form>
 
       </div>
