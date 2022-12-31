@@ -203,7 +203,11 @@
                               Sincerely,
                               <BR><BR>
                               Home Renovation Nation
-                              <a href="https://homerenovationnation.com/user.edit.jsp">Finish User Profile</a>
+                              <%if(business_type.equals("home-owner")){%>
+                                <a href="https://homerenovationnation.com/customer/user.edit.jsp">Finish User Profile</a>
+                              <%}else{%>
+                                <a href="https://homerenovationnation.com/user.edit.jsp">Finish User Profile</a>
+                              <%}%>
                           <%}%>
                         </p>
                         <%
@@ -228,7 +232,7 @@
                 <form action="signup.jsp" method="POST">
                   <div class="form-group  mt-3">
                     <label for="business-type">Select a type of business:</label>
-                    <select class="form-control  mt-1" id="business-type" name="business-type">
+                    <select class="form-control  mt-1" id="business_type" name="business_type">
                       <option value="home-owner">Home Owner</option>
                       <option value="general-contractor">General contractor</option>
                       <option value="carpenter">Carpenter</option>
