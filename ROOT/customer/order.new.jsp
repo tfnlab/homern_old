@@ -15,7 +15,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Home Renovation Nation - Order</title>
+  <title>Home Renovation Nation - Project</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -134,16 +134,16 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Order</li>
+          <li>Project</li>
         </ol>
-        <h2>Order</h2>
+        <h2>Project</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Order</h2>
+        <h2>Project</h2>
         <%@ include file="user.menu.nav.jsp" %>
 
         <%

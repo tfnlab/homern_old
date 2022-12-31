@@ -130,7 +130,7 @@
         <h2>Projects</h2>
         <%@ include file="user.menu.nav.jsp" %>
           <HR>
-            <a href="order.new.jsp" tabindex="2" ><i class="fas fa-plus"></i> Order</a>
+            <a href="order.new.jsp" tabindex="2" ><i class="fas fa-plus"></i> Project</a>
           <HR>
         <%
                 String searchKey = request.getParameter("searchKey");
