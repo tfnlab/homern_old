@@ -75,7 +75,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="user.menu.jsp">Home</a></li>
           <li>Profile</li>
         </ol>
         <h2>Profile</h2>
