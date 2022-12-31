@@ -282,16 +282,8 @@
             <p>File uploaded successfully!</p>
 
             <%
-          } else {
-            // Request is not a multipart form
-            %>
-            <form method="post" action="user.edit.logo.jsp" enctype="multipart/form-data">
-              <input type="file" name="file" />
-              <input type="submit" value="Upload" />
-            </form>
-            <%
-          }
-        %>
+              }
+              %>
 
         <form method="post" action="customer.new.jsp" enctype="multipart/form-data">
           <input type="file" name="file" />
