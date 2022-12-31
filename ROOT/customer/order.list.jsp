@@ -9,6 +9,10 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.time.Duration" %>
+<%@ page import="java.time.LocalDate" %>
+<%@ page import="java.time.Period" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -123,10 +127,19 @@
                 <HR>
                 Ends: <%= longFormat.format(order.getShipDate()) %><br>
                 <HR>
+                Duration : <%=durationString%>
+                <HR>
                 Project Address: <%= order.getShippingAddress() %><br>
                 <HR>
                 Total: <%= order.getOrderTotal() %>
                 <%
+                    Duration duration = Duration.between(order.getOrderDate(), order.getShipDate());
+                    long days = duration.toDays();
+                    long hours = duration.toHours() % 24;
+                    long minutes = duration.toMinutes() % 60;
+                    long seconds = duration.getSeconds() % 60;
+                    String durationString = String.format("%d days, %d hours, %d minutes, and %d seconds", days, hours, minutes, seconds);
+
                     invTotal = invTotal.add(order.getOrderTotal());
                 %>
                 <HR>
