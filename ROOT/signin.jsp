@@ -99,7 +99,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="signup.jsp" class="get-started-btn scrollto">Sign-up</a>
+      <a href="signup.jsp" class="get-started-btn scrollto">Sign-Up</a>
     </div>
   </header><!-- End Header -->
 
@@ -113,7 +113,7 @@
           <li><a href="index.html">Home</a></li>
           <li>Sign-In</li>
         </ol>
-        <h2>Sign-In form</h2>
+        <h2>Sign-In</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
