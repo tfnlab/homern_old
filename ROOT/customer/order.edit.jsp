@@ -297,9 +297,13 @@
               %>
 
           <hr>
-          <label for="orderTotal">Project Total Cost:</label><br>
-          <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"><br>
-          <input type="submit" value="Submit">
+          <div class="form-group mt-3">
+            <label for="orderTotal">Project Total Cost:</label><br>
+            <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"><br>
+          </div>
+          <div class="form-group mt-3">
+            <button type="submit" class="btn btn-primary" tabindex="19">Submit</button>
+          </div>
         </form>
 
       </div>
