@@ -214,7 +214,17 @@
       <div class="container px-4 px-lg-5">
         <h2>Marketing</h2>
         <%@ include file="user.menu.nav.jsp" %>
-          <select name="hrnnavbar" id="hrnnavbar" onchange="goToUrl()" tabindex="1">
+
+        <script>
+          function goToUrlSUB() {
+            var select = document.getElementById("hrnnavbarsub");
+            var option = select.options[select.selectedIndex];
+            var url = option.value;
+            window.open(url, "_self");
+          }
+        </script>
+          <HR>
+          <select name="hrnnavbarsub" id="hrnnavbarsub" onchange="goToUrlSUB()" tabindex="1">
             <option value="user.edit.referred_by.jsp" <%= currentUrl.indexOf("user.edit.referred_by.jsp") != -1 ? "selected" : "" %>><i class="fas fa-home"></i> Logo</option>
             <option value="user.edit.social.jsp" <%= currentUrl.indexOf("user.edit.social.jsp") != -1 ? "selected" : "" %>><i class="fas fa-cog"></i> Social</option>
             <option value="user.edit.referred_by.jsp" <%= currentUrl.indexOf("user.edit.referred_by.jsp") != -1 ? "selected" : "" %>><i class="fas fa-wrench"></i> Referrals</option>
