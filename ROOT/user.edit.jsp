@@ -232,48 +232,46 @@
           </select>
           <HR>
         <form method="post" action="user.edit.jsp">
-          <div class="form-group mt-2">
+          <div class="form-group mt-3">
             <label for="business_name" class="mr-2">Username:</label>
             <input type="text" class="form-control"  value="<%= user.getUsername() %>" disabled >
           </div>
 
-            <div class="container mx-5">
-            <div class="form-group mt-2">
+            <div class="form-group mt-3">
               <label for="business_name" class="mr-2">Business Name:</label>
               <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>" tabindex="5" >
             </div>
-           <div class="form-group  mt-2">
+           <div class="form-group  mt-3">
               <label for="firstName">First Name</label>
               <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>"  tabindex="6">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
               <label for="middleInitial">Middle Initial</label>
               <input type="text" class="form-control" id="middleInitial" name="middleInitial" value="<%= user.getMiddleInitial() %>"  tabindex="7">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
               <label for="lastName">Last Name</label>
               <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.getLastName() %>"  tabindex="8">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
               <label for="email">Email</label>
               <input type="email" class="form-control" id="email" name="email" value="<%= user.getEmail() %>"  tabindex="9">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
               <label for="phone">Phone</label>
               <input type="text" class="form-control" id="phone" name="phone" value="<%= user.getPhone() %>"  tabindex="10">
            </div>
-            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
               <label for="ogId">OG ID</label>
               <input type="text" class="form-control" id="ogId" name="ogId" value="<%= user.getOgId() %>"  tabindex="11">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
               <label for="address">Address</label>
               <input type="text" class="form-control" id="address" name="address" value="<%= user.getAddress() %>" onkeypress="callAC(this)"  tabindex="12">
            </div>
            <input type="hidden" id="addressaclat" name="addressaclat" value="<%= user.getAddresslat() %>">
            <input type="hidden" id="addressaclng" name="addressaclng" value="<%= user.getAddresslng() %>">
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <ul id="addressac" name="addressac"></ul>
            </div>
            <%
@@ -284,7 +282,7 @@
              String uAddPls = usernameOBJ.getAddress().replace(" ", "+");
              String uAddEnc = URLDecoder.decode(usernameOBJ.getAddress(), "UTF-8");
                    %>
-             <div class="form-group mt-2">
+             <div class="form-group mt-3">
                <hr>
                <a href="https://www.google.com/maps/search/?api=1&query=<%=uAddEnc%>">Google</a> |
                <a href="https://maps.apple.com/?address=<%=uAddEnc%>">Apple</a> |
@@ -298,15 +296,15 @@
 
            <%}%>
 
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
               <label for="city">City</label>
               <input type="text" class="form-control" id="city" name="city" value="<%= user.getCity() %>" tabindex="13">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
               <label for="state">State</label>
               <input type="text" class="form-control" id="state" name="state" value="<%= user.getState() %>" tabindex="14">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
               <label for="zipcode">Zipcode</label>
               <input type="text" class="form-control" id="zipcode" name="zipcode" value="<%= user.getZipcode() %>" tabindex="15">
            </div>
@@ -316,7 +314,7 @@
              businessType = "general-contractor";
            }
            %>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="business-type">Select a type of business:</label>
              <select class="form-control" id="businesstype" name="businesstype"  tabindex="16">
                <option value="general-contractor" <% if (businessType.equals("general-contractor")) { %>selected<% } %>>General contractor</option>
@@ -330,72 +328,72 @@
                <option value="flooring-contractor" <% if (businessType.equals("flooring-contractor")) { %>selected<% } %>>Flooring contractor</option>
              </select>
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
            <label for="invoice_terms">Invoice Terms</label><br>
            <textarea class="form-control" id="invoice_terms" name="invoice_terms" rows="5" tabindex="17"><%= user.getInvoice_terms() %></textarea>
            </div>
 
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_website">Website</label>
              <input type="text" class="form-control" id="url_website" name="url_website" value="<%= user.getUrl_website() %>"  tabindex="18">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_yelp">Yelp</label>
              <input type="text" class="form-control" id="url_yelp" name="url_yelp" value="<%= user.getUrl_yelp() %>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_google">Google</label>
              <input type="text" class="form-control" id="url_google" name="url_google" value="<%= user.getUrl_google() %>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_twitter">Twitter <a href="user.edit.social.jsp"><i class="fas fa-check"></i></a></label>
              <input type="text" class="form-control" id="url_twitter" name="url_twitter" value="<%= user.getUrl_twitter() %>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_twitter">Client Key</label>
              <input type="text" class="form-control" id="token_twitter_c_key" name="token_twitter_c_key" value="<%= user.getToken_twitter_c_key() %>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_twitter">Client Secret</label>
              <input type="text" class="form-control" id="token_twitter_c_secret" name="token_twitter_c_secret" value="<%= user.getToken_twitter_c_secret() %>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_twitter">Access Token Key</label>
              <input type="text" class="form-control" id="token_twitter_a" name="token_twitter_a" value="<%= user.getToken_twitter_a() %>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_twitter">Access Token Secret</label>
              <input type="text" class="form-control" id="token_twitter_a_secret" name="token_twitter_a_secret" value="<%= user.getToken_twitter_a_secret() %>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_tiktok">TikTok</label>
              <input type="text" class="form-control" id="url_tiktok" name="url_tiktok" value="<%= user.getUrl_tiktok() %>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_snap">Snapchat</label>
              <input type="text" class="form-control" id="url_snap" name="url_snap" value="<%= user.getUrl_snap() %>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_instagram">Instagram</label>
              <input type="text" class="form-control" id="url_instagram" name="url_instagram" value="<%= user.getUrl_instagram() %>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_facebook">Facebook</label>
              <input type="text" class="form-control" id="url_facebook" name="url_facebook" value="<%= user.getUrl_facebook() %>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_facebook">LinkedIn <a href="user.edit.social.jsp"><i class="fas fa-check"></i></a></label>
              <input type="text" class="form-control" id="url_linkedin" name="url_linkedin" value="<%= user.getUrl_linkedin()%>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_facebook">LinkedIn Access Code</label>
              <input type="text" class="form-control" id="token_linkedin" name="token_linkedin" value="<%= user.getToken_linkedin()%>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <label for="url_facebook">Referred by <a href="user.edit.referred_by.jsp"><i class="fas fa-check"></i></a></label>
              <input type="text" class="form-control" id="referred_by" name="referred_by" value="<%= user.getReferred_by() %>">
            </div>
-           <div class="form-group mt-2">
+           <div class="form-group mt-3">
              <button type="submit" class="btn btn-primary" tabindex="19">Submit</button>
            </div>
            </form>
