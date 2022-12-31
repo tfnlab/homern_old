@@ -173,6 +173,7 @@
                 %>
               <% } %>
 
+              <%if (!orders.isEmpty()) { %>
               <HR>
                     <H4>Total Money: <%=invTotal%></h4>
                 <HR>
@@ -196,6 +197,13 @@
                   }
                   %>
                     <h4>Total Time: <%=durationString%></h4>
+                <%}%>
+                <%if (!orders.isEmpty()) { %>
+                  <p>Sorry, we could not find any projects matching your criteria.</p>
+                  <p>You may want to try modifying your search parameters or creating a new project.</p>
+                  <p><a href="order.new.jsp" class="btn btn-primary" >Create a new project</a></p>
+
+                <%}%>
 
       </div>
 
