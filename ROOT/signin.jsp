@@ -210,24 +210,24 @@
         <form action="signin.jsp" method="POST" class="mx-5">
           <div class="form-group mt-5">
             <label for="username" class="h4">Username:</label>
-            <input type="text" class="form-control" id="username" name="username" required>
+            <input type="text" class="form-control" id="username" name="username" required tabindex="1">
             <small id="usernameHelp" class="form-text text-muted mt-2">Enter your username to sign in.</small>
           </div>
           <div class="form-group mt-5">
             <label for="password" class="h4">Password:</label>
-            <input type="password" class="form-control" id="password" name="password" required>
+            <input type="password" class="form-control" id="password" name="password" required  tabindex="2">
             <small id="passwordHelp" class="form-text text-muted mt-2">Enter your password to sign in.</small>
           </div>
           <div class="form-group mt-5">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+              <input class="form-check-input" type="checkbox" value="" id="rememberMe"  tabindex="3">
               <label class="form-check-label" for="rememberMe">
                 Remember me
               </label>
             </div>
           </div>
           <hr class="my-5">
-          <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="sendTweet()">Sign-In</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="sendTweet()" tabindex="4" >Sign-In</button>
         </form>
 
 
