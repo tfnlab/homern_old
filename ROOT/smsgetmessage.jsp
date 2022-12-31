@@ -26,7 +26,7 @@
        Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/smsgetmessage.py", messageSid, messageSid).start();
        String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
        String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
-       ocrDescription = stdout + stderr + " TEST ";
+       ocrDescription = stdout + stderr + " TEST " + request.getParameter("MessageSid");
        APIConfig ac = new APIConfig();
        File file = new File(ac.getPdfloc() + "sms." + uuid.toString() + ".txt");
        FileWriter fw = new FileWriter(file);
