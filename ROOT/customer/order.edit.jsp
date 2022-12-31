@@ -248,22 +248,30 @@
         <!-- ======= Contact Section ======= -->
 
         <form action="order.edit.jsp" method="POST">
+                <div class="form-group mt-3">
           <label for="orderId">Project Name:</label><br>
           <input type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"><br>
+                <div class="form-group mt-3">
           <label for="orderId">Project Description:</label><br>
+          <div class="form-group mt-3">
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
           <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
-          <div class="form-group">
+          </div>
+          <div class="form-group mt-3">
             <label for="endTime">Start Date:</label>
             <input type="datetime-local" class="form-control" name="orderDate" value="<%= order.getOrderDate() %>" datepicker >
           </div>
 
+          <div class="form-group mt-3">
           <label for="shipDate">End Date:</label><br>
           <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
+          </div>
+          <div class="form-group mt-3">
           <label for="shippingAddress">Project Address:</label><br>
           <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" value="<%= order.getShippingAddress() %>" onkeypress="callAC(this)"><br>
           <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" value="<%= order.getShippingAddresslat() %>">
           <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" value="<%= order.getShippingAddresslng() %>">
+          </div>
           <ul id="shippingAddressac" name="shippingAddressac"></ul>
           <hr>
             <%
