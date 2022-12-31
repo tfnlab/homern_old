@@ -177,11 +177,11 @@
                     <H4>Total Money: <%=invTotal%></h4>
                 <HR>
                   <%
-                  durationString = new StringJoiner(", ");
-                  days = totalDuration.toDays();
-                  hours = totalDuration.toHours() % 24;
-                  minutes = totalDuration.toMinutes() % 60;
-                  seconds = totalDuration.getSeconds() % 60;
+                  StringJoiner durationString = new StringJoiner(", ");
+                  long days = totalDuration.toDays();
+                  long hours = totalDuration.toHours() % 24;
+                  long minutes = totalDuration.toMinutes() % 60;
+                  long seconds = totalDuration.getSeconds() % 60;
                   if (days > 0) {
                       durationString.add(days + " day" + (days > 1 ? "s" : ""));
                   }
