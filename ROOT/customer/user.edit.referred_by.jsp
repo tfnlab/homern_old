@@ -3,6 +3,7 @@
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="java.net.URLDecoder" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,133 +101,40 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Profile</li>
+          <li>Home</li>
         </ol>
-        <h2>Profile</h2>
+        <h2>User</h2>
       </div>
     </section><!-- End Breadcrumbs -->
     <%
     UserDao dao = new UserDao();
     String username = (String) session.getAttribute("username");
-       String firstName = request.getParameter("firstName");
-
-      User user = new User();
-      if (firstName != null && firstName.trim().length() > 0) {
-         String middleInitial = request.getParameter("middleInitial");
-         String lastName = request.getParameter("lastName");
-         String email = request.getParameter("email");
-         String phone = request.getParameter("phone");
-         String ogId = request.getParameter("ogId");
-         String address = request.getParameter("address");
-         String city = request.getParameter("city");
-         String state = request.getParameter("state");
-         String zipcode = request.getParameter("zipcode");
-         String addressaclat = request.getParameter("addressaclat");
-         String addressaclng = request.getParameter("addressaclng");
-
-         email = email.toLowerCase();
-         user = dao.getUserByUsername(username);
-         user.setFirstName(firstName);
-         user.setMiddleInitial(middleInitial);
-         user.setLastName(lastName);
-         user.setEmail(email);
-         user.setPhone(phone);
-         user.setAddress(address);
-         user.setCity(city);
-         user.setState(state);
-         user.setZipcode(zipcode);
-         user.setAddresslat(addressaclat);
-         user.setAddresslng(addressaclng);
-         dao.updateUser(user);
-
-         session.setAttribute("usernameOBJ", user);
-     }
-
+    User user = new User();
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
-    user = dao.getUserByUsername(username);
+    List<User> users = dao.getUsersReferredBy(username);
+
     %>
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Pofile</h2>
+        <h2>User Referred By Info</h2>
         <%@ include file="user.menu.nav.jsp" %>
-        <form method="post" action="user.edit.jsp">
-            <div class="form-group mt-3">
-              <label for="business_name" class="mr-2">Username:</label>
-              <input type="text" class="form-control"  value="<%= user.getUsername() %>" disabled >
-            </div>
-           <div class="form-group  mt-3">
-              <label for="firstName">First Name</label>
-              <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>"  tabindex="6">
-           </div>
-           <div class="form-group mt-3">
-              <label for="middleInitial">Middle Initial</label>
-              <input type="text" class="form-control" id="middleInitial" name="middleInitial" value="<%= user.getMiddleInitial() %>"  tabindex="7">
-           </div>
-           <div class="form-group mt-3">
-              <label for="lastName">Last Name</label>
-              <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.getLastName() %>"  tabindex="8">
-           </div>
-           <div class="form-group mt-3">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" value="<%= user.getEmail() %>"  tabindex="9">
-           </div>
-           <div class="form-group mt-3">
-              <label for="phone">Phone</label>
-              <input type="text" class="form-control" id="phone" name="phone" value="<%= user.getPhone() %>"  tabindex="10">
-           </div>
-           <div class="form-group mt-3">
-              <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" name="address" value="<%= user.getAddress() %>" onkeypress="callAC(this)"  tabindex="12">
-           </div>
-           <input type="hidden" id="addressaclat" name="addressaclat" value="<%= user.getAddresslat() %>">
-           <input type="hidden" id="addressaclng" name="addressaclng" value="<%= user.getAddresslng() %>">
-           <div class="form-group mt-3">
-             <ul id="addressac" name="addressac"></ul>
-           </div>
-           <%
-           String address = usernameOBJ.getAddress();
-           if (address != null && !address.isEmpty()) {
-
-             String uAddSpc = usernameOBJ.getAddress().replace(" ", "-");
-             String uAddPls = usernameOBJ.getAddress().replace(" ", "+");
-             String uAddEnc = URLDecoder.decode(usernameOBJ.getAddress(), "UTF-8");
-                   %>
-             <div class="form-group mt-3">
-               <hr>
-               <a href="https://www.google.com/maps/search/?api=1&query=<%=uAddEnc%>">Google</a> |
-               <a href="https://maps.apple.com/?address=<%=uAddEnc%>">Apple</a> |
-               <a href="https://www.waze.com/en/directions?navigate=yes&latlng=<%=usernameOBJ.getAddresslat()%>,<%=usernameOBJ.getAddresslng()%>">Waze</a> |
-               <a href="https://wego.here.com/directions/mix//<%=uAddSpc%>:e-eyJuYW1lIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJhZGRyZXNzIjoiMTMyNSBOLCBMYW1lciBBdmUsIEJ1cmJhaywgQ0EgOTA4NTAiLCJsYXRpdHVkZSI6MzQuMTgzNjYyLCJsb25naXR1ZGUiOi0xMTguMzI2MTAyfQ==?map=<%=usernameOBJ.getAddresslat()%>,<%=usernameOBJ.getAddresslng()%>,15,normal">HERE</a> |
-               <a href="https://www.bing.com/maps?osid=a8d44b60-4f0c-4e4a-b9c7-3a3b3f597628&cp=<%=usernameOBJ.getAddresslat()%>~<%=usernameOBJ.getAddresslng()%>&lvl=15&style=r">Bing</a> |
-               <a href="https://www.openstreetmap.org/search?query=<%=uAddEnc%>"#map=15/<%=usernameOBJ.getAddresslat()%>/<%=usernameOBJ.getAddresslng()%>">OSM</a> |
-               <a href="https://www.tomtom.com/en_gb/maps/maps/point?lat=<%=usernameOBJ.getAddresslat()%>&lon=<%=usernameOBJ.getAddresslng()%>">TomTom</a>
-               <hr>
-             </div>
-
-           <%}%>
-
-           <div class="form-group mt-3">
-              <label for="city">City</label>
-              <input type="text" class="form-control" id="city" name="city" value="<%= user.getCity() %>" tabindex="13">
-           </div>
-           <div class="form-group mt-3">
-              <label for="state">State</label>
-              <input type="text" class="form-control" id="state" name="state" value="<%= user.getState() %>" tabindex="14">
-           </div>
-           <div class="form-group mt-3">
-              <label for="zipcode">Zipcode</label>
-              <input type="text" class="form-control" id="zipcode" name="zipcode" value="<%= user.getZipcode() %>" tabindex="15">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_facebook">Referred by <a href="user.edit.referred_by.jsp"><i class="fas fa-check"></i></a></label>
-             <input type="text" class="form-control" id="referred_by" name="referred_by" value="<%= user.getReferred_by() %>">
-           </div>
-           <div class="form-group mt-3">
-             <button type="submit" class="btn btn-primary" tabindex="19">Submit</button>
-           </div>
-           </form>
-
+        <HR>
+        <h4>Welcome to the Home Renovation Nation referral program!</h4>
+        <p>Are you a fan of Home Renovation Nation? Do you know someone who could benefit from our expertise? If so, you're in luck! With our referral program, you can earn points for every person you refer to us who becomes a paying customer.</p>
+        <p>
+          Use this referral link to help others sign up as customers and get a special discount on their first service. When you use this link to refer someone, you'll earn points towards future discounts or cash back for yourself.
+          <BR><BR>
+        <code>https://homerenovationnation.com/signup.jsp?referred_by=<%=username%></code>
+        </p>
+        <HR<
+        <% for (User ruser : users) { %>
+          First Name: <%= ruser.getFirstName() %><br>
+          Last name: <%= ruser.getLastName() %><br>
+          Phone: <%= ruser.getEmail() %><br>
+          Email: <%= ruser.getPhone() %><br>
+          <HR>
+        <%}%>
 
       </div>
 
@@ -314,8 +222,6 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-
-
-<%@ include file="lib.bottom.jsp" %>
-</body>
-</html>
+  <%@ include file="lib.bottom.jsp" %>
+  </body>
+  </html>

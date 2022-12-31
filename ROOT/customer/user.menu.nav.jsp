@@ -20,7 +20,9 @@
   <option value="user.menu.jsp" <%= currentUrl.indexOf("user.menu.jsp") != -1 ? "selected" : "" %>><i class="fas fa-home"></i> Home</option>
   <option value="user.edit.jsp" <%= currentUrl.indexOf("user.edit.jsp") != -1 ? "selected" : "" %>><i class="fas fa-cog"></i> Profile</option>
   <option value="order.list.jsp" <%= currentUrl.indexOf("order.list.jsp") != -1 ? "selected" : "" %>><i class="fas fa-shopping-cart"></i> Projects</option>
+  <option value="user.edit.referred_by.jsp" <%= currentUrl.indexOf("user.edit.referred_by.jsp") != -1 ? "selected" : "" %>><i class="fas fa-shopping-cart"></i> Referrals</option>
 </select>
+
 <!--
         <p>
         <a href="user.menu.jsp">Home</a> |
