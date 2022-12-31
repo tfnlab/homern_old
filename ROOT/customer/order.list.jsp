@@ -13,6 +13,7 @@
 <%@ page import="java.time.LocalDate" %>
 <%@ page import="java.time.Period" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
+<%@ page import="java.time.Instant" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,7 +119,10 @@
                 %>
               <% for (Order order : orders) { %>
                 <%
-                    Duration duration = Duration.between(order.getOrderDate(), order.getShipDate());
+
+                    Instant startInstant = order.getOrderDate().toInstant();
+                    Instant endInstant = order.getShipDate().toInstant();
+                    Duration duration = Duration.between(startInstant, endInstant);
                     long days = duration.toDays();
                     long hours = duration.toHours() % 24;
                     long minutes = duration.toMinutes() % 60;
