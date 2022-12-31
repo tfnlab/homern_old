@@ -106,8 +106,9 @@
                   <button type="submit" class="btn btn-primary" tabindex="4" >Search</button>
                 </form>
                 <HR>
+
                 <%
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                    SimpleDateFormat longFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a");
                     int tabindex = 4;
                 %>
               <% for (Order order : orders) { %>
@@ -117,7 +118,9 @@
                 <HR>
                 Description: <%= order.getOrderDescription() %><br>
                 <HR>
-                Date: <%= dateFormat.format(order.getOrderDate()) %><br>
+                Starts: <%= longFormat.format(order.getOrderDate()) %><br>
+                <HR>
+                Ends: <%= longFormat.format(order.getShipDate()) %><br>
                 <HR>
                 Project Address: <%= order.getShippingAddress() %><br>
                 <HR>
