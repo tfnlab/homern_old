@@ -131,7 +131,7 @@
         <h2>Technicians</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-          <a href="technician.new.jsp"><i class="fas fa-plus"></i> Technician</a>
+          <a href="technician.new.jsp" tabindex="2" ><i class="fas fa-plus"></i> Technician</a>
         <HR>
         <%
              String username = (String) session.getAttribute("username");
@@ -140,13 +140,14 @@
          %>
 
          <%
+             int tabindex = 3;
              for (Technician technician : technicians) {
          %>
          <% String color = technician.isTechnicianActive() ? "#C8E6C9" : "#FFCDD2"; %>
          <div class="container-fluid p-5" style="background-color: <%=color%>">
            <div class="card p-3">
             <p> Technician ID:
-           <a href="technician.edit.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianId() %></a> <BR>
+           <a href="technician.edit.jsp?technicianId=<%= technician.getTechnicianId() %>" tabindex=<%=tabindex+""%> ><%= technician.getTechnicianId() %></a> <BR>
            Name: <%= technician.getTechnicianName() %><br>
            Email: <%= technician.getTechnicianEmail() %><br>
            Phone: <%= technician.getTechnicianPhone() %><br>
@@ -156,6 +157,9 @@
            Payrate: <%= technician.getTechnicianPayrate() %><br>
            Location: <%= technician.getTechnicianLocation() %><br>
            Certifications: <%= technician.getTechnicianCertifications() %>
+           <%
+            tabindex +=1;
+           %>
             </p>
            </div>
          </div>
