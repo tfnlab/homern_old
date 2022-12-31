@@ -225,6 +225,7 @@
         </script>
           <HR>
           <select name="hrnnavbarsub" id="hrnnavbarsub" onchange="goToUrlSUB()" tabindex="1">
+            <option value="#" >more </option>
             <option value="user.edit.referred_by.jsp" <%= currentUrl.indexOf("user.edit.referred_by.jsp") != -1 ? "selected" : "" %>><i class="fas fa-home"></i> Logo</option>
             <option value="user.edit.social.jsp" <%= currentUrl.indexOf("user.edit.social.jsp") != -1 ? "selected" : "" %>><i class="fas fa-cog"></i> Social</option>
             <option value="user.edit.referred_by.jsp" <%= currentUrl.indexOf("user.edit.referred_by.jsp") != -1 ? "selected" : "" %>><i class="fas fa-wrench"></i> Referrals</option>
@@ -232,23 +233,23 @@
 
           <HR>
         <form method="post" action="user.edit.jsp">
-          <div class="form-group mt-3">
+          <div class="form-group mt-5">
             <label for="business_name" class="mr-2">Username:</label>
             <input type="text" class="form-control"  value="<%= user.getUsername() %>" disabled >
           </div>
-            <div class="form-group">
+            <div class="form-group mt-5">
               <label for="business_name" class="mr-2">Business Name:</label>
               <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>" tabindex="5" >
             </div>
-           <div class="form-group">
+           <div class="form-group" mt-5>
               <label for="firstName">First Name</label>
               <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>"  tabindex="6">
            </div>
-           <div class="form-group">
+           <div class="form-group" mt-5>
               <label for="middleInitial">Middle Initial</label>
               <input type="text" class="form-control" id="middleInitial" name="middleInitial" value="<%= user.getMiddleInitial() %>"  tabindex="7">
            </div>
-           <div class="form-group">
+           <div class="form-group" mt-5>
               <label for="lastName">Last Name</label>
               <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.getLastName() %>"  tabindex="8">
            </div>
