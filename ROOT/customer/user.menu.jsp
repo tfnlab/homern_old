@@ -97,8 +97,7 @@
         <h2>Home</h2>
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
-            <h4>Home Renovation Nation</h4>
-            <h2><strong>The Great Home Renovation Nation Features List: A Gonzo Guide to Managing Your Project with Style</strong></h2>
+            <h4>The Great Home Renovation Nation Features List: The Guide to Managing Your Project with Style</h4>
             <ul>
               <li><strong>Project Management Tools:</strong> Customers can use task lists, calendars, and Gantt charts to track the progress of their renovation projects and stay organized.</li>
               <li><strong>Communication Tools:</strong> Customers can easily communicate with other people involved in their renovation projects using messaging, chat, and video conferencing.</li>
