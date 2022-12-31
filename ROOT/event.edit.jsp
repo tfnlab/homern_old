@@ -210,7 +210,7 @@
                       |||
                       <a href="eventkit://new-event?summary=Meet with team&location=Conference room&start=2022-01-01T09:00:00&end=2022-01-01T10:00:00">Add event to calendar</a>
                       |||
-                      <a href="eventkit://new-event?summary=Meetwithteam&location=Conferenceroom&start=2022-01-01T09:00:00&end=2022-01-01T10:00:00">Add event to calendar</a>
+                      <a href="eventkit://new-event?summary=Meetwithteam&location=Conferenceroom&start=2022-01-01T09:00">Add event to calendar</a>
 
 
                     <HR>
