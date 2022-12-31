@@ -15,7 +15,7 @@
 <%
   String currentUrl = request.getRequestURL().toString();
 %>
-
+<HR>
 <select name="hrnnavbar" id="hrnnavbar" onchange="goToUrl()" tabindex="1">
   <option value="user.menu.jsp" <%= currentUrl.indexOf("user.menu.jsp") != -1 ? "selected" : "" %>><i class="fas fa-home"></i> Home</option>
   <option value="user.edit.jsp" <%= currentUrl.indexOf("user.edit.jsp") != -1 ? "selected" : "" %>><i class="fas fa-cog"></i> Marketing</option>
