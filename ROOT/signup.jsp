@@ -230,9 +230,9 @@
                 </p>
 
                 <form action="signup.jsp" method="POST">
-                  <div class="form-group">
+                  <div class="form-group  mt-3">
                     <label for="business-type">Select a type of business:</label>
-                    <select class="form-control" id="business-type" name="business-type">
+                    <select class="form-control  mt-1" id="business-type" name="business-type">
                       <option value="general-contractor">General contractor</option>
                       <option value="carpenter">Carpenter</option>
                       <option value="plumber">Plumber</option>
@@ -250,15 +250,15 @@
                   <div class="row">
                     <div class="col">
               		<label for="firstName">First Name:</label><br>
-              		<input type="text"  class="form-control" id="firstName" name="firstName"  required><br>
+              		<input type="text"  class="form-control mt-1" id="firstName" name="firstName"  required><br>
                     </div>
                     <div class="col">
               		<label for="middleInitial">Middle Initial:</label><br>
-              		<input type="text"  class="form-control" id="middleInitial" name="middleInitial"><br>
+              		<input type="text"  class="form-control mt-1" id="middleInitial" name="middleInitial"><br>
                     </div>
                     <div class="col">
               		<label for="lastName">Last Name:</label><br>
-              		<input type="text"  class="form-control" id="lastName" name="lastName" required><br>
+              		<input type="text"  class="form-control mt-1" id="lastName" name="lastName" required><br>
                     </div>
                   </div>
                     </div>
@@ -306,9 +306,6 @@
                     <input type="text"  class="form-control" id="zipcode" name="zipcode" required><br><br>
                     </div>
                   </div>
-                  </div>
-
-                  <div class="form-group mt-3">
                   </div>
                   <div class="form-group  mt-3">
                     <label for="url_facebook">Referred By</label>
