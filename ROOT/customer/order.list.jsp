@@ -117,6 +117,7 @@
                     SimpleDateFormat longFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a");
                     int tabindex = 4;
                     BigDecimal invTotal  = new BigDecimal("0");
+                    Duration totalDuration = Duration.ZERO;
                 %>
               <% for (Order order : orders) { %>
                 <%
@@ -141,6 +142,8 @@
                     if (seconds > 0) {
                         durationString.add(seconds + " second" + (seconds > 1 ? "s" : ""));
                     }
+
+                    totalDuration = totalDuration.plus(duration);
 
                     invTotal = invTotal.add(order.getOrderTotal());
                 %>
@@ -171,8 +174,28 @@
               <% } %>
 
               <HR>
-                    <H4>Total : <%=invTotal%></h4>
+                    <H4>Total Money: <%=invTotal%></h4>
                 <HR>
+                  <%
+                  durationString = new StringJoiner(", ");
+                  days = totalDuration.toDays();
+                  hours = totalDuration.toHours() % 24;
+                  minutes = totalDuration.toMinutes() % 60;
+                  seconds = totalDuration.getSeconds() % 60;
+                  if (days > 0) {
+                      durationString.add(days + " day" + (days > 1 ? "s" : ""));
+                  }
+                  if (hours > 0) {
+                      durationString.add(hours + " hour" + (hours > 1 ? "s" : ""));
+                  }
+                  if (minutes > 0) {
+                      durationString.add(minutes + " minute" + (minutes > 1 ? "s" : ""));
+                  }
+                  if (seconds > 0) {
+                      durationString.add(seconds + " second" + (seconds > 1 ? "s" : ""));
+                  }
+                  %>
+                    <h4>Total Time: <%=durationString%></h4>
 
       </div>
 
