@@ -163,7 +163,7 @@
 
                 <div class="form-group mt-3">
                 <label for="orderId">Project Name:</label><br>
-                <input class="form-control"  type="text" id="orderName" name="orderName"><br>
+                <input class="form-control"  type="text" id="orderName" name="orderName">
                 </div>
                 <div class="form-group mt-3">
                 <label class="form-label" for="orderDescription">Project Details</label>

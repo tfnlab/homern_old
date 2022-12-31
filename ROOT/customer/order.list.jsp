@@ -116,6 +116,7 @@
                 Project Address: <%= order.getShippingAddress() %><br>
                 Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br>
                 Total: <%= order.getOrderTotal() %><br>
+                <a class="btn btn-primary" tabindex="<%=tabindex+""%>" href="order.edit.jsp?orderId=<%= order.getOrderId() %>" >More</a>
                 <hr>
                 <%
                   tabindex +=1;
