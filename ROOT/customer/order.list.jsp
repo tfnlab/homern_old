@@ -112,12 +112,15 @@
                 <div class="container-fluid p-5" >
                     <div class="card p-3">
                 Name: <%= order.getOrderName() %><br>
-                ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" tabindex="<%=tabindex%>" ><%= order.getOrderId() %></a><br>
-                  Description: <%= order.getOrderDescription() %><br>
+                <HR>
+                Description: <%= order.getOrderDescription() %><br>
+                <HR>
                 Date: <%= order.getOrderDate() %><br>
+                <HR>
                 Project Address: <%= order.getShippingAddress() %><br>
-                Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br>
-                Total: <%= order.getOrderTotal() %><br>
+                <HR>
+                Total: <%= order.getOrderTotal() %>
+                <HR>
                 <a class="btn btn-primary" tabindex="<%=tabindex+""%>" href="order.edit.jsp?orderId=<%= order.getOrderId() %>" >More</a>
                     </div>
                 </div>
