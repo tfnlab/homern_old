@@ -21,8 +21,6 @@
   <option value="user.edit.jsp" <%= currentUrl.indexOf("user.edit.jsp") != -1 ? "selected" : "" %>><i class="fas fa-cog"></i> Profile</option>
   <option value="order.list.jsp" <%= currentUrl.indexOf("order.list.jsp") != -1 ? "selected" : "" %>><i class="fas fa-shopping-cart"></i> Projects</option>
 </select>
-
-
 <!--
         <p>
         <a href="user.menu.jsp">Home</a> |
