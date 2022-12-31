@@ -257,7 +257,7 @@
 
               UUID uuid = UUID.randomUUID();
               APIConfig conf = new APIConfig();
-              String filename = username + "." + uuid + ".png";
+              String filename = "customer." + username + "." + uuid + ".png";
               String filepath = conf.getPdfloc();
               DiskFileItemFactory factory = new DiskFileItemFactory();
               factory.setSizeThreshold(1024 * 1024); // Set the size threshold for storing files in memory
@@ -267,7 +267,7 @@
               for (FileItem item : items) {
                 if (!item.isFormField()) { // Check if the item is an uploaded file
                   InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
-                  FileOutputStream fos = new FileOutputStream(filepath  +  "customer." + filename);
+                  FileOutputStream fos = new FileOutputStream(filepath   + filename);
                   byte[] buffer = new byte[1024];
                   int length;
                   while ((length = fileContent.read(buffer)) > 0) {
@@ -277,6 +277,15 @@
                   fileContent.close();
                 }
               }
+               try{
+                    Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/ocrimage.py", filename, filename).start();
+                    String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+                    String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                    ocrDescription = stdout + stderr + " TEST ";
+                }catch(IOException ex){
+                    ocrDescription = ex.getMessage();
+                }
+
             %>
 
             <p>File uploaded successfully!</p>
@@ -299,6 +308,11 @@
             <label for="lastName">Last Name</label>
             <input type="text" class="form-control" id="lastName" name="lastName" required>
           </div>
+          <div class="form-group">
+            <label for="lastName">Description</label>
+            <textarea class="form-control" id="customerDescription" name="customerDescription" rows="5"><%= ocrDescription %></textarea>
+          </div>
+
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" name="email" >
