@@ -148,24 +148,6 @@
          String zipcode = request.getParameter("zipcode");
          String addressaclat = request.getParameter("addressaclat");
          String addressaclng = request.getParameter("addressaclng");
-         String business_type = request.getParameter("businesstype");
-         String business_name = request.getParameter("business_name");
-         String invoice_terms = request.getParameter("invoice_terms");
-         String url_website = request.getParameter("url_website");
-         String url_yelp = request.getParameter("url_yelp");
-         String url_google = request.getParameter("url_google");
-         String url_twitter = request.getParameter("url_twitter");
-         String url_tiktok = request.getParameter("url_tiktok");
-         String url_snap = request.getParameter("url_snap");
-         String url_instagram = request.getParameter("url_instagram");
-         String url_facebook = request.getParameter("url_facebook");
-         String url_linkedin = request.getParameter("url_linkedin");
-         String token_linkedin = request.getParameter("token_linkedin");
-         String token_twitter_c_key = request.getParameter("token_twitter_c_key");
-         String token_twitter_c_secret = request.getParameter("token_twitter_c_secret");
-         String token_twitter_a = request.getParameter("token_twitter_a");
-         String token_twitter_a_secret = request.getParameter("token_twitter_a_secret");
-
 
          email = email.toLowerCase();
          user = dao.getUserByUsername(username);
@@ -180,20 +162,6 @@
          user.setZipcode(zipcode);
          user.setAddresslat(addressaclat);
          user.setAddresslng(addressaclng);
-         user.setUrl_website(url_website);
-         user.setUrl_yelp(url_yelp);
-         user.setUrl_google(url_google);
-         user.setUrl_twitter(url_twitter);
-         user.setUrl_tiktok(url_tiktok);
-         user.setUrl_snap(url_snap);
-         user.setUrl_instagram(url_instagram);
-         user.setUrl_facebook(url_facebook);
-         user.setUrl_linkedin(url_linkedin);
-         user.setToken_linkedin(token_linkedin);
-         user.setToken_twitter_c_key(token_twitter_c_key);
-         user.setToken_twitter_c_secret(token_twitter_c_secret);
-         user.setToken_twitter_a(token_twitter_a);
-         user.setToken_twitter_a_secret(token_twitter_a_secret);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -206,7 +174,7 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Pofile</h2>
-
+        <%@ include file="user.menu.nav.jsp" %>
         <form method="post" action="user.edit.jsp">
             <div class="form-group mt-3">
               <label for="business_name" class="mr-2">Username:</label>
@@ -274,62 +242,6 @@
            <div class="form-group mt-3">
               <label for="zipcode">Zipcode</label>
               <input type="text" class="form-control" id="zipcode" name="zipcode" value="<%= user.getZipcode() %>" tabindex="15">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_website">Website</label>
-             <input type="text" class="form-control" id="url_website" name="url_website" value="<%= user.getUrl_website() %>"  tabindex="18">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_yelp">Yelp</label>
-             <input type="text" class="form-control" id="url_yelp" name="url_yelp" value="<%= user.getUrl_yelp() %>">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_google">Google</label>
-             <input type="text" class="form-control" id="url_google" name="url_google" value="<%= user.getUrl_google() %>">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_twitter">Twitter <a href="user.edit.social.jsp"><i class="fas fa-check"></i></a></label>
-             <input type="text" class="form-control" id="url_twitter" name="url_twitter" value="<%= user.getUrl_twitter() %>">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_twitter">Client Key</label>
-             <input type="text" class="form-control" id="token_twitter_c_key" name="token_twitter_c_key" value="<%= user.getToken_twitter_c_key() %>">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_twitter">Client Secret</label>
-             <input type="text" class="form-control" id="token_twitter_c_secret" name="token_twitter_c_secret" value="<%= user.getToken_twitter_c_secret() %>">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_twitter">Access Token Key</label>
-             <input type="text" class="form-control" id="token_twitter_a" name="token_twitter_a" value="<%= user.getToken_twitter_a() %>">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_twitter">Access Token Secret</label>
-             <input type="text" class="form-control" id="token_twitter_a_secret" name="token_twitter_a_secret" value="<%= user.getToken_twitter_a_secret() %>">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_tiktok">TikTok</label>
-             <input type="text" class="form-control" id="url_tiktok" name="url_tiktok" value="<%= user.getUrl_tiktok() %>">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_snap">Snapchat</label>
-             <input type="text" class="form-control" id="url_snap" name="url_snap" value="<%= user.getUrl_snap() %>">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_instagram">Instagram</label>
-             <input type="text" class="form-control" id="url_instagram" name="url_instagram" value="<%= user.getUrl_instagram() %>">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_facebook">Facebook</label>
-             <input type="text" class="form-control" id="url_facebook" name="url_facebook" value="<%= user.getUrl_facebook() %>">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_facebook">LinkedIn <a href="user.edit.social.jsp"><i class="fas fa-check"></i></a></label>
-             <input type="text" class="form-control" id="url_linkedin" name="url_linkedin" value="<%= user.getUrl_linkedin()%>">
-           </div>
-           <div class="form-group mt-3">
-             <label for="url_facebook">LinkedIn Access Code</label>
-             <input type="text" class="form-control" id="token_linkedin" name="token_linkedin" value="<%= user.getToken_linkedin()%>">
            </div>
            <div class="form-group mt-3">
              <label for="url_facebook">Referred by <a href="user.edit.referred_by.jsp"><i class="fas fa-check"></i></a></label>
