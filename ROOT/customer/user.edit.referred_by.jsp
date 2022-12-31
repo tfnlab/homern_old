@@ -111,7 +111,17 @@
           Email: <%= ruser.getPhone() %><br>
           <HR>
         <%}%>
-
+        <%if (users.isEmpty()) { %>
+          <p>Sorry, you currently have no referrals. Here are some ways to get referrals:</p>
+          <ul>
+            <li>Share your referral code with your friends and family.</li>
+            <li>Post about your referral code on social media.</li>
+            <li>Participate in referral contests or promotions.</li>
+            <li>Offer incentives to people who use your referral code.</li>
+            <li>Collaborate with other users or businesses to promote each other's referral codes.</li>
+          </ul>
+          <p>We hope these suggestions help you get more referrals!</p>
+        <%}%>
       </div>
 
     </section><!-- End Blog Section -->
