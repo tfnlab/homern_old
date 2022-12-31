@@ -215,7 +215,7 @@
         <h2>Marketing</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-          <a href="user.edit.logo.jsp" >Upload Logo</a>
+          <a href="user.edit.logo.jsp" tabindex="2" >Upload Logo</a>
         <HR>
         <form method="post" action="user.edit.jsp">
           <div class="form-group">
@@ -224,35 +224,35 @@
           </div>
             <div class="form-group">
               <label for="business_name" class="mr-2">Business Name:</label>
-              <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>">
+              <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>" tabindex="3" >
             </div>
            <div class="form-group">
               <label for="firstName">First Name</label>
-              <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>">
+              <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>"  tabindex="4">
            </div>
            <div class="form-group">
               <label for="middleInitial">Middle Initial</label>
-              <input type="text" class="form-control" id="middleInitial" name="middleInitial" value="<%= user.getMiddleInitial() %>">
+              <input type="text" class="form-control" id="middleInitial" name="middleInitial" value="<%= user.getMiddleInitial() %>"  tabindex="5">
            </div>
            <div class="form-group">
               <label for="lastName">Last Name</label>
-              <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.getLastName() %>">
+              <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.getLastName() %>"  tabindex="6">
            </div>
            <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" value="<%= user.getEmail() %>">
+              <input type="email" class="form-control" id="email" name="email" value="<%= user.getEmail() %>"  tabindex="7">
            </div>
            <div class="form-group">
               <label for="phone">Phone</label>
-              <input type="text" class="form-control" id="phone" name="phone" value="<%= user.getPhone() %>">
+              <input type="text" class="form-control" id="phone" name="phone" value="<%= user.getPhone() %>"  tabindex="8">
            </div>
            <div class="form-group">
               <label for="ogId">OG ID</label>
-              <input type="text" class="form-control" id="ogId" name="ogId" value="<%= user.getOgId() %>">
+              <input type="text" class="form-control" id="ogId" name="ogId" value="<%= user.getOgId() %>"  tabindex="9">
            </div>
            <div class="form-group">
               <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" name="address" value="<%= user.getAddress() %>" onkeypress="callAC(this)">
+              <input type="text" class="form-control" id="address" name="address" value="<%= user.getAddress() %>" onkeypress="callAC(this)"  tabindex="10">
            </div>
            <input type="hidden" id="addressaclat" name="addressaclat" value="<%= user.getAddresslat() %>">
            <input type="hidden" id="addressaclng" name="addressaclng" value="<%= user.getAddresslng() %>">
@@ -283,7 +283,7 @@
 
            <div class="form-group">
               <label for="city">City</label>
-              <input type="text" class="form-control" id="city" name="city" value="<%= user.getCity() %>">
+              <input type="text" class="form-control" id="city" name="city" value="<%= user.getCity() %>" >
            </div>
            <div class="form-group">
               <label for="state">State</label>
