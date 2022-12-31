@@ -203,8 +203,13 @@
                       Add to
                       <a href="https://calendar.google.com/calendar/r/eventedit?text=<%= URLEncoder.encode(event.getTitle()) %>&dates=<%= URLEncoder.encode(dateFormat.format(event.getStartTime())) %>&location=<%= URLEncoder.encode(event.getLocation()) %>&details=<%= URLEncoder.encode(event.getDescription()) %>&trp=false&sprop=website:<%= URLEncoder.encode(usernameOBJ.getBusiness_name()) %>&sprop=name:<%=usernameOBJ.getUrl_website()%>" target="_blank">Goolge</a>
                       |
-                      <a href="eventkit://new-event?summary=<%= URLEncoder.encode(event.getTitle()) %>&location=<%= URLEncoder.encode(event.getLocation()) %>&start=<%= URLEncoder.encode(dateFormatApple.format(event.getStartTime())) %>&end=<%= URLEncoder.encode(dateFormatApple.format(event.getEndTime())) %>">Add event to Apple calendar</a>
+                      <a href="eventkit://new-event?summary=<%= URLEncoder.encode(event.getTitle()) %>&location=<%= URLEncoder.encode(event.getLocation()) %>&start=<%= URLEncoder.encode(dateFormatApple.format(event.getStartTime())) %>&end=<%= URLEncoder.encode(dateFormatApple.format(event.getEndTime())) %>">Apple</a>
                       Calendar
+                      |||
+                      <a href="eventkit://new-event?summary=<%= event.getTitle() %>&location=<%= event.getLocation()%>&start=<%= dateFormatApple.format(event.getStartTime()) %>&end=<%= dateFormatApple.format(event.getEndTime()) %>">Apple</a>
+                      |||
+                      <a href="eventkit://new-event?summary=Meet with team&location=Conference room&start=2022-01-01T09:00:00&end=2022-01-01T10:00:00">Add event to calendar</a>
+
                     <HR>
                     <form action="event.edit.jsp" method="post">
                           <input type="hidden" class="form-control" name="eventid" value="<%= eId %>">
