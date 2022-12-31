@@ -149,7 +149,12 @@
             </li>
             <li>
               Gain valuable insights into your business with our new order analysis feature! Now you can easily see how your orders are performing and make informed decisions about your business. With this tool, you can track your cash flow status, calculate your profit margin, and see how long it takes to deliver orders. Whether you're running a small online store or a large e-commerce business, this feature will help you understand your performance and identify areas for improvement. Plus, with the ability to view all this information in one place, you can save time and make more informed decisions about your business. Take control of your orders with this powerful new feature!
-            </li>      
+            </li>
+            <li>
+              <h5>Feature: Add event to Google Calendar from invoice</h5>
+
+              <p>Description: This feature allows the user to easily schedule a payment or follow-up action by clicking a link in an invoice PDF. The link will open an event in the user's default calendar app, allowing the user to edit and save the event.</p>
+            </li>
 
 
           </div>
