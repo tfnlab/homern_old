@@ -1,7 +1,7 @@
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="java.util.Map" %>
-
+SERVER RESPONSE FROM HRN SERVER API
 <%
   // Get the map of all of the request parameters and their values
   Map<String, String[]> parameterMap = request.getParameterMap();
