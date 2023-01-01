@@ -120,4 +120,4 @@ SERVER RESPONSE FROM HRN SERVER API
                               postData += parameterName + "=" + value + "&";
                           }
                       }
-                      %>
+                      %><%=postData%>
