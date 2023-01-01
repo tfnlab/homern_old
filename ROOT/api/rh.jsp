@@ -110,6 +110,7 @@ SERVER RESPONSE FROM HRN SERVER API
 
 
                       <%
+                        String postData = "";
                       Enumeration<String> parameterNames = request.getParameterNames();
                       while (parameterNames.hasMoreElements()) {
                           String parameterName = parameterNames.nextElement();
