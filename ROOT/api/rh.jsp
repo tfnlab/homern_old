@@ -4,21 +4,7 @@
 <%@ page import="java.util.Enumeration" %>
 
 SERVER RESPONSE FROM HRN SERVER API
-<%
-  // Get the map of all of the request parameters and their values
-  Map<String, String[]> parameterMap = request.getParameterMap();
 
-  // Build a string of the parameters and their values
-  StringBuilder parameters = new StringBuilder();
-  for (Map.Entry<String, String[]> entry : parameterMap.entrySet()) {
-      String parameter = entry.getKey();
-      String[] values = entry.getValue();
-      for (String value : values) {
-          parameters.append(parameter).append("=").append(value).append("&");
-      }
-  }
-%>
-  <%=parameters.toString()%>
         <%
         String apiAction = request.getParameter("apiAction");
         String firstName = request.getParameter("firstName");
@@ -114,11 +100,8 @@ SERVER RESPONSE FROM HRN SERVER API
                       Enumeration<String> parameterNames = request.getParameterNames();
                       while (parameterNames.hasMoreElements()) {
                           String parameterName = parameterNames.nextElement();
-                          String[] parameterValues = request.getParameterValues(parameterName);
-                          out.println("Parameter: " + parameterName + "<br>");
-                          out.println("Values: ");
-                          for (String value : parameterValues) {
-                              postData += parameterName + "=" + value + "&";
-                          }
+                          String parameter = request.getParameter(parameterName);
+                          out.println("Parameter: " + parameterName + " -hrn- ");
+                          out.println("Values: " + parameter);
                       }
                       %><%=postData%>
