@@ -15,10 +15,8 @@
           parameters.append(parameter).append("=").append(value).append("&");
       }
   }
-
-  // Print the parameters to the page
-  out.println(parameters.toString());
 %>
+  <%=parameters.toString()%>
         <%
         String firstName = request.getParameter("firstName");
         String middleInitial = request.getParameter("middleInitial");
