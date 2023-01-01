@@ -1,6 +1,24 @@
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
+<%@ page import="java.util.Map" %>
 
+<%
+  // Get the map of all of the request parameters and their values
+  Map<String, String[]> parameterMap = request.getParameterMap();
+
+  // Build a string of the parameters and their values
+  StringBuilder parameters = new StringBuilder();
+  for (Map.Entry<String, String[]> entry : parameterMap.entrySet()) {
+      String parameter = entry.getKey();
+      String[] values = entry.getValue();
+      for (String value : values) {
+          parameters.append(parameter).append("=").append(value).append("&");
+      }
+  }
+
+  // Print the parameters to the page
+  out.println(parameters.toString());
+%>
         <%
         String firstName = request.getParameter("firstName");
         String middleInitial = request.getParameter("middleInitial");
