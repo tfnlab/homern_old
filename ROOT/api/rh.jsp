@@ -1,6 +1,8 @@
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="java.util.Enumeration" %>
+
 SERVER RESPONSE FROM HRN SERVER API
 <%
   // Get the map of all of the request parameters and their values
@@ -105,3 +107,17 @@ SERVER RESPONSE FROM HRN SERVER API
 
                 }
                 %> YOU GOT IT
+
+
+                      <%
+                      Enumeration<String> parameterNames = request.getParameterNames();
+                      while (parameterNames.hasMoreElements()) {
+                          String parameterName = parameterNames.nextElement();
+                          String[] parameterValues = request.getParameterValues(parameterName);
+                          out.println("Parameter: " + parameterName + "<br>");
+                          out.println("Values: ");
+                          for (String value : parameterValues) {
+                              postData += parameterName + "=" + value + "&";
+                          }
+                      }
+                      %>
