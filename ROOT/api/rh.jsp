@@ -18,6 +18,7 @@
 %>
   <%=parameters.toString()%>
         <%
+        String apiAction = request.getParameter("apiAction");
         String firstName = request.getParameter("firstName");
         String middleInitial = request.getParameter("middleInitial");
         String lastName = request.getParameter("lastName");
@@ -40,7 +41,15 @@
         String url_instagram = request.getParameter("url_instagram");
         String url_facebook = request.getParameter("url_facebook");
         String referred_by = request.getParameter("referred_by");
+        if (apiAction != null && apiAction.trim().length() > 0) {
+              if(apiAction.equals("signin")){
 
+              }
+              if(apiAction.equals("register")){
+
+              }
+
+        }
                 // Validate form data
                 if (username != null && username.trim().length() > 0) {
                   username = username.toLowerCase();
