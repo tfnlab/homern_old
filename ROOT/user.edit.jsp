@@ -396,7 +396,7 @@
              <input type="text" class="form-control" id="referred_by" name="referred_by" value="<%= user.getReferred_by() %>">
            </div>
            <div class="form-group mt-3">
-             <label for="api_key">Api Key by <a href="user.edit.referred_by.jsp"><i class="fas fa-check"></i></a></label>
+             <label for="api_key">Website Api Key</label>
              <input type="text" class="form-control" id="api_key" name="api_key" value="<%= user.getApi_key() %>">
            </div>
            <div class="form-group mt-3">
