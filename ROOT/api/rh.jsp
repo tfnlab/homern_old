@@ -37,7 +37,7 @@
                       entity.setUsername_entity(request.getParameter("username"));
                       entity.setPassword(request.getParameter("password"))
 
-                      Entity entity = mferDao.signupMotherFucker(customerId, api_key, username, password);
+                      Entity entity = mferDao.signupMotherFucker(customerId, api_key, entity);
 
                       %>apiAction<%
 
