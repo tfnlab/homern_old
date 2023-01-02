@@ -24,6 +24,7 @@
                       String api_key = request.getParameter("api_key");
                       Entity entity = new Entity();
                       entity = entity.generateSampleEntity();
+
 //                      entity.setId(Integer.parseInt(request.getParameter("id")));
                       entity.setUsername(customerId);
                       entity.setFirstName(request.getParameter("firstName"));
@@ -49,7 +50,8 @@
 
               }
           }catch(Exception ex){
-
+                %><%=request.getParameter("api_key")%><%
+                %><%=request.getParameter("customerId")%><%
                 %>EXCEPTION RAISED : <%=ex.getMessage()%><%
           }
         }
