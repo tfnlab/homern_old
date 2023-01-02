@@ -39,11 +39,13 @@
                       entity.setPassword(request.getParameter("password"));
 
                       entity = mferDao.signupMotherFucker(customerId, api_key, entity);
-
-                      %>apiAction
-
+                      if(entity!=null){
+                      %>
                         <%=entity.getId()%>
                       <%
+                      }else{
+                        %>Unable to Sign Up<%      
+                      }
 
               }
           }catch(Exception ex){
