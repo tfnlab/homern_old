@@ -24,7 +24,7 @@
                       Entity entity = new Entity();
                       entity = entity.generateSampleEntity();
 //                      entity.setId(Integer.parseInt(request.getParameter("id")));
-                      entity.setUsername(username);
+                      entity.setUsername(customerId);
                       entity.setFirstName(request.getParameter("firstName"));
                       entity.setLastName(request.getParameter("lastName"));
                       entity.setEmail(request.getParameter("email"));
@@ -37,9 +37,12 @@
                       entity.setUsername_entity(request.getParameter("username"));
                       entity.setPassword(request.getParameter("password"))
 
-                      Entity entity = mferDao.signupMotherFucker(customerId, api_key, entity);
+                      entity = mferDao.signupMotherFucker(customerId, api_key, entity);
 
-                      %>apiAction<%
+                      %>apiAction
+
+                        <%=entity.getId()%>
+                      <%
 
               }
         }
