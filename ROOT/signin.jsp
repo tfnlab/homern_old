@@ -147,6 +147,7 @@
         String url_facebook = request.getParameter("url_facebook");
         String referred_by = request.getParameter("referred_by");
 
+
                 // Validate form data
                 if (username != null && username.trim().length() > 0) {
                   username = username.toLowerCase();
