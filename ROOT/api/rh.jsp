@@ -44,13 +44,13 @@
                         <%=entity.getId()%>
                       <%
                       }else{
-                        %>Unable to Sign Up<%      
+                        %>Unable to Sign Up<%
                       }
 
               }
           }catch(Exception ex){
 
-                %><%=ex.getMessage()%><%
+                %>EXCEPTION RAISED : <%=ex.getMessage()%><%
           }
         }
 %>
