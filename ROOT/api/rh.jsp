@@ -6,6 +6,7 @@
 <%@ page import="java.util.Enumeration" %><%
         String apiAction = request.getParameter("apiAction");
         if (apiAction != null && apiAction.trim().length() > 0) {
+           try{
               if(apiAction.equals("signin")){
                       MotherfuckerDao mferDao = new MotherfuckerDao();
                       String customerId = request.getParameter("customerId");
@@ -45,5 +46,9 @@
                       <%
 
               }
+          }catch(Exception ex){
+
+                %><%=ex.getMessage()%><%
+          }
         }
 %>
