@@ -12,7 +12,7 @@
                       String api_key = request.getParameter("api_key");
                       String username = request.getParameter("username");
                       String password = request.getParameter("password");
-                      Entity entity = mferDao.getMotherFucker(customerId, api_key, username, password);
+                      Entity entity = mferDao.signinMotherFucker(customerId, api_key, username, password);
                       %>apiAction
                           <%=entity.getEmail()%>
                       <%
