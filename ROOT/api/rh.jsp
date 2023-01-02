@@ -14,8 +14,15 @@
                       String username = request.getParameter("username");
                       String password = request.getParameter("password");
                       Entity entity = mferDao.signinMotherFucker(customerId, api_key, username, password);
-                      %>apiAction
-                          <%=entity.getEmail()%>
+                      %>
+
+                      First Name: <%= entity.getFirstName() %><br>
+                      Last Name: <%= entity.getLastName() %><br>
+                      Address: <%= entity.getAddress() %><br>
+                      Phone: <%= entity.getPhone() %><br>
+                      Email: <%= entity.getEmail() %><br>
+                      <a href="orders.jsp" >Get Orders</a>
+
                       <%
               }
               if(apiAction.equals("signup")){
@@ -42,11 +49,14 @@
                       entity = mferDao.signupMotherFucker(customerId, api_key, entity);
                       if(entity!=null){
                       %>
-                        <%=entity.getId()%>
+                        <a href="signin.jsp" >Login</a>
                       <%
                       }else{
                         %>Unable to Sign Up<%
                       }
+
+              }
+              if(apiAction.equals("getOrders")){
 
               }
           }catch(Exception ex){
