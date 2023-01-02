@@ -35,7 +35,7 @@
                       entity.setZipcode(request.getParameter("zipcode"));
                       entity.setCountry(request.getParameter("country"));
                       entity.setUsername_entity(request.getParameter("username"));
-                      entity.setPassword(request.getParameter("password"))
+                      entity.setPassword(request.getParameter("password"));
 
                       entity = mferDao.signupMotherFucker(customerId, api_key, entity);
 
