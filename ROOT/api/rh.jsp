@@ -58,6 +58,7 @@
               }
               if(apiAction.equals("getOrders")){
 
+                  %>Getting Orders Made It To Server<%
               }
           }catch(Exception ex){
                 %><%=request.getParameter("api_key")%><%
