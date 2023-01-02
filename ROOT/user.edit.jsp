@@ -165,6 +165,7 @@
          String token_twitter_c_secret = request.getParameter("token_twitter_c_secret");
          String token_twitter_a = request.getParameter("token_twitter_a");
          String token_twitter_a_secret = request.getParameter("token_twitter_a_secret");
+         String api_key = request.getParameter("api_key");
 
 
          email = email.toLowerCase();
@@ -201,6 +202,7 @@
          user.setToken_twitter_c_secret(token_twitter_c_secret);
          user.setToken_twitter_a(token_twitter_a);
          user.setToken_twitter_a_secret(token_twitter_a_secret);
+         user.setApi_key(api_key);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -390,8 +392,12 @@
              <input type="text" class="form-control" id="token_linkedin" name="token_linkedin" value="<%= user.getToken_linkedin()%>">
            </div>
            <div class="form-group mt-3">
-             <label for="url_facebook">Referred by <a href="user.edit.referred_by.jsp"><i class="fas fa-check"></i></a></label>
+             <label for="referred_by">Referred by <a href="user.edit.referred_by.jsp"><i class="fas fa-check"></i></a></label>
              <input type="text" class="form-control" id="referred_by" name="referred_by" value="<%= user.getReferred_by() %>">
+           </div>
+           <div class="form-group mt-3">
+             <label for="api_key">Api Key by <a href="user.edit.referred_by.jsp"><i class="fas fa-check"></i></a></label>
+             <input type="text" class="form-control" id="api_key" name="api_key" value="<%= user.getApi_key() %>">
            </div>
            <div class="form-group mt-3">
              <button type="submit" class="btn btn-primary" tabindex="19">Submit</button>
