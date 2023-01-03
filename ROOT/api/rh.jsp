@@ -3,6 +3,7 @@
 <%@ page import="com.tfnlab.mysql.Entity" %>
 <%@ page import="com.tfnlab.business.MotherfuckerDao" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="com.tfnlab.mysql.OrderCustomer" %>
 <%@ page import="java.util.Enumeration" %><%
         String apiAction = request.getParameter("apiAction");
         if (apiAction != null && apiAction.trim().length() > 0) {
@@ -57,8 +58,23 @@
 
               }
               if(apiAction.equals("getOrders")){
+                  MotherfuckerDao mferDao = new MotherfuckerDao();
+                  String customerId = request.getParameter("customerId");
+                  String api_key = request.getParameter("api_key");
+                  String username = request.getParameter("username");
+                  String password = request.getParameter("password");
+                  List<OrderCustomer> ocList= mferDao.getOrders(customerId, api_key, username, password);
 
-                  %>Getting Orders Made It To Server<%
+                      for (OrderCustomer ocItem : ocList) {
+                        %>
+                         ID: <%= ocItem.getId() %><br>
+                         Customer ID:
+                         <a href="customer.edit.jsp?customerId=<%= ocItem.getOrder().getOrderId() %>" > <%= ocItem.getOrder().getOrderId() %></a><br>
+                         Name: <%= ocItem.getOrder().getOrderName() %><br>
+                         Description: <%= ocItem.getOrder().getOrderDescription() %><br>
+                         <hr>
+                         <%
+                      }
               }
           }catch(Exception ex){
                 %><%=request.getParameter("api_key")%><%
