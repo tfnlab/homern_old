@@ -166,12 +166,13 @@
                         <%
                             for (OrderTechnicians technician : lI) {
                         %>
-                               ID: <%= technician.getId() %><br>
+                               <!--
+                                ID: <%= technician.getId() %><br>
                                Tech ID: <%= technician.getTechnicianId() %><br>
+                               -->
                                <%=tMap.get(Integer.valueOf(technician.getTechnicianId())).getTechnicianName() %>
                                -- <BR>
                                <%=eMap.get(Integer.valueOf(technician.getEventId())).getTitle() %>
-                               -- <a href="order.edit.schedule.jsp?orderId=<%=orderId%>&tlid=<%= technician.getId() %>" >remove<a><br>
                                <hr>
 
                         <%
