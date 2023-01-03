@@ -23,6 +23,7 @@
                       Address: <%= entity.getAddress() %><br>
                       Phone: <%= entity.getPhone() %><br>
                       Email: <%= entity.getEmail() %><br>
+                      <HR>
                       <a href="orders.jsp" >Get Orders</a>
 
                       <%
@@ -73,10 +74,11 @@
                           Address: <%= entity.getAddress() %><br>
                           Phone: <%= entity.getPhone() %><br>
                           Email: <%= entity.getEmail() %><br>
+                          <HR>
                           <a href="orders.jsp" >Get Orders</a>
-
+                          <HR>
                           <%
-                  
+
                   List<OrderCustomer> ocList= mferDao.getOrders(customerId, api_key, username, password);
 
                       for (OrderCustomer ocItem : ocList) {
