@@ -152,7 +152,7 @@
                         %>
                         <HR>
                               <%
-                                  List<OrderTechnicians> lI = mfo.getOcItems();
+                                  List<OrderTechnicians> lI = mfo.getOtItems();
                                 EventDao evd = new EventDao();
                                 TechnicianDao technicianDao = new TechnicianDao();
 
