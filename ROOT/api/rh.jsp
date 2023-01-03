@@ -6,6 +6,14 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.math.BigDecimal" %>
+
+<%@ page import="com.tfnlab.mysql.Technician" %>
+<%@ page import="com.tfnlab.mysql.TechnicianDao" %>
+<%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
+<%@ page import="com.tfnlab.mysql.Event" %>
+<%@ page import="com.tfnlab.mysql.EventDao" %>
+
+<%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItem" %>
 <%@ page import="com.tfnlab.mysql.OrderCustomer" %>
 <%@ page import="java.util.Enumeration" %><%
@@ -141,7 +149,33 @@
                         <%
                             }
                         %>
+                        <HR>
+                              <%
+                                EventDao evd = new EventDao();
+                                TechnicianDao technicianDao = new TechnicianDao();
 
+                                HashMap<Integer, Event> eMap = new HashMap<>();
+                                HashMap<Integer, Technician> tMap = new HashMap<>();
+                                if(lI.size()>0){
+                                    eMap = evd.getEventsByUsernameMap(username);
+                                    tMap = technicianDao.getTechniciansByUsernameMap(username);
+                                }
+                              %>
+                        <%
+                            List<OrderTechnicians> lI = mfo.getOcItems();
+                            for (OrderTechnicians technician : lI) {
+                        %>
+                               ID: <%= technician.getId() %><br>
+                               Tech ID: <%= technician.getTechnicianId() %><br>
+                               <%=tMap.get(Integer.valueOf(technician.getTechnicianId())).getTechnicianName() %>
+                               -- <BR>
+                               <%=eMap.get(Integer.valueOf(technician.getEventId())).getTitle() %>
+                               -- <a href="order.edit.schedule.jsp?orderId=<%=orderId%>&tlid=<%= technician.getId() %>" >remove<a><br>
+                               <hr>
+
+                        <%
+                            }
+                        %>
                         <%
 
 
