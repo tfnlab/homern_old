@@ -170,8 +170,7 @@
                                 ID: <%= technician.getId() %><br>
                                Tech ID: <%= technician.getTechnicianId() %><br>
                                -->
-                               <%=tMap.get(Integer.valueOf(technician.getTechnicianId())).getTechnicianName() %>
-                               -- <BR>
+                               <%=tMap.get(Integer.valueOf(technician.getTechnicianId())).getTechnicianName() %> <BR>
                                <%=eMap.get(Integer.valueOf(technician.getEventId())).getTitle() %>
                                <hr>
 
