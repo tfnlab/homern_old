@@ -124,7 +124,7 @@
                         <a href="orders.jsp" >Get Orders</a>
                         <HR>
                         <%
-                            MFOrder mfo =  mferDao.getOrder(customerId, api_key, username, password, orderId)
+                            MFOrder mfo =  mferDao.getOrder(customerId, api_key, username, password, orderId);
                             List<ProductLineItem> pliList = mfo.getPlItems();
                             BigDecimal invTotal  = new BigDecimal("0");
                             for (ProductLineItem plItem : pliList) {
