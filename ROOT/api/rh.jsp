@@ -137,7 +137,6 @@
                                Tech Units: <%= plItem.getQuantity() %><br>
                                Tech Price: <%= plItem.getPrice() %><br>
                                Tech Price: <%= plItem.getTotal() %><br>
-                               -- <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                                <hr>
 
                         <%
