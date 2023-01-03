@@ -5,6 +5,7 @@
 <%@ page import="com.tfnlab.business.MFOrder" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.math.BigDecimal" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItem" %>
 <%@ page import="com.tfnlab.mysql.OrderCustomer" %>
 <%@ page import="java.util.Enumeration" %><%
