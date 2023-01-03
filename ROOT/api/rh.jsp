@@ -14,11 +14,14 @@
 <%@ page import="com.tfnlab.mysql.Event" %>
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 
+<%@ page import="java.text.SimpleDateFormat" %>
+
 <%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItem" %>
 <%@ page import="com.tfnlab.mysql.OrderCustomer" %>
 <%@ page import="java.util.Enumeration" %><%
         String apiAction = request.getParameter("apiAction");
+        SimpleDateFormat longFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a");
         if (apiAction != null && apiAction.trim().length() > 0) {
            try{
               if(apiAction.equals("signin")){
@@ -99,6 +102,7 @@
                          <a href="order.jsp?orderId=<%= ocItem.getOrder().getOrderId() %>" > <%= ocItem.getOrder().getOrderId() %></a><br>
                          Name: <%= ocItem.getOrder().getOrderName() %><br>
                          Description: <%= ocItem.getOrder().getOrderDescription() %><br>
+                         <%=longFormat.format(ocItem.getOrder().getShipDate())%><BR>
                          <hr>
                          <%
                       }
@@ -170,6 +174,7 @@
                                 ID: <%= technician.getId() %><br>
                                Tech ID: <%= technician.getTechnicianId() %><br>
                                -->
+                               Starts: <%=longFormat.format(eMap.get(Integer.valueOf(technician.getEventId())).getStartTime())%><BR>
                                <%=tMap.get(Integer.valueOf(technician.getTechnicianId())).getTechnicianName() %> <BR>
                                <%=eMap.get(Integer.valueOf(technician.getEventId())).getTitle() %>
                                <hr>
