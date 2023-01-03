@@ -83,9 +83,8 @@
 
                       for (OrderCustomer ocItem : ocList) {
                         %>
-                         ID: <%= ocItem.getId() %><br>
-                         Customer ID:
-                         <a href="customer.edit.jsp?customerId=<%= ocItem.getOrder().getOrderId() %>" > <%= ocItem.getOrder().getOrderId() %></a><br>
+                         Order ID:
+                         <a href="order.jsp?orderId=<%= ocItem.getOrder().getOrderId() %>" > <%= ocItem.getOrder().getOrderId() %></a><br>
                          Name: <%= ocItem.getOrder().getOrderName() %><br>
                          Description: <%= ocItem.getOrder().getOrderDescription() %><br>
                          <hr>
