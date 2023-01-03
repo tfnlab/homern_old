@@ -64,6 +64,19 @@
                   String api_key = request.getParameter("api_key");
                   String username = request.getParameter("username");
                   String password = request.getParameter("password");
+
+                  Entity entity = mferDao.signinMotherFucker(customerId, api_key, username, password);
+                          %>
+
+                          First Name: <%= entity.getFirstName() %><br>
+                          Last Name: <%= entity.getLastName() %><br>
+                          Address: <%= entity.getAddress() %><br>
+                          Phone: <%= entity.getPhone() %><br>
+                          Email: <%= entity.getEmail() %><br>
+                          <a href="orders.jsp" >Get Orders</a>
+
+                          <%
+                  
                   List<OrderCustomer> ocList= mferDao.getOrders(customerId, api_key, username, password);
 
                       for (OrderCustomer ocItem : ocList) {
