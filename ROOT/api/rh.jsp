@@ -159,8 +159,8 @@
                                 HashMap<Integer, Event> eMap = new HashMap<>();
                                 HashMap<Integer, Technician> tMap = new HashMap<>();
                                 if(lI.size()>0){
-                                    eMap = evd.getEventsByUsernameMap(username);
-                                    tMap = technicianDao.getTechniciansByUsernameMap(username);
+                                    eMap = evd.getEventsByUsernameMap(customerId);
+                                    tMap = technicianDao.getTechniciansByUsernameMap(customerId);
                                 }
                               %>
                         <%
