@@ -76,6 +76,15 @@
                          <hr>
                          <%
                       }
+                      if (ocList.isEmpty()) {
+                        %>
+                        <p>Sorry, we could not find any projects matching your criteria.</p>
+                        <p>You may want to try modifying your search parameters or creating a new project.</p>
+                        <p><a href="order.new.jsp" class="btn btn-primary" >Create a new project</a></p>
+                        <%
+                      }
+
+
               }
           }catch(Exception ex){
                 %><%=request.getParameter("api_key")%><%
