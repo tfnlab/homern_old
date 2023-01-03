@@ -2,8 +2,10 @@
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="com.tfnlab.mysql.Entity" %>
 <%@ page import="com.tfnlab.business.MotherfuckerDao" %>
+<%@ page import="com.tfnlab.business.MFOrder" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.tfnlab.mysql.ProductLineItem" %>
 <%@ page import="com.tfnlab.mysql.OrderCustomer" %>
 <%@ page import="java.util.Enumeration" %><%
         String apiAction = request.getParameter("apiAction");
@@ -106,6 +108,10 @@
                 String api_key = request.getParameter("api_key");
                 String username = request.getParameter("username");
                 String password = request.getParameter("password");
+                int orderId = 0;
+                if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+                  orderId = Integer.parseInt(request.getParameter("orderId"));
+                }
 
                 Entity entity = mferDao.signinMotherFucker(customerId, api_key, username, password);
                         %>
@@ -117,7 +123,29 @@
                         <HR>
                         <a href="orders.jsp" >Get Orders</a>
                         <HR>
-                        <%                
+                        <%
+                            MFOrder mfo =  mferDao.getOrder(customerId, api_key, username, password, orderId)
+                            List<ProductLineItem> pliList = mfo.getPlItems();
+                            BigDecimal invTotal  = new BigDecimal("0");
+                            for (ProductLineItem plItem : pliList) {
+                                   invTotal = invTotal.add(plItem.getTotal());
+                           %>
+                               ID: <%= plItem.getId() %><br>
+                               Tech Name: <%= plItem.getName() %><br>
+                               Tech Description: <%= plItem.getDescription() %><br>
+                               Tech Units: <%= plItem.getQuantity() %><br>
+                               Tech Price: <%= plItem.getPrice() %><br>
+                               Tech Price: <%= plItem.getTotal() %><br>
+                               -- <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
+                               <hr>
+
+                        <%
+                            }
+                        %>
+
+                        <%
+
+
               }
           }catch(Exception ex){
                 %><%=request.getParameter("api_key")%><%
