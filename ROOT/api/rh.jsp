@@ -131,7 +131,6 @@
                             for (ProductLineItem plItem : pliList) {
                                    invTotal = invTotal.add(plItem.getTotal());
                            %>
-                               ID: <%= plItem.getId() %><br>
                                Tech Name: <%= plItem.getName() %><br>
                                Tech Description: <%= plItem.getDescription() %><br>
                                Tech Units: <%= plItem.getQuantity() %><br>
