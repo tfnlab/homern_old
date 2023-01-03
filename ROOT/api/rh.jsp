@@ -152,6 +152,7 @@
                         %>
                         <HR>
                               <%
+                                  List<OrderTechnicians> lI = mfo.getOcItems();
                                 EventDao evd = new EventDao();
                                 TechnicianDao technicianDao = new TechnicianDao();
 
@@ -163,7 +164,6 @@
                                 }
                               %>
                         <%
-                            List<OrderTechnicians> lI = mfo.getOcItems();
                             for (OrderTechnicians technician : lI) {
                         %>
                                ID: <%= technician.getId() %><br>
