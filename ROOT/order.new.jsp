@@ -163,6 +163,7 @@
                 String shippingAddressaclng = request.getParameter("shippingAddressaclng");
                 String billingAddressaclat = request.getParameter("billingAddressaclat");
                 String billingAddressaclng = request.getParameter("billingAddressaclng");
+                String status = request.getParameter("status");
 
 
 
@@ -200,7 +201,7 @@
                         } catch (Exception e) {
                           %><%="Error parsing date and time string: " + e.getMessage()%><%
                       }
-                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng);
+                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng, status);
                       OrderDao dao = new OrderDao();
                       dao.insertOrder(order);
                       %>
@@ -212,10 +213,10 @@
             <!-- ======= Contact Section ======= -->
 
                 <form action="order.new.jsp" method="POST">
-                
+
                 <div class="form-group">
                   <label for="order-status">Order Status</label>
-                  <select class="form-control" id="order-status">
+                  <select class="form-control" id="status" name="status">
                     <option value="proposal">Proposal</option>
                     <option value="estimate">Estimate</option>
                     <option value="order-placement">Order placement</option>
