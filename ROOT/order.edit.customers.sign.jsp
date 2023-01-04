@@ -243,7 +243,7 @@
         response.text().then(function(text) {
           // Display the text
           alert(text);
-          var url = "order.edit.customers.jsp?orderId=" + orderId  ;
+          var url = "order.edit.customers.jsp?orderId=" + <%=orderId +""%>  ;
           window.open(url, "_self");
         });
       })
