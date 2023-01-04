@@ -3,6 +3,7 @@
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
+<%@ page import="com.tfnlab.mysql.EntityDao" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -127,14 +128,21 @@
           <%
           String username = (String) session.getAttribute("username");
           OrderDao oDao = new OrderDao();
+          EntityDao eDao = new EntityDao();
 
           %>
           <div class="container mt-5">
             <h4>Home Renovation Nation</h4>
             Orders: <%=oDao.getCustomerOrderCount(username)%>
-            Customers:
+            <HR>
+            Customers: <%=eDao.getEntityCountByUsername(username)%>
+            <HR>
+            Products
+            <HR>
             Technicians:
+            <HR>
             Events:
+            <HR>
             <style>
               .progress-bar:first-child {
                 background-color: green;
