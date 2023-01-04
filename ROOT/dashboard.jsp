@@ -4,6 +4,7 @@
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
+<%@ page import="com.tfnlab.mysql.EventDao" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -129,6 +130,7 @@
           String username = (String) session.getAttribute("username");
           OrderDao oDao = new OrderDao();
           EntityDao eDao = new EntityDao();
+          EventDao eventDao = new EventDao();
 
           %>
           <div class="container mt-5">
@@ -142,7 +144,7 @@
                   <%=sstatus%>: <%=oDao.getCustomerOrderCount(username, sstatus) %><BR>
             <%
               }
-            %>          
+            %>
             <HR>
             Customers: <%=eDao.getEntityCountByUsername(username)%>
             <HR>
@@ -150,7 +152,7 @@
             <HR>
             Technicians:
             <HR>
-            Events:
+            Events: <%=eventDao.getEventCountByUsername(username)%>
             <HR>
           </div>
       </div>
