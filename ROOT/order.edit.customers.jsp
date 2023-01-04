@@ -289,7 +289,7 @@
                     Customer ID: <a href="customer.edit.jsp?customerId=<%= ocItem.getCustomer().getId() %>" > <%= ocItem.getCustomer().getId() %></a><br>
 
                     -- <a href="customer.edit.payments.jsp?action=remove&orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" >Add Payment<a><br>
-                    -- <a href="order.edit.customers.sign.jsp?action=remove&orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" >Add Signature<a><br>
+                    -- <a href="order.edit.customers.sign.jsp?orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" >Add Signature<a><br>
 
                     Name: <%= ocItem.getCustomer().getFirstName() %><br>
                     Email: <%= ocItem.getCustomer().getEmail() %><br>
