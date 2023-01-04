@@ -118,45 +118,25 @@
           canvas.addEventListener('touchstart', startSignature);
           canvas.addEventListener('touchmove', drawSignature);
           canvas.addEventListener('touchend', endSignature);
-          // Set up touch event listeners for the canvas
-          
-          canvas.addEventListener('touchstart', startSignature);
-          canvas.addEventListener('touchmove', drawSignature);
-          canvas.addEventListener('touchend', endSignature);
 
-          // Set up the touch start event handler
           function startSignature(event) {
-            // Get the touch position relative to the canvas
-            var touch = event.touches[0];
-            var touchX = touch.clientX - canvas.offsetLeft;
-            var touchY = touch.clientY - canvas.offsetTop;
-
-            // Start a new path
-            ctx.beginPath();
-            ctx.moveTo(touchX, touchY);
+            // Start drawing the signature when the user begins a mouse or touch event
+            isDrawing = true;
+            context.moveTo(event.clientX, event.clientY);
           }
 
-          // Set up the touch move event handler
           function drawSignature(event) {
-            // Prevent the default touch event behavior
-            event.preventDefault();
-
-            // Get the touch position relative to the canvas
-            var touch = event.touches[0];
-            var touchX = touch.clientX - canvas.offsetLeft;
-            var touchY = touch.clientY - canvas.offsetTop;
-
-            // Draw a line to the new touch position
-            ctx.lineTo(touchX, touchY);
-            ctx.stroke();
+            if (isDrawing) {
+              // Draw a line to the current mouse or touch position
+              context.lineTo(event.clientX, event.clientY);
+              context.stroke();
+            }
           }
 
-          // Set up the touch end event handler
           function endSignature(event) {
-            // Finish the path
-            ctx.closePath();
+            // Stop drawing the signature when the user ends the mouse or touch event
+            isDrawing = false;
           }
-
         </script>
 
 
