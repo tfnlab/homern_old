@@ -232,7 +232,7 @@
       formData.append('signature', blob, 'signature.png');
 
       // Submit the form using the FormData object
-      fetch('order.edit.customers.sign.save.jsp', {
+      fetch('order.edit.customers.sign.save.jsp?orderId=<%=orderId+""%>', {
         method: 'POST',
         body: formData
       })
@@ -300,7 +300,7 @@
         </script>
 
 
-                <h2>Order - Customer Signature</h2>
+                <h2>Customer Signature</h2>
                         <%
                         ProductLineItemDao plDao = new ProductLineItemDao();
                         OrderCustomerDao ocDao = new OrderCustomerDao();
