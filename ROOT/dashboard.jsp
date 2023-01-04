@@ -123,7 +123,7 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Home</h2>
+        <h2>Dashboard</h2>
         <%@ include file="user.menu.nav.jsp" %>
           <%
           String username = (String) session.getAttribute("username");
@@ -132,12 +132,13 @@
 
           %>
           <div class="container mt-5">
-            <h4>Home Renovation Nation</h4>
+            <h4>Home Renovation Nation Dashboard</h4>
+            <HR>
             Orders: <%=oDao.getCustomerOrderCount(username)%>
             <HR>
             Customers: <%=eDao.getEntityCountByUsername(username)%>
             <HR>
-            Products
+            Products 
             <HR>
             Technicians:
             <HR>
