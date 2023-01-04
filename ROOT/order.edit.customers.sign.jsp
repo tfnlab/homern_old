@@ -58,45 +58,54 @@
 
 <body>
 
+  <!-- HTML page -->
+  <canvas id="signature-canvas" width="400" height="200"></canvas>
+  <form id="signature-form" method="post" enctype="multipart/form-data">
+    <input type="file" name="signature" id="signature-input" accept="image/*">
+    <button type="submit">Upload Signature</button>
+  </form>
 
-        <!-- HTML page -->
-        <canvas id="signature-canvas" width="400" height="200"></canvas>
+  <script>
+    // JavaScript code
+    var canvas = document.getElementById('signature-canvas');
+    var form = document.getElementById('signature-form');
+    var input = document.getElementById('signature-input');
 
-        <script>
-          // JavaScript code
-          var canvas = document.getElementById('signature-canvas');
-          var context = canvas.getContext('2d');
+    // Set up an event listener for the form submission event
+    form.addEventListener('submit', uploadSignature);
 
-          // Flag to track whether the user is currently drawing
-          var isDrawing = false;
+    function uploadSignature(event) {
+      // Prevent the form from being submitted
+      event.preventDefault();
 
-          // Set up event listeners for mouse and touch events
-          canvas.addEventListener('mousedown', startSignature);
-          canvas.addEventListener('mousemove', drawSignature);
-          canvas.addEventListener('mouseup', endSignature);
-          canvas.addEventListener('touchstart', startSignature);
-          canvas.addEventListener('touchmove', drawSignature);
-          canvas.addEventListener('touchend', endSignature);
+      // Get the data URL of the canvas image
+      var dataURL = canvas.toDataURL();
 
-          function startSignature(event) {
-            // Start drawing the signature when the user begins a mouse or touch event
-            isDrawing = true;
-            context.moveTo(event.clientX, event.clientY);
-          }
+      // Create a blob from the data URL
+      var blob = dataURLToBlob(dataURL);
 
-          function drawSignature(event) {
-            if (isDrawing) {
-              // Draw a line to the current mouse or touch position
-              context.lineTo(event.clientX, event.clientY);
-              context.stroke();
-            }
-          }
+      // Set the value of the signature input to the blob
+      input.value = blob;
 
-          function endSignature(event) {
-            // Stop drawing the signature when the user ends the mouse or touch event
-            isDrawing = false;
-          }
-        </script>
+      // Submit the form
+      form.submit();
+    }
+
+    function dataURLToBlob(dataURL) {
+      // Convert the data URL to a binary string
+      var binaryString = atob(dataURL.split(',')[1]);
+
+      // Create an array of bytes from the binary string
+      var byteArray = new Uint8Array(binaryString.length);
+      for (var i = 0; i < binaryString.length; i++) {
+        byteArray[i] = binaryString.charCodeAt(i);
+      }
+
+      // Create a blob from the array of bytes
+      return new Blob([byteArray], { type: 'image/png' });
+    }
+  </script>
+
 
 
 
