@@ -16,7 +16,14 @@ UserDao dao = new UserDao();
 String username = (String) session.getAttribute("username");
 String firstName = request.getParameter("firstName");
 
-
+int orderId = 0;
+if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+  orderId = Integer.parseInt(request.getParameter("orderId"));
+}
+int customerId = 0;
+if (!request.getParameter("customerId").isEmpty()) {
+  customerId = Integer.parseInt(request.getParameter("customerId"));
+}
 
 User usernameOBJ = (User) session.getAttribute("usernameOBJ");
 User user = dao.getUserByUsername(username);
@@ -25,7 +32,7 @@ User user = dao.getUserByUsername(username);
   boolean isMultipart = ServletFileUpload.isMultipartContent(request);
   if (isMultipart) {
       APIConfig conf = new APIConfig();
-      String filename = username + ".png";
+      String filename = orderId + "." + customerId + ".png";
       String filepath = conf.getPdfloc();
 
       DiskFileItemFactory factory = new DiskFileItemFactory();
@@ -38,7 +45,7 @@ User user = dao.getUserByUsername(username);
           InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
           // Save the file to a local directory or database, or process the contents in some other way
           //String fileName = item.getName(); // Get the original file name
-          FileOutputStream fos = new FileOutputStream(filepath  +  "customer.signature.logo." + filename);
+          FileOutputStream fos = new FileOutputStream(filepath  +  "order.customer.signature." + filename);
           byte[] buffer = new byte[1024];
           int length;
           while ((length = fileContent.read(buffer)) > 0) {

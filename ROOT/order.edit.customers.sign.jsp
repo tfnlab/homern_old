@@ -70,7 +70,10 @@
     if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
       orderId = Integer.parseInt(request.getParameter("orderId"));
     }
-
+    int customerId = 0;
+    if (!request.getParameter("customerId").isEmpty()) {
+      customerId = Integer.parseInt(request.getParameter("customerId"));
+    }
 
   %>
   <!-- =======================================================
@@ -232,7 +235,7 @@
       formData.append('signature', blob, 'signature.png');
 
       // Submit the form using the FormData object
-      fetch('order.edit.customers.sign.save.jsp?orderId=<%=orderId+""%>', {
+      fetch('order.edit.customers.sign.save.jsp?orderId=<%=orderId+""%>&customerId=<%=customerId +""%>', {
         method: 'POST',
         body: formData
       })
