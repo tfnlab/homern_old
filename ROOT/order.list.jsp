@@ -7,7 +7,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
-<%@ page import="java.util.List" %>
+<%@ page import="import java.util.Calendar" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -157,8 +157,14 @@
                 <HR>
                 <%
                     int tabindex = 4;
+
+                        Calendar calendar = Calendar.getInstance();
+                        Date today = calendar.getTime(); // current date
                 %>
               <% for (Order order : orders) { %>
+                <% String color = order.getShipDate().before(today) ? "#C8E6C9" : "#FFCDD2"; %>
+                <div class="container-fluid p-5" style="background-color: <%=color%>">
+                  <div class="card p-3">
                 Name: <%= order.getOrderName() %><br>
                 ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" tabindex="<%=tabindex%>" ><%= order.getOrderId() %></a><br>
                   Description: <%= order.getOrderDescription() %><br>
@@ -173,6 +179,8 @@
                 <%
                   tabindex +=1;
                 %>
+                  </div>
+                </div>
               <% } %>
 
 

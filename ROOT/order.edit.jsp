@@ -342,6 +342,7 @@
           <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"><br>
           <label for="orderTotal">Order Total:</label><br>
           <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"><br>
+          <HR>
           <input type="submit" value="Submit">
         </form>
 
