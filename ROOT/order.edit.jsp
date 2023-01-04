@@ -280,14 +280,7 @@
           <div class="form-group">
             <label for="order-status">Order Status</label>
             <select class="form-control" id="status" name="status">
-              <%
-                String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
-                for (String sstatus : statuses) {
-              %>
-              <option value="<%= sstatus %>" <%= sstatus.equals(currentStatus) ? "selected" : "" %>><%= sstatus %></option>
-              <%
-                }
-              %>
+            
             </select>
           </div>
           <label for="orderId">Order Name:</label><br>
