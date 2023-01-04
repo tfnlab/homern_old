@@ -134,11 +134,11 @@
           <div class="container mt-5">
             <h4>Home Renovation Nation Dashboard</h4>
             <HR>
-            Orders: <%=oDao.getCustomerOrderCount(username)%>
+            Orders: <%=oDao.getCustomerOrderCount(username)%> /  Proposal: <%=oDao.getCustomerOrderCount(username, "Proposal") %> 
             <HR>
             Customers: <%=eDao.getEntityCountByUsername(username)%>
             <HR>
-            Products 
+            Products
             <HR>
             Technicians:
             <HR>
