@@ -106,6 +106,8 @@
         <h2>User</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
+            <img src="user.edit.logo.view.jsp" />
+        <HR>
         <%
           boolean isMultipart = ServletFileUpload.isMultipartContent(request);
           if (isMultipart) {
