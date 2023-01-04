@@ -120,23 +120,26 @@
           canvas.addEventListener('touchend', endSignature);
 
           function startSignature(event) {
-            // Start drawing the signature when the user begins a mouse or touch event
+            event.preventDefault();
             isDrawing = true;
-            context.moveTo(event.clientX, event.clientY);
+            context.moveTo(event.pageX, event.pageY);
           }
 
           function drawSignature(event) {
             if (isDrawing) {
-              // Draw a line to the current mouse or touch position
-              context.lineTo(event.clientX, event.clientY);
+              context.lineTo(event.pageX, event.pageY);
               context.stroke();
             }
           }
 
           function endSignature(event) {
-            // Stop drawing the signature when the user ends the mouse or touch event
             isDrawing = false;
           }
+
+          canvas.addEventListener('touchstart', startSignature);
+          canvas.addEventListener('touchmove', drawSignature);
+          canvas.addEventListener('touchend', endSignature);
+
         </script>
 
 
