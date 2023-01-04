@@ -257,7 +257,8 @@
 
                 <label for="orderTotal">Order Total:</label><br>
                 <input type="text" id="orderTotal" name="orderTotal"  tabindex="9"><br>
-                <input type="submit" value="Submit"  tabindex="10">
+                <HR>
+                <input type="submit" value="Submit"  tabindex="10" class="btn btn-primary" >
                   	</form>
 
                  <%}%>
