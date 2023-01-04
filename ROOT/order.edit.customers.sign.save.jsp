@@ -32,7 +32,7 @@ User user = dao.getUserByUsername(username);
   boolean isMultipart = ServletFileUpload.isMultipartContent(request);
   if (isMultipart) {
       APIConfig conf = new APIConfig();
-      String filename = orderId + "." + customerId + ".png";
+      String filename = username + "."+ orderId + "." + customerId + ".png";
       String filepath = conf.getPdfloc();
 
       DiskFileItemFactory factory = new DiskFileItemFactory();
