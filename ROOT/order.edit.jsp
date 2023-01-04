@@ -192,7 +192,7 @@
         <h2>Order</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <hr>
-          <select id="customer-touch-points">
+          <select id="customer-touch-points" tabindex="2">
             <option value="greeting">Greeting</option>
             <option value="interestletter">Interest letter</option>
             <option value="proposal">Proposal</option>
@@ -212,11 +212,11 @@
             <option value="permitapplication">Permit application</option>
           </select>
             <HR>
-          <button class="btn btn-primary" onclick="getCom()">Correspondence</button>
-          <button class="btn btn-primary" onclick="getSchedule()">Schedule</button>
-          <button class="btn btn-primary" onclick="getProducts()">Invoice</button>
-          <button class="btn btn-primary" onclick="getCustomers()">Customers</button>
-          <button class="btn btn-primary" onclick="getPayments()">Payments</button>
+          <button class="btn btn-primary" onclick="getCom()"  tabindex="3">Correspondence</button>
+          <button class="btn btn-primary" onclick="getSchedule()" tabindex="4">Schedule</button>
+          <button class="btn btn-primary" onclick="getProducts()" tabindex="5">Invoice</button>
+          <button class="btn btn-primary" onclick="getCustomers()" tabindex="6">Customers</button>
+          <button class="btn btn-primary" onclick="getPayments()" tabindex="7">Payments</button>
         <hr>
 
         <%
@@ -276,19 +276,19 @@
 
         <form action="order.edit.jsp" method="POST">
           <label for="orderId">Order Name:</label><br>
-          <input type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"><br>
+          <input type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"  tabindex="8"><br>
           <label for="orderId">Order Description:</label><br>
-          <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"><%= order.getOrderDescription() %></textarea>
+          <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"  tabindex="9"><%= order.getOrderDescription() %></textarea>
           <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
           <div class="form-group">
             <label for="endTime">Order Date:</label>
-            <input type="datetime-local" class="form-control" name="orderDate" value="<%= order.getOrderDate() %>" datepicker >
+            <input type="datetime-local" class="form-control" name="orderDate" value="<%= order.getOrderDate() %>" datepicker  tabindex="10">
           </div>
 
           <label for="shipDate">Ship Date:</label><br>
-          <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"><br>
+          <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"  tabindex="11"><br>
           <label for="shippingAddress">Shipping Address:</label><br>
-          <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" value="<%= order.getShippingAddress() %>" onkeypress="callAC(this)"><br>
+          <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" value="<%= order.getShippingAddress() %>" onkeypress="callAC(this)"  tabindex="12"><br>
           <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" value="<%= order.getShippingAddresslat() %>">
           <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" value="<%= order.getShippingAddresslng() %>">
           <ul id="shippingAddressac" name="shippingAddressac"></ul>
@@ -318,7 +318,7 @@
           <hr>
 
           <label for="billingAddress">Billing Address:</label><br>
-          <input class="form-control" type="text" id="billingAddress" name="billingAddress" value="<%= order.getBillingAddress() %>" onkeypress="callAC(this)"><br>
+          <input class="form-control" type="text" id="billingAddress" name="billingAddress" value="<%= order.getBillingAddress() %>" onkeypress="callAC(this)"  tabindex="13"><br>
           <input type="hidden" id="billingAddressaclat" name="billingAddressaclat" value="<%= order.getBillingAddresslat() %>">
           <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" value="<%= order.getBillingAddresslng() %>">
           <ul id="billingAddressac" name="billingAddressac"></ul>
@@ -339,11 +339,11 @@
             <a href="https://www.google.com/maps/dir/?api=1&origin=<%=uAddPls%>&destination=<%=sAddPls%>">Get directions</a>
           <hr>
           <label for="paymentMethod">Payment Method:</label><br>
-          <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"><br>
+          <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"  tabindex="14"><br>
           <label for="orderTotal">Order Total:</label><br>
-          <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"><br>
+          <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"  tabindex="15"><br>
           <HR>
-          <input type="submit" value="Submit">
+          <input type="submit" value="Submit"  tabindex="16">
         </form>
 
       </div>
