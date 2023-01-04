@@ -212,6 +212,20 @@
             <!-- ======= Contact Section ======= -->
 
                 <form action="order.new.jsp" method="POST">
+                
+                <div class="form-group">
+                  <label for="order-status">Order Status</label>
+                  <select class="form-control" id="order-status">
+                    <option value="proposal">Proposal</option>
+                    <option value="estimate">Estimate</option>
+                    <option value="order-placement">Order placement</option>
+                    <option value="invoicing">Invoicing</option>
+                    <option value="payment">Payment</option>
+                    <option value="delivery">Delivery</option>
+                    <option value="fulfillment">Fulfillment</option>
+                  </select>
+                </div>
+
                 <label for="orderId">Order Name:</label><br>
                 <input class="form-control"  type="text" id="orderName" name="orderName" tabindex="2"><br>
                 <label for="orderId">Order Description:</label><br>
