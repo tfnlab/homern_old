@@ -100,8 +100,10 @@
         body: formData
       })
       .then(function(response) {
-        // Handle the response from the server
-        alert(response)
+        response.text().then(function(text) {
+          // Display the text
+          alert(text);
+        });
       })
       .catch(function(error) {
         // Handle any errors
