@@ -124,9 +124,9 @@
       <div class="container px-4 px-lg-5">
         <h2>Home</h2>
         <%@ include file="user.menu.nav.jsp" %>
-          <%          
+          <%
           String username = (String) session.getAttribute("username");
-          OrderDao oDao = news OrderDao();
+          OrderDao oDao = new OrderDao();
 
           %>
           <div class="container mt-5">
