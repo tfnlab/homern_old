@@ -59,7 +59,8 @@
 <body>
 
   <!-- HTML page -->
-  <canvas id="signature-canvas" width="400" height="200"></canvas>
+  <canvas id="signature-canvas" width="400" height="200" style="border: 2px solid #000000;"></canvas>
+
   <form id="signature-form" method="post" enctype="multipart/form-data">
     <input type="file" name="signature" id="signature-input" accept="image/*">
     <button type="submit">Upload Signature</button>
