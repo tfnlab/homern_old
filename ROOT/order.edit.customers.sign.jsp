@@ -89,10 +89,23 @@
 
       alert('Test 2');
       // Set the value of the signature input to the blob
-      input.value = blob;
+      var formData = new FormData();
 
-      // Submit the form
-      form.submit();
+      // Append the blob to the form data
+      formData.append('signature', blob, 'signature.png');
+
+      // Submit the form using the FormData object
+      fetch('order.edit.customers.sign.save.jsp', {
+        method: 'POST',
+        body: formData
+      })
+      .then(function(response) {
+        // Handle the response from the server
+        alert(response)
+      })
+      .catch(function(error) {
+        // Handle any errors
+      });
     }
 
     function dataURLToBlob(dataURL) {
