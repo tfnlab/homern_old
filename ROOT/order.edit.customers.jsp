@@ -278,7 +278,7 @@
           </div>
          <hr>
            <div class="container" id="searchR" name="searchR" >
-             <h3>Customer</h3>
+             <h3>Customer(s)</h3>
              <HR>
              <%
 
@@ -286,11 +286,16 @@
                  for (OrderCustomer ocItem : ocList) {
                 %>
 
+                    <a href="customer.edit.jsp?customerId=<%= ocItem.getCustomer().getId() %>" > <%= ocItem.getCustomer().getFirstName() %></a><br>
+                    <HR>
+                    <%= ocItem.getCustomer().getEmail() %><br>
+                    <HR>
+                    <%= ocItem.getCustomer().getPhone() %><br>
+                    <HR>
                     <a href="customer.edit.payments.jsp?action=remove&orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" ><i class="fas fa-plus"></i> Payment<a><br>
+                    <HR>
                     <a href="order.edit.customers.sign.jsp?orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" ><i class="fas fa-plus"></i> Signature<a><br>
-
-                    Name: <a href="customer.edit.jsp?customerId=<%= ocItem.getCustomer().getId() %>" > <%= ocItem.getCustomer().getFirstName() %></a><br>
-                    Email: <%= ocItem.getCustomer().getEmail() %><br>
+                    <HR>
                     <a href="order.edit.customers.jsp?action=remove&orderId=<%=orderId%>&ocId=<%= ocItem.getId() %>" >REMOVE CUSTOMER<a><br>
                     <HR>
                     <img src="order.edit.customers.sign.view.jsp?orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" />
