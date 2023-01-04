@@ -106,7 +106,43 @@
       return new Blob([byteArray], { type: 'image/png' });
     }
   </script>
+  
 
+        <script>
+          // JavaScript code
+          var canvas = document.getElementById('signature-canvas');
+          var context = canvas.getContext('2d');
+
+          // Flag to track whether the user is currently drawing
+          var isDrawing = false;
+
+          // Set up event listeners for mouse and touch events
+          canvas.addEventListener('mousedown', startSignature);
+          canvas.addEventListener('mousemove', drawSignature);
+          canvas.addEventListener('mouseup', endSignature);
+          canvas.addEventListener('touchstart', startSignature);
+          canvas.addEventListener('touchmove', drawSignature);
+          canvas.addEventListener('touchend', endSignature);
+
+          function startSignature(event) {
+            // Start drawing the signature when the user begins a mouse or touch event
+            isDrawing = true;
+            context.moveTo(event.clientX, event.clientY);
+          }
+
+          function drawSignature(event) {
+            if (isDrawing) {
+              // Draw a line to the current mouse or touch position
+              context.lineTo(event.clientX, event.clientY);
+              context.stroke();
+            }
+          }
+
+          function endSignature(event) {
+            // Stop drawing the signature when the user ends the mouse or touch event
+            isDrawing = false;
+          }
+        </script>
 
 
 
