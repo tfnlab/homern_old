@@ -263,7 +263,8 @@
                       Timestamp updatedAt = currentTime;
                       Timestamp deletedAt = currentTime;
                       String orderDescription = request.getParameter("orderDescription");
-                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng );
+                      String status = request.getParameter("status");
+                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng, status);
                       dao.updateOrder(order);
 
                 }
@@ -271,10 +272,24 @@
         <%
           Order order = dao.getOrderByOrderId(orderId);
 
+            String currentStatus = order.getStatus();
         %>
         <!-- ======= Contact Section ======= -->
 
         <form action="order.edit.jsp" method="POST">
+          <div class="form-group">
+            <label for="order-status">Order Status</label>
+            <select class="form-control" id="status" name="status">
+              <%
+                String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
+                for (String status : statuses) {
+              %>
+              <option value="<%= status %>" <%= status.equals(currentStatus) ? "selected" : "" %>><%= status %></option>
+              <%
+                }
+              %>
+            </select>
+          </div>
           <label for="orderId">Order Name:</label><br>
           <input type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"  tabindex="8"><br>
           <label for="orderId">Order Description:</label><br>

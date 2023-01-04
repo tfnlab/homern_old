@@ -217,13 +217,14 @@
                 <div class="form-group">
                   <label for="order-status">Order Status</label>
                   <select class="form-control" id="status" name="status">
-                    <option value="proposal">Proposal</option>
-                    <option value="estimate">Estimate</option>
-                    <option value="order-placement">Order placement</option>
-                    <option value="invoicing">Invoicing</option>
-                    <option value="payment">Payment</option>
-                    <option value="delivery">Delivery</option>
-                    <option value="fulfillment">Fulfillment</option>
+                  <%
+                    String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
+                    for (String status : statuses) {
+                  %>
+                  <option value="<%= status %>"  ><%= status %></option>
+                  <%
+                    }
+                  %>
                   </select>
                 </div>
 
