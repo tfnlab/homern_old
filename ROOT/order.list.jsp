@@ -171,9 +171,9 @@
                   Description: <%= order.getOrderDescription() %><br>
                 Date: <%= order.getOrderDate() %><br>
                 Shipping Address: <%= order.getShippingAddress() %><br>
-                Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br>
+                <!-- Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br> -->
                 Billing Address: <%= order.getBillingAddress() %><br>
-                Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br>
+                <!-- Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br> -->
                 Payment Method: <%= order.getPaymentMethod() %><br>
                 Total: <%= order.getOrderTotal() %><br>
                 <hr>
