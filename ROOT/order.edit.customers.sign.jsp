@@ -76,6 +76,7 @@
     form.addEventListener('submit', uploadSignature);
 
     function uploadSignature(event) {
+      alert('Test');
       // Prevent the form from being submitted
       event.preventDefault();
 
