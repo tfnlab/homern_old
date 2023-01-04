@@ -163,7 +163,7 @@
                         Date today = calendar.getTime(); // current date
                 %>
               <% for (Order order : orders) { %>
-                <% String color = order.getShipDate().before(today) ? "#C8E6C9" : "#FFCDD2"; %>
+                <% String color = order.getShipDate().after(today) ? "#C8E6C9" : "#FFCDD2"; %>
                 <div class="container-fluid p-5" style="background-color: <%=color%>">
                   <div class="card p-3">
                 Name: <%= order.getOrderName() %><br>
