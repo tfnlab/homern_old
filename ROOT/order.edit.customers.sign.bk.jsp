@@ -120,22 +120,35 @@
           canvas.addEventListener('touchend', endSignature);
 
           function startSignature(event) {
-            // Start drawing the signature when the user begins a mouse or touch event
-            isDrawing = true;
-            context.moveTo(event.clientX, event.clientY);
+            // Get the touch position relative to the canvas
+            var touch = event.touches[0];
+            var touchX = touch.clientX - canvas.offsetLeft;
+            var touchY = touch.clientY - canvas.offsetTop;
+
+            // Start a new path
+            ctx.beginPath();
+            ctx.moveTo(touchX, touchY);
           }
 
+          // Set up the touch move event handler
           function drawSignature(event) {
-            if (isDrawing) {
-              // Draw a line to the current mouse or touch position
-              context.lineTo(event.clientX, event.clientY);
-              context.stroke();
-            }
+            // Prevent the default touch event behavior
+            event.preventDefault();
+
+            // Get the touch position relative to the canvas
+            var touch = event.touches[0];
+            var touchX = touch.clientX - canvas.offsetLeft;
+            var touchY = touch.clientY - canvas.offsetTop;
+
+            // Draw a line to the new touch position
+            ctx.lineTo(touchX, touchY);
+            ctx.stroke();
           }
 
+          // Set up the touch end event handler
           function endSignature(event) {
-            // Stop drawing the signature when the user ends the mouse or touch event
-            isDrawing = false;
+            // Finish the path
+            ctx.closePath();
           }
         </script>
 
