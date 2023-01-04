@@ -176,7 +176,7 @@
                 Payment Method: <%= order.getPaymentMethod() %><br>
                 Total: <%= order.getOrderTotal() %><br>
                 <hr>
-                <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info <%= order.getOrderId() %></a><br>
+                <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
 
                 <%
                   tabindex +=1;
