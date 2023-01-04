@@ -243,6 +243,7 @@
         response.text().then(function(text) {
           // Display the text
           alert(text);
+          window.location = 'order.edit.customers.sign.save.jsp?orderId=<%=orderId+""%>';
         });
       })
       .catch(function(error) {
