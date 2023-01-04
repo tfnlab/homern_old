@@ -278,7 +278,7 @@
           </div>
          <hr>
            <div class="container" id="searchR" name="searchR" >
-             <h3>Customer(s)</h3>
+             <h3>Customers</h3>
              <HR>
              <%
 
@@ -289,7 +289,6 @@
                     <a href="customer.edit.jsp?customerId=<%= ocItem.getCustomer().getId() %>" > <%= ocItem.getCustomer().getFirstName() %></a><br>
                     <HR>
                     <%= ocItem.getCustomer().getEmail() %><br>
-                    <HR>
                     <%= ocItem.getCustomer().getPhone() %><br>
                     <HR>
                     <a href="customer.edit.payments.jsp?action=remove&orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" ><i class="fas fa-plus"></i> Payment<a><br>
