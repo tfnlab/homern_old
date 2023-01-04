@@ -167,16 +167,17 @@
                 <div class="container-fluid p-5" style="background-color: <%=color%>">
                   <div class="card p-3">
                 Name: <%= order.getOrderName() %><br>
-                ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" tabindex="<%=tabindex%>" ><%= order.getOrderId() %></a><br>
                   Description: <%= order.getOrderDescription() %><br>
                 Date: <%= order.getOrderDate() %><br>
-                Shipping Address: <%= order.getShippingAddress() %><br>
+                Project Address: <%= order.getShippingAddress() %><br>
                 <!-- Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br> -->
                 Billing Address: <%= order.getBillingAddress() %><br>
                 <!-- Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br> -->
                 Payment Method: <%= order.getPaymentMethod() %><br>
                 Total: <%= order.getOrderTotal() %><br>
                 <hr>
+                ID: <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info <%= order.getOrderId() %></a><br>
+
                 <%
                   tabindex +=1;
                 %>
