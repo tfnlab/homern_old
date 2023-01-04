@@ -12,6 +12,16 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
 <%
+UserDao dao = new UserDao();
+String username = (String) session.getAttribute("username");
+String firstName = request.getParameter("firstName");
+
+
+
+User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+User user = dao.getUserByUsername(username);
+%>
+<%
   boolean isMultipart = ServletFileUpload.isMultipartContent(request);
   if (isMultipart) {
       APIConfig conf = new APIConfig();
@@ -38,5 +48,5 @@
           fileContent.close();
         }
       }
-  }    
+  }
     %>File Save WOOHOO
