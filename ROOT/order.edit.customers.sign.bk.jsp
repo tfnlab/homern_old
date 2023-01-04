@@ -118,7 +118,13 @@
           canvas.addEventListener('touchstart', startSignature);
           canvas.addEventListener('touchmove', drawSignature);
           canvas.addEventListener('touchend', endSignature);
+          // Set up touch event listeners for the canvas
+          
+          canvas.addEventListener('touchstart', startSignature);
+          canvas.addEventListener('touchmove', drawSignature);
+          canvas.addEventListener('touchend', endSignature);
 
+          // Set up the touch start event handler
           function startSignature(event) {
             // Get the touch position relative to the canvas
             var touch = event.touches[0];
@@ -150,6 +156,7 @@
             // Finish the path
             ctx.closePath();
           }
+
         </script>
 
 
