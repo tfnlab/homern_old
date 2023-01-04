@@ -198,54 +198,11 @@
 </head>
 
 <body onload="getProductDetail()">
-
-  <!-- ======= Header ======= -->
-
-        <h2>Order - Products </h2>
-        <%@ include file="user.menu.nav.jsp" %>
-                <%
-                ProductLineItemDao plDao = new ProductLineItemDao();
-                OrderCustomerDao ocDao = new OrderCustomerDao();
-                Order order = dao.getOrderByOrderId(orderId);
-                String action = request.getParameter("action");
-                if (action != null && action.trim().length() > 0) {
-                  if(action.equals("add")){
-                    int cId = 0;
-                    if (!request.getParameter("customerId").isEmpty()) {
-                      cId = Integer.parseInt(request.getParameter("customerId"));
-                    }
-                    long currentTimeMillis = System.currentTimeMillis();
-                    Timestamp currentTime = new Timestamp(currentTimeMillis);
-                    OrderCustomer oc = new OrderCustomer(0,orderId, cId, currentTime, username);
-                    ocDao.insert(oc);
-                  }
-                  if(action.equals("remove")){
-                    int ocId = 0;
-                    if (!request.getParameter("ocId").isEmpty()) {
-                      ocId = Integer.parseInt(request.getParameter("ocId"));
-                    }
-                    ocDao.deleteById(ocId, username);
-                  }
-                }
-                %>
-                <div class="form-group">
-                  Order:
-                    <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
-                </div>
-                <HR>
-        <hr>
-          <!-- HTML page -->
-
-          <hr>
-
-     
   <canvas id="signature-canvas" width="400" height="200" style="border: 2px solid #000000;"></canvas>
-
   <form action="order.edit.customers.sign.jsp" id="signature-form" method="post" enctype="multipart/form-data">
     <input type="file" name="signature" id="signature-input" accept="image/*">
     <button type="submit">Upload Signature</button>
   </form>
-
   <script>
     // JavaScript code
     var canvas = document.getElementById('signature-canvas');
@@ -343,6 +300,36 @@
         </script>
 
 
+                <h2>Order - Products </h2>
+                        <%
+                        ProductLineItemDao plDao = new ProductLineItemDao();
+                        OrderCustomerDao ocDao = new OrderCustomerDao();
+                        Order order = dao.getOrderByOrderId(orderId);
+                        String action = request.getParameter("action");
+                        if (action != null && action.trim().length() > 0) {
+                          if(action.equals("add")){
+                            int cId = 0;
+                            if (!request.getParameter("customerId").isEmpty()) {
+                              cId = Integer.parseInt(request.getParameter("customerId"));
+                            }
+                            long currentTimeMillis = System.currentTimeMillis();
+                            Timestamp currentTime = new Timestamp(currentTimeMillis);
+                            OrderCustomer oc = new OrderCustomer(0,orderId, cId, currentTime, username);
+                            ocDao.insert(oc);
+                          }
+                          if(action.equals("remove")){
+                            int ocId = 0;
+                            if (!request.getParameter("ocId").isEmpty()) {
+                              ocId = Integer.parseInt(request.getParameter("ocId"));
+                            }
+                            ocDao.deleteById(ocId, username);
+                          }
+                        }
+                        %>
+                        <div class="form-group">
+                          Order:
+                            <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
+                        </div>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
