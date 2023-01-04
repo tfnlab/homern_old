@@ -124,19 +124,6 @@
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
             <h4>Home Renovation Nation</h4>
-            <style>
-              .progress-bar:first-child {
-                background-color: green;
-              }
-              .progress-bar:last-child {
-                background-color: red;
-              }
-            </style>
-            <hr>
-            <div class="progress">
-              <div class="progress-bar" style="width: 70%;"></div>
-              <div class="progress-bar" style="width: 30%;"></div>
-            </div>
             <hr>
             <p>Our home service software offers a range of features to help companies streamline their operations:</p>
             <ul>
