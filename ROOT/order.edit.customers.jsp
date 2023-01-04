@@ -294,6 +294,7 @@
                     Name: <%= ocItem.getCustomer().getFirstName() %><br>
                     Email: <%= ocItem.getCustomer().getEmail() %><br>
                     <a href="order.edit.customers.jsp?action=remove&orderId=<%=orderId%>&ocId=<%= ocItem.getId() %>" ><i class="fas fa-minus"> REMOVE CUSTOMER<a><br>
+                    <HR>
                     <img src="order.edit.customers.sign.view.jsp?orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" />
                     <hr>
              <%
