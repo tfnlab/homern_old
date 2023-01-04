@@ -145,7 +145,7 @@
       <div class="container px-4 px-lg-5">
         <h2>Order</h2>
         <%@ include file="user.menu.nav.jsp" %>
-
+        <HR>
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
@@ -213,22 +213,22 @@
 
                 <form action="order.new.jsp" method="POST">
                 <label for="orderId">Order Name:</label><br>
-                <input class="form-control"  type="text" id="orderName" name="orderName"><br>
+                <input class="form-control"  type="text" id="orderName" name="orderName" tabindex="2"><br>
                 <label for="orderId">Order Description:</label><br>
-                <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"></textarea>
+                <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5" tabindex="3"></textarea>
                 <label class="form-label" for="textAreaExample">Request Info</label>
                 <label for="orderDate">Order Date:</label><br>
-                <input type="datetime-local" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd"><br>
+                <input type="datetime-local" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd" tabindex="4"><br>
                 <label for="shipDate">Ship Date:</label><br>
-                <input type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd"><br>
+                <input type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" tabindex="5"><br>
                 <label for="shippingAddress">Shipping Address:</label><br>
-                <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC(this)"><br>
+                <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC(this)"  tabindex="6"><br>
                 <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" >
                 <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" >
                 <ul id="shippingAddressac" name="shippingAddressac"></ul>
                 <hr>
                 <label for="billingAddress">Billing Address:</label><br>
-                <input class="form-control" type="text" id="billingAddress" name="billingAddress" onkeypress="callAC(this)"><br>
+                <input class="form-control" type="text" id="billingAddress" name="billingAddress" onkeypress="callAC(this)"  tabindex="7"><br>
                 <input type="hidden" id="billingAddressaclat" name="billingAddressaclat" >
                 <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" >
                 <ul id="billingAddressac" name="billingAddressac"></ul>
@@ -236,7 +236,7 @@
                 <!-- HTML -->
                 <div class="form-group">
                   <label for="payment-options">Payment Options</label>
-                  <select class="form-control" id="paymentMethod" name="paymentMethod">
+                  <select class="form-control" id="paymentMethod" name="paymentMethod"  tabindex="8">
                     <option value="cash">Cash</option>
                     <option value="check">Check</option>
                     <option value="credit-card">Credit Card</option>
@@ -256,8 +256,8 @@
                 </div>
 
                 <label for="orderTotal">Order Total:</label><br>
-                <input type="text" id="orderTotal" name="orderTotal"><br>
-                <input type="submit" value="Submit">
+                <input type="text" id="orderTotal" name="orderTotal"  tabindex="9"><br>
+                <input type="submit" value="Submit"  tabindex="10">
                   	</form>
 
                  <%}%>
