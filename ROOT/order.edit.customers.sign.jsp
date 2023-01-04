@@ -8,7 +8,26 @@
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.net.URLDecoder" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="com.tfnlab.mysql.Technician" %>
+<%@ page import="com.tfnlab.mysql.TechnicianDao" %>
+<%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
+<%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
+<%@ page import="com.tfnlab.mysql.Product" %>
+<%@ page import="com.tfnlab.mysql.ProductDao" %>
+<%@ page import="com.tfnlab.mysql.Event" %>
+<%@ page import="com.tfnlab.mysql.EventDao" %>
+<%@ page import="java.util.UUID" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="com.tfnlab.mysql.ProductLineItem" %>
+<%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
+<%@ page import="com.tfnlab.mysql.OrderCustomer" %>
+<%@ page import="com.tfnlab.mysql.OrderCustomerDao" %>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,19 +42,14 @@
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-
-    <!-- Include the Bootstrap CSS file -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Include the Bootstrap Datepicker CSS file -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" />
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
@@ -44,125 +58,409 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <%
+    OrderDao dao = new OrderDao();
+    OrderTechniciansDAO otD = new OrderTechniciansDAO();
+    EventDao evd = new EventDao();
+    TechnicianDao technicianDao = new TechnicianDao();
+    ProductDao pDao = new ProductDao();
+    int orderId = 0;
+    String username = (String) session.getAttribute("username");
+    User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+    if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+      orderId = Integer.parseInt(request.getParameter("orderId"));
+    }
 
+
+  %>
   <!-- =======================================================
   * Template Name: Presento - v3.9.1
   * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-</head>
-
-<body>
-
-  <!-- HTML page -->
-  <canvas id="signature-canvas" width="400" height="200" style="border: 2px solid #000000;"></canvas>
-
-  <form action="order.edit.customers.sign.jsp" id="signature-form" method="post" enctype="multipart/form-data">
-    <input type="file" name="signature" id="signature-input" accept="image/*">
-    <button type="submit">Upload Signature</button>
-  </form>
-
   <script>
-    // JavaScript code
-    var canvas = document.getElementById('signature-canvas');
-    var form = document.getElementById('signature-form');
-    var input = document.getElementById('signature-input');
-
-    // Set up an event listener for the form submission event
-    form.addEventListener('submit', uploadSignature);
-
-    function uploadSignature(event) {
-      alert('Test');
-      // Prevent the form from being submitted
-      event.preventDefault();
-
-      // Get the data URL of the canvas image
-      var dataURL = canvas.toDataURL();
-
-      // Create a blob from the data URL
-      var blob = dataURLToBlob(dataURL);
+    function callGeo(sk, fNameLink) {
+        document.getElementById(fNameLink.substring(0,fNameLink.length-2)).value = sk;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            let items = this.responseText.split('<ITEM>');
+            fNamenew = items[items.length-1];
+            fNamenew = removeTrailingSpaces(fNamenew);
+            document.getElementById(fNamenew+"lat").value = items[0];
+            document.getElementById(fNamenew+"lng").value = items[1];
 
 
-      alert('Test 2');
-      // Set the value of the signature input to the blob
-      var formData = new FormData();
-
-      // Append the blob to the form data
-      formData.append('signature', blob, 'signature.png');
-
-      // Submit the form using the FormData object
-      fetch('order.edit.customers.sign.save.jsp', {
-        method: 'POST',
-        body: formData
-      })
-      .then(function(response) {
-        response.text().then(function(text) {
-          // Display the text
-          alert(text);
-        });
-      })
-      .catch(function(error) {
-        // Handle any errors
-      });
-    }
-
-    function dataURLToBlob(dataURL) {
-      // Convert the data URL to a binary string
-      var binaryString = atob(dataURL.split(',')[1]);
-
-      // Create an array of bytes from the binary string
-      var byteArray = new Uint8Array(binaryString.length);
-      for (var i = 0; i < binaryString.length; i++) {
-        byteArray[i] = binaryString.charCodeAt(i);
-      }
-
-      // Create a blob from the array of bytes
-      return new Blob([byteArray], { type: 'image/png' });
-    }
-  </script>
-
-
-        <script>
-          // JavaScript code
-          var canvas = document.getElementById('signature-canvas');
-          var context = canvas.getContext('2d');
-
-          // Flag to track whether the user is currently drawing
-          var isDrawing = false;
-
-          // Set up event listeners for mouse and touch events
-          canvas.addEventListener('mousedown', startSignature);
-          canvas.addEventListener('mousemove', drawSignature);
-          canvas.addEventListener('mouseup', endSignature);
-          canvas.addEventListener('touchstart', startSignature);
-          canvas.addEventListener('touchmove', drawSignature);
-          canvas.addEventListener('touchend', endSignature);
-
-          function startSignature(event) {
-            // Start drawing the signature when the user begins a mouse or touch event
-            isDrawing = true;
-            context.moveTo(event.clientX, event.clientY);
           }
+        };
 
-          function drawSignature(event) {
-            if (isDrawing) {
-              // Draw a line to the current mouse or touch position
-              context.lineTo(event.clientX, event.clientY);
-              context.stroke();
+        const encodedString = encodeURIComponent(sk);
+        var urlString = "GeocodingExample.jsp?search=" + encodedString + "&sfor=" + fNameLink;
+        xhttp.open("GET", urlString, true);
+        xhttp.send();
+    }
+
+    function removeTrailingSpaces(str) {
+            return str.replace(/\s+$/g, "");
+    }
+    function getMessage() {
+      //genmessage.jsp?comType=latepaymentrequest
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+
+          document.getElementById("orderCom").innerHTML = this.responseText.trim();
+        }
+      };
+      var select = document.getElementById("customer-touch-points");
+      var selectedOption = select.options[select.selectedIndex];
+      var text = selectedOption.text;
+      const encodedString = encodeURIComponent(text);
+      var urlString = "genmessage.jsp?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
+      xhttp.open("GET", urlString, true);
+      xhttp.send();
+    }
+    function callAC(sfor) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          let items = this.responseText.split('<ITEM>');
+          fName = items[items.length-1];
+          fName = removeTrailingSpaces(fName);
+          for (let i = 0; i < items.length-1; i++) {
+            if (items[i].length > 5) {
+              let newL = "<li>" + "<a href=\"javascript:void(0)\" onclick=\"callGeo('" + items[i] +"' , '" + fName+ "')\" >" + items[i] + "</a>" + "</li>";
+              document.getElementById(fName).innerHTML = document.getElementById(fName).innerHTML  + newL;
             }
           }
+        }
+      };
+      let elName = sfor.name + "ac";
+      let search = document.getElementById(sfor.name).value;
 
-          function endSignature(event) {
-            // Stop drawing the signature when the user ends the mouse or touch event
-            isDrawing = false;
-          }
-        </script>
+      if (search.length > 5) {
+        document.getElementById(elName).innerHTML = "";
+        var urlString = "GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
+        xhttp.open("GET", urlString, true);
+        xhttp.send();
+      }
+    }
+    function getCom() {
+      var select = document.getElementById("customer-touch-points");
+      var selectedOption = select.options[select.selectedIndex];
+      var com = selectedOption.value;
+      var orderId = <%=orderId%>;
+      var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + com;
+      window.open(url, "_self");
+    }
+    function getProductDetail() {
+      var select = document.getElementById("productsId");
+      var selectedOption = select.options[select.selectedIndex];
+      var productsId = selectedOption.value;
+      var orderId = <%=orderId%>;
+      var url = "product.xml.jsp?productId=" + productsId ;
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("name").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[0].trim());
+          document.getElementById("description").innerHTML = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[1].trim());
+          document.getElementById("price").value = removeTrailingSpaces(this.responseText.split("<HRNITEM>")[2].trim());
+          calTotal();
+        }
+      };
+      xhttp.open("GET", url, true);
+      xhttp.send();
+    }
+    function calTotal() {
+        document.getElementById("total").value = document.getElementById("units").value * document.getElementById("price").value;
+    }
+
+    function getInv() {
+      var orderId = <%=orderId%>;
+      var url = "order.edit.products.print.jsp?orderId=" + orderId;
+      window.open(url, "_blank");
+    }
+    function searchCustomer() {
+      var orderId = <%=orderId%>;
+      var url = "order.edit.customers.search.jsp?searchKey=" + document.getElementById("search").value  + "&orderId=" + orderId ;
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("searchR").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", url, true);
+      xhttp.send();
+    }
+  </script>
+</head>
+
+<body onload="getProductDetail()">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+      <h1 class="logo me-auto"><a href="index.html">HRN</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html#hero">Home</a></li>
+          <li><a class="nav-link scrollto active" href="avatar.html">Avatar</a></li>
+          <li><a class="nav-link scrollto" href="index.html#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="index.html#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="index.html#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="https://forms.gle/vdU9zvFTZJ9eKAsz6" class="get-started-btn scrollto">Get Started</a>
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Order</li>
+        </ol>
+        <h2>Order</h2>
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container px-4 px-lg-5">
+        <h2>Order - Products </h2>
+        <%@ include file="user.menu.nav.jsp" %>
+                <%
+                ProductLineItemDao plDao = new ProductLineItemDao();
+                OrderCustomerDao ocDao = new OrderCustomerDao();
+                Order order = dao.getOrderByOrderId(orderId);
+                String action = request.getParameter("action");
+                if (action != null && action.trim().length() > 0) {
+                  if(action.equals("add")){
+                    int cId = 0;
+                    if (!request.getParameter("customerId").isEmpty()) {
+                      cId = Integer.parseInt(request.getParameter("customerId"));
+                    }
+                    long currentTimeMillis = System.currentTimeMillis();
+                    Timestamp currentTime = new Timestamp(currentTimeMillis);
+                    OrderCustomer oc = new OrderCustomer(0,orderId, cId, currentTime, username);
+                    ocDao.insert(oc);
+                  }
+                  if(action.equals("remove")){
+                    int ocId = 0;
+                    if (!request.getParameter("ocId").isEmpty()) {
+                      ocId = Integer.parseInt(request.getParameter("ocId"));
+                    }
+                    ocDao.deleteById(ocId, username);
+                  }
+                }
+                %>
+                <div class="form-group">
+                  Order:
+                    <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
+                </div>
+                <HR>
+        <hr>
+          <!-- HTML page -->
+          <canvas id="signature-canvas" width="400" height="200" style="border: 2px solid #000000;"></canvas>
+
+          <form action="order.edit.customers.sign.jsp" id="signature-form" method="post" enctype="multipart/form-data">
+            <input type="file" name="signature" id="signature-input" accept="image/*">
+            <button type="submit">Upload Signature</button>
+          </form>
+
+          <script>
+            // JavaScript code
+            var canvas = document.getElementById('signature-canvas');
+            var form = document.getElementById('signature-form');
+            var input = document.getElementById('signature-input');
+
+            // Set up an event listener for the form submission event
+            form.addEventListener('submit', uploadSignature);
+
+            function uploadSignature(event) {
+              alert('Test');
+              // Prevent the form from being submitted
+              event.preventDefault();
+
+              // Get the data URL of the canvas image
+              var dataURL = canvas.toDataURL();
+
+              // Create a blob from the data URL
+              var blob = dataURLToBlob(dataURL);
 
 
+              alert('Test 2');
+              // Set the value of the signature input to the blob
+              var formData = new FormData();
+
+              // Append the blob to the form data
+              formData.append('signature', blob, 'signature.png');
+
+              // Submit the form using the FormData object
+              fetch('order.edit.customers.sign.save.jsp', {
+                method: 'POST',
+                body: formData
+              })
+              .then(function(response) {
+                response.text().then(function(text) {
+                  // Display the text
+                  alert(text);
+                });
+              })
+              .catch(function(error) {
+                // Handle any errors
+              });
+            }
+
+            function dataURLToBlob(dataURL) {
+              // Convert the data URL to a binary string
+              var binaryString = atob(dataURL.split(',')[1]);
+
+              // Create an array of bytes from the binary string
+              var byteArray = new Uint8Array(binaryString.length);
+              for (var i = 0; i < binaryString.length; i++) {
+                byteArray[i] = binaryString.charCodeAt(i);
+              }
+
+              // Create a blob from the array of bytes
+              return new Blob([byteArray], { type: 'image/png' });
+            }
+          </script>
+
+
+                <script>
+                  // JavaScript code
+                  var canvas = document.getElementById('signature-canvas');
+                  var context = canvas.getContext('2d');
+
+                  // Flag to track whether the user is currently drawing
+                  var isDrawing = false;
+
+                  // Set up event listeners for mouse and touch events
+                  canvas.addEventListener('mousedown', startSignature);
+                  canvas.addEventListener('mousemove', drawSignature);
+                  canvas.addEventListener('mouseup', endSignature);
+                  canvas.addEventListener('touchstart', startSignature);
+                  canvas.addEventListener('touchmove', drawSignature);
+                  canvas.addEventListener('touchend', endSignature);
+
+                  function startSignature(event) {
+                    // Start drawing the signature when the user begins a mouse or touch event
+                    isDrawing = true;
+                    context.moveTo(event.clientX, event.clientY);
+                  }
+
+                  function drawSignature(event) {
+                    if (isDrawing) {
+                      // Draw a line to the current mouse or touch position
+                      context.lineTo(event.clientX, event.clientY);
+                      context.stroke();
+                    }
+                  }
+
+                  function endSignature(event) {
+                    // Stop drawing the signature when the user ends the mouse or touch event
+                    isDrawing = false;
+                  }
+                </script>
+          <hr>
+      </div>
+
+    </section><!-- End Blog Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Presento<span>.</span></h3>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>
+              Sign up to learn more about technology and information management.
+            </p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Presento</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/presento-bootstrap-corporate-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-end pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -175,6 +473,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
