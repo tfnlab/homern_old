@@ -142,7 +142,7 @@
                   <%=sstatus%>: <%=oDao.getCustomerOrderCount(username, sstatus) %><BR>
             <%
               }
-            %>
+            %>          
             <HR>
             Customers: <%=eDao.getEntityCountByUsername(username)%>
             <HR>
@@ -152,20 +152,6 @@
             <HR>
             Events:
             <HR>
-            <style>
-              .progress-bar:first-child {
-                background-color: green;
-              }
-              .progress-bar:last-child {
-                background-color: red;
-              }
-            </style>
-            <hr>
-            <div class="progress">
-              <div class="progress-bar" style="width: 70%;"></div>
-              <div class="progress-bar" style="width: 30%;"></div>
-            </div>
-            <hr>
           </div>
       </div>
 
