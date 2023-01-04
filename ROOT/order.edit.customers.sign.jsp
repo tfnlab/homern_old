@@ -300,7 +300,7 @@
         </script>
 
 
-                <h2>Order - Products </h2>
+                <h2>Order - Customer Signature</h2>
                         <%
                         ProductLineItemDao plDao = new ProductLineItemDao();
                         OrderCustomerDao ocDao = new OrderCustomerDao();
