@@ -89,6 +89,7 @@
       // Set the value of the signature input to the blob
       input.value = blob;
 
+      alert('Test 2');
       // Submit the form
       form.submit();
     }
