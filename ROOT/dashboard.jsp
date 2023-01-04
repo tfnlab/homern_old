@@ -134,7 +134,15 @@
           <div class="container mt-5">
             <h4>Home Renovation Nation Dashboard</h4>
             <HR>
-            Orders: <%=oDao.getCustomerOrderCount(username)%> /  Proposal: <%=oDao.getCustomerOrderCount(username, "Proposal") %> 
+            Orders: <%=oDao.getCustomerOrderCount(username)%> <BR>
+            <%
+              String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
+              for (String sstatus : statuses) {
+            %>
+                  <%=sstatus%>: <%=oDao.getCustomerOrderCount(username, sstatus) %><BR>
+            <%
+              }
+            %>
             <HR>
             Customers: <%=eDao.getEntityCountByUsername(username)%>
             <HR>
