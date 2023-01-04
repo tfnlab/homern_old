@@ -239,8 +239,9 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Order - Products </h2>
+        <h2>Order - Customers </h2>
         <%@ include file="user.menu.nav.jsp" %>
+        <HR>
                 <%
                 ProductLineItemDao plDao = new ProductLineItemDao();
                 OrderCustomerDao ocDao = new OrderCustomerDao();
@@ -270,7 +271,6 @@
                   Order:
                     <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                 </div>
-                <HR>
         <hr>
           <div class="form-group">
             <label for="title">Search by Name, Email or Phone</label>
