@@ -131,11 +131,13 @@
               .progress-bar:last-child {
                 background-color: red;
               }
-            </style>            
+            </style>
+            <hr>
             <div class="progress">
               <div class="progress-bar" style="width: 70%;"></div>
               <div class="progress-bar" style="width: 30%;"></div>
             </div>
+            <hr>
             <p>Our home service software offers a range of features to help companies streamline their operations:</p>
             <ul>
               <li><strong>Scheduling and dispatch:</strong> our software can help schedule and dispatch technicians to service calls and manage their work schedules.</li>
