@@ -282,9 +282,9 @@
             <select class="form-control" id="status" name="status">
               <%
                 String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
-                for (String status : statuses) {
+                for (String sstatus : statuses) {
               %>
-              <option value="<%= status %>" <%= status.equals(currentStatus) ? "selected" : "" %>><%= status %></option>
+              <option value="<%= sstatus %>" <%= sstatus.equals(currentStatus) ? "selected" : "" %>><%= sstatus %></option>
               <%
                 }
               %>

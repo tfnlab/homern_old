@@ -219,9 +219,9 @@
                   <select class="form-control" id="status" name="status">
                   <%
                     String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
-                    for (String status : statuses) {
+                    for (String sstatus : statuses) {
                   %>
-                  <option value="<%= status %>"  ><%= status %></option>
+                  <option value="<%= sstatus %>"  ><%= sstatus %></option>
                   <%
                     }
                   %>
