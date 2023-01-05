@@ -8,6 +8,12 @@
   String currentUrl = request.getRequestURL().toString();
 %>
 <HR>
+<select>
+  <option data-icon="🌞" value="sunny">Sunny</option>
+  <option data-icon="🌤" value="partly-cloudy">Partly cloudy</option>
+  <option data-icon="⛈️" value="stormy">Stormy</option>
+</select>
+<HR>
   <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
 <HR>
 <select name="hrnnavbar" id="hrnnavbar" onchange="goToUrl()" tabindex="1">
