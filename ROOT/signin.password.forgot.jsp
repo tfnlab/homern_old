@@ -156,7 +156,7 @@
                                                 + "\n"
                                                 + "To reset your password, please click the link below:\n"
                                                 + "\n"
-                                                + "<a href=\"https://homerenovationnation.com/signup.password.forgot.jsp?prc=" + prc + "&username=" + username + "&email=" + email +"\" >Reset password</a> \n"
+                                                + "<a href=\"https://homerenovationnation.com/signin.password.forgot.jsp?prc=" + prc + "&username=" + username + "&email=" + email +"\" >Reset password</a> \n"
                                                 + "If you are unable to click the link, you can also copy and paste it into your web browser.\n"
                                                 + "\n"
                                                 + "If you have any issues or concerns, please don't hesitate to contact us at info@homerenovationnation.com.\n"
