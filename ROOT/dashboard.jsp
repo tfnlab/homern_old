@@ -142,6 +142,7 @@
                 <tr>
                   <th scope="col">Status</th>
                   <th scope="col">Count</th>
+                  <th scope="col">Total</th>
                 </tr>
               </thead>
               <tbody>
@@ -152,6 +153,7 @@
                 <tr>
                   <td><%= sstatus %></td>
                   <td><%= oDao.getCustomerOrderCount(username, sstatus) %></td>
+                  <td><%= oDao.getCustomerOrderTotal(username, sstatus) %></td>                  
                 </tr>
                 <%
                   }
