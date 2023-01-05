@@ -135,6 +135,8 @@
                   Random random = new Random();
                   int num = random.nextInt(900000) + 100000;
                   String prc = String.format("%06d", num);
+                  UserDao dao = new UserDao();
+                  dao.updateUserPasswordReset(username, prc);                  
 
                 }else{
 
