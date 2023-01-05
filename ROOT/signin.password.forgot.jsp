@@ -138,7 +138,7 @@
                     UserDao dao = new UserDao();
                     dao.updateUserPassword(email_user, username, prc_user, password);
 
-                    %>Password Reset<%
+                    %>Password has been reset<%
 
                 }else if (prc_user != null && prc_user.trim().length() > 0) {
                   %>
@@ -210,6 +210,9 @@
                         String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
                         String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
                         rm = stdout + stderr + " TEST ";
+                        %>
+                          We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password.
+                        <%
                     }catch(IOException ex){
                         rm = ex.getMessage();
                     }
