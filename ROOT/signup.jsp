@@ -217,7 +217,23 @@
                                   File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
                                   FileWriter fw = new FileWriter(file);
                                   BufferedWriter bw = new BufferedWriter(fw);
-                                  bw.write(email + "<CONTENT>Home Renovation Nation Confirm Email<CONTENT><a href=\"https://homerenovationnation.com/signup.confirm.email.jsp?is_email_confirmed_code=" + is_email_confirmed_code + "\" >Confrim Link</a> ");
+
+                                  String emailMessage = "Dear " + firstName + ",\n" +
+                                                       "\n" +
+                                                       "Thank you for registering with Home Renovation Nation! We're excited to have you as a member of our community.\n" +
+                                                       "\n" +
+                                                       "To complete your registration, please confirm your email by clicking the link below or visiting Home Renovation Nation and adding the following code under the \"User Profile\" section:\n" +
+                                                       "\n" +
+                                                       "<a href=\"https://homerenovationnation.com/signup.confirm.email.jsp?is_email_confirmed_code=" + is_email_confirmed_code + "&username=" + username + "&email=" + email +"\" >Confirm Email</a> " +
+                                                       " " + is_email_confirmed_code + "\n" +
+                                                       "\n" +
+                                                       "Thank you for your cooperation, and we look forward to seeing you on the site!\n" +
+                                                       "\n" +
+                                                       "Sincerely,\n" +
+                                                       "The Home Renovation Nation Team";
+
+
+                                  bw.write(email + "<CONTENT>Home Renovation Nation Confirm Email<CONTENT>" + emailMessage);
                                   bw.close();
 
                                   Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), uuid.toString()).start();
