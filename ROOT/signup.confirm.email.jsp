@@ -131,21 +131,12 @@
                 String username = request.getParameter("username");
                 String email = request.getParameter("email");
                 String is_email_confirmed_code = request.getParameter("is_email_confirmed_code");
-
-                // Validate form data
                 if (is_email_confirmed_code != null && is_email_confirmed_code.trim().length() > 0) {
                   username = username.toLowerCase();
                   email = email.toLowerCase();
-                   
-
-
+                  UserDao dao = new UserDao();
+                  dao.updateUserConfirmEmail(username, email, is_email_confirmed_code);
                 }
-
-                // Validate other fields as necessary
-
-                // Create User object and set its fields
-
-
         %>
             <!-- ======= Contact Section ======= -->
 
