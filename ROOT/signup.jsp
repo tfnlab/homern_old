@@ -1,8 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.lang.Thread,org.apache.commons.io.IOUtils,org.apache.commons.io.output.*,java.nio.charset.Charset,java.io.*,java.util.*,java.awt.image.BufferedImage,javax.imageio.ImageIO,java.io.OutputStream,java.io.FileInputStream,java.io.File"%>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="java.util.Random" %>
+<%@ page import="java.io.File" %>
+<%@ page import="java.io.FileWriter" %>
+<%@ page import="java.io.BufferedWriter" %>
+<%@ page import="com.tfnlab.api.con.APIConfig" %>
+<%@ page import="java.util.UUID" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -202,7 +206,29 @@
                         %>
                         <p>
                           <%=um%>
-                          <%if(pv){%>
+                          <%if(pv){
+
+
+                            UUID uuid = UUID.randomUUID();
+                            String rm = "";
+                            APIConfig ac = new APIConfig();
+
+                            try{
+                                  File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
+                                  FileWriter fw = new FileWriter(file);
+                                  BufferedWriter bw = new BufferedWriter(fw);
+                                  bw.write(email + "<CONTENT>Home Renovation Nation Confirm Email<CONTENT>emaillinkehere.jsp");
+                                  bw.close();
+
+                                  Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), uuid.toString()).start();
+                                  String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+                                  String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                                  rm = stdout + stderr + " TEST ";
+                              }catch(IOException ex){
+                                  rm = ex.getMessage();
+                              }
+
+                            %>
                               <hr>
                               Dear new customer,<BR><BR>
                               Welcome to Home Renovation Nation! Whether you're a homeowner looking to renovate your home or a contractor looking to grow your business, our platform has everything you need to get started. Sign up for free to access expert advice, connect with a community of homeowners, use our project planner tool, and receive discounts on products and services. Our system, built with advanced artificial intelligence, offers a wealth of functionality and capabilities to help you succeed in your home renovation journey. Join today and start exploring all that Home Renovation Nation has to offer. If you have any questions or need assistance, don't hesitate to reach out to us.
