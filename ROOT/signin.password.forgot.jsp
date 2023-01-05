@@ -131,16 +131,24 @@
         String username = request.getParameter("username");
         String prc_user = request.getParameter("prc");
         String password = request.getParameter("password");
+        String email = request.getParameter("email");
 
                 // Validate form datadata
                 if (password != null && password.trim().length() > 0) {
                     UserDao dao = new UserDao();
                     dao.updateUserPassword(email, username, prc_user, password);
 
+                    %>Password Reset<%
+
                 }else if (prc_user != null && prc_user.trim().length() > 0) {
                   %>
                   <form action="signin.password.forgot.jsp" method="POST" class="mx-5">
                     <input type="hidden" id="prc" name="prc" value="<%=request.getParameter("prc")%>" />
+                    <div class="form-group mt-5">
+                      <label for="username" class="h4">Email:</label>
+                      <input type="email" class="form-control" id="email" name="email" required tabindex="1">
+                      <small id="usernameHelp" class="form-text text-muted mt-2">Enter your email to change password.</small>
+                    </div>
                     <div class="form-group mt-5">
                       <label for="username" class="h4">Username:</label>
                       <input type="text" class="form-control" id="username" name="username" required tabindex="1">
