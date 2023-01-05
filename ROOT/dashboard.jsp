@@ -137,14 +137,28 @@
             <h4>Home Renovation Nation Dashboard</h4>
             <HR>
             Orders: <%=oDao.getCustomerOrderCount(username)%> <BR>
-            <%
-              String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
-              for (String sstatus : statuses) {
-            %>
-                  <%=sstatus%>: <%=oDao.getCustomerOrderCount(username, sstatus) %><BR>
-            <%
-              }
-            %>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Status</th>
+                  <th scope="col">Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%
+                  String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
+                  for (String sstatus : statuses) {
+                %>
+                <tr>
+                  <td><%= sstatus %></td>
+                  <td><%= oDao.getCustomerOrderCount(username, sstatus) %></td>
+                </tr>
+                <%
+                  }
+                %>
+              </tbody>
+            </table>
+
             <HR>
             Customers: <%=eDao.getEntityCountByUsername(username)%>
             <HR>
