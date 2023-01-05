@@ -31,6 +31,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/dropdown.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Presento - v3.9.1
@@ -84,7 +85,7 @@
       window.open(url, "_self");
     }
     document.getElementById("navbar").addEventListener("change", goToUrl);
-  </script>  
+  </script>
 </head>
 
 <body>
