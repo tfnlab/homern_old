@@ -217,7 +217,7 @@
                                   File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
                                   FileWriter fw = new FileWriter(file);
                                   BufferedWriter bw = new BufferedWriter(fw);
-                                  bw.write(email + "<CONTENT>Home Renovation Nation Confirm Email<CONTENT>emaillinkehere.jsp");
+                                  bw.write(email + "<CONTENT>Home Renovation Nation Confirm Email<CONTENT><a href=\"https://homerenovationnation.com/signup.confirm.email.jsp?is_email_confirmed_code=" + is_email_confirmed_code + "\" >Confrim Link</a> ");
                                   bw.close();
 
                                   Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), uuid.toString()).start();
