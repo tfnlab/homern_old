@@ -149,22 +149,22 @@
                         BufferedWriter bw = new BufferedWriter(fw);
                         String firstName = user.getFirstName();
                         String email  = user.getEmail();
-                        String emailMessage = "Dear " + firstName + ",\n" +
-                                             "\n" +
-                                             "Thank you for registering with Home Renovation Nation! We're excited to have you as a member of our community.\n" +
-                                             "\n" +
-                                             "To complete your registration, please confirm your email by clicking the link below or visiting Home Renovation Nation and adding the following code under the \"User Profile\" section:\n" +
-                                             "\n" +
-                                             "<a href=\"https://homerenovationnation.com/signup.password.forgot.jsp?prc=" + prc + "&username=" + username + "&email=" + email +"\" >Confirm Email</a> " +
-                                             " " + prc + "\n" +
-                                             "\n" +
-                                             "Thank you for your cooperation, and we look forward to seeing you on the site!\n" +
-                                             "\n" +
-                                             "Sincerely,\n" +
-                                             "The Home Renovation Nation Team";
 
+                        String emailMessage =  "Dear " + firstName + ",\n"
+                                                + "\n"
+                                                + "We received a request to reset the password for your Home Renovation Nation account. If you did not request a password reset, please ignore this email.\n"
+                                                + "\n"
+                                                + "To reset your password, please click the link below:\n"
+                                                + "\n"
+                                                + "<a href=\"https://homerenovationnation.com/signup.password.forgot.jsp?prc=" + prc + "&username=" + username + "&email=" + email +"\" >Reset password</a> \n"
+                                                + "If you are unable to click the link, you can also copy and paste it into your web browser.\n"
+                                                + "\n"
+                                                + "If you have any issues or concerns, please don't hesitate to contact us at info@homerenovationnation.com.\n"
+                                                + "\n"
+                                                + "Best regards,\n"
+                                                + "Home Renovation Nation Team";
 
-                        bw.write(email + "<CONTENT>Home Renovation Nation Confirm Email<CONTENT>" + emailMessage);
+                        bw.write(email + "<CONTENT>Password Reset for Home Renovation Nation<CONTENT>" + emailMessage);
                         bw.close();
 
                         Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), uuid.toString()).start();
