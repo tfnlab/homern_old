@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
+<%@ page import="java.util.Random" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -148,12 +150,19 @@
                 String url_facebook = request.getParameter("url_facebook");
                 String referred_by = request.getParameter("referred_by");
 
+                Random random = new Random();
+                int num = random.nextInt(900000) + 100000;
+                String is_email_confirmed_code = String.format("%06d", num);
+                int nump = random.nextInt(900000) + 100000;
+                String is_phone_confirmed_code = String.format("%06d", nump);
 
                 // Validate form data
                 if (firstName != null && firstName.trim().length() > 0) {
                   username = username.toLowerCase();
                   email = email.toLowerCase();
                   User user = new User(firstName, middleInitial, lastName, email, phone, username, password, ogId, address, city, state, zipcode, "0", "0", business_type, "", "", "url_website", "url_yelp", "url_google", "url_twitter", "url_tiktok", "url_snap", "url_instagram", "url_facebook", referred_by, "url_linkedin", "token_linkedin", "token_twitter_c_key", "token_twitter_c_secret", "token_twitter_a", "token_twitter_a_secret", "api_key");
+                  user.setIs_phone_confirmed_code(is_phone_confirmed_code);
+                  user.setIs_email_confirmed_code(is_email_confirmed_code);
                   UserDao dao = new UserDao();
                   try {
                       boolean pv = true;

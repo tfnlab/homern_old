@@ -181,7 +181,7 @@
                       Timestamp updatedAt = currentTime;
                       Timestamp deletedAt = currentTime;
                       String orderDescription = request.getParameter("orderDescription");
-                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng );
+                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng , "");
                       dao.updateOrder(order);
 
                 }
