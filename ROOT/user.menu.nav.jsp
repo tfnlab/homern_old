@@ -8,6 +8,27 @@
   String currentUrl = request.getRequestURL().toString();
 %>
 <HR>
+<style>
+select {
+  /* Style the select element */
+}
+
+option {
+  /* Style the option elements */
+  background-repeat: no-repeat;  /* Don't repeat the icon */
+  background-position: center left;  /* Position the icon */
+  padding-left: 20px;  /* Add some space for the icon */
+}
+
+option:not([disabled]):not([selected]) {
+  background-image: url('data:image/svg+xml;utf8,' + attr(data-icon) + '');
+}
+
+select::before {
+  content: attr(data-icon);
+  /* Style the pseudo-element */
+}
+</style>
 <select>
   <option data-icon="🌞" value="sunny">Sunny</option>
   <option data-icon="🌤" value="partly-cloudy">Partly cloudy</option>
