@@ -8,15 +8,18 @@
   String currentUrl = request.getRequestURL().toString();
 %>
 <HR>
+  <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+<HR>
 <select name="hrnnavbar" id="hrnnavbar" onchange="goToUrl()" tabindex="1">
-  <option value="user.menu.jsp" <%= currentUrl.indexOf("user.menu.jsp") != -1 ? "selected" : "" %>><i class="fa fa-home"></i> Home</option>
-  <option value="dashboard.jsp" <%= currentUrl.indexOf("dashboard.jsp") != -1 ? "selected" : "" %>><i class="fa fa-cog"></i> Dashboard</option>
-  <option value="user.edit.jsp" <%= currentUrl.indexOf("user.edit.jsp") != -1 ? "selected" : "" %>><i class="fa fa-cog"></i> Marketing</option>
-  <option value="technician.list.jsp" <%= currentUrl.indexOf("technician.list.jsp") != -1 ? "selected" : "" %>><i class="fa fa-wrench"></i> Technicians</option>
-  <option value="product.list.jsp" <%= currentUrl.indexOf("product.list.jsp") != -1 ? "selected" : "" %>><i class="fa fa-box"></i> Products</option>
-  <option value="customer.list.jsp" <%= currentUrl.indexOf("customer.list.jsp") != -1 ? "selected" : "" %>><i class="fa fa-users"></i> Customers</option>
-  <option value="order.list.jsp" <%= currentUrl.indexOf("order.list.jsp") != -1 ? "selected" : "" %>><i class="fa fa-shopping-cart"></i> Orders</option>
-  <option value="event.list.jsp" <%= currentUrl.indexOf("event.list.jsp") != -1 ? "selected" : "" %>><i class="fa fa-calendar"></i> Events</option>
+  <option value="home"><i class="fa fa-home"></i> Home</option>
+  <option value="user.menu.jsp" <%= currentUrl.indexOf("user.menu.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-home"></i> Home</option>
+  <option value="dashboard.jsp" <%= currentUrl.indexOf("dashboard.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-cog"></i> Dashboard</option>
+  <option value="user.edit.jsp" <%= currentUrl.indexOf("user.edit.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-cog"></i> Marketing</option>
+  <option value="technician.list.jsp" <%= currentUrl.indexOf("technician.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-wrench"></i> Technicians</option>
+  <option value="product.list.jsp" <%= currentUrl.indexOf("product.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-box"></i> Products</option>
+  <option value="customer.list.jsp" <%= currentUrl.indexOf("customer.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-users"></i> Customers</option>
+  <option value="order.list.jsp" <%= currentUrl.indexOf("order.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-shopping-cart"></i> Orders</option>
+  <option value="event.list.jsp" <%= currentUrl.indexOf("event.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-calendar"></i> Events</option>
 </select>
 
 
