@@ -7,9 +7,6 @@
 <%
   String currentUrl = request.getRequestURL().toString();
 %>
-<HR>
-  <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-<HR>
 <select name="hrnnavbar" id="hrnnavbar" onchange="goToUrl()" tabindex="1">
   <option value="home"><i class="fa fa-home"></i> Home</option>
   <option value="user.menu.jsp" <%= currentUrl.indexOf("user.menu.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-home"></i> Home</option>
