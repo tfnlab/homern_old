@@ -4,6 +4,15 @@
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 
 
+<script>
+  function goToUrl() {
+    var select = document.getElementById("hrnnavbar");
+    var option = select.options[select.selectedIndex];
+    var url = option.value;
+    window.open(url, "_self");
+  }
+  document.getElementById("navbar").addEventListener("change", goToUrl);
+</script>
 <%
   String currentUrl = request.getRequestURL().toString();
 %>
