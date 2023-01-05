@@ -137,7 +137,7 @@
                   String prc = String.format("%06d", num);
                   UserDao dao = new UserDao();
                   dao.updateUserPasswordReset(username, prc);
-                  User user = dao.getUserByUsername(username)
+                  User user = dao.getUserByUsername(username);
 
                   UUID uuid = UUID.randomUUID();
                   String rm = "";
