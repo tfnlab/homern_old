@@ -127,7 +127,9 @@
 
                 // Validate form data
                 if (username != null && username.trim().length() > 0) {
-
+                  Random random = new Random();
+                  int num = random.nextInt(900000) + 100000;
+                  String prc = String.format("%06d", num);
 
                 }else{
 
