@@ -129,9 +129,34 @@
         <%
 
         String username = request.getParameter("username");
+        String prc_user = request.getParameter("prc");
 
-                // Validate form data
-                if (username != null && username.trim().length() > 0) {
+                // Validate form datadata
+                if (prc_user != null && prc_user.trim().length() > 0) {
+                  %>
+                  <form action="signin.password.forgot.jsp" method="POST" class="mx-5">
+                    <div class="form-group mt-5">
+                      <label for="username" class="h4">Username:</label>
+                      <input type="text" class="form-control" id="username" name="username" required tabindex="1">
+                      <small id="usernameHelp" class="form-text text-muted mt-2">Enter your username to change password.</small>
+                    </div>
+                    <hr class="my-5">
+
+                    <div class="form-group mt-5">
+                      <label for="password" class="h4">New Password:</label>
+                      <input type="password" class="form-control" id="password" name="password" required  tabindex="2">
+                      <small id="passwordHelp" class="form-text text-muted mt-2">Enter your new password to reset.</small>
+                    </div>
+
+                    <div class="form-group mt-5">
+                      <label for="password" class="h4">Confirm Password:</label>
+                      <input type="password" class="form-control" id="passwordc" name="passwordc" required  tabindex="2">
+                      <small id="passwordHelp" class="form-text text-muted mt-2">Confirm your new password</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="sendTweet()" tabindex="4" >Save Password</button>
+                  </form>
+                  <%
+                }else if (username != null && username.trim().length() > 0) {
                   Random random = new Random();
                   int num = random.nextInt(900000) + 100000;
                   String prc = String.format("%06d", num);
