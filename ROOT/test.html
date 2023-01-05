@@ -3,32 +3,30 @@
   <head>
     <title>Selectable List with Icons</title>
     <!-- Style the items -->
-    <style>
-      .item {
-        /* Style the items */
-      }
-      .item::before {
-        content: attr(data-icon);
-        /* Add the icon */
-      }
-      .item.selected {
-        /* Style the selected item */
-      }
-    </style>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="assets/javascripts/jquery.selectBoxIt.min.js"></script>
+      <!-- Style the select element and the options -->
+      <style>
+        .selectboxit-container .selectboxit-options li a::before,
+        .selectboxit-container .selectboxit-options li span::before {
+          /* Add the icon to the options in the dropdown list */
+          content: attr(data-icon);
+        }
+        .selectboxit-container .selectboxit-options li a.selectboxit-option-anchor::after {
+          /* Add the icon to the selected option in the dropdown button */
+          content: attr(data-icon);
+        }
+      </style>
   </head>
   <body>
-    <!-- Create the list of items with the data-icon attribute -->
-    <div class="item" data-icon="🌞">Sunny</div>
-    <div class="item" data-icon="🌤">Partly cloudy</div>
-    <div class="item" data-icon="⛈️">Stormy</div>
-    <!-- Add a script to toggle the selected class when an item is clicked -->
-    <script>
-      const items = document.querySelectorAll('.item');
-      items.forEach(item => {
-        item.addEventListener('click', () => {
-          item.classList.toggle('selected');
-        });
-      });
-    </script>
-  </body>
-</html>
+
+     <select id="weather-select">
+    <option value="sunny" data-icon="🌞">Sunny</option>
+    <option value="partly-cloudy" data-icon="🌤">Partly cloudy</option>
+    <option value="stormy" data-icon="⛈️">Stormy</option>
+    </select>
+  
+
+      </body>
+    </html>
