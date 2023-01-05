@@ -8,29 +8,7 @@
   String currentUrl = request.getRequestURL().toString();
 %>
 <HR>
-<style>
-  .custom-select::before {
-    /* Style the dropdown button */
-  }
 
-  .custom-select::after {
-    /* Style the selected option */
-    content: attr(data-icon);
-    /* Add the icon */
-  }
-
-  .custom-select option {
-    /* Style the options in the dropdown list */
-    background-repeat: no-repeat;  /* Don't repeat the icon */
-    background-position: center left;  /* Position the icon */
-    padding-left: 20px;  /* Add some space for the icon */
-  }
-
-  .custom-select option:not([disabled]):not([selected]) {
-    background-image: url('data:image/svg+xml;utf8,' + attr(data-icon) + '');
-  }
-
-</style>
 <select class="custom-select">
   <option data-icon="🌞" value="sunny">Sunny</option>
   <option data-icon="🌤" value="partly-cloudy">Partly cloudy</option>
