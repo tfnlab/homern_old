@@ -136,7 +136,8 @@
           <div class="container mt-5">
             <h4>Home Renovation Nation Dashboard</h4>
             <HR>
-            Orders: <%=oDao.getCustomerOrderCount(username)%> <BR>
+            Orders: <%=oDao.getCustomerOrderCount(username)%>
+            <HR>
             <table class="table">
               <thead>
                 <tr>
