@@ -130,7 +130,7 @@
 
         String username = request.getParameter("username");
         String prc_user = request.getParameter("prc");
-        String password = reqeust.getParameter("password");
+        String password = request.getParameter("password");
 
                 // Validate form datadata
                 if (password != null && password.trim().length() > 0) {
