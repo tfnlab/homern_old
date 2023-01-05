@@ -137,7 +137,7 @@
 
 
         %>
-        <form action="signin.jsp" method="POST" class="mx-5">
+        <form action="signin.password.forgot.jsp" method="POST" class="mx-5">
           <div class="form-group mt-5">
             <label for="username" class="h4">Username:</label>
             <input type="text" class="form-control" id="username" name="username" required tabindex="1">
