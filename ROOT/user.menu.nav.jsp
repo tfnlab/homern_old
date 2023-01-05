@@ -9,27 +9,29 @@
 %>
 <HR>
 <style>
-select {
-  /* Style the select element */
-}
+  .custom-select::before {
+    /* Style the dropdown button */
+  }
 
-option {
-  /* Style the option elements */
-  background-repeat: no-repeat;  /* Don't repeat the icon */
-  background-position: center left;  /* Position the icon */
-  padding-left: 20px;  /* Add some space for the icon */
-}
+  .custom-select::after {
+    /* Style the selected option */
+    content: attr(data-icon);
+    /* Add the icon */
+  }
 
-option:not([disabled]):not([selected]) {
-  background-image: url('data:image/svg+xml;utf8,' + attr(data-icon) + '');
-}
+  .custom-select option {
+    /* Style the options in the dropdown list */
+    background-repeat: no-repeat;  /* Don't repeat the icon */
+    background-position: center left;  /* Position the icon */
+    padding-left: 20px;  /* Add some space for the icon */
+  }
 
-select::before {
-  content: attr(data-icon);
-  /* Style the pseudo-element */
-}
+  .custom-select option:not([disabled]):not([selected]) {
+    background-image: url('data:image/svg+xml;utf8,' + attr(data-icon) + '');
+  }
+
 </style>
-<select>
+<select class="custom-select">
   <option data-icon="🌞" value="sunny">Sunny</option>
   <option data-icon="🌤" value="partly-cloudy">Partly cloudy</option>
   <option data-icon="⛈️" value="stormy">Stormy</option>
