@@ -152,8 +152,17 @@
                 %>
                 <tr>
                   <td><%= sstatus %></td>
-                  <td><%= oDao.getCustomerOrderCount(username, sstatus) %></td>
-                  <td><%= oDao.getCustomerOrderTotal(username, sstatus) %></td>                  
+                  <td>
+                      <% int count = oDao.getCustomerOrderCount(username, sstatus);%>
+                  <%= count %></td>
+                  <td>
+                      <%if(count>0){%>
+                          <%= oDao.getCustomerOrderTotal(username, sstatus) %>
+                      <%}else{%>
+                        0
+                      <%}%>
+                  </td>
+
                 </tr>
                 <%
                   }
