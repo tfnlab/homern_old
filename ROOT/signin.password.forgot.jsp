@@ -167,6 +167,7 @@
                       <input type="password" class="form-control" id="passwordc" name="passwordc" required  tabindex="2">
                       <small id="passwordHelp" class="form-text text-muted mt-2">Confirm your new password</small>
                     </div>
+                    <hr class="my-5">
                     <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="sendTweet()" tabindex="4" >Save Password</button>
                   </form>
                   <%
