@@ -131,12 +131,12 @@
         String username = request.getParameter("username");
         String prc_user = request.getParameter("prc");
         String password = request.getParameter("password");
-        String email = request.getParameter("email");
+        String email_user = request.getParameter("email");
 
                 // Validate form datadata
                 if (password != null && password.trim().length() > 0) {
                     UserDao dao = new UserDao();
-                    dao.updateUserPassword(email, username, prc_user, password);
+                    dao.updateUserPassword(email_user, username, prc_user, password);
 
                     %>Password Reset<%
 
