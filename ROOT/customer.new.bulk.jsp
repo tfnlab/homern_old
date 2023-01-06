@@ -203,6 +203,12 @@
                   <%=customers[1]%>
                   <%=customers[3]%>
                   <%=customers[5]%>
+                  <BR>
+                  A <%=customers[17]%>
+                  A2 <%=customers[18]%>
+                  C <%=customers[19]%>
+                  S <%=customers[20]%>
+                  Z <%=customers[21]%>
                   <HR>
                   <%
                     }
