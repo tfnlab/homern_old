@@ -170,13 +170,13 @@
                     // Create a map
                     var map = new google.maps.Map(document.getElementById('map'), {
                       mapTypeId: 'roadmap',
-                      center: {lat: <%=usernameOBJ,getAddresslat()%>, lng: <%=usernameOBJ,getAddresslng()%>}
+                      center: {lat: <%=usernameOBJ.getAddresslat()%>, lng: <%=usernameOBJ.getAddresslng()%>}
                     });
 
                     // Update the map options to make the map responsive.
                     window.addEventListener('resize', function() {
                       map.setOptions({
-                        center: {lat: <%=usernameOBJ,getAddresslat()%>, lng: <%=usernameOBJ,getAddresslng()%>},
+                        center: {lat: <%=usernameOBJ.getAddresslat()%>, lng: <%=usernameOBJ.getAddresslng()%>},
                         zoom: 8
                       });
                     });
