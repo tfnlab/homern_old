@@ -230,7 +230,6 @@
                       title: '<%=entity.getAddress()%>'
                     });
                     marker<%=ke%>.addListener('click', function() {
-                      marker<%=i%>.addListener('click', function() {
                       // Update the modal body with the customer details
                       document.getElementById('customerModalBody').innerHTML = '<p><%=customer.getFirstName()%> <%=customer.getLastName()%></p><p><%=customer.getAddress()%></p>';
                       // Update the detail button with the customer ID
