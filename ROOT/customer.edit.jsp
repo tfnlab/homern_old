@@ -306,7 +306,7 @@
           </div>
           <div class="form-group">
             <label for="city">City</label>
-            <input type="text" class="form-control" id="city" name="city" value="<%= entity.getState() %>">
+            <input type="text" class="form-control" id="city" name="city" value="<%= entity.getCity() %>">
           </div>
           <div class="form-group">
             <label for="state">State</label>
