@@ -238,7 +238,7 @@
                                 entity.setCity(customers[19]);
                                 entity.setState(customers[20]);
                                 entity.setZipcode(customers[21]);
-                                if(results[1].contains("ZERO_RESULTS")]){
+                                if(results[1].contains("ZERO_RESULTS")){
                                   entity.setLocation_pointlat("0");
                                   entity.setLocation_pointlng("0");
                                 }else{
