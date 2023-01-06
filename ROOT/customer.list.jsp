@@ -90,7 +90,7 @@
       height: 400px;
       width: 600px;
     }
-  </style>  
+  </style>
 </head>
 
 <body>
@@ -184,7 +184,12 @@
                     for (Entity entity : es) { %>
                     var marker<%=ke%> = new google.maps.Marker({
                       position: {lat: <%=entity.getLocation_pointlat()%>, lng: <%=entity.getLocation_pointlng()%>},
-                      map: map
+                      map: map,
+                      label: '<%=entity.getFirstName()%> <%=entity.getLastName()%>',
+                      title: '<%=entity.getAddress()%>'
+                    });
+                    marker<%=ke%>.addListener('click', function() {
+                      alert('<%=entity.getFirstName()%> <%=entity.getLastName()%>, <%=entity.getAddress()%>');
                     });
                     <%
                         ke+=1;
