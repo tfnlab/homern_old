@@ -282,7 +282,7 @@
 
                 <form action="signup.jsp" method="POST">
                   <div class="form-group  mt-3">
-                    <label for="business-type">Select a type of business:</label>
+                    <label for="business-type">Select Your Role:</label>
                     <select class="form-control  mt-1" id="business_type" name="business_type">
                       <option value="home-owner">Home Owner</option>
                       <option value="general-contractor">General contractor</option>
