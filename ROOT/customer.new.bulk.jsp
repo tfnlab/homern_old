@@ -155,6 +155,7 @@
         <h2>Customer</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <%
+          String username = (String) session.getAttribute("username");
           boolean isMultipart = ServletFileUpload.isMultipartContent(request);
           String ocrDescription = new String();
           if (isMultipart) {
