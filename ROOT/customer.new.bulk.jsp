@@ -162,7 +162,7 @@
 
               UUID uuid = UUID.randomUUID();
               APIConfig conf = new APIConfig();
-              String filename = "customer." + username + "." + uuid + ".csv";
+              String filename = "customer.bulk." + username + "." + uuid + ".csv";
               String filepath = conf.getPdfloc();
               DiskFileItemFactory factory = new DiskFileItemFactory();
               factory.setSizeThreshold(1024 * 1024); // Set the size threshold for storing files in memory
@@ -182,6 +182,19 @@
                   fileContent.close();
                 }
               }
+
+
+              try {
+                BufferedReader reader = new BufferedReader(new FileReader(filepath   + filename));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                  %><%=line%><%
+                }
+                reader.close();
+              } catch (IOException e) {
+                e.printStackTrace();
+              }
+
             }
             %>
 
