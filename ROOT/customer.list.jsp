@@ -150,10 +150,18 @@
                   <div class="form-group">
                     <label for="firstName">Search Key</label>
                     <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>">
+                    <input type="checkbox" class="form-check-input" name="showMap" id="showMap" value="true" >
+                    <label class="form-check-label" for="availability">Map</label>
+                  </div>
+
+                  <div class="form-group form-check">
                   </div>
                   <HR>
                   <button type="submit" class="btn btn-primary">Search</button>
                 </form>
+                <%if(request.getParameter(showMap)!=null){%>
+                    SHOW MAP
+                <%}%>
                 <HR>
               <% for (Entity entity : es) { %>
                   First Name: <%= entity.getFirstName() %><br>
