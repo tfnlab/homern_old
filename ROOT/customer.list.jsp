@@ -125,7 +125,7 @@
       </div>
     </section><!-- End Breadcrumbs -->
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" id="viewCustomerButton" data-toggle="modal" data-target="#customerModal" />
+    <button type="button" class="btn btn-primary" id="viewCustomerButton" data-toggle="modal" data-target="#customerModal" style="display: none;"/>
       View Customer Details
     </button>
 
