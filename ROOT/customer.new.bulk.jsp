@@ -230,14 +230,15 @@
                                 entity = entity.generateSampleEntity();
               //                      entity.setId(Integer.parseInt(request.getParameter("id")));
                                 entity.setUsername(username);
-                                entity.setFirstName(customers[0]);
-                                entity.setLastName(customers[1]);
-                                entity.setEmail(customers[5]);
-                                entity.setPhone(customers[3]);
-                                entity.setAddress(customers[17]);
-                                entity.setCity(customers[19]);
-                                entity.setState(customers[20]);
-                                entity.setZipcode(customers[21]);
+                                entity.setFirstName(customers[0].substring(1, customers[0].length() - 1));
+                                entity.setLastName(customers[1].substring(1, customers[1].length() - 1));
+                                entity.setEmail(customers[5].substring(1, customers[5].length() - 1));
+                                entity.setPhone(customers[3].substring(1, customers[3].length() - 1));
+                                entity.setAddress(customers[17].substring(1, customers[17].length() - 1));
+                                entity.setCity(customers[19].substring(1, customers[19].length() - 1));
+                                entity.setState(customers[20].substring(1, customers[20].length() - 1));
+                                entity.setZipcode(customers[21].substring(1, customers[21].length() - 1));
+
                                 if(results[1].contains("ZERO_RESULTS")){
                                   entity.setLocation_pointlat("0");
                                   entity.setLocation_pointlng("0");
