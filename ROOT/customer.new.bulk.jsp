@@ -260,8 +260,9 @@
                     <%
                 }
                 reader.close();
-              } catch (IOException e) {
+              } catch (Exception e) {
                 e.printStackTrace();
+                %><%=e.getMessage()%><%
               }
 
             }
