@@ -196,7 +196,7 @@
                     String[] customers = line.split(",");
                     if(lineNumber==0){
                       for(int k=0;k<customers.length;k++){
-                        %><%=k + " " + customers[k]%><%
+                        %> ___ <%=k + " - " + customers[k]%> ____ <%
                       }
                     }
                     %><%=lineNumber%><%
