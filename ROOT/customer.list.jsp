@@ -84,6 +84,13 @@
       document.body.removeChild(el);
     }
   </script>
+  <style>
+    /* Set the size of the map */
+    #map {
+      height: 400px;
+      width: 600px;
+    }
+  </style>  
 </head>
 
 <body>
@@ -160,6 +167,7 @@
                   <button type="submit" class="btn btn-primary">Search</button>
                 </form>
                 <%if(request.getParameter("showMap")!=null){%>
+                  SHOWING MAP<BR>
                   <div id="map"></div>
 
                   <!-- Include the Google Maps JavaScript API -->
