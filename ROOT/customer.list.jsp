@@ -124,7 +124,31 @@
         <h2>Customers</h2>
       </div>
     </section><!-- End Breadcrumbs -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" id="viewCustomerButton" data-toggle="modal" data-target="#customerModal">
+      View Customer Details
+    </button>
 
+    <!-- Modal -->
+    <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="customerModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="customerModalLabel">Customer Details</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="customerModalBody">
+            <!-- Customer details will be inserted here -->
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn-secondary" role="button" id="customerDetailButton">Detail</a>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
@@ -206,7 +230,15 @@
                       title: '<%=entity.getAddress()%>'
                     });
                     marker<%=ke%>.addListener('click', function() {
-                      alert('<%=entity.getFirstName()%> <%=entity.getLastName()%>, <%=entity.getAddress()%> <a href="customer.edit.jsp?customerId=" >Detail</a>');
+                      marker<%=i%>.addListener('click', function() {
+                      // Update the modal body with the customer details
+                      document.getElementById('customerModalBody').innerHTML = '<p><%=customer.getFirstName()%> <%=customer.getLastName()%></p><p><%=customer.getAddress()%></p>';
+                      // Update the detail button with the customer ID
+                      document.getElementById('customerDetailButton').href = 'customer.edit.jsp?customerId=<%=customer.getId()%>';
+                      // Show the modal
+                      $('#customerModal').modal('show');
+
+                      //alert('<%=entity.getFirstName()%> <%=entity.getLastName()%>, <%=entity.getAddress()%> <a href="customer.edit.jsp?customerId=" >Detail</a>');
                     });
                     <%
                         ke+=1;
