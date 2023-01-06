@@ -19,6 +19,8 @@
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
 <%@ page import="java.io.*" %>
 <%@ page import="javax.servlet.http.*" %>
+<%@ page import="com.tfnlab.api.con.GoogleAutocomplete" %>
+<%@ page import="com.tfnlab.api.con.GeocodingExample" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -199,6 +201,8 @@
                     }
                     %><%=lineNumber%><%
                     if(customers.length>21){
+                      GeocodingExample geocodingExample = new GeocodingExample();
+                      String[] results = geocodingExample.search(customers[17] + ", " + customers[19]);
                   %>
                   <%=customers[0]%>
                   <%=customers[1]%>
@@ -214,6 +218,9 @@
                   C <%=customers[19]%>
                   S <%=customers[20]%>
                   Z <%=customers[21]%>
+                  <BR>
+                  lat <%=results[0]%>
+                  lng <%=results[1]%>
                   <%
                     }
                     lineNumber += 1;
