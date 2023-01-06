@@ -28,9 +28,10 @@
           }
 
         for (Entity entity : es) { %>
-          Name: <%= entity.getFirstName() %><br>
-            Name: <%= entity.getLastName() %><br>
-            Email: <%= entity.getLastName() %><br>
+            Name: <%= entity.getFirstName() %>, <%= entity.getLastName() %><br>
+            Phone: <%= entity.getPhone() %><br>
+            Email: <%= entity.getEmail() %><br>
+            Address: <%= entity.getAddress() %>, <%= entity.getCity() %><br>
           Customer ID: <a href="order.edit.customers.jsp?action=add&orderId=<%=orderId%>&customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
           <hr>
         <% } %>
