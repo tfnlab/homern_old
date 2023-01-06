@@ -159,7 +159,7 @@
                   <HR>
                   <button type="submit" class="btn btn-primary">Search</button>
                 </form>
-                <%if(request.getParameter(showMap)!=null){%>
+                <%if(request.getParameter("showMap")!=null){%>
                     SHOW MAP
                 <%}%>
                 <HR>
