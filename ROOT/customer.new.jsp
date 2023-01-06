@@ -438,8 +438,9 @@
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-
-
+              <HR>
+              <a href="customer.new.bulk.jsp" >Bulk Upload</a>
+              <HR>
                  <%}%>
       </div>
 
