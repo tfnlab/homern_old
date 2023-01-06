@@ -193,6 +193,7 @@
                   <%=line%>
                   <%
                     String[] customers = line.split(",");
+                    if(customers.length>5){
                   %>
                   <%=customers[0]%>
                   <%=customers[1]%>
@@ -200,6 +201,7 @@
                   <%=customers[5]%>
                   <HR>
                   <%
+                    }  
                 }
                 reader.close();
               } catch (IOException e) {
