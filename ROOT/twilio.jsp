@@ -5,7 +5,7 @@
 <%
 
 UserDao dao = new UserDao();
-String username = (String) session.getAttribute("username");
+String username = request.getParameter("username");
 User user = dao.getUserByUsername(username);
 
 %>
