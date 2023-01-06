@@ -222,6 +222,35 @@
                   lat <%=results[0]%>
                   lng <%=results[1]%>
                   <%
+
+                          Entity entity = new Entity();
+                          entity = entity.generateSampleEntity();
+        //                      entity.setId(Integer.parseInt(request.getParameter("id")));
+                          entity.setUsername(username);
+                          entity.setFirstName(customers[0]);
+                          entity.setLastName(customers[1]);
+                          entity.setEmail(customers[5]);
+                          entity.setPhone(customers[3]);
+                          entity.setAddress(customers[17]);
+                          entity.setCity(customers[19]);
+                          entity.setState(customers[20]);
+                          entity.setZipcode(customers[21]);
+                          entity.setLocation_pointlat(results[0]);
+                          entity.setLocation_pointlng(results[1]);
+                          // parse createdAt as a Timestamp object
+                          entity.setCreatedAt(currentTime);
+                          entity.setCreatedBy(username);
+                          // parse createdDate as a Date object
+        //                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
+                          // parse createdDate as a Date object
+                          //entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("createdDate")));
+                          //entity.setLastModifiedBy(request.getParameter("lastModifiedBy"));
+                          // parse lastModifiedDate as a Timestamp object
+                          //entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
+                          EntityDao ed = new EntityDao();
+                          ed.addEntity(entity);
+
+
                     }
                     lineNumber += 1;
                     %>
