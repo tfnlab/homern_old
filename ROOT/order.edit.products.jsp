@@ -346,12 +346,12 @@
                       invTotal = invTotal.add(plItem.getTotal());
               %>
                   ID: <%= plItem.getId() %><br>
-                  Tech Name: <%= plItem.getName() %><br>
-                  Tech Description: <%= plItem.getDescription() %><br>
-                  Tech Units: <%= plItem.getQuantity() %><br>
-                  Tech Price: <%= plItem.getPrice() %><br>
-                  Tech Price: <%= plItem.getTotal() %><br>
-                  -- <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
+                  Name: <%= plItem.getName() %><br>
+                  Description: <%= plItem.getDescription() %><br>
+                  Units: <%= plItem.getQuantity() %><br>
+                  Price: <%= plItem.getPrice() %><br>
+                  Total Price: <%= plItem.getTotal() %><br>
+                  <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                   <hr>
 
            <%
