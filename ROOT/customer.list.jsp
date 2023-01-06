@@ -161,9 +161,9 @@
                   <button type="submit" class="btn btn-primary">Search</button>
                 </form>
                 <%if(request.getParameter("showMap")!=null){%>
-                  SHOWING MAP<BR>
+                  <HR>
                   <div id="map" style="width: 100%; height: 400px;"></div>
-
+                  <HR>
                   <!-- Include the Google Maps JavaScript API -->
                   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBicfOJqKecv8AunaLFvEC0bRBWMVUtQus"></script>
                   <script>
