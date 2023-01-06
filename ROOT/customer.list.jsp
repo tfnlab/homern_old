@@ -160,7 +160,29 @@
                   <button type="submit" class="btn btn-primary">Search</button>
                 </form>
                 <%if(request.getParameter("showMap")!=null){%>
-                    SHOW MAP
+                  <div id="map"></div>
+
+                  <!-- Include the Google Maps JavaScript API -->
+                  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBicfOJqKecv8AunaLFvEC0bRBWMVUtQus"></script>
+                  <script>
+                    // Create a map
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                      zoom: 8,
+                      center: {lat: -34.397, lng: 150.644}
+                    });
+
+                    // Create a marker
+                    int ke = 0;
+                    <% for (Entity entity : es) { %>
+                    var marker<%=ke%> = new google.maps.Marker({
+                      position: {lat: <%=entity.getLocation_pointlat()%>, lng: <%=entity.getLocation_pointlng()%>},
+                      map: map
+                    });
+                    <%
+                        ke+=1;
+                    } %>
+                  </script>
+
                 <%}%>
                 <HR>
               <% for (Entity entity : es) { %>
