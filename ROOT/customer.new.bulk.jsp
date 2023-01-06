@@ -191,6 +191,13 @@
                 while ((line = reader.readLine()) != null) {
                   %>
                   <%=line%>
+                  <%
+                    String[] customers = line.split(",");
+                  %>
+                  <%=customers[0]%>
+                  <%=customers[1]%>
+                  <%=customers[3]%>
+                  <%=customers[5]%>
                   <HR>
                   <%
                 }
