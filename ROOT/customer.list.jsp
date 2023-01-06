@@ -231,9 +231,9 @@
                     });
                     marker<%=ke%>.addListener('click', function() {
                       // Update the modal body with the customer details
-                      document.getElementById('customerModalBody').innerHTML = '<p><%=customer.getFirstName()%> <%=customer.getLastName()%></p><p><%=customer.getAddress()%></p>';
+                      document.getElementById('customerModalBody').innerHTML = '<p><%=entity.getFirstName()%> <%=entity.getLastName()%></p><p><%=entity.getAddress()%></p>';
                       // Update the detail button with the customer ID
-                      document.getElementById('customerDetailButton').href = 'customer.edit.jsp?customerId=<%=customer.getId()%>';
+                      document.getElementById('customerDetailButton').href = 'customer.edit.jsp?customerId=<%=entity.getId()%>';
                       // Show the modal
                       $('#customerModal').modal('show');
 
