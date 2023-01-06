@@ -235,9 +235,9 @@
                 <label class="form-label" for="textAreaExample">Request Info</label>
                 <label for="orderDate">Order Date:</label><br>
                 <input type="datetime-local" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd" tabindex="4"><br>
-                <label for="shipDate">Ship Date:</label><br>
+                <label for="shipDate">Project Date:</label><br>
                 <input type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" tabindex="5"><br>
-                <label for="shippingAddress">Shipping Address:</label><br>
+                <label for="shippingAddress">Project Address:</label><br>
                 <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC(this)"  tabindex="6"><br>
                 <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" >
                 <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" >
