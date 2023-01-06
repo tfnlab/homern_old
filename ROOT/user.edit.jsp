@@ -166,7 +166,7 @@
          String token_twitter_a = request.getParameter("token_twitter_a");
          String token_twitter_a_secret = request.getParameter("token_twitter_a_secret");
          String api_key = request.getParameter("api_key");
-
+         String twilio_voice_message = request.getParameter("twilio_voice_message");
 
          email = email.toLowerCase();
 
@@ -203,6 +203,7 @@
          user.setToken_twitter_a(token_twitter_a);
          user.setToken_twitter_a_secret(token_twitter_a_secret);
          user.setApi_key(api_key);
+         user.setTwilio_voice_message(twilio_voice_message);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -399,6 +400,11 @@
              <label for="api_key">Website Api Key</label>
              <input type="text" class="form-control" id="api_key" name="api_key" value="<%= user.getApi_key() %>">
            </div>
+           <div class="form-group mt-3">
+             <label for="twilio_voice_message">Twilio Voice Message</label>
+             <input type="text" class="form-control" id="twilio_voice_message" name="twilio_voice_message" value="<%= user.getTwilio_voice_message() %>">
+           </div>
+
            <div class="form-group mt-3">
              <button type="submit" class="btn btn-primary" tabindex="19">Submit</button>
            </div>
