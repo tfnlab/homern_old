@@ -126,6 +126,8 @@
     </section><!-- End Breadcrumbs -->
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" id="viewCustomerButton" data-toggle="modal" data-target="#customerModal" />
+      View Customer Details
+    </button>
 
     <!-- Modal -->
     <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="customerModalLabel" aria-hidden="true">
