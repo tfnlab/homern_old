@@ -152,6 +152,8 @@
                     <div class="row">
                       <div class="col">
                     <label for="firstName">Search Key</label>
+                      </div>
+                      <div class="col">
                     <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>">
                       </div>
                       <div class="col">
