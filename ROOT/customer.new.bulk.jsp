@@ -188,11 +188,15 @@
               try {
                 BufferedReader reader = new BufferedReader(new FileReader(filepath   + filename));
                 String line;
+                int lineNumber = 0;
                 while ((line = reader.readLine()) != null) {
-                  %>
-                  <%=line%>
-                  <%
+
                     String[] customers = line.split(",");
+                    if(lineNumber==0){
+                      for(int k=0;k<customers.length;k++){
+                        %><%=k + " " + customers[k]%><%
+                      }
+                    }
                     if(customers.length>5){
                   %>
                   <%=customers[0]%>
@@ -201,7 +205,8 @@
                   <%=customers[5]%>
                   <HR>
                   <%
-                    }  
+                    }
+                    lineNumber += 1;
                 }
                 reader.close();
               } catch (IOException e) {
