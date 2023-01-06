@@ -84,13 +84,6 @@
       document.body.removeChild(el);
     }
   </script>
-  <style>
-    /* Set the size of the map */
-    #map {
-      height: 400px;
-      width: 600px;
-    }
-  </style>
 </head>
 
 <body>
@@ -168,15 +161,23 @@
                 </form>
                 <%if(request.getParameter("showMap")!=null){%>
                   SHOWING MAP<BR>
-                  <div id="map"></div>
+                  <div id="map" style="width: 100%; height: 400px;"></div>
 
                   <!-- Include the Google Maps JavaScript API -->
                   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBicfOJqKecv8AunaLFvEC0bRBWMVUtQus"></script>
                   <script>
                     // Create a map
                     var map = new google.maps.Map(document.getElementById('map'), {
-                      zoom: 8,
+                      mapTypeId: 'roadmap',
                       center: {lat: -34.397, lng: 150.644}
+                    });
+
+                    // Update the map options to make the map responsive.
+                    window.addEventListener('resize', function() {
+                      map.setOptions({
+                        center: {lat: -34.397, lng: 150.644},
+                        zoom: 8
+                      });
                     });
 
                     <%// Create a marker
