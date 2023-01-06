@@ -171,9 +171,9 @@
                       center: {lat: -34.397, lng: 150.644}
                     });
 
-                    // Create a marker
+                    <%// Create a marker
                     int ke = 0;
-                    <% for (Entity entity : es) { %>
+                    for (Entity entity : es) { %>
                     var marker<%=ke%> = new google.maps.Marker({
                       position: {lat: <%=entity.getLocation_pointlat()%>, lng: <%=entity.getLocation_pointlng()%>},
                       map: map
