@@ -206,7 +206,7 @@
                       title: '<%=entity.getAddress()%>'
                     });
                     marker<%=ke%>.addListener('click', function() {
-                      alert('<%=entity.getFirstName()%> <%=entity.getLastName()%>, <%=entity.getAddress()%>');
+                      alert('<%=entity.getFirstName()%> <%=entity.getLastName()%>, <%=entity.getAddress()%> <a href="customer.edit.jsp?customerId=" >Detail</a>');
                     });
                     <%
                         ke+=1;
