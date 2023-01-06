@@ -154,6 +154,7 @@
       <div class="container px-4 px-lg-5">
         <h2>Customer</h2>
         <%@ include file="user.menu.nav.jsp" %>
+        <HR>
         <%
           String username = (String) session.getAttribute("username");
           boolean isMultipart = ServletFileUpload.isMultipartContent(request);
@@ -188,7 +189,10 @@
                 BufferedReader reader = new BufferedReader(new FileReader(filepath   + filename));
                 String line;
                 while ((line = reader.readLine()) != null) {
-                  %><%=line%><%
+                  %>
+                  <%=line%>
+                  <HR>
+                  <%
                 }
                 reader.close();
               } catch (IOException e) {
