@@ -223,6 +223,7 @@
                   lng <%=results[1]%>
                   <%
                           if(lineNumber!=0){
+                              try{
                                 long currentTimeMillis = System.currentTimeMillis();
                                 Timestamp currentTime = new Timestamp(currentTimeMillis);
                                 Entity entity = new Entity();
@@ -237,8 +238,13 @@
                                 entity.setCity(customers[19]);
                                 entity.setState(customers[20]);
                                 entity.setZipcode(customers[21]);
-                                entity.setLocation_pointlat(results[0]);
-                                entity.setLocation_pointlng(results[1]);
+                                if(results[1].contains("ZERO_RESULTS")]){
+                                  entity.setLocation_pointlat("0");
+                                  entity.setLocation_pointlng("0");
+                                }else{
+                                  entity.setLocation_pointlat(results[0]);
+                                  entity.setLocation_pointlng(results[1]);
+                                }
                                 // parse createdAt as a Timestamp object
                                 entity.setCreatedAt(currentTime);
                                 entity.setCreatedBy(username);
@@ -251,6 +257,10 @@
                                 //entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
                                 EntityDao ed = new EntityDao();
                                 ed.addEntity(entity);
+                              } catch (Exception e) {
+                                e.printStackTrace();
+                                %><%=e.getMessage()%><%
+                              }
                           }
 
                     }
