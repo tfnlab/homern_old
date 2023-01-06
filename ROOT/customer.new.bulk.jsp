@@ -223,6 +223,8 @@
                   lng <%=results[1]%>
                   <%
 
+                          long currentTimeMillis = System.currentTimeMillis();
+                          Timestamp currentTime = new Timestamp(currentTimeMillis);
                           Entity entity = new Entity();
                           entity = entity.generateSampleEntity();
         //                      entity.setId(Integer.parseInt(request.getParameter("id")));
