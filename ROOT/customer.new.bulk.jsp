@@ -222,7 +222,7 @@
                   lat <%=results[0]%>
                   lng <%=results[1]%>
                   <%
-                          //if(lineNumber!=0){
+                          if(lineNumber!=0){
                               try{
                                 long currentTimeMillis = System.currentTimeMillis();
                                 Timestamp currentTime = new Timestamp(currentTimeMillis);
@@ -262,7 +262,7 @@
                                 e.printStackTrace();
                                 %><%=e.getMessage()%><%
                               }
-                          //}
+                          }
 
                     }
                     lineNumber += 1;
