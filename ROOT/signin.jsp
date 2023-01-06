@@ -223,8 +223,8 @@
           </div>
           <div class="form-group mt-5">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="rememberMe"  tabindex="3">
-              <label class="form-check-label" for="rememberMe">
+              <input class="form-check-input" type="checkbox" value="" id="remember-me"  name="remember-me" tabindex="3">
+              <label class="form-check-label" for="remember-me">
                 Remember me
               </label>
             </div>
@@ -233,6 +233,39 @@
           <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="sendTweet()" tabindex="4" >Sign-In</button>
 
         </form>
+        <script>
+          // get the remember me checkbox
+          const rememberMeCheckbox = document.getElementById('remember-me');
+
+          // add an event listener to the checkbox
+          rememberMeCheckbox.addEventListener('change', function(event) {
+            // store the username and password in local storage if the checkbox is checked
+            if (event.target.checked) {
+              // get the username and password values from the form
+              const username = document.getElementById('username').value;
+              const password = document.getElementById('password').value;
+
+              // store the username and password in local storage
+              localStorage.setItem('username', username);
+              localStorage.setItem('password', password);
+            }
+          });
+
+          // get the stored username and password from local storage
+          const storedUsername = localStorage.getItem('username');
+          const storedPassword = localStorage.getItem('password');
+
+          // if the stored username and password are present, set the values of the form fields and check the "Remember me" checkbox
+          if (storedUsername && storedPassword) {
+            // set the values of the form fields to the stored values
+            document.getElementById('username').value = storedUsername;
+            document.getElementById('password').value = storedPassword;
+
+            // check the "Remember me" checkbox
+            document.getElementById('remember-me').checked = true;
+          }
+        </script>
+
                  <%}%>
       </div>
 
