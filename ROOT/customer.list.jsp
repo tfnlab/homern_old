@@ -186,6 +186,11 @@
                       center: {lat: <%=usernameOBJ.getAddresslat().trim()%>, lng: <%=usernameOBJ.getAddresslng()%>}
                     });
 
+                    map.setOptions({
+                      center: {lat: <%=usernameOBJ.getAddresslat()%>, lng: <%=usernameOBJ.getAddresslng()%>},
+                      zoom: 8
+                    });
+
                     // Update the map options to make the map responsive.
                     window.addEventListener('resize', function() {
                       map.setOptions({
