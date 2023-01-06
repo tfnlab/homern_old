@@ -151,7 +151,14 @@
                   <div class="form-group">
                     <label for="firstName">Search Key</label>
                     <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>">
-                    <input type="checkbox" class="form-check-input" name="showMap" id="showMap" value="true" >
+                    <input type="checkbox" class="form-check-input" name="showMap" id="showMap" value="true"
+                      <%
+                        String showMap = request.getParameter("showMap");
+                        if (showMap != null) {
+                          %>checked<%
+                        }
+                      %>
+                      >
                     <label class="form-check-label" for="availability">Map</label>
                   </div>
 
