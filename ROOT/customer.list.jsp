@@ -137,6 +137,7 @@
                  String searchKey = request.getParameter("searchKey");
                 EntityDao cDao = new EntityDao();
                 String username = (String) session.getAttribute("username");
+                User usernameOBJ =  (User)session.getAttribute("usernameOBJ");
                 List<Entity> es = null;
 
                 if (searchKey != null && searchKey.trim().length() > 0) {
@@ -169,13 +170,13 @@
                     // Create a map
                     var map = new google.maps.Map(document.getElementById('map'), {
                       mapTypeId: 'roadmap',
-                      center: {lat: -34.397, lng: 150.644}
+                      center: {lat: <%=usernameOBJ,getAddresslat()%>, lng: <%=usernameOBJ,getAddresslng()%>}
                     });
 
                     // Update the map options to make the map responsive.
                     window.addEventListener('resize', function() {
                       map.setOptions({
-                        center: {lat: -34.397, lng: 150.644},
+                        center: {lat: <%=usernameOBJ,getAddresslat()%>, lng: <%=usernameOBJ,getAddresslng()%>},
                         zoom: 8
                       });
                     });
