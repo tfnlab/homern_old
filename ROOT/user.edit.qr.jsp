@@ -35,6 +35,10 @@
       String vcard = "BEGIN:VCARDEND:VCARD" + "\r";
       vcard += "VERSION:3.0" + "\r";
       vcard += "N:"+ usernameOBJ.getLastName() +";"+ usernameOBJ.getFirstName()     + "\r" ;
+      vcard += "ADR:" + usernameOBJ.getAddress() + "\r";
+      vcard += "TEL:" + usernameOBJ.getPhone() + "\r";
+      vcard += "EMAIL:" + usernameOBJ.getEmail() + "\r";
+      vcard += "URL:" + "https://" + usernameOBJ.getUrl_website() + "\r";
       vcard += "END:VCARD";
 //      QRCodeGenerator.createQRImage(new File(logofilepath), "First Name : " + usernameOBJ.getFirstName() + ",LN:" + usernameOBJ.getLastName() + ";PH:" + usernameOBJ.getPhone() + ";EM:" + usernameOBJ.getEmail(), 500, "png");
         QRCodeGenerator.createQRImage(new File(logofilepath), vcard, 500, "png");
