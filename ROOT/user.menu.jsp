@@ -111,9 +111,9 @@
 
         <ol>
           <li><a href="user.menu.jsp">Home</a></li>
-          <li>SOC</li>
+          <li>Service Operations Center</li>
         </ol>
-        <h2>Service Operations Center</h2>
+        <h2>Home Renovation Nation APP</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
@@ -121,7 +121,7 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
           <div class="container mt-5">
-            <h4>Home Renovation Nation</h4>
+            <h4>Service Operations Center</h4>
             <hr>
               <style>
                 .fa {
