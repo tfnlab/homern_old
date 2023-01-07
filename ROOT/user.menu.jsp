@@ -113,7 +113,7 @@
           <li><a href="user.menu.jsp">Home</a></li>
           <li>Service Operations Center</li>
         </ol>
-        <h2>Home Renovation Nation APP</h2>
+        <h2>Home Renovation Nation Application</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
