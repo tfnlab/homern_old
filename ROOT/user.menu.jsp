@@ -108,12 +108,10 @@
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
       <div class="container">
-
         <ol>
           <li><a href="user.menu.jsp">Home</a></li>
           <li>Service Operations Center</li>
         </ol>
-        <h2>Home Renovation Nation Application</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
