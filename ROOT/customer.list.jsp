@@ -110,7 +110,31 @@
       <a href="https://forms.gle/vdU9zvFTZJ9eKAsz6" class="get-started-btn scrollto">Get Started</a>
     </div>
   </header><!-- End Header -->
+  
+  <button type="button" class="btn btn-primary" id="viewCustomerButton" data-toggle="modal" data-target="#customerModal" style="display: none;"/>
+    View Customer Details
+  </button>
 
+  <!-- Modal -->
+  <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="customerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="customerModalLabel">Customer Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="customerModalBody">
+          <!-- Customer details will be inserted here -->
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="btn btn-secondary" role="button" id="customerDetailButton">Detail</a>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -125,30 +149,7 @@
       </div>
     </section><!-- End Breadcrumbs -->
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" id="viewCustomerButton" data-toggle="modal" data-target="#customerModal" style="display: none;"/>
-      View Customer Details
-    </button>
 
-    <!-- Modal -->
-    <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="customerModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="customerModalLabel">Customer Details</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" id="customerModalBody">
-            <!-- Customer details will be inserted here -->
-          </div>
-          <div class="modal-footer">
-            <a href="#" class="btn btn-secondary" role="button" id="customerDetailButton">Detail</a>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
