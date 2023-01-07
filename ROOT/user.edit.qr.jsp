@@ -32,8 +32,12 @@
     }
     if(request.getParameter("qrtype").equals("name")){
       logofilepath  = filepath +  "qr.name." + filename;
+      String vcard = "BEGIN:VCARDEND:VCARD" + "\r";
+      vcard += "VERSION:3.0" + "\r";
+      vcard += "N:"+ usernameOBJ.getLastName() +";"+ usernameOBJ.getFirstName()     + "\r" ;
+      vcard += "END:VCARD";
 //      QRCodeGenerator.createQRImage(new File(logofilepath), "First Name : " + usernameOBJ.getFirstName() + ",LN:" + usernameOBJ.getLastName() + ";PH:" + usernameOBJ.getPhone() + ";EM:" + usernameOBJ.getEmail(), 500, "png");
-        QRCodeGenerator.createQRImage(new File(logofilepath), "First Name : " + usernameOBJ.getFirstName() + "| Last Name : " + usernameOBJ.getLastName(), 500, "png");
+        QRCodeGenerator.createQRImage(new File(logofilepath), vcard, 500, "png");
     }
     response.setContentType("image/jpeg");
 //    response.setContentLength(new File(logofilepath).length());
