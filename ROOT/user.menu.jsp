@@ -134,36 +134,53 @@
                   color: blue;
                   text-decoration: underline;
                 }
+                .link-col {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                }
                 a {
-                  display: block;
                   padding: 10px;
                 }
               </style>
 
               <div class="row">
-                <div class="col-4">
-                  <a href="user.menu.jsp"><i class="fa fa-home"></i> Home</a>
-                  <p>Home page</p>
-                  <a href="dashboard.jsp"><i class="fa fa-cog"></i> Dashboard</a>
+                <div class="col-3 link-col">
+                  <a href="user.menu.jsp"><i class="fa fa-home"></i></a>
+                  <p>Home</p>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="dashboard.jsp"><i class="fa fa-cog"></i></a>
                   <p>Dashboard</p>
-                  <a href="user.edit.jsp"><i class="fa fa-cog"></i> Marketing</a>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="user.edit.jsp"><i class="fa fa-cog"></i></a>
                   <p>Marketing</p>
                 </div>
-                <div class="col-4">
-                  <a href="technician.list.jsp"><i class="fa fa-wrench"></i> Technicians</a>
+                <div class="col-3 link-col">
+                  <a href="technician.list.jsp"><i class="fa fa-wrench"></i></a>
                   <p>Technicians</p>
-                  <a href="product.list.jsp"><i class="fa fa-box"></i> Products</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3 link-col">
+                  <a href="product.list.jsp"><i class="fa fa-box"></i></a>
                   <p>Products</p>
-                  <a href="customer.list.jsp"><i class="fa fa-users"></i> Customers</a>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="customer.list.jsp"><i class="fa fa-users"></i></a>
                   <p>Customers</p>
                 </div>
-                <div class="col-4">
-                  <a href="order.list.jsp"><i class="fa fa-shopping-cart"></i> Orders</a>
+                <div class="col-3 link-col">
+                  <a href="order.list.jsp"><i class="fa fa-shopping-cart"></i></a>
                   <p>Orders</p>
-                  <a href="event.list.jsp"><i class="fa fa-calendar"></i> Events</a>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="event.list.jsp"><i class="fa fa-calendar"></i></a>
                   <p>Events</p>
                 </div>
               </div>
+
             <HR>
             <p>Our home service software offers a range of features to help companies streamline their operations:</p>
             <ul>
