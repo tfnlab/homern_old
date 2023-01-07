@@ -115,7 +115,7 @@
 
         <ol>
           <li><a href="user.menu.jsp">Home</a></li>
-          <li>SOC</li>
+          <li>Service Operations Center</li>
         </ol>
         <h2>Dashboard</h2>
       </div>
