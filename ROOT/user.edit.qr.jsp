@@ -25,7 +25,7 @@
     String filepath = conf.getPdfloc();
     String logofilepath  = filepath +  "qr.web." + filename;
 
-    QRCodeGenerator.createQRImage(logofilepath, "https://" + usernameOBJ.getUrl_website(), 250, "png");
+    QRCodeGenerator.createQRImage(new File(logofilepath), "https://" + usernameOBJ.getUrl_website(), 250, "png");
 
     response.setContentType("image/jpeg");
 //    response.setContentLength(new File(logofilepath).length());
