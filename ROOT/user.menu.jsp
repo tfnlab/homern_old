@@ -154,7 +154,7 @@
                   <p>Dashboard</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="user.edit.jsp"><i class="fa fa-cog"></i></a>
+                  <a href="user.edit.jsp"><i class="fa fa-handshake"></i></a>
                   <p>Marketing</p>
                 </div>
                 <div class="col-3 link-col">
