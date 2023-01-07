@@ -23,10 +23,17 @@
     APIConfig conf = new APIConfig();
     String filename = username + ".png";
     String filepath = conf.getPdfloc();
+
     String logofilepath  = filepath +  "qr.web." + filename;
 
-    QRCodeGenerator.createQRImage(new File(logofilepath), "https://" + usernameOBJ.getUrl_website(), 250, "png");
-
+    if(request.getParameter("qrtype").equals("website")){
+        logofilepath  = filepath +  "qr.web." + filename;
+        QRCodeGenerator.createQRImage(new File(logofilepath), "https://" + usernameOBJ.getUrl_website(), 500, "png");
+    }
+    if(request.getParameter("qrtype").equals("name")){
+      logofilepath  = filepath +  "qr.name." + filename;
+      QRCodeGenerator.createQRImage(new File(logofilepath), "FN:" + usernameOBJ.getFirstName() + "LN:" + usernameOBJ.getLastName() + "PH:" + usernameOBJ.getPhone() + "EM:" + usernameOBJ.getEmail(), 500, "png");
+    }
     response.setContentType("image/jpeg");
 //    response.setContentLength(new File(logofilepath).length());
     response.setHeader("Content-Length", String.valueOf(new File(logofilepath).length()));
