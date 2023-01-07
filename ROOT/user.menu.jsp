@@ -110,10 +110,10 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Home</li>
+          <li><a href="user.menu.jsp">Home</a></li>
+          <li>SOC</li>
         </ol>
-        <h2>User Home</h2>
+        <h2>Service Operations Center</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
@@ -125,6 +125,23 @@
           <div class="container mt-5">
             <h4>Home Renovation Nation</h4>
             <hr>
+              <div class="row">
+                <div class="col-4">
+                  <a href="user.menu.jsp"><i class="fa fa-home"></i> Home</a>
+                  <a href="dashboard.jsp"><i class="fa fa-cog"></i> Dashboard</a>
+                  <a href="user.edit.jsp"><i class="fa fa-cog"></i> Marketing</a>
+                </div>
+                <div class="col-4">
+                  <a href="technician.list.jsp"><i class="fa fa-wrench"></i> Technicians</a>
+                  <a href="product.list.jsp"><i class="fa fa-box"></i> Products</a>
+                  <a href="customer.list.jsp"><i class="fa fa-users"></i> Customers</a>
+                </div>
+                <div class="col-4">
+                  <a href="order.list.jsp"><i class="fa fa-shopping-cart"></i> Orders</a>
+                  <a href="event.list.jsp"><i class="fa fa-calendar"></i> Events</a>
+                </div>
+              </div>
+            <HR>    
             <p>Our home service software offers a range of features to help companies streamline their operations:</p>
             <ul>
               <li><strong>Scheduling and dispatch:</strong> our software can help schedule and dispatch technicians to service calls and manage their work schedules.</li>
