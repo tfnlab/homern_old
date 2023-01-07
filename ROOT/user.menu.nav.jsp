@@ -27,7 +27,19 @@
   <option value="event.list.jsp" <%= currentUrl.indexOf("event.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-calendar"></i> Events</option>
 </select>
 
+<script>
+  function newCustomer() {
+    window.open("customer.new.jsp", "_self");
+  }
 
+  document.addEventListener("keydown", function(event) {
+    // Check if the "Ctrl" and "S" keys are pressed
+    if (event.ctrlKey && event.keyCode == 83) {
+      event.preventDefault();
+      newCustomer();
+    }
+  });
+</script>
 <!--
         <p>
         <a href="user.menu.jsp">Home</a> |
