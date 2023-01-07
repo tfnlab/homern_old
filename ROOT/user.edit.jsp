@@ -105,7 +105,6 @@
             <li><a href="user.menu.jsp">Home</a></li>
             <li>Service Operations Center</li>
         </ol>
-        <h2>Marketing</h2>
       </div>
     </section><!-- End Breadcrumbs -->
     <%
@@ -194,6 +193,7 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Marketing</h2>
+        <HR>
         <%@ include file="user.menu.nav.jsp" %>
 
         <script>
