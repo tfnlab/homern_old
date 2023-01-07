@@ -125,7 +125,7 @@
             <hr>
               <style>
                 .fa {
-                  font-size: 24px;
+                  font-size: 48px;
                   margin-right: 10px;
                 }
                 a:hover {
