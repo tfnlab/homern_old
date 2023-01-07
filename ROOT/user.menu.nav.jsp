@@ -31,12 +31,18 @@
   function newCustomer() {
     window.open("customer.new.jsp", "_self");
   }
-
+  function newOrder() {
+    window.open("order.new.jsp", "_self");
+  }
   document.addEventListener("keydown", function(event) {
-    // Check if the "Ctrl" and "S" keys are pressed
-    if (event.ctrlKey && event.keyCode == 83) {
+    // Check if the "Ctrl" and "C" keys are pressed
+    if (event.ctrlKey && event.keyCode == 67) {
       event.preventDefault();
       newCustomer();
+    }
+    if (event.ctrlKey && event.keyCode == 79) {
+      event.preventDefault();
+      newOrder();
     }
   });
 </script>
