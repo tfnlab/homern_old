@@ -125,23 +125,46 @@
           <div class="container mt-5">
             <h4>Home Renovation Nation</h4>
             <hr>
+              <style>
+                .fa {
+                  font-size: 24px;
+                  margin-right: 10px;
+                }
+                a:hover {
+                  color: blue;
+                  text-decoration: underline;
+                }
+                a {
+                  display: block;
+                  padding: 10px;
+                }
+              </style>
+
               <div class="row">
                 <div class="col-4">
                   <a href="user.menu.jsp"><i class="fa fa-home"></i> Home</a>
+                  <p>Home page</p>
                   <a href="dashboard.jsp"><i class="fa fa-cog"></i> Dashboard</a>
+                  <p>Dashboard</p>
                   <a href="user.edit.jsp"><i class="fa fa-cog"></i> Marketing</a>
+                  <p>Marketing</p>
                 </div>
                 <div class="col-4">
                   <a href="technician.list.jsp"><i class="fa fa-wrench"></i> Technicians</a>
+                  <p>Technicians</p>
                   <a href="product.list.jsp"><i class="fa fa-box"></i> Products</a>
+                  <p>Products</p>
                   <a href="customer.list.jsp"><i class="fa fa-users"></i> Customers</a>
+                  <p>Customers</p>
                 </div>
                 <div class="col-4">
                   <a href="order.list.jsp"><i class="fa fa-shopping-cart"></i> Orders</a>
+                  <p>Orders</p>
                   <a href="event.list.jsp"><i class="fa fa-calendar"></i> Events</a>
+                  <p>Events</p>
                 </div>
               </div>
-            <HR>    
+            <HR>
             <p>Our home service software offers a range of features to help companies streamline their operations:</p>
             <ul>
               <li><strong>Scheduling and dispatch:</strong> our software can help schedule and dispatch technicians to service calls and manage their work schedules.</li>
