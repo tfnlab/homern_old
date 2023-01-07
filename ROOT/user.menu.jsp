@@ -120,8 +120,6 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Home</h2>
-        <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
             <h4>Home Renovation Nation</h4>
             <hr>
