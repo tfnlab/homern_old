@@ -124,6 +124,7 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>User Referred By Info</h2>
+        <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
         <h4>Welcome to the Home Renovation Nation referral program!</h4>
