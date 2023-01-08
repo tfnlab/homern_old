@@ -26,7 +26,9 @@
           }else{
               es = cDao.getEntitiesByUsername(username);
           }
-
+        if(es.isEmpty()){
+          %><a href="customer.new.jsp?orderId=<%=orderId%>" >add customer</a><%
+        }
         for (Entity entity : es) { %>
             Name: <%= entity.getFirstName() %>, <%= entity.getLastName() %><br>
             Phone: <%= entity.getPhone() %><br>
