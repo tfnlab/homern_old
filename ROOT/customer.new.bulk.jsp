@@ -235,6 +235,7 @@
                                 entity.setEmail(customers[5].substring(1, customers[5].length() - 1));
                                 entity.setPhone(customers[3].substring(1, customers[3].length() - 1));
                                 entity.setAddress(customers[17].substring(1, customers[17].length() - 1));
+                                entity.setAddress2(customers[18].substring(1, customers[18].length() - 1));
                                 entity.setCity(customers[19].substring(1, customers[19].length() - 1));
                                 entity.setState(customers[20].substring(1, customers[20].length() - 1));
                                 entity.setZipcode(customers[21].substring(1, customers[21].length() - 1));
