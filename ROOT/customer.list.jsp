@@ -226,7 +226,9 @@
                   First Name: <%= entity.getFirstName() %><br>
                   Last Name: <%= entity.getLastName() %><br>
                   Address: <%= entity.getAddress() %><br>
-                  Address2: <%= entity.getAddress2() %><br>
+                  <%if(!entity.getAddress2().isEmpty()){%>
+                    Address2: <%= entity.getAddress2() %><br>
+                  <%}%>
                   Phone: <%= entity.getPhone() %><br>
                   Email: <%= entity.getEmail() %><br>
                   Customer ID: <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
