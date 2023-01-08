@@ -30,7 +30,6 @@
     <!-- Include the Bootstrap CSS file -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Include the Bootstrap Datepicker CSS file -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -202,7 +201,72 @@
                 }else{
 
         %>
-            
+            <!-- ======= Contact Section ======= -->
+
+                <form action="order.new.jsp" method="POST">
+
+                <div class="form-group">
+                  <label for="order-status">Order Status</label>
+                  <select class="form-control" id="status" name="status">
+                  <%
+                    String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
+                    for (String sstatus : statuses) {
+                  %>
+                  <option value="<%= sstatus %>"  ><%= sstatus %></option>
+                  <%
+                    }
+                  %>
+                  </select>
+                </div>
+
+                <label for="orderId">Order Name:</label><br>
+                <input class="form-control"  type="text" id="orderName" name="orderName" tabindex="2" required ><br>
+                <label for="orderId">Order Description:</label><br>
+                <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5" tabindex="3"></textarea>
+                <label class="form-label" for="textAreaExample">Request Info</label>
+                <label for="orderDate">Order Date:</label><br>
+                <input type="datetime-local" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd" tabindex="4"><br>
+                <label for="shipDate">Project Date:</label><br>
+                <input type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" tabindex="5"><br>
+                <label for="shippingAddress">Project Address:</label><br>
+                <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC(this)"  tabindex="6"><br>
+                <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" >
+                <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" >
+                <ul id="shippingAddressac" name="shippingAddressac"></ul>
+                <hr>
+                <label for="billingAddress">Billing Address:</label><br>
+                <input class="form-control" type="text" id="billingAddress" name="billingAddress" onkeypress="callAC(this)"  tabindex="7"><br>
+                <input type="hidden" id="billingAddressaclat" name="billingAddressaclat" >
+                <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" >
+                <ul id="billingAddressac" name="billingAddressac"></ul>
+                <hr>
+                <!-- HTML -->
+                <div class="form-group">
+                  <label for="payment-options">Payment Options</label>
+                  <select class="form-control" id="paymentMethod" name="paymentMethod"  tabindex="8">
+                    <option value="cash">Cash</option>
+                    <option value="check">Check</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="debit-card">Debit Card</option>
+                    <option value="electronic-payment">Electronic Payment</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="google-pay">Google Pay</option>
+                    <option value="apple-pay">Apple Pay</option>
+                    <option value="bank-transfer">Bank Transfer</option>
+                    <option value="money-order">Money Order</option>
+                    <option value="gift-card">Gift Card</option>
+                    <option value="cryptocurrency">Cryptocurrency</option>
+                    <option value="doge">Doge</option>
+                    <option value="bitcoin">Bitcoin</option>
+                    <option value="eth">ETH</option>
+                  </select>
+                </div>
+
+                <label for="orderTotal">Order Total:</label><br>
+                <input type="text" id="orderTotal" name="orderTotal"  tabindex="9"><br>
+                <HR>
+                <input type="submit" value="Submit"  tabindex="10" class="btn btn-primary" >
+                  	</form>
 
                  <%}%>
       </div>
