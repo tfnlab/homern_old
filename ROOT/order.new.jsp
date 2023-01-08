@@ -8,6 +8,7 @@
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.UUID" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -164,6 +165,7 @@
                 String billingAddressaclat = request.getParameter("billingAddressaclat");
                 String billingAddressaclng = request.getParameter("billingAddressaclng");
                 String status = request.getParameter("status");
+                String uuid = java.util.UUID.randomUUID().toString();
 
 
 
@@ -202,6 +204,7 @@
                           %><%="Error parsing date and time string: " + e.getMessage()%><%
                       }
                       Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng, status);
+                      order.setUuid(uuid);
                       OrderDao dao = new OrderDao();
                       dao.insertOrder(order);
                       %>
