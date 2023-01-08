@@ -195,7 +195,7 @@
         <%@ include file="user.menu.nav.jsp" %>
 
                 <%
-                Order order = dao.getOrderByOrderId(orderId);
+                Order order = dao.getOrderByOrderId(orderId, username);
                 %>
         <%
 
