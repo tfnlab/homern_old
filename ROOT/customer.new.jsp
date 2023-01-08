@@ -163,6 +163,10 @@
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
                 String username = (String) session.getAttribute("username");
                 String first_name = request.getParameter("firstName");
+                int orderId = 0;
+                if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+                  orderId = Integer.parseInt(request.getParameter("orderId"));
+                }
 
                 // Validate form data
                 if (first_name != null && first_name.trim().length() > 0) {
@@ -301,6 +305,7 @@
         </form>
         <HR>
                     <form action="customer.new.jsp" method="post">
+                    <input type="hidden" name="orderId" id="orderId" value="<%=orderId%>" />
           <div class="form-group">
             <label for="firstName">First Name</label>
             <input type="text" class="form-control" id="firstName" name="firstName" required>
