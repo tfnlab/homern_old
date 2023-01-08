@@ -31,7 +31,7 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
 
                         Entity entity = new Entity();
                         EntityDao ed = new EntityDao();
-                        entity = ed.getEntityById(customerId);
+                        entity = ed.getEntityById(customerId, username);
                         Email_Manager eM = new Email_Manager();
                         try{
                               File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");

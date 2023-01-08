@@ -235,7 +235,7 @@
                         Payment Saved
                       <%
                 }
-                  entity = ed.getEntityById(eId);
+                  entity = ed.getEntityById(eId, username);
         %>
         <form action="customer.edit.payments.jsp" method="post">
           <div class="form-group">

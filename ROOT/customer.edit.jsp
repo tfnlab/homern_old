@@ -277,7 +277,7 @@
                         Order Saved
                       <%
                 }
-                  entity = ed.getEntityById(eId);
+                  entity = ed.getEntityById(eId, username);
         %>
                     <form action="customer.edit.jsp" method="post">
                       <input type="hidden" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly>

@@ -259,7 +259,7 @@
           EntityDao ed = new EntityDao();
 
 
-            entity = ed.getEntityById(eId);
+            entity = ed.getEntityById(eId, username);
 
           %>
                     <div class="form-group">

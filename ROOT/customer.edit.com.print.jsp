@@ -27,7 +27,7 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
             EntityDao ed = new EntityDao();
 
 
-              entity = ed.getEntityById(customerId);
+              entity = ed.getEntityById(customerId, username);
   Create_PDF cpdf = new Create_PDF();
 
   cpdf.createPD(uuid + ".pdf", entity, request.getParameter("orderCom"));
