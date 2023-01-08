@@ -186,18 +186,18 @@
                       <input type="hidden" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly>
                       <div class="form-group">
                         <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>">
+                        <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>" readonly>
                       </div>
                       <div class="form-group">
                         <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" value="<%= entity.getLastName() %>">
+                        <input type="text" class="form-control" id="lastName" name="lastName" value="<%= entity.getLastName() %>" readonly>
                       </div>
                       <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="<%= entity.getEmail() %>">
+                        <input type="email" class="form-control" id="email" name="email" value="<%= entity.getEmail() %>" readonly>
                       </div>
                     </form>
-
+                    <HR>
                     <%
 
                     OrderDao orderDao = new OrderDao();
