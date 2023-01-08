@@ -164,6 +164,7 @@
                 String username = (String) session.getAttribute("username");
                 String first_name = request.getParameter("firstName");
                 int orderId = 0;
+                String mfer_uuid = java.util.UUID.randomUUID().toString();
                 if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
                   orderId = Integer.parseInt(request.getParameter("orderId"));
                 }
@@ -236,6 +237,7 @@
                       entity.setCreatedBy(username);
                       entity.setLocation_pointlat("0");
                       entity.setLocation_pointlng("0");
+                      entity.setMfer_uuid(mfer_uuid);
                       // parse createdDate as a Date object
 //                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
                       // parse createdDate as a Date object
@@ -245,10 +247,16 @@
                       //entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
                       EntityDao ed = new EntityDao();
                       ed.addEntity(entity);
+                      entity = ed.getEntityByUuid(mfer_uuid, username);
                     %>
 
 
-                        Customer Saved
+                        Customer Saved <%=entity.getId()%>
+                        <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a>
+                        <%if(orderId!=0){%>
+                          Add to Order : <a href="order.edit.customers.jsp?action=add&orderId=<%=orderId%>&customerId=<%= entity.getId() %>" ><%= orderId %></a><br>
+                        <%}%>
+
                       <%
                 }else{
 
