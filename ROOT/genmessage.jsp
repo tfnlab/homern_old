@@ -23,7 +23,7 @@
     }
     if(orderId >0){
       OrderDao dao = new OrderDao();
-      Order order = dao.getOrderByOrderId(orderId);
+      Order order = dao.getOrderByOrderId(orderId, username);
       messageName = order.getOrderName();
     }
     if(customerId>0){
