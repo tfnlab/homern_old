@@ -169,6 +169,7 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Order</h2>
+        <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <hr>
           <select id="customer-touch-points" tabindex="2">
@@ -279,9 +280,9 @@
             <input type="datetime-local" class="form-control" name="orderDate" value="<%= order.getOrderDate() %>" datepicker  tabindex="10">
           </div>
 
-          <label for="shipDate">Ship Date:</label><br>
+          <label for="shipDate">Project Date:</label><br>
           <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= order.getShipDate() %>"  tabindex="11"><br>
-          <label for="shippingAddress">Shipping Address:</label><br>
+          <label for="shippingAddress">Project Address:</label><br>
           <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" value="<%= order.getShippingAddress() %>" onkeypress="callAC(this)"  tabindex="12"><br>
           <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" value="<%= order.getShippingAddresslat() %>">
           <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" value="<%= order.getShippingAddresslng() %>">
