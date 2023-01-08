@@ -187,7 +187,7 @@
                 }
         %>
         <%
-          Order order = dao.getOrderByOrderId(orderId);
+          Order order = dao.getOrderByOrderId(orderId, username);
 
         %>
         <!-- ======= Contact Section ======= -->
