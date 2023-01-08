@@ -266,6 +266,10 @@
                       // parse lastModifiedDate as a Timestamp object
                       //entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
                       entity.setId(eId);
+
+                      entity.setLocation_pointlat(request.getParameter("location_pointlat"));
+                      entity.setLocation_pointlng(request.getParameter("location_pointlng"));
+
                       ed.updateEntityById(entity);
                     %>
 
@@ -283,6 +287,10 @@
                       </div>
                       <HR>
                       -->
+
+                      <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= entity.getLocation_pointlat() %>">
+                      <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="<%= entity.getLocation_pointlng() %>">
+
                       <div class="form-group">
                         <label for="firstName">First Name</label>
                         <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>">
