@@ -119,6 +119,11 @@
       var url = "customer.edit.com.jsp?customerId=" + eId +  "&comType=" + com;
       window.open(url, "_self");
     }
+    function getOrders() {
+      var eId = <%=eId%>;
+      var url = "customer.edit.orders.jsp?customerId=" + eId;
+      window.open(url, "_self");
+    }
   </script>
 </head>
 
