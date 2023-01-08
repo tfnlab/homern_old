@@ -207,8 +207,13 @@
                       order.setUuid(uuid);
                       OrderDao dao = new OrderDao();
                       dao.insertOrder(order);
+                      order = dao.getOrderByUuid(uuid, username);
                       %>
+                        <HR>
                         Order Saved
+                        <HR>
+                        <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
+
                       <%
                 }else{
 
