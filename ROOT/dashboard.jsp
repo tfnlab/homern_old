@@ -111,10 +111,10 @@
           OrderDao oDao = new OrderDao();
           EntityDao eDao = new EntityDao();
           EventDao eventDao = new EventDao();
-
+          User user = (User)session.getAttribute("usernameOBJ");
           %>
           <div class="container mt-5">
-            <h4>Home Renovation Nation Dashboard</h4>
+            <h4><%=user.getBusiness_name()%> Dashboard</h4>
             <HR>
             Orders: <%=oDao.getCustomerOrderCount(username)%>
             <HR>
