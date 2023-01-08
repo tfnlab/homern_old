@@ -242,7 +242,7 @@
                 </div>
 
                 <label for="orderId">Order Name:</label><br>
-                <input class="form-control"  type="text" id="orderName" name="orderName" tabindex="2"><br>
+                <input class="form-control"  type="text" id="orderName" name="orderName" tabindex="2" required ><br>
                 <label for="orderId">Order Description:</label><br>
                 <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5" tabindex="3"></textarea>
                 <label class="form-label" for="textAreaExample">Request Info</label>
