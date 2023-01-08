@@ -2,11 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
+<%@ page import="com.tfnlab.mysql.Order"%>
+<%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.math.BigDecimal" %>
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.util.Date" %>
-<%@ page import="com.tfnlab.mysql.Order" %>
-<%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="com.tfnlab.mysql.Entity" %>
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
 <%@ page import="java.text.SimpleDateFormat" %>
@@ -196,6 +196,42 @@
                       </div>
                     </form>
 
+                    <%
+
+                    OrderDao orderDao = new OrderDao();
+                    List<Order> orders  = orderDao.getOrdersByCustomerId(entity.getId(), username);
+
+                    %>
+
+                    <%
+                        int tabindex = 4;
+
+                            Calendar calendar = Calendar.getInstance();
+                            Date today = calendar.getTime(); // current date
+                    %>
+                  <% for (Order order : orders) { %>
+                    <% String color = order.getShipDate().after(today) ? "#C8E6C9" : "#FFCDD2"; %>
+                    <div class="container-fluid p-5" style="background-color: <%=color%>">
+                      <div class="card p-3">
+                    Name: <%= order.getOrderName() %><br>
+                      Description: <%= order.getOrderDescription() %><br>
+                    Date: <%= order.getOrderDate() %><br>
+                    Project Address: <%= order.getShippingAddress() %><br>
+                    <!-- Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br> -->
+                    Billing Address: <%= order.getBillingAddress() %><br>
+                    <!-- Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br> -->
+                    Payment Method: <%= order.getPaymentMethod() %><br>
+                    Total: <%= order.getOrderTotal() %><br>
+                    <hr>
+                    <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
+
+                    <%
+                      tabindex +=1;
+                    %>
+                      </div>
+                    </div>
+                    <HR>
+                  <% } %>
 
       </div>
 
