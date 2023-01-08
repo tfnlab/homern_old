@@ -28,9 +28,16 @@
     }
 
     APIConfig conf = new APIConfig();
+
     String filename = username + "." + orderId + "." + customerId + ".png";
     String filepath = conf.getPdfloc();
     String logofilepath  = filepath +  "order.customer.signature." + filename;
+
+    File file = new File(logofilepath);
+    if (!file.exists()) {
+        logofilepath = conf.getWebloc() + "no.signature.png";
+    }
+
     response.setContentType("image/jpeg");
 //    response.setContentLength(new File(logofilepath).length());
     response.setHeader("Content-Length", String.valueOf(new File(logofilepath).length()));
