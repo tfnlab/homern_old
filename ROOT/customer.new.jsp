@@ -231,6 +231,8 @@
                       // parse createdAt as a Timestamp object
                       entity.setCreatedAt(currentTime);
                       entity.setCreatedBy(username);
+                      entity.setLocation_pointlat("0");
+                      entity.setLocation_pointlng("0");
                       // parse createdDate as a Date object
 //                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
                       // parse createdDate as a Date object
