@@ -270,7 +270,7 @@
                 }
         %>
         <%
-          Order order = dao.getOrderByOrderId(orderId);
+          Order order = dao.getOrderByOrderId(orderId, username);
 
             String currentStatus = order.getStatus();
         %>
