@@ -81,7 +81,8 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>User</h2>
+        <h2>Upload Logo</h2>
+        <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
             <img src="user.edit.logo.view.jsp" class="img-fluid" style="max-width: 50%;"/>
