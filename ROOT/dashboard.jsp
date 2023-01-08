@@ -132,7 +132,7 @@
                   for (String sstatus : statuses) {
                 %>
                 <tr>
-                  <td><%= sstatus %></td>
+                  <td><a href="order.list.jsp?searchKey=<%= sstatus %>" ><%= sstatus %></a></td>
                   <td>
                       <% int count = oDao.getCustomerOrderCount(username, sstatus);%>
                   <%= count %></td>
