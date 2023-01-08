@@ -108,7 +108,7 @@
     }
 
     function dsiplayName() {
-      document.getElementById("display_name").value = document.getElementById("firstName").value + " " document.getElementById("lastName").value;
+      document.getElementById("display_name").value = document.getElementById("firstName").value + " " + document.getElementById("lastName").value;
     }
   </script>
 </head>
