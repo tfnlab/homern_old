@@ -296,7 +296,10 @@
 
                       <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= entity.getLocation_pointlat() %>">
                       <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="<%= entity.getLocation_pointlng() %>">
-
+                      <div class="form-group">
+                        <label for="firstName">Company Name</label>
+                        <input type="text" class="form-control" id="company_name" name="company_name" value="<%= entity.getCompany_name() %>">
+                      </div>
                       <div class="form-group">
                         <label for="firstName">First Name</label>
                         <input type="text" class="form-control" id="firstName" name="firstName" value="<%= entity.getFirstName() %>">
@@ -304,6 +307,10 @@
                       <div class="form-group">
                         <label for="lastName">Last Name</label>
                         <input type="text" class="form-control" id="lastName" name="lastName" value="<%= entity.getLastName() %>">
+                      </div>
+                      <div class="form-group">
+                        <label for="lastName">Display Name</label>
+                        <input type="text" class="form-control" id="display_name" name="display_name" value="<%= entity.getDisplay_name() %>">
                       </div>
                       <div class="form-group">
                         <label for="email">Email</label>

@@ -239,6 +239,8 @@
                                 entity.setCity(customers[19].substring(1, customers[19].length() - 1));
                                 entity.setState(customers[20].substring(1, customers[20].length() - 1));
                                 entity.setZipcode(customers[21].substring(1, customers[21].length() - 1));
+                                entity.setCompany_name(customers[7].substring(1, customers[7].length() - 1));
+                                entity.setDisplay_name(customers[2].substring(1, customers[2].length() - 1));
 
                                 if(results[1].contains("ZERO_RESULTS")){
                                   entity.setLocation_pointlat("0");

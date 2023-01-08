@@ -239,6 +239,8 @@
                       entity.setLocation_pointlat("0");
                       entity.setLocation_pointlng("0");
                       entity.setMfer_uuid(mfer_uuid);
+                      entity.setCompany_name(request.getParameter("company_name"));
+                      entity.setDisplay_name(request.getParameter("display_name"));
                       // parse createdDate as a Date object
 //                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
                       // parse createdDate as a Date object
@@ -314,6 +316,10 @@
         <HR>
                     <form action="customer.new.jsp" method="post">
                     <input type="hidden" name="orderId" id="orderId" value="<%=orderId%>" />
+                    <div class="form-group">
+                      <label for="firstName">Company Name</label>
+                      <input type="text" class="form-control" id="company_name" name="company_name" >
+                    </div>
           <div class="form-group">
             <label for="firstName">First Name</label>
             <input type="text" class="form-control" id="firstName" name="firstName" required>
@@ -321,6 +327,10 @@
           <div class="form-group">
             <label for="lastName">Last Name</label>
             <input type="text" class="form-control" id="lastName" name="lastName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Display Name</label>
+            <input type="text" class="form-control" id="display_name" name="display_name" required>
           </div>
           <div class="form-group">
             <label for="lastName">Description</label>
