@@ -208,6 +208,7 @@
                       entity.setEmail(request.getParameter("email"));
                       entity.setPhone(request.getParameter("phone"));
                       entity.setAddress(request.getParameter("address"));
+                      entity.setAddress2(request.getParameter("address2"));
                       entity.setCity(request.getParameter("city"));
                       entity.setState(request.getParameter("state"));
                       entity.setZipcode(request.getParameter("zipcode"));
@@ -316,6 +317,10 @@
           <div class="form-group">
             <label for="address">Address</label>
             <input type="text" class="form-control" id="address" name="address" value="<%= entity.getAddress() %>">
+          </div>
+          <div class="form-group">
+            <label for="address">Address Line 2</label>
+            <input type="text" class="form-control" id="address2" name="address2" value="<%= entity.getAddress2() %>">
           </div>
           <div class="form-group">
             <label for="city">City</label>

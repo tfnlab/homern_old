@@ -180,6 +180,7 @@
                       entity.setEmail(request.getParameter("email"));
                       entity.setPhone(request.getParameter("phone"));
                       entity.setAddress(request.getParameter("address"));
+                      entity.setAddress2(request.getParameter("address2"));
                       entity.setCity(request.getParameter("city"));
                       entity.setState(request.getParameter("state"));
                       entity.setZipcode(request.getParameter("zipcode"));
@@ -251,7 +252,7 @@
                     %>
 
 
-                        Customer Saved 
+                        Customer Saved
                         <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a>
                         <%if(orderId!=0){%>
                           Add to Order : <a href="order.edit.customers.jsp?action=add&orderId=<%=orderId%>&customerId=<%= entity.getId() %>" ><%= orderId %></a><br>
@@ -337,6 +338,10 @@
           <div class="form-group">
             <label for="address">Address</label>
             <input type="text" class="form-control" id="address" name="address" >
+          </div>
+          <div class="form-group">
+            <label for="address">Address Line 2</label>
+            <input type="text" class="form-control" id="address2" name="address2" >
           </div>
           <div class="form-group">
             <label for="city">City</label>
