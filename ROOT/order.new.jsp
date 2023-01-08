@@ -212,7 +212,7 @@
                         <HR>
                         Order Saved
                         <HR>
-                        <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
+                        <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="2" >More Info</a><br>
 
                       <%
                 }else{
