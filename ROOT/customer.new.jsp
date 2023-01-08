@@ -251,7 +251,7 @@
                     %>
 
 
-                        Customer Saved <%=entity.getId()%>
+                        Customer Saved 
                         <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a>
                         <%if(orderId!=0){%>
                           Add to Order : <a href="order.edit.customers.jsp?action=add&orderId=<%=orderId%>&customerId=<%= entity.getId() %>" ><%= orderId %></a><br>

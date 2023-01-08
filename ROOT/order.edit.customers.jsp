@@ -302,6 +302,8 @@
              <%
                  }
              %>
+             <HR>
+               <a href="customer.new.jsp?orderId=<%=order.getOrderId()%>" >add customer</a>
            </div>
           <hr>
       </div>
