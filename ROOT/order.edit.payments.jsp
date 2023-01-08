@@ -267,7 +267,7 @@
                 <%
                 ProductLineItemDao plDao = new ProductLineItemDao();
                 OrderCustomerDao ocDao = new OrderCustomerDao();
-                Order order = dao.getOrderByOrderId(orderId);
+                Order order = dao.getOrderByOrderId(orderId, username);
                 String action = request.getParameter("action");
                 if (action != null && action.trim().length() > 0) {
                   PaymentPostDao ppDao = new PaymentPostDao();
