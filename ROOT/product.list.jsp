@@ -108,6 +108,7 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Products</h2>
+        <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
           <a href="product.new.jsp" tabindex="2"><i class="fas fa-plus"></i> Product</a>
