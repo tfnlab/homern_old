@@ -98,7 +98,11 @@
         xhttp.send();
       }
     }
-
+    function copyAddress(){
+      document.getElementById("billingAddress").value = document.getElementById("shippingAddress").value;
+      document.getElementById("billingAddressaclat").value = document.getElementById("shippingAddressaclat").value;
+      document.getElementById("billingAddressaclng").value = document.getElementById("shippingAddressaclng").value;
+    }
   </script>
 </head>
 
@@ -235,7 +239,7 @@
                 <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" >
                 <ul id="shippingAddressac" name="shippingAddressac"></ul>
                 <hr>
-                <label for="billingAddress">Billing Address:</label><br>
+                <label for="billingAddress">Billing Address:</label> <i class="fas fa-copy" onclick="copyAddress()" ></i>  <br>
                 <input class="form-control" type="text" id="billingAddress" name="billingAddress" onkeypress="callAC(this)"  tabindex="7"><br>
                 <input type="hidden" id="billingAddressaclat" name="billingAddressaclat" >
                 <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" >
