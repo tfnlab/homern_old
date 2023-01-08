@@ -199,10 +199,15 @@
                       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                         try{
                            orderDate = dateFormat.parse(request.getParameter("orderDate"));
-                           shippingDate = dateFormat.parse(request.getParameter("shipDate"));
                         } catch (Exception e) {
-                          %><%="Error parsing date and time string: " + e.getMessage()%><%
-                      }
+                           orderDate = new Date(currentTime.getTime())
+                        }
+                        try{
+                          shippingDate = dateFormat.parse(request.getParameter("shipDate"));
+                        } catch (Exception e) {
+                          shippingDate = new Date(currentTime.getTime())
+                        }
+
                       Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng, status);
                       order.setUuid(uuid);
                       OrderDao dao = new OrderDao();
