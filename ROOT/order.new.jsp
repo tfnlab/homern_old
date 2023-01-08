@@ -200,12 +200,12 @@
                         try{
                            orderDate = dateFormat.parse(request.getParameter("orderDate"));
                         } catch (Exception e) {
-                           orderDate = new Date(currentTime.getTime())
+                           orderDate = new Date(currentTime.getTime());
                         }
                         try{
                           shippingDate = dateFormat.parse(request.getParameter("shipDate"));
                         } catch (Exception e) {
-                          shippingDate = new Date(currentTime.getTime())
+                          shippingDate = new Date(currentTime.getTime());
                         }
 
                       Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng, status);
