@@ -232,7 +232,7 @@
         <h2>Order - Products </h2>
         <%@ include file="user.menu.nav.jsp" %>
                 <%
-                Order order = dao.getOrderByOrderId(orderId);
+                Order order = dao.getOrderByOrderId(orderId, username);
 
                 String name = request.getParameter("name");
                 long currentTimeMillis = System.currentTimeMillis();

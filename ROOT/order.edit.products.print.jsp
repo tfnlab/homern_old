@@ -21,7 +21,7 @@ if (request.getParameter("orderId") != null && !request.getParameter("orderId").
   orderId = Integer.parseInt(request.getParameter("orderId"));
 }
   // Get the content from the query parameter
-  Order order = dao.getOrderByOrderId(orderId);
+  Order order = dao.getOrderByOrderId(orderId, username);
   CreateInvoice cpdf = new CreateInvoice();
 
   cpdf.createPD(uuid + ".pdf", order, request.getParameter("type"));
