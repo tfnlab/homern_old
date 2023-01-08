@@ -227,7 +227,9 @@
                   <%if(!entity.getLastName().isEmpty()){%>
                     Last Name: <%= entity.getLastName() %><br>
                   <%}%>
+                  <%if(!entity.getAddress().isEmpty()){%>
                   Address: <%= entity.getAddress() %><br>
+                  <%}%>
                   <%if(!entity.getAddress2().isEmpty()){%>
                     Address2: <%= entity.getAddress2() %><br>
                   <%}%>
