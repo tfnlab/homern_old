@@ -325,11 +325,11 @@
                     </div>
           <div class="form-group">
             <label for="firstName">First Name</label>
-            <input type="text" class="form-control" id="firstName" name="firstName" required onkeypress="dsiplayName()">
+            <input type="text" class="form-control" id="firstName" name="firstName" required onchange="dsiplayName()" onkeypress="dsiplayName()">
           </div>
           <div class="form-group">
             <label for="lastName">Last Name</label>
-            <input type="text" class="form-control" id="lastName" name="lastName" required onkeypress="dsiplayName()">
+            <input type="text" class="form-control" id="lastName" name="lastName" required onchange="dsiplayName()" onkeypress="dsiplayName()">
           </div>
           <div class="form-group">
             <label for="lastName">Display Name</label>
