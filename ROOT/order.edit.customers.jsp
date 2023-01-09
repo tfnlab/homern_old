@@ -297,7 +297,7 @@
                     <HR>
                     <a href="order.edit.customers.jsp?action=remove&orderId=<%=orderId%>&ocId=<%= ocItem.getId() %>" >REMOVE CUSTOMER<a><br>
                     <HR>
-                    <img src="order.edit.customers.sign.view.jsp?orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" />
+                    <a href="order.edit.customers.sign.jsp?orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" ><img src="order.edit.customers.sign.view.jsp?orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" /><a>
                     <hr>
              <%
                  }
