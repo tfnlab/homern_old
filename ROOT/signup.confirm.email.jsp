@@ -142,7 +142,7 @@
             <!-- ======= Contact Section ======= -->
               Confirm Email, please sign in
               <BR>
-                <a href="signin.jsp" class="btn">Sign-In</a>
+                <a href="signin.jsp" class="btn btn-primary btn-lg">Sign-In</a>
       </div>
 
     </section><!-- End Blog Section -->
