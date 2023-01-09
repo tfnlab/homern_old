@@ -141,7 +141,7 @@
         %>
             <!-- ======= Contact Section ======= -->
               Confirm Email, please sign in
-              <BR>
+              <HR>
                 <a href="signin.jsp" class="btn btn-primary btn-lg">Sign-In</a>
       </div>
 
