@@ -144,6 +144,7 @@
          String token_twitter_a_secret = request.getParameter("token_twitter_a_secret");
          String api_key = request.getParameter("api_key");
          String twilio_voice_message = request.getParameter("twilio_voice_message");
+         String license_no = request.getParameter("license_no");
 
          email = email.toLowerCase();
 
@@ -181,6 +182,7 @@
          user.setToken_twitter_a_secret(token_twitter_a_secret);
          user.setApi_key(api_key);
          user.setTwilio_voice_message(twilio_voice_message);
+         user.setLicense_no(license_no);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -217,7 +219,6 @@
             <label for="business_name" class="mr-2">Username:</label>
             <input type="text" class="form-control"  value="<%= user.getUsername() %>" disabled >
           </div>
-
             <div class="form-group mt-3">
               <label for="business_name" class="mr-2">Business Name:</label>
               <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>" tabindex="5" >
@@ -384,7 +385,12 @@
            </div>
 
            <div class="form-group mt-3">
-             <button type="submit" class="btn btn-primary" tabindex="19">Submit</button>
+           <label for="business_name" class="mr-2">License No:</label>
+           <input type="text" class="form-control" id="license_no" name="license_no" value="<%= user.getLicense_no() %>" tabindex="20" >
+           </div>
+
+           <div class="form-group mt-3">
+             <button type="submit" class="btn btn-primary" tabindex="21">Submit</button>
            </div>
            </form>
 
