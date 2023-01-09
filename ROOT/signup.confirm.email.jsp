@@ -127,6 +127,7 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Sign-Up</h2>
+        <HR>
         <%
                 String username = request.getParameter("username");
                 String email = request.getParameter("email");
@@ -139,7 +140,9 @@
                 }
         %>
             <!-- ======= Contact Section ======= -->
-
+              Confirm Email, please sign in
+              <BR>
+                <a href="signin.jsp" class="btn">Sign-In</a>
       </div>
 
     </section><!-- End Blog Section -->
