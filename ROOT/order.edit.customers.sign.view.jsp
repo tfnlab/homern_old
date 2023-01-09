@@ -35,7 +35,7 @@
 
     File file = new File(logofilepath);
     if (!file.exists()) {
-        logofilepath = conf.getWebloc() + "no.signature.png";
+        logofilepath = conf.getWebloc() + "no.signature.gif";
     }
 
     response.setContentType("image/jpeg");
