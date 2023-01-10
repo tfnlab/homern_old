@@ -237,6 +237,8 @@
                 <option value="contractSigning" <%= comType.equals("contractSigning") ? "selected" : "" %>>Contract signing</option>
                 <option value="preConstructionMeeting" <%= comType.equals("preConstructionMeeting") ? "selected" : "" %>>Pre-construction meeting</option>
                 <option value="onSiteVisits" <%= comType.equals("onSiteVisits") ? "selected" : "" %>>On-site visits</option>
+                <option value="maintenanceduereminder" <%= comType.equals("maintenanceduereminder") ? "selected" : "" %>>Maintenance Due Reminder</option>
+
                 <option value="progressUpdates" <%= comType.equals("progressUpdates") ? "selected" : "" %>>Progress updates</option>
                 <option value="finalWalkThrough" <%= comType.equals("finalWalkThrough") ? "selected" : "" %>>Final walk-through</option>
                 <option value="warrantyAndMaintenance" <%= comType.equals("warrantyAndMaintenance") ? "selected" : "" %>>Warranty and maintenance</option>
