@@ -184,6 +184,7 @@
          user.setApi_key(api_key);
          user.setTwilio_voice_message(twilio_voice_message);
          user.setLicense_no(license_no);
+         user.setAddress2(address2);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
