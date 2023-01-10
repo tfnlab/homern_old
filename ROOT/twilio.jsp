@@ -11,9 +11,8 @@ if(digits==null){
         <Say><%=user.getTwilio_voice_message()%></Say>
     </Gather>
     <Say>Sorry, I didn't receive any input. Goodbye!</Say>
-<%}
-if(digits!=null)
-%>
+<%} %>
+<%if(digits!=null){%>
     <%if(digits.equals("1")){%>
       <Say>You pressed 1, forwarding to sales</Say>
       <Dial>
