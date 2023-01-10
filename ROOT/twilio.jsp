@@ -13,20 +13,6 @@ if(digits==null){
     <Say>Sorry, I didn't receive any input. Goodbye!</Say>
 <%} %>
 <%if(digits!=null){%>
-    <%if(digits.equals("1")){%>
-      <Say>You pressed 1, forwarding to sales</Say>
-      <Dial>
-        <Number><%=user.getTwilio_voice_forward_phone()%></Number>
-      </Dial>
-    <%}%>
-    <%if(digits.equals("2")){%>
-      <Say>You pressed 2, forwarding to support</Say>
-      <Dial>
-        <Number><%=user.getTwilio_voice_forward_phone()%></Number>
-      </Dial>
-    <%}%>
-    <%if(!digits.equals("2") && !digits.equals("1")){%>
-      <Say>Invalid option. Goodbye</Say>
-    <%}%>
+    <%=digits%>
 <%}%>
 </Response>
