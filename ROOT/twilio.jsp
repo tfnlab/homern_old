@@ -1,15 +1,4 @@
-<%@ page language="java" import="com.tfnlab.mysql.User,com.tfnlab.mysql.UserDao,java.lang.Thread,org.apache.commons.io.IOUtils,org.apache.commons.io.output.*,java.nio.charset.Charset,java.io.*,java.util.*,java.awt.image.BufferedImage,javax.imageio.ImageIO,java.io.OutputStream,java.io.FileInputStream,java.io.File"%>
-<%@ page import="java.io.FileOutputStream"%>
-<%@ page import="com.tfnlab.mysql.Order" %>
-<%@ page import="com.tfnlab.mysql.OrderDao" %>
-<%@ page import="com.tfnlab.business.Email_Manager" %>
-<%@ page import="java.util.UUID" %>
-<%@ page import="com.tfnlab.mysql.Entity" %>
-<%@ page import="com.tfnlab.mysql.EntityDao" %>
-<%@ page import="java.io.File" %>
-<%@ page import="java.io.FileWriter" %>
-<%@ page import="java.io.BufferedWriter" %>
-<%@ page import="com.tfnlab.api.con.APIConfig" %><?xml version="1.0" encoding="UTF-8"?>
+<%@ page language="java" import="java.util.UUID,java.io.File,java.io.FileWriter,java.io.BufferedWriter,com.tfnlab.api.con.APIConfig,java.io.FileOutputStream,com.tfnlab.mysql.User,com.tfnlab.mysql.UserDao,java.lang.Thread,org.apache.commons.io.IOUtils,org.apache.commons.io.output.*,java.nio.charset.Charset,java.io.*,java.util.*,java.awt.image.BufferedImage,javax.imageio.ImageIO,java.io.OutputStream,java.io.FileInputStream,java.io.File"%><?xml version="1.0" encoding="UTF-8"?>
 <Response><%
 
 UserDao dao = new UserDao();
