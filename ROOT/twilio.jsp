@@ -1,16 +1,15 @@
-<%@ page language="java" import="com.tfnlab.mysql.User,com.tfnlab.mysql.UserDao" %><%
+<%@ page language="java" import="com.tfnlab.mysql.User,com.tfnlab.mysql.UserDao" %><?xml version="1.0" encoding="UTF-8"?>
+<Response><%
 
 UserDao dao = new UserDao();
 String username = request.getParameter("username");
 User user = dao.getUserByUsername(username);
 if(request.getParameter("Digits")==null){
-%><?xml version="1.0" encoding="UTF-8"?>
-<Response>
+%>
     <Gather action="twilio.jsp" numDigits="1">
         <Say><%=user.getTwilio_voice_message()%></Say>
     </Gather>
     <Say>Sorry, I didn't receive any input. Goodbye!</Say>
-</Response>
 <%}else if(request.getParameter("Digits").equals("1")){%>
   <Redirect method="GET">
       <Say>You pressed 1, forwarding to sales</Say>
@@ -26,3 +25,4 @@ if(request.getParameter("Digits")==null){
       <Say>Invalid option. Goodbye</Say>
   </Redirect>
 <%}%>
+</Response>
