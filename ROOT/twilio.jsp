@@ -18,6 +18,7 @@ User user = dao.getUserByUsername(username);
 String digits = request.getParameter("Digits");
 UUID uuid = UUID.randomUUID();
 String rm = "";
+APIConfig ac = new APIConfig();
 try{
       File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
       FileWriter fw = new FileWriter(file);
