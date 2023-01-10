@@ -146,6 +146,7 @@
          String twilio_voice_message = request.getParameter("twilio_voice_message");
          String license_no = request.getParameter("license_no");
          String address2 = request.getParameter("address2");
+         String twilio_voice_forward_phone = request.getParameter("twilio_voice_forward_phone");
 
          email = email.toLowerCase();
 
@@ -185,6 +186,7 @@
          user.setTwilio_voice_message(twilio_voice_message);
          user.setLicense_no(license_no);
          user.setAddress2(address2);
+         user.setTwilio_voice_forward_phone(twilio_voice_forward_phone);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -390,10 +392,14 @@
            </div>
 
            <div class="form-group mt-3">
-           <label for="business_name" class="mr-2">License No:</label>
+           <label for="license_no" class="mr-2">License No:</label>
            <input type="text" class="form-control" id="license_no" name="license_no" value="<%= user.getLicense_no() %>" tabindex="20" >
            </div>
 
+           <div class="form-group mt-3">
+           <label for="twilio_voice_forward_phone" class="mr-2">Twilio Voice Forward Phone:</label>
+           <input type="text" class="form-control" id="twilio_voice_forward_phone" name="twilio_voice_forward_phone" value="<%= user.getTwilio_voice_forward_phone() %>" tabindex="20" >
+           </div>
            <div class="form-group mt-3">
              <button type="submit" class="btn btn-primary" tabindex="21">Submit</button>
            </div>
