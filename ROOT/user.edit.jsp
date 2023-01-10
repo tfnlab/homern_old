@@ -145,6 +145,7 @@
          String api_key = request.getParameter("api_key");
          String twilio_voice_message = request.getParameter("twilio_voice_message");
          String license_no = request.getParameter("license_no");
+         String address2 = request.getParameter("address2");
 
          email = email.toLowerCase();
 
@@ -277,7 +278,10 @@
              </div>
 
            <%}%>
-
+           <div class="form-group mt-3">
+              <label for="city">Address (Suite, Room or Apt) </label>
+              <input type="text" class="form-control" id="address2" name="address2" value="<%= user.getAddress2() %>" tabindex="13">
+           </div>
            <div class="form-group mt-3">
               <label for="city">City</label>
               <input type="text" class="form-control" id="city" name="city" value="<%= user.getCity() %>" tabindex="13">
