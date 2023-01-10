@@ -11,18 +11,12 @@ if(request.getParameter("Digits")==null){
     </Gather>
     <Say>Sorry, I didn't receive any input. Goodbye!</Say>
 <%}else if(request.getParameter("Digits").equals("1")){%>
-  <Redirect method="GET">
       <Say>You pressed 1, forwarding to sales</Say>
       <Dial><%=user.getTwilio_voice_forward_phone()%></Dial>
-  </Redirect>
 <%}else if(request.getParameter("Digits").equals("2")){%>
-  <Redirect method="GET">
       <Say>You pressed 21, forwarding to support</Say>
       <Dial><%=user.getTwilio_voice_forward_phone()%></Dial>
-  </Redirect>
 <%}else{%>
-  <Redirect method="GET">
       <Say>Invalid option. Goodbye</Say>
-  </Redirect>
 <%}%>
 </Response>
