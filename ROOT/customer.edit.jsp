@@ -179,6 +179,7 @@
               <option value="contractSigning">Contract signing</option>
               <option value="preConstructionMeeting">Pre-construction meeting</option>
               <option value="onSiteVisits">On-site visits</option>
+              <option value="maintenanceduereminder" >Maintenance Due Reminder</option>
               <option value="progressUpdates">Progress updates</option>
               <option value="finalWalkThrough">Final walk-through</option>
               <option value="warrantyAndMaintenance">Warranty and maintenance</option>
