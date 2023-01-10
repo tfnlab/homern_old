@@ -9,7 +9,7 @@ User user = dao.getUserByUsername(username);
     <Say><%=user.getTwilio_voice_message()%></Say>
     <Dial>
         <Number sendDigits="wwww1928">
-            <%=user.getPhone()%>
+            <%=user.getTwilio_voice_forward_phone()%>
         </Number>
     </Dial>
 </Response>
