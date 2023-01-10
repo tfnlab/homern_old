@@ -206,15 +206,15 @@
         <form action="technician.new.jsp" method="post">
   <div class="form-group">
     <label for="technicianName">Technician Name</label>
-    <input type="text" class="form-control" name="technicianName" id="technicianName" placeholder="Enter Technician Name">
+    <input type="text" class="form-control" name="technicianName" id="technicianName" placeholder="Enter Technician Name" required>
   </div>
   <div class="form-group">
     <label for="technicianEmail">Technician Email</label>
-    <input type="email" class="form-control" id="technicianEmail" name="technicianEmail" placeholder="Enter Technician Email">
+    <input type="email" class="form-control" id="technicianEmail" name="technicianEmail" placeholder="Enter Technician Email" required>
   </div>
   <div class="form-group">
     <label for="technicianPhone">Technician Phone</label>
-    <input type="text" class="form-control" id="technicianPhone" name="technicianPhone" placeholder="Enter Technician Phone">
+    <input type="text" class="form-control" id="technicianPhone" name="technicianPhone" placeholder="Enter Technician Phone" required>
   </div>
   <div class="form-group">
     <label for="technicianSkills">Technician Skills</label>
@@ -234,7 +234,7 @@
   </div>
   <div class="form-group">
     <label for="technicianPayrate">Technician Payrate</label>
-    <input type="number" class="form-control" id="technicianPayrate" name="technicianPayrate" placeholder="Enter Technician Payrate">
+    <input type="number" class="form-control" id="technicianPayrate" name="technicianPayrate" placeholder="Enter Technician Payrate" required >
   </div>
   <div class="form-group">
     <label for="technicianLocation">Technician Location</label>
