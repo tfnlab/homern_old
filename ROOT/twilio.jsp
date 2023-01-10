@@ -3,7 +3,7 @@
 UserDao dao = new UserDao();
 String username = request.getParameter("username");
 User user = dao.getUserByUsername(username);
-if(request.getPayments("Digits")==null){
+if(request.getParameter("Digits")==null){
 %><?xml version="1.0" encoding="UTF-8"?>
 <Response>
     <Gather action="twilio.jsp" numDigits="1">
