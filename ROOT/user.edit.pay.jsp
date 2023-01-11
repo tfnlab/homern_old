@@ -102,7 +102,23 @@
 
             <button>Submit Payment</button>
           </form>
+          <%=user.getTs()%>
+          <%
+          Calendar today = Calendar.getInstance();
 
+          // Get the calendar object for the given java.sql.Timestamp object
+          Calendar inputTimestamp = Calendar.getInstance();
+          inputTimestamp.setTimeInMillis(user.getTs().getTime());
+
+          // Subtract the input timestamp from the current date
+          long diff = today.getTimeInMillis() - inputTimestamp.getTimeInMillis();
+
+          // Divide the difference by the number of milliseconds in a day to get the number of days
+          long diffDays = diff / (24 * 60 * 60 * 1000);
+
+          %> Member for <a href="edit.user.pay.jsp" ><%=diffDays%></a> Days
+
+          <%=diffDays*1.25%>
       </div>
 
     </section><!-- End Blog Section -->
@@ -180,6 +196,7 @@
 
 
     <%@ include file="include.footer.jsp" %>
+
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
