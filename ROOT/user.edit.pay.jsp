@@ -118,9 +118,11 @@
           // Divide the difference by the number of milliseconds in a day to get the number of days
           long diffDays = diff / (24 * 60 * 60 * 1000);
 
-          %> Member for <a href="user.edit.pay.jsp" ><%=diffDays%></a> Days
+          %>
           <HR>
-          $<%=diffDays*1.25%>
+          Member for <a href="user.edit.pay.jsp" ><%=diffDays%></a> Days
+          <HR>
+          AMOUNT Due $<%=diffDays*1.25%>
       </div>
 
     </section><!-- End Blog Section -->
