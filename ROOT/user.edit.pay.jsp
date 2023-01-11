@@ -104,10 +104,10 @@
 
             BigDecimal pTotal  = new BigDecimal("0");
             BigDecimal dTotal = new BigDecimal(Double.toString(diffDays*1.25));
-          <% for (CustomerPayment cp : payments) {
+           for (CustomerPayment cp : payments) {
                 pTotal = pTotal.add(cp.getAmount());
           }%>
-          
+
           <form id="payment-form" action="user.edit.pay.post.jsp">
             <div class="form-row">
               <label for="card-element">
