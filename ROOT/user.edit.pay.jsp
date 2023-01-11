@@ -133,7 +133,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                   </div>
-                  <input type="text" class="form-control" id="amount" name="amount" placeholder="0.00" value="<%=dTotal.subtract(pTotal)>">
+                  <input type="text" class="form-control" id="amount" name="amount" placeholder="0.00" value="<%=dTotal.subtract(pTotal)%>">
                 </div>
               </div>
               <HR>
