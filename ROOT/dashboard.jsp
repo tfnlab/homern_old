@@ -116,6 +116,8 @@
           <div class="container mt-5">
             <h4><%=user.getBusiness_name()%> Dashboard</h4>
             <HR>
+              <%=user.getTs()%>
+            <HR>
             Orders: <%=oDao.getCustomerOrderCount(username)%>
             <HR>
             <table class="table">
