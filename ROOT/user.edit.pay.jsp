@@ -121,22 +121,21 @@
               <div id="card-errors" role="alert"></div>
             </div>
             <HR>
+            <%=dTotal%>
+            <HR>
+            <%=pTotal%>
+            <HR>
+            <%=dTotal.subtract(pTotal)%>
+            <HR>
               <div class="form-group">
                 <label for="amount">Amount</label>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                   </div>
-                  <input type="text" class="form-control" id="amount" name="amount" placeholder="0.00" value="<%=diffDays*1.25%>">
+                  <input type="text" class="form-control" id="amount" name="amount" placeholder="0.00" value="<%=dTotal.subtract(pTotal)>">
                 </div>
               </div>
-
-            <HR>
-              <%=dTotal%>
-              <HR>
-              <%=pTotal%>
-              <HR>
-              <%=dTotal.subtract(pTotal)%>
               <HR>
             <HR>
             <button type="submit" class="btn btn-success">Submit Payment</button>
