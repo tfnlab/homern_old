@@ -10,9 +10,12 @@
 <%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory" %>
 <%@ page import="javax.servlet.http.Part" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.Map" %>
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
 <%@ page import="com.stripe.Stripe"%>
 <%@ page import="com.stripe.model.Charge"%>
+<%@ page import="com.tfnlab.api.con.APIConfig" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,7 +91,16 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
+          <%
+              APIConfig conf = new APIConfig();
+              Stripe.apiKey = conf.getStripe();
+          Map<String, Object> chargeParams = new HashMap<>();
+          chargeParams.put("amount", 1); // $10.00 in cents
+          chargeParams.put("currency", "usd");
+          chargeParams.put("source", request.getParameter("stripeToken")); // obtained with Stripe.js
 
+          Charge charge = Charge.create(chargeParams);
+          %>
 
 
       </div>
