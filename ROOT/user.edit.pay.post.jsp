@@ -116,7 +116,7 @@
           Timestamp currentTime = new Timestamp(currentTimeMillis);
           CustomerPayment cp = new CustomerPayment();
           cp.setCustomerId(user.getId());
-          cp.setAmount(new BigDecimal(request.getParameter("Amount")));
+//          cp.setAmount(new BigDecimal(request.getParameter("Amount")));
           cp.setTs(currentTime);
           cp.setPaymentDate(new Date(currentTime.getTime()));
           cp.setPaymentMethod("Stripe");
