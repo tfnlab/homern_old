@@ -5,6 +5,10 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
 <%@ page import="com.tfnlab.mysql.EventDao" %>
+<%@ page import="java.sql.Times" %>
+<%@ page import="java.util.Calendar" %>
+import ;
+import ;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -117,6 +121,20 @@
             <h4><%=user.getBusiness_name()%> Dashboard</h4>
             <HR>
               <%=user.getTs()%>
+              <%
+              Calendar today = Calendar.getInstance();
+
+              // Get the calendar object for the given java.sql.Timestamp object
+              Calendar inputTimestamp = Calendar.getInstance();
+              inputTimestamp.setTimeInMillis(user.getTs().getTime());
+
+              // Subtract the input timestamp from the current date
+              long diff = today.getTimeInMillis() - inputTimestamp.getTimeInMillis();
+
+              // Divide the difference by the number of milliseconds in a day to get the number of days
+              long diffDays = diff / (24 * 60 * 60 * 1000);
+
+              %> Member for <%=diffDays%> Days
             <HR>
             Orders: <%=oDao.getCustomerOrderCount(username)%>
             <HR>
