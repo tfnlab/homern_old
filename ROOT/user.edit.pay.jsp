@@ -13,6 +13,8 @@
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.util.Calendar" %>
+<%@ page import="com.tfnlab.mysql.CustomerPayment" %>
+<%@ page import="com.tfnlab.mysql.CustomerPaymentDao" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -95,7 +97,16 @@
           long diff = today.getTimeInMillis() - inputTimestamp.getTimeInMillis();
           long diffDays = diff / (24 * 60 * 60 * 1000);
           %>
+          <%
+            CustomerPaymentDao cpDao = new CustomerPaymentDao();
+            List<CustomerPayment> payments = cpDao.getPaymentsByCustomerId(user.getId());
 
+            BigDecimal pTotal  = new BigDecimal("0");
+            BigDecimal dTotal = new BigDecimal(String.parseLong(diffDays*1.25));
+          <% for (CustomerPayment cp : payments) {
+                pTotal = pTotal.add(cp.getAmount());
+          }%>
+          %>
           <form id="payment-form" action="user.edit.pay.post.jsp">
             <div class="form-row">
               <label for="card-element">
@@ -120,7 +131,10 @@
               </div>
 
             <HR>
-
+              <=dTotal%>
+              <HR>
+              <=pTotal%>
+            <HR>
             <button type="submit" class="btn btn-success">Submit Payment</button>
           </form>
           <HR>
