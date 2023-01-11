@@ -121,7 +121,7 @@
 
             <HR>
 
-            <button type="button" class="btn btn-success">Submit Payment</button>
+            <button type="submit" class="btn btn-success">Submit Payment</button>
           </form>
           <HR>
           <%=user.getTs()%>
