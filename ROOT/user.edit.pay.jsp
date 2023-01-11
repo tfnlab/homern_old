@@ -120,7 +120,7 @@
 
           %> Member for <a href="user.edit.pay.jsp" ><%=diffDays%></a> Days
 
-          <%=diffDays*1.25%>
+          $<%=diffDays*1.25%>
       </div>
 
     </section><!-- End Blog Section -->
