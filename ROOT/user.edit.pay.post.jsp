@@ -13,6 +13,7 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.sql.Timestamp" %>
+<%@ page import="java.sql.Date" %>
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
 <%@ page import="com.stripe.Stripe"%>
 <%@ page import="com.stripe.model.Charge"%>
