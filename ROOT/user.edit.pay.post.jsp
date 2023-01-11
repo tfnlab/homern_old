@@ -95,7 +95,7 @@
               APIConfig conf = new APIConfig();
               Stripe.apiKey = conf.getStripe();
           Map<String, Object> chargeParams = new HashMap<>();
-          chargeParams.put("amount", 1); // $10.00 in cents
+          chargeParams.put("amount", 100); // $10.00 in cents
           chargeParams.put("currency", "usd");
           chargeParams.put("source", request.getParameter("stripeToken")); // obtained with Stripe.js
 
