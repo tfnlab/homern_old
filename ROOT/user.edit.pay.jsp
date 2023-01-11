@@ -101,9 +101,10 @@
               <!-- Used to display form errors. -->
               <div id="card-errors" role="alert"></div>
             </div>
-
-            <button>Submit Payment</button>
+            <HR>
+            <button type="button" class="btn btn-success">Submit Payment</button>
           </form>
+          <HR>
           <%=user.getTs()%>
           <%
           Calendar today = Calendar.getInstance();
