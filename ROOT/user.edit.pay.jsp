@@ -103,7 +103,7 @@
             List<CustomerPayment> payments = cpDao.getPaymentsByCustomerId(user.getId());
 
             BigDecimal pTotal  = new BigDecimal("0");
-            BigDecimal dTotal = new BigDecimal(Long.toString(diffDays*1.25));
+            BigDecimal dTotal = new BigDecimal(Double.toString(diffDays*1.25));
           <% for (CustomerPayment cp : payments) {
                 pTotal = pTotal.add(cp.getAmount());
           }%>
