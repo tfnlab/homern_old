@@ -21,6 +21,7 @@
 <%@ page import="com.tfnlab.mysql.CustomerPayment" %>
 <%@ page import="com.tfnlab.mysql.CustomerPaymentDao" %>
 <%@ page import="java.util.UUID" %>
+<%@ page import="java.math.BigDecimal" %>
 <!DOCTYPE html>
 <html lang="en">
 
