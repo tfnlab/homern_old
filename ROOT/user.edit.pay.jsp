@@ -132,9 +132,9 @@
               </div>
 
             <HR>
-              <=dTotal%>
+              <%=dTotal%>
               <HR>
-              <=pTotal%>
+              <%=pTotal%>
             <HR>
             <button type="submit" class="btn btn-success">Submit Payment</button>
           </form>
