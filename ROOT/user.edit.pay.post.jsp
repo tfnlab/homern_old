@@ -101,6 +101,7 @@
 
           Charge charge = Charge.create(chargeParams);
           %>
+          <%=charge.status%>
 
 
       </div>
