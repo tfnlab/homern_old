@@ -134,7 +134,7 @@ import ;
               // Divide the difference by the number of milliseconds in a day to get the number of days
               long diffDays = diff / (24 * 60 * 60 * 1000);
 
-              %> Member for <a href="edit.user.pay.jsp" ><%=diffDays%></a> Days
+              %> Member for <a href="user.edit.pay.jsp" ><%=diffDays%></a> Days
             <HR>
             Orders: <%=oDao.getCustomerOrderCount(username)%>
             <HR>
