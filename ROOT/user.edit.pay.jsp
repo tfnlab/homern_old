@@ -15,6 +15,7 @@
 <%@ page import="java.util.Calendar" %>
 <%@ page import="com.tfnlab.mysql.CustomerPayment" %>
 <%@ page import="com.tfnlab.mysql.CustomerPaymentDao" %>
+<%@ page import="com.math.BigDecimal" %>
 <!DOCTYPE html>
 <html lang="en">
 
