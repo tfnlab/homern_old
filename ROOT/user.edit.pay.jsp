@@ -135,6 +135,9 @@
               <%=dTotal%>
               <HR>
               <%=pTotal%>
+              <HR>
+              <%=dTotal.subtract(pTotal)%>
+              <HR>
             <HR>
             <button type="submit" class="btn btn-success">Submit Payment</button>
           </form>
