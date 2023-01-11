@@ -8,23 +8,23 @@ String digits = request.getParameter("Digits");
 UUID uuid = UUID.randomUUID();
 String rm = "";
 APIConfig ac = new APIConfig();
-try{
-      File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
-      FileWriter fw = new FileWriter(file);
-      BufferedWriter bw = new BufferedWriter(fw);
-      bw.write(user.getTwilio_voice_forward_phone()+ "<CONTENT>" + request.getParameter("From") + "<CONTENT>call for " + request.getParameter("username") +  " From " + request.getParameter("From"));
-      bw.close();
+if(digits==null){
+    try{
+          File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
+          FileWriter fw = new FileWriter(file);
+          BufferedWriter bw = new BufferedWriter(fw);
+          bw.write(user.getTwilio_voice_forward_phone()+ "<CONTENT>" + request.getParameter("From") + "<CONTENT>call for " + request.getParameter("username") +  " From " + request.getParameter("From"));
+          bw.close();
 
-      Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/smssend.py", uuid.toString(), uuid.toString()).start();
-      String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
-      String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
-      rm = stdout + stderr + " TEST ";
-}catch(IOException ex){
-      rm = ex.getMessage();
-}
-
-if(digits==null){%>
-    <Gather action="twilio.jsp?username=<%=request.getParameter("username")%>" numDigits="1">
+          Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/smssend.py", uuid.toString(), uuid.toString()).start();
+          String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+          String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+          rm = stdout + stderr + " TEST ";
+    }catch(IOException ex){
+          rm = ex.getMessage();
+    }
+%>
+    <Gather action="twilio.jsp?username=<%=request.getParameter("username")%>" numDigits="1" timeout="60">
         <Say><%=user.getTwilio_voice_message()%></Say>
     </Gather>
     <Say>Sorry, I didn't receive any input. Goodbye!</Say>
