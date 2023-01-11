@@ -11,6 +11,8 @@
 <%@ page import="javax.servlet.http.Part" %>
 <%@ page import="java.util.List" %>
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
+<%@ page import="com.stripe.Stripe"%>
+<%@ page import="com.stripe.model.Charge"%>
 <!DOCTYPE html>
 <html lang="en">
 
