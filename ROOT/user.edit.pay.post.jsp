@@ -16,6 +16,10 @@
 <%@ page import="com.stripe.Stripe"%>
 <%@ page import="com.stripe.model.Charge"%>
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
+<%@ page import="com.tfnlab.api.con.APIConfig" %>
+<%@ page import="com.tfnlab.mysql.CustomerPayment" %>
+<%@ page import="com.tfnlab.mysql.CustomerPaymentDao" %>
+<%@ page import="java.util.UUID" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,9 +103,29 @@
           chargeParams.put("currency", "usd");
           chargeParams.put("source", request.getParameter("stripeToken")); // obtained with Stripe.js
 
-          Charge charge = Charge.create(chargeParams);
+          //CHARGE CARD
+          //Charge charge = Charge.create(chargeParams);
+
+
+          CustomerPaymentDao cpDao = new CustomerPaymentDao();
+
+          long currentTimeMillis = System.currentTimeMillis();
+          Timestamp currentTime = new Timestamp(currentTimeMillis);
+          CustomerPayment cp = new CustomerPayment();
+          cp.setCustomerId(user.getId());
+          cp.setAmount(new BigDecimal(request.getParameter("Amount")));
+          cp.setTs(currentTime);
+          cp.setPaymentDate(new Date(currentTime.getTime()));
+          cp.setPaymentMethod("Stripe");
+          cp.setPaymentUuid(UUID.randomUUID());
+          cpDao.insertCustomerPayment(cp);
+
           %>
-          <%=charge.getStatus()%>
+          <%
+
+          //charge.getStatus()
+
+          %>
 
 
       </div>

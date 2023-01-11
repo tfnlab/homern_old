@@ -88,6 +88,13 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
+          <%
+          Calendar today = Calendar.getInstance();
+          Calendar inputTimestamp = Calendar.getInstance();
+          inputTimestamp.setTimeInMillis(user.getTs().getTime());
+          long diff = today.getTimeInMillis() - inputTimestamp.getTimeInMillis();
+          long diffDays = diff / (24 * 60 * 60 * 1000);
+          %>
 
           <form id="payment-form" action="user.edit.pay.post.jsp">
             <div class="form-row">
@@ -102,24 +109,22 @@
               <div id="card-errors" role="alert"></div>
             </div>
             <HR>
+              <div class="form-group">
+                <label for="amount">Amount</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                  </div>
+                  <input type="text" class="form-control" id="amount" name="amount" placeholder="0.00" value="<%=diffDays*1.25%>">
+                </div>
+              </div>
+
+            <HR>
+
             <button type="button" class="btn btn-success">Submit Payment</button>
           </form>
           <HR>
           <%=user.getTs()%>
-          <%
-          Calendar today = Calendar.getInstance();
-
-          // Get the calendar object for the given java.sql.Timestamp object
-          Calendar inputTimestamp = Calendar.getInstance();
-          inputTimestamp.setTimeInMillis(user.getTs().getTime());
-
-          // Subtract the input timestamp from the current date
-          long diff = today.getTimeInMillis() - inputTimestamp.getTimeInMillis();
-
-          // Divide the difference by the number of milliseconds in a day to get the number of days
-          long diffDays = diff / (24 * 60 * 60 * 1000);
-
-          %>
           <HR>
           Member for <a href="user.edit.pay.jsp" ><%=diffDays%></a> Days
           <HR>
