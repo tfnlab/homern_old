@@ -63,6 +63,8 @@
                       entity.setCountry(request.getParameter("country"));
                       entity.setUsername_entity(request.getParameter("username"));
                       entity.setPassword(request.getParameter("password"));
+                      entity.setLocation_pointlat("0");
+                      entity.setLocation_pointlng("0");
 
                       entity = mferDao.signupMotherFucker(customerId, api_key, entity);
                       if(entity!=null){
