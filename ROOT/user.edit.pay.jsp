@@ -68,10 +68,10 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Home</li>
+              <li><a href="user.menu.jsp">Home</a></li>
+              <li>Billing Center</li>
         </ol>
-        <h2>User</h2>
+        <h2>Billing</h2>
       </div>
     </section><!-- End Breadcrumbs -->
     <%
@@ -87,7 +87,7 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Upload Logo</h2>
+        <h2>Home Renovation Nation Billing</h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
