@@ -121,11 +121,11 @@
               <div id="card-errors" role="alert"></div>
             </div>
             <HR>
-            <%=dTotal%>
+            Total <%=dTotal%>
             <HR>
-            <%=pTotal%>
+            Paid <%=pTotal%>
             <HR>
-            <%=dTotal.subtract(pTotal)%>
+            Due <%=dTotal.subtract(pTotal)%>
             <HR>
               <div class="form-group">
                 <label for="amount">Amount</label>
@@ -145,7 +145,6 @@
           <HR>
           Member for <a href="user.edit.pay.jsp" ><%=diffDays%></a> Days
           <HR>
-          AMOUNT Due $<%=diffDays*1.25%>
       </div>
 
     </section><!-- End Blog Section -->
