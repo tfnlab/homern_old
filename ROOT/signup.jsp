@@ -321,6 +321,9 @@
                     <input type="text" class="form-control" id="referred_by" name="referred_by" <% if (request.getParameter("referred_by") !=null) { %>value="<%=request.getParameter("referred_by")%>" <% } %> >
                   </div>
                   <hr class="mt-3">
+                    <a href="signup.tos.jsp" >Terms Of Service</a>
+                  <hr class="mt-3">
+
                       <button type="submit" class="btn btn-primary">Sign-up</button>
                   	</form>
 
