@@ -71,7 +71,6 @@
               <li><a href="user.menu.jsp">Home</a></li>
               <li>Billing Center</li>
         </ol>
-        <h2>Billing</h2>
       </div>
     </section><!-- End Breadcrumbs -->
     <%
