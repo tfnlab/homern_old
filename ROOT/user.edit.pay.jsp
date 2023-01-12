@@ -120,13 +120,24 @@
               <!-- Used to display form errors. -->
               <div id="card-errors" role="alert"></div>
             </div>
-            <h4>Amount</h4>
             <HR>
-            Total <%=dTotal%>
-            <HR>
-            Paid <%=pTotal%>
-            <HR>
-            Due <%=dTotal.subtract(pTotal)%>
+              <div class="amount-container">
+                  <h3 class="amount-title">Amount</h3>
+                  <div class="amount-details">
+                      <div class="total">
+                          <span class="label">Total:</span>
+                          <span class="value"><%=dTotal%></span>
+                      </div>
+                      <div class="paid">
+                          <span class="label">Paid:</span>
+                          <span class="value"><%=pTotal%></span>
+                      </div>
+                      <div class="due">
+                          <span class="label">Due:</span>
+                          <span class="value"><%=dTotal.subtract(pTotal)%></span>
+                      </div>
+                  </div>
+              </div>
             <HR>
               <div class="form-group">
                 <label for="amount">Amount</label>
