@@ -120,6 +120,7 @@
               <!-- Used to display form errors. -->
               <div id="card-errors" role="alert"></div>
             </div>
+            <h4>Amount</h4>
             <HR>
             Total <%=dTotal%>
             <HR>
