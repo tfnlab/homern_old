@@ -124,6 +124,7 @@
           cp.setPaymentDate(new Date(currentTime.getTime()));
           cp.setPaymentMethod("Stripe");
           cp.setPaymentUuid(UUID.randomUUID());
+          cp.setTransactionId(charge.getId());
           cpDao.insertCustomerPayment(cp);
 
           %>
