@@ -63,7 +63,10 @@
         xhttp.send();
       }
     }
-
+    function getCom() {
+      var url = "get.article.jsp";
+      window.open(url, "_blank");
+    }
   </script>
 </head>
 
@@ -121,6 +124,9 @@
             <li>Collaborate with other users or businesses to promote each other's referral codes.</li>
           </ul>
           <p>We hope these suggestions help you get more referrals!</p>
+
+          <button class="btn btn-primary" onclick="getCom()">Article</button>
+
         <%}%>
       </div>
 
