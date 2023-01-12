@@ -116,10 +116,10 @@
                 String username = request.getParameter("username");
                 String password = request.getParameter("password");
                 String ogId = "odId";
-                String address = request.getParameter("address");
-                String city = request.getParameter("city");
-                String state = request.getParameter("state");
-                String zipcode = request.getParameter("zipcode");
+                String address = "";
+                String city = "";
+                String state = "";
+                String zipcode = "";
                 String addressaclat = "0";
                 String addressaclng = "0";
                 String business_type = request.getParameter("business_type");
@@ -258,7 +258,7 @@
         %>
             <!-- ======= Contact Section ======= -->
                 <p>
-                Are you a contractor looking to streamline your business operations? Look no further than Home Renovation Nation! Our platform offers a one-stop-shop for all your business needs, from order to cash. Join now and get access to our advanced tools, absolutely free for homeowners. Contractors can upgrade to our premium service for just $1 a day and unlock even more possibilities. Don't miss out on this opportunity to take your business to the next level. Sign up today and see the difference Home Renovation Nation can make.                
+                Are you a contractor looking to streamline your business operations? Look no further than Home Renovation Nation! Our platform offers a one-stop-shop for all your business needs, from order to cash. Join now and get access to our advanced tools, absolutely free for homeowners. Contractors can upgrade to our premium service for just $1 a day and unlock even more possibilities. Don't miss out on this opportunity to take your business to the next level. Sign up today and see the difference Home Renovation Nation can make.
                 </p>
 
                 <form action="signup.jsp" method="POST">
@@ -312,30 +312,10 @@
               		<label for="password">Password:</label><br>
               		<input type="password"  class="form-control" id="password" name="password" required><br>
                   </div>
-                  <div class="form-group mt-3">
-                  <label for="address">Address:</label><br>
-              		<input type="text"  class="form-control" id="address" name="address" required><br>
-                  </div>
 
 
                   <div class="form-group mt-3">
 
-
-                  <div class="row">
-                  <div class="col">
-                  <label for="city">City:</label><br>
-              		<input type="text"  class="form-control" id="city" name="city" required><br>
-                  </div>
-                  <div class="col">
-                  <label for="state">State:</label><br>
-              		<input type="text"  class="form-control" id="state" name="state" required ><br>
-                    </div>
-                    <div class="col">
-                    <label for="state">Zip:</label><br>
-                    <input type="text"  class="form-control" id="zipcode" name="zipcode" required><br><br>
-                    </div>
-                  </div>
-                  </div>
                   <div class="form-group  mt-3">
                     <label for="url_facebook">Referred By</label>
                     <input type="text" class="form-control" id="referred_by" name="referred_by" <% if (request.getParameter("referred_by") !=null) { %>value="<%=request.getParameter("referred_by")%>" <% } %> >
