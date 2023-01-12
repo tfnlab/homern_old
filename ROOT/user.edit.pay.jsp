@@ -140,7 +140,7 @@
               </div>
             <HR>
               <div class="form-group">
-                <label for="amount">Amount</label>
+                <label for="amount">Payment Amount</label>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
