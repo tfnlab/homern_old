@@ -110,7 +110,7 @@
           chargeParams.put("source", request.getParameter("stripeToken")); // obtained with Stripe.js
 
           //CHARGE CARD
-          //Charge charge = Charge.create(chargeParams);
+          Charge charge = Charge.create(chargeParams);
 
 
           CustomerPaymentDao cpDao = new CustomerPaymentDao();
@@ -127,11 +127,7 @@
           cpDao.insertCustomerPayment(cp);
 
           %>
-          <%
-
-          //charge.getStatus()
-
-          %>
+          <%=charge.getStatus()%>
 
 
       </div>
