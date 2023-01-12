@@ -227,6 +227,7 @@
                             %>
                               <hr>
                               Dear new customer,<BR><BR>
+
                               Welcome to Home Renovation Nation! Whether you're a homeowner looking to renovate your home or a contractor looking to grow your business, our platform has everything you need to get started. Sign up for free to access expert advice, connect with a community of homeowners, use our project planner tool, and receive discounts on products and services. Our system, built with advanced artificial intelligence, offers a wealth of functionality and capabilities to help you succeed in your home renovation journey. Join today and start exploring all that Home Renovation Nation has to offer. If you have any questions or need assistance, don't hesitate to reach out to us.
                               <BR><BR>
                               To start, let's finish setting up your user account so you can start using 'Home Renovation Nation' right away. Once that's done, you'll have full access to all the tools and resources available on Home Renovation Nation. We hope you find this system useful and helpful in your home renovation journey. If you have any questions or need assistance, don't hesitate to reach out to us.
@@ -257,7 +258,7 @@
         %>
             <!-- ======= Contact Section ======= -->
                 <p>
-                Welcome to <b>Home Renovation Nation</b>! If you're considering a home renovation project, our platform is here to help. Sign up for free to access expert advice, connect with a community of homeowners, use our project planner tool, and receive discounts on products and services. Our system, built with advanced artificial intelligence, offers a wealth of functionality and capabilities to help you succeed in your home renovation journey. Join today and start exploring all that Home Renovation Nation has to offer. If you have any questions or need assistance, don't hesitate to reach out to us.
+                Welcome to Home Renovation Nation! Our platform is here to help contractors run their business from order to cash. Join today and access our advanced tools for free, as a homeowner. Contractors will be charged $1.25 a day for access. Start exploring all that Home Renovation Nation has to offer today.
                 </p>
 
                 <form action="signup.jsp" method="POST">
