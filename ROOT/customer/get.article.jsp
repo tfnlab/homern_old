@@ -15,7 +15,19 @@
 <%@ page import="java.io.File" %>
 <%@ page import="java.io.FileWriter" %>
 <%@ page import="java.io.BufferedWriter" %>
-<%@ page import="com.tfnlab.api.con.APIConfig" %><%
+<%@ page import="com.tfnlab.api.con.APIConfig" %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <script>
+    setTimeout(function(){
+       location.reload();
+    }, 60000);
+    </script>
+<%
 
 UUID uuid = UUID.randomUUID();
 int customerId = 0;
@@ -46,3 +58,5 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
 %><%=uuid.toString()%> -
 <HR>
 <%=rm%>
+  </body>
+</html>
