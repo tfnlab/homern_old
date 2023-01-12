@@ -43,4 +43,6 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                               rm = ex.getMessage();
                           }
             //eM.sendMail(entity.getEmail(), request.getParameter("subject"), request.getParameter("orderCom"));
-%><%=uuid.toString()%> - <%=rm%>
+%><%=uuid.toString()%> -
+<HR>
+<%=rm%>
