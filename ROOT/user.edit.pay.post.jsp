@@ -103,7 +103,7 @@
               Stripe.apiKey = conf.getStripe();
           Map<String, Object> chargeParams = new HashMap<>();
 
-          double value = Double.parseDouble(str);
+          double value = Double.parseDouble(request.getParameter("amount"));
           int amount_int = Math.round((float)value * 100);
           chargeParams.put("amount", amount_int); // $10.00 in cents
           chargeParams.put("currency", "usd");
