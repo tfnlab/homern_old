@@ -50,7 +50,7 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                               Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/hrnReferral.py", username, username).start();
                               String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
                               String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
-                              rm = stdout + stderr + " TEST ";
+                              rm = stdout + stderr ;
                           }catch(IOException ex){
                               rm = ex.getMessage();
                           }
