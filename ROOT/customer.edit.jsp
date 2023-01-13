@@ -176,6 +176,7 @@
             <label for="touchPoints">Choose a touch point:</label>
             <select class="form-control" id="touchPoints">
               <option value="initialConsultation">Initial consultation</option>
+              <option value="needsAssessment" >Needs Assessment</option>                
               <option value="contractSigning">Contract signing</option>
               <option value="preConstructionMeeting">Pre-construction meeting</option>
               <option value="onSiteVisits">On-site visits</option>

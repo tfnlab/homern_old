@@ -234,6 +234,7 @@
               <label for="touchPoints">Choose a touch point:</label>
               <select class="form-control" id="touchPoints">
                 <option value="initialConsultation" <%= comType.equals("initialConsultation") ? "selected" : "" %>>Initial consultation</option>
+                <option value="needsAssessment" <%= comType.equals("needsAssessment") ? "selected" : "" %>>Needs Assessment</option>
                 <option value="contractSigning" <%= comType.equals("contractSigning") ? "selected" : "" %>>Contract signing</option>
                 <option value="preConstructionMeeting" <%= comType.equals("preConstructionMeeting") ? "selected" : "" %>>Pre-construction meeting</option>
                 <option value="onSiteVisits" <%= comType.equals("onSiteVisits") ? "selected" : "" %>>On-site visits</option>
