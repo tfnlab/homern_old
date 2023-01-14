@@ -143,13 +143,13 @@
         <%@ include file="user.menu.nav.jsp" %>
             <%
             String name = request.getParameter("name");
+            String username = (String) session.getAttribute("username");
             if (name != null && name.trim().length() > 0) {
                 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                 BigDecimal percentage = new BigDecimal(request.getParameter("percentage"));
                 BigDecimal amount = new BigDecimal(request.getParameter("amount"));
                 Date startDate = format.parse(request.getParameter("startDate"));
                 Date endDate = format.parse(request.getParameter("endDate"));
-                String username = request.getParameter("username");
                 Discount discount = new Discount(UUID.randomUUID().toString(), name, percentage, amount, startDate, endDate, username);
                 DiscountDao discountDao = new DiscountDao();
                 discountDao.insert(discount);
