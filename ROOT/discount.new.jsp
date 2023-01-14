@@ -142,11 +142,11 @@
             <%
             String name = request.getParameter("name");
             if (name != null && name.trim().length() > 0) {
-
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                 BigDecimal percentage = new BigDecimal(request.getParameter("percentage"));
                 BigDecimal amount = new BigDecimal(request.getParameter("amount"));
-                Date startDate = Date.valueOf(request.getParameter("startDate"));
-                Date endDate = Date.valueOf(request.getParameter("endDate"));
+                Date startDate = format.parse(request.getParameter("startDate"));
+                Date endDate = format.parse(request.getParameter("endDate"));
                 String username = request.getParameter("username");
                 Discount discount = new Discount(UUID.randomUUID().toString(), name, percentage, amount, startDate, endDate, username);
                 DiscountDao discountDao = new DiscountDao();
