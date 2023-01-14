@@ -229,7 +229,7 @@
                 <label for="orderId">Order Description:</label><br>
                 <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5" tabindex="3"></textarea>
                 <label class="form-label" for="textAreaExample">Request Info</label>
-                <label for="orderDate">Order Date:</label><br>
+                <label for="orderDate">Invoice Date:</label><br>
                 <input type="datetime-local" id="orderDate" name="orderDate" placeholder="yyyy-MM-dd" tabindex="4"><br>
                 <label for="shipDate">Project Date:</label><br>
                 <input type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" tabindex="5"><br>

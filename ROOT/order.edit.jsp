@@ -276,7 +276,7 @@
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"  tabindex="9"><%= order.getOrderDescription() %></textarea>
           <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
           <div class="form-group">
-            <label for="endTime">Order Date:</label>
+            <label for="endTime">Invoice Date:</label>
             <input type="datetime-local" class="form-control" name="orderDate" value="<%= order.getOrderDate() %>" datepicker  tabindex="10">
           </div>
 
