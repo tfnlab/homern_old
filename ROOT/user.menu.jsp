@@ -156,6 +156,24 @@
                   <p>Events</p>
                 </div>
               </div>
+              <div class="row">
+                <div class="col-3 link-col">
+                  <a href="discount.list.jsp"><i class="fa fa-gift"></i></a>
+                  <p>Discounts</p>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="rebate.list.jsp"><i class="fa fa-wallet"></i></a>
+                  <p>Rebates</p>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="order.list.jsp"><i class="fa fa-list"></i></a>
+                  <p>?</p>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="event.list.jsp"><i class="fa fa-list"></i></a>
+                  <p>?</p>
+                </div>
+              </div>
 
             <HR>
             <p>Our home service software offers a range of features to help companies streamline their operations:</p>
