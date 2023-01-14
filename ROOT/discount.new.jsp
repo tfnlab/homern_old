@@ -6,6 +6,7 @@
 <%@ page import="com.tfnlab.mysql.DiscountDao"%>
 <%@ page import="java.math.BigDecimal" %>
 <%@ page import="java.sql.Timestamp" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 <!DOCTYPE html>
 <html lang="en">
