@@ -314,7 +314,10 @@
                            No discounts available for this user
                        </div>
                  <% }
-                 %><h3>Discounts Applied</h3><%
+                 %>
+                  <HR>
+                 <h3>Discounts Applied</h3>
+                 <%
                  List<OrderDiscount> odList = odDao.getOrderDiscountsByUsernameAndOrderId(username, orderId);
                  for (OrderDiscount odItem : odList) {
                     %>
