@@ -265,7 +265,11 @@
                     od.setOrder(order);
                     od.setDiscount(discountDao.getDiscountByIdAndUsername(dId, username));
                     od.setCreatedAt(currentTime);
-                    //odDao.insert(od);
+                    try{
+                    odDao.insert(od);
+                    }catch(Exception ex){
+                      %><%=ex.getMessage()%><%
+                    }
                   }
                 }
                 %>
