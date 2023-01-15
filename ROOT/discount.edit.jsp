@@ -147,6 +147,21 @@
             if (request.getParameter("discountId") != null && !request.getParameter("discountId").isEmpty()) {
               discountId = Integer.parseInt(request.getParameter("discountId"));
             }
+            <%
+            String name = request.getParameter("name");
+            String username = (String) session.getAttribute("username");
+            if (name != null && name.trim().length() > 0) {
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                BigDecimal percentage = new BigDecimal(request.getParameter("percentage"));
+                BigDecimal amount = new BigDecimal(request.getParameter("amount"));
+                Date startDate = format.parse(request.getParameter("startDate"));
+                Date endDate = format.parse(request.getParameter("endDate"));
+                Discount discount = new Discount(UUID.randomUUID().toString(), name, percentage, amount, startDate, endDate, username);
+                discount.setDiscountId(discountId);
+                DiscountDao discountDao = new DiscountDao();
+                discountDao.updateDiscount(discount);
+            }
+            %>
             DiscountDao discountDao = new DiscountDao();
             Discount discount = discountDao.getDiscountByIdAndUsername(discountId ,username);
             %>
@@ -157,28 +172,29 @@
 
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" value="<%= discount.getName() %>" >
+                <input type="text" class="form-control" id="name" name="name" value="<%= discount.getName() %>" >
               </div>
               <div class="form-group">
                 <label for="percentage">Percentage</label>
-                <input type="text" class="form-control" id="percentage" value="<%= discount.getPercentage() %>" >
+                <input type="text" class="form-control" id="percentage" name="percentage" value="<%= discount.getPercentage() %>" >
               </div>
               <div class="form-group">
                 <label for="amount">Amount</label>
-                <input type="text" class="form-control" id="amount" value="<%= discount.getAmount() %>" >
+                <input type="text" class="form-control" id="amount" name="amount" value="<%= discount.getAmount() %>" >
               </div>
               <div class="form-group">
                 <label for="startDate">Start Date</label>
-                <input type="text" class="form-control" id="startDate" value="<%= discount.getStartDate() %>" >
+                <input type="text" class="form-control" id="startDate" name="startDate" value="<%= discount.getStartDate() %>" >
               </div>
               <div class="form-group">
                 <label for="endDate">End Date</label>
-                <input type="text" class="form-control" id="endDate" value="<%= discount.getEndDate() %>" >
+                <input type="text" class="form-control" id="endDate" name="endDate" value="<%= discount.getEndDate() %>" >
               </div>
               <div class="form-group">
                 <label for="active">Active</label>
-                <input type="text" class="form-control" id="active" value="<%= discount.isActive() %>" >
+                <input type="text" class="form-control" id="active" name="active" value="<%= discount.isActive() %>" >
               </div>
+
               <button type="submit" class="btn btn-primary">Save</button>
             </form>
 
