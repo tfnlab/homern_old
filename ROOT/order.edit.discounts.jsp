@@ -250,8 +250,23 @@
                 <%
                 ProductLineItemDao plDao = new ProductLineItemDao();
                 OrderDiscountDAO odDao = new OrderDiscountDAO();
+                DiscountDao discountDao = new DiscountDao();
                 Order order = dao.getOrderByOrderId(orderId, username);
-
+                String action = request.getParameter("action");
+                if (action != null && action.trim().length() > 0) {
+                  if(action.equals("add")){
+                    int dId = 0;
+                    if (!request.getParameter("discountId").isEmpty()) {
+                      dId = Integer.parseInt(request.getParameter("discountId"));
+                    }
+                    long currentTimeMillis = System.currentTimeMillis();
+                    Timestamp currentTime = new Timestamp(currentTimeMillis);
+                    OrderDiscount od = new OrderDiscount();
+                    od.setOrder(order);
+                    od.setDiscount(discountDao.getDiscountByIdAndUsername(dId, username));
+                    odDao.insert(od);
+                  }
+                }
                 %>
                 <div class="form-group">
                   Order:
@@ -263,7 +278,6 @@
              <HR>
              <%
 
-                 DiscountDao discountDao = new DiscountDao();
                  List<Discount> discounts = discountDao.getDiscountsByUsername(username);
                  if(discounts!= null && !discounts.isEmpty()){
                      for (Discount discount : discounts) {
@@ -275,7 +289,9 @@
                                <p class="card-text">Amount: <%= discount.getAmount() %></p>
                                <p class="card-text">Start Date: <%= discount.getStartDate() %></p>
                                <p class="card-text">End Date: <%= discount.getEndDate() %></p>
-                               <p class="card-text">Apply: <%= discount.getEndDate() %></p>
+                               <p class="card-text">
+                                 <a href="order.edit.discounts.jsp?action=add&orderId=<%=orderId%>&discountId=<%= discount.getDiscountId() %>" >Add Discount</a><br>
+                               </p>
                            </div>
                        </div>
                        <%
