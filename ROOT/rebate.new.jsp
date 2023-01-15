@@ -151,7 +151,7 @@
                 Date startDate = format.parse(request.getParameter("startDate"));
                 Date endDate = format.parse(request.getParameter("endDate"));
                 Rebate rebate = new Rebate(UUID.randomUUID().toString(), name, percentage, amount, startDate, endDate, username);
-                rebate.setDescription(request.getParameter("description"))
+                rebate.setDescription(request.getParameter("description"));
                 RebateDao rDao = new RebateDao();
                 rDao.insert(rebate);
             }
