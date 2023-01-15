@@ -155,39 +155,27 @@
               <form>
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" value="<%= discount.getName() %>" disabled>
+                <input type="text" class="form-control" id="name" value="<%= discount.getName() %>" >
               </div>
               <div class="form-group">
                 <label for="percentage">Percentage</label>
-                <input type="text" class="form-control" id="percentage" value="<%= discount.getPercentage() %>" disabled>
+                <input type="text" class="form-control" id="percentage" value="<%= discount.getPercentage() %>" >
               </div>
               <div class="form-group">
                 <label for="amount">Amount</label>
-                <input type="text" class="form-control" id="amount" value="<%= discount.getAmount() %>" disabled>
+                <input type="text" class="form-control" id="amount" value="<%= discount.getAmount() %>" >
               </div>
               <div class="form-group">
                 <label for="startDate">Start Date</label>
-                <input type="text" class="form-control" id="startDate" value="<%= discount.getStartDate() %>" disabled>
+                <input type="text" class="form-control" id="startDate" value="<%= discount.getStartDate() %>" >
               </div>
               <div class="form-group">
                 <label for="endDate">End Date</label>
-                <input type="text" class="form-control" id="endDate" value="<%= discount.getEndDate() %>" disabled>
+                <input type="text" class="form-control" id="endDate" value="<%= discount.getEndDate() %>" >
               </div>
               <div class="form-group">
                 <label for="active">Active</label>
-                <input type="text" class="form-control" id="active" value="<%= discount.isActive() %>" disabled>
-              </div>
-              <div class="form-group">
-                <label for="createdAt">Created At</label>
-                <input type="text" class="form-control" id="createdAt" value="<%= discount.getCreatedAt() %>" disabled>
-              </div>
-              <div class="form-group">
-                <label for="updatedAt">Updated At</label>
-                <input type="text" class="form-control" id="updatedAt" value="<%= discount.getUpdatedAt() %>" disabled>
-              </div>
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" value="<%= discount.getUsername() %>" disabled>
+                <input type="text" class="form-control" id="active" value="<%= discount.isActive() %>" >
               </div>
             </form>
 
