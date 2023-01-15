@@ -249,7 +249,7 @@
         <HR>
                 <%
                 ProductLineItemDao plDao = new ProductLineItemDao();
-                OrderDiscountDAO ocDao = new OrderDiscountDAO();
+                OrderDiscountDAO odDao = new OrderDiscountDAO();
                 Order order = dao.getOrderByOrderId(orderId, username);
 
                 %>
