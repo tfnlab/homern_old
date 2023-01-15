@@ -287,7 +287,7 @@
                 </div>
         <hr>
            <div class="container" id="searchR" name="searchR" >
-             <h3>Discounts</h3>
+             <h3>Rebates</h3>
              <HR>
              <%
 
@@ -316,23 +316,6 @@
                  <% }
                  %>
                   <HR>
-                 <h3>Discounts Applied</h3>
-                 <%
-                 List<OrderRebate> orList = orDao.getOrderRebatesByUsernameAndOrderId(username, orderId);
-                 for (OrderRebate orItem : orList) {
-                    %>
-                    <div class="card">
-                        <div class="card-body">
-                        <p>
-                    <%=orItem.getRebate().getName()%> <BR>
-                    <%=orItem.getRebate().getAmount()%> <BR>
-                    <a href="order.edit.rebate.jsp?action=remove&orderId=<%=orderId%>&odId=<%= orItem.getId() %>" class="btn btn-danger">REMOVE</a><BR>
-                        </p>
-                        </div>
-                    </div>
-                    <%
-                 }
-             %>
            </div>
           <hr>
       </div>
