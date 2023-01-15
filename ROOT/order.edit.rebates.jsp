@@ -267,7 +267,7 @@
                     or.setCreatedAt(currentTime);
                     or.setUsername(username);
                     try{
-                        orDao.insert(or);
+                        //orDao.insert(or);
                     }catch(Exception ex){
                       %><%=ex.getMessage()%><%
                     }
