@@ -147,7 +147,6 @@
             if (request.getParameter("discountId") != null && !request.getParameter("discountId").isEmpty()) {
               discountId = Integer.parseInt(request.getParameter("discountId"));
             }
-            <%
             String name = request.getParameter("name");
             String username = (String) session.getAttribute("username");
             if (name != null && name.trim().length() > 0) {
