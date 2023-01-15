@@ -286,7 +286,7 @@
                        </div>
                  <% }
 
-                 List<OrderDiscount> odList = odDao.getOrderDiscountsByUsernameAndOrderId(orderId);
+                 List<OrderDiscount> odList = odDao.getOrderDiscountsByUsernameAndOrderId(username, orderId);
                  for (OrderDiscount odItem : odList) {
 
                  }
