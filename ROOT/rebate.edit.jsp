@@ -166,7 +166,7 @@
             <hr>
               <h1>Add Discount</h1>
               <form action="rebate.edit.jsp" method="post">
-              <input type="hidden" class="form-control" id="rebateId" name="rebateId" value="<%= rebate.getDiscountId() %>" >
+              <input type="hidden" class="form-control" id="rebateId" name="rebateId" value="<%= rebate.getRebateId() %>" >
 
               <div class="form-group">
                 <label for="name">Name</label>
