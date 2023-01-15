@@ -9,6 +9,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.util.UUID" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -142,45 +143,33 @@
         <h2>Product</h2>
         <%@ include file="user.menu.nav.jsp" %>
             <%
-            String name = request.getParameter("name");
             String username = (String) session.getAttribute("username");
-            if (name != null && name.trim().length() > 0) {
-                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-                BigDecimal percentage = new BigDecimal(request.getParameter("percentage"));
-                BigDecimal amount = new BigDecimal(request.getParameter("amount"));
-                Date startDate = format.parse(request.getParameter("startDate"));
-                Date endDate = format.parse(request.getParameter("endDate"));
-                Discount discount = new Discount(UUID.randomUUID().toString(), name, percentage, amount, startDate, endDate, username);
-                DiscountDao discountDao = new DiscountDao();
-                discountDao.insert(discount);
-
-            }
+            DiscountDao discountDao = new DiscountDao();
             %>
-            <hr>
-              <h1>Add Discount</h1>
-          		<form action="discount.new.jsp" method="post">
-          			<div class="form-group">
-          				<label for="name">Name</label> <input type="text"
-          					class="form-control" id="name" name="name" required>
-          			</div>
-          			<div class="form-group">
-          				<label for="percentage">Percentage</label> <input type="text"
-          					class="form-control" id="percentage" name="percentage">
-          			</div>
-          			<div class="form-group">
-          				<label for="amount">Amount</label> <input type="text"
-          					class="form-control" id="amount" name="amount">
-          			</div>
-          			<div class="form-group">
-          				<label for="startDate">Start Date</label> <input type="date"
-          					class="form-control" id="startDate" name="startDate" required>
-          			</div>
-          			<div class="form-group">
-          				<label for="endDate">End Date</label> <input type="date"
-          					class="form-control" id="endDate" name="endDate" required>
-          			</div>
-          			<button type="submit" class="btn btn-primary">Save</button>
-          		</form>
+            <div class="container">
+                <%
+                List<Discount> discounts = discountDao.getDiscountsByUsername(username);
+                if(discounts!= null && !discounts.isEmpty()){
+                    for (Discount discount : discounts) {
+                %>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= discount.getName() %></h5>
+                        <p class="card-text">Percentage: <%= discount.getPercentage() %></p>
+                        <p class="card-text">Amount: <%= discount.getAmount() %></p>
+                        <p class="card-text">Start Date: <%= discount.getStartDate() %></p>
+                        <p class="card-text">End Date: <%= discount.getEndDate() %></p>
+                    </div>
+                </div>
+                <% }
+                }else{ %>
+                <div class="alert alert-warning" role="alert">
+                    No discounts available for this user
+                </div>
+                <% } %>
+            </div>
+
+
       </div>
 
     </section><!-- End Blog Section -->
