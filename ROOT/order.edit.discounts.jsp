@@ -264,6 +264,7 @@
                     OrderDiscount od = new OrderDiscount();
                     od.setOrder(order);
                     od.setDiscount(discountDao.getDiscountByIdAndUsername(dId, username));
+                    od.setCreatedAt(currentTime);
                     odDao.insert(od);
                   }
                 }
