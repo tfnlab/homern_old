@@ -310,7 +310,9 @@
 
                  List<OrderDiscount> odList = odDao.getOrderDiscountsByUsernameAndOrderId(username, orderId);
                  for (OrderDiscount odItem : odList) {
-                    %><%=odItem.getDiscount().getAmount()%><%
+                    %><%=odItem.getDiscount().getAmount()%> <BR>
+                    <a href="order.edit.customers.jsp?action=remove&orderId=<%=orderId%>&odId=<%= odItem.getId() %>" class="btn btn-danger">REMOVE</a><BR>
+                    <%
                  }
              %>
            </div>
