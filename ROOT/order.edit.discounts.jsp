@@ -24,6 +24,9 @@
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 <%@ page import="com.tfnlab.mysql.OrderCustomer" %>
 <%@ page import="com.tfnlab.mysql.OrderCustomerDao" %>
+<%@ page import="com.tfnlab.mysql.OrderDiscountDAO" %>
+<%@ page import="com.tfnlab.mysql.OrderDiscount" %>
+
 
 
 
