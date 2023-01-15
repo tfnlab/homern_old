@@ -142,6 +142,7 @@
       <div class="container px-4 px-lg-5">
         <h2>Product</h2>
         <%@ include file="user.menu.nav.jsp" %>
+        <HR>
             <%
             String username = (String) session.getAttribute("username");
             DiscountDao discountDao = new DiscountDao();
@@ -154,7 +155,7 @@
                 %>
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><%= discount.getName() %></h5>
+                        <h5 class="card-title"><a href="discount.edit.jsp?discountId=<%= discount.getDiscountId() %>" ><%= discount.getName() %></a></h5>
                         <p class="card-text">Percentage: <%= discount.getPercentage() %></p>
                         <p class="card-text">Amount: <%= discount.getAmount() %></p>
                         <p class="card-text">Start Date: <%= discount.getStartDate() %></p>
