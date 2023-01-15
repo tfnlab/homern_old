@@ -316,7 +316,7 @@
                  <% }
                  %>
                   <HR>
-                 <h3>Discounts Applied</h3>
+                 <h3>Rebates Applied</h3>
                  <%
                  List<OrderRebate> orList = orDao.getOrderRebatesByUsernameAndOrderId(username, orderId);
                  for (OrderRebate orItem : orList) {
