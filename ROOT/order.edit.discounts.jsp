@@ -310,7 +310,7 @@
 
                  List<OrderDiscount> odList = odDao.getOrderDiscountsByUsernameAndOrderId(username, orderId);
                  for (OrderDiscount odItem : odList) {
-                    %><%=odItem.getAmount()%><%
+                    %><%=odItem.getDiscount().getAmount()%><%
                  }
              %>
            </div>
