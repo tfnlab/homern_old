@@ -314,11 +314,19 @@
                            No discounts available for this user
                        </div>
                  <% }
-
+                 %><h3>Discounts Applied</h3><%
                  List<OrderDiscount> odList = odDao.getOrderDiscountsByUsernameAndOrderId(username, orderId);
                  for (OrderDiscount odItem : odList) {
-                    %><%=odItem.getDiscount().getAmount()%> <BR>
+                    %>
+                    <div class="card">
+                        <div class="card-body">
+                        <p>
+                    <%=odItem.getDiscount().getName()%> <BR>
+                    <%=odItem.getDiscount().getAmount()%> <BR>
                     <a href="order.edit.discounts.jsp?action=remove&orderId=<%=orderId%>&odId=<%= odItem.getId() %>" class="btn btn-danger">REMOVE</a><BR>
+                        </p>
+                        </div>
+                    </div>
                     <%
                  }
              %>
