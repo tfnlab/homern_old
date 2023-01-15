@@ -154,12 +154,11 @@
                 BigDecimal amount = new BigDecimal(request.getParameter("amount"));
                 Date startDate = format.parse(request.getParameter("startDate"));
                 Date endDate = format.parse(request.getParameter("endDate"));
-                Discount discount = new Discount(UUID.randomUUID().toString(), name, percentage, amount, startDate, endDate, username);
-                discount.setDiscountId(discountId);
+                Discount du = new Discount(UUID.randomUUID().toString(), name, percentage, amount, startDate, endDate, username);
+                du.setDiscountId(discountId);
                 DiscountDao discountDao = new DiscountDao();
-                discountDao.updateDiscount(discount);
+                discountDao.updateDiscount(du);
             }
-            %>
             DiscountDao discountDao = new DiscountDao();
             Discount discount = discountDao.getDiscountByIdAndUsername(discountId ,username);
             %>
