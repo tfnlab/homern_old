@@ -278,6 +278,8 @@
                       entity.setLocation_pointlat(request.getParameter("location_pointlat"));
                       entity.setLocation_pointlng(request.getParameter("location_pointlng"));
                       entity.setCompany_name(request.getParameter("company_name"));
+                      entity.setDisplay_name(request.getParameter("display_name"));
+
 
 
                       ed.updateEntityById(entity);
