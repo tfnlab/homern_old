@@ -143,6 +143,10 @@
         <h2>Product</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
+
+            <a href="discount.new.jsp" tabindex="2" ><i class="fas fa-plus"></i> Discount</a>
+
+            <HR>
             <%
             String username = (String) session.getAttribute("username");
             DiscountDao discountDao = new DiscountDao();
