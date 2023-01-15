@@ -159,7 +159,7 @@
                 %>
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="rebate.edit.jsp?rebateId=<%= rebate.getDiscountId() %>" ><%= rebate.getName() %></a></h5>
+                        <h5 class="card-title"><a href="rebate.edit.jsp?rebateId=<%= rebate.geRebateId() %>" ><%= rebate.getName() %></a></h5>
                         <p class="card-text">Percentage: <%= rebate.getPercentage() %></p>
                         <p class="card-text">Amount: <%= rebate.getAmount() %></p>
                         <p class="card-text">Start Date: <%= rebate.getStartDate() %></p>
