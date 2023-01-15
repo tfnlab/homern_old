@@ -272,6 +272,13 @@
                       %><%=ex.getMessage()%><%
                     }
                   }
+                  if(action.equals("remove")){
+                    int odId = 0;
+                    if (!request.getParameter("odId").isEmpty()) {
+                      odId = Integer.parseInt(request.getParameter("odId"));
+                    }
+                    odDao.remove(odId, username);
+                  }
                 }
                 %>
                 <div class="form-group">
@@ -311,7 +318,7 @@
                  List<OrderDiscount> odList = odDao.getOrderDiscountsByUsernameAndOrderId(username, orderId);
                  for (OrderDiscount odItem : odList) {
                     %><%=odItem.getDiscount().getAmount()%> <BR>
-                    <a href="order.edit.customers.jsp?action=remove&orderId=<%=orderId%>&odId=<%= odItem.getId() %>" class="btn btn-danger">REMOVE</a><BR>
+                    <a href="order.edit.discounts.jsp?action=remove&orderId=<%=orderId%>&odId=<%= odItem.getId() %>" class="btn btn-danger">REMOVE</a><BR>
                     <%
                  }
              %>
