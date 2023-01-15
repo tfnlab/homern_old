@@ -144,7 +144,7 @@
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
 
-            <a href="discount.new.jsp" tabindex="2" ><i class="fas fa-plus"></i> Discount</a>
+            <a href="rebate.new.jsp" tabindex="2" ><i class="fas fa-plus"></i> Rebate</a>
 
             <HR>
             <%
