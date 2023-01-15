@@ -326,7 +326,7 @@
                         <p>
                     <%=orItem.getRebate().getName()%> <BR>
                     <%=orItem.getRebate().getAmount()%> <BR>
-                    <a href="order.edit.rebates.jsp?action=remove&orderId=<%=orderId%>&odId=<%= orItem.getId() %>" class="btn btn-danger">REMOVE</a><BR>
+                    <a href="order.edit.rebates.jsp?action=remove&orderId=<%=orderId%>&orId=<%= orItem.getId() %>" class="btn btn-danger">REMOVE</a><BR>
                         </p>
                         </div>
                     </div>
