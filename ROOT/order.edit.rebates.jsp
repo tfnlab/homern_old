@@ -303,7 +303,7 @@
                                <p class="card-text">Start Date: <%= rebate.getStartDate() %></p>
                                <p class="card-text">End Date: <%= rebate.getEndDate() %></p>
                                <p class="card-text">
-                                 <a href="order.edit.rebate.jsp?action=add&orderId=<%=orderId%>&rebateId=<%= rebate.getRebateId() %>" >Add</a><br>
+                                 <a href="order.edit.rebates.jsp?action=add&orderId=<%=orderId%>&rebateId=<%= rebate.getRebateId() %>" >Add</a><br>
                                </p>
                            </div>
                        </div>
