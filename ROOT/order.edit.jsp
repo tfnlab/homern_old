@@ -322,7 +322,7 @@
           <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" value="<%= order.getShippingAddress() %>" onkeypress="callAC(this)"  tabindex="12"><br>
           <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" value="<%= order.getShippingAddresslat() %>">
           <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" value="<%= order.getShippingAddresslng() %>">
-          <input type="hidden" id="shippingAddressaczip" name="shippingAddressaczip" >
+          <input type="hidden" id="shippingAddressaczip" name="shippingAddressaczip" value="" >
           <ul id="shippingAddressac" name="shippingAddressac"></ul>
           <hr>
             <%
