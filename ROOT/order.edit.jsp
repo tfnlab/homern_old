@@ -322,6 +322,7 @@
           <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" value="<%= order.getShippingAddress() %>" onkeypress="callAC(this)"  tabindex="12"><br>
           <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" value="<%= order.getShippingAddresslat() %>">
           <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" value="<%= order.getShippingAddresslng() %>">
+          <input type="hidden" id="shippingAddressaczip" name="shippingAddressaczip" >
           <ul id="shippingAddressac" name="shippingAddressac"></ul>
           <hr>
             <%
@@ -352,6 +353,7 @@
           <input class="form-control" type="text" id="billingAddress" name="billingAddress" value="<%= order.getBillingAddress() %>" onkeypress="callAC(this)"  tabindex="13"><br>
           <input type="hidden" id="billingAddressaclat" name="billingAddressaclat" value="<%= order.getBillingAddresslat() %>">
           <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" value="<%= order.getBillingAddresslng() %>">
+          <input type="hidden" id="billingAddressaczip" name="billingAddressaczip" >
           <ul id="billingAddressac" name="billingAddressac"></ul>
           <hr>
             <%
