@@ -63,20 +63,38 @@
 %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
+    function callCoreLocator(sk) {
+      document.getElementById(fNameLink.substring(0,fNameLink.length-2)).value = sk;
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            alert(this.responseText);
+//          let items = this.responseText.split('<ITEM>');
+//          fNamenew = items[items.length-1];
+//          fNamenew = removeTrailingSpaces(fNamenew);
+//          document.getElementById(fNamenew+"lat").value = items[0];
+//          document.getElementById(fNamenew+"lng").value = items[1];
+//          document.getElementById(fNamenew+"zip").value = items[2];
+        }
+      };
+
+      const encodedString = encodeURIComponent(document.getElementById(sk.slice(0, -2)).value);
+      var urlString = "corelogic.jsp?search=" + encodedString + "&zip=" + document.getElementById(sk+"zip").value;
+      xhttp.open("GET", urlString, true);
+      xhttp.send();
+
+    }
     function callGeo(sk, fNameLink) {
         document.getElementById(fNameLink.substring(0,fNameLink.length-2)).value = sk;
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
-            alert(this.responseText);
             let items = this.responseText.split('<ITEM>');
             fNamenew = items[items.length-1];
             fNamenew = removeTrailingSpaces(fNamenew);
             document.getElementById(fNamenew+"lat").value = items[0];
             document.getElementById(fNamenew+"lng").value = items[1];
             document.getElementById(fNamenew+"zip").value = items[2];
-            
-
           }
         };
         const encodedString = encodeURIComponent(sk);
