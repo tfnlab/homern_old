@@ -220,7 +220,11 @@
 
                       order.setUuid(uuid);
                       OrderDao dao = new OrderDao();
-                      dao.insertOrder(order);
+                      try{
+                        dao.insertOrder(order);
+                      } catch (Exception e) {
+                            %><%=e.getMessage()%><%
+                      }
                       order = dao.getOrderByUuid(uuid, username);
                       %>
                         <HR>
