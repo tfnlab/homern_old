@@ -244,6 +244,25 @@
                       if (request.getParameter("billingAddressaclng") == null || request.getParameter("billingAddressaclng").isEmpty()) {
                         billingAddressaclng = "0.0";
                       }
+                      BigDecimal shippingAddressEstPrice = new BigDecimal("0");
+                      if (request.getParameter("shippingAddressEstPrice") != null && !request.getParameter("shippingAddressEstPrice").isEmpty()) {
+                          shippingAddressEstPrice = new BigDecimal(request.getParameter("shippingAddressEstPrice"));
+                      }
+
+                      BigDecimal shippingAddressLastSalePrice = new BigDecimal("0");
+                      if (request.getParameter("shippingAddressLastSalePrice") != null && !request.getParameter("shippingAddressLastSalePrice").isEmpty()) {
+                          shippingAddressLastSalePrice = new BigDecimal(request.getParameter("shippingAddressLastSalePrice"));
+                      }
+
+                      BigDecimal shippingAddressEstPriceHigh = new BigDecimal("0");
+                      if (request.getParameter("shippingAddressEstPriceHigh") != null && !request.getParameter("shippingAddressEstPriceHigh").isEmpty()) {
+                          shippingAddressEstPriceHigh = new BigDecimal(request.getParameter("shippingAddressEstPriceHigh"));
+                      }
+
+                      BigDecimal shippingAddressEstPriceLow = new BigDecimal("0");
+                      if (request.getParameter("shippingAddressEstPriceLow") != null && !request.getParameter("shippingAddressEstPriceLow").isEmpty()) {
+                          shippingAddressEstPriceLow = new BigDecimal(request.getParameter("shippingAddressEstPriceLow"));
+                      }
                       Date orderDate = new Date();
                       Date shippingDate = new Date();
                         try{
@@ -258,6 +277,10 @@
                       String orderDescription = request.getParameter("orderDescription");
                       String status = request.getParameter("status");
                       Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng, status);
+                      order.setShippingAddressEstPrice(shippingAddressEstPrice);
+                      order.setShippingAddressLastSalePrice(shippingAddressLastSalePrice);
+                      order.setShippingAddressEstPriceHigh(shippingAddressEstPriceHigh);
+                      order.setShippingAddressEstPriceLow(shippingAddressEstPriceLow);
                       dao.updateOrder(order);
 
                 }
