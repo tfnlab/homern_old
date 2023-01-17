@@ -221,7 +221,7 @@
                       order.setUuid(uuid);
                       OrderDao dao = new OrderDao();
                       //dao.insertOrder(order);
-                      order = dao.getOrderByUuid(uuid, username);
+                      //order = dao.getOrderByUuid(uuid, username);
                       %>
                         <HR>
                         Order Saved
