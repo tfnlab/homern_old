@@ -161,7 +161,7 @@ import ;
                   <td>
                       <%if(count>0){%>
                           <%
-                            //oDao.getCustomerOrderTotal(username, sstatus);
+                            BigDecimal countb = oDao.getCustomerOrderTotal(username, sstatus);
                           %>
                       <%}else{%>
                         0
