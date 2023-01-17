@@ -175,11 +175,25 @@
                         billingAddressaclng = "0.0";
                       }
 
-                      BigDecimal shippingAddressEstPrice = request.getParameter("shippingAddressEstPrice") == null || request.getParameter("shippingAddressEstPrice").isEmpty() ? new BigDecimal("0") : new BigDecimal(request.getParameter("shippingAddressEstPrice"));
-                      BigDecimal shippingAddressLastSalePrice = request.getParameter("shippingAddressLastSalePrice") == null || request.getParameter("shippingAddressLastSalePrice").isEmpty() ? new BigDecimal("0") : new BigDecimal(request.getParameter("shippingAddressLastSalePrice"));
-                      BigDecimal shippingAddressEstPriceHigh = request.getParameter("shippingAddressEstPriceHigh") == null || request.getParameter("shippingAddressEstPriceHigh").isEmpty() ? new BigDecimal("0") : new BigDecimal(request.getParameter("shippingAddressEstPriceHigh"));
-                      BigDecimal shippingAddressEstPriceLow = request.getParameter("shippingAddressEstPriceLow") == null || request.getParameter("shippingAddressEstPriceLow").isEmpty() ? new BigDecimal("0") : new BigDecimal(request.getParameter("shippingAddressEstPriceLow"));
+                      BigDecimal shippingAddressEstPrice = new BigDecimal("0");
+                      if (request.getParameter("shippingAddressEstPrice") != null && !request.getParameter("shippingAddressEstPrice").isEmpty()) {
+                          shippingAddressEstPrice = new BigDecimal(request.getParameter("shippingAddressEstPrice"));
+                      }
 
+                      BigDecimal shippingAddressLastSalePrice = new BigDecimal("0");
+                      if (request.getParameter("shippingAddressLastSalePrice") != null && !request.getParameter("shippingAddressLastSalePrice").isEmpty()) {
+                          shippingAddressLastSalePrice = new BigDecimal(request.getParameter("shippingAddressLastSalePrice"));
+                      }
+
+                      BigDecimal shippingAddressEstPriceHigh = new BigDecimal("0");
+                      if (request.getParameter("shippingAddressEstPriceHigh") != null && !request.getParameter("shippingAddressEstPriceHigh").isEmpty()) {
+                          shippingAddressEstPriceHigh = new BigDecimal(request.getParameter("shippingAddressEstPriceHigh"));
+                      }
+
+                      BigDecimal shippingAddressEstPriceLow = new BigDecimal("0");
+                      if (request.getParameter("shippingAddressEstPriceLow") != null && !request.getParameter("shippingAddressEstPriceLow").isEmpty()) {
+                          shippingAddressEstPriceLow = new BigDecimal(request.getParameter("shippingAddressEstPriceLow"));
+                      }
 
                       Timestamp createdAt = currentTime;
                       Timestamp updatedAt = currentTime;
