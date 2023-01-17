@@ -160,7 +160,7 @@
                   <td>
                       <%if(count>0){%>
                           <% try{
-                              oDao.getCustomerOrderTotal(username, sstatus);
+                              %><%=oDao.getCustomerOrderTotal(username, sstatus)%><%
                             }catch(Exception ex){
                               %><%=ex.getMessage()%><%
                             }
