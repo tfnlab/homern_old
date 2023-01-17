@@ -174,6 +174,13 @@
                       if (request.getParameter("billingAddressaclng") == null || request.getParameter("billingAddressaclng").isEmpty()) {
                         billingAddressaclng = "0.0";
                       }
+
+                      BigDecimal shippingAddressEstPrice = request.getParameter("shippingAddressEstPrice") == null || request.getParameter("shippingAddressEstPrice").isEmpty() ? new BigDecimal("0") : new BigDecimal(request.getParameter("shippingAddressEstPrice"));
+                      BigDecimal shippingAddressLastSalePrice = request.getParameter("shippingAddressLastSalePrice") == null || request.getParameter("shippingAddressLastSalePrice").isEmpty() ? new BigDecimal("0") : new BigDecimal(request.getParameter("shippingAddressLastSalePrice"));
+                      BigDecimal shippingAddressEstPriceHigh = request.getParameter("shippingAddressEstPriceHigh") == null || request.getParameter("shippingAddressEstPriceHigh").isEmpty() ? new BigDecimal("0") : new BigDecimal(request.getParameter("shippingAddressEstPriceHigh"));
+                      BigDecimal shippingAddressEstPriceLow = request.getParameter("shippingAddressEstPriceLow") == null || request.getParameter("shippingAddressEstPriceLow").isEmpty() ? new BigDecimal("0") : new BigDecimal(request.getParameter("shippingAddressEstPriceLow"));
+
+
                       Timestamp createdAt = currentTime;
                       Timestamp updatedAt = currentTime;
                       Timestamp deletedAt = currentTime;
@@ -192,6 +199,11 @@
                         }
 
                       Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng, status);
+                      order.setShippingAddressEstPrice(shippingAddressEstPrice);
+                      order.setShippingAddressLastSalePrice(shippingAddressLastSalePrice);
+                      order.setShippingAddressEstPriceHigh(shippingAddressEstPriceHigh);
+                      order.setShippingAddressEstPriceLow(shippingAddressEstPriceLow);
+                                            
                       order.setUuid(uuid);
                       OrderDao dao = new OrderDao();
                       dao.insertOrder(order);
@@ -269,6 +281,26 @@
 
                 <label for="orderTotal">Order Total:</label><br>
                 <input type="text" id="orderTotal" name="orderTotal"  tabindex="9"><br>
+                <HR>
+                <div class="form-group">
+                  <label for="shippingAddressEstPrice">Estimated Price:</label>
+                  <input type="number" class="form-control" id="shippingAddressEstPrice" name="shippingAddressEstPrice" step="0.01" tabindex="9">
+                </div>
+
+                <div class="form-group">
+                  <label for="shippingAddressLastSalePrice">Last Sale Price:</label>
+                  <input type="number" class="form-control" id="shippingAddressLastSalePrice" name="shippingAddressLastSalePrice" step="0.01" tabindex="10">
+                </div>
+
+                <div class="form-group">
+                  <label for="shippingAddressEstPriceHigh">Estimated High Price:</label>
+                  <input type="number" class="form-control" id="shippingAddressEstPriceHigh" name="shippingAddressEstPriceHigh" step="0.01" tabindex="11">
+                </div>
+
+                <div class="form-group">
+                  <label for="shippingAddressEstPriceLow">Estimated Low Price:</label>
+                  <input type="number" class="form-control" id="shippingAddressEstPriceLow" name="shippingAddressEstPriceLow" step="0.01" tabindex="12">
+                </div>
                 <HR>
                 <input type="submit" value="Submit"  tabindex="10" class="btn btn-primary" >
                   	</form>
