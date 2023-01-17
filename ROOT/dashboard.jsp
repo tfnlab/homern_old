@@ -159,9 +159,7 @@
                   </td>
                   <td>
                       <%if(count>0){%>
-                          <%
-                            BigDecimal countb = oDao.getCustomerOrderTotal(username, sstatus);
-                          %>
+                          <%= oDao.getCustomerOrderTotal(username, sstatus)%>
                       <%}else{%>
                         0
                       <%}%>
