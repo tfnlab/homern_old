@@ -159,6 +159,10 @@ import ;
                       <%= count %>
                   </td>
                   <td>
+                      <%if(count>0){%>
+                      <%}else{%>
+                        0
+                      <%}%>
                   </td>
 
                 </tr>
