@@ -5,6 +5,7 @@
     String[] results = geocodingExample.search(request.getParameter("search"));
       %><%=results[0]%><ITEM><%
       %><%=results[1]%><ITEM><%
+      %><%=results[2]%><ITEM><%
   } catch (IOException e) {
     // handle the exception here
   } finally {

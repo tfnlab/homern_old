@@ -61,8 +61,7 @@
             fNamenew = removeTrailingSpaces(fNamenew);
             document.getElementById(fNamenew+"lat").value = items[0];
             document.getElementById(fNamenew+"lng").value = items[1];
-
-
+            document.getElementById(fNamenew+"zip").value = items[2];
           }
         };
         const encodedString = encodeURIComponent(sk);
@@ -267,12 +266,14 @@
                 <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" onkeypress="callAC(this)"  tabindex="6"><br>
                 <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" >
                 <input type="hidden" id="shippingAddressaclng" name="shippingAddressaclng" >
+                <input type="hidden" id="shippingAddressaczip" name="shippingAddressaczip" >
                 <ul id="shippingAddressac" name="shippingAddressac"></ul>
                 <hr>
                 <label for="billingAddress">Billing Address:</label> <i class="fas fa-copy" onclick="copyAddress()" ></i>  <br>
                 <input class="form-control" type="text" id="billingAddress" name="billingAddress" onkeypress="callAC(this)"  tabindex="7"><br>
                 <input type="hidden" id="billingAddressaclat" name="billingAddressaclat" >
                 <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" >
+                <input type="hidden" id="billingAddressaczip" name="billingAddressaczip" >
                 <ul id="billingAddressac" name="billingAddressac"></ul>
                 <hr>
                 <!-- HTML -->
