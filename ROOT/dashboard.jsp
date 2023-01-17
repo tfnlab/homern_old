@@ -154,15 +154,9 @@ import ;
                 %>
                 <tr>
                   <td><a href="order.list.jsp?searchKey=<%= sstatus %>" ><%= sstatus %></a></td>
-                  <td>
-                      <% int count = oDao.getCustomerOrderCount(username, sstatus);%>
-                  <%= count %></td>
-                  <td>
-                      <%if(count>0){%>
-                          <%= oDao.getCustomerOrderTotal(username, sstatus) %>
-                      <%}else{%>
-                        0
-                      <%}%>
+                  <td>s
+                  </td>
+                  <td>s
                   </td>
 
                 </tr>
