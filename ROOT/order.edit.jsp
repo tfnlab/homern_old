@@ -350,7 +350,24 @@
           <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"  tabindex="14"><br>
           <label for="orderTotal">Order Total:</label><br>
           <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"  tabindex="15"><br>
-          <HR>
+          <div class="form-group">
+              <label for="shippingAddressEstPrice">Estimated Price:</label>
+              <input type="number" class="form-control" id="shippingAddressEstPrice" name="shippingAddressEstPrice" step="0.01" value="<%= order.getShippingAddressEstPrice() %>" tabindex="9">
+          </div>
+          <div class="form-group">
+              <label for="shippingAddressLastSalePrice">Last Sale Price:</label>
+              <input type="number" class="form-control" id="shippingAddressLastSalePrice" name="shippingAddressLastSalePrice" step="0.01" value="<%= order.getShippingAddressLastSalePrice() %>" tabindex="10">
+          </div>
+          <div class="form-group">
+              <label for="shippingAddressEstPriceHigh">Estimated High Price:</label>
+              <input type="number" class="form-control" id="shippingAddressEstPriceHigh" name="shippingAddressEstPriceHigh" step="0.01" value="<%= order.getShippingAddressEstPriceHigh() %>" tabindex="11">
+          </div>
+          <div class="form-group">
+              <label for="shippingAddressEstPriceLow">Estimated Low Price:</label>
+              <input type="number" class="form-control" id="shippingAddressEstPriceLow" name="shippingAddressEstPriceLow" step="0.01" value="<%= order.getShippingAddressEstPriceLow() %>" tabindex="12">
+          </div>
+
+
           <input type="submit" value="Submit"  tabindex="16">
         </form>
 
