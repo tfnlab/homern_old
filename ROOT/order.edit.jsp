@@ -73,7 +73,7 @@
             fNamenew = removeTrailingSpaces(fNamenew);
             document.getElementById(fNamenew+"lat").value = items[0];
             document.getElementById(fNamenew+"lng").value = items[1];
-
+            document.getElementById(fNamenew+"zip").value = items[2];
 
           }
         };
@@ -375,6 +375,9 @@
           <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"  tabindex="14"><br>
           <label for="orderTotal">Order Total:</label><br>
           <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"  tabindex="15"><br>
+          <hr>
+          <h4>Property Info</h4>
+          <hr>
           <div class="form-group">
               <label for="shippingAddressEstPrice">Estimated Price:</label>
               <input type="number" class="form-control" id="shippingAddressEstPrice" name="shippingAddressEstPrice" step="0.01" value="<%= order.getShippingAddressEstPrice() %>" tabindex="9">
@@ -391,8 +394,6 @@
               <label for="shippingAddressEstPriceLow">Estimated Low Price:</label>
               <input type="number" class="form-control" id="shippingAddressEstPriceLow" name="shippingAddressEstPriceLow" step="0.01" value="<%= order.getShippingAddressEstPriceLow() %>" tabindex="12">
           </div>
-
-
           <input type="submit" value="Submit"  tabindex="16">
         </form>
 
