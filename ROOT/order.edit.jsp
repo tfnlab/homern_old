@@ -75,6 +75,7 @@
             document.getElementById(fNamenew+"lat").value = items[0];
             document.getElementById(fNamenew+"lng").value = items[1];
             document.getElementById(fNamenew+"zip").value = items[2];
+            
 
           }
         };
