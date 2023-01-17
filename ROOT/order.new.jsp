@@ -222,10 +222,10 @@
                       OrderDao dao = new OrderDao();
                       try{
                         dao.insertOrder(order);
+                        order = dao.getOrderByUuid(uuid, username);
                       } catch (Exception e) {
                             %><%=e.getMessage()%><%
                       }
-                      order = dao.getOrderByUuid(uuid, username);
                       %>
                         <HR>
                         Order Saved
