@@ -64,7 +64,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     function callCoreLocator(sk) {
-      document.getElementById(fNameLink.substring(0,fNameLink.length-2)).value = sk;
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
