@@ -68,6 +68,7 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
+            alert(this.responseText);
             let items = this.responseText.split('<ITEM>');
             fNamenew = items[items.length-1];
             fNamenew = removeTrailingSpaces(fNamenew);
