@@ -148,7 +148,8 @@ import ;
               </thead>
               <tbody>
                 <%
-                  String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
+                  String[] statuses = {};
+                  //String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
                   for (String sstatus : statuses) {
                 %>
                 <tr>
