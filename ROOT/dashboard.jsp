@@ -7,8 +7,7 @@
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.util.Calendar" %>
-import ;
-import ;
+<%@ page import="java.math.BigDecimal" %>
 
 <!DOCTYPE html>
 <html lang="en">
