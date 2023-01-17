@@ -160,8 +160,8 @@ import ;
                   </td>
                   <td>
                       <%if(count>0){%>
-                          <% 
-                            oDao.getCustomerOrderTotal(username, sstatus);
+                          <%
+                            //oDao.getCustomerOrderTotal(username, sstatus);
                           %>
                       <%}else{%>
                         0
