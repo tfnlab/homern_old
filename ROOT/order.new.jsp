@@ -203,10 +203,10 @@
                       order.setShippingAddressLastSalePrice(shippingAddressLastSalePrice);
                       order.setShippingAddressEstPriceHigh(shippingAddressEstPriceHigh);
                       order.setShippingAddressEstPriceLow(shippingAddressEstPriceLow);
-                                            
+
                       order.setUuid(uuid);
                       OrderDao dao = new OrderDao();
-                      dao.insertOrder(order);
+                      //dao.insertOrder(order);
                       order = dao.getOrderByUuid(uuid, username);
                       %>
                         <HR>
