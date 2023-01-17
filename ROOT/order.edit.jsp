@@ -76,7 +76,8 @@
 //          document.getElementById(fNamenew+"zip").value = items[2];
         }
       };
-      const encodedString = encodeURIComponent(document.getElementById(sk.slice(0, -2)).value);
+      myString = document.getElementById(sk.slice(0, -2)).value.replace("Los Angeles", "");
+      const encodedString = encodeURIComponent(myString);
       var urlString = "corelogic.jsp?search=" + encodedString + "&zip=" + document.getElementById(sk+"zip").value;
       xhttp.open("GET", urlString, true);
       xhttp.send();
