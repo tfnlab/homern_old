@@ -28,7 +28,7 @@ String rm = "";
                               File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
                               FileWriter fw = new FileWriter(file);
                               BufferedWriter bw = new BufferedWriter(fw);
-                              bw.write(request.getParameter("search") + "<CONTENT>" + request.getParameter("zip") + "<CONTENT>" + username;
+                              bw.write(request.getParameter("search") + "<CONTENT>" + request.getParameter("zip") + "<CONTENT>" + username);
                               bw.close();
 
                               Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/corelogic.py", uuid.toString(), uuid.toString()).start();
