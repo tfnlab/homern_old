@@ -32,7 +32,7 @@ if (request.getParameter("orderId") != null && !request.getParameter("orderId").
   String filename = uuid + ".pdf";
   String filepath = conf.getPdfloc();
   response.setContentType("APPLICATION/OCTET-STREAM");
-  response.setHeader("Content-Disposition","attachment; filename=\"" + order.getOrderId() + "\"");
+  response.setHeader("Content-Disposition","attachment; filename=\"" + order.getOrderId() + ".pdf" + "\"");
 
   java.io.FileInputStream fileInputStream=new java.io.FileInputStream(filepath + filename);
 
