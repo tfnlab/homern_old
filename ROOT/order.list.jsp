@@ -145,6 +145,7 @@
                 <% String color = order.getShipDate().after(today) ? "#C8E6C9" : "#FFCDD2"; %>
                 <div class="container-fluid p-5" style="background-color: <%=color%>">
                   <div class="card p-3">
+                Order ID: <%= order.getOrderId() %><br>
                 Name: <%= order.getOrderName() %><br>
                   Description: <%= order.getOrderDescription() %><br>
                 Date: <%= order.getOrderDate() %><br>
