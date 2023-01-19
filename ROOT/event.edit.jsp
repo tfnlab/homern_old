@@ -168,7 +168,7 @@
                 EventDao ed = new EventDao();
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                 SimpleDateFormat dateFormatApple = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-                SimpleDateFormat dateFormatGoogleCal = new SimpleDateFormat("yyyymmdd'T'hhmmss'Z'");
+                SimpleDateFormat dateFormatGoogleCal = new SimpleDateFormat("yyyyMMdd'T'hhmmss'Z'");
                 if (title != null && title.trim().length() > 0) {
 
                       event = event.generateTestEvent();
