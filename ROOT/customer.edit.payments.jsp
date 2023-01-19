@@ -305,7 +305,6 @@
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <HR>
-              TEST
               <%=eId%>
               <%=username%>
             <%
@@ -315,9 +314,9 @@
                 for (Payment pItem : pList) {
                        pTotal = pTotal.add(pItem.getPaymentAmount());
                %>
-                   ID: <%= pItem.getPaymentId() %><br>
-                   Tech Price: <%= pItem.getPaymentAmount() %><br>
-                   Tech Price: <%= pItem.getPostTotal() %><br>
+                   Payment ID: <%= pItem.getPaymentId() %><br>
+                   Payment Amount: <%= pItem.getPaymentAmount() %><br>
+                   Posted Balance: <%= pItem.getPostTotal() %><br>
                    -- <a href="customer.edit.payments.jsp?remove=yes&customerId=<%=eId%>&pid=<%= pItem.getPaymentId() %>" >remove<a><br>
                    <hr>
 
