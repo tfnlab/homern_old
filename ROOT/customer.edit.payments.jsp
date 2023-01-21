@@ -286,10 +286,6 @@
             <input type="checkbox" class="form-check-input" id="hasReversed" name="hasReversed">
                 <label class="form-check-label" for="hasReversed">Has Reversed</label>
               </div>
-              <div class="form-group">
-                <label for="createdAt">Created At</label>
-                <input type="date" class="form-control" id="createdAt" name="createdAt" placeholder="Enter created at date">
-              </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <HR>            
