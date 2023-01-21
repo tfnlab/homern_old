@@ -166,12 +166,12 @@
                   <p>Rebates</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="order.list.jsp"><i class="fa fa-list"></i></a>
-                  <p>?</p>
+                  <a href="inventory.list.jsp"><i class="fa fa-box-open"></i></a>
+                  <p>Inventory</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="event.list.jsp"><i class="fa fa-list"></i></a>
-                  <p>?</p>
+                  <a href="timesheet.list.jsp"><i class="fa fa-clock"></i></a>
+                  <p>Time Sheet</p>
                 </div>
               </div>
 
