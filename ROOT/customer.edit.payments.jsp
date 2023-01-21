@@ -290,18 +290,6 @@
                 <label for="createdAt">Created At</label>
                 <input type="date" class="form-control" id="createdAt" name="createdAt" placeholder="Enter created at date">
               </div>
-              <div class="form-group">
-                <label for="lastUpdatedAt">Last Updated At</label>
-                <input type="date" class="form-control" id="lastUpdatedAt" name="lastUpdatedAt" placeholder="Enter last updated at date">
-              </div>
-              <div class="form-group">
-                <label for="createdBy">Created By</label>
-                <input type="text" class="form-control" id="createdBy" name="createdBy" placeholder="Enter created by">
-              </div>
-              <div class="form-group">
-                <label for="lastUpdatedBy">Last Updated By</label>
-                <input type="text" class="form-control" id="lastUpdatedBy" name="lastUpdatedBy" placeholder="Enter last updated by">
-              </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <HR>            
