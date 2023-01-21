@@ -5,6 +5,7 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
 <%@ page import="com.tfnlab.mysql.EventDao" %>
+<%@ page import="com.tfnlab.mysql.TechnicianDao" %>
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.math.BigDecimal" %>
@@ -114,6 +115,7 @@
           OrderDao oDao = new OrderDao();
           EntityDao eDao = new EntityDao();
           EventDao eventDao = new EventDao();
+          TechnicianDao tDao = new TechnicianDao();
           User user = (User)session.getAttribute("usernameOBJ");
           %>
           <div class="container mt-5">
@@ -178,13 +180,13 @@
             </table>
 
             <HR>
-            Customers: <%=eDao.getEntityCountByUsername(username)%>
+            Customers: <a href="product.list.jsp"><%=eDao.getEntityCountByUsername(username)%></a>
             <HR>
-            Products
+            Products:
             <HR>
-            Technicians:
+            Technicians: <%=tDao.getTechnicianCountByUsername(username)%>
             <HR>
-            Events: <%=eventDao.getEventCountByUsername(username)%>
+            Events: <a href="event.list.jsp"><%=eventDao.getEventCountByUsername(username)%></a>
             <HR>
           </div>
       </div>
