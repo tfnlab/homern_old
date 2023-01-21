@@ -148,6 +148,7 @@
          String address2 = request.getParameter("address2");
          String twilio_voice_forward_phone = request.getParameter("twilio_voice_forward_phone");
          String stripe_key = request.getParameter("stripe_key");
+         String stripe_key_pub = request.getParameter("stripe_key_pub");
 
          email = email.toLowerCase();
 
@@ -189,6 +190,7 @@
          user.setAddress2(address2);
          user.setTwilio_voice_forward_phone(twilio_voice_forward_phone);
          user.setStripe_key(stripe_key);
+         user.setStripe_key_pub(stripe_key_pub);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -400,14 +402,18 @@
 
            <div class="form-group mt-3">
            <label for="twilio_voice_forward_phone" class="mr-2">Twilio Voice Forward Phone:</label>
-           <input type="text" class="form-control" id="twilio_voice_forward_phone" name="twilio_voice_forward_phone" value="<%= user.getTwilio_voice_forward_phone() %>" tabindex="20" >
+           <input type="text" class="form-control" id="twilio_voice_forward_phone" name="twilio_voice_forward_phone" value="<%= user.getTwilio_voice_forward_phone() %>" tabindex="21" >
            </div>
            <div class="form-group mt-3">
            <label for="stripe_key" class="mr-2">Stripe Key:</label>
-           <input type="text" class="form-control" id="stripe_key" name="stripe_key" value="<%= user.getStripe_key() %>" tabindex="20" >
+           <input type="text" class="form-control" id="stripe_key" name="stripe_key" value="<%= user.getStripe_key() %>" tabindex="22" >
            </div>
            <div class="form-group mt-3">
-             <button type="submit" class="btn btn-primary" tabindex="21">Submit</button>
+           <label for="stripe_key_pub" class="mr-2">Stripe Key Pub:</label>
+           <input type="text" class="form-control" id="stripe_key_pub" name="stripe_key_pub" value="<%= user.getStripe_key_pub() %>" tabindex="23" >
+           </div>
+           <div class="form-group mt-3">
+             <button type="submit" class="btn btn-primary" tabindex="24">Submit</button>
            </div>
            </form>
 
