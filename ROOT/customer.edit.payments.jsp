@@ -297,6 +297,9 @@
                        pTotal = pTotal.add(pItem.getPaymentAmount());
                %>
                    Payment ID: <%= pItem.getPaymentId() %><br>
+                    <% if(usernameOBJ.getStripe_key() != null && !usernameOBJ.getStripe_key().equals("")){%>
+                       
+                    <% } %>
                    Payment Amount: <%= pItem.getPaymentAmount() %><br>
                    Posted Balance: <%= pItem.getPostTotal() %><br>
                    -- <a href="customer.edit.payments.jsp?remove=yes&customerId=<%=eId%>&pid=<%= pItem.getPaymentId() %>" >remove<a><br>
