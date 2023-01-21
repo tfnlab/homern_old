@@ -97,10 +97,9 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="user.menu.jsp">Home</a></li>
           <li>Technicians</li>
         </ol>
-        <h2>Technicians</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
