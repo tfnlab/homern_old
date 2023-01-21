@@ -184,9 +184,9 @@
             <HR>
             Customers: <a href="product.list.jsp"><%=eDao.getEntityCountByUsername(username)%></a>
             <HR>
-            Products:  <%=pDao.getCountByUsername(username)%>
+            Products:   <a href="product.list.jsp"><%=pDao.getCountByUsername(username)%></a>
             <HR>
-            Technicians: <%=tDao.getTechnicianCountByUsername(username)%>
+            Technicians:  <a href="technician.list.jsp"><%=tDao.getTechnicianCountByUsername(username)%></a>
             <HR>
             Events: <a href="event.list.jsp"><%=eventDao.getEventCountByUsername(username)%></a>
             <HR>
