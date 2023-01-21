@@ -298,7 +298,7 @@
                %>
                    Payment ID: <%= pItem.getPaymentId() %><br>
                     <% if(usernameOBJ.getStripe_key() != null && !usernameOBJ.getStripe_key().equals("")){%>
-                       
+
                     <% } %>
                    Payment Amount: <%= pItem.getPaymentAmount() %><br>
                    Posted Balance: <%= pItem.getPostTotal() %><br>

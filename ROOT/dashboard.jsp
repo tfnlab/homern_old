@@ -182,7 +182,7 @@
             </table>
 
             <HR>
-            Customers: <a href="product.list.jsp"><%=eDao.getEntityCountByUsername(username)%></a>
+            Customers: <a href="customer.list.jsp"><%=eDao.getEntityCountByUsername(username)%></a>
             <HR>
             Products:   <a href="product.list.jsp"><%=pDao.getCountByUsername(username)%></a>
             <HR>
