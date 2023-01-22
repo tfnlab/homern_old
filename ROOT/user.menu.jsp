@@ -79,7 +79,12 @@
 </head>
 
 <body>
-
+<%
+String usernameCheck = (String) session.getAttribute("username");
+if (usernameCheck == null || usernameCheck.isEmpty()) {
+response.sendRedirect("index.html");
+}
+%>
 
   <%@ include file="include.header.jsp" %>
 
