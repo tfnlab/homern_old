@@ -203,12 +203,20 @@
                 try{
                     Map<Product, Double> groupedProducts = plDao.getGroupedProductsByInvoiceId(username);
                     %>
+                                <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Product</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
      <% for (Map.Entry<Product, Double> entry : groupedProducts.entrySet()) { %>
     <tr>
         <td><%= entry.getKey().getName() %></td>
         <td><%= entry.getValue() %></td>
     </tr>
     <% } %>
+                </table>
                     <%
                 }catch(Exception ex){
                     %><%=ex.getMessage()%><%
