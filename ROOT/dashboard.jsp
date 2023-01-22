@@ -10,12 +10,8 @@
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.math.BigDecimal" %>
+<%@ include file="auth.jsp" %>
 <%
-String usernameCheck = (String) session.getAttribute("username");
-if (usernameCheck == null || usernameCheck.isEmpty() || usernameCheck.length() < 2 ) {
-     RequestDispatcher dispatcher = request.getRequestDispatcher("index.html");
-     dispatcher.forward(request, response);
-}
           User user = (User)session.getAttribute("usernameOBJ");
           if(user == null){
                 response.sendRedirect("index.html");
