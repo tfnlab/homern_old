@@ -75,15 +75,6 @@
       document.execCommand('copy');
       document.body.removeChild(el);
     }
-    window.onload = function() {
-          var username = document.getElementById("username").value;
-          var login = document.getElementById("password").value;
-          if (username != "" && login != "") {
-            alert("Username and login are populated.");
-          } else {
-            alert("Username and/or login are not populated.");
-          }
-    };
 
   </script>
 </head>
@@ -253,6 +244,16 @@
             // check the "Remember me" checkbox
             document.getElementById('remember-me').checked = true;
           }
+
+    window.onload = function() {
+          var username = document.getElementById("username").value;
+          var login = document.getElementById("password").value;
+          if (username != "" && login != "") {
+            alert("Username and login are populated.");
+          } else {
+            alert("Username and/or login are not populated.");
+          }
+    };
         </script>
 
                  <%}%>
