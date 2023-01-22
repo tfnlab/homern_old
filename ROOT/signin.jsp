@@ -81,7 +81,7 @@
           if (username != "" && login != "") {
             alert("Username and login are populated.");
           } else {
-            console.log("Username and/or login are not populated.");
+            alert("Username and/or login are not populated.");
           }
     };
 
