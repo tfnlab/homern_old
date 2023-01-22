@@ -180,7 +180,7 @@
 
   </main><!-- End #main -->
   <script>
-    var stripe = Stripe('<%=usernameOBJ.getStripe_key_pug()%>');
+    var stripe = Stripe('<%=usernameOBJ.getStripe_key_pub()%>');
     // Create an instance of Elements.
     var elements = stripe.elements();
 
