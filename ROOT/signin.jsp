@@ -75,6 +75,16 @@
       document.execCommand('copy');
       document.body.removeChild(el);
     }
+    window.onload = function() {
+  var username = document.getElementById("username").value;
+  var login = document.getElementById("login").value;
+  if (username != "" && login != "") {
+    alert("Username and login are populated.");
+  } else {
+    console.log("Username and/or login are not populated.");
+  }
+};
+
   </script>
 </head>
 
