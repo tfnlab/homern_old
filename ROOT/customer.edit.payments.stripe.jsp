@@ -173,7 +173,7 @@
             <HR>
             <button type="submit" class="btn btn-success">Submit Payment</button>
           </form>
-          <HR>ß
+          <HR>
       </div>
 
     </section><!-- End Blog Section -->
