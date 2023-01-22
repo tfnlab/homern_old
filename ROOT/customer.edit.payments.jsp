@@ -268,7 +268,7 @@
             <input type="date" class="form-control" id="expectedPostDate" name="expectedPostDate" placeholder="Enter expected post date" value="<%=defaultDateFormat.format(new Date())%>" >
           </div>
           <div class="form-group">
-            <label for="effectiveDate">Effective Date <%=defaultDateFormat.format(new Date(currentTimeMillis))%></label>
+            <label for="effectiveDate">Effective Date <%=defaultDateFormat.format(new Date())%></label>
             <input type="date" class="form-control" id="effectiveDate" name="effectiveDate" placeholder="Enter effective date" value="<%=defaultDateFormat.format(new Date())%>" >
           </div>
           <div class="form-group">
