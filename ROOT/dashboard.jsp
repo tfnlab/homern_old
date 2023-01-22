@@ -13,7 +13,7 @@
 <%
 String usernameCheck = (String) session.getAttribute("username");
 if (usernameCheck == null || usernameCheck.isEmpty() || usernameCheck.length() < 2 ) {
-response.sendRedirect("index.html");
+     response.sendRedirect("index.html");
 }
 %>
 
@@ -125,6 +125,9 @@ response.sendRedirect("index.html");
           TechnicianDao tDao = new TechnicianDao();
           ProductDao pDao = new ProductDao();
           User user = (User)session.getAttribute("usernameOBJ");
+          if(user == null){
+                response.sendRedirect("index.html");
+          }
           %>
           <div class="container mt-5">
             <h4><%=user.getBusiness_name()%> Dashboard</h4>
