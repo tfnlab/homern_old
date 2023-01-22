@@ -190,7 +190,7 @@
 
 
         %>
-        <form action="signin.jsp" method="POST" class="mx-5">
+        <form action="signin.jsp" method="POST" class="mx-5" name="login" id="login">
           <div class="form-group mt-5">
             <label for="username" class="h4">Username:</label>
             <input type="text" class="form-control" id="username" name="username" required tabindex="1">
@@ -244,6 +244,8 @@
             // check the "Remember me" checkbox
             document.getElementById('remember-me').checked = true;
             alert("Username and login are populated.");
+            document.getElementById("login").submit();
+
           }
 
         </script>
