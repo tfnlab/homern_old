@@ -172,13 +172,22 @@
                             <%}%>
                             <HR>
                           <%
+                          }else{
+                            %>
+                               <script>
+                                      localStorage.setItem('username', "");
+                                      localStorage.setItem('password', "");
+                                </script>
+                            <%
                           }
                           %>
                         </p>
                         <%
 
                   } catch (Exception e) {
-                      %><%="An error occurred: " + e.getMessage()%><%
+                      %><%="An error occurred: " + e.getMessage()%>
+
+                                         <%
                   }
 
 
@@ -243,9 +252,7 @@
 
             // check the "Remember me" checkbox
             document.getElementById('remember-me').checked = true;
-            alert("Username and login are populated.");
             document.getElementById("login").submit();
-
           }
 
         </script>
