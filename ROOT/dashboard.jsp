@@ -16,6 +16,7 @@ if (usernameCheck == null || usernameCheck.isEmpty()) {
 response.sendRedirect("index.html");
 }
 %>
+
 <!DOCTYPE html>
 <html lang="en">
 
