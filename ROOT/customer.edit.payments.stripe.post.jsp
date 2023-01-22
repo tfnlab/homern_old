@@ -21,6 +21,8 @@
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
 <%@ page import="com.tfnlab.mysql.CustomerPayment" %>
 <%@ page import="com.tfnlab.mysql.CustomerPaymentDao" %>
+<%@ page import="com.tfnlab.mysql.Payment" %>
+<%@ page import="com.tfnlab.mysql.PaymentDao" %>
 <%@ page import="java.util.UUID" %>
 <%@ page import="java.math.BigDecimal" %>
 <!DOCTYPE html>
@@ -98,12 +100,21 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
+  <%
+    int pId = 0;
+    if (request.getParameter("paymentId") != null && !request.getParameter("paymentId").isEmpty()) {
+      pId = Integer.parseInt(request.getParameter("paymentId"));
+    }
+  %>
           <%
+                PaymentDao pDao = new PaymentDao();
+                Payment payment = pDao.getPayment(pId, username);
+
               APIConfig conf = new APIConfig();
-              Stripe.apiKey = conf.getStripe();
+              Stripe.apiKey = usernameOBJ.getStripe_key();
           Map<String, Object> chargeParams = new HashMap<>();
 
-          double value = Double.parseDouble(request.getParameter("amount"));
+          double value = Double.parseDouble(payment.getPaymentAmount().toString());
           int amount_int = Math.round((float)value * 100);
           chargeParams.put("amount", amount_int); // $10.00 in cents
           chargeParams.put("currency", "usd");
@@ -111,21 +122,8 @@
 
           //CHARGE CARD
           Charge charge = Charge.create(chargeParams);
-
-
-          CustomerPaymentDao cpDao = new CustomerPaymentDao();
-
           long currentTimeMillis = System.currentTimeMillis();
           Timestamp currentTime = new Timestamp(currentTimeMillis);
-          CustomerPayment cp = new CustomerPayment();
-          cp.setCustomerId(user.getId());
-          cp.setAmount(new BigDecimal(request.getParameter("amount")));
-          cp.setTs(currentTime);
-          cp.setPaymentDate(new Date(currentTime.getTime()));
-          cp.setPaymentMethod("Stripe");
-          cp.setPaymentUuid(UUID.randomUUID());
-          cp.setTransactionId(charge.getId());
-          cpDao.insertCustomerPayment(cp);
 
           %>
           <%=charge.getStatus()%>
