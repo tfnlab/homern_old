@@ -9,6 +9,12 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.List" %>
+<%
+String usernameCheck = (String) session.getAttribute("username");
+if (usernameCheck == null || usernameCheck.isEmpty()) {
+response.sendRedirect("index.html");
+}
+%>
 <!DOCTYPE html>
 <html lang="en">
 

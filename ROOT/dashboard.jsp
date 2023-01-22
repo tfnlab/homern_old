@@ -10,7 +10,12 @@
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.math.BigDecimal" %>
-
+<%
+String usernameCheck = (String) session.getAttribute("username");
+if (usernameCheck == null || usernameCheck.isEmpty()) {
+response.sendRedirect("index.html");
+}
+%>
 <!DOCTYPE html>
 <html lang="en">
 
