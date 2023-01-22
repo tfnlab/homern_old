@@ -171,35 +171,6 @@
               <div id="card-errors" role="alert"></div>
             </div>
             <HR>
-              <div class="amount-container">
-                  <h3 class="amount-title">Amount</h3>
-                  <div class="amount-details">
-                      <div class="total">
-                          <span class="label">Total:</span>
-                          <span class="value"><%=dTotal%></span>
-                      </div>
-                      <div class="paid">
-                          <span class="label">Paid:</span>
-                          <span class="value"><%=pTotal%></span>
-                      </div>
-                      <div class="due">
-                          <span class="label">Due:</span>
-                          <span class="value"><%=dTotal.subtract(pTotal)%></span>
-                      </div>
-                  </div>
-              </div>
-            <HR>
-              <div class="form-group">
-                <label for="amount">Payment Amount</label>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">$</span>
-                  </div>
-                  <input type="text" class="form-control" id="amount" name="amount" placeholder="0.00" value="<%=dTotal.subtract(pTotal)%>">
-                </div>
-              </div>
-              <HR>
-            <HR>
             <button type="submit" class="btn btn-success">Submit Payment</button>
           </form>
           <HR>
