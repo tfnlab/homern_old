@@ -10,12 +10,6 @@
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.List" %>
 <%@ include file="auth.jsp" %>
-<%
-String usernameCheck = (String) session.getAttribute("username");
-if (usernameCheck == null || usernameCheck.isEmpty()) {
-response.sendRedirect("index.html");
-}
-%>
 <!DOCTYPE html>
 <html lang="en">
 
