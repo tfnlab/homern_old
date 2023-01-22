@@ -298,7 +298,7 @@
                %>
                    Payment ID: <%= pItem.getPaymentId() %><br>
                     <% if(usernameOBJ.getStripe_key() != null && !usernameOBJ.getStripe_key().equals("")){%>
-                            <a href="customer.edit.payments.stripe.jsp" >Pay With Stripe</a><BR>
+                            <a href="customer.edit.payments.stripe.jsp?paymentId=<%= pItem.getPaymentId() %>" >Pay With Stripe</a><BR>
                     <% } %>
                    Payment Amount: <%= pItem.getPaymentAmount() %><br>
                    Posted Balance: <%= pItem.getPostTotal() %><br>
