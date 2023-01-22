@@ -243,13 +243,9 @@
 
             // check the "Remember me" checkbox
             document.getElementById('remember-me').checked = true;
+            alert("Username and login are populated.");
           }
 
-          if (storedUsername != "" && storedPassword != "") {
-            alert("Username and login are populated.");
-          } else {
-            alert("Username and/or login are not populated." + );
-          }
         </script>
 
                  <%}%>
