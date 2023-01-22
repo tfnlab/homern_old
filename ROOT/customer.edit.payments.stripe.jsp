@@ -159,7 +159,6 @@
         <h2>Customer</h2>
         <%@ include file="user.menu.nav.jsp" %>
     <HR>
-    <HR>
           <form id="payment-form" action="customer.edit.payments.stripe.jsp?paymentId=<%=request.getParameter("paymentId")%>" >
             <div class="form-row">
               <label for="card-element">
