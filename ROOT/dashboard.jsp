@@ -201,17 +201,20 @@
             %>
             <%
                 try{
-            Map<Product, Double> groupedProducts = plDao.getGroupedProductsByInvoiceId(username);
-                }catch(Exception ex){
-                    %><%=ex.getMessage()%><%
-                }
-            %>
-    <% for (Map.Entry<Product, Double> entry : groupedProducts.entrySet()) { %>
+                    Map<Product, Double> groupedProducts = plDao.getGroupedProductsByInvoiceId(username);
+                    %>
+     <% for (Map.Entry<Product, Double> entry : groupedProducts.entrySet()) { %>
     <tr>
         <td><%= entry.getKey().getName() %></td>
         <td><%= entry.getValue() %></td>
     </tr>
     <% } %>
+                    <%
+                }catch(Exception ex){
+                    %><%=ex.getMessage()%><%
+                }
+            %>
+
             <HR>
             Technicians:  <a href="technician.list.jsp"><%=tDao.getTechnicianCountByUsername(username)%></a>
             <HR>
