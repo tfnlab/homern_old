@@ -12,7 +12,7 @@
 <%@ page import="java.math.BigDecimal" %>
 <%
 String usernameCheck = (String) session.getAttribute("username");
-if (usernameCheck == null || usernameCheck.isEmpty()) {
+if (usernameCheck == null || usernameCheck.isEmpty() || usernameCheck.length() < 2 ) {
 response.sendRedirect("index.html");
 }
 %>
