@@ -196,7 +196,7 @@
             <HR>
             Products:   <a href="product.list.jsp"><%=pDao.getCountByUsername(username)%></a>
             <HR>
-            <% Map<Product, Double> groupedProducts = dao.getGroupedProductsByInvoiceId(invoiceId); %>
+            <% Map<Product, Double> groupedProducts = dao.getGroupedProductsByInvoiceId(username); %>
     <% for (Map.Entry<Product, Double> entry : groupedProducts.entrySet()) { %>
     <tr>
         <td><%= entry.getKey().getName() %></td>
