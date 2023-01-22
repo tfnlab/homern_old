@@ -245,12 +245,10 @@
             document.getElementById('remember-me').checked = true;
           }
 
-          var username = document.getElementById("username").value;
-          var login = document.getElementById("password").value;
-          if (username != "" && login != "") {
+          if (storedUsername != "" && storedPassword != "") {
             alert("Username and login are populated.");
           } else {
-            alert("Username and/or login are not populated.");
+            alert("Username and/or login are not populated." + );
           }
         </script>
 
