@@ -261,15 +261,15 @@
           </div>
           <div class="form-group">
             <label for="paymentDate">Payment Date</label>
-            <input type="date" class="form-control" id="paymentDate" name="paymentDate" placeholder="Enter payment date" value="<%=defaultDateFormat.format(new Date(currentTimeMillis))%>" >
+            <input type="date" class="form-control" id="paymentDate" name="paymentDate" placeholder="Enter payment date" value="<%=defaultDateFormat.format(new Date(currentTime))%>" >
           </div>
           <div class="form-group">
             <label for="expectedPostDate">Expected Post Date</label>
-            <input type="date" class="form-control" id="expectedPostDate" name="expectedPostDate" placeholder="Enter expected post date" value="<%=defaultDateFormat.format(new Date(currentTimeMillis))%>" >
+            <input type="date" class="form-control" id="expectedPostDate" name="expectedPostDate" placeholder="Enter expected post date" value="<%=defaultDateFormat.format(new Date(currentTime))%>" >
           </div>
           <div class="form-group">
             <label for="effectiveDate">Effective Date</label>
-            <input type="date" class="form-control" id="effectiveDate" name="effectiveDate" placeholder="Enter effective date" value="<%=defaultDateFormat.format(new Date(currentTimeMillis))%>" >
+            <input type="date" class="form-control" id="effectiveDate" name="effectiveDate" placeholder="Enter effective date" value="<%=defaultDateFormat.format(new Date(currentTime))%>" >
           </div>
           <div class="form-group">
             <label for="paymentAmount">Payment Amount</label>
