@@ -173,11 +173,7 @@
             <HR>
             <button type="submit" class="btn btn-success">Submit Payment</button>
           </form>
-          <HR>
-          <%=user.getTs()%>
-          <HR>
-          Member for <a href="user.edit.pay.jsp" ><%=diffDays%></a> Days
-          <HR>
+          <HR>ß
       </div>
 
     </section><!-- End Blog Section -->
