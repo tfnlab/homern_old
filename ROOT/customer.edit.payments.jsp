@@ -269,7 +269,7 @@
           </div>
           <div class="form-group">
             <label for="effectiveDate">Effective Date</label>
-            <input type="date" class="form-control" id="effectiveDate" name="effectiveDate" placeholder="Enter effective date" value="HELLO" >
+            <input type="text" class="form-control" id="effectiveDate" name="effectiveDate" placeholder="Enter effective date" value="HELLO" >
           </div>
           <div class="form-group">
             <label for="paymentAmount">Payment Amount</label>
