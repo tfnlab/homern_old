@@ -15,6 +15,16 @@ String usernameCheck = (String) session.getAttribute("username");
 if (usernameCheck == null || usernameCheck.isEmpty() || usernameCheck.length() < 2 ) {
      response.sendRedirect("index.html");
 }
+          String username = (String) session.getAttribute("username");
+          OrderDao oDao = new OrderDao();
+          EntityDao eDao = new EntityDao();
+          EventDao eventDao = new EventDao();
+          TechnicianDao tDao = new TechnicianDao();
+          ProductDao pDao = new ProductDao();
+          User user = (User)session.getAttribute("usernameOBJ");
+          if(user == null){
+                response.sendRedirect("index.html");
+          }
 %>
 
 <!DOCTYPE html>
@@ -117,18 +127,7 @@ if (usernameCheck == null || usernameCheck.isEmpty() || usernameCheck.length() <
         <h2>Dashboard</h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
-          <%
-          String username = (String) session.getAttribute("username");
-          OrderDao oDao = new OrderDao();
-          EntityDao eDao = new EntityDao();
-          EventDao eventDao = new EventDao();
-          TechnicianDao tDao = new TechnicianDao();
-          ProductDao pDao = new ProductDao();
-          User user = (User)session.getAttribute("usernameOBJ");
-          if(user == null){
-                response.sendRedirect("index.html");
-          }
-          %>
+
           <div class="container mt-5">
             <h4><%=user.getBusiness_name()%> Dashboard</h4>
             <HR>
