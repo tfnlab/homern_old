@@ -14,16 +14,17 @@ String usernameCheck = (String) session.getAttribute("username");
 if (usernameCheck == null || usernameCheck.isEmpty() || usernameCheck.length() < 2 ) {
      response.sendRedirect("index.html");
 }
+          User user = (User)session.getAttribute("usernameOBJ");
+          if(user == null){
+                response.sendRedirect("index.html");
+          }
           String username = (String) session.getAttribute("username");
           OrderDao oDao = new OrderDao();
           EntityDao eDao = new EntityDao();
           EventDao eventDao = new EventDao();
           TechnicianDao tDao = new TechnicianDao();
           ProductDao pDao = new ProductDao();
-          User user = (User)session.getAttribute("usernameOBJ");
-          if(user == null){
-                response.sendRedirect("index.html");
-          }
+
 %>
 
 <!DOCTYPE html>
