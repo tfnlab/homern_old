@@ -268,7 +268,7 @@
             <input type="date" class="form-control" id="expectedPostDate" name="expectedPostDate" placeholder="Enter expected post date" value="<%=defaultDateFormat.format(new Date(currentTimeMillis))%>" >
           </div>
           <div class="form-group">
-            <label for="effectiveDate">Effective Date</label>
+            <label for="effectiveDate">Effective Date <%=defaultDateFormat.format(new Date(currentTimeMillis))%></label>
             <input type="date" class="form-control" id="effectiveDate" name="effectiveDate" placeholder="Enter effective date" value="<%=defaultDateFormat.format(new Date(currentTimeMillis))%>" >
           </div>
           <div class="form-group">
@@ -395,30 +395,6 @@
       </div>
     </div>
   </footer><!-- End Footer -->
-<script>
-  // Get the input element
-  var dateField = document.getElementById("paymentDate");
-
-  // Create a date object with the desired date
-  var date = new Date("<%=defaultDateFormat.format(new Date(currentTimeMillis))%>");
-
-  // Set the value of the input element to the formatted date string
-  dateField.value = formatDate(date);
-
-  function formatDate(date) {
-    var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
-
-    if (month.length < 2)
-        month = '0' + month;
-    if (day.length < 2)
-        day = '0' + day;
-
-    return [year, month, day].join('-');
-  }
-</script>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
