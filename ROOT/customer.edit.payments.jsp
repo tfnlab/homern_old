@@ -162,7 +162,7 @@
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
                 String paymentAmountStr = request.getParameter("paymentAmount");
-                SimpleDateFormat defaultDateFormat = new SimpleDateFormat("yyyy-mm-dd");
+                SimpleDateFormat defaultDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
                 Entity entity = new Entity();
                 EntityDao ed = new EntityDao();
