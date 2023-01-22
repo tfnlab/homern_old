@@ -10,6 +10,10 @@
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.math.BigDecimal" %>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.HashMap"%>
+<%@ page import="com.tfnlab.mysql.Product" %>
+<%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 <%@ include file="auth.jsp" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
@@ -191,6 +195,14 @@
             Customers: <a href="customer.list.jsp"><%=eDao.getEntityCountByUsername(username)%></a>
             <HR>
             Products:   <a href="product.list.jsp"><%=pDao.getCountByUsername(username)%></a>
+            <HR>
+            <% Map<Product, Double> groupedProducts = dao.getGroupedProductsByInvoiceId(invoiceId); %>
+    <% for (Map.Entry<Product, Double> entry : groupedProducts.entrySet()) { %>
+    <tr>
+        <td><%= entry.getKey().getName() %></td>
+        <td><%= entry.getValue() %></td>
+    </tr>
+    <% } %>
             <HR>
             Technicians:  <a href="technician.list.jsp"><%=tDao.getTechnicianCountByUsername(username)%></a>
             <HR>
