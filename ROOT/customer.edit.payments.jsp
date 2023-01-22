@@ -162,6 +162,7 @@
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
                 String paymentAmountStr = request.getParameter("paymentAmount");
+                SimpleDateFormat defaultDateFormat = new SimpleDateFormat("MM/dd/yyyy");
 
                 Entity entity = new Entity();
                 EntityDao ed = new EntityDao();
@@ -260,7 +261,7 @@
           </div>
           <div class="form-group">
             <label for="paymentDate">Payment Date</label>
-            <input type="date" class="form-control" id="paymentDate" name="paymentDate" placeholder="Enter payment date">
+            <input type="date" class="form-control" id="paymentDate" name="paymentDate" placeholder="Enter payment date" value="defaultDateFormat.format(currentTimeMillis)" >
           </div>
           <div class="form-group">
             <label for="expectedPostDate">Expected Post Date</label>
