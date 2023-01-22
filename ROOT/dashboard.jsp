@@ -199,7 +199,13 @@
             <%
                 ProductLineItemDao plDao = new ProductLineItemDao();
             %>
-            <% Map<Product, Double> groupedProducts = plDao.getGroupedProductsByInvoiceId(username); %>
+            <%
+                try{
+            Map<Product, Double> groupedProducts = plDao.getGroupedProductsByInvoiceId(username);
+                }catch(Exception ex){
+                    %><%=ex.getMessage()%><%
+                }
+            %>
     <% for (Map.Entry<Product, Double> entry : groupedProducts.entrySet()) { %>
     <tr>
         <td><%= entry.getKey().getName() %></td>
