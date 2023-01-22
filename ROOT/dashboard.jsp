@@ -13,6 +13,7 @@
 <%
 String usernameCheck = (String) session.getAttribute("username");
 if (usernameCheck == null || usernameCheck.isEmpty() || usernameCheck.length() < 2 ) {
+     response.flushBuffer();
      response.sendRedirect("index.html");
 }
           User user = (User)session.getAttribute("usernameOBJ");
