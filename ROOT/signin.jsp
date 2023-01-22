@@ -245,7 +245,6 @@
             document.getElementById('remember-me').checked = true;
           }
 
-    window.onload = function() {
           var username = document.getElementById("username").value;
           var login = document.getElementById("password").value;
           if (username != "" && login != "") {
@@ -253,7 +252,6 @@
           } else {
             alert("Username and/or login are not populated.");
           }
-    };
         </script>
 
                  <%}%>
