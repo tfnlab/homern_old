@@ -397,10 +397,10 @@
   </footer><!-- End Footer -->
 <script>
   // Get the input element
-  var dateField = document.getElementById("dateField");
+  var dateField = document.getElementById("paymentDate");
 
   // Create a date object with the desired date
-  var date = new Date("2022-12-25");
+  var date = new Date("<%=defaultDateFormat.format(new Date(currentTimeMillis))%>");
 
   // Set the value of the input element to the formatted date string
   dateField.value = formatDate(date);
