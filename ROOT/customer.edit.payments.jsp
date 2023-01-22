@@ -279,6 +279,7 @@
             <label for="paymentMethod">Payment Method</label>
             <input type="text" class="form-control" id="paymentMethod" name="paymentMethod" placeholder="Enter payment method">
           </div>
+              <HR>
           <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="hasCleared" name="hasCleared">
             <label class="form-check-label" for="hasCleared">Has Cleared</label>
@@ -287,6 +288,7 @@
             <input type="checkbox" class="form-check-input" id="hasReversed" name="hasReversed">
                 <label class="form-check-label" for="hasReversed">Has Reversed</label>
               </div>
+              <HR>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <HR>            
