@@ -14,6 +14,7 @@
 <%@page import="java.util.HashMap"%>
 <%@ page import="com.tfnlab.mysql.Product" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
+<%@ page import="com.tfnlab.mysql.ProductDashBoard" %>
 <%@ include file="auth.jsp" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
@@ -201,19 +202,21 @@
             %>
             <%
                 try{
-                    Map<Product, Double> groupedProducts = plDao.getGroupedProductsByInvoiceId(username);
+                    Map<Product, ProductDashBoard> groupedProducts = plDao.getGroupedProductsByInvoiceId(username);
                     %>
                                 <table class="table">
               <thead>
                 <tr>
                   <th scope="col">Product</th>
+                  <th scope="col">Quantity</th>
                   <th scope="col">Total</th>
                 </tr>
               </thead>
-     <% for (Map.Entry<Product, Double> entry : groupedProducts.entrySet()) { %>
+     <% for (Map.Entry<Product, ProductDashBoard> entry : groupedProducts.entrySet()) { %>
     <tr>
         <td><%= entry.getKey().getName() %></td>
-        <td><%= entry.getValue() %></td>
+        <td><%= entry.getValue().getQuantity() %></td>
+        <td><%= entry.getValue().getTotal_amount() %></td>
     </tr>
     <% } %>
                 </table>
