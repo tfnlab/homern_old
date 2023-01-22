@@ -10,6 +10,7 @@
 <%@ page import="com.tfnlab.mysql.Entity" %>
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
 <%@ page import="java.util.List" %>
+<%@ include file="auth.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 

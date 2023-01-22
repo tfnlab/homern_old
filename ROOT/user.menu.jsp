@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
+<%@ include file="auth.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,12 +80,6 @@
 </head>
 
 <body>
-<%
-String usernameCheck = (String) session.getAttribute("username");
-if (usernameCheck == null || usernameCheck.isEmpty()) {
-    response.sendRedirect("index.html");
-}
-%>
 
   <%@ include file="include.header.jsp" %>
 

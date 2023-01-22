@@ -3,6 +3,7 @@
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="java.net.URLDecoder" %>
+<%@ include file="auth.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 

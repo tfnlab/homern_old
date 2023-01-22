@@ -9,6 +9,7 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.List" %>
+<%@ include file="auth.jsp" %>
 <%
 String usernameCheck = (String) session.getAttribute("username");
 if (usernameCheck == null || usernameCheck.isEmpty()) {
