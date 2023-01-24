@@ -344,7 +344,7 @@
               </div>
               <HR>
               <div class="form-group">
-                <button type="submit"  class="btn btn-primary">Save Payment</button>
+                <button type="submit"  class="btn btn-primary">Post Payment To Invoice</button>
               </div>
             </form>
             <HR>
