@@ -299,6 +299,7 @@
                 %>
                 <HR>
                 <div class="form-group">
+                    <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" />
                   Order:
                     <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                 </div>
