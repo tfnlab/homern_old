@@ -65,4 +65,7 @@
         }
   %>
 </select>
+        <%if(!(pList.size()>0)){%>
+            <a href="customer.edit.payments.jsp?customerId="<%=oc.getCustomerId()%>" >Add Payment</a>
+        <%}%>
 </div>
