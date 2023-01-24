@@ -158,7 +158,7 @@
       <div class="container px-4 px-lg-5">
         <h2>Customer</h2>
         <%@ include file="user.menu.nav.jsp" %>
-
+                <%=request.getParameter("paymentAmount")%>
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
@@ -176,7 +176,7 @@
                   }
                   pDao.deletePayment(pid,username);
                 }
-                if (paymentAmountStr != null && paymentAmountStr.trim().length() > 0) {
+                if (paymentAmountStr != null && paymentAmountStr.trim().length() > 0 && false) {
                       %>
                       <%
                         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
