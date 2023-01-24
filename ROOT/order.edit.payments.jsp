@@ -297,6 +297,7 @@
                   }
                 }
                 %>
+                <HR>
                 <div class="form-group">
                   Order:
                     <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
@@ -341,6 +342,7 @@
                 <label for="paymentAmount">Payment Amount</label>
                 <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" placeholder="Enter payment amount">
               </div>
+              <HR>
               <div class="form-group">
                 <button type="submit"  class="btn btn-primary">Save Payment</button>
               </div>
