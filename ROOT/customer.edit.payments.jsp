@@ -176,7 +176,7 @@
                   }
                   pDao.deletePayment(pid,username);
                 }
-                if (paymentAmountStr != null && paymentAmountStr.trim().length() > 0 && false) {
+                if (paymentAmountStr != null && paymentAmountStr.trim().length() > 0) {
                       %>
                       <%
                         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -184,7 +184,7 @@
                         Date paymentDate = dateFormat.parse("1980-24-10");
                         Date expectedPostDate = dateFormat.parse("1980-24-10");
                         Date effectiveDate = dateFormat.parse("1980-24-10");
-                        BigDecimal paymentAmount = BigDecimal.valueOf(Double.parseDouble(request.getParameter("paymentAmount")));
+                        BigDecimal paymentAmount = BigDecimal.valueOf(request.getParameter("paymentAmount"));
                         BigDecimal totalAmount = BigDecimal.valueOf(Double.parseDouble("0"));
                         String paymentMethod = request.getParameter("paymentMethod");
                         Boolean hasCleared = Boolean.parseBoolean(request.getParameter("hasCleared"));
