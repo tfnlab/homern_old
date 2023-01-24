@@ -241,8 +241,7 @@
         %>
         <form action="customer.edit.payments.jsp" method="post">
           <div class="form-group">
-            <label for="id">ID</label>
-            <input type="text" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly disable >
+            <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a>
           </div>
           <div class="form-group">
             <label for="firstName">First Name</label>
