@@ -244,7 +244,8 @@
           <div class="form-group">
             <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %> - <%= entity.getFirstName() %> <%= entity.getLastName() %></a>
           </div>
-          <hr>
+            <input type="hidden" id="customerId" name="customerId" value="<%= entity.getId() %>" />
+                      <hr>
           <%= entity.getEmail() %>
           <HR>
           <div class="form-group">
