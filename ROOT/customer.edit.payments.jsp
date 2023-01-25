@@ -158,7 +158,7 @@
       <div class="container px-4 px-lg-5">
         <h2>Customer</h2>
         <%@ include file="user.menu.nav.jsp" %>
-                
+
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);

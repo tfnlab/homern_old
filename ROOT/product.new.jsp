@@ -228,6 +228,12 @@
                   dao.insertProduct(product);
                 %>
                 <p>Product successfully added to the database.</p>
+                <HR>
+                  <a href="product.new.jsp" tabindex="2"><i class="fas fa-plus"></i> Product</a>
+                <HR>
+                <HR>
+                  <a href="product.list.jsp" tabindex="2"><i class="fas fa-list"></i> List Products</a>
+                <HR>
                 <%
 
                 }else{
