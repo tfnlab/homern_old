@@ -137,6 +137,7 @@
         <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
+        <%@ include file="user.menu.nav.jsp" %>
         <h2>Marketing</h2>
         <HR>
     <div id='calendar'></div>
