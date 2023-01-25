@@ -39,7 +39,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
@@ -99,6 +99,22 @@
       document.execCommand('copy');
       document.body.removeChild(el);
     }
+  </script>
+
+  <script>
+    $('#calendar').fullCalendar({
+        events: [
+            {
+                title: 'Event 1',
+                start: '2022-01-01'
+            },
+            {
+                title: 'Event 2',
+                start: '2022-01-05',
+                end: '2022-01-07'
+            }
+        ]
+    });
   </script>
 </head>
 
@@ -230,7 +246,6 @@
                 </form>
 
                 <HR>
-                <div id="calendar"></div>
 
               <hr>
               <% if(events !=null) {%>
@@ -280,22 +295,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  
-  <script>
-    $('#calendar').fullCalendar({
-        events: [
-            {
-                title: 'Event 1',
-                start: '2022-01-01'
-            },
-            {
-                title: 'Event 2',
-                start: '2022-01-05',
-                end: '2022-01-07'
-            }
-        ]
-    });
-  </script>
+
+                <div id="calendar"></div>
 </body>
 
 </html>
