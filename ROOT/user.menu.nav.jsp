@@ -35,7 +35,7 @@
     window.open("order.new.jsp", "_self");
   }
   function newProducts() {
-    window.open("products.list.jsp", "_self");
+    window.open("product.list.jsp", "_self");
   }
   document.addEventListener("keydown", function(event) {
     // Check if the "Ctrl" and "C" keys are pressed
