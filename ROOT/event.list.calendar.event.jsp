@@ -1,11 +1,4 @@
-<%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="com.tfnlab.mysql.Event"%>
-<%@page import="com.tfnlab.mysql.EventDao"%>
-<%@page import="java.sql.SQLException"%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page contentType="application/json"%>
-<%
+<%@page import="java.util.List, java.util.ArrayList, com.tfnlab.mysql.Event, com.tfnlab.mysql.EventDao, java.sql.SQLException, java.text.SimpleDateFormat"%><%
 List<Event> events = new ArrayList<Event>();
 EventDao dao = new EventDao();
 String username = (String) session.getAttribute("username");
@@ -15,5 +8,4 @@ try {
     e.printStackTrace();
 }
 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-%>
-[<%for (Event event : events) {%>{    "title": "<%=event.getTitle()%>",    "start": "<%=formatter.format(event.getStartTime())%>"    <%if (event.getEndTime() != null) {%>    ,    "end": "<%=formatter.format(event.getEndTime())%>"    <%}%>},<%}%>]
+%>[<%for (Event event : events) {%>{    "title": "<%=event.getTitle()%>",    "start": "<%=formatter.format(event.getStartTime())%>"    <%if (event.getEndTime() != null) {%>    ,    "end": "<%=formatter.format(event.getEndTime())%>"    <%}%>},<%}%>]
