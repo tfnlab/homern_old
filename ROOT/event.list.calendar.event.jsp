@@ -1,6 +1,6 @@
 <%@page import="java.util.List"%>
 <%@page import="com.tfnlab.mysql.Event"%>
-<%@page import="com.tfnlab.mysql.EventDAO"%>
+<%@page import="com.tfnlab.mysql.EventDao"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="application/json"%>
