@@ -124,6 +124,7 @@
         <HR>
           <a href="event.new.jsp"><i class="fas fa-plus"></i> Event</a>
         <HR>
+        <a href="event.list.calendar.jsp" >Calendar</a> |
         <a href="event.list.jsp?sortBy=eventDate">Latest</a> |
         <a href="event.list.jsp?sortBy=eventDateDESC">Oldest</a>
         <HR>
@@ -199,9 +200,6 @@
                     technicianId = "all";
                   }
                 %>
-                   <HR>
-                   <a href="event.list.calendar.jsp" >Calendar</a>
-                   <HR>
 
                 <form method="post" action="event.list.jsp">
                   <div class="form-group">
