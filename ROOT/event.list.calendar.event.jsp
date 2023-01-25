@@ -6,7 +6,7 @@
 <%@page contentType="application/json"%>
 <%
 List<Event> events = new ArrayList<Event>();
-EventDAO dao = new EventDAO();
+EventDao dao = new EventDao();
 String username = (String) session.getAttribute("username");
 try {
     events = dao.getEventsByUsername(username, 0);
