@@ -8,4 +8,13 @@ try {
     e.printStackTrace();
 }
 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-%>[<%for (Event event : events) {%>{    "title": "<%=event.getTitle()%>",    "start": "<%=formatter.format(event.getStartTime())%>"    <%if (event.getEndTime() != null) {%>    ,    "end": "<%=formatter.format(event.getEndTime())%>"    <%}%>},<%}%>]
+%>
+[
+<%
+for (int i = 0; i < events.size(); i++) {
+    Event event = events.get(i);
+%>
+    {    "title": "<%=event.getTitle()%>",    "start": "<%=formatter.format(event.getStartTime())%>"    <%if (event.getEndTime() != null) {%>    ,    "end": "<%=formatter.format(event.getEndTime())%>"    <%}%>}
+    <% if(i < events.size()-1){ %>,<% } %>
+<% } %>
+]
