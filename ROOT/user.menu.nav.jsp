@@ -34,6 +34,9 @@
   function newOrder() {
     window.open("order.new.jsp", "_self");
   }
+  function newProducts() {
+    window.open("products.list.jsp", "_self");
+  }
   document.addEventListener("keydown", function(event) {
     // Check if the "Ctrl" and "C" keys are pressed
     if (event.ctrlKey && event.keyCode == 67) {
@@ -43,6 +46,10 @@
     if (event.ctrlKey && event.keyCode == 79) {
       event.preventDefault();
       newOrder();
+    }
+    if (event.ctrlKey && event.keyCode == 80) {
+      event.preventDefault();
+      newProducts();
     }
   });
 </script>
