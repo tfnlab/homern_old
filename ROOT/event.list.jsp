@@ -199,7 +199,9 @@
                     technicianId = "all";
                   }
                 %>
-
+                   <HR>
+                   <a href="event.list.calendar.jsp" >Calendar</a>
+                   <HR>
 
                 <form method="post" action="event.list.jsp">
                   <div class="form-group">
