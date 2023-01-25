@@ -113,22 +113,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script>
-      $(document).ready(function() {
-        $('#calendar').fullCalendar({
-          events: [
-            {
-              title: 'Event 1',
-              start: '2023-01-01'
-            },
-            {
-              title: 'Event 2',
-              start: '2022-01-05',
-              end: '2023-01-07'
+    $(document).ready(function() {
+        $.ajax({
+            type: "GET",
+            url: "event.list.calendar.event.jsp",
+            dataType: "json",
+            success: function(events) {
+                $('#calendar').fullCalendar({
+                    events: events
+                });
             }
-          ]
         });
-      });
+    });
     </script>
+
   </head>
   <body>
 
