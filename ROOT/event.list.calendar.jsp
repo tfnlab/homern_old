@@ -149,7 +149,7 @@
                     dataType: "json",
                     success: function(events) {
                         $('#calendar').fullCalendar({
-                            events: events,
+                            addEventSource: events,
                             eventRender: function(event, element) {
                                 element.css('background-color', 'green');
                             }
