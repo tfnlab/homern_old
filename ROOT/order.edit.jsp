@@ -180,11 +180,9 @@ response.sendRedirect("index.html");
     }
     function calculateFee(){
         var amount = document.getElementById("orderTotal").value;
-        var amount_percentage - 2.9;
-        alert(calculateFinalAmount(document.getElementById("orderTotal").value, amount_percentage));
-    }
-    function calculateFinalAmount(originalAmount, feePercent) {
-      return originalAmount / (1 - (feePercent / 100));
+        var amount_percentage = 2.9;
+        var amount_new = Number(amount) + (amount * (amount_percentage / 100));
+        alert(amount_new);
     }
 
   </script>
