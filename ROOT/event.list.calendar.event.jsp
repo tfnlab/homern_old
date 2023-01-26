@@ -17,7 +17,7 @@ for (int i = 0; i < events.size(); i++) {
     String[] orderStates = {"Open", "Closed", "Cancelled", "On Hold", "Pending", "Shipped", "Delivered", "Refunded", "Returned", "Need Attention", "In Progress"};
     String[] orderColors = {"green", "red", "orange", "blue", "purple", "pink", "yellow", "brown", "gray", "black"};
     if(event.getEvent_status() !=null && event.getEvent_status().equals("closed")){
-            color = "green";
+            color = "red";
     }
        for (int k = 0; k < orderStates.length; k++) {
          if(orderStates[k].equals(event.getEvent_status())){
