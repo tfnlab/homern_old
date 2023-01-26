@@ -189,7 +189,7 @@ response.sendRedirect("index.html");
             document.getElementById("orderTotalAfterFee").value = finalAmount.toFixed(2);
         }else{
             var amount = document.getElementById("orderTotal").value;
-            document.getElementById("orderTotalAfterFee").value = amount.toFixed(2);
+            document.getElementById("orderTotalAfterFee").value = amount;
         }
     }
 
