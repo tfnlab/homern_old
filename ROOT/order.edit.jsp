@@ -181,7 +181,6 @@ response.sendRedirect("index.html");
     function calculateFee(){
         var select = document.getElementById("paymentMethod");
         var selectedValue = select.options[select.selectedIndex].value;
-        alert(selectedValue);
         if(selectedValue == "stripe"){
             var amount = document.getElementById("orderTotal").value;
             var amount_percentage = 3.2;
@@ -192,7 +191,7 @@ response.sendRedirect("index.html");
             document.getElementById("orderTotalAfterFee").value = amount;
         }
     }
-    
+
     window.onload = function() {
         calculateFee();
     };
