@@ -8,6 +8,7 @@
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.net.URLDecoder" %>
+<%@ page import="java.math.BigDecimal" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%
 String usernameCheck = (String) session.getAttribute("username");
