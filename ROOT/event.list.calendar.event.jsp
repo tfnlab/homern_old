@@ -13,8 +13,12 @@ SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 <%
 for (int i = 0; i < events.size(); i++) {
     Event event = events.get(i);
+    String color = "orange";
+    if(event.getEvent_status().equals("Open")){
+            color = "green";
+    }
 %>
-    {    "title": "<%=event.getTitle()%>",    "start": "<%=formatter.format(event.getStartTime())%>"    <%if (event.getEndTime() != null) {%>    ,    "end": "<%=formatter.format(event.getEndTime())%>"    <%}%>, "color": "green"}
+    {    "title": "<%=event.getTitle()%>",    "start": "<%=formatter.format(event.getStartTime())%>"    <%if (event.getEndTime() != null) {%>    ,    "end": "<%=formatter.format(event.getEndTime())%>"    <%}%>, "color": "<%=color%>>"}
     <% if(i < events.size()-1){ %>,<% } %>
 <% } %>
 ]
