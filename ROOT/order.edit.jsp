@@ -403,7 +403,7 @@ response.sendRedirect("index.html");
           <hr>
 <div class="form-group">
   <label for="paymentMethod">Payment Method</label>
-  <select class="form-control" id="paymentMethod" name="paymentMethod">
+  <select class="form-control" id="paymentMethod" name="paymentMethod" onchange="calculateFee()">
     <option value="cash" <%= "cash".equals(order.getPaymentMethod()) ? "selected" : "" %>>Cash</option>
     <option value="check" <%= "check".equals(order.getPaymentMethod()) ? "selected" : "" %>>Check</option>
     <option value="creditCard" <%= "creditCard".equals(order.getPaymentMethod()) ? "selected" : "" %>>Credit Card</option>
