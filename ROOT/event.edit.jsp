@@ -411,6 +411,8 @@
 
        bindDatePicker();
      });
+
+
     </script>
   </script>
 </body>
