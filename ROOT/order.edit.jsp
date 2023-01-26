@@ -183,7 +183,7 @@ response.sendRedirect("index.html");
         var selectedValue = select.options[select.selectedIndex].value;
         if(selectedValue == "stripe"){
             var amount = document.getElementById("orderTotal").value;
-            var amount_percentage = 3.2;
+            var amount_percentage = <%=usernameOBJ.getStripe_fee()%>;
             var finalAmount = amount / (1 - (amount_percentage / 100));
             document.getElementById("orderTotalAfterFee").value = finalAmount.toFixed(2);
         }else{
