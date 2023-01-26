@@ -179,9 +179,11 @@ response.sendRedirect("index.html");
       window.open(url, "_self");
     }
     function calculateFee(){
-        alert(document.getElementById("orderTotal").value);
+        alert(calculateFinalAmount(document.getElementById("orderTotal").value, 2.9f));
     }
-
+    function calculateFinalAmount(originalAmount, feePercent) {
+      return originalAmount / (1 - (feePercent / 100));
+    }
 
   </script>
 </head>
