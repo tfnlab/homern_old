@@ -150,6 +150,11 @@
          String twilio_voice_forward_phone = request.getParameter("twilio_voice_forward_phone");
          String stripe_key = request.getParameter("stripe_key");
          String stripe_key_pub = request.getParameter("stripe_key_pub");
+         String stripe_fee = request.getParameter("stripe_fee");
+          BigDecimal stripe_fee = new BigDecimal("0");
+          if (request.getParameter("stripe_fee") != null && !request.getParameter("stripe_fee").isEmpty()) {
+            stripe_fee = new BigDecimal(request.getParameter("stripe_fee"));
+          }
 
          email = email.toLowerCase();
 
@@ -192,6 +197,7 @@
          user.setTwilio_voice_forward_phone(twilio_voice_forward_phone);
          user.setStripe_key(stripe_key);
          user.setStripe_key_pub(stripe_key_pub);
+         user.setStripe_fee(stripe_fee);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -414,7 +420,11 @@
            <input type="text" class="form-control" id="stripe_key_pub" name="stripe_key_pub" value="<%= user.getStripe_key_pub() %>" tabindex="23" >
            </div>
            <div class="form-group mt-3">
-             <button type="submit" class="btn btn-primary" tabindex="24">Submit</button>
+           <label for="stripe_key_pub" class="mr-2">Stripe Key Pub:</label>
+           <input type="text" class="form-control" id="stripe_fee" name="stripe_fee" value="<%= user.getStripe_fee() %>" tabindex="24" >
+           </div>
+           <div class="form-group mt-3">
+             <button type="submit" class="btn btn-primary" tabindex="25">Submit</button>
            </div>
            </form>
 
