@@ -18,7 +18,7 @@ for (int i = 0; i < events.size(); i++) {
             color = "green";
     }
 %>
-    {    "title": "<%=event.getTitle()%>",    "start": "<%=formatter.format(event.getStartTime())%>"    <%if (event.getEndTime() != null) {%>    ,    "end": "<%=formatter.format(event.getEndTime())%>"    <%}%>, "color": "<%=color%>>"}
+    {    "title": "<%=event.getTitle()%>",    "start": "<%=formatter.format(event.getStartTime())%>"    <%if (event.getEndTime() != null) {%>    ,    "end": "<%=formatter.format(event.getEndTime())%>"    <%}%>, "color": "<%=color%>"}
     <% if(i < events.size()-1){ %>,<% } %>
 <% } %>
 ]
