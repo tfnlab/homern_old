@@ -427,7 +427,7 @@ response.sendRedirect("index.html");
 
 
           <label for="orderTotal">Order Total:</label><br>
-          <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"  tabindex="15"><br>
+          <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"  tabindex="15" onchange="calculateFee()" onkeypress="calculateFee()"><br>
           <hr>
           <label for="orderTotal">Order Total Fee Included:</label><br>
           <input type="text" id="orderTotalAfterFee" name="orderTotalAfterFee"  tabindex="16"><br>
