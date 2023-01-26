@@ -245,6 +245,20 @@
                           <label for="groupId">Group ID</label>
                           <input type="text" class="form-control" name="groupId" value="<%= event.getGroupId() %>">
                         </div>
+           <%
+           String event_status = event.getEvent_status();
+           if (event_status == null || event_status.isEmpty()) {
+             event_status = "open";
+           }
+           %>
+           <div class="form-group mt-3">
+             <label for="business-type">Event Status</label>
+             <select class="form-control" id="event_status" name="event_status"  tabindex="16">
+               <option value="open" <% if (businessType.equals("open")) { %>selected<% } %>>Open</option>
+               <option value="closed" <% if (businessType.equals("closed")) { %>selected<% } %>>Closed</option>
+             </select>
+           </div>
+
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>
 
