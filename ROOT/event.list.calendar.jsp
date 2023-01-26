@@ -136,7 +136,16 @@
             dataType: "json",
             success: function(events) {
                 $('#calendar').fullCalendar({
-                    events: events
+                    events: events,
+                    eventRender: function(event, element) {
+                        if (event.category === 'orange') {
+                            element.css('background-color', 'orange');
+                        } else if (event.category === 'green') {
+                            element.css('background-color', 'green');
+                        } else {
+                            element.css('background-color', 'blue');
+                        }
+                    }
                 });
             }
         });
