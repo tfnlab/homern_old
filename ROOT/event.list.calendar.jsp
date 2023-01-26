@@ -138,7 +138,7 @@
                         $('#calendar').fullCalendar({
                             events: events,
                             eventRender: function(event, element) {
-                                element.css('background-color', 'orange');
+                                element.css('background-color', event.color);
                             }
                         });
                     }
