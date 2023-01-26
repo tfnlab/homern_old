@@ -184,7 +184,8 @@ response.sendRedirect("index.html");
 //        var amount_new = Number(amount) + (amount * (amount_percentage / 100));
 
         var finalAmount = amount / (1 - (amount_percentage / 100));
-        alert(round(finalAmount,2));
+ //       alert(round(finalAmount,2));
+        alert(finalAmount.toFixed(2));
     }
 
   </script>
