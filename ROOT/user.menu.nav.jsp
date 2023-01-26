@@ -55,8 +55,8 @@
       newProducts();
     }
     if (event.ctrlKey && event.keyCode == 69) {
-      event.getCalendarView();
-      newProducts();
+      event.preventDefault();
+      getCalendarView();
     }
   });
 </script>
