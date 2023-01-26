@@ -54,6 +54,10 @@
     if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
       eId = Integer.parseInt(request.getParameter("customerId"));
     }
+    int orderId = 0;
+    if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+      orderId = Integer.parseInt(request.getParameter("orderId"));
+    }
   %>
   <!-- =======================================================
   * Template Name: Presento - v3.9.1
@@ -238,7 +242,17 @@
                       <%
                 }
                   entity = ed.getEntityById(eId, username);
+
         %>
+           <%
+
+               List<ProductLineItem> pliList = plDao.getProductLineItemsByInvoiceId(orderId);
+               BigDecimal invTotal  = new BigDecimal("0");
+               for (ProductLineItem plItem : pliList) {
+                      invTotal = invTotal.add(plItem.getTotal());
+               }
+           %>
+                  Products Total <%=invTotal%>
         <form action="customer.edit.payments.jsp" method="post">
             <hr>
           <div class="form-group">
@@ -270,7 +284,7 @@
           </div>
           <div class="form-group">
             <label for="paymentMethod">Payment Method</label>
-            <input type="text" class="form-control" id="paymentMethod" name="paymentMethod" placeholder="Enter payment method">
+            <input type="text" class="form-control" id="paymentMethod" name="paymentMethod" placeholder="Enter payment method" value="<%=invTotal%>">
           </div>
               <HR>
           <div class="form-group form-check">
