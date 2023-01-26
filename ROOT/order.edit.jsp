@@ -184,7 +184,7 @@ response.sendRedirect("index.html");
 //        var amount_new = Number(amount) + (amount * (amount_percentage / 100));
 
         var finalAmount = amount / (1 - (amount_percentage / 100));
-        alert(finalAmount);
+        alert(formatted_x = format(finalAmount, '.2f'));
     }
 
   </script>
