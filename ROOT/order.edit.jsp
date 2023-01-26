@@ -426,10 +426,10 @@ response.sendRedirect("index.html");
 </div>
 
 
-          <label for="orderTotal">Order Total:</label><i class="fas fa-calculator" onclick="calculateFee()"></i><br>
+          <label for="orderTotal">Order Total:</label><br>
           <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"  tabindex="15"><br>
           <hr>
-          <label for="orderTotal">Order Total Fee Included:</label><i class="fas fa-calculator" onclick="calculateFee()"></i><br>
+          <label for="orderTotal">Order Total Fee Included:</label><br>
           <input type="text" id="orderTotalAfterFee" name="orderTotalAfterFee"  tabindex="16"><br>
           <hr>
           <h4>Property Info</h4>
