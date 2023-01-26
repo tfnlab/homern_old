@@ -401,9 +401,6 @@ response.sendRedirect("index.html");
             <hr>
             <a href="https://www.google.com/maps/dir/?api=1&origin=<%=uAddPls%>&destination=<%=sAddPls%>">Get directions</a>
           <hr>
-          <label for="paymentMethod">Payment Method:</label><br>
-          <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"  tabindex="14"><br>
-
 <div class="form-group">
   <label for="paymentMethod">Payment Method</label>
   <select class="form-control" id="paymentMethod" name="paymentMethod">
@@ -421,7 +418,7 @@ response.sendRedirect("index.html");
           <label for="orderTotal">Order Total:</label><i class="fas fa-calculator" onclick="calculateFee()"></i><br>
           <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"  tabindex="15"><br>
           <hr>
-          <label for="orderTotal">Order Total:</label><i class="fas fa-calculator" onclick="calculateFee()"></i><br>
+          <label for="orderTotal">Order Total Fee Included:</label><i class="fas fa-calculator" onclick="calculateFee()"></i><br>
           <input type="text" id="orderTotalAfterFee" name="orderTotalAfterFee"  tabindex="16"><br>
           <hr>
           <h4>Property Info</h4>
