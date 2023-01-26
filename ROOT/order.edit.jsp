@@ -407,6 +407,15 @@ response.sendRedirect("index.html");
           <label for="paymentMethod">Payment Method:</label><br>
           <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"  tabindex="14"><br>
 
+<div class="form-group">
+  <label for="paymentMethod">Payment Method</label>
+  <select class="form-control" id="paymentMethod" name="paymentMethod">
+    <option value="creditCard" <%= "creditCard".equals(order.getPaymentMethod()) ? "selected" : "" %>>Credit Card</option>
+    <option value="debitCard" <%= "debitCard".equals(order.getPaymentMethod()) ? "selected" : "" %>>Debit Card</option>
+    <option value="paypal" <%= "paypal".equals(order.getPaymentMethod()) ? "selected" : "" %>>Paypal</option>
+    <option value="applePay" <%= "applePay".equals(order.getPaymentMethod()) ? "selected" : "" %>>Apple Pay</option>
+  </select>
+</div>
 
 
           <label for="orderTotal">Order Total:</label><i class="fas fa-calculator" onclick="calculateFee()"></i><br>
