@@ -150,7 +150,6 @@
          String twilio_voice_forward_phone = request.getParameter("twilio_voice_forward_phone");
          String stripe_key = request.getParameter("stripe_key");
          String stripe_key_pub = request.getParameter("stripe_key_pub");
-         String stripe_fee = request.getParameter("stripe_fee");
           BigDecimal stripe_fee = new BigDecimal("0");
           if (request.getParameter("stripe_fee") != null && !request.getParameter("stripe_fee").isEmpty()) {
             stripe_fee = new BigDecimal(request.getParameter("stripe_fee"));
