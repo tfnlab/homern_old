@@ -134,16 +134,13 @@
                     type: "GET",
                     url: "event.list.calendar.event.jsp?event_stauts=open",
                     dataType: "json",
-                    success: function(openEvents) {
-                        $('#calendar').fullCalendar('addEventSource', openEvents);
-                    }
-                });
-                $.ajax({
-                    type: "GET",
-                    url: "event.list.calendar.event.jsp?event_stauts=closed",
-                    dataType: "json",
-                    success: function(closedEvents) {
-                        $('#calendar').fullCalendar('addEventSource', closedEvents);
+                    success: function(events) {
+                        $('#calendar').fullCalendar({
+                            events: events,
+                            eventRender: function(event, element) {
+                                element.css('background-color', event.color);
+                            }
+                        });
                     }
                 });
             });
