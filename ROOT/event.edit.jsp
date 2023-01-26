@@ -244,10 +244,6 @@
                           <input type="text" class="form-control" name="invitees" value="<%= event.getInvitees() %>">
                         </div>
                         <div class="form-group">
-                          <label for="username">Username</label>
-                          <input type="text" class="form-control" name="username" value="<%= event.getUsername() %>">
-                        </div>
-                        <div class="form-group">
                           <label for="groupId">Group ID</label>
                           <input type="text" class="form-control" name="groupId" value="<%= event.getGroupId() %>">
                         </div>
