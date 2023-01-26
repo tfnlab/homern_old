@@ -132,13 +132,26 @@
         $(document).ready(function() {
                 $.ajax({
                     type: "GET",
-                    url: "event.list.calendar.event.jsp",
+                    url: "event.list.calendar.event.jsp?event_stauts=open",
                     dataType: "json",
                     success: function(events) {
                         $('#calendar').fullCalendar({
                             events: events,
                             eventRender: function(event, element) {
                                 element.css('background-color', 'orange');
+                            }
+                        });
+                    }
+                });
+                $.ajax({
+                    type: "GET",
+                    url: "event.list.calendar.event.jsp?event_stauts=closed",
+                    dataType: "json",
+                    success: function(events) {
+                        $('#calendar').fullCalendar({
+                            events: events,
+                            eventRender: function(event, element) {
+                                element.css('background-color', 'green');
                             }
                         });
                     }
