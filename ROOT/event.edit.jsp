@@ -152,7 +152,11 @@
       <div class="container px-4 px-lg-5">
         <h2>Event</h2>
         <%@ include file="user.menu.nav.jsp" %>
-
+        <HR>
+        <a href="event.list.calendar.jsp" >Calendar</a> |
+        <a href="event.list.jsp?sortBy=eventDate">Latest</a> |
+        <a href="event.list.jsp?sortBy=eventDateDESC">Oldest</a>
+        <HR>
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
