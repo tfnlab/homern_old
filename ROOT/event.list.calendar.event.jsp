@@ -19,9 +19,9 @@ for (int i = 0; i < events.size(); i++) {
     if(event.getEvent_status() !=null && event.getEvent_status().equals("closed")){
             color = "green";
     }
-       for (int i = 0; i < orderStates.length; i++) {
-         if(orderStates[i].equals(event.getEvent_status())){
-            color = orderColors[i];
+       for (int k = 0; k < orderStates.length; k++) {
+         if(orderStates[k].equals(event.getEvent_status())){
+            color = orderColors[k];
          }
        }
     // https://homerenovationnation.com/event.edit.jsp?eventid=1 getId
