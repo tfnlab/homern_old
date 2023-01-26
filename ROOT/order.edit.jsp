@@ -410,6 +410,8 @@ response.sendRedirect("index.html");
 <div class="form-group">
   <label for="paymentMethod">Payment Method</label>
   <select class="form-control" id="paymentMethod" name="paymentMethod">
+    <option value="cash" <%= "cash".equals(order.getPaymentMethod()) ? "selected" : "" %>>Cash</option>
+    <option value="check" <%= "check".equals(order.getPaymentMethod()) ? "selected" : "" %>>Check</option>
     <option value="creditCard" <%= "creditCard".equals(order.getPaymentMethod()) ? "selected" : "" %>>Credit Card</option>
     <option value="debitCard" <%= "debitCard".equals(order.getPaymentMethod()) ? "selected" : "" %>>Debit Card</option>
     <option value="paypal" <%= "paypal".equals(order.getPaymentMethod()) ? "selected" : "" %>>Paypal</option>
