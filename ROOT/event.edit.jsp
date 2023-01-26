@@ -254,8 +254,8 @@
            <div class="form-group mt-3">
              <label for="business-type">Event Status</label>
              <select class="form-control" id="event_status" name="event_status"  tabindex="16">
-               <option value="open" <% if (businessType.equals("open")) { %>selected<% } %>>Open</option>
-               <option value="closed" <% if (businessType.equals("closed")) { %>selected<% } %>>Closed</option>
+               <option value="open" <% if (event_status.equals("open")) { %>selected<% } %>>Open</option>
+               <option value="closed" <% if (event_status.equals("closed")) { %>selected<% } %>>Closed</option>
              </select>
            </div>
 
