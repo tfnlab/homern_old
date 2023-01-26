@@ -134,28 +134,29 @@
                     type: "GET",
                     url: "event.list.calendar.event.jsp?event_stauts=open",
                     dataType: "json",
-                    success: function(events) {
-                        $('#calendar').fullCalendar({
-                            addEventSource: events,
-                            eventRender: function(event, element) {
-                                element.css('background-color', 'orange');
-                            }
-                        });
+                    success: function(openEvents) {
+                        $('#calendar').fullCalendar('addEventSource', openEvents);
                     }
                 });
                 $.ajax({
                     type: "GET",
                     url: "event.list.calendar.event.jsp?event_stauts=closed",
                     dataType: "json",
-                    success: function(events) {
-                        $('#calendar').fullCalendar({
-                            addEventSource: events,
-                            eventRender: function(event, element) {
-                                element.css('background-color', 'green');
-                            }
-                        });
+                    success: function(closedEvents) {
+                        $('#calendar').fullCalendar('addEventSource', closedEvents);
                     }
                 });
+            });
+
+            $('#calendar').fullCalendar({
+                events: events,
+                eventRender: function(event, element) {
+                    if (event.status === 'open') {
+                        element.css('background-color', 'orange');
+                    } else if (event.status === 'closed') {
+                        element.css('background-color', 'green');
+                    }
+                }
             });
 
 
