@@ -148,17 +148,6 @@
                 });
             });
 
-            $('#calendar').fullCalendar({
-                events: events,
-                eventRender: function(event, element) {
-                    if (event.status === 'open') {
-                        element.css('background-color', 'orange');
-                    } else if (event.status === 'closed') {
-                        element.css('background-color', 'green');
-                    }
-                }
-            });
-
 
     </script>
 
