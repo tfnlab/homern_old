@@ -182,7 +182,7 @@ response.sendRedirect("index.html");
         var select = document.getElementById("paymentMethod");
         var selectedValue = select.options[select.selectedIndex].value;
         alert(selectedValue);
-        if(selectedValue == "Stripe"){
+        if(selectedValue == "stripe"){
             var amount = document.getElementById("orderTotal").value;
             var amount_percentage = 3.2;
             var finalAmount = amount / (1 - (amount_percentage / 100));
