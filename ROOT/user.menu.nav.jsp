@@ -37,6 +37,9 @@
   function newProducts() {
     window.open("product.list.jsp", "_self");
   }
+  function getCalendarView() {
+    window.open("event.list.calendar.jsp", "_self");
+  }
   document.addEventListener("keydown", function(event) {
     // Check if the "Ctrl" and "C" keys are pressed
     if (event.ctrlKey && event.keyCode == 67) {
@@ -49,6 +52,10 @@
     }
     if (event.ctrlKey && event.keyCode == 80) {
       event.preventDefault();
+      newProducts();
+    }
+    if (event.ctrlKey && event.keyCode == 69) {
+      event.getCalendarView();
       newProducts();
     }
   });
