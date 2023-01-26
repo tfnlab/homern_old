@@ -181,7 +181,7 @@ response.sendRedirect("index.html");
     function calculateFee(){
         var select = document.getElementById("paymentMethod");
         var selectedValue = select.options[select.selectedIndex].value;
-
+        alert(selectedValue);
         if(selectedValue == "Stripe"){
             var amount = document.getElementById("orderTotal").value;
             var amount_percentage = 3.2;
