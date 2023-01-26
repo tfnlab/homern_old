@@ -14,7 +14,7 @@ SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 for (int i = 0; i < events.size(); i++) {
     Event event = events.get(i);
     String color = "orange";
-    if(event.getEvent_status() !=null && event.getEvent_status().equals("Open")){
+    if(event.getEvent_status() !=null && event.getEvent_status().equals("closed")){
             color = "green";
     }
 %>
