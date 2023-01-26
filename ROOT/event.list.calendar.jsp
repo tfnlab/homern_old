@@ -137,8 +137,8 @@
             success: function(events) {
                 $('#calendar').fullCalendar({
                     events: events,
-                    eventRender: function(event, element) {
-                        element.addClass(event.className);
+                    eventRender: function(events, element) {
+                        element.addClass(events.className);
                     }
                 });
             }
