@@ -181,8 +181,10 @@ response.sendRedirect("index.html");
     function calculateFee(){
         var amount = document.getElementById("orderTotal").value;
         var amount_percentage = 2.9;
-        var amount_new = Number(amount) + (amount * (amount_percentage / 100));
-        alert(amount_new);
+//        var amount_new = Number(amount) + (amount * (amount_percentage / 100));
+
+        var finalAmount = amount / (1 - (amount_percentage / 100));
+        alert(finalAmount);
     }
 
   </script>
