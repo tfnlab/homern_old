@@ -129,21 +129,22 @@
       <%@ include file="include.footer.jsp" %>
   </body>
       <script>
-    $(document).ready(function() {
-        $.ajax({
-            type: "GET",
-            url: "event.list.calendar.event.jsp",
-            dataType: "json",
-            success: function(events) {
-                $('#calendar').fullCalendar({
-                    events: events,
-                    eventRender: function(events, element) {
-                        element.addClass(events.className);
+        $(document).ready(function() {
+                $.ajax({
+                    type: "GET",
+                    url: "event.list.calendar.event.jsp",
+                    dataType: "json",
+                    success: function(events) {
+                        $('#calendar').fullCalendar({
+                            events: events,
+                            eventRender: function(event, element) {
+                                element.css('background-color', 'orange');
+                            }
+                        });
                     }
                 });
-            }
-        });
-    });
+            });
+
 
     </script>
 
