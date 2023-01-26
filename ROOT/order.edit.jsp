@@ -406,6 +406,23 @@ response.sendRedirect("index.html");
           <hr>
           <label for="paymentMethod">Payment Method:</label><br>
           <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"  tabindex="14"><br>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<div class="form-group">
+  <label for="paymentMethod">Payment Method</label>
+  <select class="form-control" id="paymentMethod" name="paymentMethod">
+    <option value="creditCard"
+    <c:if test="${order.paymentMethod == 'creditCard'}">selected</c:if>>Credit Card</option>
+    <option value="debitCard"
+    <c:if test="${order.paymentMethod == 'debitCard'}">selected</c:if>>Debit Card</option>
+    <option value="paypal"
+    <c:if test="${order.paymentMethod == 'paypal'}">selected</c:if>>Paypal</option>
+    <option value="applePay"
+    <c:if test="${order.paymentMethod == 'applePay'}">selected</c:if>>Apple Pay</option>
+  </select>
+</div>
+
           <label for="orderTotal">Order Total:</label><i class="fas fa-calculator" onclick="calculateFee()"></i><br>
           <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"  tabindex="15"><br>
           <hr>
