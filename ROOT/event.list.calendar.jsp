@@ -138,9 +138,9 @@
                 $('#calendar').fullCalendar({
                     events: events,
                     eventRender: function(event, element) {
-                        if (event.category === 'orange') {
+                        if (event.className === 'orange') {
                             element.css('background-color', 'orange');
-                        } else if (event.category === 'green') {
+                        } else if (event.className === 'green') {
                             element.css('background-color', 'green');
                         } else {
                             element.css('background-color', 'blue');
