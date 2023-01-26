@@ -181,11 +181,8 @@ response.sendRedirect("index.html");
     function calculateFee(){
         var amount = document.getElementById("orderTotal").value;
         var amount_percentage = 3.2;
-//        var amount_new = Number(amount) + (amount * (amount_percentage / 100));
-
         var finalAmount = amount / (1 - (amount_percentage / 100));
- //       alert(round(finalAmount,2));
-        alert(finalAmount.toFixed(2));
+        document.getElementById("orderTotalAfterFee").value = finalAmount.toFixed(2);
     }
 
   </script>
@@ -416,12 +413,16 @@ response.sendRedirect("index.html");
     <option value="debitCard" <%= "debitCard".equals(order.getPaymentMethod()) ? "selected" : "" %>>Debit Card</option>
     <option value="paypal" <%= "paypal".equals(order.getPaymentMethod()) ? "selected" : "" %>>Paypal</option>
     <option value="applePay" <%= "applePay".equals(order.getPaymentMethod()) ? "selected" : "" %>>Apple Pay</option>
+    <option value="stripe" <%= "stripe".equals(order.getPaymentMethod()) ? "selected" : "" %>>Stripe</option>
   </select>
 </div>
 
 
           <label for="orderTotal">Order Total:</label><i class="fas fa-calculator" onclick="calculateFee()"></i><br>
           <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"  tabindex="15"><br>
+          <hr>
+          <label for="orderTotal">Order Total:</label><i class="fas fa-calculator" onclick="calculateFee()"></i><br>
+          <input type="text" id="orderTotalAfterFee" name="orderTotalAfterFee"  tabindex="16"><br>
           <hr>
           <h4>Property Info</h4>
           <hr>
