@@ -247,7 +247,7 @@
 
         %>
            <%
-
+               ProductLineItemDao plDao = new ProductLineItemDao();
                List<ProductLineItem> pliList = plDao.getProductLineItemsByInvoiceId(orderId);
                BigDecimal invTotal  = new BigDecimal("0");
                for (ProductLineItem plItem : pliList) {
