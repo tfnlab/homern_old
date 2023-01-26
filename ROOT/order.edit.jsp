@@ -178,7 +178,9 @@ response.sendRedirect("index.html");
       var url = "order.edit.rebates.jsp?orderId=" + orderId ;
       window.open(url, "_self");
     }
-
+    function calculateFee(){
+        alert(document.getElementById("orderTotal").value);
+    }
 
 
   </script>
@@ -399,7 +401,7 @@ response.sendRedirect("index.html");
           <hr>
           <label for="paymentMethod">Payment Method:</label><br>
           <input type="text" id="paymentMethod" name="paymentMethod" value="<%= order.getPaymentMethod() %>"  tabindex="14"><br>
-          <label for="orderTotal">Order Total:</label><br>
+          <label for="orderTotal">Order Total:</label><i class="fas fa-calculator" onclick="calculateFee()"></i><br>
           <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"  tabindex="15"><br>
           <hr>
           <h4>Property Info</h4>
