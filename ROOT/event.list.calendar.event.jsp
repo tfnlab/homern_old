@@ -19,11 +19,11 @@ for (int i = 0; i < events.size(); i++) {
     if(event.getEvent_status() !=null && event.getEvent_status().equals("closed")){
             color = "red";
     }
-       for (int k = 0; k < orderStates.length; k++) {
-         if(orderStates[k].equals(event.getEvent_status())){
-            color = orderColors[k];
-         }
-       }
+   for (int k = 0; k < orderStates.length; k++) {
+     if(orderStates[k].toLowerCase().equals(event.getEvent_status())){
+        color = orderColors[k];
+     }
+   }
     // https://homerenovationnation.com/event.edit.jsp?eventid=1 getId
 %>
     {    "title": "<%=event.getTitle()%>",    "start": "<%=formatter.format(event.getStartTime())%>"    <%if (event.getEndTime() != null) {%>    ,    "end": "<%=formatter.format(event.getEndTime())%>"    <%}%>, "color": "<%=color%>", "url": "https://homerenovationnation.com/event.edit.jsp?eventid=<%=event.getId()%>"}
