@@ -192,6 +192,10 @@ response.sendRedirect("index.html");
             document.getElementById("orderTotalAfterFee").value = amount;
         }
     }
+    
+    window.onload = function() {
+        calculateFee();
+    };
 
   </script>
 </head>
