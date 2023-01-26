@@ -20,7 +20,7 @@ for (int i = 0; i < events.size(); i++) {
             color = "green";
     }
        for (int i = 0; i < orderStates.length; i++) {
-         if(orderStates[i].equlas(event.getEvent_status())){
+         if(orderStates[i].equals(event.getEvent_status())){
             color = orderColors[i];
          }
        }
