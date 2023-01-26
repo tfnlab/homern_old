@@ -14,6 +14,8 @@
 <%@ page import="com.tfnlab.mysql.Payment" %>
 <%@ page import="com.tfnlab.mysql.PaymentDao" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.tfnlab.mysql.ProductLineItem" %>
+<%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 <%@ include file="auth.jsp" %>
 
 
