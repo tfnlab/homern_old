@@ -259,10 +259,15 @@
            %>
            <div class="form-group mt-3">
              <label for="business-type">Event Status</label>
-             <select class="form-control" id="event_status" name="event_status"  tabindex="16">
-               <option value="open" <% if (event_status.equals("open")) { %>selected<% } %>>Open</option>
-               <option value="closed" <% if (event_status.equals("closed")) { %>selected<% } %>>Closed</option>
-             </select>
+             <% String[] orderStates = {"Open", "Closed", "Cancelled", "On Hold", "Pending", "Shipped", "Delivered", "Refunded", "Returned", "Need Attention", "In Progress"}; %>
+            <select class="form-control" id="event_status" name="event_status" tabindex="16">
+                <% for (int i = 0; i < orderStates.length; i++) { %>
+                    <option value="<%= orderStates[i].toLowerCase() %>"
+                            <% if (event_status.equals(orderStates[i].toLowerCase())) { %>selected<% } %>>
+                        <%= orderStates[i] %>
+                    </option>
+                <% } %>
+            </select>
            </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>
