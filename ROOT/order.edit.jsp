@@ -179,10 +179,15 @@ response.sendRedirect("index.html");
       window.open(url, "_self");
     }
     function calculateFee(){
-        var amount = document.getElementById("orderTotal").value;
-        var amount_percentage = 3.2;
-        var finalAmount = amount / (1 - (amount_percentage / 100));
-        document.getElementById("orderTotalAfterFee").value = finalAmount.toFixed(2);
+        if(document.getElementById("paymentMethod").value == "Stripe"){
+            var amount = document.getElementById("orderTotal").value;
+            var amount_percentage = 3.2;
+            var finalAmount = amount / (1 - (amount_percentage / 100));
+            document.getElementById("orderTotalAfterFee").value = finalAmount.toFixed(2);
+        }else{
+            var amount = document.getElementById("orderTotal").value;
+            document.getElementById("orderTotalAfterFee").value = amount.toFixed(2);
+        }
     }
 
   </script>
