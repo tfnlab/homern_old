@@ -179,6 +179,7 @@
                       String reminderTime = request.getParameter("reminderTime");
                       String invitees = request.getParameter("invitees");
                       String groupId = request.getParameter("groupId");
+                      String event_status = request.getParameter("event_status");
 
                       Date startTimeDate = dateFormat.parse(startTime);
                       Date endTimeDate = dateFormat.parse(endTime);
@@ -191,6 +192,7 @@
                       String locationaclng = request.getParameter("locationaclng");
 
                       event = new Event(eId, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, "", null, null);
+                      event.setEvent_status(event_status);
                       ed.updateEventById(event);
                     %>
 
