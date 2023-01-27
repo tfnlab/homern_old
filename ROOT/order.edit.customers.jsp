@@ -257,10 +257,10 @@
                     Timestamp currentTime = new Timestamp(currentTimeMillis);
                     if(orderId==0){
                       Order orderNew = new Order(0, username, new Date(), new Date(), "", "", "", new BigDecimal("0"), currentTime, currentTime, currentTime, "New Order", "", "0.0", "0.0", "0.0", "0.0", "Proposal");
-                      orderNew.setShippingAddressEstPrice(shippingAddressEstPrice);
-                      orderNew.setShippingAddressLastSalePrice(shippingAddressLastSalePrice);
-                      orderNew.setShippingAddressEstPriceHigh(shippingAddressEstPriceHigh);
-                      orderNew.setShippingAddressEstPriceLow(shippingAddressEstPriceLow);
+                      orderNew.setShippingAddressEstPrice(new BigDecimal("0"));
+                      orderNew.setShippingAddressLastSalePrice(new BigDecimal("0"));
+                      orderNew.setShippingAddressEstPriceHigh(new BigDecimal("0"));
+                      orderNew.setShippingAddressEstPriceLow(new BigDecimal("0"));
 
                       orderNew.setUuid(uuid);
                       try{
