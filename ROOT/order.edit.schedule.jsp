@@ -150,8 +150,10 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-<link rel="stylesheet" href="node_modules/anytime/src/anytime.css" rel="stylesheet">
-<script src="node_modules/anytime/src/anytime.js"></script>
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 </head>
 
@@ -445,9 +447,9 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        AnyTime.picker("datetime");
+  <script>
+    $( function() {
+      $( "#datetime" ).datepicker();
     });
   </script>
   <!-- Vendor JS Files -->
