@@ -28,6 +28,10 @@
 <%@ page import="com.tfnlab.mysql.PaymentPostDao" %>
 <%@ page import="com.tfnlab.mysql.Payment" %>
 <%@ page import="com.tfnlab.mysql.PaymentDao" %>
+<%@ page import="com.tfnlab.mysql.OrderDiscount" %>
+<%@ page import="com.tfnlab.mysql.OrderDiscountDAO" %>
+<%@ page import="com.tfnlab.mysql.OrderRebate" %>
+<%@ page import="com.tfnlab.mysql.OrderRebateDAO" %>
 
 
 
@@ -320,6 +324,19 @@
 		        BigDecimal totalPaid = ppDao.getTotalPaymentAmount(order.getOrderId());
 	            if(totalPaid ==null) totalPaid = new BigDecimal("0");
 
+                OrderRebateDAO orDao = new OrderRebateDAO();
+                List<OrderRebate> orList = orDao.getOrderRebatesByUsernameAndOrderId(username, order.getOrderId());
+                BigDecimal orTotal  = new BigDecimal("0");
+                for (OrderRebate orItem : orList) {
+                      orTotal = orTotal.add(odItem.getDiscount().getAmount());
+                }
+                OrderDiscountDAO odDao = new OrderDiscountDAO();
+                List<OrderDiscount> odList = odDao.getOrderDiscountsByUsernameAndOrderId(username, order.getOrderId());
+                BigDecimal odTotal  = new BigDecimal("0");
+                for (OrderDiscount odItem : odList) {
+                      odTotal = odTotal.add(orItem.getRebate().getAmount());
+
+                }
 
                 %>
                 <HR>
@@ -365,13 +382,23 @@
               </div>
               <HR>
               <div class="form-group">
-                <label for="paymentAmount">Payment Amount</label>
+                <label for="paymentAmount">Invoice Total</label>
                 <%=invTotal%>
               </div>
               <HR>
               <div class="form-group">
                 <label for="paymentAmount">Paid Amount</label>
                 <%=totalPaid%>
+              </div>
+              <HR>
+              <div class="form-group">
+                <label for="paymentAmount">Rebate Amount</label>
+                <%=orTotal%>
+              </div>
+              <HR>
+              <div class="form-group">
+                <label for="paymentAmount">Discount Amount</label>
+                <%=odTotal%>
               </div>
 
               <HR>
