@@ -287,6 +287,8 @@
                           ocId = Integer.parseInt(request.getParameter("ocId"));
                         }
 
+                        paymentAmount = new BigDecimal(request.getParameter("paymentAmount"));
+
                         int pId = 0;
                         if (request.getParameter("pId") != null && !request.getParameter("pId").isEmpty()) {
                           if(request.getParameter("pId").equals("ap")){
@@ -296,10 +298,10 @@
                                 payment.setPayment_uuid(uuid);
                                 payDao.insertPayment(payment);
                                 pId= (payDao.getPayment_by_uuid(uuid, username)).getPaymentId();
+                          }else{
+                                pId = Integer.parseInt(request.getParameter("pId"));
                           }
-                          pId = Integer.parseInt(request.getParameter("pId"));
                         }
-                        paymentAmount = new BigDecimal(request.getParameter("paymentAmount"));
                         PaymentPost pp = new  PaymentPost(1, pId, new Date(), new Date(), new Date(), paymentAmount, new Date(), new Date(), username, 3, username, ocId);
                         ppDao.insertPaymentPost(pp);
                       }
