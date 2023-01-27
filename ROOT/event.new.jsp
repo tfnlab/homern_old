@@ -226,11 +226,11 @@
           </div>
           <div class="form-group">
               <label for="start_time">Start Time</label>
-              <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=(new Date())%>">
+              <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=(new Date())%>" >
           </div>
           <div class="form-group">
             <label for="end_time">End Time</label>
-            <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=(new Date())%>">
+            <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=(new Date())%>" >
           </div>
           <div class="form-group">
             <label for="location">Location</label>
