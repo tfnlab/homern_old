@@ -120,6 +120,7 @@
 
     <%@ include file="include.header.jsp" %>
         <!-- ======= Blog Section ======= -->
+    <div >
         <HR> <HR> <HR> <HR> <HR>
         <%@ include file="user.menu.nav.jsp" %>
 
@@ -127,6 +128,7 @@
         <h2>Calendar</h2>
 
         <HR>
+    </div>
     <div id='calendar'></div>
 
       <%@ include file="include.footer.jsp" %>
