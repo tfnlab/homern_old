@@ -245,7 +245,7 @@
                         </div>
                         <div class="form-group">
                           <label for="groupId">Group ID</label>
-                          <input type="text" class="form-control" name="groupId" value="<%= event.getGroupId() %>">
+                          <input type="text" class="form-control" name="groupId" value="<%= event.getGroupId() %>" >
                         </div>
            <%
            String event_status = event.getEvent_status();
