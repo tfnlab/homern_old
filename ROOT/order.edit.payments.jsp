@@ -328,7 +328,7 @@
                 List<OrderRebate> orList = orDao.getOrderRebatesByUsernameAndOrderId(username, order.getOrderId());
                 BigDecimal orTotal  = new BigDecimal("0");
                 for (OrderRebate orItem : orList) {
-                      orTotal = orTotal.add(odItem.getRebate().getAmount());
+                      orTotal = orTotal.add(orItem.getRebate().getAmount());
                 }
                 OrderDiscountDAO odDao = new OrderDiscountDAO();
                 List<OrderDiscount> odList = odDao.getOrderDiscountsByUsernameAndOrderId(username, order.getOrderId());
