@@ -291,7 +291,7 @@
                         if (request.getParameter("pId") != null && !request.getParameter("pId").isEmpty()) {
                           if(request.getParameter("pId").equals("ap")){
                                 PaymentDao payDao = new PaymentDao();
-                                Payment payment = new Payment(0, ocDao.getCustomersById(ocId).getCustomer().getId(), new Date(), new Date(), new Date(), paymentAmount, paymentAmount, true, false, new Date(), new Date(), username, new Date(), paymentAmount);
+                                Payment payment = new Payment(0, ocDao.getCustomersById(ocId).getCustomer().getId(), new Date(), new Date(), new Date(), paymentAmount, "Quick Pay", true, false, new Date(), new Date(), username, 0, paymentAmount);
                                 String uuid = java.util.UUID.randomUUID().toString();
                                 payment.setPayment_uuid(uuid);
                                 payDao.insertPayment(payment);
