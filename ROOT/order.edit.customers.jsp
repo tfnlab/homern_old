@@ -261,7 +261,7 @@
                       orderNew.setShippingAddressLastSalePrice(new BigDecimal("0"));
                       orderNew.setShippingAddressEstPriceHigh(new BigDecimal("0"));
                       orderNew.setShippingAddressEstPriceLow(new BigDecimal("0"));
-
+                      String uuid = java.util.UUID.randomUUID().toString();
                       orderNew.setUuid(uuid);
                       try{
                         dao.insertOrder(order);
