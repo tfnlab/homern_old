@@ -308,11 +308,14 @@
              </div>
              <div class="form-group">
                  <label for="start_time">Start Time</label>
-                 <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker >
+                 <%
+                    SimpleDateFormat formatterHH = new SimpleDateFormat("MM/dd/yyyy HH");
+                 %>
+                 <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%= formatterHH.format(order.getOrderDate()) %>" >
              </div>
              <div class="form-group">
                <label for="end_time">End Time</label>
-               <input type="datetime-local"  class="form-control"  id="end_time" name="end_time" required datepicker step="60">
+               <input type="datetime-local"  class="form-control"  id="end_time" name="end_time" required datepicker value="<%= order.getShipDate() %>" step="60">
              </div>
              <div class="form-group">
                <label for="location">Location</label>
