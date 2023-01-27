@@ -315,7 +315,7 @@
              </div>
              <div class="form-group">
                <label for="end_time">End Time</label>
-               <input type="datetime-local"  class="form-control"  id="end_time" name="end_time" required datepicker value="<%= formatterHH.format(order.getShipDate()) %>" step="60">
+               <input type="datetime-local"  class="form-control"  id="end_time" name="end_time" required datepicker value="<%= formatterHH.format(order.getShipDate()) %>" step="900">
              </div>
              <div class="form-group">
                <label for="location">Location</label>
