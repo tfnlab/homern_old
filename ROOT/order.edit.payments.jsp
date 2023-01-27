@@ -290,9 +290,11 @@
                         int pId = 0;
                         if (request.getParameter("pId") != null && !request.getParameter("pId").isEmpty()) {
                           if(request.getParameter("pId").equals("ap")){
+                                PaymentDao pDao = new PaymentDao();
                                 Payment payment = new Payment(0, ocDao.getCustomersById(ocId).getCustomer().getId(), new Date(), new Date(), new Date(), paymentAmount, "Test", true, false, new Date(), new Date(), username, new Date(), paymentAmount);
                                 String uuid = java.util.UUID.randomUUID().toString();
                                 payment.setPayment_uuid(uuid);
+                                pDao.insertPayment(payment);
                                 pDao.insertPayment(payment);
                                 pId= (pDao.getPayment_by_uuid(uuid)).getPaymentId();
                           }
