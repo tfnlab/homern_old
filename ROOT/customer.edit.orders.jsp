@@ -181,6 +181,7 @@
                   entity = ed.getEntityById(eId, username);
         %>
         Customer ID: <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
+        <a href="order.edit.customers.jsp?action=add&customerId=<%= entity.getId() %>" >Add Order</a>
         <HR>
                     <form action="customer.edit.jsp" method="post">
                       <input type="hidden" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly>
