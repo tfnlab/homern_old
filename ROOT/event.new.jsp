@@ -247,10 +247,6 @@
             <input type="email" class="form-control" id="invitees" name="invitees" placeholder="Enter email addresses separated by commas">
           </div>
           <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username" required>
-          </div>
-          <div class="form-group">
             <label for="group_id">Group ID</label>
             <input type="text" class="form-control" id="group_id" name="group_id">
           </div>
