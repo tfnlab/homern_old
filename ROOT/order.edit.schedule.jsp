@@ -307,11 +307,10 @@
                <input type="text" class="form-control" id="title" name="title" required  value="<%= order.getOrderName() %>" >
              </div>
              <div class="form-group">
-                 <label for="start_time">Start Time</label>
                  <%
-                    SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH");
-
+                    SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                  %>
+                 <label for="start_time">Start Time <%= formatterHH.format(order.getOrderDate()) %></label>
                  <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%= formatterHH.format(order.getOrderDate()) %>" >
              </div>
              <div class="form-group">
