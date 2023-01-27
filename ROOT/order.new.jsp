@@ -374,13 +374,12 @@ response.sendRedirect("index.html");
   				//create date based on momentjs (we have that)
   				date = moment().format('YYYY-MM-DD');
   			}
-
   			$(this).val(date);
   		});
+        $('.datetimepicker').datetimepicker({
+        'step': 15
+        });
   	}
-    $('.datetimepicker').datetimepicker({
-    'step': 15
-    });
      var isValidDate = function(value, format) {
   		format = format || false;
   		// lets parse the date to the best of our knowledge
