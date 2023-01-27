@@ -316,6 +316,10 @@
                for (ProductLineItem plItem : pliList) {
                       invTotal = invTotal.add(plItem.getTotal());
                }
+		        PaymentPostDao ppDao = new PaymentPostDao();
+		        BigDecimal totalPaid = ppDao.getTotalPaymentAmount(order.getOrderId());
+	            if(totalPaid ==null) totalPaid = new BigDecimal("0");
+
 
                 %>
                 <HR>
@@ -362,6 +366,17 @@
               <HR>
               <div class="form-group">
                 <label for="paymentAmount">Payment Amount</label>
+                <%=invTotal%>
+              </div>
+              <HR>
+              <div class="form-group">
+                <label for="paymentAmount">Paid Amount</label>
+                <%=totalPaid%>
+              </div>
+
+              <HR>
+              <div class="form-group">
+                <label for="paymentAmount">Post Amount</label>
                 <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" placeholder="Enter payment amount" value="<%=invTotal%>">
               </div>
               <HR>
