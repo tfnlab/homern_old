@@ -310,6 +310,7 @@
                  <label for="start_time">Start Time</label>
                  <%
                     SimpleDateFormat formatterHH = new SimpleDateFormat("MM/dd/yyyy HH");
+                    
                  %>
                  <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%= formatterHH.format(order.getOrderDate()) %>" >
              </div>
