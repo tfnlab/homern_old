@@ -282,7 +282,12 @@
                         int pId = 0;
                         if (request.getParameter("pId") != null && !request.getParameter("pId").isEmpty()) {
                           if(request.getParameter("pId").equals("ap")){
-
+                                        //// WE  ARE HERE
+                                    Payment payment = new Payment(0, customerId, new Date(), new Date(), new Date(), paymentAmount, "Test", true, false, new Date(), new Date(), username, new Date(), paymentAmount);
+                                    String uuid = java.util.UUID.randomUUID().toString();
+                                    payment.setPayment_uuid(uuid);
+                                    pDao.insertPayment(payment);
+                                    pId= (pDao.getPayment_by_uuid(uuid)).getPaymentId();
                           }
                           pId = Integer.parseInt(request.getParameter("pId"));
                         }
