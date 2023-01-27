@@ -377,7 +377,7 @@
               <HR>
               <div class="form-group">
                 <label for="paymentAmount">Post Amount</label>
-                <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" placeholder="Enter payment amount" value="<%=invTotal%>">
+                <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" placeholder="Enter payment amount" value="<%=(invTotal- totalPaid)%>">
               </div>
               <HR>
               <div class="form-group">
