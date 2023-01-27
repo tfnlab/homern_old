@@ -255,6 +255,22 @@
                     }
                     long currentTimeMillis = System.currentTimeMillis();
                     Timestamp currentTime = new Timestamp(currentTimeMillis);
+                    if(orderId==0){
+                      Order orderNew = new Order(0, username, new Date(), new Date(), "", "", "", new BigDecimal("0"), currentTime, currentTime, currentTime, "New Order", "", "0.0", "0.0", "0.0", "0.0", "Proposal");
+                      orderNew.setShippingAddressEstPrice(shippingAddressEstPrice);
+                      orderNew.setShippingAddressLastSalePrice(shippingAddressLastSalePrice);
+                      orderNew.setShippingAddressEstPriceHigh(shippingAddressEstPriceHigh);
+                      orderNew.setShippingAddressEstPriceLow(shippingAddressEstPriceLow);
+
+                      orderNew.setUuid(uuid);
+                      try{
+                        dao.insertOrder(order);
+                        order = dao.getOrderByUuid(uuid, username);
+                        orderId = order.getOrderId();
+                      } catch (Exception e) {
+                            %><%=e.getMessage()%><%
+                      }
+                    }
                     OrderCustomer oc = new OrderCustomer(0,orderId, cId, currentTime, username);
                     ocDao.insert(oc);
                   }
