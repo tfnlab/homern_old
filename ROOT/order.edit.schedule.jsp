@@ -449,7 +449,7 @@
 
   <script>
     $( function() {
-      $( "#datetime" ).datepicker();
+      $( "#datetime" ).datetimepicker();
     });
   </script>
   <!-- Vendor JS Files -->
