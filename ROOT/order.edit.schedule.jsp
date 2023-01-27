@@ -147,6 +147,14 @@
       window.open(url, "_self");
     }
   </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#datepicker").datepicker();
+    });
+    </script>
+
 </head>
 
 <body>
@@ -193,7 +201,7 @@
       <div class="container px-4 px-lg-5">
         <h2>Order - Schedule </h2>
         <%@ include file="user.menu.nav.jsp" %>
-
+<input type="text" id="datepicker">
                 <%
                 Order order = dao.getOrderByOrderId(orderId, username);
                 %>
