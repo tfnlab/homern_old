@@ -120,9 +120,12 @@
 
     <%@ include file="include.header.jsp" %>
         <!-- ======= Blog Section ======= -->
+        <HR>
         <%@ include file="user.menu.nav.jsp" %>
 
+        <HR>
         <h2>Marketing</h2>
+
         <HR>
     <div id='calendar'></div>
 
