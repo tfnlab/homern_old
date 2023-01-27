@@ -342,9 +342,7 @@
          <hr>
   <label for="datetime">Select Date and Time:</label>
   <input type="text" id="datetime" name="datetime" placeholder="Choose a date and time">
-  <script>
-    AnyTime.picker("datetime");
-  </script>
+
   <HR>
          <%
              for (OrderTechnicians technician : lI) {
