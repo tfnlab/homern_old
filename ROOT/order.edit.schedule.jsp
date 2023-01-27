@@ -151,7 +151,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script>
     $(document).ready(function() {
-        $("#datepicker").datepicker();
+        $("#datepickernow").datepicker();
     });
     </script>
 
@@ -201,7 +201,7 @@
       <div class="container px-4 px-lg-5">
         <h2>Order - Schedule </h2>
         <%@ include file="user.menu.nav.jsp" %>
-<input type="text" id="datepicker">
+<input type="text" id="datepickernow">
                 <%
                 Order order = dao.getOrderByOrderId(orderId, username);
                 %>
