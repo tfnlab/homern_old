@@ -300,7 +300,7 @@
              </div>
              <div class="form-group">
                  <label for="start_time">Start Time</label>
-                 <input type="datetimepicker" class="form-control" id="start_time" name="start_time" required datepicker value="<%= order.getOrderDate() %>" >
+                 <input type="datetime" class="form-control" id="start_time" name="start_time" required datepicker value="<%= order.getOrderDate() %>" >
              </div>
              <div class="form-group">
                <label for="end_time">End Time</label>
@@ -434,7 +434,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
    <script>
    $(document).ready(function() {
-    $('#datetimepicker').datetimepicker({
+    $('#start_time').datetimepicker({
         format: 'DD/MM/YYYY HH:mm'
     });
    });
