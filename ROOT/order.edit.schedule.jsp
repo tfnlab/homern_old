@@ -436,7 +436,7 @@
     $(function () {
      var bindDatePicker = function() {
   		$(".date").datetimepicker({
-          format:'YYYY-MM-DD',
+          format:'YYYY-MM-DD HH:mm',
   			icons: {
   				time: "fa fa-clock-o",
   				date: "fa fa-calendar",
