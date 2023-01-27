@@ -26,6 +26,8 @@
 <%@ page import="com.tfnlab.mysql.OrderCustomerDao" %>
 <%@ page import="com.tfnlab.mysql.PaymentPost" %>
 <%@ page import="com.tfnlab.mysql.PaymentPostDao" %>
+<%@ page import="com.tfnlab.mysql.Payment" %>
+<%@ page import="com.tfnlab.mysql.PaymentDao" %>
 
 
 
