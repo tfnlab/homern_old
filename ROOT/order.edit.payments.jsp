@@ -295,7 +295,7 @@
                                 String uuid = java.util.UUID.randomUUID().toString();
                                 payment.setPayment_uuid(uuid);
                                 payDao.insertPayment(payment);
-                                pId= (payDao.getPayment_by_uuid(uuid)).getPaymentId();
+                                pId= (payDao.getPayment_by_uuid(uuid, username)).getPaymentId();
                           }
                           pId = Integer.parseInt(request.getParameter("pId"));
                         }
