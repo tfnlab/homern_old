@@ -149,11 +149,7 @@
   </script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        $("#datepickernow").datepicker();
-    });
-    </script>
+
 <link rel="stylesheet" href="node_modules/anytime/src/anytime.css" rel="stylesheet">
 <script src="node_modules/anytime/src/anytime.js"></script>
 </head>
@@ -494,6 +490,11 @@
 
      bindDatePicker();
    });
+  </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        AnyTime.picker("datetime");
+    });
   </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
