@@ -311,11 +311,11 @@
                     SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                  %>
                  <label for="start_time">Start Time <%= formatterHH.format(order.getOrderDate()) %></label>
-                 <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%= formatterHH.format(order.getOrderDate()) %>" step="60">
+                 <input type="datetime-local" class="form-control" id="start_time" name="start_time" required  value="<%= formatterHH.format(order.getOrderDate()) %>" step="60">
              </div>
              <div class="form-group">
                <label for="end_time">End Time</label>
-               <input type="datetime-local"  class="form-control"  id="end_time" name="end_time" required datepicker value="<%= formatterHH.format(order.getShipDate()) %>" step="900">
+               <input type="datetime-local"  class="form-control"  id="end_time" name="end_time" required  value="<%= formatterHH.format(order.getShipDate()) %>" step="900" >
              </div>
              <div class="form-group">
                <label for="location">Location</label>
