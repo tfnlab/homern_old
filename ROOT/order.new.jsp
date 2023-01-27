@@ -46,6 +46,8 @@ response.sendRedirect("index.html");
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+
+    http://cdnjs.com/libraries/jquery-ui-timepicker-addon
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -56,6 +58,9 @@ response.sendRedirect("index.html");
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
+
   <script>
     function callGeo(sk, fNameLink) {
         document.getElementById(fNameLink.substring(0,fNameLink.length-2)).value = sk;
@@ -350,62 +355,20 @@ response.sendRedirect("index.html");
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <!-- Initialize the datepicker on the text input field -->
- <script>
-    $(function () {
-     var bindDatePicker = function() {
-  		$(".date").datetimepicker({
-          format:'YYYY-MM-DD',
-  			icons: {
-  				time: "fa fa-clock-o",
-  				date: "fa fa-calendar",
-  				up: "fa fa-arrow-up",
-  				down: "fa fa-arrow-down"
-  			}
-  		}).find('input:first').on("blur",function () {
-  			// check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
-  			// update the format if it's yyyy-mm-dd
-  			var date = parseDate($(this).val());
-
-  			if (! isValidDate(date)) {
-  				//create date based on momentjs (we have that)
-  				date = moment().format('YYYY-MM-DD');
-  			}
-  			$(this).val(date);
-  		});
-        $('.time').timepicker({
-        'step': 15
+<script>
+    $(document).ready(function() {
+        $('#timepicker').timepicker({
+            step: 15,
+            onSelect: function(time) {
+                // do something with the selected time
+                console.log(time);
+            }
         });
-  	}
-     var isValidDate = function(value, format) {
-  		format = format || false;
-  		// lets parse the date to the best of our knowledge
-  		if (format) {
-  			value = parseDate(value);
-  		}
-
-  		var timestamp = Date.parse(value);
-
-  		return isNaN(timestamp) == false;
-     }
-
-     var parseDate = function(value) {
-  		var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
-  		if (m)
-  			value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
-
-  		return value;
-     }
-
-     bindDatePicker();
-   });
-    $('.datetimepicker').datetimepicker({
-        step: 15
     });
-  </script>
+</script>
 </body>
 
 </html>
