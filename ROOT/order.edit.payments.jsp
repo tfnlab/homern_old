@@ -281,21 +281,22 @@
                     if (paymentAmountStr != null && paymentAmountStr.trim().length() > 0) {
                       BigDecimal paymentAmount = new BigDecimal("0");
                       if (request.getParameter("paymentAmount") != null && !request.getParameter("paymentAmount").isEmpty()) {
-                        int pId = 0;
-                        if (request.getParameter("pId") != null && !request.getParameter("pId").isEmpty()) {
-                          if(request.getParameter("pId").equals("ap")){
-                                        //// WE  ARE HERE
-                                    Payment payment = new Payment(0, customerId, new Date(), new Date(), new Date(), paymentAmount, "Test", true, false, new Date(), new Date(), username, new Date(), paymentAmount);
-                                    String uuid = java.util.UUID.randomUUID().toString();
-                                    payment.setPayment_uuid(uuid);
-                                    pDao.insertPayment(payment);
-                                    pId= (pDao.getPayment_by_uuid(uuid)).getPaymentId();
-                          }
-                          pId = Integer.parseInt(request.getParameter("pId"));
-                        }
+
                         int ocId = 0;
                         if (request.getParameter("ocId") != null && !request.getParameter("ocId").isEmpty()) {
                           ocId = Integer.parseInt(request.getParameter("ocId"));
+                        }
+
+                        int pId = 0;
+                        if (request.getParameter("pId") != null && !request.getParameter("pId").isEmpty()) {
+                          if(request.getParameter("pId").equals("ap")){
+                                Payment payment = new Payment(0, ocDao.getCustomersById(ocId).getCustomer().getId(), new Date(), new Date(), new Date(), paymentAmount, "Test", true, false, new Date(), new Date(), username, new Date(), paymentAmount);
+                                String uuid = java.util.UUID.randomUUID().toString();
+                                payment.setPayment_uuid(uuid);
+                                pDao.insertPayment(payment);
+                                pId= (pDao.getPayment_by_uuid(uuid)).getPaymentId();
+                          }
+                          pId = Integer.parseInt(request.getParameter("pId"));
                         }
                         paymentAmount = new BigDecimal(request.getParameter("paymentAmount"));
                         PaymentPost pp = new  PaymentPost(1, pId, new Date(), new Date(), new Date(), paymentAmount, new Date(), new Date(), username, 3, username, ocId);
