@@ -354,7 +354,7 @@ response.sendRedirect("index.html");
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <!-- Initialize the datepicker on the text input field -->
-  <script>
+ <script>
     $(function () {
      var bindDatePicker = function() {
   		$(".date").datetimepicker({
@@ -376,7 +376,7 @@ response.sendRedirect("index.html");
   			}
   			$(this).val(date);
   		});
-        $('.datetimepicker').datetimepicker({
+        $('.time').timepicker({
         'step': 15
         });
   	}
