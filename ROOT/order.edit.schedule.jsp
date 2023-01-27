@@ -154,8 +154,8 @@
         $("#datepickernow").datepicker();
     });
     </script>
-<link rel="stylesheet" href="node_modules/anytime/src/lib/anytime.css">
-<script src="node_modules/anytime/src/lib/anytime.js"></script>
+<link rel="stylesheet" href="node_modules/anytime/src/anytime.css" rel="stylesheet">
+<script src="node_modules/anytime/src/anytime.js"></script>
 </head>
 
 <body>
