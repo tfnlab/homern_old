@@ -173,6 +173,13 @@
                   String groupId = request.getParameter("group_id");
                   String locationaclat = request.getParameter("locationaclat");
                   String locationaclng = request.getParameter("locationaclng");
+                  if (request.getParameter("locationaclat") == null || request.getParameter("locationaclat").isEmpty()) {
+                    locationaclat = "0.0";
+                  }
+                  if (request.getParameter("locationaclng") == null || request.getParameter("locationaclng").isEmpty()) {
+                    locationaclng = "0.0";
+                  }
+
                   //2022-12-30T17:35
 //                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/DD/YYYY, HH:MM AM");
 //                  SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy, HH:mm a");
