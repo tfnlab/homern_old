@@ -285,11 +285,11 @@
           </div>
           <div class="form-group">
             <label for="paymentAmount">Payment Amount</label>
-            <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" placeholder="Enter payment amount">
+            <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" placeholder="Enter payment amount" value="<%=invTotal%>">
           </div>
           <div class="form-group">
             <label for="paymentMethod">Payment Method</label>
-            <input type="text" class="form-control" id="paymentMethod" name="paymentMethod" placeholder="Enter payment method" value="<%=invTotal%>">
+            <input type="text" class="form-control" id="paymentMethod" name="paymentMethod" placeholder="Enter payment method" >
           </div>
               <HR>
           <div class="form-group form-check">
