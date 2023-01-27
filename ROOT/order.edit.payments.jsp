@@ -311,6 +311,12 @@
 
                   }
                 }
+               List<ProductLineItem> pliList = plDao.getProductLineItemsByInvoiceId(order.getOrderId());
+               BigDecimal invTotal  = new BigDecimal("0");
+               for (ProductLineItem plItem : pliList) {
+                      invTotal = invTotal.add(plItem.getTotal());
+               }
+
                 %>
                 <HR>
                 <div class="form-group">
@@ -356,7 +362,7 @@
               <HR>
               <div class="form-group">
                 <label for="paymentAmount">Payment Amount</label>
-                <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" placeholder="Enter payment amount">
+                <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" placeholder="Enter payment amount" value="<%=invTotal%>">
               </div>
               <HR>
               <div class="form-group">
