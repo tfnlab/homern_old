@@ -200,9 +200,8 @@
             		}
                    try{
                        reminderTimeDate = dateFormat.parse(reminderTime);
-                       reminderTimeDate = new Date();
                     } catch (Exception e) {
-            		      %><%="Error parsing date and time string: " + e.getMessage()%><%
+                       reminderTimeDate = new Date();
             		}
 
                   Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
@@ -227,11 +226,11 @@
           </div>
           <div class="form-group">
               <label for="start_time">Start Time</label>
-              <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker>
+              <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=(new Date())%>">
           </div>
           <div class="form-group">
             <label for="end_time">End Time</label>
-            <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker>
+            <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=(new Date())%>">
           </div>
           <div class="form-group">
             <label for="location">Location</label>
