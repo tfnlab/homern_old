@@ -300,11 +300,11 @@
              </div>
              <div class="form-group">
                  <label for="start_time">Start Time</label>
-                 <input type="datetime" class="form-control" id="start_time" name="start_time" required datepicker value="<%= order.getOrderDate() %>" >
+                 <input type="datetimepicker" class="form-control" id="start_time" name="start_time" required datepicker value="<%= order.getOrderDate() %>" >
              </div>
              <div class="form-group">
                <label for="end_time">End Time</label>
-               <input type="datetime" class="form-control" id="end_time" name="end_time" required datepicker value="<%= order.getShipDate() %>">
+               <input type="datetimepicker" class="form-control" id="end_time" name="end_time" required datepicker value="<%= order.getShipDate() %>">
              </div>
              <div class="form-group">
                <label for="location">Location</label>
@@ -320,7 +320,7 @@
              </div>
              <div class="form-group">
                <label for="reminder_time">Reminder Time</label>
-               <input type="datetime" class="form-control" id="reminder_time" name="reminder_time" datepicker>
+               <input type="datetimepicker" class="form-control" id="reminder_time" name="reminder_time" datepicker>
              </div>
              <div class="form-group">
                <label for="invitees">Invitees</label>
