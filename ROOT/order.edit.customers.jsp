@@ -264,7 +264,7 @@
                       String uuid = java.util.UUID.randomUUID().toString();
                       orderNew.setUuid(uuid);
                       try{
-                        dao.insertOrder(order);
+                        dao.insertOrder(orderNew);
                         order = dao.getOrderByUuid(uuid, username);
                         orderId = order.getOrderId();
                       } catch (Exception e) {
