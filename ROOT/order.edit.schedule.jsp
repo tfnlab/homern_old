@@ -308,11 +308,11 @@
              </div>
              <div class="form-group">
                  <label for="start_time">Start Time</label>
-                 <input type="date" class="form-control" id="start_time" name="start_time" required datepicker value="<%= order.getOrderDate() %>" >
+                 <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%= order.getOrderDate() %>" >
              </div>
              <div class="form-group">
                <label for="end_time">End Time</label>
-               <input type="date" class="form-control" id="end_time" name="end_time" required datepicker value="<%= order.getShipDate() %>">
+               <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%= order.getShipDate() %>">
              </div>
              <div class="form-group">
                <label for="location">Location</label>
@@ -328,7 +328,7 @@
              </div>
              <div class="form-group">
                <label for="reminder_time">Reminder Time</label>
-               <input type="date" class="form-control" id="reminder_time" name="reminder_time" datepicker>
+               <input type="datetime-local" class="form-control" id="reminder_time" name="reminder_time" datepicker>
              </div>
              <div class="form-group">
                <label for="invitees">Invitees</label>
@@ -445,11 +445,56 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <script>
-    $( function() {
-      $( "#datetime" ).datetimepicker();
-    });
-  </script>
+    <script>
+      $(function () {
+       var bindDatePicker = function() {
+    		$(".date").datetimepicker({
+            format:'YYYY-MM-DD',
+    			icons: {
+    				time: "fa fa-clock-o",
+    				date: "fa fa-calendar",
+    				up: "fa fa-arrow-up",
+    				down: "fa fa-arrow-down"
+    			}
+    		}).find('input:first').on("blur",function () {
+    			// check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
+    			// update the format if it's yyyy-mm-dd
+    			var date = parseDate($(this).val());
+
+    			if (! isValidDate(date)) {
+    				//create date based on momentjs (we have that)
+    				date = moment().format('YYYY-MM-DD');
+    			}
+
+    			$(this).val(date);
+    		});
+    	}
+
+       var isValidDate = function(value, format) {
+    		format = format || false;
+    		// lets parse the date to the best of our knowledge
+    		if (format) {
+    			value = parseDate(value);
+    		}
+
+    		var timestamp = Date.parse(value);
+
+    		return isNaN(timestamp) == false;
+       }
+
+       var parseDate = function(value) {
+    		var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
+    		if (m)
+    			value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
+
+    		return value;
+       }
+
+       bindDatePicker();
+     });
+
+
+    </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
