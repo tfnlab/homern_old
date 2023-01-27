@@ -341,7 +341,7 @@ response.sendRedirect("index.html");
     </section><!-- End Blog Section -->
 
   </main><!-- End #main -->
-<input type="text" id="timepicker" />
+<input type="datetime-local" id="timepicker" />
 
   <%@ include file="include.footer.jsp" %>
 
