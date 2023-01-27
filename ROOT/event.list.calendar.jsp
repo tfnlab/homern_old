@@ -120,7 +120,7 @@
 
     <%@ include file="include.header.jsp" %>
         <!-- ======= Blog Section ======= -->
-        <HR>
+        <HR> <HR> <HR> <HR> <HR>
         <%@ include file="user.menu.nav.jsp" %>
 
         <HR>
