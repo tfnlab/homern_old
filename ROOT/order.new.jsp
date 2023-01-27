@@ -402,6 +402,9 @@ response.sendRedirect("index.html");
 
      bindDatePicker();
    });
+    $('.datetimepicker').datetimepicker({
+        step: 15
+    });
   </script>
 </body>
 
