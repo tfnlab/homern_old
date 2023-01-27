@@ -378,7 +378,9 @@ response.sendRedirect("index.html");
   			$(this).val(date);
   		});
   	}
-
+    $('.datetimepicker').datetimepicker({
+    'step': 15
+    });
      var isValidDate = function(value, format) {
   		format = format || false;
   		// lets parse the date to the best of our knowledge
