@@ -201,7 +201,6 @@
       <div class="container px-4 px-lg-5">
         <h2>Order - Schedule </h2>
         <%@ include file="user.menu.nav.jsp" %>
-<input type="text" id="datepickernow">
                 <%
                 Order order = dao.getOrderByOrderId(orderId, username);
                 %>
@@ -310,7 +309,7 @@
                  <%
                     SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                  %>
-                 <label for="start_time">Start Time <%= formatterHH.format(order.getOrderDate()) %></label>
+                 <label for="start_time">Start Time </label>
                  <input type="datetime-local" class="form-control" id="start_time" name="start_time" required  value="<%= formatterHH.format(order.getOrderDate()) %>" step="60">
              </div>
              <div class="form-group">
