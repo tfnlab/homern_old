@@ -124,7 +124,7 @@
         <%@ include file="user.menu.nav.jsp" %>
 
         <HR>
-        <h2>Marketing</h2>
+        <h2>Calendar</h2>
 
         <HR>
     <div id='calendar'></div>
