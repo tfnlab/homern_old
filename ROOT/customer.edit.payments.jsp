@@ -16,6 +16,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItem" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
+<%@ page import="java.util.UUID" %>
 <%@ include file="auth.jsp" %>
 
 
@@ -237,6 +238,8 @@
                         }
 
                         Payment payment = new Payment(0, customerId, paymentDate, expectedPostDate, effectiveDate, paymentAmount, paymentMethod, hasCleared, hasReversed, createdAt, lastUpdatedAt, createdBy, lastModifiedBy, totalAmount);
+                        String uuid = java.util.UUID.randomUUID().toString();
+                        payment.setPayment_uuid(uuid);
                         pDao.insertPayment(payment);
                       %>
 

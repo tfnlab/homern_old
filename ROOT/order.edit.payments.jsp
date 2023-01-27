@@ -272,6 +272,7 @@
                 if (action != null && action.trim().length() > 0) {
                   PaymentPostDao ppDao = new PaymentPostDao();
                   if(action.equals("add")){
+
                     long currentTimeMillis = System.currentTimeMillis();
                     Timestamp currentTime = new Timestamp(currentTimeMillis);
                     String paymentAmountStr = request.getParameter("paymentAmount");
@@ -280,6 +281,9 @@
                       if (request.getParameter("paymentAmount") != null && !request.getParameter("paymentAmount").isEmpty()) {
                         int pId = 0;
                         if (request.getParameter("pId") != null && !request.getParameter("pId").isEmpty()) {
+                          if(request.getParameter("pId").equals("ap")){
+
+                          }
                           pId = Integer.parseInt(request.getParameter("pId"));
                         }
                         int ocId = 0;
