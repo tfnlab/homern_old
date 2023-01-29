@@ -260,7 +260,7 @@
                     String[] events = {""};
 
                         if(event_type.equals("installation")){
-                            new_events = {
+                            String[] new_events = {
                                     "Site assessment and measurement",
                                     "Equipment selection and ordering",
                                     "Permit acquisition",
