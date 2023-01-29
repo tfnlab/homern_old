@@ -197,9 +197,6 @@
 
               $('#calendar').fullCalendar('refetchEvents');
         }
-        eventRender: function(event, element) {
-            element.attr('title', event.description);
-        }
     </script>
 
 </html>
