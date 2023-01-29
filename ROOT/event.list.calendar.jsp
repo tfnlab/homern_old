@@ -114,12 +114,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
 <style>
 .order-state-box {
-  width: 100px;
+  width: 70px;
   height: 50px;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 5px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
 }
 </style>
 
