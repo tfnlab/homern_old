@@ -3,7 +3,12 @@ List<Event> events = new ArrayList<Event>();
 EventDao dao = new EventDao();
 String username = (String) session.getAttribute("username");
 try {
-    events = dao.getEventsByUsername(username, 0);
+
+    if(request.getParameter("technicianId").equals("all")){
+        events = dao.getEventsByUsername(username, 0);
+    }else{
+        events = dao.getEventsByUsername(username, 0);
+    }
 } catch (SQLException e) {
     e.printStackTrace();
 }
@@ -12,6 +17,7 @@ SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 [
 <%
 for (int i = 0; i < events.size(); i++) {
+
     Event event = events.get(i);
     String color = "orange";
     String[] orderStates = {"Open", "Closed", "Cancelled", "On Hold", "Pending", "Shipped", "Delivered", "Refunded", "Returned", "Need Attention", "In Progress"};
