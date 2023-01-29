@@ -112,7 +112,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-
+<style>
+.order-state-box {
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 16px;
+}
+</style>
 
   </head>
   <body>
@@ -124,6 +133,23 @@
         <HR> <HR> <HR> <HR> <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
+  <table>
+    <tr>
+      <%
+        String[] orderStates = {"Open", "Closed", "Cancelled", "On Hold", "Pending", "Shipped", "Delivered", "Refunded", "Returned", "Need Attention", "In Progress"};
+        String[] orderColors = {"green", "red", "orange", "blue", "purple", "pink", "yellow", "brown", "gray", "black"};
+        for (int i = 0; i < orderStates.length; i++) {
+      %>
+      <td style="background-color: <%=orderColors[i%orderColors.length]%>">
+        <div class="order-state-box">
+          <%=orderStates[i]%>
+        </div>
+      </td>
+      <%
+        }
+      %>
+    </tr>
+  </table>
         <%
 
                 String username = (String) session.getAttribute("username");
@@ -153,8 +179,6 @@
         function renderCalendar() {
             var technicianIdSelect = document.getElementById("technicianId");
             var technicianId = technicianIdSelect.options[technicianIdSelect.selectedIndex].value;
-            alert(technicianId);
-
               $.ajax({
                 type: "GET",
                 url: "event.list.calendar.event.jsp?technicianId=" + technicianId ,
