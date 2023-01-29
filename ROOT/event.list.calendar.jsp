@@ -120,6 +120,7 @@
   padding-top: 5px;
   font-weight: bold;
   font-size: 14px;
+  font-color: white;
 }
 </style>
 
@@ -150,6 +151,8 @@
       %>
     </tr>
   </table>
+
+  <HR>
         <%
 
                 String username = (String) session.getAttribute("username");
