@@ -197,10 +197,9 @@ function renderCalendar() {
                     element.attr('title', event.description);
                 }
             });
+            $('#calendar').fullCalendar('refetchEvents');
         }
     });
-
-    $('#calendar').fullCalendar('refetchEvents');
 }
 
     </script>
