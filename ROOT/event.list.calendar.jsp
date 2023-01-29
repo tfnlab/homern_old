@@ -131,9 +131,9 @@
                 List<Technician> technicians = technicianDao.getTechniciansByUsernameActive(username);
         %>
                    <select class="form-group" id="technicianId" name="technicianId" >
-                         <option value="all" <%if(technicianId.equals("all")){%>selected<%}%> >All Technicians</option>
+                         <option value="all" >All Technicians</option>
                        <% for (Technician technician : technicians) { %>
-                         <option value="<%= technician.getTechnicianId() %>" <%if(technicianId.equals(String.valueOf(technician.getTechnicianId()))){%>selected<%}%>  ><%= technician.getTechnicianName() %></option>
+                         <option value="<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianName() %></option>
                        <% } %>
                    </select>
         <HR>
