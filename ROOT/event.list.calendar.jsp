@@ -151,13 +151,13 @@
         });
 
         function renderCalendar() {
-            var technicianId = document.getElementById("technicianId");
-            var technicianIdValue = selectBox.options[selectBox.selectedIndex].value;
-            alert(technicianIdValue);
+            var technicianIdSelect = document.getElementById("technicianId");
+            var technicianId = technicianIdSelect.options[selectBox.selectedIndex].value;
+            alert(technicianId);
 
           $.ajax({
             type: "GET",
-            url: "event.list.calendar.event.jsp?technicianId=" + technicianIdValue ,
+            url: "event.list.calendar.event.jsp?technicianId=" + technicianId ,
             dataType: "json",
             success: function(events) {
               $('#calendar').fullCalendar({
