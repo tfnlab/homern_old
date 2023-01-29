@@ -222,8 +222,11 @@
                             Order order = oDao.getOrderByOrderId(ot.getEvent().getOrder().getOrderId(), username);
                             ot.getEvent().setOrder(order);
                         %>
-                            <%=ot.getEvent().getOrder().getOrderName()%> \
-                            <%=ot.getEvent().getTechnician().getTechnicianName()%>
+                           <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" >
+                            <%=ot.getEvent().getOrder().getOrderName()%> </a>
+                           <a href="technician.edit.jsp?technicianId=<%= ot.getEvent().getTechnician().getTechnicianId() %>"  >
+                            <%=ot.getEvent().getTechnician().getTechnicianName()%></a>
+
                         <%}%>
                     <HR>
                     <form action="event.edit.jsp" method="post">
