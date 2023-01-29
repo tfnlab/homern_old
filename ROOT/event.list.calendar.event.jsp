@@ -7,7 +7,9 @@ try {
     if(request.getParameter("technicianId").equals("all")){
         events = dao.getEventsByUsername(username, 0);
     }else{
-        events = dao.getEventsByUsername(username, 0);
+        int tId = 0;
+        tId = Integer.parseInt(request.getParameter("technicianId"));
+        events = dao.getEventsByUsername(username, 0, tId);
     }
 } catch (SQLException e) {
     e.printStackTrace();
