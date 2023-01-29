@@ -217,7 +217,11 @@
                       <a href="https://calendar.google.com/calendar/r/eventedit?text=<%= URLEncoder.encode(event.getTitle()) %>&dates=<%= dateFormatGoogleCal.format(event.getStartTime()) %>/<%= dateFormatGoogleCal.format(event.getEndTime()) %>&location=<%= URLEncoder.encode(event.getLocation()) %>&details=<%= URLEncoder.encode(event.getDescription()) %>&trp=false&sprop=website:<%= URLEncoder.encode(usernameOBJ.getBusiness_name()) %>&sprop=name:<%=usernameOBJ.getUrl_website()%>" target="_blank">Add to Goolge</a>
 
                     <HR>
-                        <%if(ot!=null){%>
+                        <%if(ot!=null){
+                            OrderDao oDao = new OrderDao()
+                            Order order = oDao.getOrderByOrderId(ot.getEvent().getOrder().getOrderId(), username);
+                            ot.getEvent().setOrder(order);
+                        %>
                             <%=ot.getEvent().getOrder().getOrderName()%> \
                             <%=ot.getEvent().getTechnician().getTechnicianName()%>
                         <%}%>
