@@ -161,9 +161,11 @@
                 url: "event.list.calendar.event.jsp?technicianId=" + technicianId ,
                 dataType: "json",
                 success: function(events) {
-                  $('#calendar').fullCalendar(events);
+                  $('#calendar').fullCalendar({ events: events });
+                  $('#calendar').fullCalendar('refetchEvents');
                 }
               });
+
         }
 
     </script>
