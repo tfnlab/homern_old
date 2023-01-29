@@ -143,7 +143,8 @@
             for (int i = 0; i < orderStates.length; i++) {
           %>
           <td style="background-color: <%=orderColors[i%orderColors.length]%>">
-              <div class="order-state-box" style="color: white;">
+               <hr>
+              <div class="order-state-box" style="background-color: white; color: black;">
                 <%=orderStates[i]%>
               </div>
           </td>
