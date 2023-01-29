@@ -191,13 +191,20 @@
                 dataType: "json",
                 success: function(events) {
                   $('#calendar').fullCalendar('destroy');
-                  $('#calendar').fullCalendar({ events: events });
+                    $('#calendar').fullCalendar({
+                        events: events,
+                        eventRender: function(event, element) {
+                            element.attr('title', event.description);
+                        }
+                    });
                 }
               });
 
               $('#calendar').fullCalendar('refetchEvents');
         }
-
+        eventRender: function(event, element) {
+            element.attr('title', event.description);
+        }
     </script>
 
 </html>
