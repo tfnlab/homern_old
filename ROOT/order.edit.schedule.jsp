@@ -358,6 +358,7 @@
              for (OrderTechnicians technician : lI) {
          %>
                 ID: <%= technician.getId() %><br>
+                Event ID: <a href="event.edit.jsp?eventid=<%= technician.getEventId() %>" ><%= technician.getEventId() %></a><br>
                 Tech ID: <%= technician.getTechnicianId() %><br>
                 <%=tMap.get(Integer.valueOf(technician.getTechnicianId())).getTechnicianName() %>
                 -- <BR>
