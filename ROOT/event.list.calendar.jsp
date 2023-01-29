@@ -160,8 +160,8 @@
                 url: "event.list.calendar.event.jsp?technicianId=" + technicianId ,
                 dataType: "json",
                 success: function(events) {
-                  $('#calendar').fullCalendar('removeEvents');
-                  $('#calendar').fullCalendar('addEventSource', events);
+                  $('#calendar').fullCalendar('destroy');
+                  $('#calendar').fullCalendar({ events: events });
                 }
               });
 
