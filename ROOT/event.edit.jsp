@@ -218,7 +218,7 @@
 
                     <HR>
                         <%if(ot!=null){
-                            OrderDao oDao = new OrderDao()
+                            OrderDao oDao = new OrderDao();
                             Order order = oDao.getOrderByOrderId(ot.getEvent().getOrder().getOrderId(), username);
                             ot.getEvent().setOrder(order);
                         %>
