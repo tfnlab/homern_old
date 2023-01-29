@@ -236,16 +236,24 @@
                     String locationaclat = request.getParameter("locationaclat");
                     String locationaclng = request.getParameter("locationaclng");
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
-                    Date startTimeDate = null;
-                    Date endTimeDate = null;
-                    Date reminderTimeDate = null;
-                      try{
-                         startTimeDate = dateFormat.parse(startTime);
-                         endTimeDate = dateFormat.parse(endTime);
-                         reminderTimeDate = dateFormat.parse(reminderTime);
-                      } catch (Exception e) {
-                        %><%="Error parsing date and time string: " + e.getMessage()%><%
-                      }
+                      Date startTimeDate = new Date();
+                      Date endTimeDate = new Date();
+                      Date reminderTimeDate = new Date();
+                        try{
+                           startTimeDate = dateFormat.parse(startTime);
+                        } catch (Exception e) {
+                           startTimeDate = new Date();
+                        }
+                       try{
+                           endTimeDate = dateFormat.parse(endTime);
+                        } catch (Exception e) {
+                            endTimeDate = new Date();
+                        }
+                       try{
+                           reminderTimeDate = dateFormat.parse(reminderTime);
+                        } catch (Exception e) {
+                           reminderTimeDate = new Date();
+                        }
                     Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
                     evd.addEvent(event);
                     event = evd.getEventByUuid(uuid);
