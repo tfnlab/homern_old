@@ -235,6 +235,8 @@
                     String groupId = request.getParameter("group_id");
                     String locationaclat = request.getParameter("locationaclat");
                     String locationaclng = request.getParameter("locationaclng");
+                    String event_type = request.getParameter("event_type");
+
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                       Date startTimeDate = new Date();
                       Date endTimeDate = new Date();
@@ -254,8 +256,17 @@
                         } catch (Exception e) {
                            reminderTimeDate = new Date();
                         }
+
                     Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
-                    evd.addEvent(event);
+                    if(event_type.equals("none"){
+                        evd.addEvent(event);
+                    }else{
+                        if(event_type.equals("installation"){
+                            evd.addEvent(event);
+                            event.setTitle(event.getTitle() + " New Item")
+                            evd.addEvent(event);
+                        }
+                    }
                     event = evd.getEventByUuid(uuid);
 
                   int tId = 0;
@@ -300,8 +311,8 @@
          <p>
 
                 <div class="form-group">
-                  <label for="order_type">Order Type:</label>
-                        <select name="order_type" id="order_type" >
+                  <label for="event_type">Event Type:</label>
+                        <select name="event_type" id="event_type" >
                           <option value="none">None</option>
                           <option value="installation">Installation of new heating and cooling systems</option>
                           <option value="maintenance">Maintenance and repair services</option>
