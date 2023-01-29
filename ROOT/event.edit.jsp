@@ -174,7 +174,7 @@
                 Event event = new Event();
                 EventDao ed = new EventDao();
                 OrderTechniciansDAO otDao = new OrderTechniciansDAO();
-                OrderTechnicians ot = otDao.getOrderTechniciansByEventId(eId);
+                OrderTechnicians ot = otDao.getOrderTechniciansByEventIdAll(eId);
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                 SimpleDateFormat dateFormatApple = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
@@ -210,7 +210,7 @@
                         Event Saved
                       <%
                 }
-                  event = ed.getOrderTechniciansByEventIdAll(eId);
+                  event = ed.getEventById(eId);
         %>
                     <HR>
 
@@ -218,8 +218,8 @@
 
                     <HR>
                         <%if(ot!=null){%>
-                            <%=ot.getEvent().getOrder.getName()%> \
-                            <%=ot.getTechnicianId()%>
+                            <%=ot.getEvent().getOrder().getOrderName()%> \
+                            <%=ot.getEvent().getTechnician().getTechnicianName()%>
                         <%}%>
                     <HR>
                     <form action="event.edit.jsp" method="post">
