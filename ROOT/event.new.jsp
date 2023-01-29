@@ -204,7 +204,8 @@
                        reminderTimeDate = new Date();
             		}
 
-                  Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
+                  String status = request.getParameter("status");
+                  Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, status);
                   EventDao evd = new EventDao();
 
                   evd.addEvent(event);
@@ -259,6 +260,17 @@
             <label for="group_id">Group ID</label>
             <input type="text" class="form-control" id="group_id" name="group_id">
           </div>
+           <div class="form-group mt-3">
+             <label for="business-type">Event Status</label>
+             <% String[] orderStates = {"Open", "Closed", "Cancelled", "On Hold", "Pending", "Shipped", "Delivered", "Refunded", "Returned", "Need Attention", "In Progress"}; %>
+            <select class="form-control" id="event_status" name="event_status" tabindex="16">
+                <% for (int i = 0; i < orderStates.length; i++) { %>
+                    <option value="<%= orderStates[i].toLowerCase() %>" >
+                        <%= orderStates[i] %>
+                    </option>
+                <% } %>
+            </select>
+           </div>
           <button type="submit" class="btn btn-primary">Create Event</button>
           </form>
 
