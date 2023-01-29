@@ -147,18 +147,21 @@
   </body>
       <script>
         $(document).ready(function() {
-                $.ajax({
-                    type: "GET",
-                    url: "event.list.calendar.event.jsp?event_stauts=open",
-                    dataType: "json",
-                    success: function(events) {
-                        $('#calendar').fullCalendar({
-                            events: events
-                        });
-                    }
-                });
+                renderCalendar();
             });
-
+            
+        function renderCalendar() {
+          $.ajax({
+            type: "GET",
+            url: "event.list.calendar.event.jsp?event_stauts=open",
+            dataType: "json",
+            success: function(events) {
+              $('#calendar').fullCalendar({
+                events: events
+              });
+            }
+          });
+        }
 
     </script>
 
