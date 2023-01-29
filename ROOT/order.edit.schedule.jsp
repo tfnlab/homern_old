@@ -257,29 +257,39 @@
                         } catch (Exception e) {
                            reminderTimeDate = new Date();
                         }
+                    String[] events = {""};
 
-                    Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
-                    if(event_type.equals("none")){
-                        evd.addEvent(event);
-                    }else{
                         if(event_type.equals("installation")){
-                            evd.addEvent(event);
-                            event.setTitle(event.getTitle() + " New Item");
-                            evd.addEvent(event);
+                            events = {
+                                    "Site assessment and measurement",
+                                    "Equipment selection and ordering",
+                                    "Permit acquisition",
+                                    "Preparation of the installation area",
+                                    "Disconnection and removal of old equipment",
+                                    "Installation of new equipment",
+                                    "Electrical and ductwork connections",
+                                    "Testing and commissioning of the new system",
+                                    "Clean up of the installation area",
+                                    "Handover and training to the customer",
+                                    "Follow-up inspection and maintenance."
+                                    };
                         }
-                    }
-                    event = evd.getEventByUuid(uuid);
+                    for (int i = 0; i < events.length; i++) {
+                        Event event = new Event(0, title + " " + events[i], startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
+                        evd.addEvent(event);
+                        event = evd.getEventByUuid(uuid);
 
-                  int tId = 0;
-                  if (request.getParameter("technicianId") != null && !request.getParameter("technicianId").isEmpty()) {
-                    tId = Integer.parseInt(request.getParameter("technicianId"));
-                  }
-                  OrderTechnicians ot = OrderTechnicians.createSampleOrderTechnicians();
-                  ot.setTechnicianId(tId);
-                  ot.setOrderId(orderId);
-                  ot.setEventId(event.getId());
-                  ot.setUsername(username);
-                  otD.insertOrderTechnicians(ot);
+                      int tId = 0;
+                      if (request.getParameter("technicianId") != null && !request.getParameter("technicianId").isEmpty()) {
+                        tId = Integer.parseInt(request.getParameter("technicianId"));
+                      }
+                      OrderTechnicians ot = OrderTechnicians.createSampleOrderTechnicians();
+                      ot.setTechnicianId(tId);
+                      ot.setOrderId(orderId);
+                      ot.setEventId(event.getId());
+                      ot.setUsername(username);
+                      otD.insertOrderTechnicians(ot);
+                    }
               }
         %>
 
