@@ -219,6 +219,9 @@
                 }else{
 
         %>
+                         <%
+                    SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+                 %>
         <form method="post" action="event.new.jsp">
           <div class="form-group">
             <label for="title">Title</label>
@@ -226,11 +229,11 @@
           </div>
           <div class="form-group">
               <label for="start_time">Start Time</label>
-              <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=(new Date())%>" >
+              <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(new Date())%>" >
           </div>
           <div class="form-group">
             <label for="end_time">End Time</label>
-            <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=(new Date())%>" >
+            <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=formatterHH.format(new Date())%>" >
           </div>
           <div class="form-group">
             <label for="location">Location</label>
@@ -246,7 +249,7 @@
           </div>
           <div class="form-group">
             <label for="reminder_time">Reminder Time</label>
-            <input type="datetime-local" class="form-control" id="reminder_time" name="reminder_time" datepicker>
+            <input type="datetime-local" class="form-control" id="reminder_time" name="reminder_time" datepicker value="<%=formatterHH.format(new Date())%>">
           </div>
           <div class="form-group">
             <label for="invitees">Invitees</label>
