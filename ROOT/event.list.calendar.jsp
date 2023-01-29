@@ -125,6 +125,8 @@
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
         <%
+
+                String username = (String) session.getAttribute("username");
                 TechnicianDao technicianDao = new TechnicianDao();
                 List<Technician> technicians = technicianDao.getTechniciansByUsernameActive(username);
         %>
