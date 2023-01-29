@@ -260,7 +260,7 @@
                     String[] events = {""};
 
                         if(event_type.equals("installation")){
-                            events = {
+                            new_events = {
                                     "Site assessment and measurement",
                                     "Equipment selection and ordering",
                                     "Permit acquisition",
@@ -273,6 +273,7 @@
                                     "Handover and training to the customer",
                                     "Follow-up inspection and maintenance."
                                     };
+                             events = new_events;
                         }
                     for (int i = 0; i < events.length; i++) {
                         Event event = new Event(0, title + " " + events[i], startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
