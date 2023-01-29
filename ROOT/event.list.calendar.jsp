@@ -139,7 +139,7 @@
         <tr>
           <%
             String[] orderStates = {"Open", "Closed", "Cancelled", "On Hold", "Pending", "Shipped", "Delivered", "Refunded", "Returned", "Need Attention", "In Progress"};
-            String[] orderColors = {"green", "red", "orange", "blue", "purple", "pink", "yellow", "brown", "gray", "black", "black"};
+            String[] orderColors = {"green", "red", "orange", "blue", "purple", "pink", "yellow", "brown", "gray", "black", "teal"};
             for (int i = 0; i < orderStates.length; i++) {
           %>
           <td style="background-color: <%=orderColors[i%orderColors.length]%>">
