@@ -152,7 +152,7 @@
 
         function renderCalendar() {
             var technicianIdSelect = document.getElementById("technicianId");
-            var technicianId = technicianIdSelect.options[selectBox.selectedIndex].value;
+            var technicianId = technicianIdSelect.options[technicianIdSelect.selectedIndex].value;
             alert(technicianId);
 
           $.ajax({
