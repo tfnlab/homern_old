@@ -148,9 +148,11 @@
       <script>
         $(document).ready(function() {
                 renderCalendar();
-            });
-            
+        });
+
         function renderCalendar() {
+            var technicianId = document.getElementById("technicianId").val();
+            alert(technicianId);
           $.ajax({
             type: "GET",
             url: "event.list.calendar.event.jsp?event_stauts=open",
