@@ -168,8 +168,6 @@
                        </select>
             <HR>
     </div>
-        <h2>Calendar</h2>
-
         <HR>
     </div>
     <div id='calendar'></div>
