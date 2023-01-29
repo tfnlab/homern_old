@@ -182,29 +182,27 @@
                 renderCalendar();
         });
 
-        function renderCalendar() {
-            var technicianIdSelect = document.getElementById("technicianId");
-            var technicianId = technicianIdSelect.options[technicianIdSelect.selectedIndex].value;
-              $.ajax({
-                type: "GET",
-                url: "event.list.calendar.event.jsp?technicianId=" + technicianId ,
-                dataType: "json",
-                success: function(events) {
-                  $('#calendar').fullCalendar('destroy');
-                    $('#calendar').fullCalendar({
-                        events: events,
-                        eventRender: function(event, element) {
-                            element.attr('title', event.description);
-                        }
-                    });
+function renderCalendar() {
+    var technicianIdSelect = document.getElementById("technicianId");
+    var technicianId = technicianIdSelect.options[technicianIdSelect.selectedIndex].value;
+    $.ajax({
+        type: "GET",
+        url: "event.list.calendar.event.jsp?technicianId=" + technicianId ,
+        dataType: "json",
+        success: function(events) {
+            $('#calendar').fullCalendar('destroy');
+            $('#calendar').fullCalendar({
+                events: events,
+                eventRender: function(event, element) {
+                    element.attr('title', event.description);
                 }
-              });
+            });
+        }
+    });
 
-              $('#calendar').fullCalendar('refetchEvents');
-        }
-        eventRender: function(event, element) {
-            element.attr('title', event.description);
-        }
+    $('#calendar').fullCalendar('refetchEvents');
+}
+
     </script>
 
 </html>
