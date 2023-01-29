@@ -9,6 +9,9 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="com.tfnlab.mysql.Entity" %>
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
+<%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
+<%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
+
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.text.ParseException" %>
 <%@ page import="com.tfnlab.mysql.Event" %>
@@ -170,6 +173,9 @@
                 // Validate form data
                 Event event = new Event();
                 EventDao ed = new EventDao();
+                OrderTechniciansDAO otDao = new OrderTechniciansDAO();
+                OrderTechnicians ot = otDao.getOrderTechniciansByEventId(eId);
+
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                 SimpleDateFormat dateFormatApple = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
                 SimpleDateFormat dateFormatGoogleCal = new SimpleDateFormat("yyyyMMdd'T'hhmmss'Z'");
@@ -209,6 +215,12 @@
                     <HR>
 
                       <a href="https://calendar.google.com/calendar/r/eventedit?text=<%= URLEncoder.encode(event.getTitle()) %>&dates=<%= dateFormatGoogleCal.format(event.getStartTime()) %>/<%= dateFormatGoogleCal.format(event.getEndTime()) %>&location=<%= URLEncoder.encode(event.getLocation()) %>&details=<%= URLEncoder.encode(event.getDescription()) %>&trp=false&sprop=website:<%= URLEncoder.encode(usernameOBJ.getBusiness_name()) %>&sprop=name:<%=usernameOBJ.getUrl_website()%>" target="_blank">Add to Goolge</a>
+
+                    <HR>
+                        <%if(ot!=null)%>
+                            <%=ot.getOrderId()%> \
+                            <%=ot.getTechnicianId()%>
+                        <%}%>
                     <HR>
                     <form action="event.edit.jsp" method="post">
                           <input type="hidden" class="form-control" name="eventid" value="<%= eId %>">
