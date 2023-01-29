@@ -120,7 +120,7 @@
   padding-top: 5px;
   font-weight: bold;
   font-size: 14px;
-  color: white;
+  color: gray;
 }
 </style>
 
