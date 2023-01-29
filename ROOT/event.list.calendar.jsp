@@ -161,7 +161,7 @@
                 url: "event.list.calendar.event.jsp?technicianId=" + technicianId ,
                 dataType: "json",
                 success: function(events) {
-                  $('#calendar').fullCalendar('addEventSource', events);
+                  $('#calendar').fullCalendar(events);
                 }
               });
         }
