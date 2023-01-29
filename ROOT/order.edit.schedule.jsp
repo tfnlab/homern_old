@@ -258,12 +258,12 @@
                         }
 
                     Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
-                    if(event_type.equals("none"){
+                    if(event_type.equals("none")){
                         evd.addEvent(event);
                     }else{
-                        if(event_type.equals("installation"){
+                        if(event_type.equals("installation")){
                             evd.addEvent(event);
-                            event.setTitle(event.getTitle() + " New Item")
+                            event.setTitle(event.getTitle() + " New Item");
                             evd.addEvent(event);
                         }
                     }
