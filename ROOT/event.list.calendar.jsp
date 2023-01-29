@@ -123,7 +123,17 @@
     <div >
         <HR> <HR> <HR> <HR> <HR>
         <%@ include file="user.menu.nav.jsp" %>
-
+        <HR>
+        <%
+                TechnicianDao technicianDao = new TechnicianDao();
+                List<Technician> technicians = technicianDao.getTechniciansByUsernameActive(username);
+        %>
+                   <select class="form-group" id="technicianId" name="technicianId" >
+                         <option value="all" <%if(technicianId.equals("all")){%>selected<%}%> >All Technicians</option>
+                       <% for (Technician technician : technicians) { %>
+                         <option value="<%= technician.getTechnicianId() %>" <%if(technicianId.equals(String.valueOf(technician.getTechnicianId()))){%>selected<%}%>  ><%= technician.getTechnicianName() %></option>
+                       <% } %>
+                   </select>
         <HR>
         <h2>Calendar</h2>
 
