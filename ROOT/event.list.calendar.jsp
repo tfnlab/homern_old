@@ -120,7 +120,7 @@
   padding-top: 5px;
   font-weight: bold;
   font-size: 14px;
-  color: gray;
+  color: black;
 }
 </style>
 
@@ -143,9 +143,9 @@
             for (int i = 0; i < orderStates.length; i++) {
           %>
           <td style="background-color: <%=orderColors[i%orderColors.length]%>">
-            <div class="order-state-box">
-              <%=orderStates[i]%>
-            </div>
+              <div class="order-state-box" style="color: white;">
+                <%=orderStates[i]%>
+              </div>
           </td>
           <%
             }
