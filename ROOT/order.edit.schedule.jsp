@@ -257,7 +257,7 @@
                         } catch (Exception e) {
                            reminderTimeDate = new Date();
                         }
-                    String[] events = {""};
+                    String[] events;
 
                         if(event_type.equals("installation")){
                             String[] new_events = {
@@ -273,6 +273,9 @@
                                     "Handover and training to the customer",
                                     "Follow-up inspection and maintenance."
                                     };
+                             events = new_events;
+                        }else{
+                             String[] new_events =  {""};
                              events = new_events;
                         }
                     for (int i = 0; i < events.length; i++) {
