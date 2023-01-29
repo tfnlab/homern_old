@@ -259,27 +259,7 @@
                         }
                         String[] events;
 
-                        if (event_type.equals("installation")) {
-                            String[] new_events = {
-                                "Site assessment and measurement",
-                                "Equipment selection and ordering",
-                                "Permit acquisition",
-                                "Preparation of the installation area",
-                                "Disconnection and removal of old equipment",
-                                "Installation of new equipment",
-                                "Electrical and ductwork connections",
-                                "Testing and commissioning of the new system",
-                                "Clean up of the installation area",
-                                "Handover and training to the customer",
-                                "Follow-up inspection and maintenance."
-                            };
-                            events = new_events;
-                        } else {
-                            String[] new_events = {""};
-                            events = new_events;
-                        }
 
-                    for (int i = 0; i < events.length; i++) {
                         Event event = new Event(0, title + " " + events[i], startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
                         evd.addEvent(event);
                         event = evd.getEventByUuid(uuid);
@@ -294,7 +274,7 @@
                       ot.setEventId(event.getId());
                       ot.setUsername(username);
                       otD.insertOrderTechnicians(ot);
-                    }
+                   
               }
         %>
 
