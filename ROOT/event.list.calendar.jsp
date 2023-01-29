@@ -151,8 +151,10 @@
         });
 
         function renderCalendar() {
-            var technicianId = document.getElementById("technicianId").val();
+            var selectBox = document.getElementById("technicianId");
+            var selectedOptionValue = selectBox.options[selectBox.selectedIndex].value;
             alert(technicianId);
+
           $.ajax({
             type: "GET",
             url: "event.list.calendar.event.jsp?event_stauts=open",
