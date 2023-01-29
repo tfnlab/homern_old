@@ -154,7 +154,7 @@
             var technicianIdSelect = document.getElementById("technicianId");
             var technicianId = technicianIdSelect.options[technicianIdSelect.selectedIndex].value;
             alert(technicianId);
-
+          $('#calendar').fullCalendar('removeEvents');
           $.ajax({
             type: "GET",
             url: "event.list.calendar.event.jsp?technicianId=" + technicianId ,
