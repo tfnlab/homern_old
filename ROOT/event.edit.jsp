@@ -210,7 +210,7 @@
                         Event Saved
                       <%
                 }
-                  event = ed.getEventById(eId);
+                  event = ed.getOrderTechniciansByEventIdAll(eId);
         %>
                     <HR>
 
@@ -218,7 +218,7 @@
 
                     <HR>
                         <%if(ot!=null){%>
-                            <%=ot.getOrderId()%> \
+                            <%=ot.getEvent().getOrder.getName()%> \
                             <%=ot.getTechnicianId()%>
                         <%}%>
                     <HR>
