@@ -171,7 +171,9 @@
     </div>
         <HR>
     </div>
+    <div style="margin: 20px;">
     <div id='calendar'></div>
+    </div>
 
       <%@ include file="include.footer.jsp" %>
   </body>
