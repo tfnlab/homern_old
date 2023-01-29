@@ -260,7 +260,7 @@
                         String[] events;
 
 
-                        Event event = new Event(0, title + " " + events[i], startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
+                        Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
                         evd.addEvent(event);
                         event = evd.getEventByUuid(uuid);
 
@@ -274,7 +274,7 @@
                       ot.setEventId(event.getId());
                       ot.setUsername(username);
                       otD.insertOrderTechnicians(ot);
-                   
+
               }
         %>
 
