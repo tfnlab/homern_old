@@ -157,6 +157,8 @@ response.sendRedirect("index.html");
                 String shippingAddressaclng = request.getParameter("shippingAddressaclng");
                 String billingAddressaclat = request.getParameter("billingAddressaclat");
                 String billingAddressaclng = request.getParameter("billingAddressaclng");
+
+
                 String status = request.getParameter("status");
                 String uuid = java.util.UUID.randomUUID().toString();
 
@@ -330,20 +332,6 @@ response.sendRedirect("index.html");
                 <div class="form-group">
                   <label for="shippingAddressEstPriceLow">Estimated Low Price:</label>
                   <input type="number" class="form-control" id="shippingAddressEstPriceLow" name="shippingAddressEstPriceLow" step="0.01" tabindex="12">
-                </div>
-                <HR>
-                <div class="form-group">
-                  <label for="order_type">Order Type:</label>
-<select name="order_type" id="order_type" >
-  <option value="installation">Installation of new heating and cooling systems</option>
-  <option value="maintenance">Maintenance and repair services</option>
-  <option value="replacement">Replacement of old or worn out equipment</option>
-  <option value="air-quality">Indoor air quality assessment and improvement</option>
-  <option value="duct-cleaning">Duct cleaning and sealing</option>
-  <option value="efficiency">Energy efficiency upgrades</option>
-  <option value="emergency">Emergency repair services</option>
-  <option value="preventive">Preventive maintenance contracts</option>
-</select>
                 </div>
                 <HR>
 
