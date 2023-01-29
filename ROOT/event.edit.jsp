@@ -235,9 +235,12 @@
                           <label for="description">Description</label>
                           <input type="text" class="form-control" name="description" value="<%= event.getDescription() %>">
                         </div>
+                 <%
+                    SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+                 %>
                         <div class="form-group">
                           <label for="reminderTime">Reminder Time</label>
-                          <input type="datetime-local" class="form-control" name="reminderTime" value="<%= event.getReminderTime() %>" datepicker >
+                          <input type="datetime-local" class="form-control" name="reminderTime" value="<%= formatterHH.format(event.getReminderTime()) %>" datepicker >
                         </div>
                         <div class="form-group">
                           <label for="invitees">Invitees</label>
