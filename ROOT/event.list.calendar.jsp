@@ -131,41 +131,43 @@
     <%@ include file="include.header.jsp" %>
         <!-- ======= Blog Section ======= -->
     <div >
-        <HR> <HR> <HR> <HR> <HR>
-        <%@ include file="user.menu.nav.jsp" %>
-        <HR>
-  <table>
-    <tr>
-      <%
-        String[] orderStates = {"Open", "Closed", "Cancelled", "On Hold", "Pending", "Shipped", "Delivered", "Refunded", "Returned", "Need Attention", "In Progress"};
-        String[] orderColors = {"green", "red", "orange", "blue", "purple", "pink", "yellow", "brown", "gray", "black"};
-        for (int i = 0; i < orderStates.length; i++) {
-      %>
-      <td style="background-color: <%=orderColors[i%orderColors.length]%>">
-        <div class="order-state-box">
-          <%=orderStates[i]%>
-        </div>
-      </td>
-      <%
-        }
-      %>
-    </tr>
-  </table>
+    <div style="margin: 20px;">
+            <HR> <HR> <HR> <HR> <HR>
+            <%@ include file="user.menu.nav.jsp" %>
+            <HR>
+      <table>
+        <tr>
+          <%
+            String[] orderStates = {"Open", "Closed", "Cancelled", "On Hold", "Pending", "Shipped", "Delivered", "Refunded", "Returned", "Need Attention", "In Progress"};
+            String[] orderColors = {"green", "red", "orange", "blue", "purple", "pink", "yellow", "brown", "gray", "black"};
+            for (int i = 0; i < orderStates.length; i++) {
+          %>
+          <td style="background-color: <%=orderColors[i%orderColors.length]%>">
+            <div class="order-state-box">
+              <%=orderStates[i]%>
+            </div>
+          </td>
+          <%
+            }
+          %>
+        </tr>
+      </table>
 
-  <HR>
-        <%
+      <HR>
+            <%
 
-                String username = (String) session.getAttribute("username");
-                TechnicianDao technicianDao = new TechnicianDao();
-                List<Technician> technicians = technicianDao.getTechniciansByUsernameActive(username);
-        %>
-                   <select class="form-group" id="technicianId" name="technicianId" onchange="renderCalendar()">
-                         <option value="all" >All Technicians</option>
-                       <% for (Technician technician : technicians) { %>
-                         <option value="<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianName() %></option>
-                       <% } %>
-                   </select>
-        <HR>
+                    String username = (String) session.getAttribute("username");
+                    TechnicianDao technicianDao = new TechnicianDao();
+                    List<Technician> technicians = technicianDao.getTechniciansByUsernameActive(username);
+            %>
+                       <select class="form-group" id="technicianId" name="technicianId" onchange="renderCalendar()">
+                             <option value="all" >All Technicians</option>
+                           <% for (Technician technician : technicians) { %>
+                             <option value="<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianName() %></option>
+                           <% } %>
+                       </select>
+            <HR>
+    </div>
         <h2>Calendar</h2>
 
         <HR>
