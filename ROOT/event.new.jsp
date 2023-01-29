@@ -204,8 +204,9 @@
                        reminderTimeDate = new Date();
             		}
 
-                  String status = request.getParameter("status");
-                  Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, status);
+                  String event_status = request.getParameter("status");
+                  Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
+                  event.setEvent_status(event_status);
                   EventDao evd = new EventDao();
 
                   evd.addEvent(event);
