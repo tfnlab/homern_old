@@ -299,6 +299,22 @@
          <form action="order.edit.schedule.jsp" method="POST" >
          <p>
 
+                <div class="form-group">
+                  <label for="order_type">Order Type:</label>
+                        <select name="order_type" id="order_type" >
+                          <option value="none">None</option>
+                          <option value="installation">Installation of new heating and cooling systems</option>
+                          <option value="maintenance">Maintenance and repair services</option>
+                          <option value="replacement">Replacement of old or worn out equipment</option>
+                          <option value="air-quality">Indoor air quality assessment and improvement</option>
+                          <option value="duct-cleaning">Duct cleaning and sealing</option>
+                          <option value="efficiency">Energy efficiency upgrades</option>
+                          <option value="emergency">Emergency repair services</option>
+                          <option value="preventive">Preventive maintenance contracts</option>
+                        </select>
+                </div>
+                <HR>
+
               <div class="form-group">
                <label for="technicianId">Technician:</label>
                <select class="form-group" id="technicianId" name="technicianId" >
