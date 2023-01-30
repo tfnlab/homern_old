@@ -121,8 +121,8 @@ function tomorrow(inputField) {
     var formattedDate = tomorrow.toLocaleDateString("en-US", dateOptions);
     var formattedTime = tomorrow.toLocaleTimeString("en-US", timeOptions);
     var formattedDateTime = formattedDate + " " + formattedTime;
-    alert(tomorrowString);
-    document.getElementById(inputField).value = tomorrowString;
+    alert(formattedDateTime);
+    document.getElementById(inputField).value = formattedDateTime;
 }
 
   </script>
