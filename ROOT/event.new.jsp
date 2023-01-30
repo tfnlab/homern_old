@@ -120,7 +120,7 @@ function tomorrow(inputField) {
     };
     var formattedDate = tomorrow.toLocaleDateString("en-US", dateOptions);
     var formattedTime = tomorrow.toLocaleTimeString("en-US", timeOptions);
-    var formattedDateTime = formattedDate + " " + formattedTime;
+    var formattedDateTime = formattedDate + "'T'" + formattedTime;
     alert(formattedDateTime);
     document.getElementById(inputField).value = formattedDateTime;
 }
