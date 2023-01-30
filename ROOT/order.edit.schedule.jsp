@@ -204,7 +204,6 @@
                 <%
                 Order order = dao.getOrderByOrderId(orderId, username);
                 %>
-                <%=request.getParameter("event_type")%>
         <%
 
               String shippingAddress = request.getParameter("shippingAddress");
