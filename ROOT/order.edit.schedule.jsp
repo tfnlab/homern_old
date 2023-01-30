@@ -419,6 +419,7 @@
                 </select>
                </div>
              <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
+             <HR>
              <input type="submit" value="Add Event">
          </p>
          </form>
