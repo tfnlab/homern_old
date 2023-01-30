@@ -107,12 +107,11 @@
 function tomorrow(inputField) {
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
-    date = tomorrow;
-    var year = date.getFullYear();
-    var month = (date.getMonth() + 1).toString().padStart(2, "0");
-    var day = date.getDate().toString().padStart(2, "0");
-    var hours = date.getHours().toString().padStart(2, "0");
-    var minutes = date.getMinutes().toString().padStart(2, "0");
+    var year = tomorrow.getFullYear();
+    var month = (tomorrow.getMonth() + 1).toString().padStart(2, "0");
+    var day = tomorrow.getDate().toString().padStart(2, "0");
+    var hours = tomorrow.getHours().toString().padStart(2, "0");
+    var minutes = tomorrow.getMinutes().toString().padStart(2, "0");
     var formattedDate = year + "-" + month + "-" + day + "T" + hours + ":" + minutes;
     alert(formattedDate);
     document.getElementById(inputField).value = formattedDate;
