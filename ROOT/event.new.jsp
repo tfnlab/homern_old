@@ -106,7 +106,7 @@
   <script>
 function tomorrowM(inputField) {
     var tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 3);
+    tomorrow.setDate(tomorrow.getDate() + 1);
     var year = tomorrow.getFullYear();
     var month = (tomorrow.getMonth() + 1).toString().padStart(2, "0");
     var day = tomorrow.getDate().toString().padStart(2, "0");
@@ -115,7 +115,7 @@ function tomorrowM(inputField) {
 }
 function tomorrowE(inputField) {
     var tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 3);
+    tomorrow.setDate(tomorrow.getDate() + 1);
     var year = tomorrow.getFullYear();
     var month = (tomorrow.getMonth() + 1).toString().padStart(2, "0");
     var day = tomorrow.getDate().toString().padStart(2, "0");
