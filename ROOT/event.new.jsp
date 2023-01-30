@@ -104,12 +104,20 @@
 
   </script>
   <script>
-    function tomorrow(){
-        var tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        var tomorrowString = tomorrow.toISOString().substr(0, 10);
-        document.getElementById("start_time").value = tomorrowString;
-    }
+        function tomorrow(inputField) {
+          var tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          var options = {
+            month: "2-digit",
+            day: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true
+          };
+          var tomorrowString = tomorrow.toLocaleString("en-US", options);
+          document.getElementById(inputField).value = tomorrowString;
+        }
   </script>
 </head>
 
@@ -240,7 +248,7 @@
           <div class="form-group">
               <label for="start_time">Start Time</label>
 
-                           <a href="#"><i class="fas fa-calendar-plus" onclick="tomorrow()"></i></a>
+                           <a href="#"><i class="fas fa-calendar-plus" onclick="tomorrow('start_time')"></i></a>
 
               <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(new Date())%>" >
           </div>
