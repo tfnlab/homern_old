@@ -283,6 +283,16 @@
                               "Test Vacuum Cleaner"
                             };
                             events = new_events;
+                        }else if (event_type.equals("replacement")) {
+                            String[] new_events  = {
+                              "Remove Old HVAC System",
+                              "Install New HVAC System",
+                              "Test New HVAC System",
+                              "Explain Operation and Maintenance",
+                              "Dispose of Old HVAC System",
+                              "Clean Up Installation Site"
+                            };
+                            events = new_events;
                         } else {
                             String[] new_events = {""};
                             events = new_events;
