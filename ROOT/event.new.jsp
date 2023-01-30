@@ -120,7 +120,7 @@ function tomorrow(inputField) {
   var tomorrowString = tomorrow.toLocaleString("en-US", options);
   tomorrowString = tomorrowString.replace(/,/g, '');
   tomorrowString = tomorrowString.replace(/ /g, 'T');
-
+  alert(tomorrowString);
   document.getElementById(inputField).value = tomorrowString;
 }
 
