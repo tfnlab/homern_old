@@ -152,7 +152,7 @@
                   <div class="form-group mt-3">
                     <div class="row">
                       <div class="col">
-                    <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>">
+                    <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>" tabindex="2" >
                       </div>
                       <div class="col">
                     <input type="checkbox" class="form-check-input" name="showMap" id="showMap" value="true"
@@ -162,6 +162,7 @@
                           %>checked<%
                         }
                       %>
+                      tabindex="3"
                       >
                     <label class="form-check-label" for="availability">Map</label>
                       </div>
@@ -169,7 +170,7 @@
                   </div>
 
                   <HR>
-                  <button type="submit" class="btn btn-primary">Search</button>
+                  <button type="submit" class="btn btn-primary" tabindex="4">Search</button>
                 </form>
                 <%if(request.getParameter("showMap")!=null){%>
                   <HR>
