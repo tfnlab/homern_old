@@ -105,25 +105,24 @@
   </script>
   <script>
 function tomorrow(inputField) {
-  var tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
 
-  var options = {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    timeZone: "UTC"
-  };
-
-  var tomorrowString = tomorrow.toLocaleDateString("en-US", options);
-  tomorrowString = tomorrowString.split("/").join("-");
-  tomorrowString += "T" + tomorrow.toLocaleTimeString("en-US", {hour: "2-digit", minute: "2-digit", hour12: false});
-  alert(tomorrowString);
-
-
-  document.getElementById(inputField).value = tomorrowString;
+    var dateOptions = {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    };
+    var timeOptions = {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    };
+    var formattedDate = tomorrow.toLocaleDateString("en-US", dateOptions);
+    var formattedTime = tomorrow.toLocaleTimeString("en-US", timeOptions);
+    var formattedDateTime = formattedDate + " " + formattedTime;
+    alert(tomorrowString);
+    document.getElementById(inputField).value = tomorrowString;
 }
 
   </script>
