@@ -273,7 +273,7 @@
                                 "Follow-up inspection and maintenance."
                             };
                             events = new_events;
-                        if (event_type.equals("maintenance")) {
+                        }else if (event_type.equals("maintenance")) {
                             String[] new_events  = {
                               "Inspect Vacuum Cleaner",
                               "Replace Dust Bag",
