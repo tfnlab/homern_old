@@ -118,6 +118,8 @@ function tomorrow(inputField) {
   };
 
   var tomorrowString = tomorrow.toLocaleString("en-US", options);
+
+  alert(tomorrowString);
   tomorrowString = tomorrowString.replace(/,/g, '');
   tomorrowString = tomorrowString.replace(/ /g, 'T');
   alert(tomorrowString);
