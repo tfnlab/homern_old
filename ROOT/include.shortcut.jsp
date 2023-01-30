@@ -11,6 +11,9 @@
   function getCalendarView() {
     window.open("event.list.calendar.jsp", "_self");
   }
+  function getUserMenu() {
+    window.open("user.menu.jsp", "_self");
+  }
   document.addEventListener("keydown", function(event) {
     // Check if the "Ctrl" and "C" keys are pressed
     if (event.ctrlKey && event.keyCode == 67) {
@@ -28,6 +31,10 @@
     if (event.ctrlKey && event.keyCode == 69) {
       event.preventDefault();
       getCalendarView();
+    }
+    if (event.ctrlKey && event.keyCode == 72) {
+      event.preventDefault();
+      getUserMenu();
     }
   });
 </script>
