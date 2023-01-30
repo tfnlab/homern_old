@@ -161,7 +161,7 @@
                     TechnicianDao technicianDao = new TechnicianDao();
                     List<Technician> technicians = technicianDao.getTechniciansByUsernameActive(username);
             %>
-                       <select class="form-group" id="technicianId" name="technicianId" onchange="renderCalendar()">
+                       <select class="form-group" id="technicianId" name="technicianId" onchange="renderCalendar()" tabindex="2">
                              <option value="all" >All Technicians</option>
                            <% for (Technician technician : technicians) { %>
                              <option value="<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianName() %></option>
