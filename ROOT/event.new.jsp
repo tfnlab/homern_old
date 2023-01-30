@@ -116,6 +116,7 @@
             hour12: true
           };
           var tomorrowString = tomorrow.toLocaleString("en-US", options);
+          alert(tomorrowString);
           document.getElementById(inputField).value = tomorrowString;
         }
   </script>
