@@ -237,7 +237,7 @@
                     String locationaclat = request.getParameter("locationaclat");
                     String locationaclng = request.getParameter("locationaclng");
                     String event_type = request.getParameter("event_type");
-
+                    String event_status = request.getParameter("event_status");
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                       Date startTimeDate = new Date();
                       Date endTimeDate = new Date();
@@ -300,6 +300,7 @@
                         for (int i = 0; i < events.length; i++) {
                                 uuid = java.util.UUID.randomUUID().toString();
                                 Event event = new Event(0, title  + "-" + events[i] , startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
+                                event.setEvent_status(event_status);
                                 evd.addEvent(event);
                                 event = evd.getEventByUuid(uuid);
 
@@ -407,7 +408,17 @@
                <label for="invitees">Invitees</label>
                <input type="email" class="form-control" id="invitees" name="invitees" placeholder="Enter email addresses separated by commas">
              </div>
-
+               <div class="form-group mt-3">
+                 <label for="business-type">Event Status</label>
+                 <% String[] orderStates = {"Open", "Closed", "Cancelled", "On Hold", "Pending", "Shipped", "Delivered", "Refunded", "Returned", "Need Attention", "In Progress"}; %>
+                <select class="form-control" id="event_status" name="event_status" tabindex="16">
+                    <% for (int i = 0; i < orderStates.length; i++) { %>
+                        <option value="<%= orderStates[i].toLowerCase() %>" >
+                            <%= orderStates[i] %>
+                        </option>
+                    <% } %>
+                </select>
+               </div>
              <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
              <input type="submit" value="Add Event">
          </p>
