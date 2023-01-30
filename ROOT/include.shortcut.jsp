@@ -17,6 +17,9 @@
   function getDashboard() {
     window.open("dashboard.jsp", "_self");
   }
+  function getEdituser() {
+    window.open("user.edit.jsp", "_self");
+  }
   document.addEventListener("keydown", function(event) {
     // Check if the "Ctrl" and "C" keys are pressed
     if (event.ctrlKey && event.keyCode == 67) {
@@ -42,6 +45,10 @@
     if (event.ctrlKey && event.keyCode == 68) {
       event.preventDefault();
       getDashboard();
+    }
+    if (event.ctrlKey && event.keyCode == 77) {
+      event.preventDefault();
+      getEdituser();
     }
   });
 </script>
