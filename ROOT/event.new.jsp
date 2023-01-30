@@ -225,7 +225,7 @@ function tomorrowE(inputField) {
                        reminderTimeDate = new Date();
             		}
 
-                  String event_status = request.getParameter("status");
+                  String event_status = request.getParameter("event_status");
                   Event event = new Event(0, title, startTimeDate, endTimeDate, location, description, reminderTimeDate, invitees, username, groupId, locationaclat, locationaclng, uuid, null, null);
                   event.setEvent_status(event_status);
                   EventDao evd = new EventDao();
