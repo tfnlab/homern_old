@@ -108,21 +108,9 @@ function tomorrow(inputField) {
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
 
-    var dateOptions = {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-    };
-    var timeOptions = {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false
-    };
-    var formattedDate = tomorrow.toLocaleDateString("en-US", dateOptions);
-    var formattedTime = tomorrow.toLocaleTimeString("en-US", timeOptions);
-    var formattedDateTime = formattedDate + "'T'" + formattedTime;
-    alert(formattedDateTime);
-    document.getElementById(inputField).value = formattedDateTime;
+    var formattedDate = date.toISOString().substr(0, 16);
+    alert(formattedDate);
+    document.getElementById(inputField).value = formattedDate;
 }
 
   </script>
