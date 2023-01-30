@@ -103,6 +103,14 @@
     }
 
   </script>
+  <script>
+    function tomorrow(){
+        var tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        var tomorrowString = tomorrow.toISOString().substr(0, 10);
+        document.getElementById("start_time").value = tomorrowString;
+    }
+  </script>
 </head>
 
 <body>
@@ -231,6 +239,9 @@
           </div>
           <div class="form-group">
               <label for="start_time">Start Time</label>
+              <button onclick="tomorrow()">
+                            <i class="fas fa-calendar-plus"></i> Set to Tomorrow's Date
+                </button>
               <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(new Date())%>" >
           </div>
           <div class="form-group">
