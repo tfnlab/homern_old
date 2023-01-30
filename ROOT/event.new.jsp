@@ -106,14 +106,13 @@
   <script>
 function tomorrow(inputField) {
     var tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 2);
+    tomorrow.setDate(tomorrow.getDate() + 3);
     var year = tomorrow.getFullYear();
     var month = (tomorrow.getMonth() + 1).toString().padStart(2, "0");
     var day = tomorrow.getDate().toString().padStart(2, "0");
     var hours = tomorrow.getHours().toString().padStart(2, "0");
     var minutes = tomorrow.getMinutes().toString().padStart(2, "0");
     var formattedDate = year + "-" + month + "-" + day + "T" + hours + ":" + minutes;
-    alert(formattedDate);
     document.getElementById(inputField).value = formattedDate;
 }
 
