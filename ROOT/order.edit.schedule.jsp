@@ -273,6 +273,16 @@
                                 "Follow-up inspection and maintenance."
                             };
                             events = new_events;
+                        if (event_type.equals("maintenance")) {
+                            String[] new_events  = {
+                              "Inspect Vacuum Cleaner",
+                              "Replace Dust Bag",
+                              "Check Hose and Attachments",
+                              "Lubricate Moving Parts",
+                              "Clean Air Filter",
+                              "Test Vacuum Cleaner"
+                            };
+                            events = new_events;
                         } else {
                             String[] new_events = {""};
                             events = new_events;
