@@ -111,8 +111,7 @@ function tomorrow(inputField) {
     var month = (tomorrow.getMonth() + 1).toString().padStart(2, "0");
     var day = tomorrow.getDate().toString().padStart(2, "0");
     var hours = tomorrow.getHours().toString().padStart(2, "0");
-    var minutes = tomorrow.getMinutes().toString().padStart(2, "0");
-    var formattedDate = year + "-" + month + "-" + day + "T" + hours + ":" + minutes;
+    var formattedDate = year + "-" + month + "-" + day + "T" + hours + ":00";
     document.getElementById(inputField).value = formattedDate;
 }
 
