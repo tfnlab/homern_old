@@ -117,7 +117,7 @@ function tomorrow(inputField) {
     timeZone: "UTC"
   };
 
-  var tomorrowString = tomorrow.toLocaleDateString("en-US", options) + "T" + tomorrow.toLocaleTimeString("en-US", {hour: "2-digit", minute: "2-digit"});
+  var tomorrowString = tomorrow.toLocaleDateString("en-US", options) + "T" + tomorrow.toLocaleTimeString("en-US", {hour: "2-digit", minute: "2-digit", hour12: false});
 
   document.getElementById(inputField).value = tomorrowString;
 }
