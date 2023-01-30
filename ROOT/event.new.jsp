@@ -104,21 +104,26 @@
 
   </script>
   <script>
-        function tomorrow(inputField) {
-          var tomorrow = new Date();
-          tomorrow.setDate(tomorrow.getDate() + 1);
-          var options = {
-            month: "2-digit",
-            day: "2-digit",
-            year: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: true
-          };
-          var tomorrowString = tomorrow.toLocaleString("en-US", options);
-          alert(tomorrowString);
-          document.getElementById(inputField).value = tomorrowString;
-        }
+function tomorrow(inputField) {
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  var options = {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "UTC"
+  };
+
+  var tomorrowString = tomorrow.toLocaleString("en-US", options);
+  tomorrowString = tomorrowString.replace(/,/g, '');
+  tomorrowString = tomorrowString.replace(/ /g, 'T');
+
+  document.getElementById(inputField).value = tomorrowString;
+}
+
   </script>
 </head>
 
