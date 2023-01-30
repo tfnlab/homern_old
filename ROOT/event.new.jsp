@@ -239,9 +239,9 @@
           </div>
           <div class="form-group">
               <label for="start_time">Start Time</label>
-              <button onclick="tomorrow()">
-                            <i class="fas fa-calendar-plus"></i> Set to Tomorrow's Date
-                </button>
+              
+                            <i class="fas fa-calendar-plus" onclick="tomorrow()"></i> Set to Tomorrow's Date
+
               <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(new Date())%>" >
           </div>
           <div class="form-group">
