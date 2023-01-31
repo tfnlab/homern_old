@@ -352,7 +352,7 @@
                BigDecimal invTotal  = new BigDecimal("0");
                for (ProductLineItem plItem : pliList) {
               %>
-              <div class="container mb-3">
+              <div style="margin: 1.5rem;">
       <%if (plItem.isExcluding()) {%>
         <p style="background-color: red;" >
     <%} else {
