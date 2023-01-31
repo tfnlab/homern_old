@@ -359,6 +359,7 @@
                   Units: <%= plItem.getQuantity() %><br>
                   Price: $<%= plItem.getPrice() %><br>
                   Total Price: $<%= plItem.getTotal() %><br>
+                  <%= plItem.isExcluding() %><br>
                   <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                   <hr>
 
