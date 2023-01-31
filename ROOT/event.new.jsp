@@ -116,7 +116,7 @@ function tomorrowM(inputField , end_time) {
     document.getElementById(inputField).value = formatDate(tomorrow, "08:00");
     document.getElementById(end_time).value = formatDate(tomorrow, "09:00");
 }
-function tomorrowE(inputField) {
+function tomorrowE(inputField , end_time) {
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     document.getElementById(inputField).value = formatDate(tomorrow, "13:00");
