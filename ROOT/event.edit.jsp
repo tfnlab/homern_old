@@ -179,7 +179,11 @@
                   if (request.getParameter("action") != null && !request.getParameter("action").isEmpty()) {
                      try{
                             ed.deleteEventById(eId,username);
-                            
+                            if(ot!=null){
+                                otDao.deleteOrderTechnicians(ot.getId(),username);
+                            }
+                            RequestDispatcher dispatcherdc = request.getRequestDispatcher("event.list.calendar.jsp");
+                            dispatcherdc.forward(request, response);
                      }catch(Exception Ex){
                         %><%=Ex.getMessage()%><%
                      }
@@ -303,7 +307,7 @@
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>
                         <hr>
-                        <a href=event.edit.jsp?action=remove&eventid="<%= eId %>" >Remove Item</a>
+                        <a href="event.edit.jsp?action=remove&eventid=<%= eId %>" >Remove Item</a>
 
 
       </div>
