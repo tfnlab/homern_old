@@ -349,7 +349,7 @@
                   Name: <%= plItem.getName() %><br>
                   Description: <%= plItem.getDescription() %><br>
                   Units: <%= plItem.getQuantity() %><br>
-                  Price: <%= plItem.getPrice() %><br>
+                  Price: $<%= plItem.getPrice() %><br>
                   Total Price: <%= plItem.getTotal() %><br>
                   <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                   <hr>
