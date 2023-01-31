@@ -369,10 +369,10 @@
                   Total Price: $<%= plItem.getTotal() %><br>
                   <%= plItem.isExcluding() %><br>
             </div>
+                </div>
                   <hr>
                 <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                   <hr>
-                </div>
            <%
                }
            %>
