@@ -257,6 +257,8 @@
                   int units = Integer.parseInt(request.getParameter("units"));
                   String description = request.getParameter("description");
                   ProductLineItem li = new ProductLineItem(0, orderId, productId, units, price, currentTime, currentTime, username, username, name, description);
+                  boolean is_excluding = Boolean.parseBoolean(request.getParameter("is_excluding"));
+                  li.setExcluding(is_excluding);
                   plDao.insertProductLineItem(li);
                 }
                 %>
@@ -328,12 +330,18 @@
                <label for="title">Units</label>
                <input type="text" class="form-control" id="units" name="units" required value="1"  onchange="calTotal()">
              </div>
+             <HR>
              <div class="form-group">
                <label for="title">Total</label>
                <input type="text" class="form-control" id="total" name="total" required value="0"  readonly disabled>
              </div>
              <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
-
+             <HR>
+                  <div class="form-group form-check">
+            				<input type="checkbox" class="form-check-input" name="is_excluding" id="is_excluding" value="true" >
+            				<label class="form-check-label" for="featured">Featured</label>
+            			</div>
+             <HR>
              <input type="submit" value="Add Product">
          </p>
          </form>
