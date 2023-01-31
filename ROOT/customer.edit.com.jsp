@@ -243,7 +243,19 @@
                 <option value="progressUpdates" <%= comType.equals("progressUpdates") ? "selected" : "" %>>Progress updates</option>
                 <option value="finalWalkThrough" <%= comType.equals("finalWalkThrough") ? "selected" : "" %>>Final walk-through</option>
                 <option value="warrantyAndMaintenance" <%= comType.equals("warrantyAndMaintenance") ? "selected" : "" %>>Warranty and maintenance</option>
+                  <option value="1">Scheduling regular maintenance appointments</option>
+                  <option value="2">Sending email reminders before appointments</option>
+                  <option value="3">Text message reminders</option>
+                  <option value="4">Phone call reminders</option>
+                  <option value="5">Post-maintenance follow-up</option>
+                  <option value="6">Maintenance reminders in customer account portal</option>
+                  <option value="7">In-app notifications</option>
+                  <option value="8">Customer satisfaction surveys after maintenance</option>
+                  <option value="9">Including maintenance reminders in product manuals/guides</option>
+                  <option value="10">Providing preventative maintenance tips and information</option>
+
               </select>
+
             </div>
           <%
           }
