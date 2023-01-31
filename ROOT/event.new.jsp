@@ -127,9 +127,9 @@ function tomorrowE(inputField , end_time, reminder_time) {
 function nextweek(inputField , end_time, reminder_time) {
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 7);
-    document.getElementById(inputField).value = formatDate(tomorrow, "14:00");
-    document.getElementById(end_time).value = formatDate(tomorrow, "15:00");
-    document.getElementById(reminder_time).value = formatDate(tomorrow, "13:00");
+    document.getElementById(inputField).value = formatDate(tomorrow, "09:00");
+    document.getElementById(end_time).value = formatDate(tomorrow, "10:00");
+    document.getElementById(reminder_time).value = formatDate(tomorrow, "08:00");
 }
 
   </script>
