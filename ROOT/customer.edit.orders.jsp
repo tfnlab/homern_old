@@ -182,6 +182,7 @@
         %>
         <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getFirstName() %>, <%= entity.getLastName() %></a><br>
         <%= entity.getEmail() %><BR>
+        <%= entity.getPhone() %><BR>
         <HR>
         <a href="order.edit.customers.jsp?action=add&customerId=<%= entity.getId() %>" >Add Order</a>
         <HR>
