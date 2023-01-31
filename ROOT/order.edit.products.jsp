@@ -353,7 +353,7 @@
                for (ProductLineItem plItem : pliList) {
               %>
       <%if (plItem.isExcluding()) {%>
-        <p style="background-color: red;">
+        <p style="background-color: red;" class="mb-3">
     <%} else {
         invTotal = invTotal.add(plItem.getTotal());
     %>
