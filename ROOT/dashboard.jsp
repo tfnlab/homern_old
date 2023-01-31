@@ -202,7 +202,7 @@
             %>
             <%
                 try{
-                    Map<Product, ProductDashBoard> groupedProducts = plDao.getGroupedProductsByInvoiceId(username, false);
+                    Map<Product, ProductDashBoard> groupedProducts = plDao.getGroupedProductsByInvoiceId(username, true);
                     %>
                                 <table class="table">
               <thead>
@@ -227,7 +227,7 @@
             %>
             <%
                 try{
-                    Map<Product, ProductDashBoard> groupedProducts = plDao.getGroupedProductsByInvoiceId(username, true);
+                    Map<Product, ProductDashBoard> groupedProducts = plDao.getGroupedProductsByInvoiceId(username, false);
                     %>
                                 <table class="table">
               <thead>
