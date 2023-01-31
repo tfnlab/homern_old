@@ -159,10 +159,7 @@
                   boolean featured = false;
                   BigDecimal rating = new BigDecimal("0");
 
-                  String priceStr = request.getParameter("price");
-                  if (priceStr != null) {
-                    price = new BigDecimal(priceStr);
-                  }
+                  
 
                   String inventoryStr = request.getParameter("inventory");
                   if (inventoryStr != null && inventoryStr.trim().length() > 0) {
