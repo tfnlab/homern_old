@@ -104,19 +104,18 @@
 
   </script>
   <script>
-function tomorrowM(inputField , end_time) {
-    var tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    document.getElementById(inputField).value = formatDate(tomorrow, "08:00");
-    document.getElementById(end_time).value = formatDate(tomorrow, "09:00");
-}
 function formatDate(date, time) {
     var year = date.getFullYear();
     var month = (date.getMonth() + 1).toString().padStart(2, "0");
     var day = date.getDate().toString().padStart(2, "0");
     return year + "-" + month + "-" + day + "T" + time;
 }
-
+function tomorrowM(inputField , end_time) {
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    document.getElementById(inputField).value = formatDate(tomorrow, "08:00");
+    document.getElementById(end_time).value = formatDate(tomorrow, "09:00");
+}
 function tomorrowE(inputField) {
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
