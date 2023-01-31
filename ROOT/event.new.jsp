@@ -124,6 +124,13 @@ function tomorrowE(inputField , end_time, reminder_time) {
     document.getElementById(end_time).value = formatDate(tomorrow, "15:00");
     document.getElementById(reminder_time).value = formatDate(tomorrow, "13:00");
 }
+function nextweek(inputField , end_time, reminder_time) {
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 7);
+    document.getElementById(inputField).value = formatDate(tomorrow, "14:00");
+    document.getElementById(end_time).value = formatDate(tomorrow, "15:00");
+    document.getElementById(reminder_time).value = formatDate(tomorrow, "13:00");
+}
 
   </script>
 </head>
@@ -258,6 +265,8 @@ function tomorrowE(inputField , end_time, reminder_time) {
                            <a href="#"><i class="fas fa-sun" onclick="event.preventDefault();tomorrowM('start_time', 'end_time', 'reminder_time')"></i></a>
                            &nbsp;&nbsp;
                            <a href="#"><i class="fas fa-moon" onclick="event.preventDefault();tomorrowE('start_time', 'end_time', 'reminder_time')"></i></a>
+                           &nbsp;&nbsp;
+                           <a href="#"><i class="fas fa-arrow-right" onclick="event.preventDefault();nextweek('start_time', 'end_time', 'reminder_time')"></i></a>
 
               <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(new Date())%>" >
           </div>
