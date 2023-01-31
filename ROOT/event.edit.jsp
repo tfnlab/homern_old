@@ -176,6 +176,15 @@
                 OrderTechniciansDAO otDao = new OrderTechniciansDAO();
                 OrderTechnicians ot = otDao.getOrderTechniciansByEventIdAll(eId);
 
+                  if (request.getParameter("action") != null && !request.getParameter("action").isEmpty()) {
+                    ed.deleteEventById(eId,username);
+                    if(ot!=null){
+                        otDao.deleteOrderTechnicians(ot.getId(),username);
+                    }
+                     RequestDispatcher dispatcherdc = request.getRequestDispatcher("event.list.calendar.jsp");
+                     dispatcherdc.forward(request, response);
+                  }
+
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                 SimpleDateFormat dateFormatApple = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
                 SimpleDateFormat dateFormatGoogleCal = new SimpleDateFormat("yyyyMMdd'T'hhmmss'Z'");
@@ -293,7 +302,8 @@
 
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>
-
+                        <hr>
+                        <a href=event.edit.jsp?action=remove&eventid="<%= eId %>" >Remove Item</a>
 
 
       </div>
