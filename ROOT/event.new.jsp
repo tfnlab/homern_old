@@ -124,9 +124,16 @@ function tomorrowE(inputField , end_time, reminder_time) {
     document.getElementById(end_time).value = formatDate(tomorrow, "15:00");
     document.getElementById(reminder_time).value = formatDate(tomorrow, "13:00");
 }
-function nextweek(inputField , end_time, reminder_time) {
+function nextWeek(inputField , end_time, reminder_time) {
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 7);
+    document.getElementById(inputField).value = formatDate(tomorrow, "09:00");
+    document.getElementById(end_time).value = formatDate(tomorrow, "10:00");
+    document.getElementById(reminder_time).value = formatDate(tomorrow, "08:00");
+}
+function nextMonth(inputField , end_time, reminder_time) {
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 30);
     document.getElementById(inputField).value = formatDate(tomorrow, "09:00");
     document.getElementById(end_time).value = formatDate(tomorrow, "10:00");
     document.getElementById(reminder_time).value = formatDate(tomorrow, "08:00");
@@ -266,8 +273,9 @@ function nextweek(inputField , end_time, reminder_time) {
                            &nbsp;&nbsp;
                            <a href="#"><i class="fas fa-moon" onclick="event.preventDefault();tomorrowE('start_time', 'end_time', 'reminder_time')"></i></a>
                            &nbsp;&nbsp;
-                           <a href="#"><i class="fas fa-arrow-right" onclick="event.preventDefault();nextweek('start_time', 'end_time', 'reminder_time')"></i></a>
-
+                           <a href="#"><i class="fas fa-arrow-right" onclick="event.preventDefault();nextWeek('start_time', 'end_time', 'reminder_time')"></i></a>
+                           &nbsp;&nbsp;
+                           <a href="#"><i class="fas fa-angle-double-right" onclick="event.preventDefault();nextMonth('start_time', 'end_time', 'reminder_time')"></i></a>
               <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(new Date())%>" >
           </div>
           <div class="form-group">
