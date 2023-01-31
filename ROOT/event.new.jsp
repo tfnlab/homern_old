@@ -280,9 +280,9 @@ function nextQ(inputField , end_time, reminder_time) {
                            &nbsp;&nbsp;
                            <a href="#"><i class="fas fa-moon" onclick="event.preventDefault();tomorrowE('start_time', 'end_time', 'reminder_time')"></i></a>
                            &nbsp;&nbsp;
-                           <a href="#"><i class="fas fa-arrow-right" onclick="event.preventDefault();nextWeek('start_time', 'end_time', 'reminder_time')"></i></a>
+                           <a href="#"><i class="fas fa-angle-right" onclick="event.preventDefault();nextWeek('start_time', 'end_time', 'reminder_time')"></i></a>
                            &nbsp;&nbsp;
-                           <a href="#"><i class="fas fa-arrow-right" onclick="event.preventDefault();nextMonth('start_time', 'end_time', 'reminder_time')"></i></a>
+                           <a href="#"><i class="fas fa-angle-double-right" onclick="event.preventDefault();nextMonth('start_time', 'end_time', 'reminder_time')"></i></a>
                            &nbsp;&nbsp;
                            <a href="#"><i class="fas fa-step-forward" onclick="event.preventDefault();nextQ('start_time', 'end_time', 'reminder_time')"></i></a>
               <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(new Date())%>" >
