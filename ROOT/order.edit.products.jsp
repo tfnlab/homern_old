@@ -351,11 +351,12 @@
                List<ProductLineItem> pliList = plDao.getProductLineItemsByInvoiceId(order.getOrderId());
                BigDecimal invTotal  = new BigDecimal("0");
                for (ProductLineItem plItem : pliList) {
-                      invTotal = invTotal.add(plItem.getTotal());
               %>
       <%if (plItem.isExcluding()) {%>
         <p style="background-color: red;">
-    <%} else {%>
+    <%} else {
+        invTotal = invTotal.add(plItem.getTotal());
+    %>
         <p>
     <%}%>
                   ID: <%= plItem.getId() %><br>
@@ -365,9 +366,11 @@
                   Price: $<%= plItem.getPrice() %><br>
                   Total Price: $<%= plItem.getTotal() %><br>
                   <%= plItem.isExcluding() %><br>
-                  <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
-                  <hr>
 <p>
+                  <hr>
+                <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
+                  <hr>
+
            <%
                }
            %>
