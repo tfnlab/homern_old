@@ -367,7 +367,6 @@
                   Units: <%= plItem.getQuantity() %><br>
                   Price: $<%= plItem.getPrice() %><br>
                   Total Price: $<%= plItem.getTotal() %><br>
-                  <%= plItem.isExcluding() %><br>
             </div>
                 </div>
                   <hr>
