@@ -352,14 +352,15 @@
                BigDecimal invTotal  = new BigDecimal("0");
                for (ProductLineItem plItem : pliList) {
               %>
-              <div style="margin: 1.5rem;">
+
       <%if (plItem.isExcluding()) {%>
-        <p style="background-color: red;" >
+        <div style="margin: 1.5rem;background-color: red;">
     <%} else {
         invTotal = invTotal.add(plItem.getTotal());
     %>
-        <p>
+        <div>
     <%}%>
+            <div style="margin: 1.5rem;">
                   ID: <%= plItem.getId() %><br>
                   Name: <%= plItem.getName() %><br>
                   Description: <%= plItem.getDescription() %><br>
@@ -367,7 +368,7 @@
                   Price: $<%= plItem.getPrice() %><br>
                   Total Price: $<%= plItem.getTotal() %><br>
                   <%= plItem.isExcluding() %><br>
-<p>
+            </div>
                   <hr>
                 <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                   <hr>
