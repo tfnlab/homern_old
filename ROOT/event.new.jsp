@@ -104,23 +104,24 @@
 
   </script>
   <script>
-function tomorrowM(inputField) {
+function tomorrowM(inputField , end_time) {
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
-    var year = tomorrow.getFullYear();
-    var month = (tomorrow.getMonth() + 1).toString().padStart(2, "0");
-    var day = tomorrow.getDate().toString().padStart(2, "0");
-    var formattedDate = year + "-" + month + "-" + day + "T" + "08:00";
-    document.getElementById(inputField).value = formattedDate;
+    document.getElementById(inputField).value = formatDate(tomorrow, "08:00");
+    document.getElementById(end_time).value = formatDate(tomorrow, "09:00");
 }
+function formatDate(date, time) {
+    var year = date.getFullYear();
+    var month = (date.getMonth() + 1).toString().padStart(2, "0");
+    var day = date.getDate().toString().padStart(2, "0");
+    return year + "-" + month + "-" + day + "T" + time;
+}
+
 function tomorrowE(inputField) {
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
-    var year = tomorrow.getFullYear();
-    var month = (tomorrow.getMonth() + 1).toString().padStart(2, "0");
-    var day = tomorrow.getDate().toString().padStart(2, "0");
-    var formattedDate = year + "-" + month + "-" + day + "T" + "13:00";
-    document.getElementById(inputField).value = formattedDate;
+    document.getElementById(inputField).value = formatDate(tomorrow, "13:00");
+    document.getElementById(end_time).value = formatDate(tomorrow, "14:00");
 }
 
   </script>
@@ -253,8 +254,8 @@ function tomorrowE(inputField) {
           <div class="form-group">
               <label for="start_time">Start Time</label>
 
-                           <a href="#"><i class="fas fa-sun" onclick="tomorrowM('start_time')"></i></a>
-                           <a href="#"><i class="fas fa-moon" onclick="tomorrowE('start_time')"></i></a>
+                           <a href="#"><i class="fas fa-sun" onclick="tomorrowM('start_time, end_time')"></i></a>
+                           <a href="#"><i class="fas fa-moon" onclick="tomorrowE('start_time, end_time')"></i></a>
 
               <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(new Date())%>" >
           </div>
