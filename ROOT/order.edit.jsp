@@ -9,12 +9,7 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.net.URLDecoder" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%
-String usernameCheck = (String) session.getAttribute("username");
-if (usernameCheck == null || usernameCheck.isEmpty()) {
-response.sendRedirect("index.html");
-}
-%>
+<%@ include file="auth.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 
