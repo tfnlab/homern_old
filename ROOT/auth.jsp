@@ -5,7 +5,7 @@ if (usernameCheck == null || usernameCheck.isEmpty() || usernameCheck.length() <
      RequestDispatcher dispatcher = request.getRequestDispatcher("signin.jsp");
      dispatcher.forward(request, response);
 }
-if (usernameOBJCheck == null || usernameOBJCheck.isEmpty() || usernameOBJCheck.getUsername() < 2 ) {
+if (usernameOBJCheck == null ||  usernameOBJCheck.getUsername() < 2 ) {
      RequestDispatcher dispatcher = request.getRequestDispatcher("signin.jsp");
      dispatcher.forward(request, response);
 }
