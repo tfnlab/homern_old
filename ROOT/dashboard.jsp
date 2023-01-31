@@ -239,7 +239,7 @@
               </thead>
      <% for (Map.Entry<Product, ProductDashBoard> entry : groupedProducts.entrySet()) { %>
     <tr>
-        <td><%= entry.getKey().getName() %></td>
+        <td width="60%"><%= entry.getKey().getName() %></td>
         <td><%= entry.getValue().getQuantity() %></td>
         <td><%= entry.getValue().getTotal_amount() %></td>
     </tr>
