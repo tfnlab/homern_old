@@ -353,6 +353,11 @@
                for (ProductLineItem plItem : pliList) {
                       invTotal = invTotal.add(plItem.getTotal());
               %>
+      <%if (plItem.isExcluding()) {%>
+        <p style="background-color: red;">
+    <%} else {%>
+        <p>
+    <%}%>
                   ID: <%= plItem.getId() %><br>
                   Name: <%= plItem.getName() %><br>
                   Description: <%= plItem.getDescription() %><br>
@@ -362,7 +367,7 @@
                   <%= plItem.isExcluding() %><br>
                   <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                   <hr>
-
+<p>
            <%
                }
            %>
