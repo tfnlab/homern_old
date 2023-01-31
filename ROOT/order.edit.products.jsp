@@ -352,8 +352,9 @@
                BigDecimal invTotal  = new BigDecimal("0");
                for (ProductLineItem plItem : pliList) {
               %>
+              <div class="mb-3">
       <%if (plItem.isExcluding()) {%>
-        <p style="background-color: red;" class="mb-3">
+        <p style="background-color: red;" >
     <%} else {
         invTotal = invTotal.add(plItem.getTotal());
     %>
@@ -370,7 +371,7 @@
                   <hr>
                 <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                   <hr>
-
+                </div>
            <%
                }
            %>
