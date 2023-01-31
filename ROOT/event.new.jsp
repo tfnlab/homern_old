@@ -253,8 +253,8 @@ function tomorrowE(inputField) {
           <div class="form-group">
               <label for="start_time">Start Time</label>
 
-                           <a href="#"><i class="fas fa-sun" onclick="tomorrowM('start_time, end_time')"></i></a>
-                           <a href="#"><i class="fas fa-moon" onclick="tomorrowE('start_time, end_time')"></i></a>
+                           <a href="#"><i class="fas fa-sun" onclick="tomorrowM('start_time', 'end_time')"></i></a>
+                           <a href="#"><i class="fas fa-moon" onclick="tomorrowE('start_time', 'end_time')"></i></a>
 
               <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(new Date())%>" >
           </div>
