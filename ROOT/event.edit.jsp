@@ -177,12 +177,16 @@
                 OrderTechnicians ot = otDao.getOrderTechniciansByEventIdAll(eId);
 
                   if (request.getParameter("action") != null && !request.getParameter("action").isEmpty()) {
-                    ed.deleteEventById(eId,username);
-                    if(ot!=null){
-                        otDao.deleteOrderTechnicians(ot.getId(),username);
-                    }
-                     RequestDispatcher dispatcherdc = request.getRequestDispatcher("event.list.calendar.jsp");
-                     dispatcherdc.forward(request, response);
+                     try{
+                            ed.deleteEventById(eId,username);
+                            if(ot!=null){
+                                otDao.deleteOrderTechnicians(ot.getId(),username);
+                            }
+                             RequestDispatcher dispatcherdc = request.getRequestDispatcher("event.list.calendar.jsp");
+                             dispatcherdc.forward(request, response);
+                     }catch(Exception Ex){
+                        %><%=ex.getMessage()%><%
+                     }
                   }
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
