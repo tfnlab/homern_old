@@ -110,17 +110,19 @@ function formatDate(date, time) {
     var day = date.getDate().toString().padStart(2, "0");
     return year + "-" + month + "-" + day + "T" + time;
 }
-function tomorrowM(inputField , end_time) {
+function tomorrowM(inputField , end_time, reminder_time) {
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
-    document.getElementById(inputField).value = formatDate(tomorrow, "08:00");
-    document.getElementById(end_time).value = formatDate(tomorrow, "09:00");
+    document.getElementById(inputField).value = formatDate(tomorrow, "09:00");
+    document.getElementById(end_time).value = formatDate(tomorrow, "10:00");
+    document.getElementById(reminder_time).value = formatDate(tomorrow, "08:00");
 }
-function tomorrowE(inputField , end_time) {
+function tomorrowE(inputField , end_time, reminder_time) {
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
-    document.getElementById(inputField).value = formatDate(tomorrow, "13:00");
-    document.getElementById(end_time).value = formatDate(tomorrow, "14:00");
+    document.getElementById(inputField).value = formatDate(tomorrow, "14:00");
+    document.getElementById(end_time).value = formatDate(tomorrow, "15:00");
+    document.getElementById(reminder_time).value = formatDate(tomorrow, "13:00");
 }
 
   </script>
@@ -253,8 +255,9 @@ function tomorrowE(inputField , end_time) {
           <div class="form-group">
               <label for="start_time">Start Time</label>
 
-                           <a href="#"><i class="fas fa-sun" onclick="tomorrowM('start_time', 'end_time')"></i></a>
-                           <a href="#"><i class="fas fa-moon" onclick="tomorrowE('start_time', 'end_time')"></i></a>
+                           <a href="#"><i class="fas fa-sun" onclick="tomorrowM('start_time', 'end_time', 'reminder_time')"></i></a>
+                           &nbsp;&nbsp;
+                           <a href="#"><i class="fas fa-moon" onclick="tomorrowE('start_time', 'end_time', 'reminder_time')"></i></a>
 
               <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(new Date())%>" >
           </div>
