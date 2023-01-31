@@ -159,7 +159,10 @@
                   boolean featured = false;
                   BigDecimal rating = new BigDecimal("0");
 
-                  
+                  String priceStr = request.getParameter("price");
+                  if (priceStr != null) {
+                    price = new BigDecimal(priceStr);
+                  }
 
                   String inventoryStr = request.getParameter("inventory");
                   if (inventoryStr != null && inventoryStr.trim().length() > 0) {
@@ -222,7 +225,11 @@
                   ProductDao dao = new ProductDao();
 
                   // Insert the Product object into the database
-                  dao.insertProduct(product);
+                  try{
+                      dao.insertProduct(product);
+                  }catch(Exception ex){
+                        %><%=ex.getMessage()%><%
+                  }
                 %>
                 <p>Product successfully added to the database.</p>
                 <HR>
