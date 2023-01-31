@@ -339,7 +339,7 @@
              <HR>
                   <div class="form-group form-check">
             				<input type="checkbox" class="form-check-input" name="is_excluding" id="is_excluding" value="true" >
-            				<label class="form-check-label" for="featured">Featured</label>
+            				<label class="form-check-label" for="featured">Excluded</label>
             			</div>
              <HR>
              <input type="submit" value="Add Product">
