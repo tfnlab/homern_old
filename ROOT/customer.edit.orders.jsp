@@ -180,7 +180,7 @@
                 EntityDao ed = new EntityDao();
                   entity = ed.getEntityById(eId, username);
         %>
-        Customer ID: <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getFirstName() %>, <%= entity.getLastName() %></a><br>
+        <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getFirstName() %>, <%= entity.getLastName() %></a><br>
         <%= entity.getEmail() %><BR>
         <HR>
         <a href="order.edit.customers.jsp?action=add&customerId=<%= entity.getId() %>" >Add Order</a>
