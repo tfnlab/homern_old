@@ -202,12 +202,37 @@
             %>
             <%
                 try{
-                    Map<Product, ProductDashBoard> groupedProducts = plDao.getGroupedProductsByInvoiceId(username);
+                    Map<Product, ProductDashBoard> groupedProducts = plDao.getGroupedProductsByInvoiceId(username, false);
                     %>
                                 <table class="table">
               <thead>
                 <tr>
                   <th scope="col">Product</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+     <% for (Map.Entry<Product, ProductDashBoard> entry : groupedProducts.entrySet()) { %>
+    <tr>
+        <td><%= entry.getKey().getName() %></td>
+        <td><%= entry.getValue().getQuantity() %></td>
+        <td><%= entry.getValue().getTotal_amount() %></td>
+    </tr>
+    <% } %>
+                </table>
+                    <%
+                }catch(Exception ex){
+                    %><%=ex.getMessage()%><%
+                }
+            %>
+            <%
+                try{
+                    Map<Product, ProductDashBoard> groupedProducts = plDao.getGroupedProductsByInvoiceId(username, true);
+                    %>
+                                <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Excluded Product</th>
                   <th scope="col">Quantity</th>
                   <th scope="col">Total</th>
                 </tr>
