@@ -300,6 +300,7 @@ function tomorrowE(inputField , end_time, reminder_time) {
                 <% } %>
             </select>
            </div>
+           <HR>
           <button type="submit" class="btn btn-primary">Create Event</button>
           </form>
 
