@@ -188,8 +188,6 @@
                                 ptotal = new BigDecimal(request.getParameter("price" + z));
                               }
 
-                              Timestamp createdAt = currentTime;
-                              Timestamp updatedAt = currentTime;
 
                                   int inventory = 0;
                                   int reorderLevel = 0;
