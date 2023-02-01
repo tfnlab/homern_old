@@ -73,7 +73,17 @@
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           alert(this.responseText.trim());
-          document.getElementById("productList").innerHTML = this.responseText;
+            let products = this.responseText.split("<PRODUCT>");
+
+            for (let i = 0; i < products.length; i++) {
+              console.log(products[i]);
+              let items = products[i].split("<ITEM>");
+              let input = '<input type="text" id="myInput" value="' + items[0] + '" >';
+              let inputDes = '<input type="text" id="myInput" value="' + items[1] + '" >';
+              document.getElementById("productList").innerHTML += input;
+              document.getElementById("productList").innerHTML += inputDes;
+            }
+
         }
       };
       var select = document.getElementById("name").value;
