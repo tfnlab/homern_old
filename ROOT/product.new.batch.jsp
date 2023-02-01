@@ -197,6 +197,7 @@
                                   boolean featured = false;
                                   BigDecimal rating = new BigDecimal("0");
 
+                                  BigDecimal price = new BigDecimal("0");
                                   String priceStr = request.getParameter("price");
                                   if (priceStr != null) {
                                     price = ptotal;
