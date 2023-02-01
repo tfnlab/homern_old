@@ -189,6 +189,7 @@
                               }
 
 
+                                  String sku = request.getParameter("sku");
                                   int inventory = 0;
                                   int reorderLevel = 0;
                                   int leadTime = 0;
