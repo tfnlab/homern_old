@@ -66,6 +66,21 @@
     function removeTrailingSpaces(str) {
             return str.replace(/\s+$/g, "");
     }
+    function getProducts() {
+      //genmessage.jsp?comType=latepaymentrequest
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+
+          aler(this.responseText.trim());
+        }
+      };
+      var select = document.getElementById("name").value;
+      const encodedString = encodeURIComponent(select);
+      var urlString = "product.new.batch.getproducts.jsp?servicetype=" + encodedString ;
+      xhttp.open("GET", urlString, true);
+      xhttp.send();
+    }
     function callAC(sfor) {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
