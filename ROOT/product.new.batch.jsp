@@ -269,8 +269,9 @@
             </form>
               <hr>
               <input type="submit" class="btn btn-primary" value="Submit" tabindex="17" onclick="getProducts();">
-
-
+              <HR>
+            <div id="productList" name="productList">
+            <div>
                  <%}%>
       </div>
 
@@ -326,8 +327,6 @@
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
-            <div id="productList" name="productList">
-            <div>
           </div>
 
         </div>
