@@ -355,7 +355,7 @@
                     SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                  %>
           <label for="shipDate">Project Date:</label><br>
-          <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= formatterHH.formate(order.getShipDate()) %>"  tabindex="11"><br>
+          <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= formatterHH.format(order.getShipDate()) %>"  tabindex="11"><br>
           <label for="shippingAddress">Project Address:</label><br>
           <input class="form-control" type="text" id="shippingAddress" name="shippingAddress" value="<%= order.getShippingAddress() %>" onkeypress="callAC(this)"  tabindex="12"><br>
           <input type="hidden" id="shippingAddressaclat" name="shippingAddressaclat" value="<%= order.getShippingAddresslat() %>">
