@@ -342,6 +342,9 @@
               %>
             </select>
           </div>
+                 <%
+                    SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+                 %>
           <label for="orderId">Order Name:</label><br>
           <input type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"  tabindex="8"><br>
           <label for="orderId">Order Description:</label><br>
@@ -351,9 +354,6 @@
             <label for="endTime">Invoice Date:</label>
             <input type="datetime-local" class="form-control" name="orderDate" value="<%= formatterHH.format(order.getOrderDate()) %>" datepicker  tabindex="10">
           </div>
-                 <%
-                    SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
-                 %>
           <label for="shipDate">Project Date:</label><br>
           <input class="form-control" type="datetime-local" id="shipDate" name="shipDate" placeholder="yyyy-MM-dd" value="<%= formatterHH.format(order.getShipDate()) %>"  tabindex="11"><br>
           <label for="shippingAddress">Project Address:</label><br>
