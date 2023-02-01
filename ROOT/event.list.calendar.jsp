@@ -153,7 +153,9 @@
             }
           %>
           <td >
-                       <a href="event.new.jsp" >Add Event</a>
+            <a href="event.new.jsp" >
+            <i class="fas fa-plus"></i>
+            </a>
           </td>
         </tr>
       </table>
