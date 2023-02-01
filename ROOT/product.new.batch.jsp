@@ -174,7 +174,7 @@
                   if (request.getParameter("count") != null && !request.getParameter("count").isEmpty()) {
                     count = Integer.parseInt(request.getParameter("count"));
                   }
-
+            if(count>0){
                   String username = (String) session.getAttribute("username");
                   long currentTimeMillis = System.currentTimeMillis();
                   Timestamp currentTime = new Timestamp(currentTimeMillis);
