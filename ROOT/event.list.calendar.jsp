@@ -147,10 +147,14 @@
               <div class="order-state-box" style="background-color: white; color: black;">
                 <%=orderStates[i]%>
               </div>
+
           </td>
           <%
             }
           %>
+          <td >
+                       <a href="event.new.jsp" >Add Event</a>
+          </td>
         </tr>
       </table>
 
@@ -168,7 +172,6 @@
                            <% } %>
                        </select>
 
-                       <a href="event.new.jsp" >Add Event</a>
             <HR>
     </div>
         <HR>
