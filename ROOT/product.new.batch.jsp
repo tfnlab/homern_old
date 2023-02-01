@@ -256,7 +256,7 @@
                                   String dimensions = request.getParameter("dimensions");
 
 
-                             Product product = new Product(0, sku, request.getParameter("name" + z), price, inventory, reorderLevel, leadTime, featured, rating, request.getParameter("description" + z), imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
+                             Product product = new Product(0, sku, request.getParameter("name" + z), price, inventory, reorderLevel, leadTime, featured, rating, request.getParameter("description" + z), imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, username);
                              ProductDao dao = new ProductDao();
                              try{
                                   dao.insertProduct(product);
