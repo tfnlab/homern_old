@@ -82,6 +82,7 @@
               let inputDes = '<input type="text" id="myInput" value="' + items[1] + '" >';
               document.getElementById("productList").innerHTML += input;
               document.getElementById("productList").innerHTML += inputDes;
+              document.getElementById("productList").innerHTML += '<BR>';
             }
 
         }
