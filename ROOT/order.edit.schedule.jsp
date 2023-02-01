@@ -327,7 +327,7 @@
         <HR>
         <form action="order.edit.schedule.jsp" method="POST" >
           <p>Order Dates: <%= order.getOrderDate() %> - <%= order.getShipDate() %></p><br>
-          <p>Order Description: <%= order.getOrderDescription() %></p><br>
+          <p>Order Description: <%= order.getOrderDescription() %></p>
         </form>
         <%
              List<OrderTechnicians> lI = otD.getOrderTechniciansByOrderId(order.getOrderId());
@@ -346,21 +346,7 @@
          <form action="order.edit.schedule.jsp" method="POST" >
          <p>
 
-                <div class="form-group">
-                  <label for="event_type">Add Multiple Events:</label>
-                        <select name="event_type" id="event_type" >
-                          <option value="none">None</option>
-                          <option value="installation">Installation of new heating and cooling systems</option>
-                          <option value="maintenance">Maintenance and repair services</option>
-                          <option value="replacement">Replacement of old or worn out equipment</option>
-                          <option value="air-quality">Indoor air quality assessment and improvement</option>
-                          <option value="duct-cleaning">Duct cleaning and sealing</option>
-                          <option value="efficiency">Energy efficiency upgrades</option>
-                          <option value="emergency">Emergency repair services</option>
-                          <option value="preventive">Preventive maintenance contracts</option>
-                        </select>
-                </div>
-                <HR>
+
 
               <div class="form-group">
                <label for="technicianId">Technician:</label>
@@ -418,6 +404,22 @@
                     <% } %>
                 </select>
                </div>
+               <HR>
+                <div class="form-group">
+                  <label for="event_type">Add Multiple Events:</label>
+                        <select name="event_type" id="event_type" >
+                          <option value="none">None</option>
+                          <option value="installation">Installation of new heating and cooling systems</option>
+                          <option value="maintenance">Maintenance and repair services</option>
+                          <option value="replacement">Replacement of old or worn out equipment</option>
+                          <option value="air-quality">Indoor air quality assessment and improvement</option>
+                          <option value="duct-cleaning">Duct cleaning and sealing</option>
+                          <option value="efficiency">Energy efficiency upgrades</option>
+                          <option value="emergency">Emergency repair services</option>
+                          <option value="preventive">Preventive maintenance contracts</option>
+                        </select>
+                </div>
+                <HR>
              <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
              <HR>
              <input type="submit" value="Add Event">
