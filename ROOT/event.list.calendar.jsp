@@ -181,7 +181,7 @@
         <HR>
     </div>
     <div style="margin: 20px;">
-    <div id='calendar'></div>
+    <div id='calendar' style="width: 80%; height: 80%;"></div>
     </div>
 
       <%@ include file="include.footer.jsp" %>
