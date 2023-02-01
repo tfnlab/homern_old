@@ -239,9 +239,9 @@
               </thead>
      <% for (Map.Entry<Product, ProductDashBoard> entry : groupedProducts.entrySet()) { %>
     <tr>
-        <td width="60%"><%= entry.getKey().getName() %></td>
-        <td><%= entry.getValue().getQuantity() %></td>
-        <td><%= entry.getValue().getTotal_amount() %></td>
+        <td><%= entry.getKey().getName() %></td>
+        <td class="text-right"><%= entry.getValue().getQuantity() %></td>
+        <td class="text-right"><%= entry.getValue().getTotal_amount() %></td>
     </tr>
     <% } %>
                 </table>
