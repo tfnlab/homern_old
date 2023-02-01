@@ -190,7 +190,73 @@
 
                               Timestamp createdAt = currentTime;
                               Timestamp updatedAt = currentTime;
-                             Product product = new Product(0, "sku", request.getParameter("name" + z), ptotal, 0, 0, 0, "", 1, request.getParameter("description" + z), "", createdAt, updatedAt, "15", "15", true, 0, 0, username);
+
+                                  int inventory = 0;
+                                  int reorderLevel = 0;
+                                  int leadTime = 0;
+                                  boolean featured = false;
+                                  BigDecimal rating = new BigDecimal("0");
+
+                                  String priceStr = request.getParameter("price");
+                                  if (priceStr != null) {
+                                    price = ptotal;
+                                  }
+
+                                  String inventoryStr = request.getParameter("inventory");
+                                  if (inventoryStr != null && inventoryStr.trim().length() > 0) {
+                                    inventory = Integer.parseInt(inventoryStr);
+                                  }
+
+                                  String reorderLevelStr = request.getParameter("reorder_level");
+                                  if (reorderLevelStr != null && reorderLevelStr.trim().length() > 0) {
+                                    reorderLevel = Integer.parseInt(reorderLevelStr);
+                                  }
+
+                                  String leadTimeStr = request.getParameter("lead_time");
+                                  if (leadTimeStr != null && leadTimeStr.trim().length() > 0) {
+                                    leadTime = Integer.parseInt(leadTimeStr);
+                                  }
+
+                                  String featuredStr = request.getParameter("featured");
+                                  if (featuredStr != null && featuredStr.trim().length() > 0) {
+                                    featured = Boolean.parseBoolean(featuredStr);
+                                  }
+
+                                  String ratingStr = request.getParameter("rating");
+                                  if (ratingStr != null && ratingStr.trim().length() > 0) {
+                                    rating = new BigDecimal(ratingStr);
+                                  }
+
+                                  String description = request.getParameter("description");
+                                  String imageUrl = request.getParameter("image_url");
+                                  Timestamp createdAt = currentTime;
+                                  Timestamp updatedAt = currentTime;
+                                  int categoryId = 0;
+                                  int manufacturerId = 0;
+                                  boolean availability = false;
+                                  BigDecimal weight = new BigDecimal("0");
+
+                                  String categoryIdStr = request.getParameter("category_id");
+                                  if (categoryIdStr != null && categoryIdStr.trim().length() > 0) {
+                                    categoryId = Integer.parseInt(categoryIdStr);
+                                  }
+
+                                  String manufacturerIdStr = request.getParameter("manufacturer_id");
+                                  if (manufacturerIdStr != null && manufacturerIdStr.trim().length() > 0) {
+                                    manufacturerId = Integer.parseInt(manufacturerIdStr);
+                                  }
+
+
+                                  availability = Boolean.parseBoolean(request.getParameter("availability"));
+
+                                  String weightStr = request.getParameter("weight");
+                                  if (weightStr != null && weightStr.trim().length() > 0) {
+                                    weight = new BigDecimal(weightStr);
+                                  }
+                                  String dimensions = request.getParameter("dimensions");
+
+
+                             Product product = new Product(id, sku, request.getParameter("name" + z), price, inventory, reorderLevel, leadTime, featured, rating, request.getParameter("description" + z), imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
                              ProductDao dao = new ProductDao();
                              try{
                                   dao.insertProduct(product);
