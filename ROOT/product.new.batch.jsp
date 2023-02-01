@@ -169,7 +169,9 @@
         <h2>Product</h2>
         <%@ include file="user.menu.nav.jsp" %>
             <hr>
+
         <%
+                  User usernameOBJ = (User) session.getAttribute("usernameOBJ");
                   int count = 0;
                   if (request.getParameter("count") != null && !request.getParameter("count").isEmpty()) {
                     count = Integer.parseInt(request.getParameter("count"));
@@ -276,7 +278,7 @@
             <form action="event.preventDefault();" method="post">
               <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" tabindex="3">
+                <input type="text" class="form-control" id="name" name="name" tabindex="3" value="write list of service for <%=usernameOBJ.getBusiness_type()%> company">
               </div>
             </form>
               <hr>
