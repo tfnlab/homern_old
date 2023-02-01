@@ -308,6 +308,7 @@ response.sendRedirect("index.html");
                     <option value="doge">Doge</option>
                     <option value="bitcoin">Bitcoin</option>
                     <option value="eth">ETH</option>
+                    <option value="zelle">Zelle</option>
                   </select>
                 </div>
 
