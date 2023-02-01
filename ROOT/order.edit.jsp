@@ -417,6 +417,8 @@
     <option value="paypal" <%= "paypal".equals(order.getPaymentMethod()) ? "selected" : "" %>>Paypal</option>
     <option value="applePay" <%= "applePay".equals(order.getPaymentMethod()) ? "selected" : "" %>>Apple Pay</option>
     <option value="stripe" <%= "stripe".equals(order.getPaymentMethod()) ? "selected" : "" %>>Stripe</option>
+    <option value="zelle" <%= "zelle".equals(order.getPaymentMethod()) ? "selected" : "" %>>Zelle</option>
+
   </select>
 </div>
 
