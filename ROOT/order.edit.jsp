@@ -349,7 +349,7 @@
           <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
           <div class="form-group">
             <label for="endTime">Invoice Date:</label>
-            <input type="datetime-local" class="form-control" name="orderDate" value="<%= order.getOrderDate() %>" datepicker  tabindex="10">
+            <input type="datetime-local" class="form-control" name="orderDate" value="<%= formatterHH.format(order.getOrderDate()) %>" datepicker  tabindex="10">
           </div>
                  <%
                     SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
