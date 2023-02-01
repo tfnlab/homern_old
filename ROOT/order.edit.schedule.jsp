@@ -354,10 +354,9 @@
                    <% for (Technician technician : technicians) { %>
                      <option value="<%= technician.getTechnicianId() %>"><%= technician.getTechnicianName() %></option>
                    <% } %>
-
-                </select>
-
-             </div>
+               </select>
+               </div>
+                <HR>
              <div class="form-group">
                <label for="title">Title</label>
                <input type="text" class="form-control" id="title" name="title" required  value="<%= order.getOrderName() %>" >
@@ -419,7 +418,6 @@
                           <option value="preventive">Preventive maintenance contracts</option>
                         </select>
                 </div>
-                <HR>
              <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" >
              <HR>
              <input type="submit" value="Add Event">
