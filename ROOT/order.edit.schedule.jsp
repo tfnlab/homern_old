@@ -347,7 +347,7 @@
          <p>
 
                 <div class="form-group">
-                  <label for="event_type">Event Type:</label>
+                  <label for="event_type">Add Multiple Events:</label>
                         <select name="event_type" id="event_type" >
                           <option value="none">None</option>
                           <option value="installation">Installation of new heating and cooling systems</option>
