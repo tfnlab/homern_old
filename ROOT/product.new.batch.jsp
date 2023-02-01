@@ -78,8 +78,9 @@
             for (let i = 0; i < products.length-1; i++) {
               console.log(products[i]);
               let items = products[i].split("<ITEM>");
-              let input = '<input type="text" id="myInput" value="' + items[0] + '" >';
-              let inputDes = '<input type="text" id="myInput" value="' + items[1] + '" >';
+              let input = '<input type="text" id="name'+ i +'" value="' + items[0] + '" >';
+              let inputDes = '<input type="text" id="description' + i + '" name="description' + i + '" value="' + items[1] + '" >';
+              let inputP = '<input type="text" id="price' + i + '" name="price' + i + '" value="" >';
               document.getElementById("productList").innerHTML += input;
               document.getElementById("productList").innerHTML += inputDes;
               document.getElementById("productList").innerHTML += '<HR>';
@@ -168,6 +169,17 @@
         <%@ include file="user.menu.nav.jsp" %>
             <hr>
         <%
+                  int count = 0;
+                  if (request.getParameter("count") != null && !request.getParameter("count").isEmpty()) {
+                    orderId = Integer.parseInt(request.getParameter("count"));
+                  }
+                  if(count>0){
+                  for(int z=0;z<count;z++)
+                            %><%=request.getParameter("name" + count)%><%
+                            %><%=request.getParameter("description" + count)%><%
+                            %><%=request.getParameter("price" + count)%><%
+                  }
+
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
 
