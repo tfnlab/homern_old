@@ -73,7 +73,7 @@
         if (this.readyState == 4 && this.status == 200) {
             let products = this.responseText.split("<PRODUCT>");
 
-            let inputCount = '<input type="text" id="count" value="' + products.length-1 + '" >';
+            let inputCount = '<input type="hidden" id="count" value="' + products.length + '" >';
             document.getElementById("productList").innerHTML += inputCount;
             for (let i = 0; i < products.length-1; i++) {
               console.log(products[i]);
