@@ -73,6 +73,7 @@
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           alert(this.responseText.trim());
+          document.getElementById("productList").innerHTML = this.responseText;
         }
       };
       var select = document.getElementById("name").value;
@@ -325,6 +326,8 @@
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
+            <div id="productList" name="productList">
+            <div>
           </div>
 
         </div>
