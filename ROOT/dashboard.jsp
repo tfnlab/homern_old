@@ -153,14 +153,12 @@
             Orders: <%=oDao.getCustomerOrderCount(username)%>
             <HR>
             <table class="table" border=1>
-              <thead>
+
                 <tr>
-                  <th >Status</th>
-                  <th align="right" sytle="text-align: right;">Count</th>
-                  <th align="right" sytle="text-align: right;">Total</th>
+                  <td >Status</th>
+                  <td align="right" sytle="text-align: right;">Count</td>
+                  <td align="right" sytle="text-align: right;">Total</td>
                 </tr>
-              </thead>
-              <tbody>
                 <%
 //                  String[] statuses = {};
                   String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
@@ -189,7 +187,6 @@
                 <%
                   }
                 %>
-              </tbody>
             </table>
 
             <HR>
