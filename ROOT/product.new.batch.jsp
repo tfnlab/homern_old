@@ -175,110 +175,32 @@
                     count = Integer.parseInt(request.getParameter("count"));
                   }
 
+                  String username = (String) session.getAttribute("username");
+                  long currentTimeMillis = System.currentTimeMillis();
+                  Timestamp currentTime = new Timestamp(currentTimeMillis);
+
                   for(int z=0;z<count-1;z++){
                             %><%=request.getParameter("name" + z)%><%
                             %><%=request.getParameter("description" + z)%><%
                             %><%=request.getParameter("price" + z)%><%
-                  }
+                              BigDecimal ptotal = new BigDecimal("0");
+                              if (request.getParameter("price" + z) != null && !request.getParameter("price" + z).isEmpty()) {
+                                ptotal = new BigDecimal(request.getParameter("price" + z));
+                              }
 
-                long currentTimeMillis = System.currentTimeMillis();
-                Timestamp currentTime = new Timestamp(currentTimeMillis);
-
-                String username = (String) session.getAttribute("username");
-
-                  // Get the form data from the request
-                  String sku = request.getParameter("sku");
-                  String name = request.getParameter("name");
-
-                if (name != null && name.trim().length() > 0) {
-                  int id = 0;
-                  BigDecimal price = new BigDecimal("0");
-                  int inventory = 0;
-                  int reorderLevel = 0;
-                  int leadTime = 0;
-                  boolean featured = false;
-                  BigDecimal rating = new BigDecimal("0");
-
-                  String priceStr = request.getParameter("price");
-                  if (priceStr != null) {
-                    price = new BigDecimal(priceStr);
-                  }
-
-                  String inventoryStr = request.getParameter("inventory");
-                  if (inventoryStr != null && inventoryStr.trim().length() > 0) {
-                    inventory = Integer.parseInt(inventoryStr);
-                  }
-
-                  String reorderLevelStr = request.getParameter("reorder_level");
-                  if (reorderLevelStr != null && reorderLevelStr.trim().length() > 0) {
-                    reorderLevel = Integer.parseInt(reorderLevelStr);
-                  }
-
-                  String leadTimeStr = request.getParameter("lead_time");
-                  if (leadTimeStr != null && leadTimeStr.trim().length() > 0) {
-                    leadTime = Integer.parseInt(leadTimeStr);
-                  }
-
-                  String featuredStr = request.getParameter("featured");
-                  if (featuredStr != null && featuredStr.trim().length() > 0) {
-                    featured = Boolean.parseBoolean(featuredStr);
-                  }
-
-                  String ratingStr = request.getParameter("rating");
-                  if (ratingStr != null && ratingStr.trim().length() > 0) {
-                    rating = new BigDecimal(ratingStr);
-                  }
-
-                  String description = request.getParameter("description");
-                  String imageUrl = request.getParameter("image_url");
-                  Timestamp createdAt = currentTime;
-                  Timestamp updatedAt = currentTime;
-                  int categoryId = 0;
-                  int manufacturerId = 0;
-                  boolean availability = false;
-                  BigDecimal weight = new BigDecimal("0");
-
-                  String categoryIdStr = request.getParameter("category_id");
-                  if (categoryIdStr != null && categoryIdStr.trim().length() > 0) {
-                    categoryId = Integer.parseInt(categoryIdStr);
-                  }
-
-                  String manufacturerIdStr = request.getParameter("manufacturer_id");
-                  if (manufacturerIdStr != null && manufacturerIdStr.trim().length() > 0) {
-                    manufacturerId = Integer.parseInt(manufacturerIdStr);
+                              Timestamp createdAt = currentTime;
+                              Timestamp updatedAt = currentTime;
+                             Product product = new Product(0, "sku", request.getParameter("name" + z), ptotal, "inventory", 0, 0, "", 1, request.getParameter("description" + z), "", createdAt, updatedAt, "15", "15", true, 0, 0, username);
+                             ProductDao dao = new ProductDao();
+                             try{
+                                  dao.insertProduct(product);
+                             }catch(Exception ex){
+                                    %><%=ex.getMessage()%><%
+                             }
                   }
 
 
-                  availability = Boolean.parseBoolean(request.getParameter("availability"));
 
-                  String weightStr = request.getParameter("weight");
-                  if (weightStr != null && weightStr.trim().length() > 0) {
-                    weight = new BigDecimal(weightStr);
-                  }
-                  String dimensions = request.getParameter("dimensions");
-                  String customerId = username;
-
-                  // Create a new Product object
-                  Product product = new Product(id, sku, name, price, inventory, reorderLevel, leadTime, featured, rating, description, imageUrl, createdAt, updatedAt, categoryId, manufacturerId, availability, weight, dimensions, customerId);
-
-                  // Create a new ProductDao object
-                  ProductDao dao = new ProductDao();
-
-                  // Insert the Product object into the database
-                  try{
-                      dao.insertProduct(product);
-                  }catch(Exception ex){
-                        %><%=ex.getMessage()%><%
-                  }
-                %>
-                <p>Product successfully added to the database.</p>
-                <HR>
-                  <a href="product.new.jsp" tabindex="2"><i class="fas fa-plus"></i> Product</a>
-                <HR>
-                <HR>
-                  <a href="product.list.jsp" tabindex="2"><i class="fas fa-list"></i> List Products</a>
-                <HR>
-                <%
 
                 }else{
 
