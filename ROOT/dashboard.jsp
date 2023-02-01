@@ -155,9 +155,9 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">Status</th>
-                  <th align="right" scope="col">Count</th>
-                  <th align="right" scope="col">Total</th>
+                  <th >Status</th>
+                  <th align="right" >Count</th>
+                  <th align="right" >Total</th>
                 </tr>
               </thead>
               <tbody>
