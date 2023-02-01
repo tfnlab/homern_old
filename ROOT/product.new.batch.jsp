@@ -260,13 +260,13 @@
         %>
             <!-- ======= Contact Section ======= -->
 
-            <form action="product.new.jsp" method="post">
+            <form action="event.preventDefault();" method="post">
               <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name" tabindex="3">
               </div>
               <hr>
-              <input type="submit" class="btn btn-primary" value="Submit" tabindex="17" onclick="event.preventDefault();getProducts();">
+              <input type="submit" class="btn btn-primary" value="Submit" tabindex="17" onclick="getProducts();">
             </form>
 
 
