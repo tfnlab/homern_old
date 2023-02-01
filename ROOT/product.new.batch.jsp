@@ -171,7 +171,7 @@
         <%
                   int count = 0;
                   if (request.getParameter("count") != null && !request.getParameter("count").isEmpty()) {
-                    orderId = Integer.parseInt(request.getParameter("count"));
+                    count = Integer.parseInt(request.getParameter("count"));
                   }
                   if(count>0){
                   for(int z=0;z<count;z++)
