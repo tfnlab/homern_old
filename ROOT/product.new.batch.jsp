@@ -190,7 +190,7 @@
 
                               Timestamp createdAt = currentTime;
                               Timestamp updatedAt = currentTime;
-                             Product product = new Product(0, "sku", request.getParameter("name" + z), ptotal, "inventory", 0, 0, "", 1, request.getParameter("description" + z), "", createdAt, updatedAt, "15", "15", true, 0, 0, username);
+                             Product product = new Product(0, "sku", request.getParameter("name" + z), ptotal, 0, 0, 0, "", 1, request.getParameter("description" + z), "", createdAt, updatedAt, "15", "15", true, 0, 0, username);
                              ProductDao dao = new ProductDao();
                              try{
                                   dao.insertProduct(product);
