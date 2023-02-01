@@ -167,6 +167,8 @@
                              <option value="<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianName() %></option>
                            <% } %>
                        </select>
+
+                       <a href="event.new.jsp" >Add Event</a>
             <HR>
     </div>
         <HR>
