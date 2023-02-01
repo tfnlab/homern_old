@@ -156,8 +156,8 @@
               <thead>
                 <tr>
                   <th >Status</th>
-                  <th align="right" >Count</th>
-                  <th align="right" >Total</th>
+                  <th align="right" sytle="text-align: right;">Count</th>
+                  <th align="right" sytle="text-align: right;">Total</th>
                 </tr>
               </thead>
               <tbody>
