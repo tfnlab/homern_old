@@ -153,9 +153,11 @@
             }
           %>
           <td >
-            <a href="event.new.jsp" >
-            <i class="fas fa-plus"></i>
-            </a>
+            <div class="order-state-box" >
+                <a href="event.new.jsp" >
+                <i class="fas fa-plus"></i>
+                </a>
+            </div>
           </td>
         </tr>
       </table>
