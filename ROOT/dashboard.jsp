@@ -202,13 +202,12 @@
                     Map<Product, ProductDashBoard> groupedProducts = plDao.getGroupedProductsByInvoiceId(username, false);
                     %>
                                 <table class="table">
-              <thead>
+
                 <tr>
-                  <th scope="col">Product</th>
-                  <th align="right" scope="col">Quantity</th>
-                  <th align="right" scope="col">Total</th>
+                  <td scope="col">Product</td>
+                  <td align="right" scope="col">Quantity</td>
+                  <td align="right" scope="col">Total</td>
                 </tr>
-              </thead>
      <% for (Map.Entry<Product, ProductDashBoard> entry : groupedProducts.entrySet()) { %>
     <tr>
         <td><%= entry.getKey().getName() %></td>
@@ -227,13 +226,13 @@
                     Map<Product, ProductDashBoard> groupedProducts = plDao.getGroupedProductsByInvoiceId(username, true);
                     %>
                                 <table class="table">
-              <thead>
+
                 <tr>
-                  <th scope="col">Excluded Product</th>
-                  <th align="right" scope="col">Quantity</th>
-                  <th align="right" scope="col">Total</th>
+                  <td scope="col">Excluded Product</td>
+                  <td align="right" scope="col">Quantity</td>
+                  <td align="right" scope="col">Total</td>
                 </tr>
-              </thead>
+
      <% for (Map.Entry<Product, ProductDashBoard> entry : groupedProducts.entrySet()) { %>
     <tr>
         <td><%= entry.getKey().getName() %></td>
