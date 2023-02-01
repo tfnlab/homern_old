@@ -174,8 +174,8 @@
                   if (request.getParameter("count") != null && !request.getParameter("count").isEmpty()) {
                     count = Integer.parseInt(request.getParameter("count"));
                   }
-                  
-                  for(int z=0;z<count;z++){
+
+                  for(int z=0;z<count-1;z++){
                             %><%=request.getParameter("name" + z)%><%
                             %><%=request.getParameter("description" + z)%><%
                             %><%=request.getParameter("price" + z)%><%
