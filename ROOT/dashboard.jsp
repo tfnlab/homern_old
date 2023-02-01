@@ -152,7 +152,7 @@
             <HR>
             Orders: <%=oDao.getCustomerOrderCount(username)%>
             <HR>
-            <table class="table">
+            <table class="table" border=1>
               <thead>
                 <tr>
                   <th >Status</th>
