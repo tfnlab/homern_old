@@ -68,7 +68,6 @@
     }
     function getProducts() {
       //genmessage.jsp?comType=latepaymentrequest
-      event.preventDefault();
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -267,7 +266,7 @@
                 <input type="text" class="form-control" id="name" name="name" tabindex="3">
               </div>
               <hr>
-              <input type="submit" class="btn btn-primary" value="Submit" tabindex="17" onclick="getProducts()">
+              <input type="submit" class="btn btn-primary" value="Submit" tabindex="17" onclick="event.preventDefault();getProducts();">
             </form>
 
 
