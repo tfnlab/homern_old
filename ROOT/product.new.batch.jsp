@@ -235,7 +235,7 @@
                                   Timestamp updatedAt = currentTime;
                                   int categoryId = 0;
                                   int manufacturerId = 0;
-                                  boolean availability = false;
+                                  boolean availability = true;
                                   BigDecimal weight = new BigDecimal("0");
 
                                   String categoryIdStr = request.getParameter("category_id");
