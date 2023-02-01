@@ -156,8 +156,8 @@
               <thead>
                 <tr>
                   <th scope="col">Status</th>
-                  <th scope="col">Count</th>
-                  <th scope="col">Total</th>
+                  <th align="right" scope="col">Count</th>
+                  <th align="right" scope="col">Total</th>
                 </tr>
               </thead>
               <tbody>
@@ -168,11 +168,11 @@
                 %>
                 <tr>
                   <td><a href="order.list.jsp?searchKey=<%= sstatus %>" ><%= sstatus %></a></td>
-                  <td>
+                  <td align="right">
                       <% int count = oDao.getCustomerOrderCount(username, sstatus);%>
                       <%= count %>
                   </td>
-                  <td>
+                  <td align="right">
                       <%if(count>0){%>
                           <% try{
                               %><%=oDao.getCustomerOrderTotal(username, sstatus)%><%
@@ -208,8 +208,8 @@
               <thead>
                 <tr>
                   <th scope="col">Product</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Total</th>
+                  <th align="right" scope="col">Quantity</th>
+                  <th align="right" scope="col">Total</th>
                 </tr>
               </thead>
      <% for (Map.Entry<Product, ProductDashBoard> entry : groupedProducts.entrySet()) { %>
@@ -233,15 +233,15 @@
               <thead>
                 <tr>
                   <th scope="col">Excluded Product</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Total</th>
+                  <th align="right" scope="col">Quantity</th>
+                  <th align="right" scope="col">Total</th>
                 </tr>
               </thead>
      <% for (Map.Entry<Product, ProductDashBoard> entry : groupedProducts.entrySet()) { %>
     <tr>
         <td><%= entry.getKey().getName() %></td>
-        <td class="text-right"><%= entry.getValue().getQuantity() %></td>
-        <td class="text-right"><%= entry.getValue().getTotal_amount() %></td>
+        <td align="right"><%= entry.getValue().getQuantity() %></td>
+        <td align="right"><%= entry.getValue().getTotal_amount() %></td>
     </tr>
     <% } %>
                 </table>
