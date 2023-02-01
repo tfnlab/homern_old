@@ -176,9 +176,9 @@
                   }
                   if(count>0){
                   for(int z=0;z<count;z++)
-                            %><%=request.getParameter("name" + count)%><%
-                            %><%=request.getParameter("description" + count)%><%
-                            %><%=request.getParameter("price" + count)%><%
+                            %><%=request.getParameter("name" + z)%><%
+                            %><%=request.getParameter("description" + z)%><%
+                            %><%=request.getParameter("price" + z)%><%
                   }
 
                 long currentTimeMillis = System.currentTimeMillis();
