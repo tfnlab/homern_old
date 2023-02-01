@@ -78,7 +78,7 @@
             for (let i = 0; i < products.length-1; i++) {
               console.log(products[i]);
               let items = products[i].split("<ITEM>");
-              let input = '<input type="text" id="name'+ i +'" value="' + items[0] + '" >';
+              let input = '<input type="text" name="name'+ i +'" id="name'+ i +'" value="' + items[0] + '" >';
               let inputDes = '<input type="text" id="description' + i + '" name="description' + i + '" value="' + items[1] + '" >';
               let inputP = '<input type="text" id="price' + i + '" name="price' + i + '" value="" >';
               document.getElementById("productList").innerHTML += input;
