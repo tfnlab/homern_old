@@ -13,12 +13,5 @@
     String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
     String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
     strRes = stdout + stderr;
-//    tmp.tmp.setMessage(null)
-    tmp.setMessage(strRes);
-    tmp.setSubject(request.getParameter("comType"));
-    tmp.setUsername(username);
-    tmp.setActive(false);
-    tmp.setPublic(false);
-    tD.addTemplate(tmp);
   }
  %><%= strRes %>
