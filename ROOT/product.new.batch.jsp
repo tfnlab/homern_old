@@ -265,9 +265,9 @@
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name" tabindex="3">
               </div>
+            </form>
               <hr>
               <input type="submit" class="btn btn-primary" value="Submit" tabindex="17" onclick="getProducts();">
-            </form>
 
 
                  <%}%>
