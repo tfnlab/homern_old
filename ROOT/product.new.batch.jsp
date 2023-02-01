@@ -73,7 +73,7 @@
         if (this.readyState == 4 && this.status == 200) {
             let products = this.responseText.split("<PRODUCT>");
 
-            let inputCount = '<input type="hidden" id="count" value="' + products.length + '" >';
+            let inputCount = '<input type="hidden" name="count" id="count" value="' + products.length + '" >';
             document.getElementById("productList").innerHTML += inputCount;
             for (let i = 0; i < products.length-1; i++) {
               console.log(products[i]);
@@ -83,6 +83,7 @@
               let inputP = '<input type="text" id="price' + i + '" name="price' + i + '" value="" >';
               document.getElementById("productList").innerHTML += input;
               document.getElementById("productList").innerHTML += inputDes;
+              document.getElementById("productList").innerHTML += inputP;
               document.getElementById("productList").innerHTML += '<HR>';
             }
 
