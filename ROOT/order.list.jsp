@@ -174,7 +174,7 @@
                       BigDecimal amountDue = order.getOrderTotal_sql().subtract((ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql());
                       String colorT = (amountDue.compareTo(BigDecimal.ZERO) == 0) ? "green" : "red";
                       if(amountDue.compareTo(BigDecimal.ZERO) != 0)
-                      colorT = ((ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql().compareTo(BigDecimal.ZERO) == 0) ? "red" : "yellow";
+                      colorT = ((ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql().compareTo(BigDecimal.ZERO) == 0) ? "red" : "#9B870C";
                     %>
                     <span style="color: <%= colorT %>;">
                       <%= amountDue %>
