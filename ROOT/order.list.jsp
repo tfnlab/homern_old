@@ -122,7 +122,11 @@
                 List<Order> orders = null;
                 HashMap<Integer, Order> ordersMap = new HashMap<>();
                 if (searchKey != null && searchKey.trim().length() > 0) {
-                    orders = orderDao.getCustomerOrdersSearchKey(searchKey, username);
+                    try{
+                        orders = orderDao.getCustomerOrdersSearchKey(searchKey, username);
+                    }catch(Exception ex){
+                        %><%=ex.getMessage()%><%
+                    }
                 }else{
                     searchKey = "";
                     orders = orderDao.getCustomerOrdersDetails(username);
