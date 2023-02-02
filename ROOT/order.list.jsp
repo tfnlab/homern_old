@@ -154,23 +154,25 @@
                 <% String color = order.getShipDate().after(today) ? "#C8E6C9" : "#FFCDD2"; %>
                 <div class="container-fluid p-5" style="background-color: <%=color%>">
                   <div class="card p-3">
-                Order ID: <%= order.getOrderId() %><br>
-                Order Status: <%= order.getStatus() %><br>
-                Name: <%= order.getOrderName() %><br>
-                  Description: <%= order.getOrderDescription() %><br>
-                Date: <%= order.getOrderDate() %><br>
-                Project Address: <%= order.getShippingAddress() %><br>
-                <!-- Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br> -->
-                Billing Address: <%= order.getBillingAddress() %><br>
-                <!-- Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br> -->
-                Payment Method: <%= order.getPaymentMethod() %><br>
-                Total: <%= order.getOrderTotal() %><br>
-                <H3>Products</h3>
-                Total Total: <%= order.getOrderTotal_sql() %><br>
-                Total Paid: <%= (ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql() %><br>
-                Total Due: <%= order.getOrderTotal_sql().subtract((ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql()) %><br>
-                <hr>
-                <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
+                    Order ID: <%= order.getOrderId() %><br>
+                    Order Status: <%= order.getStatus() %><br>
+                    Name: <%= order.getOrderName() %><br>
+                      Description: <%= order.getOrderDescription() %><br>
+                    Date: <%= order.getOrderDate() %><br>
+                    Project Address: <%= order.getShippingAddress() %><br>
+                    <!-- Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br> -->
+                    Billing Address: <%= order.getBillingAddress() %><br>
+                    <!-- Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br> -->
+                    Payment Method: <%= order.getPaymentMethod() %><br>
+                    Total: <%= order.getOrderTotal() %><br>
+                    <H3>Products</h3>
+                    Total Total: <%= order.getOrderTotal_sql() %><br>
+                    <%if(ordersMap.get(order.getOrderId())!=null){%>
+                    Total Paid: <%= (ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql() %><br>
+                    Total Due: <%= order.getOrderTotal_sql().subtract((ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql()) %><br>
+                    <%}%>
+                    <hr>
+                    <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
 
                 <%
                   tabindex +=1;
