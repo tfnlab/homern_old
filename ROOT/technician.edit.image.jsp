@@ -169,12 +169,12 @@
               APIConfig conf = new APIConfig();
                 String technicianId = "technicianId";
                 Collection<Part> parts = request.getParts();
-                Part inputFieldPart = request.getPart("technicianId");
+                Part inputFieldPart = request.getPart("inputFieldName");
                 if (inputFieldPart != null) {
                     technicianId = inputFieldPart.getInputStream().toString();
                     // Use the input field value as needed
                 }
-                
+
                 %>
                 <%= technicianId %><%
               String filename = technicianId + "." + username + ".png";
