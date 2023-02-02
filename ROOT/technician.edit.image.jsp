@@ -195,6 +195,7 @@
             <%
           } else {
             // Request is not a multipart form
+                int id = Integer.parseInt(request.getParameter("technicianId"));
                 TechnicianDao td = new TechnicianDao();
                 Technician technician = new Technician();
                 technician = td.getTechnicianById(id);

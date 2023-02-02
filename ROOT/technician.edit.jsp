@@ -257,7 +257,7 @@
               <textarea class="form-control" id="technicianNotes" name="technicianNotes"><%= technician.getTechnicianNotes() %></textarea>
           </div>
           <div class="form-group">
-              <a href="technician.edit.image.jsp" ><label for="technicianPhoto">Photo</label></a>
+              <a href="technician.edit.image.jsp?technicianId=<%= technician.getTechnicianId() %>" ><label for="technicianPhoto">Photo</label></a>
           </div>
           <div class="form-group">
               <label for="technicianPassword">Password</label>
