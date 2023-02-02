@@ -165,22 +165,7 @@
 
 <%
                 String technicianId = "technicianId";
-if (ServletFileUpload.isMultipartContent(request)) {
-    FileItemFactory factory = new DiskFileItemFactory();
-    ServletFileUpload upload = new ServletFileUpload(factory);
-    List<FileItem> items = upload.parseRequest(request);
 
-    for (FileItem item : items) {
-        if (!item.isFormField()) {
-            continue;
-        }
-        String inputFieldName = item.getFieldName();
-        String inputFieldValue = item.getString();
-        if (inputFieldName.equals("technicianId")) {
-            technicianId = inputFieldValue;
-        }
-    }
-}
 %>
         <img src="technician.edit.image.view.jsp?technicianId=<%=technicianId%>" class="img-fluid" style="max-width: 50%;"/>
 
@@ -199,6 +184,17 @@ if (ServletFileUpload.isMultipartContent(request)) {
               factory.setRepository(new File(filepath)); // Set the repository location for temporarily storing files
               ServletFileUpload upload = new ServletFileUpload(factory);
               List<FileItem> items = upload.parseRequest(request);
+              for (FileItem item : items) {
+                if (!item.isFormField()) { // Check if the item is an uploaded file
+
+                }else{
+                    String inputFieldName = item.getFieldName();
+                    String inputFieldValue = item.getString();
+                    if (inputFieldName.equals("technicianId")) {
+                        technicianId = inputFieldValue;
+                    }
+                }
+              }
               for (FileItem item : items) {
                 if (!item.isFormField()) { // Check if the item is an uploaded file
                   InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
