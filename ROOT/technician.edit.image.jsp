@@ -10,7 +10,15 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="com.tfnlab.mysql.Technician" %>
 <%@ page import="com.tfnlab.mysql.TechnicianDao" %>
-
+<%@ page import="java.net.URLDecoder" %>
+<%@ page import="java.io.*" %>
+<%@ page import="javax.servlet.http.*" %>
+<%@ page import="com.tfnlab.api.con.APIConfig" %>
+<%@ page import="org.apache.commons.fileupload.servlet.ServletFileUpload" %>
+<%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory" %>
+<%@ page import="javax.servlet.http.Part" %>
+<%@ page import="java.util.List" %>
+<%@ page import="org.apache.commons.fileupload.FileItem" %>
 <!DOCTYPE html>
 <html lang="en">
 
