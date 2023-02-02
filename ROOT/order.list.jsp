@@ -164,13 +164,12 @@
                     Billing Address: <%= order.getBillingAddress() %><br>
                     <!-- Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br> -->
                     Payment Method: <%= order.getPaymentMethod() %><br>
-                    Total: <%= order.getOrderTotal() %><br>
-                    <H3>Products</h3>
+                    Order Total: <%= order.getOrderTotal() %><br>
                     <div class="panel-body" style="text-align: right;">
-                    Total Total: <%= order.getOrderTotal_sql() %><br>
+                    Total: <%= order.getOrderTotal_sql() %><br>
                     <%if(ordersMap.get(order.getOrderId())!=null && order.getOrderTotal_sql() !=null){%>
-                    Total Paid: <%= (ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql() %><br>
-                    Total Due: <%
+                    Paid: <%= (ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql() %><br>
+                    Due: <%
                       BigDecimal amountDue = order.getOrderTotal_sql().subtract((ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql());
                       String colorT = (amountDue.compareTo(BigDecimal.ZERO) == 0) ? "green" : "red";
                       if(amountDue.compareTo(BigDecimal.ZERO) != 0)
