@@ -307,6 +307,7 @@
                           }
                         }
                         PaymentPost pp = new  PaymentPost(1, pId, new Date(), new Date(), new Date(), paymentAmount, new Date(), new Date(), username, 3, username, ocId);
+                        pp.setOrder_Id(orderId);
                         ppDao.insertPaymentPost(pp);
                       }
                     }
