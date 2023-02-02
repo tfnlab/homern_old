@@ -126,8 +126,8 @@
                 }else{
                     searchKey = "";
                     orders = orderDao.getCustomerOrdersDetails(username);
-                }
                     ordersMap = orderDao.getCustomerOrdersDetailsPaid(username);
+                }
                 %>
                 <form action="order.list.jsp" method="post">
                   <div class="form-group">
@@ -160,10 +160,6 @@
                 Payment Method: <%= order.getPaymentMethod() %><br>
                 Total: <%= order.getOrderTotal() %><br>
                 <H3>Products</h3>
-                Total Total: <%= order.getOrderTotal_sql() %><br>
-                Total Paid: <%= (ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql() %><br>
-                Total Due: <%= order.getOrderTotal_sql().subtract((ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql()) %><br>
-                <hr>
                 <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
 
                 <%
