@@ -162,6 +162,7 @@
         <HR>
         <%
           boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+                String username = (String) session.getAttribute("username");
           if (isMultipart) {
               APIConfig conf = new APIConfig();
               String filename = request.getParameter("technicianId") + "." + username + ".png";
