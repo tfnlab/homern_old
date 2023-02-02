@@ -176,7 +176,6 @@
               APIConfig conf = new APIConfig();
 
                 %><%= technicianId %><%
-              String filename = technicianId + "." + username + ".png";
               String filepath = conf.getPdfloc();
                 %><%= filename %><%
               DiskFileItemFactory factory = new DiskFileItemFactory();
@@ -195,6 +194,7 @@
                     }
                 }
               }
+              String  filename = technicianId + "." + username + ".png";
               for (FileItem item : items) {
                 if (!item.isFormField()) { // Check if the item is an uploaded file
                   InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
