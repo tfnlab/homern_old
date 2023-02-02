@@ -126,8 +126,8 @@
                 }else{
                     searchKey = "";
                     orders = orderDao.getCustomerOrdersDetails(username);
-                    ordersMap = orderDao.getCustomerOrdersDetailsPaid(username);
                 }
+                    ordersMap = orderDao.getCustomerOrdersDetailsPaid(username);
                 %>
                 <form action="order.list.jsp" method="post">
                   <div class="form-group">
