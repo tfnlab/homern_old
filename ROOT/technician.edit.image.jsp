@@ -175,9 +175,7 @@
           if (isMultipart) {
               APIConfig conf = new APIConfig();
 
-                %><%= technicianId %><%
               String filepath = conf.getPdfloc();
-                %><%= filename %><%
               DiskFileItemFactory factory = new DiskFileItemFactory();
               factory.setSizeThreshold(1024 * 1024); // Set the size threshold for storing files in memory
               factory.setRepository(new File(filepath)); // Set the repository location for temporarily storing files
