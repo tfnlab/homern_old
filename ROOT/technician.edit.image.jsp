@@ -158,7 +158,7 @@
         <h2>Technician</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-
+            <img src="technician.edit.image.view.jsp?technicianId=<%=request.getParameter("technicianId")%>" class="img-fluid" style="max-width: 50%;"/>
         <HR>
         <%
           boolean isMultipart = ServletFileUpload.isMultipartContent(request);
