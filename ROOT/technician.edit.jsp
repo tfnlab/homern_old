@@ -258,7 +258,7 @@
           </div>
           <div class="form-group">
               <a href="technician.edit.image.jsp?technicianId=<%= technician.getTechnicianId() %>" >
-              <img src="technician.edit.image.view.jsp?technicianId=<%=request.getParameter("technicianId")%>" class="img-fluid" style="max-width: 50%;"/>
+              <img src="technician.edit.image.view.jsp?technicianId=<%=technician.getTechnicianId()%>" class="img-fluid" style="max-width: 50%;"/>
               </a>
           </div>
           <div class="form-group">
