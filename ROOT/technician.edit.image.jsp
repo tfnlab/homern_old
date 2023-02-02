@@ -150,124 +150,58 @@
         <h2>Technician</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
+
+        <HR>
         <%
+          boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+          if (isMultipart) {
+              APIConfig conf = new APIConfig();
+              String filename = request.getParameter("technicianId") + "." + username + ".png";
+              String filepath = conf.getPdfloc();
 
-                int id = Integer.parseInt(request.getParameter("technicianId"));
-                long currentTimeMillis = System.currentTimeMillis();
-                Timestamp currentTime = new Timestamp(currentTimeMillis);
-
-                String username = (String) session.getAttribute("username");
-                TechnicianDao td = new TechnicianDao();
-
-
-
-                String technicianName = request.getParameter("technicianName");
-
-
-
-                // Validate form data
-                Technician technician = new Technician();
-                if (technicianName != null && technicianName.trim().length() > 0) {
-
-
-                      //Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng);
-                      //OrderDao dao = new OrderDao();
-                      //ao.insertOrder(order);
-
-
-                        technician = technician.generateSampleTechnician();
-                        technician.setTechnicianId(id);
-                        technician.setTechnicianName(request.getParameter("technicianName"));
-                        technician.setTechnicianEmail(request.getParameter("technicianEmail"));
-                        technician.setTechnicianPhone(request.getParameter("technicianPhone"));
-                        technician.setTechnicianSkills(request.getParameter("technicianSkills"));
-                        technician.setTechnicianActive(Boolean.parseBoolean(request.getParameter("isTechnicianActive")));
-                        technician.setTechnicianInterviewed(Boolean.parseBoolean(request.getParameter("technicianInterviewed")));
-                        technician.setTechnicianPassedBackgroundCheck(Boolean.parseBoolean(request.getParameter("technicianPassedBackgroundCheck")));
-                        technician.setTechnicianPayrate(new BigDecimal(request.getParameter("technicianPayrate")));
-                        technician.setTechnicianLocation(request.getParameter("technicianLocation"));
-                        technician.setTechnicianCertifications(request.getParameter("technicianCertifications"));
-                        technician.setTechnicianAvailability(request.getParameter("technicianAvailability"));
-                        technician.setTechnicianNotes(request.getParameter("technicianNotes"));
-                        //technician.setTechnicianPhoto(request.getParameter("technicianPhoto").getBytes());
-                        technician.setTechnicianPassword(request.getParameter("technicianPassword"));
-                        Timestamp createdAt = currentTime;
-                        Timestamp updatedAt = currentTime;
-                        technician.setDateCreated(new java.util.Date(createdAt.getTime()));
-                        technician.setDateLastModified(new java.util.Date(updatedAt.getTime()));
-                        technician.setUsername(username);
-
-                        td.updateRecord(technician);
-
-                      %>
-
-                        Order Saved
-                      <%
+              DiskFileItemFactory factory = new DiskFileItemFactory();
+              factory.setSizeThreshold(1024 * 1024); // Set the size threshold for storing files in memory
+              factory.setRepository(new File(filepath)); // Set the repository location for temporarily storing files
+              ServletFileUpload upload = new ServletFileUpload(factory);
+              List<FileItem> items = upload.parseRequest(request);
+              for (FileItem item : items) {
+                if (!item.isFormField()) { // Check if the item is an uploaded file
+                  InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
+                  // Save the file to a local directory or database, or process the contents in some other way
+                  //String fileName = item.getName(); // Get the original file name
+                  FileOutputStream fos = new FileOutputStream(filepath  +  "technician." + filename);
+                  byte[] buffer = new byte[1024];
+                  int length;
+                  while ((length = fileContent.read(buffer)) > 0) {
+                    fos.write(buffer, 0, length);
+                  }
+                  fos.close();
+                  fileContent.close();
                 }
+              }
+            %>
+
+            <p>File uploaded successfully!</p>
+
+            <%
+          } else {
+            // Request is not a multipart form
+                TechnicianDao td = new TechnicianDao();
+                Technician technician = new Technician();
                 technician = td.getTechnicianById(id);
+            %>
+            <form method="post" action="technician.edit.image.jsp" enctype="multipart/form-data">
+               <input type="hidden" name="technicianId" value="<%= technician.getTechnicianId() %>">
+              <input type="file" name="file" />
+              <input type="submit" value="Upload" />
+            </form>
+            <%
+          }
         %>
-        <form action="technician.edit.jsp" method="post">
-          <input type="hidden" name="technicianId" value="<%= technician.getTechnicianId() %>">
-          <div class="form-group">
-              <label for="technicianName">Name</label>
-              <input type="text" class="form-control" id="technicianName" name="technicianName" value="<%= technician.getTechnicianName() %>">
-          </div>
-          <div class="form-group">
-              <label for="technicianEmail">Email</label>
-              <input type="email" class="form-control" id="technicianEmail" name="technicianEmail" value="<%= technician.getTechnicianEmail() %>">
-          </div>
-          <div class="form-group">
-              <label for="technicianPhone">Phone</label>
-              <input type="text" class="form-control" id="technicianPhone" name="technicianPhone" value="<%= technician.getTechnicianPhone() %>">
-          </div>
-          <div class="form-group">
-              <label for="technicianSkills">Skills</label>
-              <input type="text" class="form-control" id="technicianSkills" name="technicianSkills" value="<%= technician.getTechnicianSkills() %>">
-          </div>
-          <div class="form-group">
-              <label for="isTechnicianActive">Active</label>
-              <input type="checkbox" class="form-control" id="isTechnicianActive" name="isTechnicianActive" value="true" <%= technician.isTechnicianActive() ? "checked" : "" %>>
-          </div>
-          <div class="form-group">
-            <label for="technicianInterviewed">Technician Interviewed</label>
-            <input type="checkbox" class="form-control" id="technicianInterviewed" name="technicianInterviewed" value="true" <%= technician.isTechnicianInterviewed() ? "checked" : "" %>>
-          </div>
-          <div class="form-group">
-              <label for="technicianPassedBackgroundCheck">Passed Background Check</label>
-              <input type="checkbox" class="form-control" id="technicianPassedBackgroundCheck" name="technicianPassedBackgroundCheck" value="true" <%= technician.isTechnicianPassedBackgroundCheck() ? "checked" : "" %>>
-          </div>
-          <div class="form-group">
-              <label for="technicianPayrate">Payrate</label>
-              <input type="number" step="0.01" class="form-control" id="technicianPayrate" name="technicianPayrate" value="<%= technician.getTechnicianPayrate() %>">
-          </div>
-          <div class="form-group">
-              <label for="technicianLocation">Location</label>
-              <input type="text" class="form-control" id="technicianLocation" name="technicianLocation" value="<%= technician.getTechnicianLocation() %>">
-          </div>
-          <div class="form-group">
-              <label for="technicianCertifications">Certifications</label>
-              <input type="text" class="form-control" id="technicianCertifications" name="technicianCertifications" value="<%= technician.getTechnicianCertifications() %>">
-          </div>
-          <div class="form-group">
-              <label for="technicianAvailability">Availability</label>
-              <input type="text" class="form-control" id="technicianAvailability" name="technicianAvailability" value="<%= technician.getTechnicianAvailability() %>">
-          </div>
-          <div class="form-group">
-              <label for="technicianNotes">Notes</label>
-              <textarea class="form-control" id="technicianNotes" name="technicianNotes"><%= technician.getTechnicianNotes() %></textarea>
-          </div>
-          <div class="form-group">
-              <a href="technician.edit.image.jsp" ><label for="technicianPhoto">Photo</label></a>
-          </div>
-          <div class="form-group">
-              <label for="technicianPassword">Password</label>
-              <input type="password" class="form-control" id="technicianPassword" name="technicianPassword" value="<%= technician.getTechnicianPassword() %>">
-          </div>
- <button type="submit" class="btn btn-primary">Submit</button>
- </form>
+
+
 
       </div>
-
     </section><!-- End Blog Section -->
 
   </main><!-- End #main -->
