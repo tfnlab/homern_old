@@ -161,7 +161,7 @@
         <h2>Technician</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-            <img src="technician.edit.image.view.jsp?technicianId=<%=request.getParameter("technicianId")%>" class="img-fluid" style="max-width: 50%;"/>
+            <img src="technician.edit.image.view.jsp?technicianId=<%=technicianId%>" class="img-fluid" style="max-width: 50%;"/>
         <HR>
 
 <%
@@ -188,7 +188,7 @@ if (ServletFileUpload.isMultipartContent(request)) {
                 String username = (String) session.getAttribute("username");
           if (isMultipart) {
               APIConfig conf = new APIConfig();
-                
+
                 %>
                 <%= technicianId %><%
               String filename = technicianId + "." + username + ".png";
