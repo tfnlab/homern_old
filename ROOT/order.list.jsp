@@ -9,6 +9,7 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.HashMap" %>
 <%@ include file="auth.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -119,12 +120,13 @@
                 String username = (String) session.getAttribute("username");
 
                 List<Order> orders = null;
-
+                HashMap<Integer, Order> ordersMap = new HashMap<>();
                 if (searchKey != null && searchKey.trim().length() > 0) {
                     orders = orderDao.getCustomerOrdersSearchKey(searchKey, username);
                 }else{
                     searchKey = "";
                     orders = orderDao.getCustomerOrdersDetails(username);
+                    ordersMap = orderDao.getCustomerOrdersDetailsPaid(username);
                 }
                 %>
                 <form action="order.list.jsp" method="post">
@@ -159,7 +161,7 @@
                 Total: <%= order.getOrderTotal() %><br>
                 <H3>Products</h3>
                 Total Total: <%= order.getOrderTotal_sql() %><br>
-                Total Paid: <%= order.getOrderTotal_paid_sql() %><br>
+                Total Paid: <%= (ordersMap.get(order.getOrderId()))order.getOrderTotal_paid_sql() %><br>
                 Total Due: <%= order.getOrderTotal_due_sql() %><br>
                 <hr>
                 <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
