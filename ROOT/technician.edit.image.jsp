@@ -180,7 +180,8 @@
                         }
                     }
                 }
-
+                %>
+                <%= technicianId %><%
               String filename = technicianId + "." + username + ".png";
               String filepath = conf.getPdfloc();
 
@@ -207,7 +208,6 @@
             %>
 
             <p>File uploaded successfully!</p>
-
             <%
           } else {
             // Request is not a multipart form
