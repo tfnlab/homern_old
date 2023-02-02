@@ -20,20 +20,9 @@
 
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
     User user = dao.getUserByUsername(username);
-    String technicianId = "technicianId";
+    String technicianId = request.getParameter("technicianId");
     APIConfig conf = new APIConfig();
-        Collection<Part> parts = request.getParts();
-        for (Part part : parts) {
-            if (part.getContentType() != null) {
-            } else {
-                // it's a regular form field
-                String name = part.getName();
-                String value = request.getParameter(name);
-                if(name.equals("technicianId")){
-                    technicianId = value;
-                }
-            }
-        }
+
 
     String filename = technicianId + "." + username + ".png";
 

@@ -165,7 +165,21 @@
                 String username = (String) session.getAttribute("username");
           if (isMultipart) {
               APIConfig conf = new APIConfig();
-              String filename = request.getParameter("technicianId") + "." + username + ".png";
+                String technicianId = "technicianId";
+                Collection<Part> parts = request.getParts();
+                for (Part part : parts) {
+                    if (part.getContentType() != null) {
+                    } else {
+                        // it's a regular form field
+                        String name = part.getName();
+                        String value = request.getParameter(name);
+                        if(name.equals("technicianId")){
+                            technicianId = value;
+                        }
+                    }
+                }
+
+              String filename = technicianId + "." + username + ".png";
               String filepath = conf.getPdfloc();
 
               DiskFileItemFactory factory = new DiskFileItemFactory();
