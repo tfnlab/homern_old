@@ -124,7 +124,7 @@
                     orders = orderDao.getCustomerOrdersSearchKey(searchKey, username);
                 }else{
                     searchKey = "";
-                    orders = orderDao.getCustomerOrders(username);
+                    orders = orderDao.getCustomerOrdersDetails(username);
                 }
                 %>
                 <form action="order.list.jsp" method="post">
@@ -157,6 +157,7 @@
                 <!-- Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br> -->
                 Payment Method: <%= order.getPaymentMethod() %><br>
                 Total: <%= order.getOrderTotal() %><br>
+                Total: <%= order.getOrderTotal_due_sql() %><br>
                 <hr>
                 <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
 
