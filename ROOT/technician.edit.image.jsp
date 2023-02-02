@@ -216,7 +216,7 @@
                 Technician technician = new Technician();
                 technician = td.getTechnicianById(id);
             %>
-            <form method="post" action="technician.edit.image.jsp" enctype="multipart/form-data">
+            <form method="post" action="technician.edit.image.jsp?technicianId=<%= technician.getTechnicianId() %>" enctype="multipart/form-data">
                <input type="hidden" name="technicianId" value="<%= technician.getTechnicianId() %>">
               <input type="file" name="file" />
               <input type="submit" value="Upload" />
