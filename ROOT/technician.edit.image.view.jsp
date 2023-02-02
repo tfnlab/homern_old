@@ -11,6 +11,8 @@
 <%@ page import="javax.servlet.http.Part" %>
 <%@ page import="java.util.List" %>
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
+<%@ page import="java.util.Collection" %>
+<%@ page import="javax.servlet.http.Part" %>
 <%
     UserDao dao = new UserDao();
     String username = (String) session.getAttribute("username");
@@ -18,9 +20,24 @@
 
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
     User user = dao.getUserByUsername(username);
-
+    String technicianId = "technicianId";
     APIConfig conf = new APIConfig();
-    String filename = request.getParameter("technicianId") + "." + username + ".png";
+        Collection<Part> parts = request.getParts();
+        for (Part part : parts) {
+            if (part.getContentType() != null) {
+            } else {
+                // it's a regular form field
+                String name = part.getName();
+                String value = request.getParameter(name);
+                if(name.equals("technicianId")){
+                    technicianId = value;
+                }
+            }
+        }
+
+    String filename = technicianId + "." + username + ".png";
+
+
     String filepath = conf.getPdfloc();
     String logofilepath  = filepath +  "technician." + filename;
     response.setContentType("image/jpeg");
