@@ -172,9 +172,9 @@
                     Total Paid: <%= (ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql() %><br>
                     Total Due: <%
                       BigDecimal amountDue = order.getOrderTotal_sql().subtract((ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql());
-                      String color = (amountDue.compareTo(BigDecimal.ZERO) == 0) ? "green" : "red";
+                      String colorT = (amountDue.compareTo(BigDecimal.ZERO) == 0) ? "green" : "red";
                     %>
-                    <span style="color: <%= color %>;">
+                    <span style="color: <%= colorT %>;">
                       <%= amountDue %>
                     </span>
                     <br>
