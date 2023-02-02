@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.io.*, org.apache.commons.fileupload.*, org.apache.commons.fileupload.servlet.*, org.apache.commons.fileupload.disk.*" %>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="java.math.BigDecimal" %>
@@ -162,19 +163,32 @@
         <HR>
             <img src="technician.edit.image.view.jsp?technicianId=<%=request.getParameter("technicianId")%>" class="img-fluid" style="max-width: 50%;"/>
         <HR>
+
+<%
+                String technicianId = "technicianId";
+if (ServletFileUpload.isMultipartContent(request)) {
+    FileItemFactory factory = new DiskFileItemFactory();
+    ServletFileUpload upload = new ServletFileUpload(factory);
+    List<FileItem> items = upload.parseRequest(request);
+
+    for (FileItem item : items) {
+        if (!item.isFormField()) {
+            continue;
+        }
+        String inputFieldName = item.getFieldName();
+        String inputFieldValue = item.getString();
+        if (inputFieldName.equals("technicianId")) {
+            technicianId = inputFieldValue;
+        }
+    }
+}
+%>
         <%
           boolean isMultipart = ServletFileUpload.isMultipartContent(request);
                 String username = (String) session.getAttribute("username");
           if (isMultipart) {
               APIConfig conf = new APIConfig();
-                String technicianId = "technicianId";
-                Collection<Part> parts = request.getParts();
-                Part inputFieldPart = request.getPart("inputFieldName");
-                if (inputFieldPart != null) {
-                    technicianId = inputFieldPart.getInputStream().toString();
-                    // Use the input field value as needed
-                }
-
+                
                 %>
                 <%= technicianId %><%
               String filename = technicianId + "." + username + ".png";
