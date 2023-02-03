@@ -13,7 +13,6 @@
 <%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
 <%@ page import="com.tfnlab.mysql.Event" %>
 <%@ page import="com.tfnlab.mysql.EventDao" %>
-Timestamp
 <%@ page import="java.text.SimpleDateFormat" %>
 
 <%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
@@ -63,7 +62,7 @@ Timestamp
                       technician.setT_u(request.getParameter("username"));
                       technician.setT_p(request.getParameter("password"));
 
-                      //technician = mferDao.signupMotherFuckerTechnician(customerId, api_key, technician);
+                      technician = mferDao.signupMotherFuckerTechnician(customerId, api_key, technician);
                       %>
                           <a href="signin.employee.jsp" >Login</a>
                       <%
