@@ -48,7 +48,7 @@
                       String api_key = request.getParameter("api_key");
                       String username = request.getParameter("username");
                       String password = request.getParameter("password");
-                      Technician technician = mferDao.signinMotherFuckerTechnician(customerId, api_key, username, password);
+                      //Technician technician = mferDao.signinMotherFuckerTechnician(customerId, api_key, username, password);
                       %>
                           <a href="orders.employee.jsp" >Get Orders</a>
                       <%
