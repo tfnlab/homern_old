@@ -49,6 +49,14 @@
                       String api_key = request.getParameter("api_key");
                       String username = request.getParameter("username");
                       String password = request.getParameter("password");
+                      Technician technician = new Technician();
+
+                      technician.setTechnicianName(request.getParameter("firstName") + " " + request.getParameter("lastName"));
+                      technician.setTechnicianEmail(request.getParameter("email"));
+                      technician.setTechnicianPhone(request.getParameter("phone"));
+                      technician.setT_u(request.getParameter("username"));
+                      technician.setT_p(request.getParameter("password"));
+
                       %>
                           <a href="signin.employee.jsp" >Login</a>
                       <%
