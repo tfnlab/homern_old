@@ -43,6 +43,12 @@
 
                       <%
               }
+              if(apiAction.equals("signupemployee")){
+                      String api_key = request.getParameter("api_key");
+                      %>
+                        <a href="signin.employee.jsp" >Login</a>
+                      <%
+              }
               if(apiAction.equals("signup")){
                       MotherfuckerDao mferDao = new MotherfuckerDao();
                       String customerId = request.getParameter("customerId");
