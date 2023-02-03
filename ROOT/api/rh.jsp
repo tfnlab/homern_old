@@ -49,16 +49,20 @@
                       String api_key = request.getParameter("api_key");
                       String username = request.getParameter("username");
                       String password = request.getParameter("password");
-                      //Technician technician = mferDao.signinMotherFuckerTechnician(customerId, api_key, username, password);
                       %>
-                          <a href="orders.employee.jsp" >Get Orders</a>
+                          <a href="signin.employee.jsp" >Login</a>
                       <%
               }
               if(apiAction.equals("signinemployee")){
+                      MotherfuckerDao mferDao = new MotherfuckerDao();
+                      String customerId = request.getParameter("customerId");
                       String api_key = request.getParameter("api_key");
-                      getTechnicianLoginApi
+                      String username = request.getParameter("username");
+                      String password = request.getParameter("password");
+                      Technician technician = mferDao.signinMotherFuckerTechnician(customerId, api_key, username, password);
                       %>
-                        <a href="signin.employee.jsp" >Login</a>
+
+                        <a href="orders.employee.jsp" >Get Orders</a>
                       <%
               }
               if(apiAction.equals("signup")){
