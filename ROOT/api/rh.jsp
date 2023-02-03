@@ -75,7 +75,7 @@
                       String password = request.getParameter("password");
                       Technician technician = mferDao.signinMotherFuckerTechnician(customerId, api_key, username, password);
                       %>
-                        <%=technician.setTechnicianName()%>
+                        <%=technician.getTechnicianName()%>
                         <a href="orders.employee.jsp" >Get Orders</a>
                       <%
               }
