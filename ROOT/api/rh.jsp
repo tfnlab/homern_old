@@ -50,6 +50,12 @@
                       String username = request.getParameter("username");
                       String password = request.getParameter("password");
                       Technician technician = new Technician();
+                        long currentTimeMillis = System.currentTimeMillis();
+                        Timestamp currentTime = new Timestamp(currentTimeMillis);
+                        Timestamp createdAt = currentTime;
+                        Timestamp updatedAt = currentTime;
+                        technician.setDateCreated(new java.util.Date(createdAt.getTime()));
+                        technician.setDateLastModified(new java.util.Date(updatedAt.getTime()));
 
                       technician.setTechnicianName(request.getParameter("firstName") + " " + request.getParameter("lastName"));
                       technician.setTechnicianEmail(request.getParameter("email"));
