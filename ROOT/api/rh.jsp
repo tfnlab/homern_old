@@ -44,6 +44,7 @@
                       <%
               }
               if(apiAction.equals("signupemployee")){
+                      MotherfuckerDao mferDao = new MotherfuckerDao();
                       String customerId = request.getParameter("customerId");
                       String api_key = request.getParameter("api_key");
                       String username = request.getParameter("username");
