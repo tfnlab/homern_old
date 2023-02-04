@@ -27,6 +27,7 @@
           EmployeeTimeSheetDAO etsDao = new EmployeeTimeSheetDAO();
           EmployeeTimeSheet ets = etsDao.getLatestTimesheetEntryByTechnicianId(id);
 
+          TechnicianDao tDao = new TechnicianDao();
           if(ets==null){
                 ets = new EmployeeTimeSheet();
                 Date startDate = new Date();
