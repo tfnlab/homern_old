@@ -69,6 +69,7 @@
                     int id = Integer.parseInt(request.getParameter("technicianId"));
                     EmployeeTimeSheetDAO etsDao = new EmployeeTimeSheetDAO();
                        List<EmployeeTimeSheet> etsList = etsDao.getTimesheetEntryByTechnicianId(id);
+                       %>LIST SIZE <%=etsList.size()%> <BR><%
                        for (EmployeeTimeSheet etc : etsList) {
                                 %><%=etc.getStartTime()%> ------ <%
                                 %><%=etc.getEndTime()%>
