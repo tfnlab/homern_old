@@ -83,12 +83,12 @@
                                <%= technician.getTechnicianName() %>
                                <%= technician.getTotal_hours_worked() %>
                                <%= technician.isTechnician_is_working() %>
-                               <HR>
                                <%if(technician.isTechnician_is_working()){%>
                                 <button type="button" class="btn btn-success" onclick="updateClock('<%= technician.getTechnicianId() %>')">Start</button>
                                <%}else{%>
                                 <button type="button" class="btn btn-danger" onclick="updateClock('<%= technician.getTechnicianId() %>')">Stop</button>
                                <%}%>
+                               <HR>
                                <%
                        }
                     %>
