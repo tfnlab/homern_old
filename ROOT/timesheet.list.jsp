@@ -4,6 +4,7 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
 <%@ page import="com.tfnlab.mysql.EventDao" %>
+<%@ page import="com.tfnlab.mysql.Technician" %>
 <%@ page import="com.tfnlab.mysql.TechnicianDao" %>
 <%@ page import="com.tfnlab.mysql.ProductDao" %>
 <%@ page import="java.sql.Timestamp" %>
