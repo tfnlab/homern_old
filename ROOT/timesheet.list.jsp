@@ -61,7 +61,6 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
-                    CONTENT GO HERE
                     <%
                        TechnicianDao tDao = new TechnicianDao();
                        List<Technician> technicians = tDao.getTotalHoursWorked(username);
@@ -69,6 +68,7 @@
                                %>
                                <%= technician.getTechnicianName() %>
                                <%= technician.getTotal_hours_worked() %>
+                               <%= technician.getTechnician_is_working() %>
                                <HR>
                                <%
                        }
