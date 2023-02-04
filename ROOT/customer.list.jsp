@@ -233,7 +233,7 @@
                   <%if(!entity.getAddress().isEmpty()){%>
                   Address: <%= entity.getAddress() %><br>
                   <%}%>
-                  <%if(!entity.getAddress2().isEmpty()){%>
+                  <%if(entity.getAddress2()!=null && !entity.getAddress2().isEmpty()){%>
                     Address2: <%= entity.getAddress2() %><br>
                   <%}%>
                   <%if(!entity.getPhone().isEmpty()){%>
