@@ -16,6 +16,7 @@
 <%@ page import="com.tfnlab.mysql.Product" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 <%@ page import="com.tfnlab.mysql.ProductDashBoard" %>
+<%@ page import="com.tfnlab.mysql.EmployeeTimeSheetDAO" %>
 <%@ include file="auth.jsp" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
@@ -62,6 +63,18 @@
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
                     CONTENT GO HERE
+                   <%
+
+                    int id = Integer.parseInt(request.getParameter("technicianId"));
+                    EmployeeTimeSheetDAO etsDao = new EmployeeTimeSheetDAO();
+                       List<EmployeeTimeSheet> etsList = etsDao.getTimesheetEntryByTechnicianId(id);
+                       for (EmployeeTimeSheet etc : etsList) {
+                                %><%=etc.getStartTime()%><%
+                                %><%=etc.getEndTime()%>
+                                  <HR>
+                                <%
+                       }
+                   %>
           </div>
       </div>
     </section><!-- End Blog Section -->
