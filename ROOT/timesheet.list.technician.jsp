@@ -73,6 +73,7 @@
                                 %><%=etc.getStartTime()%><%
                                 %><%=etc.getEndTime()%>
                                   <HR>
+
                                 <%
                        }
                    %>
