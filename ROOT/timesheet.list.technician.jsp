@@ -43,21 +43,6 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    function updateClock(technician_id) {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          alert(this.responseText);
-          location.reload();
-        }
-      };
-      var urlString = "timesheet.list.update.jsp?technicianId=" + technician_id;
-      alert(urlString);
-      xhttp.open("GET", urlString, true);
-      xhttp.send();
-    }
-  </script>
 </head>
 <body>
     <%@ include file="include.header.jsp" %>
@@ -76,29 +61,12 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
-                    <%
-                       TechnicianDao tDao = new TechnicianDao();
-                       List<Technician> technicians = tDao.getTotalHoursWorked(username);
-                       for (Technician technician : technicians) {
-                               %>
-                               <a href="timesheet.list.technician.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianName() %></a>
-                               <%= technician.getTotal_hours_worked() %>
-                               <%= technician.isTechnician_is_working() %>
-                               is Working <%=technician.isTechnician_is_working()%>
-                               <%if(technician.isTechnician_is_working()){%>
-                                <button type="button" class="btn btn-danger" onclick="updateClock('<%= technician.getTechnicianId() %>')">Stop</button>
-                               <%}else{%>
-                                <button type="button" class="btn btn-success" onclick="updateClock('<%= technician.getTechnicianId() %>')">Start</button>
-                               <%}%>
-                               <HR>
-                               <%
-                       }
-                    %>
+                    CONTENT GO HERE
           </div>
       </div>
     </section><!-- End Blog Section -->
   </main>
-    <%@ include file="include.footer.jsp" %>
+  <%@ include file="include.footer.jsp" %>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
