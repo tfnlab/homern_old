@@ -45,7 +45,7 @@
                       Date endDate = new Date();
                       etsDao.updateEndTimeByTechnicianId(ets.getTimeSheetID(), endDate);
                       tDao.updateRecordWorkingStatus(id, false);
-                      %>Stopped<%
+                      %>Stopped - STOPPED<%
                 }else{
                     ets = new EmployeeTimeSheet();
                     Date startDate = new Date();
