@@ -175,6 +175,12 @@
                 </div>
               </div>
 
+              <div class="row">
+                <div class="col-3 link-col">
+                  <a href="expense.list.jsp"><i class="fa fa-plane"></i></a>
+                  <p>Expenses</p>
+                </div>
+              </div>
             <HR>
             <p>Our home service software offers a range of features to help companies streamline their operations:</p>
             <ul>
