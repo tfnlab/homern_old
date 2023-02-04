@@ -43,7 +43,7 @@
                 if(ets.getStartTime().equals(ets.getEndTime())){
                     // set to true
                       Date endDate = new Date();
-                      etsDao.updateEndTimeByTechnicianId(id, endDate);
+                      etsDao.updateEndTimeByTechnicianId(ets.getTimeSheetID(), endDate);
                       tDao.updateRecordWorkingStatus(id, false);
                       %>Stopped<%
                 }else{

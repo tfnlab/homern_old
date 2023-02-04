@@ -225,6 +225,7 @@
                 <%}%>
                 <HR>
               <% for (Entity entity : es) { %>
+                  <%try{%>
                   First Name: <%= entity.getFirstName() %><br>
                   <%if(!entity.getLastName().isEmpty()){%>
                     Last Name: <%= entity.getLastName() %><br>
@@ -240,6 +241,9 @@
                   <%}%>
                   Email: <%= entity.getEmail() %><br>
                   Customer ID: <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
+                  <%}catch(Exception ex){%>
+                        <%=ex.getMessage()%>
+                  <%}%>
                 <hr>
               <% } %>
 
