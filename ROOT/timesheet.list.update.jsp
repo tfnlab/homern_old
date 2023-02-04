@@ -40,7 +40,7 @@
                 etsDao.addEmployeeTimeSheet(ets);
                 %>STARTED<%
           }else{
-                if(ets.getStartTime(ets.getEndTime())){
+                if(ets.getStartTime().equals(ets.getEndTime())){
                     // set to true
                       tDao.updateRecordWorkingStatus(id, false);
                       %>Stopped<%
