@@ -30,7 +30,9 @@
           if(ets==null){
                 Date startDate = new Date();
                 ets.setEmployeeID(id);
+                ets.setDate(startDate);
                 ets.setStartTime(startDate);
+                ets.setHoursWorked(0);
                 etsDao.addEmployeeTimeSheet(ets);
                 %>STARTED<%
           }
