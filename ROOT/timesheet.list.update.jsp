@@ -18,6 +18,7 @@
 <%@ page import="com.tfnlab.mysql.ProductDashBoard" %>
 <%@ page import="com.tfnlab.mysql.EmployeeTimeSheet" %>
 <%@ page import="com.tfnlab.mysql.EmployeeTimeSheetDAO" %>
+<%@ page import="java.util.Date" %>
 <%@ include file="auth.jsp" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
@@ -30,7 +31,7 @@
                 Date startDate = new Date();
                 ets.setEmployeeID(id);
                 ets.setStartTime(startDate);
-                //etsDao.addEmployeeTimeSheet(ets);
+                etsDao.addEmployeeTimeSheet(ets);
                 %>STARTED<%
           }
 
