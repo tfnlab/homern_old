@@ -60,6 +60,16 @@
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
                     CONTENT GO HERE
+                    <% TechnicianDao tDao = new TechnicianDao()
+                       List<Technician> technicians = tDao.getTotalHoursWorked(username);
+                       for (Technician technician : technicians) {
+                               %>
+                               <%= technician.getTechnicianName() %>
+                               <%= technician.getTotal_hours_worked() %>
+                               <HR>
+                               <%
+                       }
+                    %>
           </div>
       </div>
     </section><!-- End Blog Section -->
