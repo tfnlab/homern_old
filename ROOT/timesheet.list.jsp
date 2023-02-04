@@ -68,7 +68,7 @@
                                %>
                                <%= technician.getTechnicianName() %>
                                <%= technician.getTotal_hours_worked() %>
-                               <%= technician.getTechnician_is_working() %>
+                               <%= technician.isTechnician_is_working() %>
                                <HR>
                                <%
                        }
