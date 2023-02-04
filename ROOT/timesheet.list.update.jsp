@@ -28,8 +28,8 @@
           EmployeeTimeSheet ets = etsDao.getLatestTimesheetEntryByTechnicianId(id);
 
           TechnicianDao tDao = new TechnicianDao();
-          tDao.updateRecordWorkingStatus(id, true);
           if(ets==null){
+              tDao.updateRecordWorkingStatus(id, true);
                 ets = new EmployeeTimeSheet();
                 Date startDate = new Date();
                 ets.setEmployeeID(id);
@@ -39,6 +39,8 @@
                 ets.setHoursWorked(0);
                 etsDao.addEmployeeTimeSheet(ets);
                 %>STARTED<%
+          }else{
+              tDao.updateRecordWorkingStatus(id, false);
           }
 
 %>
