@@ -16,10 +16,18 @@
 <%@ page import="com.tfnlab.mysql.Product" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 <%@ page import="com.tfnlab.mysql.ProductDashBoard" %>
+<%@ page import="com.tfnlab.mysql.EmployeeTimeSheet" %>
+<%@ page import="com.tfnlab.mysql.EmployeeTimeSheetDAO" %>
 <%@ include file="auth.jsp" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");
+          int id = Integer.parseInt(request.getParameter("technicianId"));
+          EmployeeTimeSheetDAO etsDao = new EmployeeTimeSheetDAO();
+          EmployeeTimeSheet ets = etsDao.getLatestTimesheetEntryByTechnicianId(id);
+          if(ets==null){
+                %>STARTED<%
+          }
 
 %>
 
