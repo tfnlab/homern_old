@@ -70,7 +70,7 @@
                     EmployeeTimeSheetDAO etsDao = new EmployeeTimeSheetDAO();
                        List<EmployeeTimeSheet> etsList = etsDao.getTimesheetEntryByTechnicianId(id);
                        for (EmployeeTimeSheet etc : etsList) {
-                                %><%=etc.getStartTime()%><%
+                                %><%=etc.getStartTime()%> ------ <%
                                 %><%=etc.getEndTime()%>
                                   <HR>
 
