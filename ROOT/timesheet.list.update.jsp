@@ -28,13 +28,14 @@
           EmployeeTimeSheet ets = etsDao.getLatestTimesheetEntryByTechnicianId(id);
 
           TechnicianDao tDao = new TechnicianDao();
+          tDao.updateRecordWorkingStatus(id, true);
           if(ets==null){
                 ets = new EmployeeTimeSheet();
                 Date startDate = new Date();
                 ets.setEmployeeID(id);
                 ets.setDate(startDate);
                 ets.setStartTime(startDate);
-                ets.setEndTime(startDate);
+                ets.setEndTime(null);
                 ets.setHoursWorked(0);
                 etsDao.addEmployeeTimeSheet(ets);
                 %>STARTED<%
