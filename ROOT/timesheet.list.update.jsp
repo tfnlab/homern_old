@@ -25,7 +25,12 @@
           int id = Integer.parseInt(request.getParameter("technicianId"));
           EmployeeTimeSheetDAO etsDao = new EmployeeTimeSheetDAO();
           EmployeeTimeSheet ets = etsDao.getLatestTimesheetEntryByTechnicianId(id);
+
           if(ets==null){
+                Date startDate = new Date();
+                ets.setEmployeeID(id);
+                ets.setStartTime(startDate);
+                etsDao.addEmployeeTimeSheet(ets);
                 %>STARTED<%
           }
 
