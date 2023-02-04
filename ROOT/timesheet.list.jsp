@@ -51,7 +51,7 @@
           alert(this.responseText);
         }
       };
-      var urlString = "timesheet.list.update.jsp?technician_id=" + technician_id;
+      var urlString = "timesheet.list.update.jsp?technicianId=" + technician_id;
       alert(urlString);
       xhttp.open("GET", urlString, true);
       xhttp.send();
