@@ -40,7 +40,22 @@
                 etsDao.addEmployeeTimeSheet(ets);
                 %>STARTED<%
           }else{
-              tDao.updateRecordWorkingStatus(id, false);
+                if(ets.getStartTime(ets.getEndTime())){
+                    // set to true
+                      tDao.updateRecordWorkingStatus(id, false);
+                      %>Stopped<%
+                }else{
+                    ets = new EmployeeTimeSheet();
+                    Date startDate = new Date();
+                    ets.setEmployeeID(id);
+                    ets.setDate(startDate);
+                    ets.setStartTime(startDate);
+                    ets.setEndTime(startDate);
+                    ets.setHoursWorked(0);
+                    etsDao.addEmployeeTimeSheet(ets);
+                    tDao.updateRecordWorkingStatus(id, true);
+                    %>STARTED<%
+                }
           }
 
 %>
