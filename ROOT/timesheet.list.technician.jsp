@@ -72,7 +72,7 @@
                     int id = Integer.parseInt(request.getParameter("technicianId"));
                     EmployeeTimeSheetDAO etsDao = new EmployeeTimeSheetDAO();
                        List<EmployeeTimeSheet> etsList = etsDao.getTimesheetEntryByTechnicianId(id);
-                       %>LIST SIZE <%=etsList.size()%> <BR><%
+                       %>LIST SIZE <%=etsList.size()%> <BR><BR><%
                        for (EmployeeTimeSheet etc : etsList) {
                                 %>
                                 <form action="technician.list.technician.jsp" method="post">
