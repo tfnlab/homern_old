@@ -75,7 +75,7 @@
                        %>LIST SIZE <%=etsList.size()%> <BR><BR><%
                        for (EmployeeTimeSheet etc : etsList) {
                                 %>
-                                <form action="technician.list.technician.jsp" method="post">
+                                <form action="timesheet.list.technician.jsp" method="post">
                                     <input type="hidden" name="timesheetid" id="timesheetid" value="<%=etc.getTimeSheetID()%>" />
                                     <a href="timesheet.list.technician.edit.jsp?timesheetid=<%=etc.getTimeSheetID()%>" ><%=etc.getTimeSheetID()%></a>
                                    <div class="form-group">
