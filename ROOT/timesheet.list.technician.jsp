@@ -71,8 +71,12 @@
                        List<EmployeeTimeSheet> etsList = etsDao.getTimesheetEntryByTechnicianId(id);
                        %>LIST SIZE <%=etsList.size()%> <BR><%
                        for (EmployeeTimeSheet etc : etsList) {
-                                %><%=etc.getStartTime()%> ------ <%
-                                %><%=etc.getEndTime()%>
+                                %>
+                                <%=etc.getTimeSheetID()%>
+                                <%=etc.getStartTime()%>
+
+                                <%=etc.getStartTime()%> 
+                                <%=etc.getEndTime()%>
                                   <HR>
 
                                 <%
