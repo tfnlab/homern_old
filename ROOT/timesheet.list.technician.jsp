@@ -18,6 +18,7 @@
 <%@ page import="com.tfnlab.mysql.ProductDashBoard" %>
 <%@ page import="com.tfnlab.mysql.EmployeeTimeSheet" %>
 <%@ page import="com.tfnlab.mysql.EmployeeTimeSheetDAO" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="auth.jsp" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
@@ -86,7 +87,7 @@
                                   <div class="form-group">
                                     <label for="end_time">End Time</label>
                                     <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=formatterHH.format(etc.getEndTime())%>" >
-                                  </div>  
+                                  </div>
                                 </form>
 
                                 <%
