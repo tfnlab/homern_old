@@ -76,6 +76,8 @@
                        for (EmployeeTimeSheet etc : etsList) {
                                 %>
                                 <form action="timesheet.list.technician.jsp" method="post">
+
+                                    <input type="hidden" name="technicianId" id="technicianId" value="<%=id%>" />
                                     <input type="hidden" name="timesheetid" id="timesheetid" value="<%=etc.getTimeSheetID()%>" />
                                     <a href="timesheet.list.technician.edit.jsp?timesheetid=<%=etc.getTimeSheetID()%>" ><%=etc.getTimeSheetID()%></a>
                                    <div class="form-group">
