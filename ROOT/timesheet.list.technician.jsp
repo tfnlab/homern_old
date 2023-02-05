@@ -64,7 +64,6 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
-                    CONTENT GO HERE
 <%
                     SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                  %>
@@ -79,7 +78,7 @@
                                 <form action="technician.list.technician.jsp" method="post">
                                     <input type="hidden" name="timesheetid" id="timesheetid" value="<%=etc.getTimeSheetID()%>" />
                                     <a href="timesheet.list.technician.edit.jsp?timesheetid=<%=etc.getTimeSheetID()%>" ><%=etc.getTimeSheetID()%></a>
-                                 <div class="form-group">
+                                   <div class="form-group">
                                     <label for="end_time">End Time</label>
                                     <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=formatterHH.format(etc.getStartTime())%>" >
                                   </div>
