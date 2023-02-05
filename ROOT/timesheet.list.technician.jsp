@@ -81,7 +81,7 @@
                                     <input type="hidden" name="timesheetid" id="timesheetid" value="<%=etc.getTimeSheetID()%>" />
                                     <a href="timesheet.list.technician.edit.jsp?timesheetid=<%=etc.getTimeSheetID()%>" ><%=etc.getTimeSheetID()%></a>
                                    <div class="form-group">
-                                    <label for="end_time">End Time</label>
+                                    <label for="end_time">Start Time</label>
                                     <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=formatterHH.format(etc.getStartTime())%>" >
                                   </div>
                                   <div class="form-group">
