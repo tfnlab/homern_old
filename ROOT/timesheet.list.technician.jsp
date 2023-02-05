@@ -72,10 +72,10 @@
                        %>LIST SIZE <%=etsList.size()%> <BR><%
                        for (EmployeeTimeSheet etc : etsList) {
                                 %>
-                                <%=etc.getTimeSheetID()%>
+                                <a href="timesheet.list.technician.edit.jsp?timesheetid=<%=etc.getTimeSheetID()%>" ><%=etc.getTimeSheetID()%></a>
                                 <%=etc.getStartTime()%>
 
-                                <%=etc.getStartTime()%> 
+                                <%=etc.getStartTime()%>
                                 <%=etc.getEndTime()%>
                                   <HR>
 
