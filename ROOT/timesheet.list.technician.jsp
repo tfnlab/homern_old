@@ -66,21 +66,31 @@
           <div class="container mt-5">
 <%
                     SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                  %>
                    <%
                     int id = Integer.parseInt(request.getParameter("technicianId"));
                     EmployeeTimeSheetDAO etsDao = new EmployeeTimeSheetDAO();
-
-                        if (request.getParameter("action") != null && !request.getParameter("action").isEmpty()) {
                             int tsid = Integer.parseInt(request.getParameter("timesheetid"));
+                        if (request.getParameter("action") != null && !request.getParameter("action").isEmpty()) {
                             if(request.getParameter("action").equals("remove")){
                                 try{
                                     etsDao.deleteEmployeeTimeSheet(tsid, username);
                                  }catch(Exception Ex){
+                                    EmployeeTimeSheet ets = new EmployeeTimeSheet();
+                                    etsDao.deleteEmployeeTimeSheet(ets);
                                     %><%=Ex.getMessage()%><%
                                  }
                              }
                              if(request.getParameter("action").equals("remove")){
+                                    Date startDate = dateFormat.parse(request.getParameter("end_time"));
+                                    Date endDate = dateFormat.parse(request.getParameter("end_time"));
+                                    EmployeeTimeSheet etc = new EmployeeTimeSheet();
+                                    etc.setStartTime(startDate);
+                                    etc.setEndTime(endDate);
+                                    etc.setTimeSheetID(id);
+                                    etc.setUsername(username);
+                                    etc.updateEmployeeTimeSheet(etc);
                              }
                         }
 
