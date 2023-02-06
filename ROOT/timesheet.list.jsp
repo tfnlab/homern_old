@@ -79,6 +79,7 @@
                     <%
                        TechnicianDao tDao = new TechnicianDao();
                        List<Technician> technicians = tDao.getTotalHoursWorked(username);
+
                        for (Technician technician : technicians) {
                                %>
                                <a href="timesheet.list.technician.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianName() %></a>

@@ -68,15 +68,26 @@
                     SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                  %>
                    <%
-
                     int id = Integer.parseInt(request.getParameter("technicianId"));
                     EmployeeTimeSheetDAO etsDao = new EmployeeTimeSheetDAO();
-                       List<EmployeeTimeSheet> etsList = etsDao.getTimesheetEntryByTechnicianId(id);
+                    List<EmployeeTimeSheet> etsList = etsDao.getTimesheetEntryByTechnicianId(id);
+
+                        if (request.getParameter("action") != null && !request.getParameter("action").isEmpty()) {
+                            if(request.getParameter("action").equals("remove")){
+                                try{
+                                    etsDao.deleteEmployeeTimeSheet(id, username);
+                                 }catch(Exception Ex){
+                                    %><%=Ex.getMessage()%><%
+                                 }
+                             }
+                        }
+
                        %>LIST SIZE <%=etsList.size()%> <BR><BR><%
                        for (EmployeeTimeSheet etc : etsList) {
                                 %>
                                 <form action="timesheet.list.technician.jsp" method="post">
-
+                                    <a href="timesheet.list.technician.edit.jsp?action=remove&timesheetid=<%=etc.getTimeSheetID()%>" >Remove</a>
+                                    <HR>
                                     <input type="hidden" name="technicianId" id="technicianId" value="<%=id%>" />
                                     <input type="hidden" name="timesheetid" id="timesheetid" value="<%=etc.getTimeSheetID()%>" />
                                     <a href="timesheet.list.technician.edit.jsp?timesheetid=<%=etc.getTimeSheetID()%>" ><%=etc.getTimeSheetID()%></a>
