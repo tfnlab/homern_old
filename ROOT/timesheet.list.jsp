@@ -76,25 +76,38 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
+                    <div class="container-fluid">
+
                     <%
                        TechnicianDao tDao = new TechnicianDao();
                        List<Technician> technicians = tDao.getTotalHoursWorked(username);
 
                        for (Technician technician : technicians) {
                                %>
+                               <div class="row">
+                                <div class="col-3">
                                <a href="timesheet.list.technician.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianName() %></a>
                                <%= technician.getTotal_hours_worked() %>
+                                </div>
+                                <div class="col-3">
                                <%= technician.isTechnician_is_working() %>
+                                </div>
+                                <div class="col-3">
                                is Working <%=technician.isTechnician_is_working()%>
+                                   </div>
+                                 <div class="col-3">
                                <%if(technician.isTechnician_is_working()){%>
                                 <button type="button" class="btn btn-danger" onclick="updateClock('<%= technician.getTechnicianId() %>')">Stop</button>
                                <%}else{%>
                                 <button type="button" class="btn btn-success" onclick="updateClock('<%= technician.getTechnicianId() %>')">Start</button>
                                <%}%>
-                               <HR>
+                                 </div>
+                                </div>
+                                </div>
                                <%
                        }
                     %>
+                        </div>
           </div>
       </div>
     </section><!-- End Blog Section -->
