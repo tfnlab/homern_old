@@ -96,11 +96,10 @@
                        <%
                        for (EmployeeTimeSheet etc : etsList) {
                                 %>
-      <div class="row">
+                                  <div class="row">
                                 <form action="timesheet.list.technician.jsp" method="post">
                                 <div class="col-sm-3">
                                     <a href="timesheet.list.technician.jsp?action=remove&technicianId=<%=id%>&timesheetid=<%=etc.getTimeSheetID()%>" >Remove</a>
-                                    <HR>
                                     <input type="hidden" name="action" id="action" value="edit" />
 
                                     <input type="hidden" name="technicianId" id="technicianId" value="<%=id%>" />
@@ -123,8 +122,7 @@
                                   <button type="submit" class="btn btn-primary">Edit Time</button>
                                 </div>
                                 </form>
-                                <HR>
-      </div>
+                                </div>
                                 <%
                        }
                    %>
