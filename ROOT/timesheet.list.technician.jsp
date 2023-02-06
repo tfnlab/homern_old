@@ -78,7 +78,7 @@
                                     etsDao.deleteEmployeeTimeSheet(tsid, username);
                              }
                              if(request.getParameter("action").equals("edit")){
-                                    Date startDate = dateFormat.parse(request.getParameter("end_time"));
+                                    Date startDate = dateFormat.parse(request.getParameter("start_time"));
                                     Date endDate = dateFormat.parse(request.getParameter("end_time"));
                                     EmployeeTimeSheet etc = new EmployeeTimeSheet();
                                     etc.setStartTime(startDate);
@@ -98,14 +98,14 @@
                                     <a href="timesheet.list.technician.jsp?action=remove&technicianId=<%=id%>&timesheetid=<%=etc.getTimeSheetID()%>" >Remove</a>
                                     <HR>
                                     <input type="hidden" name="action" id="action" value="edit" />
-                                    
+
                                     <input type="hidden" name="technicianId" id="technicianId" value="<%=id%>" />
                                     <input type="hidden" name="timesheetid" id="timesheetid" value="<%=etc.getTimeSheetID()%>" />
                                     <a href="timesheet.list.technician.jsp?timesheetid=<%=etc.getTimeSheetID()%>" ><%=etc.getTimeSheetID()%></a>
                                    <div class="form-group">
                                     <label for="end_time">Start Time</label>
-                                    <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=formatterHH.format(etc.getStartTime())%>" >
-                                  </div>
+                                    <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(etc.getStartTime())%>" >
+                                    </div>
                                   <div class="form-group">
                                     <label for="end_time">End Time</label>
                                     <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=formatterHH.format(etc.getEndTime())%>" >
