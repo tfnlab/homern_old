@@ -72,8 +72,8 @@
                    <%
                     int id = Integer.parseInt(request.getParameter("technicianId"));
                     EmployeeTimeSheetDAO etsDao = new EmployeeTimeSheetDAO();
-                            int tsid = Integer.parseInt(request.getParameter("timesheetid"));
                         if (request.getParameter("action") != null && !request.getParameter("action").isEmpty()) {
+                            int tsid = Integer.parseInt(request.getParameter("timesheetid"));
                             if(request.getParameter("action").equals("remove")){
                                     etsDao.deleteEmployeeTimeSheet(tsid, username);
                              }
