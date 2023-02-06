@@ -37,6 +37,7 @@
                 ets.setStartTime(startDate);
                 ets.setEndTime(startDate);
                 ets.setHoursWorked(0);
+                ets.setUsername(username);
                 etsDao.addEmployeeTimeSheet(ets);
                 %>STARTED<%
           }else{
