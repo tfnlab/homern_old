@@ -87,7 +87,7 @@
                        for (EmployeeTimeSheet etc : etsList) {
                                 %>
                                 <form action="timesheet.list.technician.jsp" method="post">
-                                    <a href="timesheet.list.technician.jsp?action=remove&technicianId=<%=etc.getTimeSheetID()%>&timesheetid=<%=etc.getTimeSheetID()%>" >Remove</a>
+                                    <a href="timesheet.list.technician.jsp?action=remove&technicianId=<%=id%>&timesheetid=<%=etc.getTimeSheetID()%>" >Remove</a>
                                     <HR>
                                     <input type="hidden" name="technicianId" id="technicianId" value="<%=id%>" />
                                     <input type="hidden" name="timesheetid" id="timesheetid" value="<%=etc.getTimeSheetID()%>" />
