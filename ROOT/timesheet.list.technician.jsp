@@ -85,7 +85,7 @@
                                     etc.setEndTime(endDate);
                                     etc.setTimeSheetID(id);
                                     etc.setUsername(username);
-                                    etc.updateEmployeeTimeSheet(etc);
+                                    etsDao.updateEmployeeTimeSheet(etc);
                              }
                         }
 
