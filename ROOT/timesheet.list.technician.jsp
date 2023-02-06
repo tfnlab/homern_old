@@ -74,15 +74,9 @@
                             int tsid = Integer.parseInt(request.getParameter("timesheetid"));
                         if (request.getParameter("action") != null && !request.getParameter("action").isEmpty()) {
                             if(request.getParameter("action").equals("remove")){
-                                try{
                                     etsDao.deleteEmployeeTimeSheet(tsid, username);
-                                 }catch(Exception Ex){
-                                    EmployeeTimeSheet ets = new EmployeeTimeSheet();
-                                    etsDao.deleteEmployeeTimeSheet(ets);
-                                    %><%=Ex.getMessage()%><%
-                                 }
                              }
-                             if(request.getParameter("action").equals("remove")){
+                             if(request.getParameter("action").equals("edit")){
                                     Date startDate = dateFormat.parse(request.getParameter("end_time"));
                                     Date endDate = dateFormat.parse(request.getParameter("end_time"));
                                     EmployeeTimeSheet etc = new EmployeeTimeSheet();
