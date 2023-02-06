@@ -86,11 +86,11 @@
                        for (EmployeeTimeSheet etc : etsList) {
                                 %>
                                 <form action="timesheet.list.technician.jsp" method="post">
-                                    <a href="timesheet.list.technician.edit.jsp?action=remove&timesheetid=<%=etc.getTimeSheetID()%>" >Remove</a>
+                                    <a href="timesheet.list.technician.jsp?action=remove&timesheetid=<%=etc.getTimeSheetID()%>" >Remove</a>
                                     <HR>
                                     <input type="hidden" name="technicianId" id="technicianId" value="<%=id%>" />
                                     <input type="hidden" name="timesheetid" id="timesheetid" value="<%=etc.getTimeSheetID()%>" />
-                                    <a href="timesheet.list.technician.edit.jsp?timesheetid=<%=etc.getTimeSheetID()%>" ><%=etc.getTimeSheetID()%></a>
+                                    <a href="timesheet.list.technician.jsp?timesheetid=<%=etc.getTimeSheetID()%>" ><%=etc.getTimeSheetID()%></a>
                                    <div class="form-group">
                                     <label for="end_time">Start Time</label>
                                     <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=formatterHH.format(etc.getStartTime())%>" >
