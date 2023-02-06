@@ -85,7 +85,7 @@
                                     etc.setEndTime(endDate);
                                     etc.setTimeSheetID(tsid);
                                     etc.setUsername(username);
-                                    etsDao.updateEmployeeTimeSheet(etc);
+                                    %>UPDATE COUNT <%=etsDao.updateEmployeeTimeSheet(etc)%><%
                              }
                         }
 
