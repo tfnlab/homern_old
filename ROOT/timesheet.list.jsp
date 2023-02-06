@@ -102,6 +102,7 @@
                                 <button type="button" class="btn btn-success" onclick="updateClock('<%= technician.getTechnicianId() %>')">Start</button>
                                <%}%>
                                  </div>
+                                 <HR>
                                 </div>
                                <%
                        }
