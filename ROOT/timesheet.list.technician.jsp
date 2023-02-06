@@ -70,7 +70,6 @@
                    <%
                     int id = Integer.parseInt(request.getParameter("technicianId"));
                     EmployeeTimeSheetDAO etsDao = new EmployeeTimeSheetDAO();
-                    List<EmployeeTimeSheet> etsList = etsDao.getTimesheetEntryByTechnicianId(id);
 
                         if (request.getParameter("action") != null && !request.getParameter("action").isEmpty()) {
                             int tsid = Integer.parseInt(request.getParameter("timesheetid"));
@@ -82,6 +81,8 @@
                                  }
                              }
                         }
+
+                       List<EmployeeTimeSheet> etsList = etsDao.getTimesheetEntryByTechnicianId(id);
 
                        %>LIST SIZE <%=etsList.size()%> <BR><BR><%
                        for (EmployeeTimeSheet etc : etsList) {
