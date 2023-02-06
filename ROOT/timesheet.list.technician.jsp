@@ -83,7 +83,7 @@
                                     EmployeeTimeSheet etc = new EmployeeTimeSheet();
                                     etc.setStartTime(startDate);
                                     etc.setEndTime(endDate);
-                                    etc.setTimeSheetID(id);
+                                    etc.setTimeSheetID(tsid);
                                     etc.setUsername(username);
                                     etsDao.updateEmployeeTimeSheet(etc);
                              }
