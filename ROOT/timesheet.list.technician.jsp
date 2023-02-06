@@ -73,9 +73,10 @@
                     List<EmployeeTimeSheet> etsList = etsDao.getTimesheetEntryByTechnicianId(id);
 
                         if (request.getParameter("action") != null && !request.getParameter("action").isEmpty()) {
+                            int tsid = Integer.parseInt(request.getParameter("timesheetid"));
                             if(request.getParameter("action").equals("remove")){
                                 try{
-                                    etsDao.deleteEmployeeTimeSheet(id, username);
+                                    etsDao.deleteEmployeeTimeSheet(tsid, username);
                                  }catch(Exception Ex){
                                     %><%=Ex.getMessage()%><%
                                  }
@@ -86,7 +87,7 @@
                        for (EmployeeTimeSheet etc : etsList) {
                                 %>
                                 <form action="timesheet.list.technician.jsp" method="post">
-                                    <a href="timesheet.list.technician.jsp?action=remove&timesheetid=<%=etc.getTimeSheetID()%>" >Remove</a>
+                                    <a href="timesheet.list.technician.jsp?action=remove&technicianId=<%=etc.getTimeSheetID()%>&timesheetid=<%=etc.getTimeSheetID()%>" >Remove</a>
                                     <HR>
                                     <input type="hidden" name="technicianId" id="technicianId" value="<%=id%>" />
                                     <input type="hidden" name="timesheetid" id="timesheetid" value="<%=etc.getTimeSheetID()%>" />
