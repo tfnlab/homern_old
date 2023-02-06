@@ -98,7 +98,7 @@
                                 %>
                                   <div class="row">
                                 <form action="timesheet.list.technician.jsp" method="post">
-                                <div class="col-sm-3">
+                                <div class="col-3">
                                     <a href="timesheet.list.technician.jsp?action=remove&technicianId=<%=id%>&timesheetid=<%=etc.getTimeSheetID()%>" >Remove</a>
                                     <input type="hidden" name="action" id="action" value="edit" />
 
@@ -106,19 +106,19 @@
                                     <input type="hidden" name="timesheetid" id="timesheetid" value="<%=etc.getTimeSheetID()%>" />
                                     <a href="timesheet.list.technician.jsp?timesheetid=<%=etc.getTimeSheetID()%>" ><%=etc.getTimeSheetID()%></a>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-3">
                                    <div class="form-group">
                                     <label for="end_time">Start Time</label>
                                     <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(etc.getStartTime())%>" >
                                     </div>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-3">
                                   <div class="form-group">
                                     <label for="end_time">End Time</label>
                                     <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=formatterHH.format(etc.getEndTime())%>" >
                                   </div>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-3">
                                   <button type="submit" class="btn btn-primary">Edit Time</button>
                                 </div>
                                 </form>
