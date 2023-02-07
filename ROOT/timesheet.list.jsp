@@ -85,16 +85,16 @@
                        for (Technician technician : technicians) {
                                %>
                                <div class="row">
-                                <div class="col-1">
+                                <div class="col-3">
                                <a href="timesheet.list.technician.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianName() %></a>
                                 </div>
                                 <div class="col-2">
                                <%= technician.getTotal_hours_worked()/60 %>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-2">
                                <%= technician.isTechnician_is_working() %>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-2">
                                is Working <%=technician.isTechnician_is_working()%>
                                    </div>
                                  <div class="col-3">
