@@ -87,6 +87,8 @@
                                <div class="row">
                                 <div class="col-3">
                                <a href="timesheet.list.technician.jsp?technicianId=<%= technician.getTechnicianId() %>" ><%= technician.getTechnicianName() %></a>
+                                </div>
+                                <div class="col-3">
                                <%= technician.getTotal_hours_worked()/60 %>
                                 </div>
                                 <div class="col-3">
