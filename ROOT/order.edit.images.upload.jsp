@@ -34,7 +34,10 @@
 
       for (FileItem item : items) {
         if (!item.isFormField()) {
-
+                  InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
+                  // Save the file to a local directory or database, or process the contents in some other way
+                  //String fileName = item.getName(); // Get the original file name
+ 
         }
       }
     } catch (FileUploadException e) {
