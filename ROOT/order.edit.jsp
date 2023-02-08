@@ -215,7 +215,7 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Order ID - <%=orderId%></h2>
+        <h2>Order <%=orderId%></h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <hr>
