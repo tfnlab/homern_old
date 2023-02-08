@@ -34,18 +34,19 @@
 
       for (FileItem item : items) {
         if (!item.isFormField()) {
-              InputStream fileStream = item.getInputStream();
-              String fileName = item.getName();
-              FileOutputStream outputStream = new FileOutputStream(new File("/var/lib/tomcat9/webapps/images/" + fileName));
-              int read = 0;
-              byte[] bytes = new byte[1024];
-              while ((read = fileStream.read(bytes)) != -1) {
-                outputStream.write(bytes, 0, read);
-              }
-              outputStream.flush();
-              outputStream.close();
-              fileStream.close();
-              %><%=fileName%><%
+
+                  InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
+                  // Save the file to a local directory or database, or process the contents in some other way
+                  //String fileName = item.getName(); // Get the original file name
+                  FileOutputStream fos = new FileOutputStream("/var/lib/tomcat9/webapps/images/" + fileName);
+
+                  byte[] buffer = new byte[1024];
+                  int length;
+                  while ((length = fileContent.read(buffer)) > 0) {
+                    fos.write(buffer, 0, length);
+                  }
+                  fos.close();
+                  fileContent.close();
         }
       }
     } catch (FileUploadException e) {
