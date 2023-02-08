@@ -1,27 +1,40 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="com.tfnlab.mysql.User"%>
-<%@ page import="com.tfnlab.mysql.UserDao" %>
-<%@ page import="com.tfnlab.mysql.OrderDao" %>
-<%@ page import="com.tfnlab.mysql.EntityDao" %>
-<%@ page import="com.tfnlab.mysql.EventDao" %>
-<%@ page import="com.tfnlab.mysql.Technician" %>
-<%@ page import="com.tfnlab.mysql.TechnicianDao" %>
-<%@ page import="com.tfnlab.mysql.ProductDao" %>
-<%@ page import="java.sql.Timestamp" %>
-<%@ page import="java.util.Calendar" %>
-<%@ page import="java.math.BigDecimal" %>
-<%@page import="java.util.Map"%>
-<%@page import="java.util.HashMap"%>
-<%@ page import="java.util.List" %>
-<%@ page import="com.tfnlab.mysql.Product" %>
-<%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
-<%@ page import="com.tfnlab.mysql.ProductDashBoard" %>
-<%@ page import="com.tfnlab.mysql.Order" %>
-<%@ page import="com.tfnlab.mysql.OrderDao" %>
-<%@ include file="auth.jsp" %>
+<%@ page import="java.io.*, java.util.*, javax.servlet.*, javax.servlet.http.*, org.apache.commons.fileupload.*" %>
 <%
-          User user = (User)session.getAttribute("usernameOBJ");
-          String username = (String) session.getAttribute("username");
+  boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 
+  if (isMultipart) {
+    FileItemFactory factory = new DiskFileItemFactory();
+    ServletFileUpload upload = new ServletFileUpload(factory);
+
+    try {
+      List<FileItem> items = upload.parseRequest(request);
+
+      for (FileItem item : items) {
+        if (!item.isFormField()) {
+          InputStream fileStream = item.getInputStream();
+          // Handle the uploaded file stream
+            if (!item.isFormField()) {
+              InputStream fileStream = item.getInputStream();
+
+              String fileName = item.getName();
+              FileOutputStream outputStream = new FileOutputStream(new File("/var/lib/tomcat9/webapps/images/" + fileName));
+
+              int read = 0;
+              byte[] bytes = new byte[1024];
+
+              while ((read = fileStream.read(bytes)) != -1) {
+                outputStream.write(bytes, 0, read);
+              }
+
+              outputStream.flush();
+              outputStream.close();
+              fileStream.close();
+            }
+
+        }
+      }
+    } catch (FileUploadException e) {
+      // Handle the exception
+    }
+  }
 %>
-DONE
