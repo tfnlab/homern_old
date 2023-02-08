@@ -132,11 +132,8 @@
       }
     }
     function getCom() {
-      var select = document.getElementById("customer-touch-points");
-      var selectedOption = select.options[select.selectedIndex];
-      var com = selectedOption.value;
       var orderId = <%=orderId%>;
-      var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + com;
+      var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=greeting";
       window.open(url, "_self");
     }
     function getSchedule() {
@@ -225,26 +222,6 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <hr>
-          <select id="customer-touch-points" tabindex="2">
-            <option value="greeting">Greeting</option>
-            <option value="interestletter">Interest letter</option>
-            <option value="proposal">Proposal</option>
-            <option value="invoicing">Invoicing</option>
-            <option value="thankyou">Thank you</option>
-            <option value="paymentrequest">Payment request</option>
-            <option value="latepaymentrequest">Late Payment request</option>
-            <option value="paymentconfirmation">Payment confirmation</option>
-            <option value="progressupdate">Progress update</option>
-            <option value="changeorderrequest">Change order request</option>
-            <option value="warrantyormaintenanceinformation">Warranty or maintenance information</option>
-            <option value="customersatisfactionsurvey">Customer satisfaction survey</option>
-            <option value="followup">Follow-up</option>
-            <option value="estimaterequest">Estimate request</option>
-            <option value="scheduling">Scheduling</option>
-            <option value="sitevisit">Site visit</option>
-            <option value="permitapplication">Permit application</option>
-          </select>
-            <HR>
           <button class="btn btn-primary" onclick="getCom()"  tabindex="3"><i class="fas fa-envelope-open-text"></i> Correspondence</button>
           <button class="btn btn-primary" onclick="getCustomers()" tabindex="4"><i class="fas fa-user-tie"></i> Customers</button>
           <button class="btn btn-primary" onclick="getSchedule()" tabindex="5"><i class="fas fa-calendar-alt"></i> Schedule</button>
