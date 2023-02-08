@@ -62,8 +62,18 @@
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
                     CONTENT GO HERE
-
-                    ADD IMAGES
+<%
+    int orderId = 0;
+    if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+      orderId = Integer.parseInt(request.getParameter("orderId"));
+    }
+    OrderDao dao = new OrderDao();
+    Order order = dao.getOrderByOrderId(orderId, username);
+%>
+                <div class="form-group">
+                  Order:
+                    <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
+                </div>
           </div>
       </div>
     </section><!-- End Blog Section -->
