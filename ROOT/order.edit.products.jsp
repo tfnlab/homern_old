@@ -240,6 +240,7 @@
                 ProductLineItemDao plDao = new ProductLineItemDao();
 
                 String remove = request.getParameter("remove");
+                %>TEST EXECUTED ONE<%
                 if (remove != null && remove.trim().length() > 0) {
                   int plid = 0;
                   if (!request.getParameter("plid").isEmpty()) {
