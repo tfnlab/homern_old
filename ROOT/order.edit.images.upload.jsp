@@ -1,4 +1,4 @@
-<%@ page import="java.io.*, java.util.*, javax.servlet.*, javax.servlet.http.*, org.apache.commons.fileupload.*" %>
+<%@ page import="java.io.*, java.util.*, javax.servlet.*, javax.servlet.http.*, org.apache.commons.fileupload.ServletFileUpload" %>
 <%
   boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 
