@@ -222,9 +222,9 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <hr>
-          <button class="btn btn-primary" onclick="getCom()"  tabindex="3"><i class="fas fa-envelope-open-text"></i> Correspondence</button>
+          <button class="btn btn-primary" onclick="getCom()"  tabindex="3"><i class="fas fa-envelope-open-text"></i> Messages</button>
           <button class="btn btn-primary" onclick="getCustomers()" tabindex="4"><i class="fas fa-user-tie"></i> Customers</button>
-          <button class="btn btn-primary" onclick="getSchedule()" tabindex="5"><i class="fas fa-calendar-alt"></i> Schedule</button>
+          <button class="btn btn-primary" onclick="getSchedule()" tabindex="5"><i class="fas fa-calendar-alt"></i> Events</button>
           <button class="btn btn-primary" onclick="getDiscounts()" tabindex="6"><i class="fas fa-tags"></i> Discounts</button>
           <button class="btn btn-primary" onclick="getRebates()" tabindex="7"><i class="fas fa-percentage"></i> Rebates</button>
           <button class="btn btn-primary" onclick="getProducts()" tabindex="8"><i class="fas fa-file-invoice"></i> Invoice</button>
