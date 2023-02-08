@@ -76,7 +76,7 @@
                     <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                 </div>
                 <BR>
-                
+
           </div>
       </div>
     </section><!-- End Blog Section -->

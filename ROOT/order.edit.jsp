@@ -246,12 +246,12 @@
           </select>
             <HR>
           <button class="btn btn-primary" onclick="getCom()"  tabindex="3">Correspondence</button>
-          <button class="btn btn-primary" onclick="getCustomers()" tabindex="4">Customers</button>
+          <button class="btn btn-primary" onclick="getCustomers()" tabindex="4"><i class="fas fa-user-tie"></i> Customers</button>
           <button class="btn btn-primary" onclick="getSchedule()" tabindex="5">Schedule</button>
           <button class="btn btn-primary" onclick="getDiscounts()" tabindex="6">Discounts</button>
           <button class="btn btn-primary" onclick="getRebates()" tabindex="7">Rebates</button>
-          <button class="btn btn-primary" onclick="getProducts()" tabindex="8">Invoice</button>
-          <button class="btn btn-primary" onclick="getPayments()" tabindex="9">Payments</button>
+          <button class="btn btn-primary" onclick="getProducts()" tabindex="8"><i class="fas fa-file-invoice"></i> Invoice</button>
+          <button class="btn btn-primary" onclick="getPayments()" tabindex="9"><i class="fas fa-money-bill-alt"></i> Payments</button>
           <button class="btn btn-primary" onclick="getImages()" tabindex="10">Images</button>
         <hr>
 
