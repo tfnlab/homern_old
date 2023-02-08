@@ -77,10 +77,13 @@
                 </div>
                 <BR>
 
-                <form action="order.edit.images.jsp" method="post" enctype="multipart/form-data">
-                  <input type="file" name="files[]" multiple />
-                  <input type="submit" value="Upload Files">
-                </form>
+<form>
+  <input type="file" id="fileInput">
+  <canvas id="canvas"></canvas>
+  <button type="submit" id="submitButton">Upload</button>
+</form>
+
+
 
           </div>
       </div>
@@ -96,23 +99,44 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/js/main.js"></script>
-  <script>
-    $(document).ready(function() {
-      $("#upload-form").submit(function(event) {
-        event.preventDefault();
-        var formData = new FormData(this);
-        $.ajax({
-          url: 'order.edit.images.upload.jsp',
-          type: 'POST',
-          data: formData,
-          processData: false,
-          contentType: false,
-          success: function(response) {
-            console.log(response);
-          }
+
+<script>
+  var fileInput = document.getElementById('fileInput');
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+  var submitButton = document.getElementById('submitButton');
+
+  fileInput.addEventListener('change', function(e) {
+    var image = new Image();
+    image.src = URL.createObjectURL(fileInput.files[0]);
+
+    image.onload = function() {
+      canvas.width = image.width * 0.5;
+      canvas.height = image.height * 0.5;
+
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+      canvas.toBlob(function(blob) {
+        var formData = new FormData();
+        formData.append('file', blob);
+
+        submitButton.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', 'your-server-endpoint');
+          xhr.onload = function() {
+            if (xhr.status === 200) {
+              // Handle successful upload
+            } else {
+              // Handle error
+            }
+          };
+          xhr.send(formData);
         });
-      });
-    });
-  </script>
+      }, 'image/jpeg');
+    };
+  });
+</script>
 </body>
 </html>
