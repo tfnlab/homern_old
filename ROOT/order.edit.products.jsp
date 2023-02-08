@@ -22,7 +22,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItem" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
-
+<%@ include file="auth.jsp" %>
 
 
 <!DOCTYPE html>
@@ -240,15 +240,11 @@
                 ProductLineItemDao plDao = new ProductLineItemDao();
 
                 String remove = request.getParameter("remove");
-                %>TEST EXECUTED ONE<%
                 if (remove != null && remove.trim().length() > 0) {
                   int plid = 0;
                   if (!request.getParameter("plid").isEmpty()) {
                     plid = Integer.parseInt(request.getParameter("plid"));
                   }
-                  %>TEST EXECUTED<%
-                  %><%=username%>><%
-                  %><%=plid%>><%
                   plDao.deleteProductLineItem(plid,username);
                 }
 
