@@ -215,7 +215,7 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Order</h2>
+        <h2>Order ID - <%=orderId%>></h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <hr>
@@ -329,8 +329,6 @@
         <!-- ======= Contact Section ======= -->
 
         <form action="order.edit.jsp" method="POST">
-            Order ID - <%= order.getOrderId() %>
-            <HR>
           <div class="form-group">
             <label for="order-status">Order Status</label>
             <select class="form-control" id="status" name="status">
