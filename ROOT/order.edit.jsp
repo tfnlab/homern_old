@@ -353,7 +353,7 @@
                     SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                  %>
           <label for="orderId">Order Name:</label><br>
-          <input type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"  tabindex="8"><br>
+          <input class="form-control" type="text" id="orderName" name="orderName" value="<%= order.getOrderName() %>"  tabindex="8"><br>
           <label for="orderId">Order Description:</label><br>
           <textarea class="form-control" id="orderDescription" name="orderDescription" rows="5"  tabindex="9"><%= order.getOrderDescription() %></textarea>
           <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>">
