@@ -13,6 +13,8 @@
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
 <%@ page import="java.util.Collection" %>
 <%@ page import="javax.servlet.http.Part" %>
+<%@ page import="org.apache.commons.fileupload.servlet.ServletFileUpload" %>
+<%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory" %>
 <%
     UserDao dao = new UserDao();
     String username = (String) session.getAttribute("username");
