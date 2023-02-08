@@ -124,7 +124,7 @@
           e.preventDefault();
 
           var xhr = new XMLHttpRequest();
-          xhr.open('POST', 'your-server-endpoint');
+          xhr.open('POST', 'order.edit.images.upload.jsp');
           xhr.onload = function() {
             if (xhr.status === 200) {
               // Handle successful upload
