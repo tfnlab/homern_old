@@ -38,7 +38,7 @@
                   InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
                   // Save the file to a local directory or database, or process the contents in some other way
                   //String fileName = item.getName(); // Get the original file name
-                  FileOutputStream fos = new FileOutputStream("/var/lib/tomcat9/webapps/images/" + fileName);
+                  FileOutputStream fos = new FileOutputStream("/var/lib/tomcat9/webapps/images/item.png" );
 
                   byte[] buffer = new byte[1024];
                   int length;
