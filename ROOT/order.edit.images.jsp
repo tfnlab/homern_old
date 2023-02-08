@@ -96,5 +96,23 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#upload-form").submit(function(event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+          url: 'order.edit.images.upload.jsp',
+          type: 'POST',
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function(response) {
+            console.log(response);
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
