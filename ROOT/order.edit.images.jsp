@@ -77,6 +77,11 @@
                 </div>
                 <BR>
 
+                <form action="order.edit.images.jsp" method="post" enctype="multipart/form-data">
+                  <input type="file" name="files[]" multiple />
+                  <input type="submit" value="Upload Files">
+                </form>
+
           </div>
       </div>
     </section><!-- End Blog Section -->
