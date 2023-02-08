@@ -63,7 +63,6 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
-                    CONTENT GO HERE
 <%
     int orderId = 0;
     if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
@@ -76,6 +75,8 @@
                   Order:
                     <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                 </div>
+                <BR>
+                
           </div>
       </div>
     </section><!-- End Blog Section -->
