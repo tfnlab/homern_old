@@ -122,55 +122,55 @@
 
               <div class="row">
                 <div class="col-3 link-col">
-                  <a href="user.menu.jsp"><i class="fa fa-home"></i></a>
+                  <a href="user.menu.jsp" tabindex="1" ><i class="fa fa-home"></i></a>
                   <p>Home</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="dashboard.jsp"><i class="fa fa-cog"></i></a>
+                  <a href="dashboard.jsp" tabindex="2" ><i class="fa fa-cog"></i></a>
                   <p>Dashboard</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="user.edit.jsp"><i class="fa fa-handshake"></i></a>
+                  <a href="user.edit.jsp" tabindex="3" ><i class="fa fa-handshake"></i></a>
                   <p>Marketing</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="technician.list.jsp"><i class="fa fa-wrench"></i></a>
+                  <a href="technician.list.jsp" tabindex="4" ><i class="fa fa-wrench"></i></a>
                   <p>Technicians</p>
                 </div>
               </div>
               <div class="row">
                 <div class="col-3 link-col">
-                  <a href="product.list.jsp"><i class="fa fa-box"></i></a>
+                  <a href="product.list.jsp" tabindex="5" ><i class="fa fa-box"></i></a>
                   <p>Products</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="customer.list.jsp"><i class="fa fa-users"></i></a>
+                  <a href="customer.list.jsp" tabindex="6" ><i class="fa fa-users"></i></a>
                   <p>Customers</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="order.list.jsp"><i class="fa fa-shopping-cart"></i></a>
+                  <a href="order.list.jsp" tabindex="7" ><i class="fa fa-shopping-cart"></i></a>
                   <p>Orders</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="event.list.jsp"><i class="fa fa-calendar"></i></a>
+                  <a href="event.list.jsp" tabindex="8" ><i class="fa fa-calendar"></i></a>
                   <p>Events</p>
                 </div>
               </div>
               <div class="row">
                 <div class="col-3 link-col">
-                  <a href="discount.list.jsp"><i class="fa fa-gift"></i></a>
+                  <a href="discount.list.jsp" tabindex="9" ><i class="fa fa-gift"></i></a>
                   <p>Discounts</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="rebate.list.jsp"><i class="fa fa-wallet"></i></a>
+                  <a href="rebate.list.jsp" tabindex="10" ><i class="fa fa-wallet"></i></a>
                   <p>Rebates</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="inventory.list.jsp"><i class="fa fa-box-open"></i></a>
+                  <a href="inventory.list.jsp" tabindex="11" ><i class="fa fa-box-open"></i></a>
                   <p>Inventory</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="timesheet.list.jsp"><i class="fa fa-clock"></i></a>
+                  <a href="timesheet.list.jsp" tabindex="12" ><i class="fa fa-clock"></i></a>
                   <p>Time Sheet</p>
                 </div>
               </div>
