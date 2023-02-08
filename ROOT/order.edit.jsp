@@ -329,8 +329,10 @@
         <!-- ======= Contact Section ======= -->
 
         <form action="order.edit.jsp" method="POST">
+            Order ID<%= order.getOrderId() %>
+            <HR>
           <div class="form-group">
-            <label for="order-status">Order Status - <%= order.getOrderId() %></label>
+            <label for="order-status">Order Status</label>
             <select class="form-control" id="status" name="status">
               <%
                 String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
