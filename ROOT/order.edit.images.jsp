@@ -128,6 +128,7 @@
           xhr.onload = function() {
             if (xhr.status === 200) {
               // Handle successful upload
+              alert('Done')
             } else {
               // Handle error
             }
