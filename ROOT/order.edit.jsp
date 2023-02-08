@@ -329,7 +329,7 @@
         <!-- ======= Contact Section ======= -->
 
         <form action="order.edit.jsp" method="POST">
-            Order ID<%= order.getOrderId() %>
+            Order ID - <%= order.getOrderId() %>
             <HR>
           <div class="form-group">
             <label for="order-status">Order Status</label>
