@@ -25,6 +25,7 @@
   <option value="customer.list.jsp" <%= currentUrl.indexOf("customer.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-users"></i> Customers</option>
   <option value="order.list.jsp" <%= currentUrl.indexOf("order.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-shopping-cart"></i> Orders</option>
   <option value="event.list.jsp" <%= currentUrl.indexOf("event.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-calendar"></i> Events</option>
+  <option value="timesheet.list.jsp" <%= currentUrl.indexOf("timesheet.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-clock"></i> Timesheets</option>
 </select>
 
     <%@ include file="include.shortcut.jsp" %>
