@@ -173,6 +173,12 @@
       var url = "order.edit.rebates.jsp?orderId=" + orderId ;
       window.open(url, "_self");
     }
+    function getImages() {
+      var orderId = <%=orderId%>;
+      var url = "order.edit.images.jsp?orderId=" + orderId ;
+      window.open(url, "_self");
+    }
+
     function calculateFee(){
         var select = document.getElementById("paymentMethod");
         var selectedValue = select.options[select.selectedIndex].value;
@@ -240,12 +246,13 @@
           </select>
             <HR>
           <button class="btn btn-primary" onclick="getCom()"  tabindex="3">Correspondence</button>
-          <button class="btn btn-primary" onclick="getCustomers()" tabindex="6">Customers</button>
-          <button class="btn btn-primary" onclick="getSchedule()" tabindex="4">Schedule</button>
-          <button class="btn btn-primary" onclick="getDiscounts()" tabindex="5">Discounts</button>
-          <button class="btn btn-primary" onclick="getRebates()" tabindex="5">Rebates</button>
-          <button class="btn btn-primary" onclick="getProducts()" tabindex="5">Invoice</button>
-          <button class="btn btn-primary" onclick="getPayments()" tabindex="7">Payments</button>
+          <button class="btn btn-primary" onclick="getCustomers()" tabindex="4">Customers</button>
+          <button class="btn btn-primary" onclick="getSchedule()" tabindex="5">Schedule</button>
+          <button class="btn btn-primary" onclick="getDiscounts()" tabindex="6">Discounts</button>
+          <button class="btn btn-primary" onclick="getRebates()" tabindex="7">Rebates</button>
+          <button class="btn btn-primary" onclick="getProducts()" tabindex="8">Invoice</button>
+          <button class="btn btn-primary" onclick="getPayments()" tabindex="9">Payments</button>
+          <button class="btn btn-primary" onclick="getImages()" tabindex="10">Images</button>
         <hr>
 
         <%
