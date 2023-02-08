@@ -45,6 +45,7 @@
               outputStream.flush();
               outputStream.close();
               fileStream.close();
+              %><%=fileName%><%
         }
       }
     } catch (FileUploadException e) {
