@@ -247,6 +247,8 @@
                     plid = Integer.parseInt(request.getParameter("plid"));
                   }
                   %>TEST EXECUTED<%
+                  %><%=username%>><%
+                  %><%=plid%>><%
                   plDao.deleteProductLineItem(plid,username);
                 }
 
