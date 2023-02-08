@@ -330,7 +330,7 @@
 
         <form action="order.edit.jsp" method="POST">
           <div class="form-group">
-            <label for="order-status">Order Status</label>
+            <label for="order-status">Order Status - <%= order.getOrderId() %></label>
             <select class="form-control" id="status" name="status">
               <%
                 String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
