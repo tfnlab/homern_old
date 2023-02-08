@@ -34,9 +34,6 @@
 
       for (FileItem item : items) {
         if (!item.isFormField()) {
-          InputStream fileStream = item.getInputStream();
-          // Handle the uploaded file stream
-            if (!item.isFormField()) {
               InputStream fileStream = item.getInputStream();
 
               String fileName = item.getName();
@@ -52,8 +49,6 @@
               outputStream.flush();
               outputStream.close();
               fileStream.close();
-            }
-
         }
       }
     } catch (FileUploadException e) {
