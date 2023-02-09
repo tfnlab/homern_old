@@ -82,7 +82,7 @@
 
         for (ImageRepository image : images) {
                 %>
-                <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" />
+                <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" />
                     <HR>
                 <%
         }
