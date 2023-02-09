@@ -86,7 +86,7 @@
   <HR>
   <canvas id="canvas"></canvas>
   <HR>
-  <button type="submit" id="submitButton" id="submitButton" name="submitButton" class="btn-success" >Upload</button>
+  <button type="submit" id="submitButton" id="submitButton" name="submitButton" class="btn btn-primary" >Upload</button>
   <input type="hidden" id="orderId" name="orderId" value="<%=orderId%>" >
   <input type="hidden" id="client_request_key" name="client_request_key" value="<%=uuid%>" >
 
