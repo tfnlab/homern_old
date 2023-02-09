@@ -54,7 +54,7 @@
         }
       }
 
-      if(!dao.isClient_request_key_New(client_request_key)){
+      if(!dao.isClient_request_key(client_request_key)){
           for (FileItem item : items) {
             if (!item.isFormField()) {
 
