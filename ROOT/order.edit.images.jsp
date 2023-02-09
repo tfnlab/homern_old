@@ -78,7 +78,7 @@
                 <BR>
 
 <form>
-  <input type="file" id="fileInput">
+  <input type="file" id="fileInput" accept="image/*">
   <canvas id="canvas"></canvas>
   <button type="submit" id="submitButton">Upload</button>
   <input type="hidden" id="orderId" name="orderId" value="<%=orderId%>" >
