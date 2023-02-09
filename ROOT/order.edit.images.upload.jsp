@@ -78,7 +78,7 @@
                       ir.setUsername(username);
                       ir.setUploadDate(currentTime);
                       ir.setFileType("PNG");
-                      ir.getClient_request_key(client_request_key);
+                      ir.setClient_request_key(client_request_key);
                       ir.setFileSize(1);
                       dao.insert(ir);
             }
