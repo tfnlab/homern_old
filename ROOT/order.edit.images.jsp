@@ -101,47 +101,49 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/js/main.js"></script>
 
-<script>
-  var fileInput = document.getElementById('fileInput');
-  var canvas = document.getElementById('canvas');
-  var ctx = canvas.getContext('2d');
-  var submitButton = document.getElementById('submitButton');
+    <script>
+      var fileInput = document.getElementById('fileInput');
+      var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext('2d');
+      var submitButton = document.getElementById('submitButton');
+      var orderId = document.getElementById('orderId').value;
 
-  fileInput.addEventListener('change', function(e) {
-    for (var i = 0; i < fileInput.files.length; i++) {
-      var image = new Image();
-      image.src = URL.createObjectURL(fileInput.files[i]);
+      fileInput.addEventListener('change', function(e) {
+        for (var i = 0; i < fileInput.files.length; i++) {
+          var image = new Image();
+          image.src = URL.createObjectURL(fileInput.files[i]);
 
-      image.onload = function() {
-        canvas.width = image.width * 0.5;
-        canvas.height = image.height * 0.5;
+          image.onload = function() {
+            canvas.width = image.width * 0.5;
+            canvas.height = image.height * 0.5;
 
-        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+            ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-        canvas.toBlob(function(blob) {
-          var formData = new FormData();
-          formData.append('file', blob);
+            canvas.toBlob(function(blob) {
+              var formData = new FormData();
+              formData.append('file', blob);
+              formData.append('orderId', orderId);
 
-          submitButton.addEventListener('click', function(e) {
-            e.preventDefault();
+              submitButton.addEventListener('click', function(e) {
+                e.preventDefault();
 
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'order.edit.images.upload.jsp');
-            xhr.onload = function() {
-              if (xhr.status === 200) {
-                // Handle successful upload
-                alert('Done');
-                alert(this.responseText);
-              } else {
-                // Handle error
-              }
-            };
-            xhr.send(formData);
-          });
-        }, 'image/jpeg');
-      };
-    }
-  });
-</script>
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'order.edit.images.upload.jsp');
+                xhr.onload = function() {
+                  if (xhr.status === 200) {
+                    // Handle successful upload
+                    alert('Done');
+                    alert(this.responseText);
+                  } else {
+                    // Handle error
+                  }
+                };
+                xhr.send(formData);
+              });
+            }, 'image/jpeg');
+          };
+        }
+      });
+    </script>
 </body>
 </html>
