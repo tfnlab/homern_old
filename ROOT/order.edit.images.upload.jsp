@@ -53,9 +53,13 @@
 
       for (FileItem item : items) {
         if (!item.isFormField()) {
+
+                  APIConfig conf = new APIConfig();
+                    String filepath = conf.getPdfloc();
+                    String logofilepath  = filepath +  username + "." +  orderId + "." + uuid + ".png";
                   String uuid = java.util.UUID.randomUUID().toString();
                   InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
-                  FileOutputStream fos = new FileOutputStream("/var/lib/tomcat9/webapps/images/" +username + "." +  orderId + "." + uuid + ".png" );
+                  FileOutputStream fos = new FileOutputStream(logofilepath);
                   byte[] buffer = new byte[1024];
                   int length;
                   while ((length = fileContent.read(buffer)) > 0) {
