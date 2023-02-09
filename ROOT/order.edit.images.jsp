@@ -82,12 +82,11 @@
                 </div>
 
 <form>
+  <label for="orderId">Image Description:</label><br>
+  <textarea class="form-control" id="imgDescription" name="imgDescription" rows="3" ></textarea>
+  <HR>
   <input type="file" id="fileInput" accept="image/*" multiple>
-  <HR>
-  <div id="image_div_canvas" name="image_div_canvas">
-    <canvas id="canvas"></canvas>
-  <div>
-  <HR>
+
   <button type="submit" id="submitButton" name="submitButton" class="btn btn-primary" >Upload</button>
   <input type="hidden" id="orderId" name="orderId" value="<%=orderId%>" >
   <input type="hidden" id="client_request_key" name="client_request_key" value="<%=uuid%>" >
@@ -113,6 +112,12 @@
     %>
                     </div>
           </div>
+
+  <HR>
+  <div id="image_div_canvas" name="image_div_canvas">
+    <canvas id="canvas"></canvas>
+  <div>
+  <HR>
           </div>
       </div>
     </section><!-- End Blog Section -->
