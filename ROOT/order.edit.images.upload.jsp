@@ -32,11 +32,11 @@
 <%
   boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 
+                long currentTimeMillis = System.currentTimeMillis();
+                Timestamp currentTime = new Timestamp(currentTimeMillis);
   if (isMultipart) {
     FileItemFactory factory = new DiskFileItemFactory();
     ServletFileUpload upload = new ServletFileUpload(factory);
-                long currentTimeMillis = System.currentTimeMillis();
-                Timestamp currentTime = new Timestamp(currentTimeMillis);
     try {
       List<FileItem> items = upload.parseRequest(request);
 
@@ -63,17 +63,18 @@
                   }
                   fos.close();
                   fileContent.close();
-                  ImageRepository ir = new ImageRepository();
-                  ir.setFilename(uuid);
-                  ir.setOrderId(orderId);
-                  ir.setUsername(username);
-                  ir.setUploadDate(currentTime);
-                  ImageRepositoryDAO dao = new ImageRepositoryDAO();
-                  dao.insert(ir);
         }
       }
+
     } catch (FileUploadException e) {
        %><%=e.getMessage()%><%
     }
   }
+                  ImageRepository ir = new ImageRepository();
+                  ir.setFilename("test");
+                  ir.setOrderId(0);
+                  ir.setUsername("username");
+                  ir.setUploadDate(currentTime);
+                  ImageRepositoryDAO dao = new ImageRepositoryDAO();
+                  dao.insert(ir);
 %> DONE
