@@ -83,8 +83,10 @@
 
 <form>
   <input type="file" id="fileInput" accept="image/*" multiple>
+  <HR>
   <canvas id="canvas"></canvas>
-  <button type="submit" id="submitButton">Upload</button>
+  <HR>
+  <button type="submit" id="submitButton" id="submitButton" name="submitButton" class="btn-success" >Upload</button>
   <input type="hidden" id="orderId" name="orderId" value="<%=orderId%>" >
   <input type="hidden" id="client_request_key" name="client_request_key" value="<%=uuid%>" >
 
@@ -157,11 +159,13 @@
                 xhr.open('POST', 'order.edit.images.upload.jsp');
                 xhr.onload = function() {
                   if (xhr.status === 200) {
+                    document.getElementById('submitButton').class = "btn btn-success";
                     document.getElementById("image_div").innerHTML = this.responseText.trim();
                   } else {
                     // Handle error
                   }
                 };
+                document.getElementById('submitButton').class = "btn btn-warning";
                 xhr.send(formData);
               });
             }, 'image/jpeg');
