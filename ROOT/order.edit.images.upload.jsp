@@ -52,7 +52,7 @@
         if (!item.isFormField()) {
                   String uuid = java.util.UUID.randomUUID().toString();
                   InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
-                  FileOutputStream fos = new FileOutputStream("/var/lib/tomcat9/webapps/images/" +username + "." +  orderId+ ".png" );
+                  FileOutputStream fos = new FileOutputStream("/var/lib/tomcat9/webapps/images/" +username + "." +  orderId + "." + uuid + ".png" );
                   byte[] buffer = new byte[1024];
                   int length;
                   while ((length = fileContent.read(buffer)) > 0) {
