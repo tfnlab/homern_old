@@ -82,8 +82,8 @@
                 </div>
 
 <form>
-  <label for="orderId">Image Description:</label><br>
-  <textarea class="form-control" id="imgDescription" name="imgDescription" rows="3" ></textarea>
+  <label for="orderId">Add Image Description:</label><br>
+  <textarea class="form-control" id="imgDescription" name="imgDescription" rows="2" ></textarea>
   <HR>
   <input type="file" id="fileInput" accept="image/*" multiple>
 
