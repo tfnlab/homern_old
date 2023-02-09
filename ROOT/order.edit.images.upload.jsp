@@ -23,6 +23,10 @@
 <%@ page import="java.util.Collection" %>
 <%@ page import="javax.servlet.http.Part" %>
 <%
+    String orderId = "0";
+    String username = (String) session.getAttribute("username");
+%>
+<%
   boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 
   if (isMultipart) {
@@ -33,12 +37,20 @@
       List<FileItem> items = upload.parseRequest(request);
 
       for (FileItem item : items) {
+        if (item.isFormField()) {
+            String inputFieldName = item.getFieldName();
+            String inputFieldValue = item.getString();
+            if (inputFieldName.equals("orderId")) {
+                orderId = inputFieldValue;
+            }
+        }
+      }
+
+
+      for (FileItem item : items) {
         if (!item.isFormField()) {
                   InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
-                  // Save the file to a local directory or database, or process the contents in some other way
-                  //String fileName = item.getName(); // Get the original file name
-                  FileOutputStream fos = new FileOutputStream("/var/lib/tomcat9/webapps/images/item.png" );
-
+                  FileOutputStream fos = new FileOutputStream("/var/lib/tomcat9/webapps/images/" +username + "." +  orderId+ ".png" );
                   byte[] buffer = new byte[1024];
                   int length;
                   while ((length = fileContent.read(buffer)) > 0) {

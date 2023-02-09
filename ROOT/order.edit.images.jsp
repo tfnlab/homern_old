@@ -81,6 +81,7 @@
   <input type="file" id="fileInput">
   <canvas id="canvas"></canvas>
   <button type="submit" id="submitButton">Upload</button>
+  <input type="hidden" id="orderId" name="orderId" value="<%=orderId%>" >
 </form>
 
 
@@ -128,7 +129,7 @@
           xhr.onload = function() {
             if (xhr.status === 200) {
               // Handle successful upload
-              alert('Done')
+              alert('Done');
             } else {
               // Handle error
             }
