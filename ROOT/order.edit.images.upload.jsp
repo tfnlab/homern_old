@@ -27,6 +27,7 @@
 <%@ page import="java.util.UUID" %>
 <%
     int orderId = 0;
+    String client_request_key = "none";
     String username = (String) session.getAttribute("username");
 %>
 <%
@@ -47,36 +48,41 @@
             if (inputFieldName.equals("orderId")) {
                 orderId = Integer.parseInt(inputFieldValue);
             }
+           if (inputFieldName.equals("client_request_key")) {
+                client_request_key = inputFieldValue;
+           }
         }
       }
 
+      if(!dao.isClient_request_key_New(client_request_key)){
+          for (FileItem item : items) {
+            if (!item.isFormField()) {
 
-      for (FileItem item : items) {
-        if (!item.isFormField()) {
+                      APIConfig conf = new APIConfig();
+                      String uuid = java.util.UUID.randomUUID().toString();
+                      String filepath = conf.getPdfloc();
+                      String logofilepath  = filepath +  username + "." +  orderId + "." + uuid + ".png";
+                      InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
+                      FileOutputStream fos = new FileOutputStream(logofilepath);
+                      byte[] buffer = new byte[1024];
+                      int length;
+                      while ((length = fileContent.read(buffer)) > 0) {
+                        fos.write(buffer, 0, length);
+                      }
+                      fos.close();
+                      fileContent.close();
 
-                  APIConfig conf = new APIConfig();
-                  String uuid = java.util.UUID.randomUUID().toString();
-                  String filepath = conf.getPdfloc();
-                  String logofilepath  = filepath +  username + "." +  orderId + "." + uuid + ".png";
-                  InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
-                  FileOutputStream fos = new FileOutputStream(logofilepath);
-                  byte[] buffer = new byte[1024];
-                  int length;
-                  while ((length = fileContent.read(buffer)) > 0) {
-                    fos.write(buffer, 0, length);
-                  }
-                  fos.close();
-                  fileContent.close();
-
-                  ImageRepository ir = new ImageRepository();
-                  ir.setFilename(uuid);
-                  ir.setOrderId(orderId);
-                  ir.setUsername(username);
-                  ir.setUploadDate(currentTime);
-                  ir.setFileType("PNG");
-                  ir.setFileSize(1);
-                  dao.insert(ir);
-        }
+                      ImageRepository ir = new ImageRepository();
+                      ir.setFilename(uuid);
+                      ir.setOrderId(orderId);
+                      ir.setUsername(username);
+                      ir.setUploadDate(currentTime);
+                      ir.setFileType("PNG");
+                      ir.getClient_request_key(client_request_key);
+                      ir.setFileSize(1);
+                      dao.insert(ir);
+            }
+          }
       }
       List<ImageRepository> images = dao.selectByUsernameAndOrderId(username, orderId);
 

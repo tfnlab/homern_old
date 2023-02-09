@@ -21,6 +21,7 @@
 <%@ page import="com.tfnlab.mysql.Order" %>
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ include file="auth.jsp" %>
+<%@ page import="java.util.UUID" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");
@@ -72,6 +73,7 @@
     }
     OrderDao dao = new OrderDao();
     Order order = dao.getOrderByOrderId(orderId, username);
+     String uuid = java.util.UUID.randomUUID().toString();
 %>
                 <div class="form-group">
                   Order:
@@ -84,6 +86,8 @@
   <canvas id="canvas"></canvas>
   <button type="submit" id="submitButton">Upload</button>
   <input type="hidden" id="orderId" name="orderId" value="<%=orderId%>" >
+  <input type="hidden" id="client_request_key" name="client_request_key" value="<%=uuid%>" >
+
 </form>
  <HR>
          <div id="image_div" name="image_div">
