@@ -20,9 +20,8 @@
     User user = dao.getUserByUsername(username);
 
     APIConfig conf = new APIConfig();
-    String filename = username + ".png";
     String filepath = conf.getPdfloc();
-    String logofilepath  = filepath +  "logo." + filename;
+    String logofilepath  = filepath +  username + "." +  request.getParameter("orderId") + "." + request.getParameter("imgId") + ".png";
     response.setContentType("image/jpeg");
 //    response.setContentLength(new File(logofilepath).length());
     response.setHeader("Content-Length", String.valueOf(new File(logofilepath).length()));

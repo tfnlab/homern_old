@@ -81,7 +81,9 @@
       List<ImageRepository> images = dao.selectByUsernameAndOrderId(username, orderId);
 
         for (ImageRepository image : images) {
-                %><%=image.getFilename()%><%
+                %><img src="order.edit.images.view.jsp?imgId=<%=image.getId()%>&orderId=<%=orderId%>" />
+                    <HR>
+                <%
         }
     } catch (FileUploadException e) {
        %><%=e.getMessage()%><%
