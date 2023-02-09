@@ -91,9 +91,12 @@
       List<ImageRepository> images = iDao.selectByUsernameAndOrderId(username, order.getOrderId());
 
         for (ImageRepository image : images) {
-                %>  <div class="thumbnail">
+                %>
+                    <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
                     <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" />
                     <HR>
+                    </div>
                     </div>
                 <%
         }
