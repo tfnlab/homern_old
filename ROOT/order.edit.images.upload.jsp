@@ -63,6 +63,7 @@
                   }
                   fos.close();
                   fileContent.close();
+
                   ImageRepository ir = new ImageRepository();
                   ir.setFilename(uuid);
                   ir.setOrderId(orderId);
@@ -78,4 +79,4 @@
        %><%=e.getMessage()%><%
     }
   }
-%> DONE
+%> DONE NOW
