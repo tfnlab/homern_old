@@ -84,7 +84,9 @@
 <form>
   <input type="file" id="fileInput" accept="image/*" multiple>
   <HR>
-  <canvas id="canvas"></canvas>
+  <div id="image_div_canvas" name="image_div_canvas">
+    <canvas id="canvas"></canvas>
+  <div>
   <HR>
   <button type="submit" id="submitButton" name="submitButton" class="btn btn-primary" >Upload</button>
   <input type="hidden" id="orderId" name="orderId" value="<%=orderId%>" >
