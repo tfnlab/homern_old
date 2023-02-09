@@ -22,6 +22,7 @@
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
 <%@ page import="java.util.Collection" %>
 <%@ page import="javax.servlet.http.Part" %>
+<%@ page import="java.util.UUID" %>
 <%
     String orderId = "0";
     String username = (String) session.getAttribute("username");
@@ -49,6 +50,7 @@
 
       for (FileItem item : items) {
         if (!item.isFormField()) {
+                  String uuid = java.util.UUID.randomUUID().toString();
                   InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
                   FileOutputStream fos = new FileOutputStream("/var/lib/tomcat9/webapps/images/" +username + "." +  orderId+ ".png" );
                   byte[] buffer = new byte[1024];
