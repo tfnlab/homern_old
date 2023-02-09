@@ -21,7 +21,10 @@
 
     APIConfig conf = new APIConfig();
     String filepath = conf.getPdfloc();
-    String logofilepath  = filepath +  username + "." +  request.getParameter("orderId") + "." + request.getParameter("imgId") + ".png";
+    //order.edit.images.view.jsp?imgId=37&orderId=102
+    // allregioninctest.102.6d7ac2ae-e37f-4bd0-8104-9a80d4f19022.png
+
+    String logofilepath  = filepath +  username + "." +  request.getParameter("orderId") + "." + request.getParameter("filename") + ".png";
     response.setContentType("image/jpeg");
 //    response.setContentLength(new File(logofilepath).length());
     response.setHeader("Content-Length", String.valueOf(new File(logofilepath).length()));

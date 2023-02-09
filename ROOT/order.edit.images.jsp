@@ -83,9 +83,16 @@
   <button type="submit" id="submitButton">Upload</button>
   <input type="hidden" id="orderId" name="orderId" value="<%=orderId%>" >
 </form>
+    <%
+            ImageRepositoryDAO dao = new ImageRepositoryDAO();
+      List<ImageRepository> images = dao.selectByUsernameAndOrderId(username, order.getOrderId());
 
-
-
+        for (ImageRepository image : images) {
+                %><img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" />
+                    <HR>
+                <%
+        }
+    %>
           </div>
       </div>
     </section><!-- End Blog Section -->
