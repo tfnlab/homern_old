@@ -85,13 +85,19 @@
           }
       }
       List<ImageRepository> images = dao.selectByUsernameAndOrderId(username, orderId);
-
+           %>
+           <div class="d-flex flex-wrap">
+           <%
         for (ImageRepository image : images) {
                 %>
-                <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" />
-                    <HR>
+                    <div class="d-flex mb-4 mr-4">
+                <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" style="width: 100px; height: 100px;" />
+                    </div>
                 <%
         }
+            %>
+            </div>
+            <%
     } catch (FileUploadException e) {
        %><%=e.getMessage()%><%
     }
