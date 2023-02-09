@@ -70,7 +70,7 @@
                   ir.setUsername(username);
                   ir.setUploadDate(currentTime);
                   ir.setFileType("PNG");
-                  ir.setFileSize(0);
+                  ir.setFileSize(1);
                   ImageRepositoryDAO dao = new ImageRepositoryDAO();
                   dao.insert(ir);
         }
