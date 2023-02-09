@@ -11,6 +11,8 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="com.tfnlab.mysql.Technician" %>
 <%@ page import="com.tfnlab.mysql.TechnicianDao" %>
+<%@ page import="com.tfnlab.mysql.ImageRepository" %>
+<%@ page import="com.tfnlab.mysql.ImageRepositoryDAO" %>
 <%@ page import="java.net.URLDecoder" %>
 <%@ page import="java.io.*" %>
 <%@ page import="javax.servlet.http.*" %>
@@ -33,7 +35,8 @@
   if (isMultipart) {
     FileItemFactory factory = new DiskFileItemFactory();
     ServletFileUpload upload = new ServletFileUpload(factory);
-
+                long currentTimeMillis = System.currentTimeMillis();
+                Timestamp currentTime = new Timestamp(currentTimeMillis);
     try {
       List<FileItem> items = upload.parseRequest(request);
 
@@ -60,6 +63,13 @@
                   }
                   fos.close();
                   fileContent.close();
+                  ImageRepository ir = new ImageRepository();
+                  ir.setFilename(uuid);
+                  ir.setOrderId(orderId);
+                  ir.setUsername(username);
+                  ir.setUploadDate(currentTime);
+                  ImageRepositoryDAO dao = new ImageRepositoryDAO();
+                  dao.insert(ir);
         }
       }
     } catch (FileUploadException e) {
