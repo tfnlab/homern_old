@@ -86,7 +86,7 @@
   <HR>
   <canvas id="canvas"></canvas>
   <HR>
-  <button type="submit" id="submitButton" id="submitButton" name="submitButton" class="btn btn-primary" >Upload</button>
+  <button type="submit" id="submitButton" name="submitButton" class="btn btn-primary" >Upload</button>
   <input type="hidden" id="orderId" name="orderId" value="<%=orderId%>" >
   <input type="hidden" id="client_request_key" name="client_request_key" value="<%=uuid%>" >
 
@@ -159,13 +159,16 @@
                 xhr.open('POST', 'order.edit.images.upload.jsp');
                 xhr.onload = function() {
                   if (xhr.status === 200) {
-                    document.getElementById('submitButton').class = "btn btn-success";
+                    document.getElementById("submitButton").classList.remove("btn-warning");
+                    document.getElementById("submitButton").classList.add("btn-success");
                     document.getElementById("image_div").innerHTML = this.responseText.trim();
                   } else {
                     // Handle error
                   }
                 };
-                document.getElementById('submitButton').class = "btn btn-warning";
+                document.getElementById("submitButton").classList.remove("btn-primary");
+                document.getElementById("submitButton").classList.add("btn-warning");
+
                 xhr.send(formData);
               });
             }, 'image/jpeg');
