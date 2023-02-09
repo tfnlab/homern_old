@@ -163,7 +163,6 @@
                   if (xhr.status === 200) {
                     document.getElementById("submitButton").classList.remove("btn-warning");
                     document.getElementById("submitButton").classList.add("btn-success");
-                    document.getElementById("image_div_canvas").innerHTML = '<canvas id="canvas"></canvas>';
                     document.getElementById("image_div").innerHTML = this.responseText.trim();
                   } else {
                     // Handle error
