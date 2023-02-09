@@ -76,6 +76,7 @@
                   ir.setUsername("username");
                   ir.setUploadDate(currentTime);
                   ir.setFileType("png");
+                  ir.setFileSize(500);
                   ImageRepositoryDAO dao = new ImageRepositoryDAO();
                   dao.insert(ir);
 %> DONE
