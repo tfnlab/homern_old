@@ -81,7 +81,8 @@
       List<ImageRepository> images = dao.selectByUsernameAndOrderId(username, orderId);
 
         for (ImageRepository image : images) {
-                %><img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" />
+                %>
+                <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" />
                     <HR>
                 <%
         }

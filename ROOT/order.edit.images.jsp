@@ -85,6 +85,7 @@
   <button type="submit" id="submitButton">Upload</button>
   <input type="hidden" id="orderId" name="orderId" value="<%=orderId%>" >
 </form>
+         <div id="image_div" name="image_div">
     <%
             ImageRepositoryDAO iDao = new ImageRepositoryDAO();
       List<ImageRepository> images = iDao.selectByUsernameAndOrderId(username, order.getOrderId());
@@ -95,6 +96,7 @@
                 <%
         }
     %>
+          </div>
           </div>
       </div>
     </section><!-- End Blog Section -->
@@ -140,9 +142,7 @@
                 xhr.open('POST', 'order.edit.images.upload.jsp');
                 xhr.onload = function() {
                   if (xhr.status === 200) {
-                    // Handle successful upload
-                    alert('Done');
-                    alert(this.responseText);
+                    document.getElementById("image_div").innerHTML = this.responseText.trim();
                   } else {
                     // Handle error
                   }
