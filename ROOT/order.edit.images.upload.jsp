@@ -45,7 +45,6 @@
             String inputFieldName = item.getFieldName();
             String inputFieldValue = item.getString();
             if (inputFieldName.equals("orderId")) {
-                orderId = inputFieldValue;
                 orderId = Integer.parseInt(inputFieldValue);
             }
         }
