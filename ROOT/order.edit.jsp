@@ -139,11 +139,8 @@
       window.open(url, "_self");
     }
     function getSchedule() {
-      var select = document.getElementById("customer-touch-points");
-      var selectedOption = select.options[select.selectedIndex];
-      var com = selectedOption.value;
       var orderId = <%=orderId%>;
-      var url = "order.edit.schedule.jsp?orderId=" + orderId +  "&comType=" + com;
+      var url = "order.edit.schedule.jsp?orderId=" + orderId ;
       window.open(url, "_self");
     }
     function getProducts() {
