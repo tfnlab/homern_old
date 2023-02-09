@@ -26,7 +26,7 @@
 <%@ page import="javax.servlet.http.Part" %>
 <%@ page import="java.util.UUID" %>
 <%
-    String orderId = "0";
+    int orderId = 0;
     String username = (String) session.getAttribute("username");
 %>
 <%
@@ -46,6 +46,7 @@
             String inputFieldValue = item.getString();
             if (inputFieldName.equals("orderId")) {
                 orderId = inputFieldValue;
+                orderId = Integer.parseInt(inputFieldValue);
             }
         }
       }
