@@ -85,7 +85,9 @@
   <button type="submit" id="submitButton">Upload</button>
   <input type="hidden" id="orderId" name="orderId" value="<%=orderId%>" >
 </form>
+ <HR>
          <div id="image_div" name="image_div">
+
     <%
             ImageRepositoryDAO iDao = new ImageRepositoryDAO();
       List<ImageRepository> images = iDao.selectByUsernameAndOrderId(username, order.getOrderId());
