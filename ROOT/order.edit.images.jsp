@@ -78,7 +78,8 @@
                 <div class="form-group">
                   Order:
                     <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a>
-                    (<a href="order.edit.images.jsp?orderId=<%= order.getOrderId() %>" >Refresh / Upload New</a>)
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    (<a href="order.edit.images.jsp?orderId=<%= order.getOrderId() %>" >refresh / upload New</a>)
                 </div>
   <HR>
 <form>
