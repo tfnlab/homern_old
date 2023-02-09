@@ -217,9 +217,9 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Order <%=orderId%></h2>
-        <HR>
         <%@ include file="user.menu.nav.jsp" %>
+        <HR>
+        <h2>Order <%=orderId%></h2>
         <hr>
           <button class="btn btn-primary" onclick="getCom()"  tabindex="3"><i class="fas fa-envelope-open-text"></i> Message</button>
           <button class="btn btn-primary" onclick="getCustomers()" tabindex="4"><i class="fas fa-user-tie"></i> Customer</button>
