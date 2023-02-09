@@ -66,7 +66,7 @@
 
                   ImageRepository ir = new ImageRepository();
                   ir.setFilename(uuid);
-                  ir.setOrderId(orderId);
+                  ir.setOrderId(30);
                   ir.setUsername(username);
                   ir.setUploadDate(currentTime);
                   ir.setFileType("PNG");
