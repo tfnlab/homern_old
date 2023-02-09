@@ -68,6 +68,8 @@
                   ir.setOrderId(orderId);
                   ir.setUsername(username);
                   ir.setUploadDate(currentTime);
+                  ir.setFileType("PNG");
+                  ir.setFileSize(0);
                   ImageRepositoryDAO dao = new ImageRepositoryDAO();
                   dao.insert(ir);
         }
