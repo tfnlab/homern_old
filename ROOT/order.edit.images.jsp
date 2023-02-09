@@ -129,6 +129,7 @@
       var ctx = canvas.getContext('2d');
       var submitButton = document.getElementById('submitButton');
       var orderId = document.getElementById('orderId').value;
+      var client_request_key = document.getElementById('client_request_key').value;
 
       fileInput.addEventListener('change', function(e) {
         for (var i = 0; i < fileInput.files.length; i++) {
@@ -145,6 +146,8 @@
               var formData = new FormData();
               formData.append('file', blob);
               formData.append('orderId', orderId);
+              formData.append('client_request_key', client_request_key);
+
 
               submitButton.addEventListener('click', function(e) {
                 e.preventDefault();
