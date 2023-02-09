@@ -86,8 +86,8 @@
   <input type="hidden" id="orderId" name="orderId" value="<%=orderId%>" >
 </form>
     <%
-            ImageRepositoryDAO dao = new ImageRepositoryDAO();
-      List<ImageRepository> images = dao.selectByUsernameAndOrderId(username, order.getOrderId());
+            ImageRepositoryDAO iDao = new ImageRepositoryDAO();
+      List<ImageRepository> images = iDao.selectByUsernameAndOrderId(username, order.getOrderId());
 
         for (ImageRepository image : images) {
                 %><img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" />
