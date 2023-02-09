@@ -72,7 +72,7 @@
                   ir.setFileType("PNG");
                   ir.setFileSize(0);
                   ImageRepositoryDAO dao = new ImageRepositoryDAO();
-                  dao.insert(ir);
+                  dao.insert(ir);asdfsdf
         }
       }
     } catch (FileUploadException e) {
