@@ -94,7 +94,7 @@
 
         for (ImageRepository image : images) {
                 %>
-                    <div class="col-sm-6 col-md-4">
+                    <div class="col-sm-4 col-md-2">
                     <div class="thumbnail">
                     <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" />
                     <HR>
