@@ -78,10 +78,11 @@
                 <div class="form-group">
                   Order:
                     <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a>
-                    (<a href="order.edit.images.jsp?orderId=<%= order.getOrderId() %>" >Refresh</a>)
+                    (<a href="order.edit.images.jsp?orderId=<%= order.getOrderId() %>" >Refresh / Upload New</a>)
                 </div>
-
+  <HR>
 <form>
+
   <label for="orderId">Add Image Description:</label><br>
   <textarea class="form-control" id="imgDescription" name="imgDescription" rows="2" ></textarea>
   <HR>
