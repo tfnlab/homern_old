@@ -77,9 +77,9 @@
 %>
                 <div class="form-group">
                   Order:
-                    <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
+                    <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a>
+                    (<a href="order.edit.images.jsp?orderId=<%= order.getOrderId() %>" >Refresh</a>)
                 </div>
-                <BR>
 
 <form>
   <input type="file" id="fileInput" accept="image/*" multiple>
