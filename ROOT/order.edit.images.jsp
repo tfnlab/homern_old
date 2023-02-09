@@ -87,6 +87,7 @@
 </form>
  <HR>
          <div id="image_div" name="image_div">
+                    <div class="d-flex flex-wrap">
 
     <%
             ImageRepositoryDAO iDao = new ImageRepositoryDAO();
@@ -94,15 +95,14 @@
 
         for (ImageRepository image : images) {
                 %>
-                    <div class="d-flex flex-wrap">
                         <div class="d-flex mb-4 mr-4">
                             <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" />
                             <HR>
                         </div>
-                    </div>
                 <%
         }
     %>
+                    </div>
           </div>
           </div>
       </div>
