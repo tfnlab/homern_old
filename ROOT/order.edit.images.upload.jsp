@@ -66,7 +66,7 @@
 
                   ImageRepository ir = new ImageRepository();
                   ir.setFilename(uuid);
-                  ir.setOrderId(30);
+                  ir.setOrderId(orderId);
                   ir.setUsername(username);
                   ir.setUploadDate(currentTime);
                   ir.setFileType("PNG");
@@ -79,4 +79,4 @@
        %><%=e.getMessage()%><%
     }
   }
-%> DONE NOW
+%> DONE NOW <%=orderId%>
