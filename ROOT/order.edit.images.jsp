@@ -79,7 +79,7 @@
                   Order:
                     <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    (<a href="order.edit.images.jsp?orderId=<%= order.getOrderId() %>" >refresh / upload New</a>)
+                    (<a href="order.edit.images.jsp?orderId=<%= order.getOrderId() %>" >refresh</a>)
                 </div>
   <HR>
 <form>
