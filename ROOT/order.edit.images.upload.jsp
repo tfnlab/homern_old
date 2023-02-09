@@ -73,7 +73,7 @@
         }
       }
     } catch (FileUploadException e) {
-      // Handle the exception
+       %><%=e.getMessage()%><%
     }
   }
 %> DONE
