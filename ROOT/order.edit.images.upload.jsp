@@ -39,7 +39,7 @@
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
     try {
       List<FileItem> items = upload.parseRequest(request);
-
+      ImageRepositoryDAO dao = new ImageRepositoryDAO();
       for (FileItem item : items) {
         if (item.isFormField()) {
             String inputFieldName = item.getFieldName();
@@ -71,10 +71,14 @@
                   ir.setUploadDate(currentTime);
                   ir.setFileType("PNG");
                   ir.setFileSize(1);
-                  ImageRepositoryDAO dao = new ImageRepositoryDAO();
                   dao.insert(ir);
         }
       }
+      List<ImageRepository> images = dao.selectByUsernameAndOrderId(username, orderId);
+
+        for (ImageRepository image : images) {
+                %><%=image.getFilename()%><%
+        }
     } catch (FileUploadException e) {
        %><%=e.getMessage()%><%
     }
