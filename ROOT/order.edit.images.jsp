@@ -119,13 +119,20 @@
         for (ImageRepository image : images) {
                 %>
                         <div class="d-flex mb-4 mr-4">
-                            <a href="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" >
-                            <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" style="width: 100px; height: 100px;" />
-                            <a>
                             <HR>
-                            <%=image.getType()%>
+
                             <HR>
-                            <%=image.getDescription()%>
+
+                              <div class="thumbnail">
+                                <a href="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" >
+                                <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" style="width: 100px; height: 100px;" />
+                                <a>
+                                <div class="caption">
+                                  <h3>Title <%=image.getType()%></h3>
+                                  <p>ID: <%=image.getId()%></p>
+                                  <p><%=image.getDescription()%></p>
+                                </div>
+                              </div>
                         </div>
                 <%
         }
