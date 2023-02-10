@@ -83,6 +83,20 @@
                 </div>
   <HR>
 <form>
+  <label for="orderId">Select Image Type:</label><br>
+<select id="image_type">
+  <option value="before">Before</option>
+  <option value="during">During</option>
+  <option value="after">After</option>
+  <option value="damage">Damage</option>
+  <option value="progress">Progress</option>
+  <option value="special_note">Special Note</option>
+  <option value="completed_work">Completed Work</option>
+  <option value="materials">Materials</option>
+  <option value="equipment">Equipment</option>
+  <option value="other">Other</option>
+</select>
+  <HR>
 
   <label for="orderId">Add Image Description:</label><br>
   <input class="form-control" id="description" name="description" />
@@ -179,6 +193,10 @@
                 };
                 var description = document.getElementById('description').value;
                 formData.append('description', description);
+                var selectBox = document.getElementById("image_type");
+                var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+                formData.append('image_type', selectedValue);
+
                 document.getElementById("submitButton").classList.remove("btn-primary");
                 document.getElementById("submitButton").classList.add("btn-warning");
 

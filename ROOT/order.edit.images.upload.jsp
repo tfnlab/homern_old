@@ -29,6 +29,7 @@
     int orderId = 0;
     String client_request_key = "none";
     String description = "none";
+    String image_type = "none";
     String username = (String) session.getAttribute("username");
 %>
 <%
@@ -55,6 +56,10 @@
            if (inputFieldName.equals("description")) {
                 description = inputFieldValue;
            }
+           if (inputFieldName.equals("image_type")) {
+                image_type = inputFieldValue;
+           }
+
         }
       }
 
@@ -85,6 +90,7 @@
                       ir.setClient_request_key(client_request_key);
                       ir.setDescription(description);
                       ir.setFileSize(1);
+                      ir.setType(image_type);
                       dao.insert(ir);
             }
           }
