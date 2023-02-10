@@ -85,7 +85,7 @@
 <form>
 
   <label for="orderId">Add Image Description:</label><br>
-  <textarea class="form-control" id="description" name="description" rows="2" ></textarea>
+  <input class="form-control" id="description" name="description" />
   <HR>
   <input type="file" id="fileInput" accept="image/*" multiple>
   <HR>
@@ -157,12 +157,9 @@
 
             canvas.toBlob(function(blob) {
               var formData = new FormData();
-              var description = document.getElementById('description').innerHTML;
-              alert(description);
               formData.append('file', blob);
               formData.append('orderId', orderId);
               formData.append('client_request_key', client_request_key);
-              formData.append('description', description);
 
 
 
@@ -180,6 +177,8 @@
                     // Handle error
                   }
                 };
+                var description = document.getElementById('description').innerHTML;
+                formData.append('description', description);
                 document.getElementById("submitButton").classList.remove("btn-primary");
                 document.getElementById("submitButton").classList.add("btn-warning");
 
