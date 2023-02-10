@@ -85,7 +85,7 @@
 <form>
 
   <label for="orderId">Add Image Description:</label><br>
-  <textarea class="form-control" id="imgDescription" name="imgDescription" rows="2" ></textarea>
+  <textarea class="form-control" id="description" name="description" rows="2" ></textarea>
   <HR>
   <input type="file" id="fileInput" accept="image/*" multiple>
   <HR>
@@ -142,6 +142,7 @@
       var submitButton = document.getElementById('submitButton');
       var orderId = document.getElementById('orderId').value;
       var client_request_key = document.getElementById('client_request_key').value;
+      var description = document.getElementById('description').innerHTML;
 
       fileInput.addEventListener('change', function(e) {
         for (var i = 0; i < fileInput.files.length; i++) {
@@ -159,6 +160,8 @@
               formData.append('file', blob);
               formData.append('orderId', orderId);
               formData.append('client_request_key', client_request_key);
+              formData.append('description', description);
+
 
 
               submitButton.addEventListener('click', function(e) {
