@@ -144,6 +144,8 @@
       var client_request_key = document.getElementById('client_request_key').value;
       var description = document.getElementById('description').innerHTML;
 
+      alert(description);
+      
       fileInput.addEventListener('change', function(e) {
         for (var i = 0; i < fileInput.files.length; i++) {
           var image = new Image();
