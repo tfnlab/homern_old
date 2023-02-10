@@ -142,10 +142,8 @@
       var submitButton = document.getElementById('submitButton');
       var orderId = document.getElementById('orderId').value;
       var client_request_key = document.getElementById('client_request_key').value;
-      var description = document.getElementById('description').innerHTML;
 
-      alert(description);
-      
+
       fileInput.addEventListener('change', function(e) {
         for (var i = 0; i < fileInput.files.length; i++) {
           var image = new Image();
@@ -159,6 +157,8 @@
 
             canvas.toBlob(function(blob) {
               var formData = new FormData();
+              var description = document.getElementById('description').innerHTML;
+              alert(description);
               formData.append('file', blob);
               formData.append('orderId', orderId);
               formData.append('client_request_key', client_request_key);
