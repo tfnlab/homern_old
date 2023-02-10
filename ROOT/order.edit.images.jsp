@@ -118,10 +118,6 @@
 
         for (ImageRepository image : images) {
                 %>
-                        <div class="d-flex flex-wrap">
-                            <HR>
-
-                            <HR>
                             <div class="col-sm-6 col-md-4">
                               <div class="thumbnail">
                                 <a href="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" >
@@ -134,7 +130,6 @@
                                 </div>
                               </div>
                             </div>
-                        </div>
                 <%
         }
     %>
