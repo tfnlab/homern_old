@@ -165,6 +165,9 @@
                     <!-- Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br> -->
                     Payment Method: <%= order.getPaymentMethod() %><br>
                     Order Total: <%= order.getOrderTotal() %><br>
+                    <%
+                        try{
+                    %>
                     <div class="panel-body" style="text-align: right;">
                     Total: <%= order.getOrderTotal_sql() %><br>
                     <%if(ordersMap.get(order.getOrderId())!=null && order.getOrderTotal_sql() !=null){%>
@@ -183,6 +186,12 @@
                     </div>
                     <%}%>
                     <hr>
+                    <%
+
+                    }catch(Exception ex){
+                        %><%=ex.getMessage()%><%
+                    }
+                    %>
                     <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
 
                 <%
