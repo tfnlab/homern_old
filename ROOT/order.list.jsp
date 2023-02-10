@@ -163,12 +163,13 @@
                     <!-- Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br> -->
                     Billing Address: <%= order.getBillingAddress() %><br>
                     <!-- Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br> -->
-                    <%
-                        try{
-                    %>
+
                     Payment Method: <%= order.getPaymentMethod() %><br>
                     Order Total: <%= order.getOrderTotal() %><br>
                     <div class="panel-body" style="text-align: right;">
+                    <%
+                        try{
+                    %>
                     Total: <%= order.getOrderTotal_sql() %><br>
                     <%if(ordersMap.get(order.getOrderId())!=null && order.getOrderTotal_sql() !=null){%>
                     Paid: <%= (ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql() %><br>
@@ -183,15 +184,15 @@
                     </span>
                     <br>
 
-                    </div>
-                    <%}%>
-                    <hr>
                     <%
 
                     }catch(Exception ex){
                         %><%=ex.getMessage()%><%
                     }
                     %>
+                    </div>
+                    <%}%>
+                    <hr>
                     <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
 
                 <%
