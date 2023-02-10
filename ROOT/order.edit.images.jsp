@@ -122,6 +122,10 @@
                             <a href="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" >
                             <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" style="width: 100px; height: 100px;" />
                             <a>
+                            <HR>
+                            <%=image.getType()%>
+                            <HR>
+                            <%=image.getDescription()%>
                         </div>
                 <%
         }
