@@ -177,7 +177,7 @@
                     // Handle error
                   }
                 };
-                var description = document.getElementById('description').innerHTML;
+                var description = document.getElementById('description').value;
                 formData.append('description', description);
                 document.getElementById("submitButton").classList.remove("btn-primary");
                 document.getElementById("submitButton").classList.add("btn-warning");
