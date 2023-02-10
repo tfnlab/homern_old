@@ -118,7 +118,7 @@
 
         for (ImageRepository image : images) {
                 %>
-                        <div class="d-flex mb-4 mr-4">
+                        <div class="d-flex flex-wrap">
                             <HR>
 
                             <HR>
