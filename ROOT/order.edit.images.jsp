@@ -122,7 +122,7 @@
                             <HR>
 
                             <HR>
-
+                            <div class="col-sm-6 col-md-4">
                               <div class="thumbnail">
                                 <a href="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" >
                                 <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" style="width: 100px; height: 100px;" />
@@ -133,6 +133,7 @@
                                   <p><%=image.getDescription()%></p>
                                 </div>
                               </div>
+                            </div>
                         </div>
                 <%
         }
