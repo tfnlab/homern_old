@@ -184,6 +184,7 @@
                     </span>
                     <br>
 
+                    <%}%>
                     <%
 
                     }catch(Exception ex){
@@ -191,7 +192,6 @@
                     }
                     %>
                     </div>
-                    <%}%>
                     <hr>
                     <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
 
