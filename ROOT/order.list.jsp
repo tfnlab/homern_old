@@ -163,11 +163,11 @@
                     <!-- Location : <%= order.getShippingAddresslat() %> ,<%= order.getShippingAddresslng() %><br> -->
                     Billing Address: <%= order.getBillingAddress() %><br>
                     <!-- Location : <%= order.getBillingAddresslat() %> ,<%= order.getBillingAddresslng() %><br> -->
-                    Payment Method: <%= order.getPaymentMethod() %><br>
-                    Order Total: <%= order.getOrderTotal() %><br>
                     <%
                         try{
                     %>
+                    Payment Method: <%= order.getPaymentMethod() %><br>
+                    Order Total: <%= order.getOrderTotal() %><br>
                     <div class="panel-body" style="text-align: right;">
                     Total: <%= order.getOrderTotal_sql() %><br>
                     <%if(ordersMap.get(order.getOrderId())!=null && order.getOrderTotal_sql() !=null){%>
