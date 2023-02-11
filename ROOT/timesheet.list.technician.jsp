@@ -106,7 +106,7 @@
                                 <form action="timesheet.list.technician.jsp" method="post">
                                   <div class="row">
                                 <div class="col-md-1">
-                                  <button type="submit" class="btn btn-primary">Save (<%=etc.getTimeSheetID()%>)</button>
+                                  <button type="submit" class="btn btn-primary">Save&nbsp;<%=etc.getTimeSheetID()%></button>
                                 </div>
                                 <div class="col-md-1">
                                    <div class="form-group">
