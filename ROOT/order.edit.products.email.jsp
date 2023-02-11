@@ -29,6 +29,7 @@ if (request.getParameter("orderId") != null && !request.getParameter("orderId").
 
   cpdf.createPD(uuid + ".pdf", order, request.getParameter("type"));
 
+                 OrderCustomerDao ocDao = new OrderCustomerDao();
                  List<OrderCustomer> ocList = ocDao.getCustomersByOrderId(orderId);
                  for (OrderCustomer ocItem : ocList) {
 
