@@ -126,7 +126,10 @@
                                     <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=formatterHH.format(etc.getEndTime())%>" >
                                   </div>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-1">
+                                    &nbsp;
+                                </div>
+                                <div class="col-md-1">
                                     <a href="timesheet.list.technician.jsp?action=remove&technicianId=<%=id%>&timesheetid=<%=etc.getTimeSheetID()%>" ><i class="fas fa-trash"></i></a>
                                     <input type="hidden" name="action" id="action" value="edit" />
 
