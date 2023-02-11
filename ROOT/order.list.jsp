@@ -170,8 +170,8 @@
                     <%
                         try{
                     %>
-                    Total: <%= order.getOrderTotal_sql() %><br>
                     <%if(ordersMap.get(order.getOrderId())!=null && order.getOrderTotal_sql() !=null){%>
+                    Total: <%= order.getOrderTotal_sql() %><br>
                     Paid: <%= (ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql() %><br>
                     Due: <%
                       BigDecimal amountDue = order.getOrderTotal_sql().subtract((ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql());
