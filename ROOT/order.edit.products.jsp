@@ -505,10 +505,10 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
     <script >
         window.onload = function() {
-          const textField = document.getElementById("orderCom");
+          var textField = document.getElementById("orderCom");
           textField.addEventListener("input", function() {
-            const textFieldValue = textField.value;
-            document.getElementById("orderCom").value = textFieldValue;
+            var textFieldValue = textField.innerHTML;
+            document.getElementById("orderCom").innerHTML = textFieldValue;
           });
         };
     </script>
