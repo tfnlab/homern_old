@@ -318,7 +318,7 @@
                                       <a href="javascript:void(0)" onclick="getMessageInvoice()">Generate Message</a>
                                   <HR>
                                   <label for="orderId">Touch Point</label><br>
-                                  <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
+                                  <textarea id="orderCom" name="orderCom" rows="5"></textarea>
                                    <HR>
                                   <button class="btn btn-primary" onclick="getInvEmail()">
                                     Email
