@@ -151,6 +151,7 @@
          String twilio_voice_forward_phone = request.getParameter("twilio_voice_forward_phone");
          String stripe_key = request.getParameter("stripe_key");
          String stripe_key_pub = request.getParameter("stripe_key_pub");
+         String sendgrid_key = request.getParameter("sendgrid_key");
           BigDecimal stripe_fee = new BigDecimal("0");
           if (request.getParameter("stripe_fee") != null && !request.getParameter("stripe_fee").isEmpty()) {
             stripe_fee = new BigDecimal(request.getParameter("stripe_fee"));
@@ -198,6 +199,7 @@
          user.setStripe_key(stripe_key);
          user.setStripe_key_pub(stripe_key_pub);
          user.setStripe_fee(stripe_fee);
+         user.setSendgrid_key(sendgrid_key);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
