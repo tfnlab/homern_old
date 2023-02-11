@@ -8,7 +8,6 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
-<%@ page import="com.tfnlab.business.Email_Manager" %>
 <%@ page import="java.util.UUID" %>
 <%@ page import="com.tfnlab.mysql.Entity" %>
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
@@ -32,15 +31,14 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                         Entity entity = new Entity();
                         EntityDao ed = new EntityDao();
                         entity = ed.getEntityById(customerId, username);
-                        Email_Manager eM = new Email_Manager();
                         try{
                               File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
                               FileWriter fw = new FileWriter(file);
                               BufferedWriter bw = new BufferedWriter(fw);
-                              bw.write(entity.getEmail() + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com"));
+                              bw.write(entity.getEmail() + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com")+ "<CONTENT>" + usernameOBJ.getSendgrid_email());
                               bw.close();
 
-                              Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), uuid.toString()).start();
+                              Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), usernameOBJ.getSendgrid_key()).start();
                               String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
                               String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
                               rm = stdout + stderr + " TEST ";
