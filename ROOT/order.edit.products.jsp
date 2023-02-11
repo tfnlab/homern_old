@@ -179,7 +179,7 @@
 
     }
     function getInvEmail(){
-      document.getElementById("orderCom").innerHTML = "test hell";
+//      document.getElementById("orderCom").innerHTML = "test hell";
       var select = document.getElementById("type");
       var selectedOption = select.options[select.selectedIndex];
       var type = selectedOption.value;
