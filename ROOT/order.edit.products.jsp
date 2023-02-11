@@ -291,12 +291,12 @@
                                     Download
                                     <span class="fas fa-download" ></span>
                                   </button>
-                                  <HR>
-                                  <button class="btn btn-primary" style="flex: 1;" onclick="getInvEmail()">
-                                    Email
-                                    <span class="fas fa-download" ></span>
-                                  </button>
                                 </div>
+                                  <HR>
+                                  <button class="btn btn-primary" onclick="getInvEmail()">
+                                    Email
+                                    <span class="fas fa-email" ></span>
+                                  </button>
 
 
 
