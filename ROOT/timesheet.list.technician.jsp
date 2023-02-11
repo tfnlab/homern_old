@@ -20,6 +20,7 @@
 <%@ page import="com.tfnlab.mysql.EmployeeTimeSheetDAO" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
+<%@ page import="com.tfnlab.util.HRNDate" %>
 <%@ include file="auth.jsp" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
@@ -109,7 +110,7 @@
                                 </div>
                                 <div class="col-md-1">
                                    <div class="form-group">
-                                    <label for="end_time">Start</label>
+                                    <label for="end_time">Start <%=HRNDate.getDay_of_week(etc.getStartTime())%></label>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
