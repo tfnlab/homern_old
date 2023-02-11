@@ -186,7 +186,7 @@
                 </div>
                 <div class="col-3 link-col">
                   <a href="user.edit.referred_by.jsp" tabindex="3" ><i class="fa fa-people-arrows"></i></a>
-                  <p>Social Media</p>
+                  <p>Referral</p>
                 </div>
               </div>
             <HR>
