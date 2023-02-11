@@ -503,13 +503,14 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script >
-        const textField = document.getElementById("textField");
-        textField.addEventListener("input", function() {
-          const textFieldValue = textField.value;
-          document.getElementById("display").innerHTML = textFieldValue;
-        });
-  </script>
+    <script >
+      const textField = document.getElementById("orderCom");
+      textField.addEventListener("input", function() {
+        const textFieldValue = textField.value;
+        document.getElementById("orderCom").value = textFieldValue;
+      });
+    </script>
+
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
