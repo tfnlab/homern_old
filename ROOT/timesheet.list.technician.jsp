@@ -106,7 +106,10 @@
                                 <form action="timesheet.list.technician.jsp" method="post">
                                   <div class="row">
                                 <div class="col-md-1">
-                                  <button type="submit" class="btn btn-primary">Save&nbsp;<%=etc.getTimeSheetID()%></button>
+                                    <%=etc.getTimeSheetID()%>
+                                    <small>
+                                    <a href="timesheet.list.technician.jsp?action=remove&technicianId=<%=id%>&timesheetid=<%=etc.getTimeSheetID()%>" ><i class="fas fa-trash"></i></a>
+                                    </small>
                                 </div>
                                 <div class="col-md-1">
                                    <div class="form-group">
@@ -137,7 +140,8 @@
                                     &nbsp;
                                 </div>
                                 <div class="col-md-1">
-                                    <a href="timesheet.list.technician.jsp?action=remove&technicianId=<%=id%>&timesheetid=<%=etc.getTimeSheetID()%>" ><i class="fas fa-trash"></i></a>
+
+                                    <button type="submit" class="btn btn-primary">Save&nbsp;</button>
                                     <input type="hidden" name="action" id="action" value="edit" />
 
                                     <input type="hidden" name="technicianId" id="technicianId" value="<%=id%>" />
