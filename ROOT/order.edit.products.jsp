@@ -306,6 +306,7 @@
                               <HR>
                                 <div class="form-group" style="display: flex;">
                                   <select class="selectpicker form-control" id="type" name="type" style="flex: 1;width:90%">
+                                    <option value="Material Delivery Note" >Material Delivery Note</option>
                                     <option value="Work Order" >Work Order</option>
                                     <option value="Proposal" >Proposal</option>
                                     <option value="Estimate" >Estimate</option>
