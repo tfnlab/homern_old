@@ -10,6 +10,8 @@
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="com.tfnlab.business.CreateInvoice" %>
 <%@ page import="java.util.UUID" %>
+<%@ page import="com.tfnlab.mysql.OrderCustomer" %>
+<%@ page import="com.tfnlab.mysql.OrderCustomerDao" %>
 <%@ page import="com.tfnlab.mysql.PaymentPostDao" %>
 <%@ page import="com.tfnlab.api.con.APIConfig" %><%
 OrderDao dao = new OrderDao();
