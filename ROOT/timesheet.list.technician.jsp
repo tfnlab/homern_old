@@ -107,6 +107,7 @@
                                   <div class="row">
                                 <div class="col-md-1">
                                     <%=etc.getTimeSheetID()%>
+                                    <HR>
                                     <small>
                                     <a href="timesheet.list.technician.jsp?action=remove&technicianId=<%=id%>&timesheetid=<%=etc.getTimeSheetID()%>" ><i class="fas fa-trash"></i></a>
                                     </small>
