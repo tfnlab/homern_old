@@ -193,7 +193,7 @@
                     <%
 
                     }catch(Exception ex){
-                        %><%=ex.getMessage()%><%
+                        %>Error: <%=ex.getMessage()%><%
                     }
                     %>
                     </div>
