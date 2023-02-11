@@ -111,15 +111,23 @@
                                     <input type="hidden" name="timesheetid" id="timesheetid" value="<%=etc.getTimeSheetID()%>" />
                                     <a href="timesheet.list.technician.jsp?timesheetid=<%=etc.getTimeSheetID()%>" ><%=etc.getTimeSheetID()%></a>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-1">
                                    <div class="form-group">
                                     <label for="end_time">Start Time</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                   <div class="form-group">
                                     <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(etc.getStartTime())%>" >
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-1">
                                   <div class="form-group">
                                     <label for="end_time">End Time</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
                                     <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=formatterHH.format(etc.getEndTime())%>" >
                                   </div>
                                 </div>
