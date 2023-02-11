@@ -186,9 +186,10 @@
 
                     <%}%>
                     <%
-
                     }catch(Exception ex){
-                        %>(No Products)<%
+                        %>
+                        <a href="order.edit.products.jsp?orderId=<%=order.getOrderId()%>" >(No Products)</a>
+                        <%
                     }
                     %>
                     </div>
