@@ -302,11 +302,6 @@
 
 
         <HR>
-        <form action="order.edit.schedule.jsp" method="POST" >
-          <p>Order Dates: <%= order.getOrderDate() %> - <%= order.getShipDate() %></p><br>
-          <p>Order Description: <%= order.getOrderDescription() %></p><br>
-        </form>
-        <HR>
         <%
              List<Product> products = pDao.searchByCustomerIdIsActive(username);
          %>
