@@ -181,11 +181,11 @@
                   <p>Expenses</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="user.edit.social.jsp" tabindex="3" ><i class="fas fa-share-square"></i></a>
+                  <a href="user.edit.social.jsp" tabindex="3" ><i class="fa fa-share-square"></i></a>
                   <p>Social Media</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="user.edit.referred_by.jsp" tabindex="3" ><i class="fas fa-people-arrows"></i></a>
+                  <a href="user.edit.referred_by.jsp" tabindex="3" ><i class="fa fa-people-arrows"></i></a>
                   <p>Social Media</p>
                 </div>
               </div>
