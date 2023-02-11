@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="col-md-1">
                                    <div class="form-group">
-                                    <label for="end_time">Start Time</label>
+                                    <label for="end_time">Start&nbspTime</label>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -123,7 +123,7 @@
                                 </div>
                                 <div class="col-md-1">
                                   <div class="form-group">
-                                    <label for="end_time">End Time</label>
+                                    <label for="end_time">End&nbspTime</label>
                                   </div>
                                 </div>
                                 <div class="col-md-2">
