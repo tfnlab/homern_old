@@ -505,6 +505,7 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
     <script >
       const textField = document.getElementById("orderCom");
+      alert("test");
       textField.addEventListener("input", function() {
         const textFieldValue = textField.value;
         document.getElementById("orderCom").value = textFieldValue;
