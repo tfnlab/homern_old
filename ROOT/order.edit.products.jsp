@@ -179,17 +179,13 @@
 
     }
     function getInvEmail(){
-//      document.getElementById("orderCom").innerHTML = "test hell";
-      alert(document.getElementById("orderCom").value);
-      alert(document.getElementById("orderCom").innerHTML);
       var select = document.getElementById("type");
       var selectedOption = select.options[select.selectedIndex];
       var type = selectedOption.value;
       var orderId = <%=orderId%>;
-      var encodedString = encodeURIComponent(document.getElementById("orderCom").innerHTML);
-      alert(encodedString);
+      var encodedString = encodeURIComponent(document.getElementById("orderCom").value);
       var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type +"&message=" + encodedString;
-      //window.open(url, "_blank");
+      window.open(url, "_blank");
     }
     function getInv() {
       var select = document.getElementById("type");
@@ -509,24 +505,7 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script >
-        window.onload = function() {
-            alert("test 1");
 
-            const textField = document.getElementById("orderCom");
-            const eventTypes = Object.keys(textField).filter(key => /^on/.test(key));
-            eventTypes.forEach(eventType => {
-              textField.removeEventListener(eventType.slice(2), textField[eventType]);
-            });
-            alert("test");
-
-              textField.addEventListener("input", function() {
-                  const textFieldValue = textField.value;
-                  document.getElementById("orderCom").value = textFieldValue;
-
-              });
-        };
-    </script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
