@@ -152,6 +152,8 @@
          String stripe_key = request.getParameter("stripe_key");
          String stripe_key_pub = request.getParameter("stripe_key_pub");
          String sendgrid_key = request.getParameter("sendgrid_key");
+         String sendgrid_email = request.getParameter("sendgrid_email");
+
           BigDecimal stripe_fee = new BigDecimal("0");
           if (request.getParameter("stripe_fee") != null && !request.getParameter("stripe_fee").isEmpty()) {
             stripe_fee = new BigDecimal(request.getParameter("stripe_fee"));
@@ -200,6 +202,8 @@
          user.setStripe_key_pub(stripe_key_pub);
          user.setStripe_fee(stripe_fee);
          user.setSendgrid_key(sendgrid_key);
+         user.setSendgrid_email(sendgrid_email);
+
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -428,6 +432,10 @@
            <div class="form-group mt-3">
            <label for="stripe_key_pub" class="mr-2">Send Grid Key:</label>
            <input type="text" class="form-control" id="sendgrid_key" name="sendgrid_key" value="<%= user.getSendgrid_key() %>" tabindex="25" >
+           </div>
+           <div class="form-group mt-3">
+           <label for="stripe_key_pub" class="mr-2">Send Grid Email:</label>
+           <input type="text" class="form-control" id="sendgrid_email" name="sendgrid_email" value="<%= user.getSendgrid_email() %>" tabindex="25" >
            </div>
            <div class="form-group mt-3">
              <button type="submit" class="btn btn-primary" tabindex="26">Submit</button>
