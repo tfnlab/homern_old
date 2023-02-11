@@ -26,38 +26,33 @@ if (request.getParameter("orderId") != null && !request.getParameter("orderId").
   CreateInvoice cpdf = new CreateInvoice();
 
   cpdf.createPD(uuid + ".pdf", order, request.getParameter("type"));
-%>DONE
 
-<%
-  APIConfig conf = new APIConfig();
-  String filename = uuid + ".pdf";
-  String filepath = conf.getPdfloc();
-  filepath + filename;
+                 List<OrderCustomer> ocList = ocDao.getCustomersByOrderId(orderId);
+                 for (OrderCustomer ocItem : ocList) {
 
-
-UUID uuid = UUID.randomUUID();
-String rm = "";
-  // Get the content from the query parameter
-            APIConfig ac = new APIConfig();
-
-
+                        APIConfig conf = new APIConfig();
+                        String filename = uuid + ".pdf";
+                        String filepath = conf.getPdfloc();
+                        UUID uuidEmail = UUID.randomUUID();
+                        String rm = "";
+                        APIConfig ac = new APIConfig();
                         Entity entity = new Entity();
                         EntityDao ed = new EntityDao();
                         entity = ed.getEntityById(customerId, username);
                         try{
-                              File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
+                              File file = new File(ac.getPdfloc() + uuidEmail.toString() + ".txt");
                               FileWriter fw = new FileWriter(file);
                               BufferedWriter bw = new BufferedWriter(fw);
-                              bw.write(entity.getEmail() + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com")+ "<CONTENT>" + usernameOBJ.getSendgrid_email());
+                              bw.write(ocItem.getCustomer().getEmail() + "<CONTENT>Test<CONTENT>Test<CONTENT>" + usernameOBJ.getSendgrid_email() + "<CONTENT>" + filepath + filename);
                               bw.close();
-
-                              Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), usernameOBJ.getSendgrid_key()).start();
+                              Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuidEmail.toString(), usernameOBJ.getSendgrid_key()).start();
                               String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
                               String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
                               rm = stdout + stderr + " TEST ";
                           }catch(IOException ex){
                               rm = ex.getMessage();
                           }
-            //eM.sendMail(entity.getEmail(), request.getParameter("subject"), request.getParameter("orderCom"));
-%>TEST UPDATE : <%=uuid.toString()%> - DONE <%=rm%>
+                            %>TEST UPDATE : <%=uuid.toString()%> - DONE <%=rm%><%
+                 }
+
 
