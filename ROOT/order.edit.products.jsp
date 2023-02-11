@@ -207,8 +207,9 @@
       var text = selectedOption.text;
       const encodedString = encodeURIComponent(text);
       var urlString = "genmessage.jsp?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
-      xhttp.open("GET", urlString, true);
-      xhttp.send();
+      xhttp.open("POST", urlString, true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send("orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString);
     }
   </script>
 </head>
