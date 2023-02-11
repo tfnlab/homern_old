@@ -520,9 +520,7 @@
 
               var textField = document.getElementById("orderCom");
               textField.addEventListener("input", function() {
-                  const textFieldValue = textField.value;
-                  document.getElementById("orderCom").value = textFieldValue;
-
+                     alert("test sdds");
               });
         };
     </script>
