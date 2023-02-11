@@ -107,11 +107,15 @@
                                   <button type="submit" class="btn btn-primary">Edit Time</button>
                                 </div>
                                 <div class="col-md-1">
+                                     <a href="timesheet.list.technician.jsp?timesheetid=<%=etc.getTimeSheetID()%>" ><%=etc.getTimeSheetID()%></a>
+                                </div>
+
+                                <div class="col-md-1">
                                    <div class="form-group">
                                     <label for="end_time">Start&nbspTime</label>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                    <div class="form-group">
                                     <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(etc.getStartTime())%>" >
                                     </div>
@@ -127,12 +131,11 @@
                                   </div>
                                 </div>
                                 <div class="col-md-1">
-                                    <a href="timesheet.list.technician.jsp?action=remove&technicianId=<%=id%>&timesheetid=<%=etc.getTimeSheetID()%>" >Remove</a>
+                                    <a href="timesheet.list.technician.jsp?action=remove&technicianId=<%=id%>&timesheetid=<%=etc.getTimeSheetID()%>" ><i class="fas fa-trash"></i></a>
                                     <input type="hidden" name="action" id="action" value="edit" />
 
                                     <input type="hidden" name="technicianId" id="technicianId" value="<%=id%>" />
                                     <input type="hidden" name="timesheetid" id="timesheetid" value="<%=etc.getTimeSheetID()%>" />
-                                    <a href="timesheet.list.technician.jsp?timesheetid=<%=etc.getTimeSheetID()%>" ><%=etc.getTimeSheetID()%></a>
                                 </div>
                                 </div>
                                 </form>
