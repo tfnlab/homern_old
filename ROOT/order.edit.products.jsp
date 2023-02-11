@@ -116,7 +116,7 @@
       var select = document.getElementById("customer-touch-points");
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
-      const encodedString = encodeURIComponent(text);
+      var encodedString = encodeURIComponent(text);
       var urlString = "genmessage.jsp?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
       xhttp.open("GET", urlString, true);
       xhttp.send();
@@ -180,7 +180,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var type = selectedOption.value;
       var orderId = <%=orderId%>;
-      const encodedString = encodeURIComponent(document.getElementById("orderCom").innerHTML);
+      var encodedString = encodeURIComponent(document.getElementById("orderCom").innerHTML);
       var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type +"&message=" + encodedString;
       window.open(url, "_blank");
     }
