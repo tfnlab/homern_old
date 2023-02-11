@@ -205,7 +205,7 @@
       var select = document.getElementById("type");
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
-      const encodedString = encodeURIComponent(text);
+      var encodedString = encodeURIComponent(text);
       var urlString = "genmessage.jsp?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
       xhttp.open("POST", urlString, true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
