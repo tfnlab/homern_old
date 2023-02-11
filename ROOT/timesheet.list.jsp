@@ -102,8 +102,8 @@
                                 <button type="button" class="btn btn-danger" onclick="updateClock('<%= technician.getTechnicianId() %>')">Stop</button>
                                <%}else{%>
                                 <button type="button" class="btn btn-success" onclick="updateClock('<%= technician.getTechnicianId() %>')">Start</button>
-                                <HR>
                                <%}%>
+                                <HR>
                                  </div>
                                  <HR>
                                 </div>
