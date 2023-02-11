@@ -39,9 +39,6 @@ if (request.getParameter("orderId") != null && !request.getParameter("orderId").
                         UUID uuidEmail = UUID.randomUUID();
                         String rm = "";
                         APIConfig ac = new APIConfig();
-                        Entity entity = new Entity();
-                        EntityDao ed = new EntityDao();
-                        entity = ed.getEntityById(customerId, username);
                         try{
                               File file = new File(ac.getPdfloc() + uuidEmail.toString() + ".txt");
                               FileWriter fw = new FileWriter(file);
