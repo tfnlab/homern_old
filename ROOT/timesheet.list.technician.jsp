@@ -64,6 +64,9 @@
         <h2>Template</h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
+
+
+
           <div class="container mt-5">
 <%
                     SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
@@ -91,7 +94,9 @@
 
                        List<EmployeeTimeSheet> etsList = etsDao.getTimesheetEntryByTechnicianId(id);
 
-                       %>LIST SIZE <%=etsList.size()%> <BR><BR>
+                       %><a href="timesheet.list.jsp" tabindex="12" >Time Sheet
+                       <i class="fa fa-clock"></i></a>
+                        <BR><BR>
                        <div class="container-fluid">
                        <%
                        for (EmployeeTimeSheet etc : etsList) {
