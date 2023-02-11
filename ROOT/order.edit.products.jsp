@@ -181,8 +181,9 @@
       var type = selectedOption.value;
       var orderId = <%=orderId%>;
       var encodedString = encodeURIComponent(document.getElementById("orderCom").innerHTML);
+      alert(encodedString);
       var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type +"&message=" + encodedString;
-      window.open(url, "_blank");
+      //window.open(url, "_blank");
     }
     function getInv() {
       var select = document.getElementById("type");
