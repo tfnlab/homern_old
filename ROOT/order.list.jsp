@@ -180,7 +180,12 @@
                       colorT = ((ordersMap.get(order.getOrderId())).getOrderTotal_paid_sql().compareTo(BigDecimal.ZERO) == 0) ? "red" : "#9B870C";
                     %>
                     <span style="color: <%= colorT %>;">
-                      <%= if(amountDue!=null)amountDue %>
+                      <% if(amountDue!=null) {
+                      %>
+                      <%=amountDue%>
+                      <%
+                        }
+                      %>
                     </span>
                     <br>
 
