@@ -175,7 +175,14 @@
     function calTotal() {
         document.getElementById("total").value = document.getElementById("units").value * document.getElementById("price").value;
     }
-
+    function getInvEmail{
+      var select = document.getElementById("type");
+      var selectedOption = select.options[select.selectedIndex];
+      var type = selectedOption.value;
+      var orderId = <%=orderId%>;
+      var url = "order.edit.products.print.email.jsp?orderId=" + orderId + "&type=" + type;
+      window.open(url, "_blank");
+    }
     function getInv() {
       var select = document.getElementById("type");
       var selectedOption = select.options[select.selectedIndex];
@@ -282,6 +289,11 @@
                                   </select>
                                   <button class="btn btn-primary" style="flex: 1;" onclick="getInv()">
                                     Download
+                                    <span class="fas fa-download" ></span>
+                                  </button>
+                                  <HR>
+                                  <button class="btn btn-primary" style="flex: 1;" onclick="getInvEmail()">
+                                    Email
                                     <span class="fas fa-download" ></span>
                                   </button>
                                 </div>
