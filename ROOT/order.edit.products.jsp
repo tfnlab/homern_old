@@ -180,7 +180,8 @@
       var selectedOption = select.options[select.selectedIndex];
       var type = selectedOption.value;
       var orderId = <%=orderId%>;
-      var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type;
+      const encodedString = encodeURIComponent(document.getElementById("orderCom").innerHTML);
+      var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type +"&message=" + encodedString;
       window.open(url, "_blank");
     }
     function getInv() {
