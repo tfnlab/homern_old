@@ -424,7 +424,11 @@
            <input type="text" class="form-control" id="stripe_fee" name="stripe_fee" value="<%= user.getStripe_fee() %>" tabindex="24" >
            </div>
            <div class="form-group mt-3">
-             <button type="submit" class="btn btn-primary" tabindex="25">Submit</button>
+           <label for="stripe_key_pub" class="mr-2">Send Grid Key:</label>
+           <input type="text" class="form-control" id="sendgrid_key" name="sendgrid_key" value="<%= user.getSendgrid_key() %>" tabindex="25" >
+           </div>
+           <div class="form-group mt-3">
+             <button type="submit" class="btn btn-primary" tabindex="26">Submit</button>
            </div>
            </form>
 
