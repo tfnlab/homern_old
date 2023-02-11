@@ -296,7 +296,7 @@
                                   <HR>
                                   <button class="btn btn-primary" onclick="getInvEmail()">
                                     Email
-                                    <span class="fas fa-email" ></span>
+                                    <span class="fas fa-envelope" ></span>
                                   </button>
 
 
