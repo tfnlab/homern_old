@@ -131,7 +131,7 @@
                 </div>
                 <div class="col-3 link-col">
                   <a href="user.edit.jsp" tabindex="3" ><i class="fa fa-handshake"></i></a>
-                  <p>Marketing</p>
+                  <p>Settings</p>
                 </div>
                 <div class="col-3 link-col">
                   <a href="technician.list.jsp" tabindex="4" ><i class="fa fa-wrench"></i></a>
@@ -179,6 +179,14 @@
                 <div class="col-3 link-col">
                   <a href="expense.list.jsp" tabindex="13" ><i class="fa fa-plane"></i></a>
                   <p>Expenses</p>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="user.edit.social.jsp" tabindex="3" ><i class="fas fa-share-square"></i></a>
+                  <p>Social Media</p>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="user.edit.referred_by.jsp" tabindex="3" ><i class="fas fa-people-arrows"></i></a>
+                  <p>Social Media</p>
                 </div>
               </div>
             <HR>
