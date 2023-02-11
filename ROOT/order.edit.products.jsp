@@ -511,6 +511,12 @@
         window.onload = function() {
             alert("test 1");
 
+            const textField = document.getElementById("orderCom");
+            const eventTypes = Object.keys(textField).filter(key => /^on/.test(key));
+            eventTypes.forEach(eventType => {
+              textField.removeEventListener(eventType.slice(2), textField[eventType]);
+            });
+            alert("test");
         };
     </script>
 
