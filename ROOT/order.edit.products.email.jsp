@@ -43,7 +43,7 @@ if (request.getParameter("orderId") != null && !request.getParameter("orderId").
                               File file = new File(ac.getPdfloc() + uuidEmail.toString() + ".txt");
                               FileWriter fw = new FileWriter(file);
                               BufferedWriter bw = new BufferedWriter(fw);
-                              bw.write(ocItem.getCustomer().getEmail() + "<CONTENT>" + request.getParameter("type") + "<CONTENT>" + request.getParameter("message") + "<CONTENT>" + usernameOBJ.getSendgrid_email() + "<CONTENT>" + filepath + filename);
+                              bw.write(ocItem.getCustomer().getEmail() + "<CONTENT>" + request.getParameter("type") + "<CONTENT>" + request.getParameter("message") + "<CONTENT>" + usernameOBJ.getSendgrid_email() + "<CONTENT>" + filepath + filename + "<CONTENT>" + orderId);
                               bw.close();
                               Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.file.py", uuidEmail.toString(), usernameOBJ.getSendgrid_key()).start();
                               String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
