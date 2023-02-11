@@ -179,6 +179,8 @@
 
     }
     function getInvEmail(){
+        var confirmResult = confirm("Are you sure you want to move the request forward?");
+        if (confirmResult == true) {
       var select = document.getElementById("type");
       var selectedOption = select.options[select.selectedIndex];
       var type = selectedOption.value;
@@ -186,6 +188,7 @@
       var encodedString = encodeURIComponent(document.getElementById("orderCom").value);
       var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type +"&message=" + encodedString;
       window.open(url, "_blank");
+         }
     }
     function getInv() {
       var select = document.getElementById("type");
