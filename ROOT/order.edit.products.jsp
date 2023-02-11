@@ -287,6 +287,7 @@
                                     <option value="Payment Request" >Payment Request</option>
                                     <option value="Payment Confirmation" >Payment Confirmation</option>
                                   </select>
+                                  &nbsp;
                                   <button class="btn btn-primary" style="flex: 1;" onclick="getInv()">
                                     Download
                                     <span class="fas fa-download" ></span>
