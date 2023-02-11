@@ -45,7 +45,7 @@ if (request.getParameter("orderId") != null && !request.getParameter("orderId").
                               BufferedWriter bw = new BufferedWriter(fw);
                               bw.write(ocItem.getCustomer().getEmail() + "<CONTENT>Test<CONTENT>Test<CONTENT>" + usernameOBJ.getSendgrid_email() + "<CONTENT>" + filepath + filename);
                               bw.close();
-                              Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.email.py", uuidEmail.toString(), usernameOBJ.getSendgrid_key()).start();
+                              Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.file.py", uuidEmail.toString(), usernameOBJ.getSendgrid_key()).start();
                               String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
                               String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
                               rm = stdout + stderr + " TEST ";
