@@ -188,7 +188,7 @@
                     <%
 
                     }catch(Exception ex){
-                        %>Error (No Products)<%
+                        %>(No Products)<%
                     }
                     %>
                     </div>
