@@ -504,12 +504,14 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
     <script >
-      const textField = document.getElementById("orderCom");
-      alert("test");
-      textField.addEventListener("input", function() {
-        const textFieldValue = textField.value;
-        document.getElementById("orderCom").value = textFieldValue;
-      });
+    const textField = document.getElementById("orderCom");
+    function inputHandler() {
+      const textFieldValue = textField.value;
+      document.getElementById("orderCom").value = textFieldValue;
+      // Remove all other input event listeners
+      textField.removeEventListener("input", inputHandler);
+    }
+    textField.addEventListener("input", inputHandler);
     </script>
 
   <!-- Template Main JS File -->
