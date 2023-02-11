@@ -175,7 +175,7 @@
     function calTotal() {
         document.getElementById("total").value = document.getElementById("units").value * document.getElementById("price").value;
     }
-    function getInvEmail{
+    function getInvEmail(){
       var select = document.getElementById("type");
       var selectedOption = select.options[select.selectedIndex];
       var type = selectedOption.value;
