@@ -97,6 +97,7 @@
                        %><a href="timesheet.list.jsp" tabindex="12" >Time Sheet
                        <i class="fa fa-clock"></i></a>
                         <BR><BR>
+                                 <HR>
                        <div class="container-fluid">
                        <%
                        for (EmployeeTimeSheet etc : etsList) {
