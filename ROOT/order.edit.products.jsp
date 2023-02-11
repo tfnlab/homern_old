@@ -180,6 +180,8 @@
     }
     function getInvEmail(){
 //      document.getElementById("orderCom").innerHTML = "test hell";
+      alert(document.getElementById("orderCom").value);
+      alert(document.getElementById("orderCom").innerHTML);
       var select = document.getElementById("type");
       var selectedOption = select.options[select.selectedIndex];
       var type = selectedOption.value;
