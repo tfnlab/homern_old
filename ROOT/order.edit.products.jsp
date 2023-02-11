@@ -519,9 +519,7 @@
             alert("test");
 
               var textField = document.getElementById("orderCom");
-              textField.addEventListener("input", function() {
-                     alert("test sdds");
-              });
+
         };
     </script>
 
