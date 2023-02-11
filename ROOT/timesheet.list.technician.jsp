@@ -106,22 +106,22 @@
                                 <div class="col-md-2">
                                   <button type="submit" class="btn btn-primary">Edit&nbsp;Time (<%=etc.getTimeSheetID()%>)</button>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-1">
                                    <div class="form-group">
-                                    <label for="end_time">Start&nbspTime</label>
+                                    <label for="end_time">Start</label>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                    <div class="form-group">
                                     <input type="datetime-local" class="form-control" id="start_time" name="start_time" required datepicker value="<%=formatterHH.format(etc.getStartTime())%>" >
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-1">
                                   <div class="form-group">
-                                    <label for="end_time">End&nbspTime</label>
+                                    <label for="end_time">End</label>
                                   </div>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                   <div class="form-group">
                                     <input type="datetime-local" class="form-control" id="end_time" name="end_time" required datepicker value="<%=formatterHH.format(etc.getEndTime())%>" >
                                   </div>
