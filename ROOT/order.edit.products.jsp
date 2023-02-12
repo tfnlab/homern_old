@@ -186,10 +186,11 @@
       var type = selectedOption.value;
       var orderId = <%=orderId%>;
       var encodedString = encodeURIComponent(document.getElementById("orderCom").value);
-        var customersChecked = document.getElementById("customers").checked;
-        var techniciansChecked = document.getElementById("technicians").checked;
+//        var customersChecked = document.getElementById("customers").checked;
+//        var techniciansChecked = document.getElementById("technicians").checked;
 
-        var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type + "&recipients=" + recipientsParam + "&message=" + encodedString + "&customersChecked=" + customersChecked + "&techniciansChecked=" + techniciansChecked;
+//        var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type + "&recipients=" + recipientsParam + "&message=" + encodedString + "&customersChecked=" + customersChecked + "&techniciansChecked=" + techniciansChecked;
+          var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type + "&recipients=" + recipientsParam + "&message=" + encodedString ;
          window.open(url, "_blank");
 
          }
