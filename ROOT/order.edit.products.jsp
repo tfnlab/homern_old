@@ -333,10 +333,6 @@
                                   <label for="orderId">Touch Point</label><br>
                                   <textarea class="form-control" id="orderCom" name="orderCom" rows="5" onkeyup=""></textarea>
                                    <HR>
-                        <input type="checkbox" id="customers" name="customers" value="customers" checked > Customers
-
-                        <input type="checkbox" id="technicians"  name="technicians" value="technicians" checked > Technicians
-
 
                                   <button class="btn btn-primary" onclick="getInvEmail()">
                                     Email
