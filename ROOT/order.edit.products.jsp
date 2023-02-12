@@ -186,7 +186,19 @@
       var type = selectedOption.value;
       var orderId = <%=orderId%>;
       var encodedString = encodeURIComponent(document.getElementById("orderCom").value);
-      var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type +"&message=" + encodedString;
+        var customersChecked = document.querySelector('input[name="customers"]:checked');
+        var techniciansChecked = document.querySelector('input[name="technicians"]:checked');
+        var recipients = [];
+        if (customersChecked) {
+          recipients.push(customersChecked.value);
+        }
+        if (techniciansChecked) {
+          recipients.push(techniciansChecked.value);
+        }
+        var recipientsParam = recipients.join(',');
+        var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type + "&recipients=" + recipientsParam + "&message=" + encodedString;
+
+//      var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type +"&message=" + encodedString;
       window.open(url, "_blank");
          }
     }
