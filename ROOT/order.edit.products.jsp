@@ -186,13 +186,9 @@
       var type = selectedOption.value;
       var orderId = <%=orderId%>;
       var encodedString = encodeURIComponent(document.getElementById("orderCom").value);
-//        var customersChecked = document.getElementById("customers").checked;
-//        var techniciansChecked = document.getElementById("technicians").checked;
 
-//        var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type + "&recipients=" + recipientsParam + "&message=" + encodedString + "&customersChecked=" + customersChecked + "&techniciansChecked=" + techniciansChecked;
-          var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type + "&recipients=" + recipientsParam + "&message=" + encodedString ;
-         window.open(url, "_blank");
-
+      var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type +"&message=" + encodedString;
+      window.open(url, "_blank");
          }
     }
     function getInv() {
@@ -333,6 +329,10 @@
                                   <label for="orderId">Touch Point</label><br>
                                   <textarea class="form-control" id="orderCom" name="orderCom" rows="5" onkeyup=""></textarea>
                                    <HR>
+                        <input type="checkbox" name="customers" value="customers"> Customers
+
+                        <input type="checkbox" name="technicians" value="technicians"> Technicians
+
 
                                   <button class="btn btn-primary" onclick="getInvEmail()">
                                     Email
