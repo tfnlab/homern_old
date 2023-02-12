@@ -54,6 +54,6 @@ if (request.getParameter("orderId") != null && !request.getParameter("orderId").
                           }
                             %>TEST UPDATE : <%=uuid.toString()%> - DONE <%=rm%><%
                  }
-                 %>technicians: <%=request.getParameter("technicians")%> customers: <%=request.getParameter("customers")%>
+                 %>technicians: <%=request.getParameter("techniciansChecked")%> customers: <%=request.getParameter("customersChecked")%>
 
 
