@@ -188,7 +188,7 @@
       var encodedString = encodeURIComponent(document.getElementById("orderCom").value);
         var customersChecked = document.getElementById("customers").checked;
         var techniciansChecked = document.getElementById("technicians").checked;
-        
+
         var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type + "&recipients=" + recipientsParam + "&message=" + encodedString + "&customersChecked=" + customersChecked + "&techniciansChecked=" + techniciansChecked;
          window.open(url, "_blank");
 
@@ -334,7 +334,7 @@
                                    <HR>
                         <input type="checkbox" id="customers" name="customers" value="customers" checked > Customers
 
-                        <input type="checkbox" id="technicians"  name="technicians" value="technicians" > Technicians
+                        <input type="checkbox" id="technicians"  name="technicians" value="technicians" checked > Technicians
 
 
                                   <button class="btn btn-primary" onclick="getInvEmail()">
