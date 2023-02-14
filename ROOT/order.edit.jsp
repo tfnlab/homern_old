@@ -192,7 +192,11 @@
     window.onload = function() {
         calculateFee();
     };
-
+    function copyAddress(){
+      document.getElementById("billingAddress").value = document.getElementById("shippingAddress").value;
+      document.getElementById("billingAddressaclat").value = document.getElementById("shippingAddressaclat").value;
+      document.getElementById("billingAddressaclng").value = document.getElementById("shippingAddressaclng").value;
+    }
   </script>
 </head>
 
@@ -370,7 +374,7 @@
 
           <hr>
 
-          <label for="billingAddress">Billing Address:</label><br>
+          <label for="billingAddress">Billing Address: <i class="fas fa-copy" onclick="copyAddress()" ></i> </label> <br>
           <input class="form-control" type="text" id="billingAddress" name="billingAddress" value="<%= order.getBillingAddress() %>" onkeypress="callAC(this)"  tabindex="13"><br>
           <input type="hidden" id="billingAddressaclat" name="billingAddressaclat" value="<%= order.getBillingAddresslat() %>">
           <input type="hidden" id="billingAddressaclng" name="billingAddressaclng" value="<%= order.getBillingAddresslng() %>">
