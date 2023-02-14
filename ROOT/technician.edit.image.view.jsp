@@ -28,7 +28,11 @@
     APIConfig conf = new APIConfig();
 
 
-    String filename  = filepath +  username + "." +  orderId + "." + uuid + ".png";
+    String filename = technicianId + "." + username + ".png";
+    //String filename  = filepath +  username + "." +  orderId + "." + uuid + ".png";
+
+
+    String filepath = conf.getPdfloc();
 
 
     String filepath = conf.getPdfloc();
