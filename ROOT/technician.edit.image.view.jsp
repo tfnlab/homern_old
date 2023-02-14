@@ -33,9 +33,6 @@
 
 
     String filepath = conf.getPdfloc();
-
-
-    String filepath = conf.getPdfloc();
     String logofilepath  = filepath +  "technician." + filename;
     response.setContentType("image/jpeg");
 //    response.setContentLength(new File(logofilepath).length());
