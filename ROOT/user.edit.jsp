@@ -426,7 +426,7 @@
            <input type="text" class="form-control" id="stripe_key_pub" name="stripe_key_pub" value="<%= user.getStripe_key_pub() %>" tabindex="23" >
            </div>
            <div class="form-group mt-3">
-           <label for="stripe_key_pub" class="mr-2">Stripe Key Pub:</label>
+           <label for="stripe_key_pub" class="mr-2">Stripe Fee:</label>
            <input type="text" class="form-control" id="stripe_fee" name="stripe_fee" value="<%= user.getStripe_fee() %>" tabindex="24" >
            </div>
            <div class="form-group mt-3">
