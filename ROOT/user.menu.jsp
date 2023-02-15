@@ -188,6 +188,10 @@
                   <a href="user.edit.referred_by.jsp" tabindex="3" ><i class="fa fa-people-arrows"></i></a>
                   <p>Referral</p>
                 </div>
+                <div class="col-3 link-col">
+                  <a href="dmp.list.jsp" tabindex="3" ><i class="fa fa-database"></i></a>
+                  <p>Data Management Platform</p>
+                </div>
               </div>
             <HR>
             <p>Our home service software offers a range of features to help companies streamline their operations:</p>
