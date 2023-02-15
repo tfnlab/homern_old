@@ -61,8 +61,6 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
-                    CONTENT GO HERE
-
                     Data Management Platform
           </div>
       </div>
