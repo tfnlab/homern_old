@@ -92,6 +92,7 @@
                   fileContent.close();
                 }
               }
+            }
             %>
           <div class="container mt-5">
                     Data Management Platform
