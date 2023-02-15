@@ -415,7 +415,7 @@
           <label for="orderTotal">Order Total:</label><br>
           <input type="text" id="orderTotal" name="orderTotal" value="<%= order.getOrderTotal() %>"  tabindex="15" onchange="calculateFee()" onkeypress="calculateFee()"><br>
           <hr>
-          <label for="orderTotal">Order Total Fee Included:</label><br>
+          <label for="orderTotal">Order Total Payment Fee Included: (i.e. select 'Payment Method' (Stripe))</label><br>
           <input type="text" id="orderTotalAfterFee" name="orderTotalAfterFee"  tabindex="16"><br>
           <hr>
           <h4>Property Info</h4>

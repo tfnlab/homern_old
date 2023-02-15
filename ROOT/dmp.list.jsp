@@ -16,10 +16,12 @@
 <%@ page import="com.tfnlab.mysql.Product" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 <%@ page import="com.tfnlab.mysql.ProductDashBoard" %>
+<%@ page import="java.util.UUID" %>
 <%@ include file="auth.jsp" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");
+          String uuid = java.util.UUID.randomUUID().toString();
 
 %>
 <!DOCTYPE html>
@@ -60,8 +62,42 @@
         <h2>Template</h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
+
+        <%
+          boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+          if (isMultipart) {
+              APIConfig conf = new APIConfig();
+
+              String filepath = conf.getPdfloc();
+              DiskFileItemFactory factory = new DiskFileItemFactory();
+              factory.setSizeThreshold(1024 * 1024); // Set the size threshold for storing files in memory
+              factory.setRepository(new File(filepath)); // Set the repository location for temporarily storing files
+              ServletFileUpload upload = new ServletFileUpload(factory);
+              List<FileItem> items = upload.parseRequest(request);
+              String  filename = uuid + "." + username + ".csv";
+              for (FileItem item : items) {
+                if (!item.isFormField()) { // Check if the item is an uploaded file
+                  InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
+                  // Save the file to a local directory or database, or process the contents in some other way
+                  //String fileName = item.getName(); // Get the original file name
+                  FileOutputStream fos = new FileOutputStream(filepath  +  "dmp." + filename);
+                  byte[] buffer = new byte[1024];
+                  int length;
+                  while ((length = fileContent.read(buffer)) > 0) {
+                    fos.write(buffer, 0, length);
+                  }
+                  fos.close();
+                  fileContent.close();
+                }
+              }
+            %>
           <div class="container mt-5">
                     Data Management Platform
+                    <HR>
+                    <form method="post" action="dmp.list.jsp" enctype="multipart/form-data">
+                      <input type="file" name="file" />
+                      <input type="submit" value="Upload" />
+                    </form>
           </div>
       </div>
     </section><!-- End Blog Section -->
