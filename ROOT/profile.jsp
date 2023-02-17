@@ -177,10 +177,10 @@
                   <button type="submit" class="btn btn-primary" onclick="postReview()">Submit Review</button>
                 </form>
 
-                </p>
                   <div class="portfolio_description_panel">
 
                   </div>
+                </p>
             </div>
           </div>
 
