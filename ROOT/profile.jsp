@@ -301,6 +301,9 @@
   <script >
   window.onload = function() {
     // Get a reference to the div element
+    loadReviews();
+  };
+  function loadReviews() {
     const div = document.getElementById('portfolio_description_panel_token');
 
     // Create an XMLHttpRequest object
@@ -328,7 +331,7 @@
 
     // Send the request
     xhr.send();
-  };  
+  }
   </script>
 </body>
 
