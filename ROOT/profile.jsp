@@ -58,10 +58,9 @@
     xhr.onerror = function() {
       console.error('Request failed.');
     };
-    const formData = `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&rating=${encodeURIComponent(rating)}&comment=${encodeURIComponent(comment)}`;
+    const formData = `name=${encodeURI(name)}&email=${encodeURI(email)}&rating=${encodeURI(rating)}&comment=${encodeURI(comment)}`;
     xhr.send(formData);
   }
-
 
 
   </script>
