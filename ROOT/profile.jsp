@@ -38,34 +38,30 @@
   // get the form data
   function postReview(event) {
     event.preventDefault();
-    alert("TEST");
     const form = document.getElementById('review-form');
-    const formData = new FormData(form);
-    // create a new XMLHttpRequest object
+    const name = form.elements['name'].value;
+    const email = form.elements['email'].value;
+    const rating = form.elements['rating'].value;
+    const comment = form.elements['comment'].value;
     const xhr = new XMLHttpRequest();
-    // open the request
     xhr.open('POST', 'profile.save.jsp');
-    // set the request header
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    // define the onload function
     xhr.onload = function() {
       if (xhr.status === 200) {
-        // do something with the response data
         alert(xhr.responseText);
         document.getElementById('portfolio_description_panel').innerHTML = xhr.responseText;
         console.log(xhr.responseText);
       } else {
-        // handle the error
         console.error(xhr.statusText);
       }
     };
-    // define the onerror function
     xhr.onerror = function() {
       console.error('Request failed.');
     };
-    // send the request
+    const formData = `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&rating=${encodeURIComponent(rating)}&comment=${encodeURIComponent(comment)}`;
     xhr.send(formData);
   }
+
 
 
   </script>
