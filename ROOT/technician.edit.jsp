@@ -264,6 +264,10 @@
               <input type="text" class="form-control" id="wallet_id_public" name="wallet_id_public" value="<%= technician.getWallet_id_public() %>">
           </div>
           <div class="form-group">
+              <label for="wallet_id_public">Active NFT ID (<a href="https://opensea.io/collection/liquid-crystal-display" >Liquid Crystal Display</a>)</label>
+              <input type="text" class="form-control" id="wallet_id_active_nft_id" name="wallet_id_active_nft_id" value="<%= technician.getWallet_id_active_nft_id() %>">
+          </div>
+          <div class="form-group">
               <label for="technicianNotes">Notes</label>
               <textarea class="form-control" id="technicianNotes" name="technicianNotes"><%= technician.getTechnicianNotes() %></textarea>
           </div>
