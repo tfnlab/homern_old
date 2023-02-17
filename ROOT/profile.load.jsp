@@ -11,7 +11,11 @@ String token_id = request.getParameter("token_id");
 ReviewDAO reviewDAO = new ReviewDAO();
 List<Review> reviews = reviewDAO.getReviewsByTokenId(token_id);
 
+double average_review = reviewDAO.getAverageRatingByTokenId(token_id);
+
 %>
+<h3>Average Rating <%=average_review%></h3>
+<hr>
 <% for (Review review : reviews) { %>
    <%=review.getName()%><BR>
    <%=review.getComment()%><BR>
