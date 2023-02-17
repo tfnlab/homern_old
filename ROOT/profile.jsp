@@ -110,8 +110,7 @@
             <div class="portfolio-info">
               <h3><a href="https://opensea.io/collection/home-renovation-nation">Home Renovation Nation</a></h3>
               <ul>
-                <li><strong>ID</strong>: <%=request.getParameter("token_id")%></li>
-                <li><strong>Project date</strong>: 04 Feb, 2023</li>
+                <li><strong>Token ID</strong>: <%=request.getParameter("token_id")%></li>
                 <li><strong>URL</strong>: <a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%=request.getParameter("token_id")%>" >opensea.io</a></li>
               </ul>
             </div>
