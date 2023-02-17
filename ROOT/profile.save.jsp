@@ -13,7 +13,6 @@
   Review review = new Review(0, name, email, rating, comment, null);
   ReviewDAO reviewDAO = new ReviewDAO();
   boolean success = reviewDAO.insert(review);
-  boolean success = true;
 
   if (success) {
 %>
