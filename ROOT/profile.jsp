@@ -178,7 +178,7 @@
                   <HR>
                   <button type="submit" class="btn btn-primary" onclick="postReview(event)">Submit Review</button>
                 </form>
-
+                  <HR>
                   <div class="portfolio_description_panel" id="portfolio_description_panel">
 
                     Reviews
