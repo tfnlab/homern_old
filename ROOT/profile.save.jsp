@@ -12,6 +12,7 @@
 
   if (success) {
 %>
+    <%=email%>
     <p>Review submitted successfully!</p>
 <%
   } else {
