@@ -260,7 +260,7 @@
               <input type="text" class="form-control" id="wallet_id_private" name="wallet_id_private" value="<%= technician.getWallet_id_private() %>">
           </div>
           <div class="form-group">
-              <label for="wallet_id_public">Wallet Public</label>
+              <label for="wallet_id_public">Wallet Public</label> <a href="https://opensea.io/<%= technician.getWallet_id_public() %>" >OpenSea.io</a>
               <input type="text" class="form-control" id="wallet_id_public" name="wallet_id_public" value="<%= technician.getWallet_id_public() %>">
           </div>
           <div class="form-group">
