@@ -196,7 +196,14 @@
           </div>
 
         </div>
+        <div class="row gy-4">
 
+          <div class="portfolio_description_panel_token" id="portfolio_description_panel_token">
+
+            Main for Nat Reviews
+
+          </div>
+        </div>
       </div>
     </section><!-- End Portfolio Details Section -->
 
@@ -291,7 +298,38 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script >
+  window.onload = function() {
+    // Get a reference to the div element
+    const div = document.getElementById('portfolio_description_panel_token');
 
+    // Create an XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+
+    // Set up the request
+    xhr.open('GET', 'profile.load.jsp');
+
+    // Set the response type
+    xhr.responseType = 'text';
+
+    // Set up the onload handler
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        div.innerHTML = xhr.responseText;
+      } else {
+        console.error(xhr.statusText);
+      }
+    };
+
+    // Set up the onerror handler
+    xhr.onerror = function() {
+      console.error('Request failed.');
+    };
+
+    // Send the request
+    xhr.send();
+  };  
+  </script>
 </body>
 
 </html>
