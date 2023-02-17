@@ -36,7 +36,8 @@
   ======================================================== -->
   <script >
   // get the form data
-  function postReview() {
+  function postReview(event) {
+    event.preventDefault();
     alert("TEST");
     const form = document.querySelector('#review-form');
     const formData = new FormData(form);
@@ -174,7 +175,7 @@
                     </div>
                   </div>
                   <HR>
-                  <button type="submit" class="btn btn-primary" onclick="preventDefault();postReview()">Submit Review</button>
+                  <button type="submit" class="btn btn-primary" onclick="postReview(event)">Submit Review</button>
                 </form>
 
                   <div class="portfolio_description_panel">
