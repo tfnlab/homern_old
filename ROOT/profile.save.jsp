@@ -8,9 +8,10 @@
 <%
   String name = request.getParameter("name");
   String email = request.getParameter("email");
+  String token_id = request.getParameter("token_id")
   int rating = Integer.parseInt(request.getParameter("rating"));
   String comment = request.getParameter("comment");
-  Review review = new Review(0, name, email, rating, comment, null);
+  Review review = new Review(0, name, email, rating, comment, null, token_id);
   ReviewDAO reviewDAO = new ReviewDAO();
   boolean success = reviewDAO.insert(review);
 
