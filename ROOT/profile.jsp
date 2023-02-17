@@ -60,6 +60,7 @@
       console.error('Request failed.');
     };
     const formData = 'name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&rating=' + encodeURIComponent(rating) + '&comment=' + encodeURIComponent(comment) + '&token_id=' + token_id;
+    alert(formData);
     xhr.send(formData);
   }
 
