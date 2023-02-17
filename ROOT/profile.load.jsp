@@ -12,9 +12,9 @@ ReviewDAO reviewDAO = new ReviewDAO();
 List<Review> reviews = reviewDAO.getReviewsByTokenId(token_id);
 
 %>
-
-
-
 <% for (Review review : reviews) { %>
-   <%=review.getName()%>
+   <%=review.getName()%><BR>
+   <%=review.getComment()%><BR>
+   <%=review.getRating()%><BR>
+   <HR>
 <%}%>
