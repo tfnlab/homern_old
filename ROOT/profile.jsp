@@ -206,12 +206,16 @@
                     <div class="d-flex">
                       <input type="radio" name="rating" id="rating1" value="1">
                       <label class="ml-2" for="rating1">1</label>
+                      &nbsp;&nbsp;
                       <input type="radio" name="rating" id="rating2" value="2">
                       <label class="ml-2" for="rating2">2</label>
+                      &nbsp;&nbsp;
                       <input type="radio" name="rating" id="rating3" value="3">
                       <label class="ml-2" for="rating3">3</label>
+                      &nbsp;&nbsp;
                       <input type="radio" name="rating" id="rating4" value="4">
                       <label class="ml-2" for="rating4">4</label>
+                      &nbsp;&nbsp;
                       <input type="radio" name="rating" id="rating5" value="5">
                       <label class="ml-2" for="rating5">5</label>
                     </div>
