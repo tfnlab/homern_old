@@ -51,6 +51,7 @@
     xhr.onload = function() {
       if (xhr.status === 200) {
         // do something with the response data
+        alert("TEST");
         document.getElementById('portfolio_description_panel').innerHTML = xhr.responseText;
         console.log(xhr.responseText);
       } else {
