@@ -193,6 +193,8 @@
                         technician.setTechnicianPassword(request.getParameter("technicianPassword"));
                         technician.setWallet_id_private(request.getParameter("wallet_id_private"));
                         technician.setWallet_id_public(request.getParameter("wallet_id_public"));
+                        technician.setWallet_id_active_nft_id(request.getParameter("wallet_id_active_nft_id"));
+
 
                         Timestamp createdAt = currentTime;
                         Timestamp updatedAt = currentTime;
