@@ -253,6 +253,14 @@
               <input type="text" class="form-control" id="technicianAvailability" name="technicianAvailability" value="<%= technician.getTechnicianAvailability() %>">
           </div>
           <div class="form-group">
+              <label for="wallet_id_private">Wallet Private Key</label>
+              <input type="text" class="form-control" id="wallet_id_private" name="wallet_id_private" value="<%= technician.getWallet_id_private() %>">
+          </div>
+          <div class="form-group">
+              <label for="wallet_id_public">Wallet Public</label>
+              <input type="text" class="form-control" id="wallet_id_public" name="wallet_id_public" value="<%= technician.getWallet_id_public() %>">
+          </div>
+          <div class="form-group">
               <label for="technicianNotes">Notes</label>
               <textarea class="form-control" id="technicianNotes" name="technicianNotes"><%= technician.getTechnicianNotes() %></textarea>
           </div>
