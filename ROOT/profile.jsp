@@ -151,7 +151,7 @@
                 profile / reviews / events
 
                 <form name="review-form" id="review-form">
-                    <input type="text" class="form-control" id="token_id" name="token_id" value="<%request.getParameter("token_id")%>" placeholder="Enter your name">
+                    <input type="text" class="form-control" id="token_id" name="token_id" value="<%=request.getParameter("token_id")%>" placeholder="Enter your name">
                   <div class="form-group">
                     <label for="nameInput">Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
