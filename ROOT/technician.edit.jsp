@@ -103,6 +103,17 @@
     }
     function verifyOwner() {
         alert("Test");
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            let items = this.responseText.split('<ITEM>');
+            document.getElementById('wallet_id_public').value = items[2];
+          }
+        };
+        let search = document.getElementById('wallet_id_active_nft_id').value;
+        var urlString = "technician.edit.getowner.jsp?token_id=" + search;
+        xhttp.open("GET", urlString, true);
+        xhttp.send();
     }
 
   </script>
