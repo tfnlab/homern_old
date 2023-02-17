@@ -8,12 +8,11 @@
 <%
   String name = request.getParameter("name");
   String email = request.getParameter("email");
-  //int rating = Integer.parseInt(request.getParameter("rating"));
-  //String comment = request.getParameter("comment");
-  //Review review = new Review(0, name, email, rating, comment, null);
-  //ReviewDAO reviewDAO = new ReviewDAO();
-  //boolean success = reviewDAO.insert(review);
-  boolean success = true;
+  int rating = Integer.parseInt(request.getParameter("rating"));
+  String comment = request.getParameter("comment");
+  Review review = new Review(0, name, email, rating, comment, null);
+  ReviewDAO reviewDAO = new ReviewDAO();
+  boolean success = reviewDAO.insert(review);
 
   if (success) {
 %>
