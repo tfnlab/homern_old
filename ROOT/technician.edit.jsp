@@ -266,7 +266,7 @@
               <input type="text" class="form-control" id="wallet_id_public" name="wallet_id_public" value="<%= technician.getWallet_id_public() %>">
           </div>
           <div class="form-group">
-              <label for="wallet_id_public">Active NFT ID (<a href="https://opensea.io/collection/liquid-crystal-display" >Liquid Crystal Display</a> - <a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%= technician.getWallet_id_active_nft_id() %>" ><%= technician.getWallet_id_active_nft_id() %></a>)</label>
+              <label for="wallet_id_public">Active <a href="https://opensea.io/collection/liquid-crystal-display" >Liquid Crystal Display</a> Token ID <a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%= technician.getWallet_id_active_nft_id() %>" ><%= technician.getWallet_id_active_nft_id() %></a></label>
               <input type="text" class="form-control" id="wallet_id_active_nft_id" name="wallet_id_active_nft_id" value="<%= technician.getWallet_id_active_nft_id() %>">
           </div>
           <div class="form-group">
