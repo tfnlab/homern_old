@@ -39,7 +39,7 @@
   function postReview(event) {
     event.preventDefault();
     alert("TEST");
-    const form = document.querySelector('#review-form');
+    const form = document.getElementById('#review-form');
     const formData = new FormData(form);
     // create a new XMLHttpRequest object
     const xhr = new XMLHttpRequest();
