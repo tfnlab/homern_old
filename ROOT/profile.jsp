@@ -179,7 +179,9 @@
                   <button type="submit" class="btn btn-primary" onclick="postReview(event)">Submit Review</button>
                 </form>
 
-                  <div class="portfolio_description_panel">
+                  <div class="portfolio_description_panel" id="portfolio_description_panel">
+
+                    Reviews
 
                   </div>
                 </p>
