@@ -4,4 +4,4 @@
 <%@ page import="java.io.*" %>
 <%@ page import="com.tfnlab.mysql.Review" %>
 <%@ page import="com.tfnlab.mysql.ReviewDAO" %>
- load reviews
+ load reviews from page
