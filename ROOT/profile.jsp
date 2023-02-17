@@ -154,10 +154,18 @@
               <p>
                 profile / reviews / events
 
-                <form name="review-form" id="review-form" >
+                <form name="review-form" id="review-form">
+                  <div class="form-group">
+                    <label for="nameInput">Name</label>
+                    <input type="text" class="form-control" id="nameInput" name="name" placeholder="Enter your name">
+                  </div>
+                  <div class="form-group">
+                    <label for="emailInput">Email</label>
+                    <input type="email" class="form-control" id="emailInput" name="email" placeholder="Enter your email">
+                  </div>
                   <div class="form-group">
                     <label for="reviewTextarea">Comments</label>
-                    <textarea class="form-control" id="reviewTextarea" rows="3" placeholder="Enter your review here..."></textarea>
+                    <textarea class="form-control" id="reviewTextarea" name="comment" rows="3" placeholder="Enter your review here..."></textarea>
                   </div>
                   <HR>
                   <div class="form-group">
@@ -178,6 +186,7 @@
                   <HR>
                   <button type="submit" class="btn btn-primary" onclick="postReview(event)">Submit Review</button>
                 </form>
+
                   <HR>
                   <div class="portfolio_description_panel" id="portfolio_description_panel">
 
