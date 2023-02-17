@@ -16,5 +16,5 @@ List<Review> reviews = reviewDAO.getReviewsByTokenId(token_id);
 
 
 <% for (Review review : reviews) { %>
-   <%review.getName()%>
+   <%=review.getName()%>
 <%}%>
