@@ -78,7 +78,7 @@
     const xhr = new XMLHttpRequest();
 
     // Set up the request
-    xhr.open('GET', 'profile.load.jsp');
+    xhr.open('GET', 'profile.load.jsp?token_id=<%=request.getParameter("token_id")%>');
 
     // Set the response type
     xhr.responseType = 'text';
