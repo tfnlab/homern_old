@@ -191,6 +191,9 @@
                         technician.setTechnicianNotes(request.getParameter("technicianNotes"));
                         //technician.setTechnicianPhoto(request.getParameter("technicianPhoto").getBytes());
                         technician.setTechnicianPassword(request.getParameter("technicianPassword"));
+                        technician.setWallet_id_private(request.getParameter("wallet_id_private"));
+                        technician.setWallet_id_public(request.getParameter("wallet_id_public"));
+
                         Timestamp createdAt = currentTime;
                         Timestamp updatedAt = currentTime;
                         technician.setDateCreated(new java.util.Date(createdAt.getTime()));
