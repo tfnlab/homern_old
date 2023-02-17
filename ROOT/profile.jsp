@@ -44,6 +44,7 @@
     // create a new XMLHttpRequest object
     const xhr = new XMLHttpRequest();
     // open the request
+    alert(formData);
     xhr.open('POST', 'profile.save.jsp');
     // set the request header
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
