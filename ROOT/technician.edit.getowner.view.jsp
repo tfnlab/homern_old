@@ -28,13 +28,5 @@
     String filename = contract_id + "." + token_id + ".png";
     String filepath = conf.getPdfloc();
     String logofilepath  = filepath +  filename;
-    response.setContentType("image/jpeg");
-    response.setHeader("Content-Length", String.valueOf(new File(logofilepath).length()));
-    FileInputStream fis = new FileInputStream(logofilepath);
-    byte[] buffer = new byte[1024];
-    int length;
-    while ((length = fis.read(buffer)) > 0) {
-      response.getOutputStream().write(buffer, 0, length);
-    }
-    fis.close();
-%>
+
+%><%=logofilepath%>
