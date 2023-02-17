@@ -108,17 +108,17 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Home Renovation Nation</h3>
+              <h3><a href="https://opensea.io/collection/home-renovation-nation">Home Renovation Nation</a></h3>
               <ul>
-                <li><strong>Category</strong>: NFT</li>
+                <li><strong>ID</strong>: <%=request.getParameter("token_id")%></li>
                 <li><strong>Project date</strong>: 04 Feb, 2023</li>
-                <li><strong>URL</strong>: <a href="https://opensea.io/collection/home-renovation-nation">opensea.io</a></li>
+                <li><strong>URL</strong>: <a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%=request.getParameter("token_id")%>" >opensea.io</a></li>
               </ul>
             </div>
             <div class="portfolio-description">
               <h2>Home Renovation Nation</h2>
               <p>
-                profile
+                profile / reviews / events
                 </p>
             </div>
           </div>
