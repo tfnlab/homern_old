@@ -34,6 +34,39 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <script >
+  // get the form data
+  function postReview() {
+    alert("TEST");
+    const form = document.querySelector('#review-form');
+    const formData = new FormData(form);
+    // create a new XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+    // open the request
+    xhr.open('POST', 'profile.save.jsp');
+    // set the request header
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // define the onload function
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // do something with the response data
+        document.getElementById('portfolio_description_panel').innerHTML = xhr.responseText;
+        console.log(xhr.responseText);
+      } else {
+        // handle the error
+        console.error(xhr.statusText);
+      }
+    };
+    // define the onerror function
+    xhr.onerror = function() {
+      console.error('Request failed.');
+    };
+    // send the request
+    xhr.send(formData);
+  }
+
+
+  </script>
 </head>
 
 <body>
@@ -119,11 +152,12 @@
               <p>
                 profile / reviews / events
 
-                <form>
+                <form name="review-form" id="review-form" >
                   <div class="form-group">
                     <label for="reviewTextarea">Comments</label>
                     <textarea class="form-control" id="reviewTextarea" rows="3" placeholder="Enter your review here..."></textarea>
                   </div>
+                  <HR>
                   <div class="form-group">
                     <label for="ratingInput">Rating</label>
                     <div class="d-flex">
@@ -139,10 +173,14 @@
                       <label class="ml-2" for="rating5">5</label>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit Review</button>
+                  <HR>
+                  <button type="submit" class="btn btn-primary" onclick="postReview()">Submit Review</button>
                 </form>
-                                
+
                 </p>
+                  <div class="portfolio_description_panel">
+
+                  </div>
             </div>
           </div>
 
