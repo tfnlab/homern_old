@@ -43,6 +43,7 @@
     const email = form.elements['email'].value;
     const rating = form.elements['rating'].value;
     const comment = form.elements['comment'].value;
+    const token_id = form.elements['token_id'].value;
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'profile.save.jsp');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -58,7 +59,7 @@
     xhr.onerror = function() {
       console.error('Request failed.');
     };
-    const formData = 'name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&rating=' + encodeURIComponent(rating) + '&comment=' + encodeURIComponent(comment) ;
+    const formData = 'name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&rating=' + encodeURIComponent(rating) + '&comment=' + encodeURIComponent(comment) + '&token_id=' + token_id;
     xhr.send(formData);
   }
 
