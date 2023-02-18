@@ -180,10 +180,7 @@
               </ul>
             </div>
             <div class="portfolio-description">
-              <p>
-                profile / reviews / events
-
-                <form name="review-form" id="review-form">
+              <form name="review-form" id="review-form">
                     <input type="hidden" class="form-control" id="token_id" name="token_id" value="<%=request.getParameter("token_id")%>" placeholder="Enter your name">
                   <div class="form-group">
                     <label for="nameInput">Name</label>
@@ -220,12 +217,11 @@
                   <HR>
                   <button type="submit" class="btn btn-primary" onclick="postReview(event)">Submit Review</button>
                 </form>
-
+                <p>
                   <HR>
                   <div class="portfolio_description_panel" id="portfolio_description_panel">
 
-                    Reviews
-
+                    
                   </div>
                 </p>
             </div>
