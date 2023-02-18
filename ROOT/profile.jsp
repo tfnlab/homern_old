@@ -164,12 +164,10 @@
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
 
-                <div class="swiper-slide">
                   <img src="technician.edit.getowner.view.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%=request.getParameter("token_id")%>" " alt="">
-                </div>
+                
 
               </div>
-              <div class="swiper-pagination"></div>
             </div>
           </div>
 
