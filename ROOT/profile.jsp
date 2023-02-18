@@ -174,7 +174,7 @@
             <div class="portfolio-info">
               <h3><a href="portfolio-lcd.jsp" >Home Renovation Nation</a></h3>
               <ul>
-                <li><strong>Token ID</strong>: <%=request.getParameter("token_id")%></li>
+                <li><strong>Digital ID</strong>: <%=request.getParameter("token_id")%></li>
                 <li><strong>URL</strong>: <a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%=request.getParameter("token_id")%>" >opensea.io</a></li>
               </ul>
             </div>
