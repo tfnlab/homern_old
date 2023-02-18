@@ -14,7 +14,7 @@ int total_reviews = reviewDAO.getTotalReviewsByTokenId(token_id);
 String formatted_average_review = String.format("%.2f", average_review);
 
 %>
-<h3>Average Rating <%=formatted_average_review%> Total <%=total_reviews%></h3>
+<h3>Reviews Average <%=formatted_average_review%> Total <%=total_reviews%></h3>
 <hr>
 <% for (Review review : reviews) { %>
    <%=review.getName()%><BR>
