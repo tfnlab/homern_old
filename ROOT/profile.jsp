@@ -221,7 +221,7 @@
                   <HR>
                   <div class="portfolio_description_panel" id="portfolio_description_panel">
 
-                    
+
                   </div>
                 </p>
             </div>
@@ -229,7 +229,7 @@
 
         </div>
         <div class="row gy-4">
-
+          <HR>
           <div class="portfolio_description_panel_token" id="portfolio_description_panel_token">
 
             Main for Nat Reviews
