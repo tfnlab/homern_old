@@ -327,6 +327,7 @@
                <option value="carpenter" <% if (businessType.equals("carpenter")) { %>selected<% } %>>Carpenter</option>
                <option value="plumber" <% if (businessType.equals("plumber")) { %>selected<% } %>>Plumber</option>
                <option value="electrician" <% if (businessType.equals("electrician")) { %>selected<% } %>>Electrician</option>
+               <option value="hers-rating-company" <% if (businessType.equals("hers-rating-company")) { %>selected<% } %>>HERS rating company</option>
                <option value="hvac-technician" <% if (businessType.equals("hvac-technician")) { %>selected<% } %>>HVAC technician</option>
                <option value="landscaper" <% if (businessType.equals("landscaper")) { %>selected<% } %>>Landscaper</option>
                <option value="roofing-contractor" <% if (businessType.equals("roofing-contractor")) { %>selected<% } %>>Roofing contractor</option>

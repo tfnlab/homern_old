@@ -270,6 +270,7 @@
                       <option value="carpenter">Carpenter</option>
                       <option value="plumber">Plumber</option>
                       <option value="electrician">Electrician</option>
+                      <option value="hers-rating-company">HERS rating company</option>
                       <option value="hvac-technician">HVAC technician</option>
                       <option value="landscaper">Landscaper</option>
                       <option value="roofing-contractor">Roofing contractor</option>
