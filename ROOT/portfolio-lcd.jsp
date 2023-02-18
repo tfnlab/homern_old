@@ -1,3 +1,10 @@
+<%@ page import="java.sql.*" %>
+<%@ page import="javax.sql.*" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.io.*" %>
+<%@ page import="com.tfnlab.mysql.Review" %>
+<%@ page import="com.tfnlab.mysql.ReviewDAO" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -134,7 +141,7 @@
 
         </div>
       </div>
-      <div class="container">      
+      <div class="container">
         <div class="row " >
           <div class="col">
           Art Project:
@@ -154,6 +161,16 @@
           Conclusion:
           <HR>
           The Liquid Crystal Display NFT Collection is an innovative project that combines art and utility. The collection celebrates the legacy of the liquid crystal display and its role in shaping our culture and society. The collection also serves a practical purpose by providing a verification badge for service professionals in the Home Renovation Nation network. This project has the potential to create a unique and valuable ecosystem of art, technology, and service professionals.
+          <%
+          ReviewDAO reviewDAO = new ReviewDAO();
+          List<Review> reviews = reviewDAO.getReviewsGroupedByTokenId();
+
+          %>
+
+          <% for (Review review : reviews) { %>
+             <%=review.getToken_id()%><BR>
+             <%=review.getAverage()%><BR>
+          <% } %>   
           </div>
         </div>
       </div>
