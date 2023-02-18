@@ -87,9 +87,9 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Portfolio Details</li>
+          <li>Reviews</li>
         </ol>
-        <h2>Portfolio Details</h2>
+        <h2>Reviews Ranking</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
