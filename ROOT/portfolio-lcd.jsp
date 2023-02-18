@@ -102,7 +102,12 @@
 
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">                
+              <div class="swiper-wrapper align-items-center">
+                <%
+                ReviewDAO reviewDAO = new ReviewDAO();
+                List<Review> reviews = reviewDAO.getReviewsGroupedByTokenId();
+
+                %>                              
                 <% for (Review review : reviews) { %>
                 <div class="swiper-slide">
                   <img src="technician.edit.getowner.view.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%=review.getToken_id()%>"  alt="">
@@ -159,11 +164,7 @@
           Conclusion:
           <HR>
           The Liquid Crystal Display NFT Collection is an innovative project that combines art and utility. The collection celebrates the legacy of the liquid crystal display and its role in shaping our culture and society. The collection also serves a practical purpose by providing a verification badge for service professionals in the Home Renovation Nation network. This project has the potential to create a unique and valuable ecosystem of art, technology, and service professionals.
-          <%
-          ReviewDAO reviewDAO = new ReviewDAO();
-          List<Review> reviews = reviewDAO.getReviewsGroupedByTokenId();
 
-          %>
           <HR>
           </div>
         </div>
