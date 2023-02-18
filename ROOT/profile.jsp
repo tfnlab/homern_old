@@ -147,9 +147,8 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>NFT</li>
+          <li>Reviews</li>
         </ol>
-        <h2>Home Renovation Nation</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
