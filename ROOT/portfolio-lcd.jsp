@@ -114,7 +114,9 @@
                   <img src="technician.edit.getowner.view.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%=review.getToken_id()%>"  alt="">
                   </a>
                   <HR>
-                  <%=review.getAverage()%>
+                  <h3>Average Rating <%=review.getAverage()%></h3>
+                  <HR>
+                  <p>< href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%=review.getToken_id()%>" >Open Sea</a></p>
                 </div>
                 <% } %>
                </div>
