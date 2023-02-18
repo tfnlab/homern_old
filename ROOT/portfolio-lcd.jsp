@@ -166,11 +166,11 @@
           List<Review> reviews = reviewDAO.getReviewsGroupedByTokenId();
 
           %>
-
+          <HR>
           <% for (Review review : reviews) { %>
              <%=review.getToken_id()%><BR>
              <%=review.getAverage()%><BR>
-          <% } %>   
+          <% } %>
           </div>
         </div>
       </div>
