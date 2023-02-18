@@ -17,8 +17,7 @@ String formatted_average_review = String.format("%.2f", average_review);
 <h3>Reviews Average <%=formatted_average_review%> Total <%=total_reviews%></h3>
 <hr>
 <% for (Review review : reviews) { %>
-   <%=review.getName()%><BR>
+   <%=review.getName()%> (<%=review.getRating()%>)<BR>
    <%=review.getComment()%><BR>
-   <%=review.getRating()%><BR>
    <HR>
 <%}%>
