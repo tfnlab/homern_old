@@ -204,6 +204,11 @@
          user.setSendgrid_key(sendgrid_key);
          user.setSendgrid_email(sendgrid_email);
 
+
+         user.setWallet_id_private(request.getParameter("wallet_id_private"));
+         user.setWallet_id_public(request.getParameter("wallet_id_public"));
+         user.setWallet_id_active_nft_id(request.getParameter("wallet_id_active_nft_id"));         
+
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -437,6 +442,20 @@
            <div class="form-group mt-3">
            <label for="stripe_key_pub" class="mr-2">Send Grid Email:</label>
            <input type="text" class="form-control" id="sendgrid_email" name="sendgrid_email" value="<%= user.getSendgrid_email() %>" tabindex="25" >
+           </div>
+           <div class="form-group">
+               <label for="wallet_id_private">Wallet Private Key</label>
+               <input type="text" class="form-control" id="wallet_id_private" name="wallet_id_private" value="<%= user.getWallet_id_private() %>">
+           </div>
+           <div class="form-group">
+               <label for="wallet_id_public">Wallet Public</label> <a href="https://opensea.io/<%= user.getWallet_id_public() %>" >OpenSea.io</a>
+               <input type="text" class="form-control" id="wallet_id_public" name="wallet_id_public" value="<%= user.getWallet_id_public() %>">
+           </div>
+           <div class="form-group">
+               <label for="wallet_id_public">Active <a href="https://opensea.io/collection/liquid-crystal-display" >Liquid Crystal Display</a> Token Identification Number <a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%= user.getWallet_id_active_nft_id() %>" ><%= user.getWallet_id_active_nft_id() %></a></label>
+               <input type="text" class="form-control" id="wallet_id_active_nft_id" name="wallet_id_active_nft_id" value="<%= user.getWallet_id_active_nft_id() %>" onkeyup="verifyOwner()">
+               <HR>
+               <img src="technician.edit.getowner.view.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%= user.getWallet_id_active_nft_id() %>" class="img-fluid" style="max-width: 50%;"/>
            </div>
            <div class="form-group mt-3">
              <button type="submit" class="btn btn-primary" tabindex="26">Submit</button>
