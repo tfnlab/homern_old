@@ -102,17 +102,15 @@
 
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
+              <div class="swiper-wrapper align-items-center">                
+                <% for (Review review : reviews) { %>
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-4.png" alt="">
+                  <img src="technician.edit.getowner.view.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%=review.getToken_id()%>"  alt="">
+                  <HR>
+                  <%=review.getAverage()%>
                 </div>
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-5.png" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-6.png" alt="">
-                </div>
-              </div>
+                <% } %>
+               </div>
               <div class="swiper-pagination"></div>
             </div>
           </div>
@@ -167,10 +165,6 @@
 
           %>
           <HR>
-          <% for (Review review : reviews) { %>
-             <%=review.getToken_id()%><BR>
-             <%=review.getAverage()%><BR>
-          <% } %>
           </div>
         </div>
       </div>
