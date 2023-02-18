@@ -106,7 +106,7 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Sign-Up</h2>
+        <h4>Terms of Service</h4>
 <p>
   Welcome to Home Renovation Nation! Our platform provides software as a service (SaaS) for homeowners and contractors. By using our platform, you are agreeing to the following terms and conditions:
 
