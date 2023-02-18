@@ -100,7 +100,15 @@
           <li>Sign-up</li>
         </ol>
         <h2>Terms of Service</h2>
-        Welcome to Home Renovation Nation! Our platform provides software as a service (SaaS) for homeowners and contractors. By using our platform, you are agreeing to the following terms and conditions:
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container px-4 px-lg-5">
+        <h2>Sign-Up</h2>
+<p>
+  Welcome to Home Renovation Nation! Our platform provides software as a service (SaaS) for homeowners and contractors. By using our platform, you are agreeing to the following terms and conditions:
 
 Eligibility: You must be 18 years or older to use our services. By using our platform, you represent and warrant that you are of legal age to form a binding contract and that you comply with all of the terms and conditions of this Agreement.
 
@@ -125,14 +133,7 @@ Governing Law: These terms and conditions shall be governed by and construed in 
 Contact Us: If you have any questions or comments about our platform or these terms, please contact us.
 
 By using our platform, you confirm that you have read, understood, and agree to be bound by these terms and conditions. If you do not agree to these terms, you are not authorized to use our platform.
-      </div>
-    </section><!-- End Breadcrumbs -->
-
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
-      <div class="container px-4 px-lg-5">
-        <h2>Sign-Up</h2>
-
+</p>
       </div>
 
     </section><!-- End Blog Section -->
