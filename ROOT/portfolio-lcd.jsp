@@ -116,7 +116,7 @@
                   <HR>
                   <h3>Average Rating <%=review.getAverage()%></h3>
                   <HR>
-                  <p>< href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%=review.getToken_id()%>" >Open Sea</a></p>
+                  <p><a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%=review.getToken_id()%>" >Open Sea</a></p>
                 </div>
                 <% } %>
                </div>
