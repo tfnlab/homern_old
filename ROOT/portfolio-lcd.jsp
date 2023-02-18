@@ -106,7 +106,7 @@
                 <%
                 ReviewDAO reviewDAO = new ReviewDAO();
                 List<Review> reviews = reviewDAO.getReviewsGroupedByTokenId();
-
+                int count = 1;
                 %>
                 <% for (Review review : reviews) { %>
                 <div class="swiper-slide">
@@ -114,10 +114,11 @@
                   <img src="technician.edit.getowner.view.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%=review.getToken_id()%>"  alt="">
                   </a>
                   <HR>
-                  <h3>Average Rating <%=review.getAverage()%></h3>
+                  <h3>Rank #<%=count%> Digital ID <%=review.getToken_id()%> Average Rating <%=review.getAverage()%></h3>
                   <HR>
                   <p><a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%=review.getToken_id()%>" >Open Sea</a></p>
                 </div>
+                <% count += 1;%>
                 <% } %>
                </div>
               <div class="swiper-pagination"></div>
