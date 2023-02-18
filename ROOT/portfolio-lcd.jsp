@@ -107,10 +107,12 @@
                 ReviewDAO reviewDAO = new ReviewDAO();
                 List<Review> reviews = reviewDAO.getReviewsGroupedByTokenId();
 
-                %>                              
+                %>
                 <% for (Review review : reviews) { %>
                 <div class="swiper-slide">
+                  <a href="profile.jsp?token_id=<%=review.getToken_id()%>" >
                   <img src="technician.edit.getowner.view.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%=review.getToken_id()%>"  alt="">
+                  </a>
                   <HR>
                   <%=review.getAverage()%>
                 </div>
