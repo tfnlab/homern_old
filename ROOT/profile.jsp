@@ -185,10 +185,12 @@
                     <label for="nameInput">Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
                   </div>
+                  <hr>
                   <div class="form-group">
                     <label for="emailInput">Email</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
                   </div>
+                  <hr>
                   <div class="form-group">
                     <label for="reviewTextarea">Comments</label>
                     <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Enter your review here..."></textarea>
