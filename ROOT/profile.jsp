@@ -165,7 +165,7 @@
               <div class="swiper-wrapper align-items-center">
 
                   <img src="technician.edit.getowner.view.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%=request.getParameter("token_id")%>" " alt="">
-                
+
 
               </div>
             </div>
@@ -180,7 +180,6 @@
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>Home Renovation Nation</h2>
               <p>
                 profile / reviews / events
 
