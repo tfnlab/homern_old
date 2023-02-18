@@ -49,7 +49,6 @@
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
       if (xhr.status === 200) {
-        alert(xhr.responseText);
         document.getElementById('portfolio_description_panel').innerHTML = xhr.responseText;
         console.log(xhr.responseText);
         loadReviews();
@@ -62,7 +61,6 @@
       console.error('Request failed.');
     };
     const formData = 'name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&rating=' + encodeURIComponent(rating) + '&comment=' + encodeURIComponent(comment) + '&token_id=' + token_id;
-    alert(formData);
     xhr.send(formData);
   }
 
