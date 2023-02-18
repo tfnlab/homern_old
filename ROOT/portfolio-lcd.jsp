@@ -89,7 +89,7 @@
           <li><a href="index.html">Home</a></li>
           <li>Reviews</li>
         </ol>
-        <h2>Reviews Ranking</h2>
+        <h2>Review Rankings</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
