@@ -187,7 +187,7 @@
                       //OrderDao dao = new OrderDao();
                       //ao.insertOrder(order);
 
-
+                        try{
                         technician = technician.generateSampleTechnician();
                         technician.setTechnicianId(id);
                         technician.setTechnicianName(request.getParameter("technicianName"));
@@ -216,7 +216,9 @@
                         technician.setUsername(username);
 
                         td.updateRecord(technician);
-
+                      }catch(Exception ex){
+                        %><%=ex.getMessage()%><%
+                      }
                       %>
 
                         Order Saved
