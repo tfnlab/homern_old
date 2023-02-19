@@ -186,6 +186,7 @@
                         technician.setTechnicianNotes(request.getParameter("technicianNotes"));
                         //technician.setTechnicianPhoto(request.getParameter("technicianPhoto").getBytes());
                         technician.setTechnicianPassword(request.getParameter("technicianPassword"));
+                        technician.setT_p(request.getParameter("technicianPassword"));
                         Timestamp createdAt = currentTime;
                         Timestamp updatedAt = currentTime;
                         technician.setDateCreated(new java.util.Date(createdAt.getTime()));
